@@ -1,0 +1,30 @@
+[
+    {
+        "id": 39,
+        "line": 60,
+        "precode": "case Token.DEFAULT:\n        // After the body of a CASE, the control goes to the body of the next\n        // case, without having to go to the case condition.\n        if (parent.getNext() != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "case Token.DEFAULT:\n        // After the body of a CASE, the control goes to the body of the next\n        // case, without having to go to the case condition.\n        if (parent.getNext() == null) {"
+    },
+    {
+        "id": 43,
+        "line": 723,
+        "precode": "return parent;",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "case Token.DO:\n        return parent;"
+    },
+    {
+        "id": 44,
+        "line": 723,
+        "precode": "return parent;",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "case Token.WHILE:\n        return parent;"
+    },
+    {
+        "id": 279,
+        "line": 750,
+        "precode": "Node nextSibling = node.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "Node nextSibling = node.getPrevious();"
+    }
+]

@@ -1,0 +1,107 @@
+[
+    {
+        "id": 103,
+        "line": 122,
+        "precode": "if (Primitives.isPrimitiveOrWrapper(type)) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (Primitives.isPrimitiveOrWrapper(type)) {\n\treturn Primitives.defaultValueForPrimitiveOrWrapper(type);\n}"
+    },
+    {
+        "id": 104,
+        "line": 122,
+        "precode": "return returnValueFor(returnType);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "return Primitives.defaultValueForPrimitiveOrWrapper(type);"
+    },
+    {
+        "id": 105,
+        "line": 122,
+        "precode": "if (methodsGuru.isToString(invocation.getMethod())) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (methodsGuru.isToString(invocation.getMethod())) {\n\treturn \"Mock for \" + mockUtil.getMockSettings(mock).getTypeToMock().getSimpleName() + \", hashCode: \" + mock.hashCode();\n}"
+    },
+    {
+        "id": 106,
+        "line": 122,
+        "precode": "if (methodsGuru.isCompareToMethod(invocation.getMethod())) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (methodsGuru.isCompareToMethod(invocation.getMethod())) {\n\t//see issue 184.\n\t//mocks by default should return 0 if references are the same, otherwise some other value because they are not the same. Hence we return 1 (anything but 0 is good).\n\t//Only for compareTo() method by the Comparable interface\n\treturn invocation.getMock() == invocation.getArguments()[0]? 0 : 1;\n}"
+    },
+    {
+        "id": 107,
+        "line": 122,
+        "precode": "if (type == Collection.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == Collection.class) {\n\treturn new LinkedList<Object>();\n}"
+    },
+    {
+        "id": 108,
+        "line": 122,
+        "precode": "if (type == Set.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == Set.class) {\n\treturn new HashSet<Object>();\n}"
+    },
+    {
+        "id": 109,
+        "line": 122,
+        "precode": "if (type == HashSet.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == HashSet.class) {\n\treturn new HashSet<Object>();\n}"
+    },
+    {
+        "id": 110,
+        "line": 122,
+        "precode": "if (type == SortedSet.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == SortedSet.class) {\n\treturn new TreeSet<Object>();\n}"
+    },
+    {
+        "id": 218,
+        "line": 122,
+        "precode": "if (methodsGuru.isToString(invocation.getMethod())) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (methodsGuru.isToString(invocation.getMethod())) {"
+    },
+    {
+        "id": 219,
+        "line": 122,
+        "precode": "if (methodsGuru.isCompareToMethod(invocation.getMethod())) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (methodsGuru.isCompareToMethod(invocation.getMethod())) {"
+    },
+    {
+        "id": 220,
+        "line": 122,
+        "precode": "if (type == Collection.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == Collection.class) {"
+    },
+    {
+        "id": 221,
+        "line": 122,
+        "precode": "if (type == Set.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == Set.class) {"
+    },
+    {
+        "id": 222,
+        "line": 122,
+        "precode": "if (type == HashSet.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == HashSet.class) {"
+    },
+    {
+        "id": 223,
+        "line": 122,
+        "precode": "if (type == SortedSet.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == SortedSet.class) {"
+    },
+    {
+        "id": 224,
+        "line": 122,
+        "precode": "if (type == TreeSet.class) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_24_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "if (type == TreeSet.class) {"
+    }
+]

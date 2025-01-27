@@ -1,0 +1,44 @@
+[
+    {
+        "id": 171,
+        "line": 435,
+        "precode": "        if (Feature.WRITE_BIGDECIMAL_AS_PLAIN.enabledIn(_features)) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "        if (Feature.WRITE_BIGDECIMAL_AS_PLAIN.is(_features)) {"
+    },
+    {
+        "id": 172,
+        "line": 437,
+        "precode": "            int scale = value.scale();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "            int scale = value.Scale();"
+    },
+    {
+        "id": 174,
+        "line": 439,
+        "precode": "                _reportError(String.format(",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "            if ((scale < -MAX_BIG_DECIMAL_SCALE) || (scale > MAX_BIG_DECIMAL_SCALE)) {error(String.format("
+    },
+    {
+        "id": 175,
+        "line": 440,
+        "precode": "\"Attempt to write plain `java.math.BigDecimal` (see JsonGenerator.Feature.WRITE_BIGDECIMAL_AS_PLAIN) with illegal scale (%d): needs to be between [-%d, %d]\",",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "                _reportError(String.format(value,"
+    },
+    {
+        "id": 177,
+        "line": 443,
+        "precode": "            return value.toPlainString();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "            return value.format();"
+    },
+    {
+        "id": 178,
+        "line": 445,
+        "precode": "        return value.toString();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "        return value.value();"
+    }
+]

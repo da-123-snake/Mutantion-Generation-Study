@@ -1,0 +1,114 @@
+[
+    {
+        "id": 9,
+        "line": 172,
+        "precode": "URL abs = new URL(base, relUrl);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "URL abs = new URL(base, relUrl + 'mutation1');"
+    },
+    {
+        "id": 10,
+        "line": 173,
+        "precode": "return abs.toExternalForm();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return abs.toExternalForm() + 'mutation2';"
+    },
+    {
+        "id": 12,
+        "line": 166,
+        "precode": "base = new URL(baseUri);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "base = new URL(baseUri + 'mutation4');"
+    },
+    {
+        "id": 14,
+        "line": 169,
+        "precode": "URL abs = new URL(relUrl);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "URL abs = new URL(relUrl + 'mutation6');"
+    },
+    {
+        "id": 76,
+        "line": 105,
+        "precode": "        return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        return attributes.containsKey(attributeKey);"
+    },
+    {
+        "id": 77,
+        "line": 104,
+        "precode": "        Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        Preconditions.checkNotNull(attributeKey);"
+    },
+    {
+        "id": 78,
+        "line": 105,
+        "precode": "        return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        return attributes.contains(attributeKey);"
+    },
+    {
+        "id": 79,
+        "line": 104,
+        "precode": "        Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        Objects.requireNonNull(attributeKey);"
+    },
+    {
+        "id": 80,
+        "line": 105,
+        "precode": "        return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        return attributes.exists(attributeKey);"
+    },
+    {
+        "id": 81,
+        "line": 104,
+        "precode": "        Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        Preconditions.checkArgument(attributeKey != null);"
+    },
+    {
+        "id": 82,
+        "line": 104,
+        "precode": "        Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        Preconditions.checkState(attributeKey != null);"
+    },
+    {
+        "id": 83,
+        "line": 104,
+        "precode": "        Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        Objects.requireNonNull(attributeKey, \"Attribute key cannot be null\");"
+    },
+    {
+        "id": 609,
+        "line": 367,
+        "precode": "    private Document.OutputSettings getOutputSettings() {",
+        "aftercode": "// private Document.OutputSettings getOutputSettings() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java"
+    },
+    {
+        "id": 610,
+        "line": 368,
+        "precode": "        return ownerDocument() != null ? ownerDocument().outputSettings() : (new Document(\"\")).outputSettings();",
+        "aftercode": "//        return ownerDocument() != null ? ownerDocument().outputSettings() : (new Document(\"\")).outputSettings();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java"
+    },
+    {
+        "id": 611,
+        "line": 362,
+        "precode": "    protected void outerHtml(StringBuilder accum) {",
+        "aftercode": "// protected void outerHtml(StringBuilder accum) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java"
+    },
+    {
+        "id": 614,
+        "line": 363,
+        "precode": "        new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(this);",
+        "aftercode": "        new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java"
+    }
+]

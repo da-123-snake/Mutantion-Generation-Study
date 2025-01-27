@@ -1,0 +1,100 @@
+[
+    {
+        "id": 45,
+        "line": 906,
+        "precode": "if (n.getType() == Token.FUNCTION) {",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (n.getType() == Token.FUNCTION) {\n\treturn false;"
+    },
+    {
+        "id": 46,
+        "line": 906,
+        "precode": "\treturn false;",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (n.getType() == Token.FUNCTION) {\n\treturn false;\n}\nreturn false;"
+    },
+    {
+        "id": 47,
+        "line": 906,
+        "precode": "\treturn true;",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (n.getType() == Token.FUNCTION) {\n\treturn false;\n}\nreturn true;"
+    },
+    {
+        "id": 48,
+        "line": 906,
+        "precode": "}\n",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (n.getType() == Token.FUNCTION) {\n\treturn false;\n}\nreturn false;"
+    },
+    {
+        "id": 49,
+        "line": 906,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (n.getType() == Token.FUNCTION) {\n\treturn false;\n}\nreturn false;"
+    },
+    {
+        "id": 50,
+        "line": 906,
+        "precode": "return true;",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (n.getType() == Token.FUNCTION) {\n\treturn false;\n}\nreturn true;"
+    },
+    {
+        "id": 51,
+        "line": 906,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (n.getType() == Token.FUNCTION) {\n\treturn false;\n}\nreturn false;"
+    },
+    {
+        "id": 271,
+        "line": 764,
+        "precode": "parent = node.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "parent = node.getParent();\nif (parent == null || parent.getType() == Token.FUNCTION || node == root) {\n    return null;\n}"
+    },
+    {
+        "id": 272,
+        "line": 764,
+        "precode": "if (parent.getType() == Token.IF) {",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (parent.getType() == Token.IF || parent.getType() == Token.WHILE || parent.getType() == Token.DO || parent.getType() == Token.FOR) {"
+    },
+    {
+        "id": 273,
+        "line": 764,
+        "precode": "switch (parent.getType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "switch (parent.getType()) {\n    case Token.IF:\n    case Token.WHILE:\n    case Token.DO:\n    case Token.FOR:\n        break;"
+    },
+    {
+        "id": 274,
+        "line": 764,
+        "precode": "if (parent.getNext()!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (parent.getNext()!= null && parent.getNext().getType()!= Token.ELSE) {"
+    },
+    {
+        "id": 275,
+        "line": 764,
+        "precode": "if (NodeUtil.isForIn(parent)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (NodeUtil.isForIn(parent) || NodeUtil.isForOf(parent)) {"
+    },
+    {
+        "id": 276,
+        "line": 764,
+        "precode": "if (parent.getFirstChild() == node) {",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (parent.getFirstChild() == node || parent.getFirstChild().getNext() == node) {"
+    },
+    {
+        "id": 277,
+        "line": 764,
+        "precode": "if (NodeUtil.hasFinally(parent)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_103_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (NodeUtil.hasFinally(parent) &&!parent.getFirstChild().equals(node)) {"
+    }
+]

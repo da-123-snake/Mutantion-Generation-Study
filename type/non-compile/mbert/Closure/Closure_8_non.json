@@ -1,0 +1,51 @@
+[
+    {
+        "id": 74,
+        "line": 201,
+        "precode": "      Var var = s.getVar(lhs.getString());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "      Var var = s.var(lhs.getString());"
+    },
+    {
+        "id": 75,
+        "line": 202,
+        "precode": "      return var != null",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "          &&!isNamedParameter(var)&&!blacklistedVars.contains(var);"
+    },
+    {
+        "id": 76,
+        "line": 203,
+        "precode": "          && var.getScope() == s",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "          && var.getScope()<s"
+    },
+    {
+        "id": 77,
+        "line": 204,
+        "precode": "          && !isNamedParameter(var)",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "          &&(!isNamedParameter(var)"
+    },
+    {
+        "id": 78,
+        "line": 205,
+        "precode": "          && !blacklistedVars.contains(var);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "          &&(!blacklistedVars.contains(var);"
+    },
+    {
+        "id": 79,
+        "line": 210,
+        "precode": "    return v.getParentNode().isParamList();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "    return v.getParentNode().name();"
+    },
+    {
+        "id": 80,
+        "line": 214,
+        "precode": "    for (Collapse collapse : collapses) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "    for (Collapse collapse :collapse) {"
+    }
+]

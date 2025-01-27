@@ -1,0 +1,58 @@
+[
+    {
+        "id": 97,
+        "line": 184,
+        "precode": "            return 0;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "            return1;"
+    },
+    {
+        "id": 99,
+        "line": 187,
+        "precode": "            if (other.getClass().getName().equals(this.getClass().getName())) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "            if (other.getClass().getName().cmp(this.getClass().getName())) {"
+    },
+    {
+        "id": 100,
+        "line": 188,
+        "precode": "                return iValue - getValueInOtherClassLoader(other);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "                return iValue.getValueInOtherClassLoader(other);"
+    },
+    {
+        "id": 102,
+        "line": 193,
+        "precode": "        return iValue - ((ValuedEnum) other).iValue;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "        return iValueOf((ValuedEnum) other).iValue;"
+    },
+    {
+        "id": 103,
+        "line": 204,
+        "precode": "            Method mth = other.getClass().getMethod(\"getValue\", null);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "            Method mth = other.getClass().get(\"getValue\", null);"
+    },
+    {
+        "id": 104,
+        "line": 205,
+        "precode": "            Integer value = (Integer) mth.invoke(other, null);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "            Integer value = (Integer) mth.call(other, null);"
+    },
+    {
+        "id": 105,
+        "line": 206,
+        "precode": "            return value.intValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "            return value.value();"
+    },
+    {
+        "id": 106,
+        "line": 214,
+        "precode": "        throw new IllegalStateException(\"This should not happen\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "        throw new IllegalStateException(e);"
+    }
+]

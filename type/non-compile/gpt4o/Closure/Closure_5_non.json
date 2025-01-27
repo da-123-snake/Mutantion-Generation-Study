@@ -1,0 +1,44 @@
+[
+    {
+        "id": 198,
+        "line": 166,
+        "precode": "if (parent.isGetProp()) {",
+        "aftercode": "if (parent.isNotGetProp()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 201,
+        "line": 225,
+        "precode": "if (child.isGetterDef() ||",
+        "aftercode": "if (child.isNotGetterDef() &&",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 210,
+        "line": "if (gramps.isCall() && gramps.getFirstChild() == parent) {",
+        "precode": "if (gramps.isCall() && gramps.getFirstChild() == parent) {",
+        "aftercode": "if (gramps.isCall() || gramps.getFirstChild() != parent) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 214,
+        "line": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "precode": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "aftercode": "if (!child.isGetterDef() && !child.isSetterDef()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 396,
+        "line": 356,
+        "precode": "NodeUtil.newUndefinedNode(null)))",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "NodeUtil.newNumberNode(0, null)))"
+    },
+    {
+        "id": 398,
+        "line": "replacement = IR.trueNode();",
+        "precode": "if (nodes.isEmpty()) {\n        replacement = IR.trueNode();",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (nodes.isEmpty()) {\n        replacement = IR.falseNode();"
+    }
+]

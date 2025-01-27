@@ -1,0 +1,30 @@
+[
+    {
+        "id": 52,
+        "line": 983,
+        "precode": "        int hash = q1 ^ _seed;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_11_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        int hash = q1$_seed;"
+    },
+    {
+        "id": 53,
+        "line": 989,
+        "precode": "        hash += (hash >>> 16); // to xor hi- and low- 16-bits",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_11_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        hash^+= (hash >>> 16); // to xor hi- and low- 16-bits"
+    },
+    {
+        "id": 70,
+        "line": 884,
+        "precode": "        if (_needRehash) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_11_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        if (dirty) {"
+    },
+    {
+        "id": 71,
+        "line": 885,
+        "precode": "            rehash();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_11_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        if (_needRehash) {refresh();"
+    }
+]

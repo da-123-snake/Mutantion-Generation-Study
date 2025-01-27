@@ -1,0 +1,247 @@
+[
+    {
+        "id": 180,
+        "line": 638,
+        "precode": "final char[] buf = _charBuffer;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "final byte[] buf = _byteBuffer;"
+    },
+    {
+        "id": 182,
+        "line": 638,
+        "precode": "if (len <= buf.length) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (len <= buf.length) {"
+    },
+    {
+        "id": 183,
+        "line": 638,
+        "precode": "text.getChars(offset, offset+len, buf, 0);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "text.getBytes(offset, len, buf, 0);"
+    },
+    {
+        "id": 184,
+        "line": 638,
+        "precode": "_writeRawSegment(buf, 0, len);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "_writeRawSegment(buf, 0, len);"
+    },
+    {
+        "id": 188,
+        "line": 638,
+        "precode": "while (len > 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "while (len > 0) {"
+    },
+    {
+        "id": 189,
+        "line": 638,
+        "precode": "int len2 = Math.min(maxChunk, len);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "int len2 = Math.min(maxChunk, len);"
+    },
+    {
+        "id": 190,
+        "line": 638,
+        "precode": "text.getChars(offset, offset+len2, buf, 0);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "text.getBytes(offset, len2, buf, 0);"
+    },
+    {
+        "id": 191,
+        "line": 638,
+        "precode": "if ((_outputTail + maxBytes) > _outputEnd) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if ((_outputTail + maxBytes) > _outputEnd) {"
+    },
+    {
+        "id": 192,
+        "line": 638,
+        "precode": "_flushBuffer();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "_flushBuffer();"
+    },
+    {
+        "id": 195,
+        "line": 638,
+        "precode": "if (len > 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (len > 0) {"
+    },
+    {
+        "id": 196,
+        "line": 638,
+        "precode": "char ch = buf[len2-1];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "byte ch = buf[len2-1];"
+    },
+    {
+        "id": 197,
+        "line": 638,
+        "precode": "if ((ch >= SURR1_FIRST) && (ch <= SURR1_LAST)) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if ((ch >= SURR1_FIRST) && (ch <= SURR1_LAST)) {"
+    },
+    {
+        "id": 198,
+        "line": 638,
+        "precode": "--len2;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "--len2;"
+    },
+    {
+        "id": 199,
+        "line": 638,
+        "precode": "main_loop:",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "main_loop:"
+    },
+    {
+        "id": 200,
+        "line": 638,
+        "precode": "while (offset < len) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "while (offset < len) {"
+    },
+    {
+        "id": 201,
+        "line": 638,
+        "precode": "int ch = (int) cbuf[offset];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "int ch = (int) cbuf[offset];"
+    },
+    {
+        "id": 202,
+        "line": 638,
+        "precode": "if (ch > 0x7F) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (ch > 0x7F) {"
+    },
+    {
+        "id": 203,
+        "line": 638,
+        "precode": "break inner_loop;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "break inner_loop;"
+    },
+    {
+        "id": 204,
+        "line": 638,
+        "precode": "char ch = cbuf[offset++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "byte ch = cbuf[offset++];"
+    },
+    {
+        "id": 205,
+        "line": 638,
+        "precode": "if (ch < 0x800) { // 2-byte?",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (ch < 0x800) { // 2-byte?"
+    },
+    {
+        "id": 206,
+        "line": 638,
+        "precode": "_outputBuffer[_outputTail++] = (byte) (0xc0 | (ch >> 6));",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "_outputBuffer[_outputTail++] = (byte) (0xc0 | (ch >> 6));"
+    },
+    {
+        "id": 207,
+        "line": 638,
+        "precode": "_outputBuffer[_outputTail++] = (byte) (0x80 | (ch & 0x3f));",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "_outputBuffer[_outputTail++] = (byte) (0x80 | (ch & 0x3f));"
+    },
+    {
+        "id": 208,
+        "line": 638,
+        "precode": "while (true) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 209,
+        "line": 638,
+        "precode": "char ch = cbuf[offset++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "byte ch = cbuf[offset++];"
+    },
+    {
+        "id": 210,
+        "line": 638,
+        "precode": "if (ch < 0x800) { // 2-byte?",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (ch < 0x800) { // 2-byte?"
+    },
+    {
+        "id": 211,
+        "line": 638,
+        "precode": "offset = _outputRawMultiByteChar(ch, cbuf, offset, len);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "offset = _outputRawMultiByteChar(ch, cbuf, offset, len);"
+    },
+    {
+        "id": 212,
+        "line": 638,
+        "precode": "writeRaw(cbuf, offset, len);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "writeRaw(cbuf, offset, len);"
+    },
+    {
+        "id": 213,
+        "line": 1940,
+        "precode": "if (ch <= SURR2_LAST) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (ch > SURR2_LAST) {"
+    },
+    {
+        "id": 214,
+        "line": 1940,
+        "precode": "if (ch <= SURR2_LAST) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (ch >= SURR2_LAST) {"
+    },
+    {
+        "id": 215,
+        "line": 1940,
+        "precode": "if (ch <= SURR2_LAST) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (ch == SURR2_LAST) {"
+    },
+    {
+        "id": 216,
+        "line": 1940,
+        "precode": "if (ch <= SURR2_LAST) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (ch!= SURR2_LAST) {"
+    },
+    {
+        "id": 217,
+        "line": 1940,
+        "precode": "if (inputOffset >= inputEnd || cbuf == null) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (inputOffset < inputEnd && cbuf!= null) {"
+    },
+    {
+        "id": 218,
+        "line": 1940,
+        "precode": "if (inputOffset >= inputEnd || cbuf == null) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (inputOffset >= inputEnd || cbuf!= null) {"
+    },
+    {
+        "id": 219,
+        "line": 1940,
+        "precode": "if (inputOffset >= inputEnd || cbuf == null) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (inputOffset < inputEnd || cbuf == null) {"
+    },
+    {
+        "id": 220,
+        "line": 1940,
+        "precode": "if (inputOffset >= inputEnd || cbuf == null) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_17_fixed/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java",
+        "aftercode": "if (inputOffset < inputEnd && cbuf == null) {"
+    }
+]

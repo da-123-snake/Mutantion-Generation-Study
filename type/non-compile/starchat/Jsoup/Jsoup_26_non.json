@@ -1,0 +1,205 @@
+[
+    {
+        "id": 245,
+        "line": 48,
+        "precode": "Validate.notNull(dirtyDocument);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Validate.notNull(dirtyDocument);"
+    },
+    {
+        "id": 246,
+        "line": 48,
+        "precode": "Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());"
+    },
+    {
+        "id": 247,
+        "line": 48,
+        "precode": "if (dirtyDocument.body()!= null) // frameset documents won't have a body. the clean doc will have empty body.",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "if (dirtyDocument.body()!= null) // frameset documents won't have a body. the clean doc will have empty body."
+    },
+    {
+        "id": 248,
+        "line": 48,
+        "precode": "copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "copySafeNodes(dirtyDocument.body(), clean.body());"
+    },
+    {
+        "id": 249,
+        "line": 48,
+        "precode": "return clean;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "return clean;"
+    },
+    {
+        "id": 250,
+        "line": 48,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 251,
+        "line": 48,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 456,
+        "line": 8,
+        "precode": "public class Whitelists {\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "public class Whitelists {\n\tprivate static final List<String> emptyTags = List.of();\n\n"
+    },
+    {
+        "id": 457,
+        "line": 8,
+        "precode": "    private static final List<String> emptyTags = List.of();\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "    private static final List<String> emptyTags = List.of();\n\tprivate static final List<String> emptyAttrs = List.of();\n\n"
+    },
+    {
+        "id": 458,
+        "line": 8,
+        "precode": "    private static final List<String> emptyAttrs = List.of();\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "    private static final List<String> emptyAttrs = List.of();\n\tprivate static final List<String> allowedTags = List.of();\n\n"
+    },
+    {
+        "id": 459,
+        "line": 8,
+        "precode": "    private static final List<String> allowedTags = List.of();\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "    private static final List<String> allowedTags = List.of();\n\tprivate static final List<String> allowedAttrs = List.of();\n\n"
+    },
+    {
+        "id": 460,
+        "line": 8,
+        "precode": "    private static final List<String> allowedAttrs = List.of();\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "    private static final List<String> allowedAttrs = List.of();\n\tpublic static boolean isSafeTag(String tag) {\n\t\treturn allowedTags.contains(tag) || emptyTags.contains(tag);\n\t}\n\n"
+    },
+    {
+        "id": 461,
+        "line": 129,
+        "precode": "Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 0;"
+    },
+    {
+        "id": 462,
+        "line": 129,
+        "precode": "int numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 1;"
+    },
+    {
+        "id": 463,
+        "line": 129,
+        "precode": "return numDiscarded == 0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded!= 0;"
+    },
+    {
+        "id": 464,
+        "line": 129,
+        "precode": "Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 1;"
+    },
+    {
+        "id": 465,
+        "line": 129,
+        "precode": "int numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 2;"
+    },
+    {
+        "id": 466,
+        "line": 129,
+        "precode": "return numDiscarded == 0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded!= 1;"
+    },
+    {
+        "id": 467,
+        "line": 129,
+        "precode": "Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 2;"
+    },
+    {
+        "id": 468,
+        "line": 129,
+        "precode": "int numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 3;"
+    },
+    {
+        "id": 469,
+        "line": 129,
+        "precode": "return numDiscarded == 0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded!= 2;"
+    },
+    {
+        "id": 470,
+        "line": 129,
+        "precode": "Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 3;"
+    },
+    {
+        "id": 471,
+        "line": 129,
+        "precode": "int numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 4;"
+    },
+    {
+        "id": 472,
+        "line": 129,
+        "precode": "return numDiscarded == 0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded!= 3;"
+    },
+    {
+        "id": 473,
+        "line": 129,
+        "precode": "Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 4;"
+    },
+    {
+        "id": 474,
+        "line": 129,
+        "precode": "int numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 5;"
+    },
+    {
+        "id": 475,
+        "line": 129,
+        "precode": "return numDiscarded == 0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded!= 4;"
+    },
+    {
+        "id": 476,
+        "line": 129,
+        "precode": "Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 5;"
+    },
+    {
+        "id": 477,
+        "line": 129,
+        "precode": "int numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Document clean = Document.createShell(dirtyDocument.baseUri());\nint numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());\nreturn numDiscarded == 6;"
+    }
+]

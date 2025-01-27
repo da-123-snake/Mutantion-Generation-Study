@@ -1,0 +1,282 @@
+[
+    {
+        "id": 262,
+        "line": 778,
+        "precode": "JSType type = getJSType(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "JSType type = getJSType(n.getFirstChild());"
+    },
+    {
+        "id": 263,
+        "line": 778,
+        "precode": "if (dereference) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (!dereference) {"
+    },
+    {
+        "id": 264,
+        "line": 778,
+        "precode": "  ObjectType dereferenced = type.dereference();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "  ObjectType dereferenced = type.getImplicitPrototype();"
+    },
+    {
+        "id": 265,
+        "line": 778,
+        "precode": "if (dereferenced!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (dereferenced == null) {"
+    },
+    {
+        "id": 266,
+        "line": 778,
+        "precode": "  type = dereferenced;",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "  type = type.getImplicitPrototype();"
+    },
+    {
+        "id": 267,
+        "line": 778,
+        "precode": "if (n.isGetProp()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (n.isGetElem()) {"
+    },
+    {
+        "id": 268,
+        "line": 778,
+        "precode": "  ObjectType objectType = getJSType(n.getFirstChild()).dereference();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "  ObjectType objectType = getJSType(n.getFirstChild().getFirstChild()).dereference();"
+    },
+    {
+        "id": 269,
+        "line": 778,
+        "precode": "  if (objectType!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "  if (objectType == null) {"
+    },
+    {
+        "id": 270,
+        "line": 778,
+        "precode": "    String propName = n.getLastChild().getString();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "    String propName = n.getFirstChild().getLastChild().getString();"
+    },
+    {
+        "id": 271,
+        "line": 778,
+        "precode": "    if (objectType.getConstructor()!= null &&",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "    if (objectType.getImplicitPrototype()!= null &&"
+    },
+    {
+        "id": 272,
+        "line": 778,
+        "precode": "      objectType.getConstructor().isInterface()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      objectType.getImplicitPrototype().isInterface()) {"
+    },
+    {
+        "id": 273,
+        "line": 778,
+        "precode": "      ObjectType interfaceType = FunctionType.getTopDefiningInterface(",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      ObjectType interfaceType = FunctionType.getTopDefiningInterface(objectType,"
+    },
+    {
+        "id": 274,
+        "line": 778,
+        "precode": "        objectType, propName);",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "        objectType.getImplicitPrototype(), propName); "
+    },
+    {
+        "id": 275,
+        "line": 778,
+        "precode": "      if (objectType!= null &&",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      if (interfaceType!= null &&"
+    },
+    {
+        "id": 276,
+        "line": 778,
+        "precode": "       !objectType.hasOwnProperty(propName)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "       !interfaceType.hasOwnProperty(propName)) {"
+    },
+    {
+        "id": 277,
+        "line": 778,
+        "precode": "        objectType = objectType.getImplicitPrototype();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "        interfaceType = interfaceType.getImplicitPrototype();"
+    },
+    {
+        "id": 278,
+        "line": 778,
+        "precode": "      if (objectType!= null &&",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      if (objectType.getConstructor()!= null ||"
+    },
+    {
+        "id": 279,
+        "line": 778,
+        "precode": "        objectType.isFunctionPrototypeType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "        objectType.isConstructor() ||"
+    },
+    {
+        "id": 280,
+        "line": 778,
+        "precode": "        return objectType.toString() + \".\" + propName;",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "        return interfaceType.toString() + \".\" + propName;"
+    },
+    {
+        "id": 281,
+        "line": 778,
+        "precode": "      } else if (type.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      } else if (type.isConstructor()) {"
+    },
+    {
+        "id": 282,
+        "line": 778,
+        "precode": "        return \"function\";",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "        return \"function\";"
+    },
+    {
+        "id": 283,
+        "line": 778,
+        "precode": "String getReadableJSTypeName(Node n, boolean dereference) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "String getReadableJSTypeName(Node n, boolean dereference) {"
+    },
+    {
+        "id": 284,
+        "line": 778,
+        "precode": "JSType type = getJSType(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "JSType type = getJSType(n);"
+    },
+    {
+        "id": 285,
+        "line": 778,
+        "precode": "if (dereference) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 286,
+        "line": 778,
+        "precode": "ObjectType dereferenced = type.dereference();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "ObjectType dereferenced = type;"
+    },
+    {
+        "id": 287,
+        "line": 778,
+        "precode": "if (dereferenced!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 288,
+        "line": 778,
+        "precode": "type = dereferenced;",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "type = dereferenced;"
+    },
+    {
+        "id": 290,
+        "line": 778,
+        "precode": "if (type.isFunctionPrototypeType() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 291,
+        "line": 778,
+        "precode": "JSType type = getJSType(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "JSType type = getJSType(n);"
+    },
+    {
+        "id": 292,
+        "line": 778,
+        "precode": "if (dereference) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 293,
+        "line": 778,
+        "precode": "ObjectType dereferenced = type.dereference();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "ObjectType dereferenced = type;"
+    },
+    {
+        "id": 294,
+        "line": 778,
+        "precode": "if (dereferenced!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 295,
+        "line": 778,
+        "precode": "type = dereferenced;",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "type = dereferenced;"
+    },
+    {
+        "id": 301,
+        "line": 778,
+        "precode": "String qualifiedName = n.getQualifiedName();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "String qualifiedName = n.getQualifiedName();"
+    },
+    {
+        "id": 302,
+        "line": 778,
+        "precode": "if (qualifiedName!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 303,
+        "line": 778,
+        "precode": "return type.toString();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return type.toString();"
+    },
+    {
+        "id": 304,
+        "line": 778,
+        "precode": "} else if (type.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "} else if (true) {"
+    },
+    {
+        "id": 306,
+        "line": 778,
+        "precode": "return \"function\";",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return \"function\";"
+    },
+    {
+        "id": 307,
+        "line": 778,
+        "precode": "} else {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "} else {"
+    },
+    {
+        "id": 308,
+        "line": 778,
+        "precode": "return type.toString();",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return type.toString();"
+    }
+]

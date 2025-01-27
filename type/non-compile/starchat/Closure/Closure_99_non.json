@@ -1,0 +1,436 @@
+[
+    {
+        "id": 8,
+        "line": 161,
+        "precode": "if (n.getType() == Token.FUNCTION) {",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (n.getType() == Token.FUNCTION &&!n.hasJSDocInfo()) {"
+    },
+    {
+        "id": 11,
+        "line": 161,
+        "precode": "  JSDocInfo jsDoc = getFunctionJsDocInfo(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  JSDocInfo jsDoc = getFunctionJsDocInfo(n) || n.hasJSDocInfo()"
+    },
+    {
+        "id": 12,
+        "line": 161,
+        "precode": "  if (jsDoc!= null &&",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  if (jsDoc!= null &&!jsDoc.isConstructor() &&!jsDoc.isInterface() &&!jsDoc.hasThisType() &&!jsDoc.isOverride() &&!n.hasJSDocInfo()) {"
+    },
+    {
+        "id": 13,
+        "line": 161,
+        "precode": "    (jsDoc.isConstructor() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    (jsDoc.isConstructor() ||!jsDoc.hasThisType() &&!n.hasJSDocInfo()) &&"
+    },
+    {
+        "id": 14,
+        "line": 161,
+        "precode": "    jsDoc.isInterface() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    jsDoc.isInterface() ||!jsDoc.hasThisType() &&!n.hasJSDocInfo()) &&"
+    },
+    {
+        "id": 15,
+        "line": 161,
+        "precode": "    jsDoc.hasThisType() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    jsDoc.hasThisType() ||!n.hasJSDocInfo()) &&"
+    },
+    {
+        "id": 16,
+        "line": 161,
+        "precode": "    jsDoc.isOverride() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    jsDoc.isOverride() ||!n.hasJSDocInfo()) {"
+    },
+    {
+        "id": 19,
+        "line": 161,
+        "precode": "  var a = function() { }; // or",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  var a = function() { }; // or || n.hasJSDocInfo()"
+    },
+    {
+        "id": 20,
+        "line": 161,
+        "precode": "  function a() {} // or",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  function a() {} // or || n.hasJSDocInfo()"
+    },
+    {
+        "id": 21,
+        "line": 161,
+        "precode": "  a.x = function() {};",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  a.x = function() {}; || n.hasJSDocInfo()"
+    },
+    {
+        "id": 22,
+        "line": 161,
+        "precode": "  int pType = parent.getType();",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  int pType = parent.getType(); || n.hasJSDocInfo()"
+    },
+    {
+        "id": 23,
+        "line": 161,
+        "precode": "  if (!(pType == Token.BLOCK ||",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  if (!(pType == Token.BLOCK ||!n.hasJSDocInfo()) {"
+    },
+    {
+        "id": 24,
+        "line": 161,
+        "precode": "    Token.SCRIPT ||",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    Token.SCRIPT ||!n.hasJSDocInfo()) &&"
+    },
+    {
+        "id": 25,
+        "line": 161,
+        "precode": "    Token.NAME ||",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    Token.NAME ||!n.hasJSDocInfo()) &&"
+    },
+    {
+        "id": 26,
+        "line": 161,
+        "precode": "    Token.ASSIGN)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    Token.ASSIGN)) || n.hasJSDocInfo()) {"
+    },
+    {
+        "id": 27,
+        "line": 161,
+        "precode": "if (n.getType() == Token.THIS) {",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (n.getType() == Token.NAME) { // changed 'THIS' to 'NAME'"
+    },
+    {
+        "id": 28,
+        "line": 161,
+        "precode": "if (jsDoc!= null &&",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (jsDoc!= null || // added '||'"
+    },
+    {
+        "id": 29,
+        "line": 161,
+        "precode": "if (!(pType == Token.BLOCK ||",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (!(pType == Token.BLOCK && // changed '||' to '&&'"
+    },
+    {
+        "id": 30,
+        "line": 161,
+        "precode": "if (n == lhs) {",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (n == rhs) { // changed 'lhs' to 'rhs'"
+    },
+    {
+        "id": 31,
+        "line": 161,
+        "precode": "if (NodeUtil.isGet(lhs)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (NodeUtil.isGet(rhs)) { // changed 'lhs' to 'rhs'"
+    },
+    {
+        "id": 32,
+        "line": 161,
+        "precode": "if (parent!= null && parent.getType() == Token.ASSIGN) {",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (parent!= null && parent.getType() == Token.VAR) { // changed 'ASSIGN' to 'VAR'"
+    },
+    {
+        "id": 33,
+        "line": 161,
+        "precode": "if (n == assignLhsChild) {",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (n == null) { // changed 'assignLhsChild' to 'null'"
+    },
+    {
+        "id": 1059,
+        "line": 161,
+        "precode": "if (parent!= null && parent.getType() == Token.ASSIGN) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (parent!= null && parent.getType() == Token.ASSIGN &&!parent.hasProp('assignLhsChild')) {\n"
+    },
+    {
+        "id": 1060,
+        "line": 161,
+        "precode": "  Node lhs = parent.getFirstChild();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  Node lhs = parent.getFirstChild();\nif (lhs.getType() == Token.THIS) {\n  compiler.report(t.makeError(lhs, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1061,
+        "line": 161,
+        "precode": "  Node rhs = lhs.getNext();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  Node rhs = lhs.getNext();\nif (rhs.getType() == Token.THIS) {\n  compiler.report(t.makeError(rhs, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1062,
+        "line": 161,
+        "precode": "  if (n == lhs) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  if (n == lhs &&!lhs.hasProp('assignLhsChild')) {\n"
+    },
+    {
+        "id": 1063,
+        "line": 161,
+        "precode": "    // Always traverse the left side of the assignment. To handle\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    // Always traverse the left side of the assignment. To handle\nif (lhs.getType() == Token.THIS) {\n  compiler.report(t.makeError(lhs, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1064,
+        "line": 161,
+        "precode": "    // nested assignments properly (e.g., (a = this).property = c;),\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    // nested assignments properly (e.g., (a = this).property = c;),\nif (lhs.getType() == Token.THIS) {\n  compiler.report(t.makeError(lhs, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1065,
+        "line": 161,
+        "precode": "    assignLhsChild = lhs;\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    assignLhsChild = lhs;\nif (lhs.getType() == Token.THIS) {\n  compiler.report(t.makeError(lhs, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1066,
+        "line": 161,
+        "precode": "  } else {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  } else {\nif (rhs.getType() == Token.THIS) {\n  compiler.report(t.makeError(rhs, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1067,
+        "line": 161,
+        "precode": "    if (NodeUtil.isGet(lhs)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "    if (NodeUtil.isGet(lhs) &&!lhs.hasProp('assignLhsChild')) {\n"
+    },
+    {
+        "id": 1068,
+        "line": 161,
+        "precode": "      // Only traverse the right side if it's not an assignment to a prototype\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "      // Only traverse the right side if it's not an assignment to a prototype\nif (rhs.getType() == Token.THIS) {\n  compiler.report(t.makeError(rhs, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1069,
+        "line": 161,
+        "precode": "      // property or subproperty.\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "      // property or subproperty.\nif (rhs.getType() == Token.THIS) {\n  compiler.report(t.makeError(rhs, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1070,
+        "line": 161,
+        "precode": "        if (lhs!= null) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "        if (lhs!= null &&!lhs.hasProp('assignLhsChild')) {\n"
+    },
+    {
+        "id": 1071,
+        "line": 161,
+        "precode": "          Node pType = parent.getType();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "          Node pType = parent.getType();\nif (pType.getType() == Token.THIS) {\n  compiler.report(t.makeError(pType, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1072,
+        "line": 161,
+        "precode": "          if (!(pType == Token.BLOCK ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "          if (!(pType == Token.BLOCK ||\nif (pType.getType() == Token.THIS) {\n  compiler.report(t.makeError(pType, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1073,
+        "line": 161,
+        "precode": "            pType == Token.SCRIPT ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "            pType == Token.SCRIPT ||\nif (pType.getType() == Token.THIS) {\n  compiler.report(t.makeError(pType, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1074,
+        "line": 161,
+        "precode": "            pType == Token.NAME ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "            pType == Token.NAME ||\nif (pType.getType() == Token.THIS) {\n  compiler.report(t.makeError(pType, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1075,
+        "line": 161,
+        "precode": "            pType == Token.ASSIGN)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "            pType == Token.ASSIGN)) {\nif (pType.getType() == Token.THIS) {\n  compiler.report(t.makeError(pType, level, GLOBAL_THIS));\n}\n"
+    },
+    {
+        "id": 1117,
+        "line": 161,
+        "precode": "JSDocInfo jsDoc = getFunctionJsDocInfo(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "JSDocInfo jsDoc = getFunctionJsDocInfo(n); if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType() || jsDoc.isOverride())) { return false; }"
+    },
+    {
+        "id": 1118,
+        "line": 161,
+        "precode": "if (jsDoc!= null &&",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType() || jsDoc.isOverride())) {"
+    },
+    {
+        "id": 1119,
+        "line": 161,
+        "precode": "if (jsDoc!= null && (jsDoc.isConstructor()",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType() || jsDoc.isOverride())) {"
+    },
+    {
+        "id": 1120,
+        "line": 161,
+        "precode": "if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface()",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType() || jsDoc.isOverride())) {"
+    },
+    {
+        "id": 1121,
+        "line": 161,
+        "precode": "if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType()",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType() || jsDoc.isOverride())) {"
+    },
+    {
+        "id": 1122,
+        "line": 161,
+        "precode": "if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType() || jsDoc.isOverride()",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType() || jsDoc.isOverride())) {"
+    },
+    {
+        "id": 1123,
+        "line": 161,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "return false; if (jsDoc!= null && (jsDoc.isConstructor() || jsDoc.isInterface() || jsDoc.hasThisType() || jsDoc.isOverride())) {"
+    },
+    {
+        "id": 1124,
+        "line": 161,
+        "precode": "if (n.getType() == Token.THIS) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (false) {\n"
+    },
+    {
+        "id": 1125,
+        "line": 161,
+        "precode": "if (n.getType() == Token.FUNCTION) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (false) {\n"
+    },
+    {
+        "id": 1126,
+        "line": 161,
+        "precode": "  JSDocInfo jsDoc = getFunctionJsDocInfo(n);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  var jsDoc = null;\n"
+    },
+    {
+        "id": 1127,
+        "line": 161,
+        "precode": "  if (jsDoc!= null &&\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  if (false &&\n"
+    },
+    {
+        "id": 1128,
+        "line": 161,
+        "precode": "      (jsDoc.isConstructor() ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "      (false ||\n"
+    },
+    {
+        "id": 1129,
+        "line": 161,
+        "precode": "          jsDoc.isInterface() ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "          false ||\n"
+    },
+    {
+        "id": 1130,
+        "line": 161,
+        "precode": "          jsDoc.hasThisType() ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "          false ||\n"
+    },
+    {
+        "id": 1131,
+        "line": 161,
+        "precode": "          jsDoc.isOverride())) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "          false) {\n"
+    },
+    {
+        "id": 1132,
+        "line": 161,
+        "precode": "  int pType = parent.getType();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  var pType = 0;\n"
+    },
+    {
+        "id": 1133,
+        "line": 161,
+        "precode": "  if (!(pType == Token.BLOCK ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  if (!(false ||\n"
+    },
+    {
+        "id": 1134,
+        "line": 161,
+        "precode": "        pType == Token.SCRIPT ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "        false ||\n"
+    },
+    {
+        "id": 1135,
+        "line": 161,
+        "precode": "        pType == Token.NAME ||\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "        false ||\n"
+    },
+    {
+        "id": 1136,
+        "line": 161,
+        "precode": "        pType == Token.ASSIGN)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "        false) {\n"
+    },
+    {
+        "id": 1137,
+        "line": 161,
+        "precode": "  Node lhs = parent.getFirstChild();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  var lhs = null;\n"
+    },
+    {
+        "id": 1138,
+        "line": 161,
+        "precode": "  Node rhs = lhs.getNext();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  var rhs = null;\n"
+    },
+    {
+        "id": 1139,
+        "line": 161,
+        "precode": "  if (n == lhs) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_99_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "  if (false) {\n"
+    }
+]

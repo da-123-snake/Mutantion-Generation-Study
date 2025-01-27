@@ -1,0 +1,261 @@
+[
+    {
+        "id": 272,
+        "line": 148,
+        "precode": "private class ProcessCommonJsModulesCallback extends AbstractPostOrderCallback {",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "private class ProcessCommonJsModulesCallback extends AbstractPostOrderCallback {"
+    },
+    {
+        "id": 273,
+        "line": 148,
+        "precode": "    private int scriptNodeCount = 0;",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "    private int scriptNodeCount = 1;"
+    },
+    {
+        "id": 274,
+        "line": 148,
+        "precode": "    private Set<String> modulesWithExports = Sets.newHashSet();",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "    private Set<String> modulesWithExports = Sets.newHashSet();"
+    },
+    {
+        "id": 275,
+        "line": 148,
+        "precode": "    @Override",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "    @Override"
+    },
+    {
+        "id": 276,
+        "line": 148,
+        "precode": "    public void visit(NodeTraversal t, Node n, Node parent) {",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "    public void visit(NodeTraversal t, Node n, Node parent) {"
+    },
+    {
+        "id": 277,
+        "line": 148,
+        "precode": "        if (n.isCall() && n.getChildCount() == 2 && \"require\".equals(n.getFirstChild().getQualifiedName()) && n.getChildAtIndex(1).isString()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "        if (n.isCall() && n.getChildCount() == 2 && \"require\".equals(n.getFirstChild().getQualifiedName()) && n.getChildAtIndex(1).isString()) {"
+    },
+    {
+        "id": 278,
+        "line": 148,
+        "precode": "            visitRequireCall(t, n, parent);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "            visitRequireCall(t, n, parent);"
+    },
+    {
+        "id": 279,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (!modulesWithExports.contains(moduleName) || modulesWithExports.remove(moduleName)) {\n"
+    },
+    {
+        "id": 280,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (!modulesWithExports.contains(moduleName) && modulesWithExports.remove(moduleName)) {\n"
+    },
+    {
+        "id": 281,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (modulesWithExports.contains(moduleName) && modulesWithExports.remove(moduleName)) {\n"
+    },
+    {
+        "id": 282,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (!modulesWithExports.contains(moduleName) && modulesWithExports.remove(moduleName) == false) {\n"
+    },
+    {
+        "id": 283,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (!modulesWithExports.contains(moduleName) || modulesWithExports.remove(moduleName) == false) {\n"
+    },
+    {
+        "id": 284,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (modulesWithExports.contains(moduleName) && modulesWithExports.remove(moduleName) == false) {\n"
+    },
+    {
+        "id": 285,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (!modulesWithExports.contains(moduleName) && modulesWithExports.remove(moduleName) == true) {\n"
+    },
+    {
+        "id": 286,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (!modulesWithExports.contains(moduleName) || modulesWithExports.remove(moduleName) == true) {\n"
+    },
+    {
+        "id": 287,
+        "line": 220,
+        "precode": "if (!modulesWithExports.contains(moduleName)) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (modulesWithExports.contains(moduleName) && modulesWithExports.remove(moduleName) == true) {\n"
+    },
+    {
+        "id": 288,
+        "line": 234,
+        "precode": "Node exports = prop.getChildAtIndex(1);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "Node exports = prop.getChildAtIndex(2);"
+    },
+    {
+        "id": 289,
+        "line": 234,
+        "precode": "Node exports = prop.getChildAtIndex(1);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "Node exports = prop.getChildAtIndex(1).getParent();"
+    },
+    {
+        "id": 290,
+        "line": 234,
+        "precode": "Node exports = prop.getChildAtIndex(1);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "Node exports = prop.getChildAtIndex(1).getNext();"
+    },
+    {
+        "id": 291,
+        "line": 234,
+        "precode": "Node exports = prop.getChildAtIndex(1);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "Node exports = prop.getChildAtIndex(1).getPrevious();"
+    },
+    {
+        "id": 292,
+        "line": 234,
+        "precode": "Node exports = prop.getChildAtIndex(1);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "Node exports = prop.getChildAtIndex(1).getFirstChild();"
+    },
+    {
+        "id": 293,
+        "line": 234,
+        "precode": "Node exports = prop.getChildAtIndex(1);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "Node exports = prop.getChildAtIndex(1).getLastChild();"
+    },
+    {
+        "id": 294,
+        "line": 234,
+        "precode": "Node exports = prop.getChildAtIndex(1);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "Node exports = prop.getChildAtIndex(1).getFirstCild();"
+    },
+    {
+        "id": 1446,
+        "line": 120,
+        "precode": "String currentFilename = normalizeSourceName(script.getFileName());",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "String currentFilename = normalizeSourceName(script.getFileName());"
+    },
+    {
+        "id": 1447,
+        "line": 120,
+        "precode": "requiredFilename = requiredFilename.replaceAll(\"\\\\.js$\", \"\");",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "requiredFilename = requiredFilename.replaceAll(\"\\\\.js$\", \".\");"
+    },
+    {
+        "id": 1448,
+        "line": 120,
+        "precode": "currentFilename = currentFilename.replaceAll(\"\\\\.js$\", \"\");",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "currentFilename = currentFilename.replaceAll(\"\\\\.js$\", \".\");"
+    },
+    {
+        "id": 1449,
+        "line": 120,
+        "precode": "if (requiredFilename.startsWith(\".\" + File.separator) ||",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (requiredFilename.startsWith(\".\" + File.separator) ||"
+    },
+    {
+        "id": 1450,
+        "line": 120,
+        "precode": "requiredFilename = (new URI(currentFilename)).resolve(",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "requiredFilename = (new URI(currentFilename)).resolve("
+    },
+    {
+        "id": 1451,
+        "line": 120,
+        "precode": "if (requiredFilename.startsWith(\"..\") ||",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (requiredFilename.startsWith(\"..\") ||"
+    },
+    {
+        "id": 1452,
+        "line": 120,
+        "precode": "requiredFilename = (new URI(currentFilename)).resolve(new URI(requiredFilename)).toString();",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "requiredFilename = (new URI(currentFilename)).resolve(new URI(requiredFilename)).toString();"
+    },
+    {
+        "id": 1453,
+        "line": 200,
+        "precode": "if (reportDependencies) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "if (!reportDependencies) {\n"
+    },
+    {
+        "id": 1454,
+        "line": 200,
+        "precode": "  CompilerInput ci = t.getInput();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "  CompilerInput ci = t.getInput();\nif (true) {\n"
+    },
+    {
+        "id": 1455,
+        "line": 200,
+        "precode": "  JSModule m = new JSModule(moduleName);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "  JSModule m = new JSModule(moduleName);\nif (true) {\n"
+    },
+    {
+        "id": 1456,
+        "line": 200,
+        "precode": "  m.addAndOverrideModule(ci);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "  m.addAndOverrideModule(ci);\nif (true) {\n"
+    },
+    {
+        "id": 1457,
+        "line": 200,
+        "precode": "  module = m;\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "  module = m;\nif (true) {\n"
+    },
+    {
+        "id": 1458,
+        "line": 200,
+        "precode": "  if (reportDependencies) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "  if (!reportDependencies) {\n"
+    },
+    {
+        "id": 1459,
+        "line": 200,
+        "precode": "    CompilerInput ci = t.getInput();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "    CompilerInput ci = t.getInput();\nif (true) {\n"
+    }
+]

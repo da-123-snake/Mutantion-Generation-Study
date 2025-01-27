@@ -1,0 +1,51 @@
+[
+    {
+        "id": 172,
+        "line": 278,
+        "precode": "int parseInt(String s, int offset, int limit) {\n",
+        "filepath": "defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "aftercode": "int parseInt(String s, int offset, int limit) {\n    try {\n        return Integer.parseInt(s.substring(offset, limit));\n    } catch (NumberFormatException e) {\n        throw new IllegalArgumentException(e);\n    }\n}"
+    },
+    {
+        "id": 173,
+        "line": 278,
+        "precode": "if (checkOffset(date, offset, '-')) {\n",
+        "filepath": "defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "aftercode": "if (checkOffset(date, offset, '-')) {\n    try {\n        Integer.parseInt(date.substring(offset, offset + 1));\n    } catch (NumberFormatException e) {\n        throw new IllegalArgumentException(e);\n    }\n}"
+    },
+    {
+        "id": 174,
+        "line": 278,
+        "precode": "int month = parseInt(date, offset, offset += 2);\n",
+        "filepath": "defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "aftercode": "int month = parseInt(date, offset, offset += 2);\n    try {\n        Integer.parseInt(date.substring(offset - 2, offset));\n    } catch (NumberFormatException e) {\n        throw new IllegalArgumentException(e);\n    }\n}"
+    },
+    {
+        "id": 175,
+        "line": 278,
+        "precode": "if (checkOffset(date, offset, '-')) {\n",
+        "filepath": "defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "aftercode": "if (checkOffset(date, offset, '-')) {\n    try {\n        Integer.parseInt(date.substring(offset, offset + 1));\n    } catch (NumberFormatException e) {\n        throw new IllegalArgumentException(e);\n    }\n}"
+    },
+    {
+        "id": 176,
+        "line": 278,
+        "precode": "int day = parseInt(date, offset, offset += 2);\n",
+        "filepath": "defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "aftercode": "int day = parseInt(date, offset, offset += 2);\n    try {\n        Integer.parseInt(date.substring(offset - 2, offset));\n    } catch (NumberFormatException e) {\n        throw new IllegalArgumentException(e);\n    }\n}"
+    },
+    {
+        "id": 177,
+        "line": 278,
+        "precode": "if (!hasT && (date.length() <= offset)) {\n",
+        "filepath": "defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "aftercode": "if (!hasT && (date.length() <= offset)) {\n    try {\n        Calendar calendar = new GregorianCalendar(year, month - 1, day);\n        return calendar.getTime();\n    } catch (IllegalArgumentException e) {\n        throw new ParseException(e.getMessage(), offset);\n    }\n}"
+    },
+    {
+        "id": 178,
+        "line": 278,
+        "precode": "if (date.length() <= offset) {\n",
+        "filepath": "defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "aftercode": "if (date.length() <= offset) {\n    try {\n        throw new IndexOutOfBoundsException();\n    } catch (IndexOutOfBoundsException e) {\n        throw new ParseException(e.getMessage(), offset);\n    }\n}"
+    }
+]

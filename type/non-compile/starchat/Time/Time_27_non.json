@@ -1,0 +1,268 @@
+[
+    {
+        "id": 102,
+        "line": 1343,
+        "precode": "if (iFieldType >= SECONDS_MILLIS) {\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType >= SECONDS_MILLIS) {\n    // valueLong contains the seconds and millis fields\n    // the minimum output is 0.000, which is 4 digits\n    sum = Math.max(sum, 4);\n    // plus one for the decimal point\n    sum++;\n    if (iFieldType == SECONDS_OPTIONAL_MILLIS &&\n"
+    },
+    {
+        "id": 103,
+        "line": 1343,
+        "precode": "    // valueLong contains the seconds and millis fields\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "    // valueLong contains the seconds and millis fields\n    // the minimum output is 0.000, which is 4 digits\n    sum = Math.max(sum, 4);\n    // plus one for the decimal point\n    sum++;\n    if (iFieldType == SECONDS_OPTIONAL_MILLIS &&\n"
+    },
+    {
+        "id": 104,
+        "line": 1343,
+        "precode": "    // the minimum output is 0.000, which is 4 digits\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "    // the minimum output is 0.000, which is 4 digits\n    sum = Math.max(sum, 4);\n    // plus one for the decimal point\n    sum++;\n    if (iFieldType == SECONDS_OPTIONAL_MILLIS &&\n"
+    },
+    {
+        "id": 105,
+        "line": 1343,
+        "precode": "    // plus one for the decimal point\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "    // plus one for the decimal point\n    sum++;\n    if (iFieldType == SECONDS_OPTIONAL_MILLIS &&\n"
+    },
+    {
+        "id": 106,
+        "line": 1343,
+        "precode": "    if (iFieldType == SECONDS_OPTIONAL_MILLIS &&\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "    if (iFieldType == SECONDS_OPTIONAL_MILLIS &&\n        (Math.abs(valueLong) % DateTimeConstants.MILLIS_PER_SECOND) == 0) {\n        sum -= 4;\n    }\n    // reset valueLong to refer to the seconds part for the prefic/suffix calculation\n    valueLong = valueLong / DateTimeConstants.MILLIS_PER_SECOND;\n"
+    },
+    {
+        "id": 107,
+        "line": 1343,
+        "precode": "    // reset valueLong to refer to the seconds part for the prefic/suffix calculation\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "    // reset valueLong to refer to the seconds part for the prefic/suffix calculation\n    valueLong = valueLong / DateTimeConstants.MILLIS_PER_SECOND;\n    // plus one for the decimal point\n    sum++;\n    if (iFieldType == SECONDS_OPTIONAL_MILLIS &&\n"
+    },
+    {
+        "id": 108,
+        "line": 1343,
+        "precode": "    // plus one for the decimal point\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "    // plus one for the decimal point\n    sum++;\n}"
+    },
+    {
+        "id": 109,
+        "line": 1343,
+        "precode": "private final FieldFormatter[] iFieldFormatters;",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "private final FieldFormatter[] iFieldFormatters = new FieldFormatter[iFieldFormatters.length];"
+    },
+    {
+        "id": 110,
+        "line": 1343,
+        "precode": "private final PeriodFieldAffix iPrefix;",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "private final PeriodFieldAffix iPrefix = new PeriodFieldAffix();"
+    },
+    {
+        "id": 111,
+        "line": 1343,
+        "precode": "private final PeriodFieldAffix iSuffix;",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "private final PeriodFieldAffix iSuffix = new PeriodFieldAffix();"
+    },
+    {
+        "id": 112,
+        "line": 1343,
+        "precode": "private final int iMinPrintedDigits;",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "private final int iMinPrintedDigits = iMinPrintedDigits + 1;"
+    },
+    {
+        "id": 113,
+        "line": 1343,
+        "precode": "private final int iPrintZeroSetting;",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "private final int iPrintZeroSetting = iPrintZeroSetting + 1;"
+    },
+    {
+        "id": 114,
+        "line": 1343,
+        "precode": "private final int iMaxParsedDigits;",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "private final int iMaxParsedDigits = iMaxParsedDigits + 1;"
+    },
+    {
+        "id": 115,
+        "line": 1343,
+        "precode": "private final boolean iRejectSignedValues;",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "private final boolean iRejectSignedValues =!iRejectSignedValues;"
+    },
+    {
+        "id": 116,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) % DateTimeConstants.MILLIS_PER_SECOND > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong) % DateTimeConstants.MILLIS_PER_SECOND, 3);\n}"
+    },
+    {
+        "id": 117,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) % 1000 > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong) % 1000, 3);\n}"
+    },
+    {
+        "id": 118,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) % 100 > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong) % 100, 3);\n}"
+    },
+    {
+        "id": 119,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) % 10 > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong) % 10, 3);\n}"
+    },
+    {
+        "id": 120,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong), 3);\n}"
+    },
+    {
+        "id": 121,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) > 1000) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong), 3);\n}"
+    },
+    {
+        "id": 122,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) > 100) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong), 3);\n}"
+    },
+    {
+        "id": 123,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) > 10) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong), 3);\n}"
+    },
+    {
+        "id": 124,
+        "line": 1343,
+        "precode": "if (iFieldType == SECONDS_MILLIS || dp > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, dp, 3);\n}",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "if (iFieldType == SECONDS_MILLIS || Math.abs(valueLong) > 0) {\n    buf.append('.');\n    FormatUtils.appendPaddedInteger(buf, Math.abs(valueLong), 4);\n}"
+    },
+    {
+        "id": 422,
+        "line": 828,
+        "precode": "public PeriodFormatterBuilder appendSeparator(String text, String finalText, String[] variants) {\n",
+        "aftercode": "public PeriodFormatterBuilder appendSeparator(String text, String finalText, String[] variants, boolean useBefore, boolean useAfter) {\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 423,
+        "line": 828,
+        "precode": "return appendSeparator(text, finalText, variants, true, true);\n",
+        "aftercode": "return appendSeparator(text, finalText, variants, false, false);\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 424,
+        "line": 828,
+        "precode": "if (text == null || finalText == null) {\n",
+        "aftercode": "if (text == null || finalText == null) {\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 425,
+        "line": 828,
+        "precode": "clearPrefix();\n",
+        "aftercode": "clearPrefix();\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 428,
+        "line": 828,
+        "precode": "if (pairs.size() == 0) {\n",
+        "aftercode": "if (pairs.size() == 0) {\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 429,
+        "line": 828,
+        "precode": "if (useAfter && useBefore == false) {\n",
+        "aftercode": "if (useAfter && useBefore == false) {\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 430,
+        "line": 828,
+        "precode": "Separator separator = new Separator(\n",
+        "aftercode": "Separator separator = new Separator(\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 431,
+        "line": 828,
+        "precode": "text,\n",
+        "aftercode": "text,\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 432,
+        "line": 828,
+        "precode": "finalText,\n",
+        "aftercode": "finalText,\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 433,
+        "line": 828,
+        "precode": "variants,\n",
+        "aftercode": "variants,\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 434,
+        "line": 828,
+        "precode": "Literal.EMPTY,\n",
+        "aftercode": "Literal.EMPTY,\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 435,
+        "line": 828,
+        "precode": "Literal.EMPTY,\n",
+        "aftercode": "Literal.EMPTY,\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 436,
+        "line": 828,
+        "precode": "useBefore,\n",
+        "aftercode": "useBefore,\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 437,
+        "line": 828,
+        "precode": "useAfter);\n",
+        "aftercode": "useAfter);\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    },
+    {
+        "id": 438,
+        "line": 828,
+        "precode": "append0(separator, separator);\n",
+        "aftercode": "append0(separator, separator);\n",
+        "filepath": "defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java"
+    }
+]

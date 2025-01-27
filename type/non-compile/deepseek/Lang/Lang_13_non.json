@@ -1,0 +1,30 @@
+[
+    {
+        "id": 65,
+        "line": 238,
+        "precode": "static class ClassLoaderAwareObjectInputStream extends ObjectInputStream {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "static class ClassLoaderAwareObjectInputStream extends InputStream {"
+    },
+    {
+        "id": 67,
+        "line": 241,
+        "precode": "private ClassLoader classLoader;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "private Object classLoader;"
+    },
+    {
+        "id": 92,
+        "line": 277,
+        "precode": "return Class.forName(name, false, classLoader);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try { return Class.forName(name, false, classLoader); } catch (ClassNotFoundException ex) { throw new RuntimeException(ex); }"
+    },
+    {
+        "id": 93,
+        "line": 280,
+        "precode": "return Class.forName(name, false, Thread.currentThread().getContextClassLoader());",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try { return Class.forName(name, false, Thread.currentThread().getContextClassLoader()); } catch (ClassNotFoundException cnfe) { throw new RuntimeException(cnfe); }"
+    }
+]

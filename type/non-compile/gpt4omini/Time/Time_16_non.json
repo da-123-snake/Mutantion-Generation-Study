@@ -1,0 +1,23 @@
+[
+    {
+        "id": 141,
+        "line": 708,
+        "precode": "DateTimeParserBucket bucket = new DateTimeParserBucket(",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "DateTimeParserBucket bucket = new DateTimeParserBucket(instantLocal, chrono.withUTC(), iLocale, iPivotYear, chrono.year().get(instantLocal));"
+    },
+    {
+        "id": 578,
+        "line": 712,
+        "precode": "if (iOffsetParsed && bucket.getOffsetInteger() != null) {",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "if (!iOffsetParsed || bucket.getOffsetInteger() == null) {"
+    },
+    {
+        "id": 579,
+        "line": 713,
+        "precode": "int parsedOffset = bucket.getOffsetInteger();",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "int parsedOffset = bucket.getOffsetInteger() != null ? bucket.getOffsetInteger() : 0;"
+    }
+]

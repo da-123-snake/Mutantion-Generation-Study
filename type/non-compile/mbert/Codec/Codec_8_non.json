@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "line": 416,
+        "precode": "        return eof ? -1 : 0;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_8_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "        return0;"
+    },
+    {
+        "id": 2,
+        "line": 672,
+        "precode": "        return StringUtils.newStringUtf8(encodeBase64(binaryData, false, true));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_8_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "        return StringUtils.escape(encodeBase64(binaryData, false, true));"
+    },
+    {
+        "id": 11,
+        "line": 589,
+        "precode": "        return octet == PAD || (octet >= 0 && octet < DECODE_TABLE.length && DECODE_TABLE[octet] != -1);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_8_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "        return octet == PADOR(octet >= 0 && octet < DECODE_TABLE.length && DECODE_TABLE[octet]!= -1);"
+    },
+    {
+        "id": 36,
+        "line": 446,
+        "precode": "                resizeBuffer();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_8_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "            if (buffer == null || buffer.length - pos < encodeSize) {flush();"
+    },
+    {
+        "id": 37,
+        "line": 448,
+        "precode": "            switch (modulus) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_8_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "            switch (mode) {"
+    },
+    {
+        "id": 38,
+        "line": 449,
+        "precode": "                case 1 :",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_8_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "                case0 :"
+    }
+]

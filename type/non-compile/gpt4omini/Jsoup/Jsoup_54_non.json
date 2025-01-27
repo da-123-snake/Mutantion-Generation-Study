@@ -1,0 +1,149 @@
+[
+    {
+        "id": 1222,
+        "line": 19,
+        "precode": "import javax.xml.transform.stream.StreamResult;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "import javax.xml.transform.stream.StreamResults;"
+    },
+    {
+        "id": 1223,
+        "line": 20,
+        "precode": "import java.io.StringWriter;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "import java.io.StringOut;"
+    },
+    {
+        "id": 1224,
+        "line": 21,
+        "precode": "import java.util.HashMap;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "import java.util.LinkedHashMap;"
+    },
+    {
+        "id": 1225,
+        "line": 3,
+        "precode": "/**",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "/*"
+    },
+    {
+        "id": 1226,
+        "line": 5,
+        "precode": " * Helper class to transform a {@link org.jsoup.nodes.Document} to a {@link org.w3c.dom.Document org.w3c.dom.Document},",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": " * Helper function to convert a {@link org.jsoup.nodes.Document} into a {@link org.w3c.dom.Document org.w3c.dom.Document},"
+    },
+    {
+        "id": 1227,
+        "line": 6,
+        "precode": " * for integration with toolsets that use the W3C DOM.",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": " * for compatibility with systems utilizing the W3C DOM."
+    },
+    {
+        "id": 1228,
+        "line": 7,
+        "precode": " *",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": " * This class aids in document transformation."
+    },
+    {
+        "id": 1232,
+        "line": 101,
+        "precode": "Text text = doc.createTextNode(sourceText.getWholeText());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "Text text = doc.createTextNode(sourceText.getText());"
+    },
+    {
+        "id": 1233,
+        "line": 105,
+        "precode": "Comment comment = doc.createComment(sourceComment.getData());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "Comment comment = doc.createComment(sourceComment.getWholeData());"
+    },
+    {
+        "id": 1234,
+        "line": 109,
+        "precode": "Text node = doc.createTextNode(sourceData.getWholeData());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "Text node = doc.createTextNode(sourceData.getData());"
+    },
+    {
+        "id": 1239,
+        "line": 103,
+        "precode": "if (source instanceof org.jsoup.nodes.Comment) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "if (source instanceof org.jsoup.nodes.Comment || source instanceof org.jsoup.nodes.DataNode) {"
+    },
+    {
+        "id": 1240,
+        "line": 126,
+        "precode": "if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "if (key.matches(\"[a-zA-Z_:][\\w:.-]*\"))"
+    },
+    {
+        "id": 1243,
+        "line": 127,
+        "precode": "el.setAttribute(key, attribute.getValue());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "el.setAttributeNS(namespace, key, attribute.getValue());"
+    },
+    {
+        "id": 1246,
+        "line": 77,
+        "precode": "new HashMap<String, String>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "new HashMap<>();"
+    },
+    {
+        "id": 1247,
+        "line": 74,
+        "precode": "xmlnsPrefix = \"xmlns:\";",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "xmlnsPrefix = \"xml:\";"
+    },
+    {
+        "id": 1249,
+        "line": 76,
+        "precode": "private final Document doc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "private final Document document;"
+    },
+    {
+        "id": 1252,
+        "line": 123,
+        "precode": "for (Attribute attribute : source.attributes()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "for (int i = 0; i < source.attributes().size(); i++) {"
+    },
+    {
+        "id": 1258,
+        "line": 145,
+        "precode": "else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 1259,
+        "line": 146,
+        "precode": "continue;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 1263,
+        "line": 146,
+        "precode": "continue;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "// continue;"
+    },
+    {
+        "id": 1384,
+        "line": 92,
+        "precode": "copyAttributes(sourceEl, el);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "copyAttributes(sourceEl, el); if (sourceEl.hasChildNodes()) el.setAttribute(\"hasChildren\", \"true\");"
+    }
+]

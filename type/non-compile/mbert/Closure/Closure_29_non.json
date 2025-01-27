@@ -1,0 +1,163 @@
+[
+    {
+        "id": 437,
+        "line": 328,
+        "precode": "      List<Node> nodes = Lists.newArrayList();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      List<Node> nodes = Lists.create();"
+    },
+    {
+        "id": 438,
+        "line": 329,
+        "precode": "      Node val = ref.getAssignedValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      Node val = ref.next();"
+    },
+    {
+        "id": 439,
+        "line": 330,
+        "precode": "      blacklistVarReferencesInTree(val, v.scope);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      Node val = ref.getAssignedValue();assign(val, v.scope);"
+    },
+    {
+        "id": 440,
+        "line": 331,
+        "precode": "      Preconditions.checkState(val.isObjectLit());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      Preconditions.check(val.isObjectLit());"
+    },
+    {
+        "id": 441,
+        "line": 332,
+        "precode": "      Set<String> all = Sets.newLinkedHashSet(varmap.keySet());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      Set<String> all = Sets.new(varmap.keySet());"
+    },
+    {
+        "id": 442,
+        "line": 333,
+        "precode": "      for (Node key = val.getFirstChild(); key != null;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      for (Node key = val.next(); key!= null;"
+    },
+    {
+        "id": 443,
+        "line": 334,
+        "precode": "           key = key.getNext()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "           key!= key.getNext()) {"
+    },
+    {
+        "id": 444,
+        "line": 335,
+        "precode": "        String var = key.getString();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "        String var = key.value();"
+    },
+    {
+        "id": 445,
+        "line": 336,
+        "precode": "        Node value = key.removeFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "        Node value = key.next();"
+    },
+    {
+        "id": 446,
+        "line": 350,
+        "precode": "                NodeUtil.newUndefinedNode(null)));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "                NodeUtil.name(null)));"
+    },
+    {
+        "id": 447,
+        "line": 354,
+        "precode": "      if (nodes.isEmpty()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      if (nodes.empty()) {"
+    },
+    {
+        "id": 448,
+        "line": 355,
+        "precode": "        replacement = IR.trueNode();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "        replacement|= IR.trueNode();"
+    },
+    {
+        "id": 702,
+        "line": 157,
+        "precode": "      Set<String> validProperties = Sets.newHashSet();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      Set<String> validProperties = Sets.create();"
+    },
+    {
+        "id": 703,
+        "line": 158,
+        "precode": "      for (Reference ref : refs) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "      for (Reference ref :references) {"
+    },
+    {
+        "id": 704,
+        "line": 159,
+        "precode": "        Node name = ref.getNode();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "        Node name = ref.name();"
+    },
+    {
+        "id": 705,
+        "line": 160,
+        "precode": "        Node parent = ref.getParent();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "        Node parent = ref.parent();"
+    },
+    {
+        "id": 706,
+        "line": 182,
+        "precode": "          String propName = parent.getLastChild().getString();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "          String propName = parent.getLastChild().name();"
+    },
+    {
+        "id": 707,
+        "line": 183,
+        "precode": "          if (!validProperties.contains(propName)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "          if (...validProperties.contains(propName)) {"
+    },
+    {
+        "id": 708,
+        "line": 184,
+        "precode": "            if (NodeUtil.isVarOrSimpleAssignLhs(parent, gramps)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "            if (NodeUtil.match(parent, gramps)) {"
+    },
+    {
+        "id": 710,
+        "line": 187,
+        "precode": "              return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "              returntrue;"
+    },
+    {
+        "id": 711,
+        "line": 222,
+        "precode": "            return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "            returntrue;"
+    },
+    {
+        "id": 712,
+        "line": 225,
+        "precode": "          validProperties.add(child.getString());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "          validProperties.push(child.getString());"
+    },
+    {
+        "id": 713,
+        "line": 227,
+        "precode": "          Node childVal = child.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "          Node childVal = child.get();"
+    }
+]

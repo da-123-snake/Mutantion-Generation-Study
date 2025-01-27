@@ -1,0 +1,72 @@
+[
+    {
+        "id": 615,
+        "line": 106,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "try { throw new RuntimeException();"
+    },
+    {
+        "id": 616,
+        "line": 113,
+        "precode": "return toModuleName(requiredFilename);",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "// return toModuleName(requiredFilename);"
+    },
+    {
+        "id": 618,
+        "line": 122,
+        "precode": "filename = filename.substring(filenamePrefix.length());",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "filename = filename.substring(filenamePrefix.length() - 1);"
+    },
+    {
+        "id": 620,
+        "line": 126,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "throw new RuntimeException();"
+    },
+    {
+        "id": 621,
+        "line": 15,
+        "precode": "script.addChildToFront(IR.var(IR.name(moduleName), IR.objectlit())\n      .copyInformationFromForTree(script));",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "script.addChildToBack(IR.var(IR.name(moduleName), IR.objectlit())\n      .copyInformationFromForTree(script));"
+    },
+    {
+        "id": 622,
+        "line": 17,
+        "precode": "script.addChildToFront(IR.exprResult(\n      IR.call(IR.getprop(IR.name(\"goog\"), IR.string(\"provide\")),\n          IR.string(moduleName))).copyInformationFromForTree(script));",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "script.addChildToBack(IR.exprResult(\n      IR.call(IR.getprop(IR.name(\"goog\"), IR.string(\"provide\")),\n          IR.string(moduleName))).copyInformationFromForTree(script));"
+    },
+    {
+        "id": 626,
+        "line": 188,
+        "precode": "CompilerInput ci = t.getInput();",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "CompilerInput ci = t.getCurrentParent();"
+    },
+    {
+        "id": 635,
+        "line": 231,
+        "precode": "String moduleName = guessCJSModuleName(prop.getSourceFileName());",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "String moduleName = guessESModuleName(prop.getSourceFileName());"
+    },
+    {
+        "id": 1723,
+        "line": 127,
+        "precode": "",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "filename = filename.replaceAll(\"/\", \"\\\\\");"
+    },
+    {
+        "id": 1731,
+        "line": 196,
+        "precode": ".copyInformationFromForTree(script));",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": ".copyInformationFrom(script));"
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "id": 220,
+        "line": 36,
+        "precode": "throw new IllegalArgumentException(\"@JsonAdapter value must be TypeAdapter or TypeAdapterFactory reference.\");",
+        "filepath": "defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "throw new UnsupportedOperationException(\"@JsonAdapter value must be TypeAdapter or TypeAdapterFactory reference.\");"
+    },
+    {
+        "id": 221,
+        "line": 36,
+        "precode": "throw new IllegalArgumentException(\"@JsonAdapter value must be TypeAdapter or TypeAdapterFactory reference.\");",
+        "filepath": "defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "throw new RuntimeException(\"@JsonAdapter value must be TypeAdapter or TypeAdapterFactory reference.\");"
+    },
+    {
+        "id": 222,
+        "line": 36,
+        "precode": "throw new IllegalArgumentException(\"@JsonAdapter value must be TypeAdapter or TypeAdapterFactory reference.\");",
+        "filepath": "defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "System.err.println(\"@JsonAdapter value must be TypeAdapter or TypeAdapterFactory reference.\");"
+    },
+    {
+        "id": 224,
+        "line": 68,
+        "precode": "typeAdapter = typeAdapter.nullSafe();",
+        "filepath": "defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "typeAdapter = typeAdapter.nullUnsafe();"
+    },
+    {
+        "id": 227,
+        "line": 70,
+        "precode": "return typeAdapter;",
+        "filepath": "defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "return new TypeAdapter<Object>();"
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 84,
+        "line": 1036,
+        "precode": "    scope = traverseChildren(n, scope);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "    scope//= traverseChildren(n, scope);"
+    },
+    {
+        "id": 85,
+        "line": 1038,
+        "precode": "    Node constructor = n.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "    Node constructor = n.next();"
+    },
+    {
+        "id": 86,
+        "line": 1039,
+        "precode": "    JSType constructorType = constructor.getJSType();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "    JSType constructorType = constructor.type();"
+    },
+    {
+        "id": 87,
+        "line": 1040,
+        "precode": "    JSType type = null;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "    JSType type =undefined;"
+    },
+    {
+        "id": 90,
+        "line": 1054,
+        "precode": "          type = ct.getInstanceType();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "          type|= ct.getInstanceType();"
+    },
+    {
+        "id": 91,
+        "line": 1055,
+        "precode": "          backwardsInferenceFromCallSite(n, ct);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "          type = ct.getInstanceType();extend(n, ct);"
+    },
+    {
+        "id": 92,
+        "line": 1059,
+        "precode": "    n.setJSType(type);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "    n.push(type);"
+    },
+    {
+        "id": 93,
+        "line": 1060,
+        "precode": "    return scope;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "    returnn;"
+    },
+    {
+        "id": 500,
+        "line": 1118,
+        "precode": "        ObjectType.cast(constraint.restrictByNotNullOrUndefined());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "        ObjectType.create(constraint.restrictByNotNullOrUndefined());"
+    },
+    {
+        "id": 502,
+        "line": 1120,
+        "precode": "      type.matchConstraint(constraintObj);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "      type.add(constraintObj);"
+    }
+]

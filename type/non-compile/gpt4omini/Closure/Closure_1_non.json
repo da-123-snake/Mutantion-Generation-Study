@@ -1,0 +1,72 @@
+[
+    {
+        "id": 2,
+        "line": 388,
+        "precode": "return;",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 3,
+        "line": 383,
+        "precode": "Node function = fnScope.getRootNode();",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "Node function = fnScope.getNode();"
+    },
+    {
+        "id": 6,
+        "line": 391,
+        "precode": "Node argList = getFunctionArgList(function);",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "Node argList = function.getArgumentList();"
+    },
+    {
+        "id": 7,
+        "line": 400,
+        "precode": "argList.removeChild(lastArg);",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "argList.removeChild(lastArg.getPrevious());"
+    },
+    {
+        "id": 8,
+        "line": 407,
+        "precode": "callSiteOptimizer.optimize(fnScope, referenced);",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "callSiteOptimizer.adjust(fnScope, referenced);"
+    },
+    {
+        "id": 1034,
+        "line": 17,
+        "precode": "assignedToUnknownValue = value != null && !NodeUtil.isLiteralValue(value, true);",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "assignedToUnknownValue = value == null || NodeUtil.isLiteralValue(value, true);"
+    },
+    {
+        "id": 1044,
+        "line": 22,
+        "precode": "} else if (!NodeUtil.isLiteralValue(assign.assignNode.getLastChild(), true)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "} else if (NodeUtil.isLiteralValue(assign.assignNode.getLastChild(), false)) {"
+    },
+    {
+        "id": 1049,
+        "line": 906,
+        "precode": "final boolean isPropertyAssign;",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "final boolean isPropertyAssign = false;"
+    },
+    {
+        "id": 1050,
+        "line": 917,
+        "precode": "final boolean mayHaveSecondarySideEffects;",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "final boolean mayHaveSecondarySideEffects = true;"
+    },
+    {
+        "id": 1053,
+        "line": 24,
+        "precode": "this.mayHaveSecondarySideEffects = maybeAliased ||",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "this.mayHaveSecondarySideEffects = false ||"
+    }
+]

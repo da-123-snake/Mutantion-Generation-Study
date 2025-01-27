@@ -1,0 +1,30 @@
+[
+    {
+        "id": 253,
+        "line": 47,
+        "precode": "field.set(testClass, Mockito.mock(instance.getClass(), withSettings()\n                                .spiedInstance(instance)\n                                .defaultAnswer(Mockito.CALLS_REAL_METHODS)\n                                .name(field.getName())));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "field.set(testClass, Mockito.mock(instance.getClass(), withSettings()\n                                .spiedInstance(instance)\n                                .defaultAnswer(Mockito.CALLS_REALLY_BAD_METHODS)\n                                .name(field.getName())));"
+    },
+    {
+        "id": 256,
+        "line": 48,
+        "precode": "Mockito.reset(instance);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "Mockito.verify(instance).reset();"
+    },
+    {
+        "id": 257,
+        "line": 75,
+        "precode": "field.set(testClass, Mockito.mock(instance.getClass(), withSettings()\n                                .spiedInstance(instance)\n                                .defaultAnswer(Mockito.CALLS_REAL_METHODS)\n                                .name(field.getName())));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "field.set(testClass, Mockito.mock(instance.getClass(), withSettings()\n                                .spiedInstance(instance)\n                                .defaultAnswer(null)\n                                .name(field.getName())));"
+    },
+    {
+        "id": 263,
+        "line": 34,
+        "precode": "boolean wasAccessible = field.isAccessible();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "// boolean wasAccessible = field.isAccessible();"
+    }
+]

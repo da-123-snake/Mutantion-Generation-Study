@@ -1,0 +1,156 @@
+[
+    {
+        "id": 56,
+        "line": 385,
+        "precode": "if (containsHeader && (!emptyHeader || (emptyHeader && !this.format.getIgnoreEmptyHeaders()))) {",
+        "aftercode": "if (!containsHeader && (emptyHeader || (emptyHeader && !this.format.getIgnoreEmptyHeaders()))) {",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 57,
+        "line": 389,
+        "precode": "hdrMap.put(header, Integer.valueOf(i));",
+        "aftercode": "hdrMap.put(header, i);",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 58,
+        "line": 363,
+        "precode": "hdrMap = new LinkedHashMap<String, Integer>();",
+        "aftercode": "hdrMap = new HashMap<String, Integer>();",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 59,
+        "line": 370,
+        "precode": "headerRecord = nextRecord.values();",
+        "aftercode": "headerRecord = nextRecord.readValues();",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 60,
+        "line": 373,
+        "precode": "if (this.format.getSkipHeaderRecord()) {",
+        "aftercode": "if (!this.format.getSkipHeaderRecord()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 90,
+        "line": 286,
+        "precode": "return this.lexer.getCurrentLineNumber();",
+        "aftercode": "return this.lexer.increaseLineNumber();",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 111,
+        "line": 29,
+        "precode": "import java.nio.charset.Charset;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.nio.charset.StandardCharsets;"
+    },
+    {
+        "id": 112,
+        "line": 30,
+        "precode": "import java.util.ArrayList;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.LinkedList;"
+    },
+    {
+        "id": 113,
+        "line": 31,
+        "precode": "import java.util.Arrays;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.Vector;"
+    },
+    {
+        "id": 114,
+        "line": 32,
+        "precode": "import java.util.Collection;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.HashSet;"
+    },
+    {
+        "id": 115,
+        "line": 33,
+        "precode": "import java.util.Iterator;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.Enumeration;"
+    },
+    {
+        "id": 116,
+        "line": 34,
+        "precode": "import java.util.LinkedHashMap;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.TreeMap;"
+    },
+    {
+        "id": 117,
+        "line": 35,
+        "precode": "import java.util.List;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.Stack;"
+    },
+    {
+        "id": 118,
+        "line": 369,
+        "precode": "if (nextRecord != null) {",
+        "aftercode": "if (nextRecord == null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 119,
+        "line": 370,
+        "precode": "                headerRecord = nextRecord.values();",
+        "aftercode": "                headerRecord = null;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 120,
+        "line": 372,
+        "precode": "            } else {",
+        "aftercode": "            } else if (this.format.getSkipHeaderRecord()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 121,
+        "line": 372,
+        "precode": "            } else {",
+        "aftercode": "            } else { this.nextRecord();",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 122,
+        "line": 372,
+        "precode": "            } else {",
+        "aftercode": "            } else { headerRecord = null;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 123,
+        "line": 372,
+        "precode": "            } else {",
+        "aftercode": "            } else { break;",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 124,
+        "line": 372,
+        "precode": "            } else {",
+        "aftercode": "            } else if (formatHeader.length == 0) {",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 125,
+        "line": 372,
+        "precode": "            } else {",
+        "aftercode": "            } else if (formatHeader != null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 126,
+        "line": 372,
+        "precode": "            } else {",
+        "aftercode": "            } else if (headerRecord != null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    }
+]

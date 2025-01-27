@@ -1,0 +1,100 @@
+[
+    {
+        "id": 580,
+        "line": 723,
+        "precode": "furthestBlock.appendChild(adopter);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "furthestBlock.insertBefore(adopter, furthestBlock.firstChild);"
+    },
+    {
+        "id": 581,
+        "line": 724,
+        "precode": "tb.removeFromActiveFormattingElements(formatEl);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.removeFromActiveFormattingElements(formatEl); tb.addFormattingElement(formatEl);"
+    },
+    {
+        "id": 583,
+        "line": 727,
+        "precode": "tb.insertOnStackAfter(furthestBlock, adopter);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.insertOnStackBefore(furthestBlock, adopter);"
+    },
+    {
+        "id": 584,
+        "line": 717,
+        "precode": "Element adopter = new Element(formatEl.tag(), tb.getBaseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "Element adopter = new Element(formatEl.nodeName(), tb.getBaseUri());"
+    },
+    {
+        "id": 585,
+        "line": 718,
+        "precode": "adopter.attributes().addAll(formatEl.attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "adopter.attributes().putAll(formatEl.attributes());"
+    },
+    {
+        "id": 586,
+        "line": 729,
+        "precode": "if (StringUtil.in(name, Constants.InBodyStartApplets)) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "if (!StringUtil.in(name, Constants.InBodyStartApplets)) {"
+    },
+    {
+        "id": 650,
+        "line": 1434,
+        "precode": "tb.error(this);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.warn(this);"
+    },
+    {
+        "id": 651,
+        "line": 459,
+        "precode": "if (name.equals(\"isindex\")) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "if (name.equalsIgnoreCase(\"isindex\")) {"
+    },
+    {
+        "id": 653,
+        "line": 1473,
+        "precode": "tb.insert(startTag);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.append(startTag);"
+    },
+    {
+        "id": 654,
+        "line": 456,
+        "precode": "return tb.process(startTag.name(\"img\"));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "return tb.process(startTag.name(\"img\").toUpperCase());"
+    },
+    {
+        "id": 996,
+        "line": 1434,
+        "precode": "tb.error(this);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.error(new Exception());"
+    },
+    {
+        "id": 997,
+        "line": 761,
+        "precode": "Iterator<Element> it = stack.descendingIterator();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "for (Element node : stack) {"
+    },
+    {
+        "id": 998,
+        "line": 765,
+        "precode": "tb.generateImpliedEndTags(name);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.removeFromActiveFormattingElements(name);"
+    },
+    {
+        "id": 1166,
+        "line": 1473,
+        "precode": "tb.insert(startTag);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.insert(startTag.name(\"modifiedPlaintext\"));"
+    }
+]

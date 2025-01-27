@@ -1,0 +1,114 @@
+[
+    {
+        "id": 128,
+        "line": 87,
+        "precode": "    Node js = compiler.parseSyntheticCode(code);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "    Node js = compiler.parse(code);"
+    },
+    {
+        "id": 129,
+        "line": 88,
+        "precode": "    NodeTraversal.traverse(compiler, js,",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "    NodeTraversal.walk(compiler, js,"
+    },
+    {
+        "id": 130,
+        "line": 89,
+        "precode": "        new Normalize.NormalizeStatements(compiler, false));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "        new Normalize.NormalizeStatements(js, false));"
+    },
+    {
+        "id": 131,
+        "line": 90,
+        "precode": "    NodeTraversal.traverse(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "    NodeTraversal.exit("
+    },
+    {
+        "id": 132,
+        "line": 91,
+        "precode": "        compiler, js,",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "    NodeTraversal.traverse(code, js,"
+    },
+    {
+        "id": 133,
+        "line": 94,
+        "precode": "                compiler.getUniqueNameIdSupplier(),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "                compiler.name(),"
+    },
+    {
+        "id": 134,
+        "line": 95,
+        "precode": "                prefix)));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "                compiler.getUniqueNameIdSupplier(),prefix)));"
+    },
+    {
+        "id": 135,
+        "line": 96,
+        "precode": "    return js;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "    returnnull;"
+    },
+    {
+        "id": 243,
+        "line": 120,
+        "precode": "    new NodeTraversal(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "        compiler, new NormalizeStatements(compiler, assertOnChange)).erseRoots(externs, root);"
+    },
+    {
+        "id": 244,
+        "line": 121,
+        "precode": "        compiler, new NormalizeStatements(compiler, assertOnChange))",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "    new NodeTraversal(root, new NormalizeStatements(compiler, assertOnChange))"
+    },
+    {
+        "id": 245,
+        "line": 122,
+        "precode": "        .traverseRoots(externs, root);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "       .traverseRoots(this, root);"
+    },
+    {
+        "id": 246,
+        "line": 123,
+        "precode": "    if (MAKE_LOCAL_NAMES_UNIQUE) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "    if (debug) {"
+    },
+    {
+        "id": 247,
+        "line": 125,
+        "precode": "      NodeTraversal t = new NodeTraversal(compiler, renamer);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "      NodeTraversal t = new NodeTraversal(this, renamer);"
+    },
+    {
+        "id": 248,
+        "line": 221,
+        "precode": "      Node externsAndJs = root.getParent();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "      Node externsAndJs = root.next();"
+    },
+    {
+        "id": 249,
+        "line": 222,
+        "precode": "      Preconditions.checkState(externsAndJs != null);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "      Preconditions.check(externsAndJs!= null);"
+    },
+    {
+        "id": 250,
+        "line": 223,
+        "precode": "      Preconditions.checkState(externsAndJs.hasChild(externs));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "      Preconditions.check(externsAndJs.hasChild(externs));"
+    }
+]

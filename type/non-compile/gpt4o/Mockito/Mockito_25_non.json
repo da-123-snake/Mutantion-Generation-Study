@@ -1,0 +1,513 @@
+[
+    {
+        "id": 19,
+        "line": 14,
+        "precode": "import org.mockito.internal.util.reflection.GenericMetadataSupport;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import org.mockito.internal.util.reflection.GenericMetadataUtil;"
+    },
+    {
+        "id": 20,
+        "line": 15,
+        "precode": "import org.mockito.invocation.InvocationOnMock;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import org.mockito.invocation.Invocation;"
+    },
+    {
+        "id": 21,
+        "line": 16,
+        "precode": "import org.mockito.stubbing.Answer;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import org.mockito.stubbing.StubAnswer;"
+    },
+    {
+        "id": 22,
+        "line": 18,
+        "precode": "import java.io.Serializable;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import java.io.Externalizable;"
+    },
+    {
+        "id": 23,
+        "line": 20,
+        "precode": "static org.mockito.Mockito.mock;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "static org.mockito.Mockito.spy;"
+    },
+    {
+        "id": 24,
+        "line": 21,
+        "precode": "static org.mockito.Mockito.withSettings;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "static org.mockito.Mockito.withConfig;"
+    },
+    {
+        "id": 25,
+        "line": 15,
+        "precode": "import org.mockito.invocation.InvocationOnMock;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import org.mockito.invocation.InvocationMock;"
+    },
+    {
+        "id": 26,
+        "line": 71,
+        "precode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), container);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata, container), container);"
+    },
+    {
+        "id": 30,
+        "line": 71,
+        "precode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), container);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return recordDeepStubMock(createDeepStubMock(returnTypeGenericMetadata), container);"
+    },
+    {
+        "id": 32,
+        "line": 71,
+        "precode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), container);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), new ContainerImpl());"
+    },
+    {
+        "id": 36,
+        "line": 91,
+        "precode": "withSettings();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "withSettings().name(\"mockName\");"
+    },
+    {
+        "id": 37,
+        "line": 93,
+        "precode": "return mockSettings",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return null"
+    },
+    {
+        "id": 38,
+        "line": 94,
+        "precode": "defaultAnswer(returnsDeepStubsAnswerUsing(returnTypeGenericMetadata));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "defaultAnswer(Answers.RETURNS_MOCKS);"
+    },
+    {
+        "id": 40,
+        "line": 94,
+        "precode": "defaultAnswer(returnsDeepStubsAnswerUsing(returnTypeGenericMetadata));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "defaultAnswer(Answers.RETURNS_SMART_NULLS);"
+    },
+    {
+        "id": 41,
+        "line": 117,
+        "precode": "protected GenericMetadataSupport actualParameterizedType(Object mock) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "protected GenericMetadataSupport actualParameterizedType(Object mock) thrownew RuntimeException() {"
+    },
+    {
+        "id": 45,
+        "line": 108,
+        "precode": "container.addAnswer(new Answer<Object>() {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "container.addAnswer(new Answer<Void>() {"
+    },
+    {
+        "id": 46,
+        "line": 108,
+        "precode": "container.addAnswer(new Answer<Object>() {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "container.removeAnswer(new Answer<Object>() {"
+    },
+    {
+        "id": 47,
+        "line": 114,
+        "precode": "return mock;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return invocation.getMock();"
+    },
+    {
+        "id": 48,
+        "line": 108,
+        "precode": "container.addAnswer(new Answer<Object>() {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "container.addAnswer(new Answer<Boolean>() {"
+    },
+    {
+        "id": 50,
+        "line": 109,
+        "precode": "public Object answer(InvocationOnMock invocation) throws Throwable {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "public Void answer(InvocationOnMock invocation) throws Throwable {"
+    },
+    {
+        "id": 51,
+        "line": 93,
+        "precode": "return mockSettings",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return new MockSettingsImpl()"
+    },
+    {
+        "id": 53,
+        "line": 108,
+        "precode": "container.addAnswer(new Answer<Object>() {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "container.addAnswer(new Answer<Object>() throws Throwable {"
+    },
+    {
+        "id": 55,
+        "line": 13,
+        "precode": "} );",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "}.apply();"
+    },
+    {
+        "id": 56,
+        "line": 101,
+        "precode": "return returnTypeGenericMetadata;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return new GenericMetadataSupport();"
+    },
+    {
+        "id": 57,
+        "line": 93,
+        "precode": "return mockSettings",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return this.mockSettings"
+    },
+    {
+        "id": 254,
+        "line": 47,
+        "precode": "public Object answer(InvocationOnMock invocation) throws Throwable {",
+        "aftercode": "public Object answer(InvocationOnMock invocation) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java"
+    },
+    {
+        "id": 258,
+        "line": 72,
+        "precode": "}",
+        "aftercode": "// No closing brace here",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java"
+    },
+    {
+        "id": 260,
+        "line": 49,
+        "precode": "actualParameterizedType(invocation.getMock()).resolveGenericReturnType(invocation.getMethod());",
+        "aftercode": "null.resolveGenericReturnType(invocation.getMethod());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java"
+    },
+    {
+        "id": 261,
+        "line": 48,
+        "precode": "GenericMetadataSupport returnTypeGenericMetadata =",
+        "aftercode": "Object returnTypeGenericMetadata =",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java"
+    },
+    {
+        "id": 262,
+        "line": 51,
+        "precode": "Class<?> rawType = returnTypeGenericMetadata.rawType();",
+        "aftercode": "Object rawType = returnTypeGenericMetadata.rawType();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java"
+    },
+    {
+        "id": 263,
+        "line": 45,
+        "precode": "private ReturnsEmptyValues delegate = new ReturnsEmptyValues();",
+        "aftercode": "private ReturnsEmptyValues delegate = new Object();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java"
+    },
+    {
+        "id": 270,
+        "line": 61,
+        "precode": "InvocationContainerImpl container = (InvocationContainerImpl) handler.getInvocationContainer();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "InvocationContainerImpl container = new InvocationContainerImpl(handler);"
+    },
+    {
+        "id": 271,
+        "line": 64,
+        "precode": "for (StubbedInvocationMatcher stubbedInvocationMatcher : container.getStubbedInvocations()) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "for (StubbedInvocationMatcher stubbedInvocationMatcher : new ArrayList<StubbedInvocationMatcher>()) {"
+    },
+    {
+        "id": 278,
+        "line": 64,
+        "precode": "for (StubbedInvocationMatcher stubbedInvocationMatcher : container.getStubbedInvocations()) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "for (StubbedInvocationMatcher stubbedInvocationMatcher : container.getStubbedInvocations())"
+    },
+    {
+        "id": 282,
+        "line": 64,
+        "precode": "for (StubbedInvocationMatcher stubbedInvocationMatcher : container.getStubbedInvocations()) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "for (StubbedInvocationMatcher stubbedInvocationMatcher : container.getStubbedInvocations().clone()) {"
+    },
+    {
+        "id": 283,
+        "line": 65,
+        "precode": "if(container.getInvocationForStubbing().matches(stubbedInvocationMatcher.getInvocation())) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "if(stubbedInvocationMatcher.getInvocation().matches(container.getInvocationForStubbing())) {"
+    },
+    {
+        "id": 284,
+        "line": 60,
+        "precode": "InternalMockHandler<Object> handler = new MockUtil().getMockHandler(invocation.getMock());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "InternalMockHandler<Object> handler = MockUtil.mockHandler(invocation.getMock());"
+    },
+    {
+        "id": 288,
+        "line": 114,
+        "precode": "return mock;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return invocation.callRealMethod();"
+    },
+    {
+        "id": 289,
+        "line": 109,
+        "precode": "public Object answer(InvocationOnMock invocation) throws Throwable {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "public Object answer(Object invocation) throws Throwable {"
+    },
+    {
+        "id": 300,
+        "line": 5,
+        "precode": "package org.mockito.internal.stubbing.defaultanswers;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "package org.mockito.internal.stubbing.modifiedanswers;"
+    },
+    {
+        "id": 301,
+        "line": 7,
+        "precode": "import org.mockito.MockSettings;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import org.mockito.MockUtil;"
+    },
+    {
+        "id": 302,
+        "line": 10,
+        "precode": "import org.mockito.internal.stubbing.InvocationContainerImpl;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import org.mockito.internal.stubbing.InvocationHandlerImpl;"
+    },
+    {
+        "id": 303,
+        "line": 11,
+        "precode": "import org.mockito.internal.stubbing.StubbedInvocationMatcher;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import org.mockito.internal.stubbing.InvocationMatcherHandler;"
+    },
+    {
+        "id": 304,
+        "line": 15,
+        "precode": "import org.mockito.invocation.InvocationOnMock;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import org.mockito.invocation.HandlerOnMock;"
+    },
+    {
+        "id": 305,
+        "line": 18,
+        "precode": "import java.io.Serializable;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import java.io.Externalizable;"
+    },
+    {
+        "id": 306,
+        "line": 21,
+        "precode": "import static org.mockito.Mockito.withSettings;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import static org.mockito.Mockito.verifySettings;"
+    },
+    {
+        "id": 307,
+        "line": 18,
+        "precode": "import java.io.Serializable;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import java.io.Serializable as Serial;"
+    },
+    {
+        "id": 308,
+        "line": 20,
+        "precode": "import static org.mockito.Mockito.mock;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import static org.mockito.Mockito.spy;"
+    },
+    {
+        "id": 309,
+        "line": 21,
+        "precode": "import static org.mockito.Mockito.withSettings;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "import static org.mockito.Mockito.RETURNS_DEEP_STUBS;"
+    },
+    {
+        "id": 311,
+        "line": 55,
+        "precode": "return handler.getMockSettings().getDefaultAnswer().answer(invocation);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return handler.getMockSettings().getAnswers().get(invocation);"
+    },
+    {
+        "id": 312,
+        "line": 70,
+        "precode": "settings.defaultAnswer(CONSTRUCTORS_USE_DEEP_STUBS);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "settings.defaultAnswer(RETURNS_SELF);"
+    },
+    {
+        "id": 313,
+        "line": 85,
+        "precode": "if (!container.getStubbings().isEmpty()) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "if (container.getStubbings().isEmpty()) {"
+    },
+    {
+        "id": 314,
+        "line": 102,
+        "precode": "return createNewInstanceToReturn(invocation, matcher.getArguments());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return createNewInstanceToReturn(invocation, new Object[0]);"
+    },
+    {
+        "id": 329,
+        "line": 71,
+        "precode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), container);",
+        "aftercode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), container.getInvocationForStubbing());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java"
+    },
+    {
+        "id": 330,
+        "line": 71,
+        "precode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), container);",
+        "aftercode": "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), new InvocationContainerImpl(new MockSettingsImpl()));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java"
+    },
+    {
+        "id": 332,
+        "line": 81,
+        "precode": "return mock(",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return nullMock("
+    },
+    {
+        "id": 333,
+        "line": 81,
+        "precode": "return mock(",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return fakeMock("
+    },
+    {
+        "id": 341,
+        "line": 94,
+        "precode": "defaultAnswer(returnsDeepStubsAnswerUsing(returnTypeGenericMetadata));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "defaultAnswer(returnsDeepStubsAnswerUsing(null));"
+    },
+    {
+        "id": 343,
+        "line": 101,
+        "precode": "returnTypeGenericMetadata;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "super.actualParameterizedType(mock);"
+    },
+    {
+        "id": 345,
+        "line": 109,
+        "precode": "public Object answer(InvocationOnMock invocation) throws Throwable {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "public Object response(InvocationOnMock invocation) throws Throwable {"
+    },
+    {
+        "id": 346,
+        "line": 109,
+        "precode": "throws Throwable {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "throws Exception {"
+    },
+    {
+        "id": 347,
+        "line": 80,
+        "precode": "private Object createNewDeepStubMock(GenericMetadataSupport returnTypeGenericMetadata) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "private Object createDeepStub(GenericMetadataSupport returnTypeGenericMetadata) {"
+    },
+    {
+        "id": 348,
+        "line": 117,
+        "precode": "protected GenericMetadataSupport actualParameterizedType(Object mock) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "protected GenericMetadataSupport inferGenericReturnType(Object mock) {"
+    },
+    {
+        "id": 349,
+        "line": 120,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "} else { return null; }"
+    },
+    {
+        "id": 351,
+        "line": 93,
+        "precode": "return mockSettings",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return mockSettings.description(\"DeepStub\")"
+    },
+    {
+        "id": 352,
+        "line": 88,
+        "precode": "MockSettings mockSettings =",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "MockSettings updatedMockSettings ="
+    },
+    {
+        "id": 353,
+        "line": 94,
+        "precode": "defaultAnswer(returnsDeepStubsAnswerUsing(returnTypeGenericMetadata));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "defaultAnswer(returnsDeepStubsAnswerUsing(returnTypeGenericMetadata)).name(\"DeepStub\");"
+    },
+    {
+        "id": 355,
+        "line": 80,
+        "precode": "private Object createNewDeepStubMock(GenericMetadataSupport returnTypeGenericMetadata) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "private Object createDeepStubMock(GenericMetadataSupport returnType) {"
+    },
+    {
+        "id": 359,
+        "line": 90,
+        "precode": "withSettings().extraInterfaces(returnTypeGenericMetadata.rawExtraInterfaces())",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "withSettings().extraInterfaces(Collections.emptyList())"
+    },
+    {
+        "id": 361,
+        "line": 88,
+        "precode": "MockSettings mockSettings =",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "MockSettings settings ="
+    },
+    {
+        "id": 362,
+        "line": 93,
+        "precode": "return mockSettings",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "return returnsDeepStubsAnswerUsing(mockSettings)"
+    },
+    {
+        "id": 363,
+        "line": 94,
+        "precode": "defaultAnswer(returnsDeepStubsAnswerUsing(returnTypeGenericMetadata));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "defaultAnswer(returnsEmptyValues());"
+    },
+    {
+        "id": 364,
+        "line": 120,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Mockito/Mockito_25_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java",
+        "aftercode": "} else { throw new IllegalArgumentException(\"Invalid mock metadata\"); }"
+    }
+]

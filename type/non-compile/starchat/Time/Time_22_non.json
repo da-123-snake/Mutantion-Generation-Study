@@ -1,0 +1,93 @@
+[
+    {
+        "id": 293,
+        "line": 230,
+        "precode": "protected BasePeriod(long duration) {\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "protected BasePeriod(long duration) {\n    iType = PeriodType.time();\n    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n}"
+    },
+    {
+        "id": 294,
+        "line": 230,
+        "precode": "protected BasePeriod(long duration) {\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "protected BasePeriod(long duration) {\n    iType = PeriodType.time();\n    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[0] = 0;\n}"
+    },
+    {
+        "id": 295,
+        "line": 230,
+        "precode": "protected BasePeriod(long duration) {\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "protected BasePeriod(long duration) {\n    iType = PeriodType.time();\n    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[1] = 0;\n}"
+    },
+    {
+        "id": 296,
+        "line": 230,
+        "precode": "protected BasePeriod(long duration) {\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "protected BasePeriod(long duration) {\n    iType = PeriodType.time();\n    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[2] = 0;\n}"
+    },
+    {
+        "id": 297,
+        "line": 230,
+        "precode": "protected BasePeriod(long duration) {\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "protected BasePeriod(long duration) {\n    iType = PeriodType.time();\n    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[3] = 0;\n}"
+    },
+    {
+        "id": 298,
+        "line": 230,
+        "precode": "    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[0] = 0;\n    iValues[1] = 0;\n    iValues[2] = 0;\n    iValues[3] = 0;\n}"
+    },
+    {
+        "id": 299,
+        "line": 230,
+        "precode": "    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "    int[] values = ISOChronology.getInstanceUTC().get(this, duration);\n    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[4] = 0;\n    iValues[5] = 0;\n    iValues[6] = 0;\n    iValues[7] = 0;\n}"
+    },
+    {
+        "id": 300,
+        "line": 230,
+        "precode": "    System.arraycopy(values, 0, iValues, 4, 4);\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[0] = 0;\n    iValues[1] = 0;\n    iValues[2] = 0;\n    iValues[3] = 0;\n    iValues[4] = 0;\n    iValues[5] = 0;\n    iValues[6] = 0;\n    iValues[7] = 0;\n}"
+    },
+    {
+        "id": 301,
+        "line": 230,
+        "precode": "    iType = PeriodType.standard();\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[0] = 0;\n    iValues[1] = 0;\n    iValues[2] = 0;\n    iValues[3] = 0;\n    iValues[4] = 0;\n    iValues[5] = 0;\n    iValues[6] = 0;\n    iValues[7] = 0;\n    iType = PeriodType.time();\n}"
+    },
+    {
+        "id": 302,
+        "line": 230,
+        "precode": "    iType = PeriodType.standard();\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[0] = 0;\n    iValues[1] = 0;\n    iValues[2] = 0;\n    iValues[3] = 0;\n    iValues[4] = 0;\n    iValues[5] = 0;\n    iValues[6] = 0;\n    iValues[7] = 0;\n    iType = PeriodType.weeks();\n}"
+    },
+    {
+        "id": 303,
+        "line": 230,
+        "precode": "    iType = PeriodType.standard();\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[0] = 0;\n    iValues[1] = 0;\n    iValues[2] = 0;\n    iValues[3] = 0;\n    iValues[4] = 0;\n    iValues[5] = 0;\n    iValues[6] = 0;\n    iValues[7] = 0;\n    iType = PeriodType.days();\n}"
+    },
+    {
+        "id": 304,
+        "line": 230,
+        "precode": "    iType = PeriodType.standard();\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[0] = 0;\n    iValues[1] = 0;\n    iValues[2] = 0;\n    iValues[3] = 0;\n    iValues[4] = 0;\n    iValues[5] = 0;\n    iValues[6] = 0;\n    iValues[7] = 0;\n    iType = PeriodType.hours();\n}"
+    },
+    {
+        "id": 305,
+        "line": 230,
+        "precode": "    iType = PeriodType.standard();\n",
+        "filepath": "defects4j_fixed/Time/Time_22_fixed/src/main/java/org/joda/time/base/BasePeriod.java",
+        "aftercode": "    iType = PeriodType.standard();\n    iValues = new int[8];\n    System.arraycopy(values, 0, iValues, 4, 4);\n    iValues[0] = 0;\n    iValues[1] = 0;\n    iValues[2] = 0;\n    iValues[3] = 0;\n    iValues[4] = 0;\n    iValues[5] = 0;\n    iValues[6] = 0;\n    iValues[7] = 0;\n    iType = PeriodType.minutes();\n}"
+    }
+]

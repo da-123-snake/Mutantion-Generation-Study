@@ -1,0 +1,37 @@
+[
+    {
+        "id": 141,
+        "line": 273,
+        "precode": "Integer row = null;",
+        "filepath": "defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "int row = 0;"
+    },
+    {
+        "id": 145,
+        "line": 329,
+        "precode": "Set<Integer> basicRows = new HashSet<Integer>();",
+        "aftercode": "Set<Integer> basicRows = new HashSet<Integer>(basicRows);",
+        "filepath": "defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java"
+    },
+    {
+        "id": 151,
+        "line": 328,
+        "precode": "double mostNegative = basicRow == null ? 0 : getEntry(basicRow, getRhsOffset());",
+        "aftercode": "double mostNegative,\n    tempMostNegative = basicRow == null ? 0 : getEntry(basicRow, getRhsOffset());\nif (tempMostNegative < 0) { \n    mostNegative = tempMostNegative;\n}",
+        "filepath": "defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java"
+    },
+    {
+        "id": 152,
+        "line": 329,
+        "precode": "Set<Integer> basicRows = new HashSet<Integer>();",
+        "aftercode": "Set<Integer> basicRows,\n    tempBasicRows = new HashSet<Integer>(basicRows);\nif (!tempBasicRows.isEmpty()) {\n    basicRows = tempBasicRows;\n}",
+        "filepath": "defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java"
+    },
+    {
+        "id": 159,
+        "line": 329,
+        "precode": "Set<Integer> basicRows = new HashSet<Integer>();",
+        "aftercode": "Set<Integer> basicRows = new HashSet<Integer>(basicRows);\nbasicRows.remove(0);",
+        "filepath": "defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java"
+    }
+]

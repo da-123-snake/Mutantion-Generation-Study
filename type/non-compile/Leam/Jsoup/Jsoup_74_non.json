@@ -1,0 +1,247 @@
+[
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if((stripLeading && !reachedNonWhite)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if((lastWasWhite || stripLeading)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if((stripLeading || lastWasWhite)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if(!isInvisibleChar(c)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 162,
+        "aftercode": "package org.jsoup.helper;\n\nimport java.net.MalformedURLException;\nimport java.net.URL;\nimport java.util.Arrays;\nimport java.util.Collection;\nimport java.util.Iterator;\n\n/**\n * A minimal String utility class. Designed for internal jsoup use only.\n */\npublic final class StringUtil {\n    // memoised padding up to 21\n    static final String[] padding = {\"\", \" \", \"  \", \"   \", \"    \", \"     \", \"      \", \"       \", \"        \",\n        \"         \", \"          \", \"           \", \"            \", \"             \", \"              \", \"               \",\n        \"                \", \"                 \", \"                  \", \"                   \", \"                    \"};\n\n    /**\n     * Join a collection of strings by a separator\n     * @param strings collection of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(Collection strings, String sep) {\n        return join(strings.iterator(), sep);\n    }\n\n    /**\n     * Join a collection of strings by a separator\n     * @param strings iterator of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(Iterator strings, String sep) {\n        if (!strings.hasNext())\n            return \"\";\n\n        String start = strings.next().toString();\n        if (!strings.hasNext()) // only one, avoid builder\n            return start;\n\n        StringBuilder sb = new StringBuilder(64).append(start);\n        while (strings.hasNext()) {\n            sb.append(sep);\n            sb.append(strings.next());\n        }\n        return sb.toString();\n    }\n\n    /**\n     * Join an array of strings by a separator\n     * @param strings collection of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(String[] strings, String sep) {\n        return join(Arrays.asList(strings), sep);\n    }\n\n    /**\n     * Returns space padding\n     * @param width amount of padding desired\n     * @return string of spaces * width\n     */\n    public static String padding(int width) {\n        if (width < 0)\n            throw new IllegalArgumentException(\"width must be > 0\");\n\n        if (width < padding.length)\n            return padding[width];\n        char[] out = new char[width];\n        for (int i = 0; i < width; i++)\n            out[i] = ' ';\n        return String.valueOf(out);\n    }\n\n    /**\n     * Tests if a string is blank: null, empty, or only whitespace (\" \", \\r\\n, \\t, etc)\n     * @param string string to test\n     * @return if string is blank\n     */\n    public static boolean isBlank(String string) {\n        if (string == null || string.length() == 0)\n            return true;\n\n        int l = string.length();\n        for (int i = 0; i < l; i++) {\n            if (!StringUtil.isWhitespace(string.codePointAt(i)))\n                return false;\n        }\n        return true;\n    }\n\n    /**\n     * Tests if a string is numeric, i.e. contains only digit characters\n     * @param string string to test\n     * @return true if only digit chars, false if empty or null or contains non-digit chars\n     */\n    public static boolean isNumeric(String string) {\n        if (string == null || string.length() == 0)\n            return false;\n\n        int l = string.length();\n        for (int i = 0; i < l; i++) {\n            if (!Character.isDigit(string.codePointAt(i)))\n                return false;\n        }\n        return true;\n    }\n\n    /**\n     * Tests if a code point is \"whitespace\" as defined in the HTML spec. Used for output HTML.\n     * @param c code point to test\n     * @return true if code point is whitespace, false otherwise\n     * @see #isActuallyWhitespace(int)\n     */\n    public static boolean isWhitespace(int c){\n        return c == ' ' || c == '\\t' || c == '\\n' || c == '\\f' || c == '\\r';\n    }\n\n    /**\n     * Tests if a code point is \"whitespace\" as defined by what it looks like. Used for Element.text etc.\n     * @param c code point to test\n     * @return true if code point is whitespace, false otherwise\n     */\n    public static boolean isActuallyWhitespace(int c){\n        return c == ' ' || c == '\\t' || c == '\\n' || c == '\\f' || c == '\\r' || c == 160;\n        // 160 is &nbsp; (non-breaking space). Not in the spec but expected.\n    }\n\n    public static boolean isInvisibleChar(int c) {\n        return Character.getType(c) == 16 && (c == 8203 || c == 8204 || c == 8205 || c == 173);\n        // zero width sp, zw non join, zw join, soft hyphen\n    }\n\n    /**\n     * Normalise the whitespace within this string; multiple spaces collapse to a single, and all whitespace characters\n     * (e.g. newline, tab) convert to a simple space\n     * @param string content to normalise\n     * @return normalised string\n     */\n    public static String normaliseWhitespace(String string) {\n        StringBuilder sb = StringUtil.stringBuilder();\n        appendNormalisedWhitespace(sb, string, false);\n        return sb.toString();\n    }\n\n    /**\n     * After normalizing the whitespace within a string, appends it to a string builder.\n     * @param accum builder to append to\n     * @param string string to normalize whitespace within\n     * @param stripLeading set to true if you wish to remove any leading whitespace\n     */\n    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {\n        boolean lastWasWhite = false;\n        boolean reachedNonWhite = false;\n\n        int len = string.length();\n        int c;\n        for (int i = 0; i < len; i+= Character.charCount(c)) {\n            c = string.codePointAt(i);\n            if (isActuallyWhitespace(c)) {\nif((stripLeading && !reachedNonWhite)){\n                    continue;\n                accum.append(' ');\n                lastWasWhite = true;\n            }\n\nif(!isInvisibleChar(c)){\n                accum.appendCodePoint(c);\n                lastWasWhite = false;\n                reachedNonWhite = true;\n            }\n        }\n    }\n\n    public static boolean in(final String needle, final String... haystack) {\n        final int len = haystack.length;\n        for (int i = 0; i < len; i++) {\n            if (haystack[i].equals(needle))\n            return true;\n        }\n        return false;\n    }\n\n    public static boolean inSorted(String needle, String[] haystack) {\n        return Arrays.binarySearch(haystack, needle) >= 0;\n    }\n\n    /**\n     * Create a new absolute URL, from a provided existing absolute URL and a relative URL component.\n     * @param base the existing absolute base URL\n     * @param relUrl the relative URL to resolve. (If it's already absolute, it will be returned)\n     * @return the resolved absolute URL\n     * @throws MalformedURLException if an error occurred generating the URL\n     */\n    public static URL resolve(URL base, String relUrl) throws MalformedURLException {\n        // workaround: java resolves '//path/file + ?foo' to '//path/?foo', not '//path/file?foo' as desired\n        if (relUrl.startsWith(\"?\"))\n            relUrl = base.getPath() + relUrl;\n        // workaround: //example.com + ./foo = //example.com/./foo, not //example.com/foo\n        if (relUrl.indexOf('.') == 0 && base.getFile().indexOf('/') != 0) {\n            base = new URL(base.getProtocol(), base.getHost(), base.getPort(), \"/\" + base.getFile());\n        }\n        return new URL(base, relUrl);\n    }\n\n    /**\n     * Create a new absolute URL, from a provided existing absolute URL and a relative URL component.\n     * @param baseUrl the existing absolute base URL\n     * @param relUrl the relative URL to resolve. (If it's already absolute, it will be returned)\n     * @return an absolute URL if one was able to be generated, or the empty string if not\n     */\n    public static String resolve(final String baseUrl, final String relUrl) {\n        URL base;\n        try {\n            try {\n                base = new URL(baseUrl);\n            } catch (MalformedURLException e) {\n                // the base is unsuitable, but the attribute/rel may be abs on its own, so try that\n                URL abs = new URL(relUrl);\n                return abs.toExternalForm();\n            }\n            return resolve(base, relUrl).toExternalForm();\n        } catch (MalformedURLException e) {\n            return \"\";\n        }\n    }\n\n    /**\n     * Maintains a cached StringBuilder, to minimize new StringBuilder GCs. Prevents it from growing to big per thread.\n     * Care must be taken to not grab more than one in the same stack (not locked or mutexed or anything).\n     * @return an empty StringBuilder\n     */\n    public static StringBuilder stringBuilder() {\n        StringBuilder sb = stringLocal.get();\n        if (sb.length() > MaxCachedBuilderSize) {\n            sb = new StringBuilder(MaxCachedBuilderSize);\n            stringLocal.set(sb);\n        } else {\n            sb.delete(0, sb.length());\n        }\n        return sb;\n\n    }\n\n    private static final int MaxCachedBuilderSize = 8 * 1024;\n    private static final ThreadLocal<StringBuilder> stringLocal = new ThreadLocal<StringBuilder>(){\n        @Override\n        protected StringBuilder initialValue() {\n            return new StringBuilder(MaxCachedBuilderSize);\n        }\n    };\n\n\n}"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "            if (isActuallyWhitespace(c)) {",
+        "line": 162,
+        "aftercode": "if(len){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if(isActuallyWhitespace(c)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "            if (isActuallyWhitespace(c)) {",
+        "line": 162,
+        "aftercode": "if(string){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "            c = string.codePointAt(i);",
+        "line": 161,
+        "aftercode": "string.codePointAt(i);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "            else if (!isInvisibleChar(c)) {",
+        "line": 168,
+        "aftercode": "!isInvisibleChar(c);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if((lastWasWhite && stripLeading)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if(string.codePointAt(i)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 162,
+        "aftercode": "package org.jsoup.helper;\n\nimport java.net.MalformedURLException;\nimport java.net.URL;\nimport java.util.Arrays;\nimport java.util.Collection;\nimport java.util.Iterator;\n\n/**\n * A minimal String utility class. Designed for internal jsoup use only.\n */\npublic final class StringUtil {\n    // memoised padding up to 21\n    static final String[] padding = {\"\", \" \", \"  \", \"   \", \"    \", \"     \", \"      \", \"       \", \"        \",\n        \"         \", \"          \", \"           \", \"            \", \"             \", \"              \", \"               \",\n        \"                \", \"                 \", \"                  \", \"                   \", \"                    \"};\n\n    /**\n     * Join a collection of strings by a separator\n     * @param strings collection of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(Collection strings, String sep) {\n        return join(strings.iterator(), sep);\n    }\n\n    /**\n     * Join a collection of strings by a separator\n     * @param strings iterator of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(Iterator strings, String sep) {\n        if (!strings.hasNext())\n            return \"\";\n\n        String start = strings.next().toString();\n        if (!strings.hasNext()) // only one, avoid builder\n            return start;\n\n        StringBuilder sb = new StringBuilder(64).append(start);\n        while (strings.hasNext()) {\n            sb.append(sep);\n            sb.append(strings.next());\n        }\n        return sb.toString();\n    }\n\n    /**\n     * Join an array of strings by a separator\n     * @param strings collection of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(String[] strings, String sep) {\n        return join(Arrays.asList(strings), sep);\n    }\n\n    /**\n     * Returns space padding\n     * @param width amount of padding desired\n     * @return string of spaces * width\n     */\n    public static String padding(int width) {\n        if (width < 0)\n            throw new IllegalArgumentException(\"width must be > 0\");\n\n        if (width < padding.length)\n            return padding[width];\n        char[] out = new char[width];\n        for (int i = 0; i < width; i++)\n            out[i] = ' ';\n        return String.valueOf(out);\n    }\n\n    /**\n     * Tests if a string is blank: null, empty, or only whitespace (\" \", \\r\\n, \\t, etc)\n     * @param string string to test\n     * @return if string is blank\n     */\n    public static boolean isBlank(String string) {\n        if (string == null || string.length() == 0)\n            return true;\n\n        int l = string.length();\n        for (int i = 0; i < l; i++) {\n            if (!StringUtil.isWhitespace(string.codePointAt(i)))\n                return false;\n        }\n        return true;\n    }\n\n    /**\n     * Tests if a string is numeric, i.e. contains only digit characters\n     * @param string string to test\n     * @return true if only digit chars, false if empty or null or contains non-digit chars\n     */\n    public static boolean isNumeric(String string) {\n        if (string == null || string.length() == 0)\n            return false;\n\n        int l = string.length();\n        for (int i = 0; i < l; i++) {\n            if (!Character.isDigit(string.codePointAt(i)))\n                return false;\n        }\n        return true;\n    }\n\n    /**\n     * Tests if a code point is \"whitespace\" as defined in the HTML spec. Used for output HTML.\n     * @param c code point to test\n     * @return true if code point is whitespace, false otherwise\n     * @see #isActuallyWhitespace(int)\n     */\n    public static boolean isWhitespace(int c){\n        return c == ' ' || c == '\\t' || c == '\\n' || c == '\\f' || c == '\\r';\n    }\n\n    /**\n     * Tests if a code point is \"whitespace\" as defined by what it looks like. Used for Element.text etc.\n     * @param c code point to test\n     * @return true if code point is whitespace, false otherwise\n     */\n    public static boolean isActuallyWhitespace(int c){\n        return c == ' ' || c == '\\t' || c == '\\n' || c == '\\f' || c == '\\r' || c == 160;\n        // 160 is &nbsp; (non-breaking space). Not in the spec but expected.\n    }\n\n    public static boolean isInvisibleChar(int c) {\n        return Character.getType(c) == 16 && (c == 8203 || c == 8204 || c == 8205 || c == 173);\n        // zero width sp, zw non join, zw join, soft hyphen\n    }\n\n    /**\n     * Normalise the whitespace within this string; multiple spaces collapse to a single, and all whitespace characters\n     * (e.g. newline, tab) convert to a simple space\n     * @param string content to normalise\n     * @return normalised string\n     */\n    public static String normaliseWhitespace(String string) {\n        StringBuilder sb = StringUtil.stringBuilder();\n        appendNormalisedWhitespace(sb, string, false);\n        return sb.toString();\n    }\n\n    /**\n     * After normalizing the whitespace within a string, appends it to a string builder.\n     * @param accum builder to append to\n     * @param string string to normalize whitespace within\n     * @param stripLeading set to true if you wish to remove any leading whitespace\n     */\n    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {\n        boolean lastWasWhite = false;\n        boolean reachedNonWhite = false;\n\n        int len = string.length();\n        int c;\n        for (int i = 0; i < len; i+= Character.charCount(c)) {\n            c = string.codePointAt(i);\n            if (isActuallyWhitespace(c)) {\nif((stripLeading && !reachedNonWhite)){\n                    continue;\n                accum.append(' ');\n                lastWasWhite = true;\n            }\n\nif(isInvisibleChar(c)){\n                accum.appendCodePoint(c);\n                lastWasWhite = false;\n                reachedNonWhite = true;\n            }\n        }\n    }\n\n    public static boolean in(final String needle, final String... haystack) {\n        final int len = haystack.length;\n        for (int i = 0; i < len; i++) {\n            if (haystack[i].equals(needle))\n            return true;\n        }\n        return false;\n    }\n\n    public static boolean inSorted(String needle, String[] haystack) {\n        return Arrays.binarySearch(haystack, needle) >= 0;\n    }\n\n    /**\n     * Create a new absolute URL, from a provided existing absolute URL and a relative URL component.\n     * @param base the existing absolute base URL\n     * @param relUrl the relative URL to resolve. (If it's already absolute, it will be returned)\n     * @return the resolved absolute URL\n     * @throws MalformedURLException if an error occurred generating the URL\n     */\n    public static URL resolve(URL base, String relUrl) throws MalformedURLException {\n        // workaround: java resolves '//path/file + ?foo' to '//path/?foo', not '//path/file?foo' as desired\n        if (relUrl.startsWith(\"?\"))\n            relUrl = base.getPath() + relUrl;\n        // workaround: //example.com + ./foo = //example.com/./foo, not //example.com/foo\n        if (relUrl.indexOf('.') == 0 && base.getFile().indexOf('/') != 0) {\n            base = new URL(base.getProtocol(), base.getHost(), base.getPort(), \"/\" + base.getFile());\n        }\n        return new URL(base, relUrl);\n    }\n\n    /**\n     * Create a new absolute URL, from a provided existing absolute URL and a relative URL component.\n     * @param baseUrl the existing absolute base URL\n     * @param relUrl the relative URL to resolve. (If it's already absolute, it will be returned)\n     * @return an absolute URL if one was able to be generated, or the empty string if not\n     */\n    public static String resolve(final String baseUrl, final String relUrl) {\n        URL base;\n        try {\n            try {\n                base = new URL(baseUrl);\n            } catch (MalformedURLException e) {\n                // the base is unsuitable, but the attribute/rel may be abs on its own, so try that\n                URL abs = new URL(relUrl);\n                return abs.toExternalForm();\n            }\n            return resolve(base, relUrl).toExternalForm();\n        } catch (MalformedURLException e) {\n            return \"\";\n        }\n    }\n\n    /**\n     * Maintains a cached StringBuilder, to minimize new StringBuilder GCs. Prevents it from growing to big per thread.\n     * Care must be taken to not grab more than one in the same stack (not locked or mutexed or anything).\n     * @return an empty StringBuilder\n     */\n    public static StringBuilder stringBuilder() {\n        StringBuilder sb = stringLocal.get();\n        if (sb.length() > MaxCachedBuilderSize) {\n            sb = new StringBuilder(MaxCachedBuilderSize);\n            stringLocal.set(sb);\n        } else {\n            sb.delete(0, sb.length());\n        }\n        return sb;\n\n    }\n\n    private static final int MaxCachedBuilderSize = 8 * 1024;\n    private static final ThreadLocal<StringBuilder> stringLocal = new ThreadLocal<StringBuilder>(){\n        @Override\n        protected StringBuilder initialValue() {\n            return new StringBuilder(MaxCachedBuilderSize);\n        }\n    };\n\n\n}"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if((lastWasWhite || lastWasWhite)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "            else if (!isInvisibleChar(c)) {",
+        "line": 168,
+        "aftercode": "if(isInvisibleChar()){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if((i < len)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "            else if (!isInvisibleChar(c)) {",
+        "line": 168,
+        "aftercode": "if(!isInvisibleChar()){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if(((stripLeading && !reachedNonWhite) || stripLeading)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if(((stripLeading && !reachedNonWhite) || lastWasWhite)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if((stripLeading && !reachedNonWhite)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 162,
+        "aftercode": "package org.jsoup.helper;\n\nimport java.net.MalformedURLException;\nimport java.net.URL;\nimport java.util.Arrays;\nimport java.util.Collection;\nimport java.util.Iterator;\n\n/**\n * A minimal String utility class. Designed for internal jsoup use only.\n */\npublic final class StringUtil {\n    // memoised padding up to 21\n    static final String[] padding = {\"\", \" \", \"  \", \"   \", \"    \", \"     \", \"      \", \"       \", \"        \",\n        \"         \", \"          \", \"           \", \"            \", \"             \", \"              \", \"               \",\n        \"                \", \"                 \", \"                  \", \"                   \", \"                    \"};\n\n    /**\n     * Join a collection of strings by a separator\n     * @param strings collection of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(Collection strings, String sep) {\n        return join(strings.iterator(), sep);\n    }\n\n    /**\n     * Join a collection of strings by a separator\n     * @param strings iterator of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(Iterator strings, String sep) {\n        if (!strings.hasNext())\n            return \"\";\n\n        String start = strings.next().toString();\n        if (!strings.hasNext()) // only one, avoid builder\n            return start;\n\n        StringBuilder sb = new StringBuilder(64).append(start);\n        while (strings.hasNext()) {\n            sb.append(sep);\n            sb.append(strings.next());\n        }\n        return sb.toString();\n    }\n\n    /**\n     * Join an array of strings by a separator\n     * @param strings collection of string objects\n     * @param sep string to place between strings\n     * @return joined string\n     */\n    public static String join(String[] strings, String sep) {\n        return join(Arrays.asList(strings), sep);\n    }\n\n    /**\n     * Returns space padding\n     * @param width amount of padding desired\n     * @return string of spaces * width\n     */\n    public static String padding(int width) {\n        if (width < 0)\n            throw new IllegalArgumentException(\"width must be > 0\");\n\n        if (width < padding.length)\n            return padding[width];\n        char[] out = new char[width];\n        for (int i = 0; i < width; i++)\n            out[i] = ' ';\n        return String.valueOf(out);\n    }\n\n    /**\n     * Tests if a string is blank: null, empty, or only whitespace (\" \", \\r\\n, \\t, etc)\n     * @param string string to test\n     * @return if string is blank\n     */\n    public static boolean isBlank(String string) {\n        if (string == null || string.length() == 0)\n            return true;\n\n        int l = string.length();\n        for (int i = 0; i < l; i++) {\n            if (!StringUtil.isWhitespace(string.codePointAt(i)))\n                return false;\n        }\n        return true;\n    }\n\n    /**\n     * Tests if a string is numeric, i.e. contains only digit characters\n     * @param string string to test\n     * @return true if only digit chars, false if empty or null or contains non-digit chars\n     */\n    public static boolean isNumeric(String string) {\n        if (string == null || string.length() == 0)\n            return false;\n\n        int l = string.length();\n        for (int i = 0; i < l; i++) {\n            if (!Character.isDigit(string.codePointAt(i)))\n                return false;\n        }\n        return true;\n    }\n\n    /**\n     * Tests if a code point is \"whitespace\" as defined in the HTML spec. Used for output HTML.\n     * @param c code point to test\n     * @return true if code point is whitespace, false otherwise\n     * @see #isActuallyWhitespace(int)\n     */\n    public static boolean isWhitespace(int c){\n        return c == ' ' || c == '\\t' || c == '\\n' || c == '\\f' || c == '\\r';\n    }\n\n    /**\n     * Tests if a code point is \"whitespace\" as defined by what it looks like. Used for Element.text etc.\n     * @param c code point to test\n     * @return true if code point is whitespace, false otherwise\n     */\n    public static boolean isActuallyWhitespace(int c){\n        return c == ' ' || c == '\\t' || c == '\\n' || c == '\\f' || c == '\\r' || c == 160;\n        // 160 is &nbsp; (non-breaking space). Not in the spec but expected.\n    }\n\n    public static boolean isInvisibleChar(int c) {\n        return Character.getType(c) == 16 && (c == 8203 || c == 8204 || c == 8205 || c == 173);\n        // zero width sp, zw non join, zw join, soft hyphen\n    }\n\n    /**\n     * Normalise the whitespace within this string; multiple spaces collapse to a single, and all whitespace characters\n     * (e.g. newline, tab) convert to a simple space\n     * @param string content to normalise\n     * @return normalised string\n     */\n    public static String normaliseWhitespace(String string) {\n        StringBuilder sb = StringUtil.stringBuilder();\n        appendNormalisedWhitespace(sb, string, false);\n        return sb.toString();\n    }\n\n    /**\n     * After normalizing the whitespace within a string, appends it to a string builder.\n     * @param accum builder to append to\n     * @param string string to normalize whitespace within\n     * @param stripLeading set to true if you wish to remove any leading whitespace\n     */\n    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {\n        boolean lastWasWhite = false;\n        boolean reachedNonWhite = false;\n\n        int len = string.length();\n        int c;\n        for (int i = 0; i < len; i+= Character.charCount(c)) {\n            c = string.codePointAt(i);\n            if (isActuallyWhitespace(c)) {\nif((stripLeading && !reachedNonWhite)){\n                    continue;\n                accum.append(' ');\n                lastWasWhite = true;\n            }\n\nif((stripLeading && !reachedNonWhite)){\n                accum.appendCodePoint(c);\n                lastWasWhite = false;\n                reachedNonWhite = true;\n            }\n        }\n    }\n\n    public static boolean in(final String needle, final String... haystack) {\n        final int len = haystack.length;\n        for (int i = 0; i < len; i++) {\n            if (haystack[i].equals(needle))\n            return true;\n        }\n        return false;\n    }\n\n    public static boolean inSorted(String needle, String[] haystack) {\n        return Arrays.binarySearch(haystack, needle) >= 0;\n    }\n\n    /**\n     * Create a new absolute URL, from a provided existing absolute URL and a relative URL component.\n     * @param base the existing absolute base URL\n     * @param relUrl the relative URL to resolve. (If it's already absolute, it will be returned)\n     * @return the resolved absolute URL\n     * @throws MalformedURLException if an error occurred generating the URL\n     */\n    public static URL resolve(URL base, String relUrl) throws MalformedURLException {\n        // workaround: java resolves '//path/file + ?foo' to '//path/?foo', not '//path/file?foo' as desired\n        if (relUrl.startsWith(\"?\"))\n            relUrl = base.getPath() + relUrl;\n        // workaround: //example.com + ./foo = //example.com/./foo, not //example.com/foo\n        if (relUrl.indexOf('.') == 0 && base.getFile().indexOf('/') != 0) {\n            base = new URL(base.getProtocol(), base.getHost(), base.getPort(), \"/\" + base.getFile());\n        }\n        return new URL(base, relUrl);\n    }\n\n    /**\n     * Create a new absolute URL, from a provided existing absolute URL and a relative URL component.\n     * @param baseUrl the existing absolute base URL\n     * @param relUrl the relative URL to resolve. (If it's already absolute, it will be returned)\n     * @return an absolute URL if one was able to be generated, or the empty string if not\n     */\n    public static String resolve(final String baseUrl, final String relUrl) {\n        URL base;\n        try {\n            try {\n                base = new URL(baseUrl);\n            } catch (MalformedURLException e) {\n                // the base is unsuitable, but the attribute/rel may be abs on its own, so try that\n                URL abs = new URL(relUrl);\n                return abs.toExternalForm();\n            }\n            return resolve(base, relUrl).toExternalForm();\n        } catch (MalformedURLException e) {\n            return \"\";\n        }\n    }\n\n    /**\n     * Maintains a cached StringBuilder, to minimize new StringBuilder GCs. Prevents it from growing to big per thread.\n     * Care must be taken to not grab more than one in the same stack (not locked or mutexed or anything).\n     * @return an empty StringBuilder\n     */\n    public static StringBuilder stringBuilder() {\n        StringBuilder sb = stringLocal.get();\n        if (sb.length() > MaxCachedBuilderSize) {\n            sb = new StringBuilder(MaxCachedBuilderSize);\n            stringLocal.set(sb);\n        } else {\n            sb.delete(0, sb.length());\n        }\n        return sb;\n\n    }\n\n    private static final int MaxCachedBuilderSize = 8 * 1024;\n    private static final ThreadLocal<StringBuilder> stringLocal = new ThreadLocal<StringBuilder>(){\n        @Override\n        protected StringBuilder initialValue() {\n            return new StringBuilder(MaxCachedBuilderSize);\n        }\n    };\n\n\n}"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if(!isInvisibleChar(c)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "                if ((stripLeading && !reachedNonWhite) || lastWasWhite)",
+        "line": 163,
+        "aftercode": "if((stripLeading || stripLeading)){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "precode": "    public static void appendNormalisedWhitespace(StringBuilder accum, String string, boolean stripLeading) {",
+        "line": 154,
+        "aftercode": "StringBuilder accum,String string        boolean lastWasWhite = false;"
+    }
+]

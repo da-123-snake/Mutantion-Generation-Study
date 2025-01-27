@@ -1,0 +1,30 @@
+[
+    {
+        "id": 2,
+        "line": 180,
+        "precode": "            throw new DimensionMismatchException(vals.length, dim);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_11_fixed/src/main/java/org/apache/commons/math3/distribution/MultivariateNormalDistribution.java",
+        "aftercode": "            throw new DimensionMismatchException(vals, dim);"
+    },
+    {
+        "id": 3,
+        "line": 183,
+        "precode": "        return FastMath.pow(2 * FastMath.PI, -0.5 * dim) *",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_11_fixed/src/main/java/org/apache/commons/math3/distribution/MultivariateNormalDistribution.java",
+        "aftercode": "            FastMath.pow(covarianceMatrixDeterminant, -0.5)*getExponentTerm(vals);"
+    },
+    {
+        "id": 4,
+        "line": 184,
+        "precode": "            FastMath.pow(covarianceMatrixDeterminant, -0.5) *",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_11_fixed/src/main/java/org/apache/commons/math3/distribution/MultivariateNormalDistribution.java",
+        "aftercode": "            FastMath.exp(covarianceMatrixDeterminant, -0.5) *"
+    },
+    {
+        "id": 5,
+        "line": 185,
+        "precode": "            getExponentTerm(vals);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_11_fixed/src/main/java/org/apache/commons/math3/distribution/MultivariateNormalDistribution.java",
+        "aftercode": "            FastMath.pow(covarianceMatrixDeterminant, -0.5) *density(vals);"
+    }
+]

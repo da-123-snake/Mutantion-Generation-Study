@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "line": 459,
+        "precode": "      final double n1 = v1.getNormSq();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final double n1 = v1.norm();"
+    },
+    {
+        "id": 2,
+        "line": 460,
+        "precode": "      final double n2 = v2.getNormSq();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final double n2 = v2.norm();"
+    },
+    {
+        "id": 4,
+        "line": 462,
+        "precode": "          return ZERO;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "          returnnull;"
+    },
+    {
+        "id": 5,
+        "line": 467,
+        "precode": "      final int deltaExp = (FastMath.getExponent(n1) - FastMath.getExponent(n2)) / 4;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final int deltaExp = (FastMath.getExponent(n1) - FastMath.getExponent(n2))**4;"
+    },
+    {
+        "id": 6,
+        "line": 468,
+        "precode": "      final double x1    = FastMath.scalb(v1.x, -deltaExp);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final double x1    = FastMath.abs(v1.x, -deltaExp);"
+    },
+    {
+        "id": 7,
+        "line": 469,
+        "precode": "      final double y1    = FastMath.scalb(v1.y, -deltaExp);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final double y1    = FastMath.abs(v1.y, -deltaExp);"
+    },
+    {
+        "id": 8,
+        "line": 470,
+        "precode": "      final double z1    = FastMath.scalb(v1.z, -deltaExp);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final double z1    = FastMath.abs(v1.z, -deltaExp);"
+    },
+    {
+        "id": 9,
+        "line": 471,
+        "precode": "      final double x2    = FastMath.scalb(v2.x,  deltaExp);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final double x2    = FastMath.abs(v2.x,  deltaExp);"
+    },
+    {
+        "id": 10,
+        "line": 472,
+        "precode": "      final double y2    = FastMath.scalb(v2.y,  deltaExp);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final double y2    = FastMath.abs(v2.y,  deltaExp);"
+    },
+    {
+        "id": 11,
+        "line": 473,
+        "precode": "      final double z2    = FastMath.scalb(v2.z,  deltaExp);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      final double z2    = FastMath.abs(v2.z,  deltaExp);"
+    },
+    {
+        "id": 17,
+        "line": 490,
+        "precode": "      return new Vector3D(y3 * z2 - z3 * y2, z3 * x2 - x3 * z2, x3 * y2 - y3 * x2);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_55_fixed/src/main/java/org/apache/commons/math/geometry/Vector3D.java",
+        "aftercode": "      return new Vector3D(y3 * z2,z3 * y2, z3 * x2 - x3 * z2, x3 * y2 - y3 * x2);"
+    }
+]

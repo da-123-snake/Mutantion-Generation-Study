@@ -1,0 +1,135 @@
+[
+    {
+        "id": 1,
+        "line": 189,
+        "precode": "double[][] jTj = new double[cols][cols];",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "double[][] jTj = new double[cols][cols];\nfor (int i = 0; i < cols; ++i) {"
+    },
+    {
+        "id": 2,
+        "line": 189,
+        "precode": "for (int i = 0; i < cols; ++i) {",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "for (int i = 0; i < cols; ++i) {\n    for (int j = i; j < cols; ++j) {"
+    },
+    {
+        "id": 3,
+        "line": 189,
+        "precode": "for (int j = i; j < cols; ++j) {",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "for (int j = i; j < cols; ++j) {\n    double sum = 0;\n    for (int k = 0; k < max; k += cols) {"
+    },
+    {
+        "id": 4,
+        "line": 189,
+        "precode": "double sum = 0;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "double sum = 0;\n    for (int k = 0; k < max; k += cols) {\n        sum += jacobian[k + i] * jacobian[k + j];"
+    },
+    {
+        "id": 5,
+        "line": 189,
+        "precode": "for (int k = 0; k < max; k += cols) {",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "for (int k = 0; k < max; k += cols) {\n        sum += jacobian[k + i] * jacobian[k + j];\n    }\n    jTj[i][j] = sum;\n    jTj[j][i] = sum;"
+    },
+    {
+        "id": 6,
+        "line": 189,
+        "precode": "jTj[i][j] = sum;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "jTj[i][j] = sum;\n    jTj[j][i] = sum;"
+    },
+    {
+        "id": 7,
+        "line": 189,
+        "precode": "jTj[j][i] = sum;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "jTj[j][i] = sum;\n    try {\n        // compute the covariances matrix\n        return new RealMatrixImpl(jTj).inverse().getData();\n    } catch (InvalidMatrixException ime) {"
+    },
+    {
+        "id": 8,
+        "line": 215,
+        "precode": "int m = problem.getMeasurements().length;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "int n = problem.getMeasurements().length;"
+    },
+    {
+        "id": 9,
+        "line": 215,
+        "precode": "int p = problem.getUnboundParameters().length;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "int q = problem.getUnboundParameters().length;"
+    },
+    {
+        "id": 10,
+        "line": 215,
+        "precode": "if (m <= p) {",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "if (n <= q) {"
+    },
+    {
+        "id": 11,
+        "line": 215,
+        "precode": "double[] errors = new double[problem.getUnboundParameters().length];",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "double[] errors = new double[problem.getUnboundParameters().length];"
+    },
+    {
+        "id": 12,
+        "line": 215,
+        "precode": "final double c = Math.sqrt(getChiSquare(problem) / (m - p));",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "final double c = Math.sqrt(getChiSquare(problem) / (n - q));"
+    },
+    {
+        "id": 13,
+        "line": 215,
+        "precode": "double[][] covar = getCovariances(problem);",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "double[][] covar = getCovariances(problem);"
+    },
+    {
+        "id": 14,
+        "line": 215,
+        "precode": "for (int i = 0; i < errors.length; ++i) {",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "for (int j = 0; j < errors.length; ++j) {"
+    },
+    {
+        "id": 15,
+        "line": 215,
+        "precode": "errors[i] = Math.sqrt(covar[i][i]) * c;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "errors[j] = Math.sqrt(covar[j][j]) * c;"
+    },
+    {
+        "id": 16,
+        "line": 215,
+        "precode": "return errors;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "return errors;"
+    },
+    {
+        "id": 17,
+        "line": 215,
+        "precode": "int m = problem.getMeasurements().length;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "int m = problem.getMeasurements().length + 1;"
+    },
+    {
+        "id": 18,
+        "line": 215,
+        "precode": "int p = problem.getUnboundParameters().length;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "int p = problem.getUnboundParameters().length + 1;"
+    },
+    {
+        "id": 19,
+        "line": 215,
+        "precode": "return errors;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "return errors + 1;"
+    }
+]

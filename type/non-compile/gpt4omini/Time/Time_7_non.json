@@ -1,0 +1,114 @@
+[
+    {
+        "id": 140,
+        "line": 706,
+        "precode": "long instantMillis = instant.getMillis();",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantMillis = instant.getMillis() + 1;"
+    },
+    {
+        "id": 141,
+        "line": 707,
+        "precode": "Chronology chrono = instant.getChronology();",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "Chronology chrono = instant.getChronology().withUTC();"
+    },
+    {
+        "id": 142,
+        "line": 708,
+        "precode": "int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis + 1);"
+    },
+    {
+        "id": 143,
+        "line": 709,
+        "precode": "long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantLocal = instantMillis - chrono.getZone().getOffset(instantMillis);"
+    },
+    {
+        "id": 144,
+        "line": 710,
+        "precode": "chrono = selectChronology(chrono);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "chrono = selectChronology(chrono).withUTC();"
+    },
+    {
+        "id": 145,
+        "line": 9,
+        "precode": "DateTimeParserBucket bucket = new DateTimeParserBucket(instantLocal, chrono, iLocale, iPivotYear, defaultYear);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "DateTimeParserBucket bucket = new DateTimeParserBucket(instantLocal, chrono, iLocale, iPivotYear, defaultYear + 1);"
+    },
+    {
+        "id": 146,
+        "line": 714,
+        "precode": "int newPos = parser.parseInto(bucket, text, position);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "int newPos = parser.parseInto(bucket, text, position + 1);"
+    },
+    {
+        "id": 592,
+        "line": 706,
+        "precode": "long instantMillis = instant.getMillis();",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantMillis = instant.getMillis() + 1;"
+    },
+    {
+        "id": 593,
+        "line": 707,
+        "precode": "Chronology chrono = instant.getChronology();",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "Chronology chrono = Chronology.getISOCriteria();"
+    },
+    {
+        "id": 594,
+        "line": 708,
+        "precode": "int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis + 1000);"
+    },
+    {
+        "id": 595,
+        "line": 709,
+        "precode": "long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantLocal = instantMillis - chrono.getZone().getOffset(instantMillis);"
+    },
+    {
+        "id": 596,
+        "line": 710,
+        "precode": "chrono = selectChronology(chrono);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "chrono = selectChronology(iChronology);"
+    },
+    {
+        "id": 597,
+        "line": 10,
+        "precode": "DateTimeParserBucket bucket = new DateTimeParserBucket(instantLocal, chrono, iLocale, iPivotYear, defaultYear);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "DateTimeParserBucket bucket = new DateTimeParserBucket(instantLocal, chrono, iLocale, iPivotYear, defaultYear + 1);"
+    },
+    {
+        "id": 598,
+        "line": 706,
+        "precode": "long instantMillis = instant.getMillis();",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantMillis = instant.getMillis() - 5000;"
+    },
+    {
+        "id": 599,
+        "line": 707,
+        "precode": "Chronology chrono = instant.getChronology();",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "Chronology chrono = instant.getChronology().withUTC();"
+    },
+    {
+        "id": 600,
+        "line": 708,
+        "precode": "int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis + 2000);"
+    }
+]

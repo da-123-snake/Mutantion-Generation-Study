@@ -1,0 +1,114 @@
+[
+    {
+        "id": 909,
+        "line": 293,
+        "precode": "paramBuilder.newParameterFromNode(oldParams.next());",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "paramBuilder.newParameterFromNode(oldParams.peekNext());"
+    },
+    {
+        "id": 910,
+        "line": 293,
+        "precode": "paramBuilder.newParameterFromNode(oldParams.next());",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "paramBuilder.newParameterFromNode(oldParams.previous());"
+    },
+    {
+        "id": 911,
+        "line": 296,
+        "precode": "parametersNode = paramBuilder.build();",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parametersNode = paramBuilder.instantiate();"
+    },
+    {
+        "id": 913,
+        "line": 293,
+        "precode": "paramBuilder.newParameterFromNode(oldParams.next());",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "paramBuilder.newParameterFromNode(oldParams.remove());"
+    },
+    {
+        "id": 914,
+        "line": 292,
+        "precode": "while (oldParams.hasNext()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "do { } while (oldParams.hasNext());"
+    },
+    {
+        "id": 915,
+        "line": 296,
+        "precode": "parametersNode = paramBuilder.build();",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parametersNode = paramBuilder.compile();"
+    },
+    {
+        "id": 916,
+        "line": 267,
+        "precode": "oldParams.next();",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "oldParams.peek();"
+    },
+    {
+        "id": 919,
+        "line": 488,
+        "precode": "builder.newParameterFromNode(oldParameterType);",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "builder.removeParameter(oldParameterType);"
+    },
+    {
+        "id": 920,
+        "line": 489,
+        "precode": "oldParameterType = oldParameterType.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "oldParameterType = oldParameterType.getPrevious();"
+    },
+    {
+        "id": 924,
+        "line": 488,
+        "precode": "builder.newParameterFromNode(oldParameterType);",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "builder.skipParameterFromNode(oldParameterType);"
+    },
+    {
+        "id": 926,
+        "line": 497,
+        "precode": "for (String inexistentName : allJsDocParams) {",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "for (String inexistentName : new HashSet<>(allJsDocParams)) {"
+    },
+    {
+        "id": 927,
+        "line": 488,
+        "precode": "builder.newParameterFromNode(oldParameterType);",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "builder.newParameterFromNode(oldParameterType, true);"
+    },
+    {
+        "id": 928,
+        "line": 494,
+        "precode": "reportError(TEMPLATE_TYPE_EXPECTED, fnName);",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "reportError(fnName, TEMPLATE_TYPE_EXPECTED);"
+    },
+    {
+        "id": 1810,
+        "line": 193,
+        "precode": "typeRegistry.getNativeType(OBJECT_TYPE))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "typeRegistry.getNativeType(STRING_TYPE))) {"
+    },
+    {
+        "id": 1811,
+        "line": 194,
+        "precode": "reportWarning(THIS_TYPE_NON_OBJECT, type.toString());",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "reportWarning(THIS_TYPE_NON_OBJECT, 'Non-object type');"
+    },
+    {
+        "id": 1813,
+        "line": 183,
+        "precode": "private class ThisTypeValidator implements Predicate<JSType> {",
+        "filepath": "defects4j_fixed/Closure/Closure_41_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "private class ThisTypeValidator implements Function<JSType, Boolean> {"
+    }
+]

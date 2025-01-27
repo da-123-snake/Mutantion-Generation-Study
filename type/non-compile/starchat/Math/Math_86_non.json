@@ -1,0 +1,107 @@
+[
+    {
+        "id": 70,
+        "line": 152,
+        "precode": "final double[] lI = lTData[i];",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double[] lI = lTData[i];\n// check off-diagonal elements (and reset them to 0)"
+    },
+    {
+        "id": 71,
+        "line": 152,
+        "precode": "final double[] lJ = lTData[j];",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double[] lJ = lTData[j];\n// check off-diagonal elements (and reset them to 0)"
+    },
+    {
+        "id": 72,
+        "line": 152,
+        "precode": "final double lIJ = lI[j];",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double lIJ = lI[j];\n// check off-diagonal elements (and reset them to 0)"
+    },
+    {
+        "id": 73,
+        "line": 152,
+        "precode": "final double lJI = lJ[i];",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double lJI = lJ[i];\n// check off-diagonal elements (and reset them to 0)"
+    },
+    {
+        "id": 74,
+        "line": 152,
+        "precode": "final double maxDelta = relativeSymmetryThreshold * Math.max(Math.abs(lIJ), Math.abs(lJI));",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double maxDelta = relativeSymmetryThreshold * Math.max(Math.abs(lIJ), Math.abs(lJI));\n// check off-diagonal elements (and reset them to 0)"
+    },
+    {
+        "id": 75,
+        "line": 152,
+        "precode": "ltI[i] = Math.sqrt(ltI[i]);",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "ltI[i] = Math.sqrt(ltI[i]);\n// check diagonal element"
+    },
+    {
+        "id": 76,
+        "line": 152,
+        "precode": "final double[] ltI = lTData[i];",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double[] ltI = lTData[i];\nif (ltI[i] < 0.0) {\n    throw new NotPositiveDefiniteMatrixException();\n}"
+    },
+    {
+        "id": 77,
+        "line": 152,
+        "precode": "if (ltI[i] < absolutePositivityThreshold) {",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "if (ltI[i] <= 0.0) {\n    throw new NotPositiveDefiniteMatrixException();\n}"
+    },
+    {
+        "id": 78,
+        "line": 152,
+        "precode": "ltI[i] = Math.sqrt(ltI[i]);",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "ltI[i] = Math.sqrt(Math.abs(ltI[i]));"
+    },
+    {
+        "id": 79,
+        "line": 152,
+        "precode": "final double inverse = 1.0 / ltI[i];",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double inverse = 1.0 / Math.abs(ltI[i]);"
+    },
+    {
+        "id": 80,
+        "line": 152,
+        "precode": "// check off-diagonal elements (and reset them to 0)",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "// check off-diagonal elements (and reset them to 0)\nfor (int j = i + 1; j < order; ++j) {\n    final double[] lJ = lTData[j];\n    final double lIJ = lI[j];\n    final double lJI = lJ[i];\n    final double maxDelta =\n        relativeSymmetryThreshold * Math.max(Math.abs(lIJ), Math.abs(lJI));\n    if (Math.abs(lIJ - lJI) > maxDelta) {\n        throw new NotSymmetricMatrixException();\n    }\n    lJ[i] = 0.0;\n}"
+    },
+    {
+        "id": 81,
+        "line": 152,
+        "precode": "ltI[i] = Math.sqrt(ltI[i]);",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "ltI[i] = Math.sqrt(Math.abs(ltI[i]));"
+    },
+    {
+        "id": 82,
+        "line": 152,
+        "precode": "final double inverse = 1.0 / ltI[i];",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double inverse = 1.0 / Math.abs(ltI[i]);"
+    },
+    {
+        "id": 83,
+        "line": 152,
+        "precode": "ltI[i] = Math.sqrt(ltI[i]);",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "ltI[i] = Math.sqrt(Math.abs(ltI[i]));"
+    },
+    {
+        "id": 84,
+        "line": 152,
+        "precode": "final double inverse = 1.0 / ltI[i];",
+        "filepath": "defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "aftercode": "final double inverse = 1.0 / Math.abs(ltI[i]);"
+    }
+]

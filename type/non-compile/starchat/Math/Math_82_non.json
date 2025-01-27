@@ -1,0 +1,37 @@
+[
+    {
+        "id": 573,
+        "line": 93,
+        "precode": "if (MathUtils.compareTo(entry, 0, epsilon) > 0) {",
+        "filepath": "defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "if (MathUtils.compareTo(entry, 0, epsilon) >= 0) {"
+    },
+    {
+        "id": 574,
+        "line": 93,
+        "precode": "final double ratio = rhs / entry;",
+        "filepath": "defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "final double ratio = rhs / (entry * -1);"
+    },
+    {
+        "id": 575,
+        "line": 93,
+        "precode": "if (ratio < minRatio) {",
+        "filepath": "defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "if (ratio <= minRatio) {"
+    },
+    {
+        "id": 576,
+        "line": 93,
+        "precode": "minRatio = ratio;",
+        "filepath": "defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "minRatio = -minRatio;"
+    },
+    {
+        "id": 577,
+        "line": 93,
+        "precode": "minRatioPos = i;",
+        "filepath": "defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "minRatioPos = -minRatioPos;"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 2,
+        "line": 938,
+        "precode": "        return pos == text.length() ? -1 : pos;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        returnpos;"
+    },
+    {
+        "id": 9,
+        "line": 650,
+        "precode": "            buff.append(\"--\").append(option.getLongOpt());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            buff.append(\"--\").join(option.getLongOpt());"
+    },
+    {
+        "id": 11,
+        "line": 656,
+        "precode": "            buff.append(option.getOpt() == null ? longOptSeparator : \" \");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            buff.end(option.getOpt() == null? longOptSeparator : \" \");"
+    },
+    {
+        "id": 12,
+        "line": 657,
+        "precode": "            buff.append(\"<\").append(option.getArgName() != null ? option.getArgName() : getArgName()).append(\">\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            buff.append(\"<\").append(option.getArgName()!= null? option.getArgName() : getArgName()).join(\">\");"
+    },
+    {
+        "id": 14,
+        "line": 727,
+        "precode": "        renderWrappedText(sb, width, nextLineTabStop, text);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        StringBuffer sb = new StringBuffer(text.length());print(sb, width, nextLineTabStop, text);"
+    },
+    {
+        "id": 16,
+        "line": 907,
+        "precode": "        if (((pos = text.indexOf('\\n', startPos)) != -1 && pos <= width)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "', startPos))!= -1 && pos <= width)||((pos = text.indexOf('\\\\t', startPos))!= -1 && pos <= width))"
+    }
+]

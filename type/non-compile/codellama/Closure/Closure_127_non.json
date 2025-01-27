@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1197,
+        "line": 141,
+        "precode": "if (n == null) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_127_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (n == null) { return; }"
+    },
+    {
+        "id": 1200,
+        "line": 15,
+        "precode": "if (n.getType() == Token.BREAK) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_127_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (n.getType() == Token.BREAK) { if (n.hasChildren()) { break; } }"
+    },
+    {
+        "id": 1201,
+        "line": 16,
+        "precode": "if (n.getType() == Token.CONTINUE) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_127_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (n.getType() == Token.CONTINUE) { if (n.hasChildren()) { break; } }"
+    },
+    {
+        "id": 1202,
+        "line": 162,
+        "precode": "if (outEdges.size() == 1 &&",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_127_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (outEdges.size() == 1 && (n.getNext() == null || n.getNext().isFunction())) { if (outEdges.get(0).getValue() == Branch.UNCOND) { Node fallThrough = computeFollowing(n); Node nextCfgNode = outEdges.get(0).getDestination().getValue(); if (nextCfgNode == fallThrough && !inFinally(n.getParent(), n)) { removeNode(n); } } }"
+    },
+    {
+        "id": 1203,
+        "line": 21,
+        "precode": "if (n.getType() == Token.DO) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_127_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (n.getType() == Token.DO) { if (n.hasChildren()) { break; } }"
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "line": 317,
+        "precode": "            while (iter.hasNext())",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_9_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "            while (iter.next())"
+    },
+    {
+        "id": 2,
+        "line": 319,
+        "precode": "                buff.append(iter.next());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_9_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "                buff.end(iter.next());"
+    },
+    {
+        "id": 3,
+        "line": 320,
+        "precode": "                buff.append(\", \");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_9_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "                buff.join(\", \");"
+    },
+    {
+        "id": 4,
+        "line": 323,
+        "precode": "            throw new MissingOptionException(buff.substring(0, buff.length() - 2));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_9_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "            throw new MissingOptionException(buff.ring(0, buff.length() - 2));"
+    },
+    {
+        "id": 17,
+        "line": 291,
+        "precode": "                cmd.addOption(opt);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_9_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "                cmd.add(opt);"
+    },
+    {
+        "id": 27,
+        "line": 45,
+        "precode": "        this.options = options;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_9_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "        this.options== options;"
+    },
+    {
+        "id": 28,
+        "line": 46,
+        "precode": "        this.requiredOptions = options.getRequiredOptions();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_9_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "        this.requiredOptions|= options.getRequiredOptions();"
+    },
+    {
+        "id": 29,
+        "line": 50,
+        "precode": "        return options;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_9_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "        returnnull;"
+    }
+]

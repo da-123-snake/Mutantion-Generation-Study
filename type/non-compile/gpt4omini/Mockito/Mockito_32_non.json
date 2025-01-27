@@ -1,0 +1,58 @@
+[
+    {
+        "id": 294,
+        "line": 50,
+        "precode": "field.set(testClass, Mockito.mock(instance.getClass(), withSettings()",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "field.set(testClass, Mockito.spy(instance.getClass(), withSettings()"
+    },
+    {
+        "id": 297,
+        "line": 68,
+        "precode": "new Reporter().unsupportedCombinationOfAnnotations(annotation.getSimpleName(), annotation.getClass().getSimpleName());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "new Reporter().reportDependencyOnAnotherAnnotation(annotation.getSimpleName(), annotation.getClass().getSimpleName());"
+    },
+    {
+        "id": 300,
+        "line": 50,
+        "precode": "field.set(testClass, Mockito.mock(instance.getClass(), withSettings()",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "field.set(testClass, Mockito.mock(instance.getClass(), withSettings().name(field.getName() + \"_mocked\"))"
+    },
+    {
+        "id": 301,
+        "line": 52,
+        "precode": "defaultAnswer(Mockito.CALLS_REAL_METHODS)",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "defaultAnswer(Mockito.RETURNS_DEFAULTS)"
+    },
+    {
+        "id": 303,
+        "line": 19,
+        "precode": "throw new MockitoException(\"Cannot create a @Spy for '\" + field.getName() + \"' field because the *instance* is missing\",",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "throw new MockitoException(\"Failed to create a @Spy for '\" + field.getName() + \"' due to missing instance\","
+    },
+    {
+        "id": 305,
+        "line": 53,
+        "precode": ".name(field.getName())))",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": ".name(\"mocked_\" + field.getName())))"
+    },
+    {
+        "id": 307,
+        "line": 50,
+        "precode": "Mockito.mock(instance.getClass(), withSettings()",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "Mockito.mock(instance.getClass(), withSettings().lenient()"
+    },
+    {
+        "id": 308,
+        "line": 52,
+        "precode": ".defaultAnswer(Mockito.CALLS_REAL_METHODS)",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": ".defaultAnswer(Mockito.CALLS_REAL_METHODS); // with some comments"
+    }
+]

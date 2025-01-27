@@ -1,0 +1,65 @@
+[
+    {
+        "id": 178,
+        "line": 89,
+        "precode": "else if (PatternOptionBuilder.EXISTING_FILE_VALUE == clazz)",
+        "aftercode": "else if (!PatternOptionBuilder.EXISTING_FILE_VALUE == clazz)",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java"
+    },
+    {
+        "id": 183,
+        "line": 237,
+        "precode": "return new FileInputStream(str);",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return new BufferedInputStream(new FileInputStream(str));"
+    },
+    {
+        "id": 185,
+        "line": 241,
+        "precode": "throw new ParseException(\"Unable to find file: \" + str);",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "throw new IOException(\"Unable to find file: \" + str);"
+    },
+    {
+        "id": 186,
+        "line": 237,
+        "precode": "return new FileInputStream(str);",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return new FileInputStream(new FileInputStream(str));"
+    },
+    {
+        "id": 188,
+        "line": 237,
+        "precode": "return new FileInputStream(str);",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return new BufferedInputStream(new BufferedInputStream(new FileInputStream(str)));"
+    },
+    {
+        "id": 190,
+        "line": 237,
+        "precode": "return new FileInputStream(str);",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return new ByteArrayInputStream(str.getBytes());"
+    },
+    {
+        "id": 193,
+        "line": 237,
+        "precode": "return new FileInputStream(str);",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return new DataInputStream(new FileInputStream(str));"
+    },
+    {
+        "id": 194,
+        "line": 237,
+        "precode": "return new FileInputStream(str);",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return new BufferedInputStream(new FileInputStream(new File(str)));"
+    },
+    {
+        "id": 196,
+        "line": 237,
+        "precode": "return new FileInputStream(str);",
+        "filepath": "defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return new DataInputStream(new DataInputStream(new FileInputStream(str)));"
+    }
+]

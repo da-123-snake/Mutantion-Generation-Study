@@ -1,0 +1,23 @@
+[
+    {
+        "id": 4,
+        "line": 4,
+        "precode": "if (current == '\r' || (current == '\n' && lastChar != '\r')) {",
+        "aftercode": "if (current == '\t' || (current == '\n' && lastChar != '\r')) {",
+        "filepath": "defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java"
+    },
+    {
+        "id": 5,
+        "line": 4,
+        "precode": "if (current == '\r' || (current == '\n' && lastChar != '\r')) {",
+        "aftercode": "if (current == '\r' && lastChar != '\n') {",
+        "filepath": "defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java"
+    },
+    {
+        "id": 6,
+        "line": 57,
+        "precode": "int current = super.read();",
+        "aftercode": "int current = super.read() + 1;",
+        "filepath": "defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java"
+    }
+]

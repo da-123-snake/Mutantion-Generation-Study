@@ -1,0 +1,142 @@
+[
+    {
+        "id": 20,
+        "line": 207,
+        "precode": "} else if (tq.matches(':has(')) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "} else if (tq.matches(':contains(')) {"
+    },
+    {
+        "id": 21,
+        "line": 207,
+        "precode": "} else if (tq.matches(':has(')) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "} else if (tq.matches(':not(')) {"
+    },
+    {
+        "id": 23,
+        "line": 249,
+        "precode": "} else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "} else if (tq.matchesWord()) {"
+    },
+    {
+        "id": 39,
+        "line": 308,
+        "precode": "String searchText = TokenQueue.unescape(tq.chompBalanced('(',')'));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "String searchText = tq.consumeTo(')');"
+    },
+    {
+        "id": 40,
+        "line": 311,
+        "precode": "return own ? root.getElementsContainingOwnText(searchText) : root.getElementsContainingText(searchText);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return own ? root.getElementsByClass(searchText) : root.getElementsContainTextOwn(searchText);"
+    },
+    {
+        "id": 43,
+        "line": 309,
+        "precode": "Validate.notEmpty(searchText, \":contains(text) query must not be empty\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Validate.isFalse(searchText.isEmpty(), \":contains(text) query must not be empty\");"
+    },
+    {
+        "id": 48,
+        "line": 437,
+        "precode": "return output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return elements;"
+    },
+    {
+        "id": 49,
+        "line": 437,
+        "precode": "return output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return candidates;"
+    },
+    {
+        "id": 50,
+        "line": 437,
+        "precode": "return output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(parents);"
+    },
+    {
+        "id": 51,
+        "line": 437,
+        "precode": "return output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return filterForChildren; // This should raise a compilation error due to return type mismatch"
+    },
+    {
+        "id": 52,
+        "line": 437,
+        "precode": "return output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return select(query, root);"
+    },
+    {
+        "id": 55,
+        "line": 420,
+        "precode": "return children;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return parents;"
+    },
+    {
+        "id": 56,
+        "line": 420,
+        "precode": "return children;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return candidates;"
+    },
+    {
+        "id": 59,
+        "line": 420,
+        "precode": "return children;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return findElements();"
+    },
+    {
+        "id": 63,
+        "line": 435,
+        "precode": "output.add(el);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "output.add(new Element(\"mutated\"));"
+    },
+    {
+        "id": 66,
+        "line": 437,
+        "precode": "return output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return elements;"
+    },
+    {
+        "id": 67,
+        "line": 138,
+        "precode": "tq.consumeWhitespace();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "tq.ignoreWhitespace();"
+    },
+    {
+        "id": 68,
+        "line": 141,
+        "precode": "Elements output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements result;"
+    },
+    {
+        "id": 77,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements = new LinkedHashSet<>(output);"
+    },
+    {
+        "id": 93,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.replaceAll(e -> output.iterator().next());"
+    }
+]

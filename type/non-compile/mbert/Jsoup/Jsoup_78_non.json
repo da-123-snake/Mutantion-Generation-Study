@@ -1,0 +1,317 @@
+[
+    {
+        "id": 11,
+        "line": 139,
+        "precode": "                foundCharset = foundCharset.trim().replaceAll(\"[\\\"']\", \"\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                foundCharset!= foundCharset.trim().replaceAll(\"[\\\\\"\\']\", \"\");"
+    },
+    {
+        "id": 12,
+        "line": 140,
+        "precode": "                charsetName = foundCharset;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                charsetName|= foundCharset;"
+    },
+    {
+        "id": 13,
+        "line": 141,
+        "precode": "                doc = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                doc!= null;"
+    },
+    {
+        "id": 14,
+        "line": 142,
+        "precode": "            } else if (!fullyRead) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            } else if (meaningfullyRead) {"
+    },
+    {
+        "id": 15,
+        "line": 143,
+        "precode": "                doc = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                doc!= null;"
+    },
+    {
+        "id": 48,
+        "line": 149,
+        "precode": "            if (charsetName == null)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            if (charsetName=null)"
+    },
+    {
+        "id": 49,
+        "line": 150,
+        "precode": "                charsetName = defaultCharset;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                charsetNameName= defaultCharset;"
+    },
+    {
+        "id": 50,
+        "line": 151,
+        "precode": "            BufferedReader reader = new BufferedReader(new InputStreamReader(input, charsetName), bufferSize);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            BufferedReader reader = new BufferedReader(new InputStreamReader(in, charsetName), bufferSize);"
+    },
+    {
+        "id": 51,
+        "line": 153,
+        "precode": "                doc = parser.parseInput(reader, baseUri);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                doc*= parser.parseInput(reader, baseUri);"
+    },
+    {
+        "id": 52,
+        "line": 156,
+        "precode": "                throw e.ioException();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                throw e.get();"
+    },
+    {
+        "id": 53,
+        "line": 158,
+        "precode": "            doc.outputSettings().charset(charsetName);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            doc.outputSettings().append(charsetName);"
+    },
+    {
+        "id": 175,
+        "line": 116,
+        "precode": "            String docData = Charset.forName(defaultCharset).decode(firstBytes).toString();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            String docData = Charset.forName(defaultCharset).decode(firstBytes).text();"
+    },
+    {
+        "id": 176,
+        "line": 117,
+        "precode": "            doc = parser.parseInput(docData, baseUri);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            docData= parser.parseInput(docData, baseUri);"
+    },
+    {
+        "id": 178,
+        "line": 122,
+        "precode": "            for (Element meta : metaElements) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            for (Element meta :elements) {"
+    },
+    {
+        "id": 216,
+        "line": 90,
+        "precode": "            out.write(buffer, 0, len);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            out.Write(buffer, 0, len);"
+    },
+    {
+        "id": 217,
+        "line": 95,
+        "precode": "        if (input == null) // empty body",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        if (input=null) // empty body"
+    },
+    {
+        "id": 219,
+        "line": 97,
+        "precode": "        input = ConstrainableInputStream.wrap(input, bufferSize, 0);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        input*= ConstrainableInputStream.wrap(input, bufferSize, 0);"
+    },
+    {
+        "id": 220,
+        "line": 99,
+        "precode": "        Document doc = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        Document doc =this;"
+    },
+    {
+        "id": 223,
+        "line": 104,
+        "precode": "        ByteBuffer firstBytes = readToByteBuffer(input, firstReadBufferSize - 1); // -1 because we read one more to see if completed. First read is < buffer size, so can't be invalid.",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        ByteBuffer firstBytes =read(input, firstReadBufferSize - 1); // -1 because we read one more to see if completed. First read is < buffer size, so can\\'t be invalid."
+    },
+    {
+        "id": 225,
+        "line": 173,
+        "precode": "        Validate.isTrue(maxSize >= 0, \"maxSize must be 0 (unlimited) or larger\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        Validate.true(maxSize >= 0, \"maxSize must be 0 (unlimited) or larger\");"
+    },
+    {
+        "id": 226,
+        "line": 174,
+        "precode": "        final ConstrainableInputStream input = ConstrainableInputStream.wrap(inStream, bufferSize, maxSize);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        final ConstrainableInputStream input = ConstrainableInputStream.create(inStream, bufferSize, maxSize);"
+    },
+    {
+        "id": 227,
+        "line": 175,
+        "precode": "        return input.readToByteBuffer(maxSize);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        return input.read(maxSize);"
+    },
+    {
+        "id": 228,
+        "line": 179,
+        "precode": "        return readToByteBuffer(inStream, 0);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        returnread(inStream, 0);"
+    },
+    {
+        "id": 229,
+        "line": 183,
+        "precode": "        RandomAccessFile randomAccessFile = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        RandomAccessFile randomAccessFile =file;"
+    },
+    {
+        "id": 230,
+        "line": 95,
+        "precode": "        if (input == null) // empty body",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        if (input=null) // empty body"
+    },
+    {
+        "id": 232,
+        "line": 97,
+        "precode": "        input = ConstrainableInputStream.wrap(input, bufferSize, 0);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        input*= ConstrainableInputStream.wrap(input, bufferSize, 0);"
+    },
+    {
+        "id": 233,
+        "line": 99,
+        "precode": "        Document doc = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        Document doc =this;"
+    },
+    {
+        "id": 251,
+        "line": 109,
+        "precode": "        BomCharset bomCharset = detectCharsetFromBom(firstBytes);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        BomCharset bomCharset =decode(firstBytes);"
+    },
+    {
+        "id": 253,
+        "line": 111,
+        "precode": "            charsetName = bomCharset.charset;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            charsetName|= bomCharset.charset;"
+    },
+    {
+        "id": 255,
+        "line": 115,
+        "precode": "        if (charsetName == null) { // determine from meta. safe first parse as UTF-8",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        if (charsetName=null) { // determine from meta. safe first parse as UTF-8"
+    },
+    {
+        "id": 256,
+        "line": 52,
+        "precode": "        return parseInputStream(new FileInputStream(in), charsetName, baseUri, Parser.htmlParser());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        returnload(new FileInputStream(in), charsetName, baseUri, Parser.htmlParser());"
+    },
+    {
+        "id": 257,
+        "line": 77,
+        "precode": "        return parseInputStream(in, charsetName, baseUri, parser);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        returnload(in, charsetName, baseUri, parser);"
+    },
+    {
+        "id": 285,
+        "line": 90,
+        "precode": "            out.write(buffer, 0, len);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            out.Write(buffer, 0, len);"
+    },
+    {
+        "id": 286,
+        "line": 95,
+        "precode": "        if (input == null) // empty body",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        if (input=null) // empty body"
+    },
+    {
+        "id": 288,
+        "line": 97,
+        "precode": "        input = ConstrainableInputStream.wrap(input, bufferSize, 0);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        input*= ConstrainableInputStream.wrap(input, bufferSize, 0);"
+    },
+    {
+        "id": 289,
+        "line": 99,
+        "precode": "        Document doc = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        Document doc =this;"
+    },
+    {
+        "id": 292,
+        "line": 104,
+        "precode": "        ByteBuffer firstBytes = readToByteBuffer(input, firstReadBufferSize - 1); // -1 because we read one more to see if completed. First read is < buffer size, so can't be invalid.",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        ByteBuffer firstBytes =read(input, firstReadBufferSize - 1); // -1 because we read one more to see if completed. First read is < buffer size, so can\\'t be invalid."
+    },
+    {
+        "id": 295,
+        "line": 109,
+        "precode": "        BomCharset bomCharset = detectCharsetFromBom(firstBytes);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        BomCharset bomCharset =decode(firstBytes);"
+    },
+    {
+        "id": 297,
+        "line": 139,
+        "precode": "                foundCharset = foundCharset.trim().replaceAll(\"[\\\"']\", \"\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                foundCharset!= foundCharset.trim().replaceAll(\"[\\\\\"\\']\", \"\");"
+    },
+    {
+        "id": 298,
+        "line": 140,
+        "precode": "                charsetName = foundCharset;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                charsetName|= foundCharset;"
+    },
+    {
+        "id": 299,
+        "line": 141,
+        "precode": "                doc = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                doc!= null;"
+    },
+    {
+        "id": 300,
+        "line": 142,
+        "precode": "            } else if (!fullyRead) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "            } else if (meaningfullyRead) {"
+    },
+    {
+        "id": 569,
+        "line": 173,
+        "precode": "        Validate.isTrue(maxSize >= 0, \"maxSize must be 0 (unlimited) or larger\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        Validate.true(maxSize >= 0, \"maxSize must be 0 (unlimited) or larger\");"
+    },
+    {
+        "id": 570,
+        "line": 174,
+        "precode": "        final ConstrainableInputStream input = ConstrainableInputStream.wrap(inStream, bufferSize, maxSize);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        final ConstrainableInputStream input = ConstrainableInputStream.create(inStream, bufferSize, maxSize);"
+    },
+    {
+        "id": 571,
+        "line": 175,
+        "precode": "        return input.readToByteBuffer(maxSize);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_78_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        return input.read(maxSize);"
+    }
+]

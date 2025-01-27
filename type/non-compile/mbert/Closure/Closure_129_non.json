@@ -1,0 +1,37 @@
+[
+    {
+        "id": 33,
+        "line": 163,
+        "precode": "      Node first = n.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_129_fixed/src/com/google/javascript/jscomp/PrepareAst.java",
+        "aftercode": "      Node first = n.next();"
+    },
+    {
+        "id": 34,
+        "line": 166,
+        "precode": "      while (first.isCast()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_129_fixed/src/com/google/javascript/jscomp/PrepareAst.java",
+        "aftercode": "      while (first.next()) {"
+    },
+    {
+        "id": 35,
+        "line": 167,
+        "precode": "        first = first.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_129_fixed/src/com/google/javascript/jscomp/PrepareAst.java",
+        "aftercode": "        first|= first.getFirstChild();"
+    },
+    {
+        "id": 36,
+        "line": 170,
+        "precode": "      if (!NodeUtil.isGet(first)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_129_fixed/src/com/google/javascript/jscomp/PrepareAst.java",
+        "aftercode": "      if (GetNodeUtil.isGet(first)) {"
+    },
+    {
+        "id": 37,
+        "line": 171,
+        "precode": "        n.putBooleanProp(Node.FREE_CALL, true);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_129_fixed/src/com/google/javascript/jscomp/PrepareAst.java",
+        "aftercode": "        n.prop(Node.FREE_CALL, true);"
+    }
+]

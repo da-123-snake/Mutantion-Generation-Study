@@ -1,0 +1,310 @@
+[
+    {
+        "id": 76,
+        "line": 61,
+        "precode": "private int pos = 0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "private int pos = 0;"
+    },
+    {
+        "id": 77,
+        "line": 61,
+        "precode": "private int mark = 0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "private int mark = 0;"
+    },
+    {
+        "id": 78,
+        "line": 61,
+        "precode": "CharacterReader(String input) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "CharacterReader(String input) {"
+    },
+    {
+        "id": 79,
+        "line": 61,
+        "precode": "this.input = input.toCharArray();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "this.input = input.toCharArray();"
+    },
+    {
+        "id": 80,
+        "line": 61,
+        "precode": "this.length = this.input.length;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "this.length = this.input.length;"
+    },
+    {
+        "id": 81,
+        "line": 61,
+        "precode": "int pos = 0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int pos = 0;"
+    },
+    {
+        "id": 82,
+        "line": 61,
+        "precode": "boolean isEmpty() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "boolean isEmpty() {"
+    },
+    {
+        "id": 83,
+        "line": 279,
+        "precode": "int nextIndexOf(CharSequence seq) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(String seq) {"
+    },
+    {
+        "id": 84,
+        "line": 279,
+        "precode": "    // doesn't handle scanning for surrogates",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    // doesn't handle scanning for surrogates\n    if (seq.length() == 1) return nextIndexOf(seq.charAt(0));"
+    },
+    {
+        "id": 85,
+        "line": 279,
+        "precode": "    char startChar = seq.charAt(0);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    char startChar = seq.codePointAt(0);"
+    },
+    {
+        "id": 86,
+        "line": 279,
+        "precode": "    for (int offset = pos; offset < length; offset++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    for (int offset = pos; offset < length; offset++) {\n        if (input[offset]!= startChar) continue;"
+    },
+    {
+        "id": 87,
+        "line": 279,
+        "precode": "        // scan to first instance of startchar:",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        // scan to first instance of startchar:\n        if (input[offset] == startChar) continue;"
+    },
+    {
+        "id": 88,
+        "line": 279,
+        "precode": "        int i = offset + 1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        int i = offset + 1;\n        int last = i + seq.length() - 1;"
+    },
+    {
+        "id": 89,
+        "line": 279,
+        "precode": "        if (offset < length && last <= length) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        if (offset < length && last <= length) {\n            for (int j = 1; i < last && seq.codePointAt(j) == input[i]; i++, j++);"
+    },
+    {
+        "id": 209,
+        "line": 279,
+        "precode": "int nextIndexOf(CharSequence seq) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(String seq) {"
+    },
+    {
+        "id": 210,
+        "line": 279,
+        "precode": "    // doesn't handle scanning for surrogates",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    // doesn't handle scanning for surrogates\n    if (seq == null) throw new NullPointerException();"
+    },
+    {
+        "id": 211,
+        "line": 279,
+        "precode": "    char startChar = seq.charAt(0);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    char startChar = seq.codePointAt(0);"
+    },
+    {
+        "id": 212,
+        "line": 279,
+        "precode": "    for (int offset = pos; offset < length; offset++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    for (int offset = pos; offset < length; offset++) {"
+    },
+    {
+        "id": 213,
+        "line": 279,
+        "precode": "        // scan to first instance of startchar:",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        // scan to first instance of startchar:\n        if (startChar!= input[offset])\n            while (++offset < length && startChar!= input[offset]);"
+    },
+    {
+        "id": 214,
+        "line": 279,
+        "precode": "        int i = offset + 1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        int i = offset + 1;\n        int last = i + seq.length() - 1;"
+    },
+    {
+        "id": 215,
+        "line": 279,
+        "precode": "        if (offset < length && last <= length) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        if (offset < length && last <= length) {\n            for (int j = 1; i < last && seq.charAt(j) == input[i]; i++, j++);"
+    },
+    {
+        "id": 507,
+        "line": 279,
+        "precode": "int nextIndexOf(CharSequence seq) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(String seq) {"
+    },
+    {
+        "id": 508,
+        "line": 279,
+        "precode": "    // doesn't handle scanning for surrogates",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    // doesn't handle scanning for surrogates\n    int nextIndexOf(String seq) {"
+    },
+    {
+        "id": 509,
+        "line": 279,
+        "precode": "    char startChar = seq.charAt(0);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    char startChar = seq.charAt(0);\n    int nextIndexOf(String seq) {"
+    },
+    {
+        "id": 510,
+        "line": 279,
+        "precode": "    for (int offset = pos; offset < length; offset++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    for (int offset = pos; offset < length; offset++) {\n        // scan to first instance of startchar:\n        if (startChar!= input[offset])\n            while(++offset < length && startChar!= input[offset]);\n        int i = offset + 1;\n        int last = i + seq.length()-1;\n        if (offset < length && last <= length) {\n            for (int j = 1; i < last && seq.charAt(j) == input[i]; i++, j++);\n            if (i == last) // found full sequence\n                return offset - pos;\n        }\n    }"
+    },
+    {
+        "id": 511,
+        "line": 279,
+        "precode": "        // doesn't handle scanning for surrogates",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        // doesn't handle scanning for surrogates\n        int i = offset + 1;\n        int last = i + seq.length()-1;\n        if (offset < length && last <= length) {\n            for (int j = 1; i < last && seq.charAt(j) == input[i]; i++, j++);\n            if (i == last) // found full sequence\n                return offset - pos;\n        }\n    }"
+    },
+    {
+        "id": 512,
+        "line": 279,
+        "precode": "        int i = offset + 1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        int i = offset + 1;\n        int last = i + seq.length()-1;\n        if (offset < length && last <= length) {\n            for (int j = 1; i < last && seq.charAt(j) == input[i]; i++, j++);\n            if (i == last) // found full sequence\n                return offset - pos;\n        }\n    }"
+    },
+    {
+        "id": 513,
+        "line": 279,
+        "precode": "        int last = i + seq.length()-1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        int last = i + seq.length()-1;\n        if (offset < length && last <= length) {\n            for (int j = 1; i < last && seq.charAt(j) == input[i]; i++, j++);\n            if (i == last) // found full sequence\n                return offset - pos;\n        }\n    }"
+    },
+    {
+        "id": 994,
+        "line": 279,
+        "precode": "char c = input[pos];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');"
+    },
+    {
+        "id": 995,
+        "line": 279,
+        "precode": "char c = input[pos];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (c >= '0' && c <= '9');"
+    },
+    {
+        "id": 996,
+        "line": 279,
+        "precode": "char c = input[pos];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (c >= 'a' && c <= 'z');"
+    },
+    {
+        "id": 997,
+        "line": 279,
+        "precode": "char c = input[pos];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (c >= 'A' && c <= 'Z');"
+    },
+    {
+        "id": 998,
+        "line": 279,
+        "precode": "char c = input[pos];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');"
+    },
+    {
+        "id": 999,
+        "line": 279,
+        "precode": "char c = input[pos];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');"
+    },
+    {
+        "id": 1000,
+        "line": 279,
+        "precode": "char c = input[pos];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'z');"
+    },
+    {
+        "id": 1001,
+        "line": 279,
+        "precode": "int nextIndexOf(CharSequence seq) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(String seq) {"
+    },
+    {
+        "id": 1002,
+        "line": 279,
+        "precode": "    // doesn't handle scanning for surrogates",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    // doesn't handle scanning for surrogates\n    if (seq.length() == 1) {"
+    },
+    {
+        "id": 1003,
+        "line": 279,
+        "precode": "    char startChar = seq.charAt(0);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    char startChar = seq.charAt(0);\n    if (startChar == input[pos]) {"
+    },
+    {
+        "id": 1004,
+        "line": 279,
+        "precode": "    for (int offset = pos; offset < length; offset++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "    for (int offset = pos; offset < length; offset++) {\n        if (input[offset] == startChar) {"
+    },
+    {
+        "id": 1005,
+        "line": 279,
+        "precode": "        // scan to first instance of startchar:",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        // scan to first instance of startchar:\n        int i = offset + 1;"
+    },
+    {
+        "id": 1006,
+        "line": 279,
+        "precode": "        while(++offset < length && startChar!= input[offset]);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        while (++offset < length && input[offset]!= startChar); {"
+    },
+    {
+        "id": 1007,
+        "line": 279,
+        "precode": "        int i = offset + 1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        int i = offset + 1;\n        if (i < length && input[i] == startChar) {"
+    },
+    {
+        "id": 1008,
+        "line": 279,
+        "precode": "        int last = i + seq.length()-1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        int last = i + seq.length() - 1;\n        if (last <= length && input[last] == startChar) {"
+    },
+    {
+        "id": 1009,
+        "line": 279,
+        "precode": "        if (offset < length && last <= length) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "        if (offset < length && last <= length) {\n            for (int j = 1; i < last && input[i + j] == input[j]; j++) {"
+    }
+]

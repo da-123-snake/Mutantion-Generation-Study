@@ -1,0 +1,121 @@
+[
+    {
+        "id": 147,
+        "line": 186,
+        "precode": "long result = Math.round(binomialCoefficientDouble(n, k));",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "long result = Math.ceil(binomialCoefficientDouble(n, k));"
+    },
+    {
+        "id": 148,
+        "line": 186,
+        "precode": "long result = Math.round(binomialCoefficientDouble(n, k));",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "long result = Math.floor(binomialCoefficientDouble(n, k));"
+    },
+    {
+        "id": 177,
+        "line": 187,
+        "precode": "if (result == Long.MAX_VALUE) {",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "if (result > Long.MAX_VALUE) throw new ArithmeticException(...);"
+    },
+    {
+        "id": 187,
+        "line": 244,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw new IllegalArgumentException(\"must have n > k for binomial coefficient (n,k);\")"
+    },
+    {
+        "id": 190,
+        "line": 244,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw new IllegalStateException(\"n must be non-negative for binomial coefficient (n,k);\")"
+    },
+    {
+        "id": 201,
+        "line": 244,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw new UnsupportedOperationException(\"Only non-negative n allowed.\");"
+    },
+    {
+        "id": 217,
+        "line": 244,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "assert(n >= 0): \"n must be a non-negative number\";"
+    },
+    {
+        "id": 238,
+        "line": 341,
+        "precode": "throw new ArithmeticException(",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw new ArithmeticException(\"Overflow: Factorial result is too large\");"
+    },
+    {
+        "id": 239,
+        "line": 342,
+        "precode": "result too large to represent in a long integer\");",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "result too large to fit in a long integer\");"
+    },
+    {
+        "id": 241,
+        "line": 339,
+        "precode": "long result = Math.round(factorialDouble(n));",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "long result = factorialDouble(n);"
+    },
+    {
+        "id": 243,
+        "line": 341,
+        "precode": "throw new ArithmeticException(",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw new Exception("
+    },
+    {
+        "id": 245,
+        "line": 342,
+        "precode": "result too large to represent in a long integer\");",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "result too large for long representation\");"
+    },
+    {
+        "id": 258,
+        "line": 30,
+        "precode": "t = ((u & 1) == 1) ? v : -(u / 2);",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "t = ((u & 1) == 0) ? v : -(u / 2);"
+    },
+    {
+        "id": 261,
+        "line": 458,
+        "precode": "while (t != 0);",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "while (t >= 0);"
+    },
+    {
+        "id": 349,
+        "line": 16,
+        "precode": "return Double.longBitsToDouble(sign | exponent | (mantissa + 1));",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return Double.longBitsToDouble(sign | exponent | (mantissa + 2));"
+    },
+    {
+        "id": 351,
+        "line": 20,
+        "precode": "return Double.longBitsToDouble(sign | (exponent - 0x0010000000000000L) | 0x000fffffffffffffL);",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return Double.longBitsToDouble(sign | (exponent - 0x0001000000000000L) | 0x000fffffffffffffL);"
+    },
+    {
+        "id": 352,
+        "line": 22,
+        "precode": "return Double.longBitsToDouble(sign | exponent | (mantissa - 1));",
+        "filepath": "defects4j_fixed/Math/Math_94_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return Double.longBitsToDouble(sign | exponent | (mantissa - 2));"
+    }
+]

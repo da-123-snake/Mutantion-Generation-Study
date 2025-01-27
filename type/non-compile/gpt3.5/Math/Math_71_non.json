@@ -1,0 +1,156 @@
+[
+    {
+        "id": 29,
+        "line": 248,
+        "precode": "scale[i] = scalAbsoluteTolerance + scalRelativeTolerance * Math.abs(y[i]);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "scale[i] = scalAbsoluteTolerance - scalRelativeTolerance * Math.abs(y[i]);"
+    },
+    {
+        "id": 30,
+        "line": 252,
+        "precode": "scale[i] = vecAbsoluteTolerance[i] + vecRelativeTolerance[i] * Math.abs(y[i]);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "scale[i] = vecAbsoluteTolerance[i] - vecRelativeTolerance[i] * Math.abs(y[i]);"
+    },
+    {
+        "id": 31,
+        "line": 255,
+        "precode": "hNew = initializeStep(equations, forward, getOrder(), scale,",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "hNew = initializeStep(equations, forward, getOrder(), scale + 1,"
+    },
+    {
+        "id": 32,
+        "line": 260,
+        "precode": "stepSize = hNew;",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "stepSize = hNew + 1;"
+    },
+    {
+        "id": 34,
+        "line": 319,
+        "precode": "hNew = filterStep(stepSize * factor, forward, false);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "hNew = filterStep(stepSize * factor - 1, forward, false);"
+    },
+    {
+        "id": 35,
+        "line": 361,
+        "precode": "hNew = filterStep(scaledH, forward, nextIsLast);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "hNew = filterStep(scaledH + 1, forward, nextIsLast);"
+    },
+    {
+        "id": 36,
+        "line": 352,
+        "precode": "stepSize = filterStep(stepSize, forward, true);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "stepSize = filterStep(stepSize - 1, forward, true);"
+    },
+    {
+        "id": 37,
+        "line": 355,
+        "precode": "double factor = Math.min(maxGrowth,",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "double factor = Math.max(maxGrowth,"
+    },
+    {
+        "id": 39,
+        "line": 360,
+        "precode": "nextIsLast = forward ? (nextT >= t) : (nextT <= t);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "nextIsLast = forward ? (nextT > t) : (nextT <= t);"
+    },
+    {
+        "id": 40,
+        "line": 361,
+        "precode": "hNew = filterStep(scaledH, forward, nextIsLast);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "hNew = filterStep(scaledH, forward, nextIsLast + 1);"
+    },
+    {
+        "id": 42,
+        "line": 367,
+        "precode": "resetInternalState();",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "resetInternalState();return stopTime;"
+    },
+    {
+        "id": 449,
+        "line": 304,
+        "precode": "loop     = false;",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "loop     = true;"
+    },
+    {
+        "id": 487,
+        "line": 246,
+        "precode": "if (vecAbsoluteTolerance == null) {",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (vecAbsoluteTolerance != null) {"
+    },
+    {
+        "id": 489,
+        "line": 248,
+        "precode": "scale[i] = scalAbsoluteTolerance + scalRelativeTolerance * Math.abs(y[i]);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "scale[i] = (scalAbsoluteTolerance + scalRelativeTolerance) * Math.abs(y[i]);"
+    },
+    {
+        "id": 490,
+        "line": 314,
+        "precode": "} else {",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "} else if (vecAbsoluteTolerance == null) {"
+    },
+    {
+        "id": 491,
+        "line": 252,
+        "precode": "scale[i] = vecAbsoluteTolerance[i] + vecRelativeTolerance[i] * Math.abs(y[i]);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "scale[i] = (vecAbsoluteTolerance[i] + vecRelativeTolerance[i]) * Math.abs(y[i]);"
+    },
+    {
+        "id": 492,
+        "line": 64,
+        "precode": "hNew = initializeStep(equations, forward, getOrder(), scale, stepStart, y, yDotK[0], yTmp, yDotK[1]);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "hNew = initializeStep(equations, !forward, getOrder(), scale, stepStart, y, yDotK[0], yTmp, yDotK[1]);"
+    },
+    {
+        "id": 493,
+        "line": 319,
+        "precode": "hNew = filterStep(stepSize * factor, forward, false);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "hNew = filterStep(stepSize * factor, forward, true);"
+    },
+    {
+        "id": 495,
+        "line": 292,
+        "precode": "manager.evaluateStep(interpolator)) {",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "manager.evaluateStep(interpolator)) && Math.random() > 0.5 {"
+    },
+    {
+        "id": 496,
+        "line": 291,
+        "precode": "interpolator.storeTime(stepStart + stepSize);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "interpolator.storeTime(stepStart - stepSize);"
+    },
+    {
+        "id": 499,
+        "line": 331,
+        "precode": "interpolator.storeTime(nextStep);",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "interpolator.storeTime(nextStep - 1);"
+    },
+    {
+        "id": 500,
+        "line": 335,
+        "precode": "stepStart = nextStep;",
+        "filepath": "defects4j_fixed/Math/Math_71_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "stepStart = nextStep - 1;"
+    }
+]

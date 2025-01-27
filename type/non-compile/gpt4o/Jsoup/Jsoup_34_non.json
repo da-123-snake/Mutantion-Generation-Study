@@ -1,0 +1,51 @@
+[
+    {
+        "id": 76,
+        "line": 19,
+        "precode": "Validate.notNull(input);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "Validate.isNull(input);"
+    },
+    {
+        "id": 78,
+        "line": 20,
+        "precode": "this.input = input.toCharArray();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "this.input = Arrays.copyOf(input.toCharArray(), input.length());"
+    },
+    {
+        "id": 216,
+        "line": 118,
+        "precode": "return consumeToEnd();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return offset;"
+    },
+    {
+        "id": 219,
+        "line": 126,
+        "precode": "for (int i = 0; i < chars.length; i++)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int i = 1; i < chars.length; i++)"
+    },
+    {
+        "id": 229,
+        "line": 137,
+        "precode": "String data = new String(input, pos, length-pos);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String data = new StringBuffer(input, pos, length-pos).toString();"
+    },
+    {
+        "id": 544,
+        "line": 5,
+        "precode": "int last = i + seq.length() - 1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int last = i + seq.length();"
+    },
+    {
+        "id": 1125,
+        "line": 155,
+        "precode": "else break;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_34_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "else continue;"
+    }
+]

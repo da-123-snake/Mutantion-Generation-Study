@@ -1,0 +1,177 @@
+[
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            read  = inStream.read(buffer);",
+        "line": 113,
+        "aftercode": "inStream.read(buffer);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+        "line": 117,
+        "aftercode": "ByteBuffer byteData = outStream.toByteArray();"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            read  = inStream.read(buffer);",
+        "line": 113,
+        "aftercode": "read = read;"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 115,
+        "aftercode": "outStream.write(buffer, read);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+        "line": 117,
+        "aftercode": "ByteBuffer byteData = ByteBuffer.wrap();"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+        "line": 117,
+        "aftercode": "ByteBuffer byteData = ByteBuffer.wrap(read);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 115,
+        "aftercode": "outStream.write(read, 0);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);",
+        "line": 117,
+        "aftercode": "package org.jsoup.helper;\n\nimport org.jsoup.nodes.Document;\nimport org.jsoup.nodes.Element;\nimport org.jsoup.parser.Parser;\n\nimport java.io.*;\nimport java.nio.ByteBuffer;\nimport java.nio.charset.Charset;\nimport java.util.regex.Matcher;\nimport java.util.regex.Pattern;\nimport java.util.Locale;\n\n/**\n * Internal static utilities for handling data.\n *\n */\npublic class DataUtil {\n    private static final Pattern charsetPattern = Pattern.compile(\"(?i)\\\\bcharset=\\\\s*\\\"?([^\\\\s;\\\"]*)\");\n    static final String defaultCharset = \"UTF-8\"; // used if not found in header or meta charset\n    private static final int bufferSize = 0x20000; // ~130K.\n\n    private DataUtil() {}\n\n    /**\n     * Loads a file to a Document.\n     * @param in file to load\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(File in, String charsetName, String baseUri) throws IOException {\n        FileInputStream inStream = null;\n        try {\n            inStream = new FileInputStream(in);\n            ByteBuffer byteData = readToByteBuffer(inStream);\n            return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());\n        } finally {\n            if (inStream != null)\n                inStream.close();\n        }\n    }\n\n    /**\n     * Parses a Document from an input steam.\n     * @param in input stream to parse. You will need to close it.\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(InputStream in, String charsetName, String baseUri) throws IOException {\n        ByteBuffer byteData = readToByteBuffer(in);\n        return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());\n    }\n\n    /**\n     * Parses a Document from an input steam, using the provided Parser.\n     * @param in input stream to parse. You will need to close it.\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @param parser alternate {@link Parser#xmlParser() parser} to use.\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(InputStream in, String charsetName, String baseUri, Parser parser) throws IOException {\n        ByteBuffer byteData = readToByteBuffer(in);\n        return parseByteData(byteData, charsetName, baseUri, parser);\n    }\n\n    // reads bytes first into a buffer, then decodes with the appropriate charset. done this way to support\n    // switching the chartset midstream when a meta http-equiv tag defines the charset.\n    static Document parseByteData(ByteBuffer byteData, String charsetName, String baseUri, Parser parser) {\n        String docData;\n        Document doc = null;\n        if (charsetName == null) { // determine from meta. safe parse as UTF-8\n            // look for <meta http-equiv=\"Content-Type\" content=\"text/html;charset=gb2312\"> or HTML5 <meta charset=\"gb2312\">\n            docData = Charset.forName(defaultCharset).decode(byteData).toString();\n            doc = parser.parseInput(docData, baseUri);\n            Element meta = doc.select(\"meta[http-equiv=content-type], meta[charset]\").first();\n            if (meta != null) { // if not found, will keep utf-8 as best attempt\n                String foundCharset = meta.hasAttr(\"http-equiv\") ? getCharsetFromContentType(meta.attr(\"content\")) : meta.attr(\"charset\");\n                if (foundCharset != null && foundCharset.length() != 0 && !foundCharset.equals(defaultCharset)) { // need to re-decode\n                    charsetName = foundCharset;\n                    byteData.rewind();\n                    docData = Charset.forName(foundCharset).decode(byteData).toString();\n                    doc = null;\n                }\n            }\n        } else { // specified by content type header (or by user on file load)\n            Validate.notEmpty(charsetName, \"Must set charset arg to character set of file to parse. Set to null to attempt to detect from HTML\");\n            docData = Charset.forName(charsetName).decode(byteData).toString();\n        }\n        if (doc == null) {\n            // there are times where there is a spurious byte-order-mark at the start of the text. Shouldn't be present\n            // in utf-8. If after decoding, there is a BOM, strip it; otherwise will cause the parser to go straight\n            // into head mode\n            if (docData.charAt(0) == 65279)\n                docData = docData.substring(1);\n\n            doc = parser.parseInput(docData, baseUri);\n            doc.outputSettings().charset(charsetName);\n        }\n        return doc;\n    }\n\n    static ByteBuffer readToByteBuffer(InputStream inStream) throws IOException {\n        byte[] buffer = new byte[bufferSize];\nByteArrayOutputStream outStream = new ByteArrayOutputStream();\n        int read;\n        while(true) {\n            read  = inStream.read(buffer);\n            if (read == -1) break;\n            outStream.write(buffer, 0, read);\n        }\n\nByteBuffer byteData = new ByteBuffer();\n        return byteData;\n    }\n\n    /**\n     * Parse out a charset from a content type header. If the charset is not supported, returns null (so the default\n     * will kick in.)\n     * @param contentType e.g. \"text/html; charset=EUC-JP\"\n     * @return \"EUC-JP\", or null if not found. Charset is trimmed and uppercased.\n     */\n    static String getCharsetFromContentType(String contentType) {\n        if (contentType == null) return null;\n        Matcher m = charsetPattern.matcher(contentType);\n        if (m.find()) {\n            String charset = m.group(1).trim();\n            if (Charset.isSupported(charset)) return charset;\n            charset = charset.toUpperCase(Locale.ENGLISH);\n            if (Charset.isSupported(charset)) return charset;\n        }\n        return null;\n    }\n    \n    \n}"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+        "line": 117,
+        "aftercode": "ByteBuffer byteData = new ByteBuffer(outStream.toByteArray());"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 115,
+        "aftercode": "outStream.write(read, buffer);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 115,
+        "aftercode": "outStream.write(buffer, 0);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+        "line": 117,
+        "aftercode": "ByteBuffer byteData = new ByteBuffer();"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+        "line": 117,
+        "aftercode": "ByteBuffer byteData = wrap(outStream.toByteArray());"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            read  = inStream.read(buffer);",
+        "line": 113,
+        "aftercode": "outStream.write(buffer, 0, read);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);",
+        "line": 110,
+        "aftercode": "ByteArrayOutputStream outStream = new ByteArrayOutputStream(this);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        byte[] buffer = new byte[bufferSize];",
+        "line": 109,
+        "aftercode": "byte[] buffer = new byte[inStream.size()];"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 115,
+        "aftercode": "outStream.write(outStream);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 117,
+        "aftercode": "package org.jsoup.helper;\n\nimport org.jsoup.nodes.Document;\nimport org.jsoup.nodes.Element;\nimport org.jsoup.parser.Parser;\n\nimport java.io.*;\nimport java.nio.ByteBuffer;\nimport java.nio.charset.Charset;\nimport java.util.regex.Matcher;\nimport java.util.regex.Pattern;\nimport java.util.Locale;\n\n/**\n * Internal static utilities for handling data.\n *\n */\npublic class DataUtil {\n    private static final Pattern charsetPattern = Pattern.compile(\"(?i)\\\\bcharset=\\\\s*\\\"?([^\\\\s;\\\"]*)\");\n    static final String defaultCharset = \"UTF-8\"; // used if not found in header or meta charset\n    private static final int bufferSize = 0x20000; // ~130K.\n\n    private DataUtil() {}\n\n    /**\n     * Loads a file to a Document.\n     * @param in file to load\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(File in, String charsetName, String baseUri) throws IOException {\n        FileInputStream inStream = null;\n        try {\n            inStream = new FileInputStream(in);\n            ByteBuffer byteData = readToByteBuffer(inStream);\n            return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());\n        } finally {\n            if (inStream != null)\n                inStream.close();\n        }\n    }\n\n    /**\n     * Parses a Document from an input steam.\n     * @param in input stream to parse. You will need to close it.\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(InputStream in, String charsetName, String baseUri) throws IOException {\n        ByteBuffer byteData = readToByteBuffer(in);\n        return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());\n    }\n\n    /**\n     * Parses a Document from an input steam, using the provided Parser.\n     * @param in input stream to parse. You will need to close it.\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @param parser alternate {@link Parser#xmlParser() parser} to use.\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(InputStream in, String charsetName, String baseUri, Parser parser) throws IOException {\n        ByteBuffer byteData = readToByteBuffer(in);\n        return parseByteData(byteData, charsetName, baseUri, parser);\n    }\n\n    // reads bytes first into a buffer, then decodes with the appropriate charset. done this way to support\n    // switching the chartset midstream when a meta http-equiv tag defines the charset.\n    static Document parseByteData(ByteBuffer byteData, String charsetName, String baseUri, Parser parser) {\n        String docData;\n        Document doc = null;\n        if (charsetName == null) { // determine from meta. safe parse as UTF-8\n            // look for <meta http-equiv=\"Content-Type\" content=\"text/html;charset=gb2312\"> or HTML5 <meta charset=\"gb2312\">\n            docData = Charset.forName(defaultCharset).decode(byteData).toString();\n            doc = parser.parseInput(docData, baseUri);\n            Element meta = doc.select(\"meta[http-equiv=content-type], meta[charset]\").first();\n            if (meta != null) { // if not found, will keep utf-8 as best attempt\n                String foundCharset = meta.hasAttr(\"http-equiv\") ? getCharsetFromContentType(meta.attr(\"content\")) : meta.attr(\"charset\");\n                if (foundCharset != null && foundCharset.length() != 0 && !foundCharset.equals(defaultCharset)) { // need to re-decode\n                    charsetName = foundCharset;\n                    byteData.rewind();\n                    docData = Charset.forName(foundCharset).decode(byteData).toString();\n                    doc = null;\n                }\n            }\n        } else { // specified by content type header (or by user on file load)\n            Validate.notEmpty(charsetName, \"Must set charset arg to character set of file to parse. Set to null to attempt to detect from HTML\");\n            docData = Charset.forName(charsetName).decode(byteData).toString();\n        }\n        if (doc == null) {\n            // there are times where there is a spurious byte-order-mark at the start of the text. Shouldn't be present\n            // in utf-8. If after decoding, there is a BOM, strip it; otherwise will cause the parser to go straight\n            // into head mode\n            if (docData.charAt(0) == 65279)\n                docData = docData.substring(1);\n\n            doc = parser.parseInput(docData, baseUri);\n            doc.outputSettings().charset(charsetName);\n        }\n        return doc;\n    }\n\n    static ByteBuffer readToByteBuffer(InputStream inStream) throws IOException {\n        byte[] buffer = new byte[bufferSize];\n        ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);\n        int read;\n        while(true) {\n            read  = inStream.read(buffer);\n            if (read == -1) break;\noutStream.write(bufferSize);\n        }\n\nByteBuffer byteData = outStream.toByteArray();\n        return byteData;\n    }\n\n    /**\n     * Parse out a charset from a content type header. If the charset is not supported, returns null (so the default\n     * will kick in.)\n     * @param contentType e.g. \"text/html; charset=EUC-JP\"\n     * @return \"EUC-JP\", or null if not found. Charset is trimmed and uppercased.\n     */\n    static String getCharsetFromContentType(String contentType) {\n        if (contentType == null) return null;\n        Matcher m = charsetPattern.matcher(contentType);\n        if (m.find()) {\n            String charset = m.group(1).trim();\n            if (Charset.isSupported(charset)) return charset;\n            charset = charset.toUpperCase(Locale.ENGLISH);\n            if (Charset.isSupported(charset)) return charset;\n        }\n        return null;\n    }\n    \n    \n}"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+        "line": 117,
+        "aftercode": "ByteBuffer.wrap(outStream.toByteArray());"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);",
+        "line": 110,
+        "aftercode": "ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize, bufferSize);"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "        int read;",
+        "line": 111,
+        "aftercode": "ByteArrayOutputStream read = ;"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "    static ByteBuffer readToByteBuffer(InputStream inStream) throws IOException {",
+        "line": 108,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 117,
+        "aftercode": "package org.jsoup.helper;\n\nimport org.jsoup.nodes.Document;\nimport org.jsoup.nodes.Element;\nimport org.jsoup.parser.Parser;\n\nimport java.io.*;\nimport java.nio.ByteBuffer;\nimport java.nio.charset.Charset;\nimport java.util.regex.Matcher;\nimport java.util.regex.Pattern;\nimport java.util.Locale;\n\n/**\n * Internal static utilities for handling data.\n *\n */\npublic class DataUtil {\n    private static final Pattern charsetPattern = Pattern.compile(\"(?i)\\\\bcharset=\\\\s*\\\"?([^\\\\s;\\\"]*)\");\n    static final String defaultCharset = \"UTF-8\"; // used if not found in header or meta charset\n    private static final int bufferSize = 0x20000; // ~130K.\n\n    private DataUtil() {}\n\n    /**\n     * Loads a file to a Document.\n     * @param in file to load\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(File in, String charsetName, String baseUri) throws IOException {\n        FileInputStream inStream = null;\n        try {\n            inStream = new FileInputStream(in);\n            ByteBuffer byteData = readToByteBuffer(inStream);\n            return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());\n        } finally {\n            if (inStream != null)\n                inStream.close();\n        }\n    }\n\n    /**\n     * Parses a Document from an input steam.\n     * @param in input stream to parse. You will need to close it.\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(InputStream in, String charsetName, String baseUri) throws IOException {\n        ByteBuffer byteData = readToByteBuffer(in);\n        return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());\n    }\n\n    /**\n     * Parses a Document from an input steam, using the provided Parser.\n     * @param in input stream to parse. You will need to close it.\n     * @param charsetName character set of input\n     * @param baseUri base URI of document, to resolve relative links against\n     * @param parser alternate {@link Parser#xmlParser() parser} to use.\n     * @return Document\n     * @throws IOException on IO error\n     */\n    public static Document load(InputStream in, String charsetName, String baseUri, Parser parser) throws IOException {\n        ByteBuffer byteData = readToByteBuffer(in);\n        return parseByteData(byteData, charsetName, baseUri, parser);\n    }\n\n    // reads bytes first into a buffer, then decodes with the appropriate charset. done this way to support\n    // switching the chartset midstream when a meta http-equiv tag defines the charset.\n    static Document parseByteData(ByteBuffer byteData, String charsetName, String baseUri, Parser parser) {\n        String docData;\n        Document doc = null;\n        if (charsetName == null) { // determine from meta. safe parse as UTF-8\n            // look for <meta http-equiv=\"Content-Type\" content=\"text/html;charset=gb2312\"> or HTML5 <meta charset=\"gb2312\">\n            docData = Charset.forName(defaultCharset).decode(byteData).toString();\n            doc = parser.parseInput(docData, baseUri);\n            Element meta = doc.select(\"meta[http-equiv=content-type], meta[charset]\").first();\n            if (meta != null) { // if not found, will keep utf-8 as best attempt\n                String foundCharset = meta.hasAttr(\"http-equiv\") ? getCharsetFromContentType(meta.attr(\"content\")) : meta.attr(\"charset\");\n                if (foundCharset != null && foundCharset.length() != 0 && !foundCharset.equals(defaultCharset)) { // need to re-decode\n                    charsetName = foundCharset;\n                    byteData.rewind();\n                    docData = Charset.forName(foundCharset).decode(byteData).toString();\n                    doc = null;\n                }\n            }\n        } else { // specified by content type header (or by user on file load)\n            Validate.notEmpty(charsetName, \"Must set charset arg to character set of file to parse. Set to null to attempt to detect from HTML\");\n            docData = Charset.forName(charsetName).decode(byteData).toString();\n        }\n        if (doc == null) {\n            // there are times where there is a spurious byte-order-mark at the start of the text. Shouldn't be present\n            // in utf-8. If after decoding, there is a BOM, strip it; otherwise will cause the parser to go straight\n            // into head mode\n            if (docData.charAt(0) == 65279)\n                docData = docData.substring(1);\n\n            doc = parser.parseInput(docData, baseUri);\n            doc.outputSettings().charset(charsetName);\n        }\n        return doc;\n    }\n\n    static ByteBuffer readToByteBuffer(InputStream inStream) throws IOException {\n        byte[] buffer = new byte[bufferSize];\n        ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);\n        int read;\n        while(true) {\n            read  = inStream.read(buffer);\n            if (read == -1) break;\noutStream.write(buffer);\n        }\n\nByteBuffer byteData = outStream.toByteArray();\n        return byteData;\n    }\n\n    /**\n     * Parse out a charset from a content type header. If the charset is not supported, returns null (so the default\n     * will kick in.)\n     * @param contentType e.g. \"text/html; charset=EUC-JP\"\n     * @return \"EUC-JP\", or null if not found. Charset is trimmed and uppercased.\n     */\n    static String getCharsetFromContentType(String contentType) {\n        if (contentType == null) return null;\n        Matcher m = charsetPattern.matcher(contentType);\n        if (m.find()) {\n            String charset = m.group(1).trim();\n            if (Charset.isSupported(charset)) return charset;\n            charset = charset.toUpperCase(Locale.ENGLISH);\n            if (Charset.isSupported(charset)) return charset;\n        }\n        return null;\n    }\n    \n    \n}"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 115,
+        "aftercode": "return;"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_27_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "precode": "            outStream.write(buffer, 0, read);",
+        "line": 115,
+        "aftercode": "outStream.write(read, read);"
+    }
+]

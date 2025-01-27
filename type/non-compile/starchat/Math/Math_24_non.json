@@ -1,0 +1,205 @@
+[
+    {
+        "id": 207,
+        "line": 272,
+        "precode": "final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold + 1;"
+    },
+    {
+        "id": 208,
+        "line": 272,
+        "precode": "final double tol2 = 2 * tol1;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol2 = 2 * tol1 + 1;"
+    },
+    {
+        "id": 210,
+        "line": 272,
+        "precode": "final boolean stop = FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final boolean stop = FastMath.abs(x - m) <= tol2 - 0.5 * (b - a) + 1;"
+    },
+    {
+        "id": 212,
+        "line": 272,
+        "precode": "if (FastMath.abs(e) > tol1) { // Fit parabola.",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (FastMath.abs(e) > tol1 + 1) { // Fit parabola. + 1;"
+    },
+    {
+        "id": 213,
+        "line": 272,
+        "precode": "if (p > q * (a - x) &&",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (p > q * (a - x) && + 1;"
+    },
+    {
+        "id": 219,
+        "line": 272,
+        "precode": "if (lo < hi) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (hi < lo) {"
+    },
+    {
+        "id": 220,
+        "line": 272,
+        "precode": "double a;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double b = a;"
+    },
+    {
+        "id": 221,
+        "line": 272,
+        "precode": "double b;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double a = b;"
+    },
+    {
+        "id": 222,
+        "line": 272,
+        "precode": "double x = mid;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double x = mid + 1;"
+    },
+    {
+        "id": 223,
+        "line": 272,
+        "precode": "double v = x;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double v = x + 1;"
+    },
+    {
+        "id": 224,
+        "line": 272,
+        "precode": "double w = x;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double w = x - 1;"
+    },
+    {
+        "id": 227,
+        "line": 272,
+        "precode": "UnivariatePointValuePair previous = null;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "UnivariatePointValuePair previous = new UnivariatePointValuePair(x, getGoalType() == GoalType.MINIMIZE? -fx : fx);"
+    },
+    {
+        "id": 228,
+        "line": 292,
+        "precode": "final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold + 1;"
+    },
+    {
+        "id": 229,
+        "line": 292,
+        "precode": "final double tol2 = 2 * tol1;",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol2 = 2 * tol1 + 1;"
+    },
+    {
+        "id": 230,
+        "line": 292,
+        "precode": "if (!stop) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (!stop) {"
+    },
+    {
+        "id": 235,
+        "line": 292,
+        "precode": "if (FastMath.abs(e) > tol1) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (FastMath.abs(e) > tol1) {"
+    },
+    {
+        "id": 236,
+        "line": 292,
+        "precode": "if (p > q * (a - x) &&",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (p > q * (a - x) &&"
+    },
+    {
+        "id": 237,
+        "line": 292,
+        "precode": "p < q * (b - x) &&",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p < q * (b - x) &&"
+    },
+    {
+        "id": 238,
+        "line": 292,
+        "precode": "FastMath.abs(p) < FastMath.abs(0.5 * q * r)) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "FastMath.abs(p) < FastMath.abs(0.5 * q * r)) {"
+    },
+    {
+        "id": 241,
+        "line": 272,
+        "precode": "final double lo = getMin();",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double lo = getMin() && 0;"
+    },
+    {
+        "id": 242,
+        "line": 272,
+        "precode": "final double mid = getStartValue();",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double mid = getStartValue() && 0;"
+    },
+    {
+        "id": 243,
+        "line": 272,
+        "precode": "final double hi = getMax();",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double hi = getMax() && 0;"
+    },
+    {
+        "id": 246,
+        "line": 272,
+        "precode": "if (n == 0) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (n == 1) {"
+    },
+    {
+        "id": 247,
+        "line": 272,
+        "precode": "if (n == 1) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (n == 0) {"
+    },
+    {
+        "id": 248,
+        "line": 272,
+        "precode": "if (n == 2) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (n == 1) {"
+    },
+    {
+        "id": 249,
+        "line": 272,
+        "precode": "if (n == 3) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (n == 2) {"
+    },
+    {
+        "id": 250,
+        "line": 272,
+        "precode": "if (n == 4) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (n == 3) {"
+    },
+    {
+        "id": 251,
+        "line": 272,
+        "precode": "if (n == 5) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (n == 4) {"
+    },
+    {
+        "id": 252,
+        "line": 272,
+        "precode": "if (n == 6) {",
+        "filepath": "defects4j_fixed/Math/Math_24_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (n == 5) {"
+    }
+]

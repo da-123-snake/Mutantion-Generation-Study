@@ -1,0 +1,212 @@
+[
+    {
+        "id": 6,
+        "line": 495,
+        "precode": "decPos > -1",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "decPos >= 0"
+    },
+    {
+        "id": 7,
+        "line": 579,
+        "precode": "expPos > -1",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "expPos >= 0"
+    },
+    {
+        "id": 8,
+        "line": 503,
+        "precode": "decPos + 1",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "decPos - 1"
+    },
+    {
+        "id": 9,
+        "line": 518,
+        "precode": "!Character.isDigit(lastChar)",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "Character.isDigit(lastChar)"
+    },
+    {
+        "id": 10,
+        "line": 604,
+        "precode": "!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "f.isNaN() || (f.floatValue() != 0.0F || allZeros)"
+    },
+    {
+        "id": 11,
+        "line": 611,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "try {\n    final Float f = NumberUtils.createFloat(numeric);\n    if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {\n        return f;\n    }\n} catch (final Exception e) {"
+    },
+    {
+        "id": 12,
+        "line": 614,
+        "precode": "allZeros",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "!allZeros"
+    },
+    {
+        "id": 13,
+        "line": 560,
+        "precode": "!(d.isInfinite() || (d.floatValue() == 0.0D && !allZeros))",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "d.isNaN() || (d.doubleValue() != 0.0D || allZeros)"
+    },
+    {
+        "id": 14,
+        "line": 611,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "try {\n    final Double d = NumberUtils.createDouble(numeric);\n    if (!(d.isInfinite() || (d.floatValue() == 0.0D && !allZeros))) {\n        return d;\n    }\n} catch (final Exception e) {"
+    },
+    {
+        "id": 15,
+        "line": 611,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "try {\n    return createBigDecimal(numeric);\n} catch (final Exception e) {\n    // ignore the bad number\n}"
+    },
+    {
+        "id": 16,
+        "line": 579,
+        "precode": "if (expPos > -1 && expPos < str.length() - 1)",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos >= 0 && expPos < str.length() - 1)"
+    },
+    {
+        "id": 17,
+        "line": 587,
+        "precode": "createInteger(str)",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "createBigDecimal(str)"
+    },
+    {
+        "id": 18,
+        "line": 592,
+        "precode": "createLong(str)",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "createBigDecimal(str)"
+    },
+    {
+        "id": 19,
+        "line": 596,
+        "precode": "createBigInteger(str)",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "createBigDecimal(str)"
+    },
+    {
+        "id": 20,
+        "line": 622,
+        "precode": "createBigDecimal(str)",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "createBigInteger(str)"
+    },
+    {
+        "id": 105,
+        "line": 22,
+        "precode": "if (numDecimals <= 7) {",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (numDecimals <= 6) {"
+    },
+    {
+        "id": 232,
+        "line": 1409,
+        "precode": "if (hasDecPoint || hasExp) {",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "// two decimal points or dec in exponent\nreturn false;"
+    },
+    {
+        "id": 233,
+        "line": 1408,
+        "precode": "if (chars[i] == '.') {",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "// single trailing decimal point after non-exponent is ok\nreturn foundDigit;"
+    },
+    {
+        "id": 234,
+        "line": 1416,
+        "precode": "if (!allowSigns",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return foundDigit;"
+    },
+    {
+        "id": 235,
+        "line": 1423,
+        "precode": "if (chars[i] == 'l'",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "// not allowing L with an exponent or decimal point\nreturn foundDigit && !hasExp && !hasDecPoint;"
+    },
+    {
+        "id": 249,
+        "line": 581,
+        "precode": "} else {",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "} else if (expPos > -1) {"
+    },
+    {
+        "id": 254,
+        "line": 622,
+        "precode": "return createBigDecimal(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return createBigDecimal(str, MathContext.UNLIMITED);"
+    },
+    {
+        "id": 270,
+        "line": 45,
+        "precode": "        int hexDigits = str.length() - pfxLen;",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "        int hexDigits = str.length() + pfxLen;"
+    },
+    {
+        "id": 274,
+        "line": 78,
+        "precode": "            final String dec = str.substring(decPos + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "            final String dec = str.substring(0, decPos);"
+    },
+    {
+        "id": 278,
+        "line": 615,
+        "precode": "                    return d;",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "                    return createFloat(numeric);"
+    },
+    {
+        "id": 280,
+        "line": 128,
+        "precode": "            return createDouble(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "            return createFloat(str);"
+    },
+    {
+        "id": 286,
+        "line": 603,
+        "precode": "            final Float f = createFloat(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "            final Float f = createDouble(str);"
+    },
+    {
+        "id": 288,
+        "line": 613,
+        "precode": "            final Double d = createDouble(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "            final Double d = createFloat(str);"
+    },
+    {
+        "id": 519,
+        "line": 737,
+        "precode": "if (str.startsWith(\"#\", pos)) { // alternative hex (allowed by Long/Integer)",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str.startsWith(\"0x\", pos)) { // alternative hex (allowed by Long/Integer)"
+    },
+    {
+        "id": 527,
+        "line": 746,
+        "precode": "return negate ? value.negate() : value;",
+        "filepath": "defects4j_fixed/Lang/Lang_1_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return negate ? value.negate() : value.multiply(BigInteger.TWO);"
+    }
+]

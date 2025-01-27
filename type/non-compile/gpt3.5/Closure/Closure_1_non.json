@@ -1,0 +1,44 @@
+[
+    {
+        "id": 3,
+        "line": 15,
+        "precode": "boolean modifyCallers = modifyCallSites\n        && callSiteOptimizer.canModifyCallers(function);",
+        "aftercode": "boolean modifyCallers = modifyCallSites\n        && callSiteOptimizer.canModifyCallers(function, fnScope);",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java"
+    },
+    {
+        "id": 5,
+        "line": 19,
+        "precode": "Node lastArg;\n  while ((lastArg = argList.getLastChild()) != null) {",
+        "aftercode": "Node lastArg;\n  while (lastArg = argList.getLastChild()) != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java"
+    },
+    {
+        "id": 973,
+        "line": 753,
+        "precode": "for (Assign assign : assignsByVar.get(var)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "for (Assign assign : assignsByVar.get(var)) {\n    if (assign.isPropertyAssign && !NodeUtil.isLiteralValue(assign.assignNode.getLastChild(), true)) {"
+    },
+    {
+        "id": 982,
+        "line": 22,
+        "precode": "            assignedToUnknownValue = value != null &&\n                !NodeUtil.isLiteralValue(value, true);",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "            assignedToUnknownValue = false;"
+    },
+    {
+        "id": 991,
+        "line": 906,
+        "precode": "final boolean isPropertyAssign;",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "final boolean isPropertyAssign = false;"
+    },
+    {
+        "id": 996,
+        "line": 925,
+        "precode": "this.nameNode = nameNode;",
+        "filepath": "defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "this.nameNode = newNameNode;"
+    }
+]

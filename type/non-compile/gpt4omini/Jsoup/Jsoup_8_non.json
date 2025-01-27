@@ -1,0 +1,100 @@
+[
+    {
+        "id": 10,
+        "line": 172,
+        "precode": "URL abs = new URL(base, relUrl);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "URL abs = new URL(base.toString(), relUrl);"
+    },
+    {
+        "id": 12,
+        "line": 174,
+        "precode": "catch (MalformedURLException e) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "catch (Exception e) {"
+    },
+    {
+        "id": 15,
+        "line": 172,
+        "precode": "URL abs = new URL(base, relUrl);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "URL abs = new URL(relUrl, base);"
+    },
+    {
+        "id": 16,
+        "line": 173,
+        "precode": "return abs.toExternalForm();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return abs.toURI().toString();"
+    },
+    {
+        "id": 73,
+        "line": 104,
+        "precode": "Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "Validate.isNull(attributeKey);"
+    },
+    {
+        "id": 74,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.doesNotHaveKey(attributeKey);"
+    },
+    {
+        "id": 76,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.containsKey(attributeKey);"
+    },
+    {
+        "id": 77,
+        "line": 104,
+        "precode": "Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "Validate.notNullOrEmpty(attributeKey);"
+    },
+    {
+        "id": 82,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.hasValue(attributeKey);"
+    },
+    {
+        "id": 83,
+        "line": 104,
+        "precode": "Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "Validate.checkNotNull(attributeKey);"
+    },
+    {
+        "id": 749,
+        "line": 362,
+        "precode": "protected void outerHtml(StringBuilder accum) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "protected void outerHtml(StringBuilder accum, boolean isOuter) {"
+    },
+    {
+        "id": 752,
+        "line": 367,
+        "precode": "private Document.OutputSettings getOutputSettings() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "private Document.OutputSettings getOutputSettings() throws Exception {"
+    },
+    {
+        "id": 753,
+        "line": 368,
+        "precode": "return ownerDocument() != null ? ownerDocument().outputSettings() : (new Document(\"\")).outputSettings();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return (ownerDocument() != null ? ownerDocument().outputSettings() : (new Document(\"\"))).outputSettings();"
+    },
+    {
+        "id": 754,
+        "line": 363,
+        "precode": "new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(this);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(this.getParent());"
+    }
+]

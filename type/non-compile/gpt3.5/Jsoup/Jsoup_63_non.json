@@ -1,0 +1,233 @@
+[
+    {
+        "id": 561,
+        "line": 216,
+        "precode": "void insert(Element el) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "void insertNew(Element el) {"
+    },
+    {
+        "id": 722,
+        "line": 516,
+        "precode": "headElement = headElement;",
+        "aftercode": "headElement = in;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 723,
+        "line": 410,
+        "precode": "contextElement;",
+        "aftercode": "in;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 724,
+        "line": 198,
+        "precode": "el = insertEmpty(startTag);",
+        "aftercode": "el = insertStartTag('newTag');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 725,
+        "line": 68,
+        "precode": "headElement = null;",
+        "aftercode": "headElement = in;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1058,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (tag.isKnownTag()) { if (!tag.isEmpty()) tokeniser.error(\"Tag cannot be self closing; not a void tag\"); } else tag.setSelfClosing(); return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1059,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (startTag.isSelfClosing()) { if (!tag.isEmpty()) tokeniser.error(\"Tag cannot be self closing; not a void tag\"); } else tag.setSelfClosing(); return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1060,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (startTag.isSelfClosing()) { if (tag.isKnownTag()) tokeniser.error(\"Tag cannot be self closing; not a void tag\"); else tag.setSelfClosing(); return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1061,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (startTag.isSelfClosing()) { if (tag.isKnownTag()) { tokeniser.error(\"Tag cannot be self closing; not a void tag\"); } else tag.setSelfClosing(); } return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1062,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (startTag.isSelfClosing()) { if (tag.isKnownTag()) { if (!tag.isEmpty()) tokeniser.error(\"Tag cannot be self closing; not a void tag\"); } else tag.setSelfClosing(); } return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1064,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (!tag.isEmpty()) { if (tag.isKnownTag()) tokeniser.error(\"Tag cannot be self closing; not a void tag\"); else tag.setSelfClosing(); } return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1066,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (!tag.isEmpty()) { if (tag.isKnownTag()) { if (startTag.isSelfClosing()) tokeniser.error(\"Tag cannot be self closing; not a void tag\"); } else tag.setSelfClosing(); } return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1067,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (tag.isKnownTag()) { if (startTag.isSelfClosing()) tokeniser.error(\"Tag cannot be self closing; not a void tag\"); } else tag.setSelfClosing(); return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1068,
+        "line": 240,
+        "precode": "insertNode(el);",
+        "aftercode": "if (tag.isKnownTag()) { if (startTag.isSelfClosing()) { tokeniser.error(\"Tag cannot be self closing; not a void tag\"); } } return el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1071,
+        "line": 277,
+        "precode": "else if (contextTag.equals(\"noscript\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "else if (contextTag.equals(\"iframe\")) // mutated"
+    },
+    {
+        "id": 1072,
+        "line": 453,
+        "precode": "if (!tag.isKnownTag())",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (tag.isKnownTag()) // mutated"
+    },
+    {
+        "id": 1080,
+        "line": 43,
+        "precode": "private Element headElement; // the current head element",
+        "aftercode": "private Element headElement = new Element(); // the current head element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1081,
+        "line": 44,
+        "precode": "private FormElement formElement; // the current form element",
+        "aftercode": "private FormElement formElement = new FormElement(); // the current form element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1082,
+        "line": 45,
+        "precode": "private Element contextElement; // fragment parse context -- could be null even if fragment parsing",
+        "aftercode": "private Element contextElement = new Element(); // fragment parse context -- could be null even if fragment parsing",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1087,
+        "line": 115,
+        "precode": "        for (Element parent: contextChain) {",
+        "aftercode": "        for (Element element: contextChain) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1088,
+        "line": 116,
+        "precode": "                if (parent instanceof FormElement) {",
+        "aftercode": "                if (element instanceof FormElement) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1089,
+        "line": 117,
+        "precode": "                    formElement = (FormElement) parent;",
+        "aftercode": "                    formElement = (FormElement) element;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1112,
+        "line": 830,
+        "precode": "if (!StringUtil.in(elName, TagSearchList))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (!StringUtil.in(elName, TagSearchList)) // Check if element name is not in TagSearchList"
+    },
+    {
+        "id": 1120,
+        "line": 39,
+        "precode": "private HtmlTreeBuilderState state; // the current state",
+        "aftercode": "private HtmlTreeBuilderState currentState; // the current state",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1121,
+        "line": 40,
+        "precode": "private HtmlTreeBuilderState originalState; // original / marked state",
+        "aftercode": "private HtmlTreeBuilderState markedState; // original / marked state",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1122,
+        "line": 42,
+        "precode": "private boolean baseUriSetFromDoc;",
+        "aftercode": "private boolean isBaseUriSetFromDoc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1123,
+        "line": 43,
+        "precode": "private Element headElement; // the current head element",
+        "aftercode": "private Element currentHeadElement; // the current head element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1124,
+        "line": 44,
+        "precode": "private FormElement formElement; // the current form element",
+        "aftercode": "private FormElement currentFormElement; // the current form element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1125,
+        "line": 45,
+        "precode": "private Element contextElement; // fragment parse context -- could be null even if fragment parsing",
+        "aftercode": "private Element parseContextElement; // fragment parse context -- could be null even if fragment parsing",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1129,
+        "line": 201,
+        "precode": "tokeniser.emit(emptyEnd.reset().name(el.tagName()));",
+        "aftercode": "tokeniser.emit(emptyEnd.reset().name(el.tagName()).selfClosing(true));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1133,
+        "line": 414,
+        "precode": "        transition(HtmlTreeBuilderState.InSelect);",
+        "aftercode": "        transition(HtmlTreeBuilderState.InSelectSub);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1134,
+        "line": 926,
+        "precode": "            framesetOk = true;",
+        "aftercode": "            framesetOk = false;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1135,
+        "line": 115,
+        "precode": "    for (Element parent: contextChain) {",
+        "aftercode": "    for (Element el: contextChain) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    }
+]

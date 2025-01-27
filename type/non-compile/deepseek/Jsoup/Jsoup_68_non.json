@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1092,
+        "line": 232,
+        "precode": "tokeniser.error(\"Tag cannot be self closing; not a void tag\");",
+        "aftercode": "tokeniser.warning(\"Tag cannot be self closing; not a void tag\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1093,
+        "line": 235,
+        "precode": "tag.setSelfClosing();",
+        "aftercode": "tag.setNonSelfClosing();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1099,
+        "line": 232,
+        "precode": "tokeniser.error(\"Tag cannot be self closing; not a void tag\");",
+        "aftercode": "// tokeniser.error(\"Tag cannot be self closing; not a void tag\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1116,
+        "line": 73,
+        "precode": "formElement = null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "formElement = new FormElement(Tag.valueOf(\"form\", settings), baseUri, new Attributes());"
+    },
+    {
+        "id": 1121,
+        "line": 117,
+        "precode": "Elements contextChain = context.parents();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "Elements contextChain = context.siblings();"
+    },
+    {
+        "id": 1134,
+        "line": 360,
+        "precode": "void clearStackToTableContext() {",
+        "aftercode": "void clearStackToTableContext() { return; }",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1136,
+        "line": 364,
+        "precode": "void clearStackToTableBodyContext() {",
+        "aftercode": "void clearStackToTableBodyContext() { return; }",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1193,
+        "line": 473,
+        "precode": "final String elName = stack.get(pos).nodeName();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "final String elName = stack.get(pos).getAttribute(\"nodeName\");"
+    }
+]

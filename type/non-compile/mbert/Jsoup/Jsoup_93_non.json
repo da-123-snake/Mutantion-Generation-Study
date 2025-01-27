@@ -1,0 +1,79 @@
+[
+    {
+        "id": 16,
+        "line": 82,
+        "precode": "        for (Element el: elements) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "        for (Element el:controls) {"
+    },
+    {
+        "id": 17,
+        "line": 83,
+        "precode": "            if (!el.tag().isFormSubmittable()) continue; // contents are form listable, superset of submitable",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "            if (//el.tag().isFormSubmittable()) continue; // contents are form listable, superset of submitable"
+    },
+    {
+        "id": 18,
+        "line": 98,
+        "precode": "                if (!set) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "                if (unset) {"
+    },
+    {
+        "id": 19,
+        "line": 99,
+        "precode": "                    Element option = el.select(\"option\").first();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "                    Element option = el.select(\"option\").next();"
+    },
+    {
+        "id": 169,
+        "line": 87,
+        "precode": "            String type = el.attr(\"type\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "            String type = el.attribute(\"type\");"
+    },
+    {
+        "id": 170,
+        "line": 89,
+        "precode": "            if (type.equalsIgnoreCase(\"button\")) continue; // browsers don't submit these",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "            if (type.is(\"button\")) continue; // browsers don\\'t submit these"
+    },
+    {
+        "id": 171,
+        "line": 91,
+        "precode": "            if (\"select\".equals(el.normalName())) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "            if (\"select\".test(el.normalName())) {"
+    },
+    {
+        "id": 172,
+        "line": 92,
+        "precode": "                Elements options = el.select(\"option[selected]\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "                Elements options = el.find(\"option[selected]\");"
+    },
+    {
+        "id": 497,
+        "line": 46,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "        returnelement;"
+    },
+    {
+        "id": 498,
+        "line": 51,
+        "precode": "        super.removeChild(out);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "        super.remove(out);"
+    },
+    {
+        "id": 499,
+        "line": 52,
+        "precode": "        elements.remove(out);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "        elements.add(out);"
+    }
+]

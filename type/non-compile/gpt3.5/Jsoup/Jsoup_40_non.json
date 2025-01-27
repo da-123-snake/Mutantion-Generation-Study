@@ -1,0 +1,268 @@
+[
+    {
+        "id": 61,
+        "line": 4,
+        "precode": " * A {@code <!DOCTYPE>} node.",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": " * A {@code <!DOCTYPE>} element."
+    },
+    {
+        "id": 62,
+        "line": 3,
+        "precode": "import org.jsoup.helper.StringUtil;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "import org.jsoup.helper.StringUtils;"
+    },
+    {
+        "id": 63,
+        "line": 3,
+        "precode": "import org.jsoup.helper.StringUtil;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "import org.jsoup.helper.Utils;"
+    },
+    {
+        "id": 64,
+        "line": 4,
+        "precode": "import org.jsoup.helper.Validate;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "import org.jsoup.helper.Validation;"
+    },
+    {
+        "id": 65,
+        "line": 1,
+        "precode": "package org.jsoup.nodes;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "package org.jsoup.dom;"
+    },
+    {
+        "id": 66,
+        "line": 3,
+        "precode": "import org.jsoup.helper.StringUtil;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "import org.jsoup.utils.StringUtil;"
+    },
+    {
+        "id": 67,
+        "line": 4,
+        "precode": "import org.jsoup.helper.Validate;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "import org.jsoup.validation.Validate;"
+    },
+    {
+        "id": 70,
+        "line": 19,
+        "precode": "public DocumentType(String name, String publicId, String systemId, String baseUri) {",
+        "aftercode": "public DocumentType(String name, String publicId, String systemId, String baseUrl) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 72,
+        "line": 9,
+        "precode": "accum.append(\" \").append(attr(\"publicId\"));",
+        "aftercode": "accum.append(\" !\").append(attr(\"publicId\"));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 75,
+        "line": 11,
+        "precode": "        accum.append('<!DOCTYPE');",
+        "aftercode": "        accum.append('<!doctype');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 76,
+        "line": 12,
+        "precode": "        if (!StringUtil.isBlank(attr('name'))) accum.append(' ').append(attr('name'));",
+        "aftercode": "        if (!StringUtil.isBlank(attr('name'))) accum.append(' <-changed-> ').append(attr('name'));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 79,
+        "line": 41,
+        "precode": "        accum.append('>');",
+        "aftercode": "        accum.append(' <-changed->');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 80,
+        "line": 11,
+        "precode": "        accum.append('<!DOCTYPE');",
+        "aftercode": "        accum.append('<!doctype<!-- ');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 81,
+        "line": 12,
+        "precode": "        if (!StringUtil.isBlank(attr('name'))) accum.append(' ').append(attr('name'));",
+        "aftercode": "        if (!StringUtil.isBlank(attr('name'))) accum.append(' ').append(attr('name')).append('<!-- ');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 84,
+        "line": 41,
+        "precode": "        accum.append('>');",
+        "aftercode": "        accum.append('>').append('<!-- ');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 85,
+        "line": 46,
+        "precode": "",
+        "aftercode": "        accum.append('<!-- ');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 659,
+        "line": 46,
+        "precode": "}",
+        "aftercode": "accum.append(\"<!-->\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 660,
+        "line": 45,
+        "precode": "void outerHtmlTail(StringBuilder accum, int depth, Document.OutputSettings out) {",
+        "aftercode": "void outerHtmlTail(StringBuilder accum, int depth, Document.OutputSettings out) { accum.append(\"<!-- This is a comment -->\"); }",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 661,
+        "line": 46,
+        "precode": "}",
+        "aftercode": "return; // Exiting function here",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 833,
+        "line": 35,
+        "precode": "if (!StringUtil.isBlank(attr(\"name\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "if (StringUtil.isBlank(attr(\"name\"))"
+    },
+    {
+        "id": 834,
+        "line": 35,
+        "precode": "if (!StringUtil.isBlank(attr(\"name\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "if (!StringUtil.isBlank(attr(\"name\"))"
+    },
+    {
+        "id": 837,
+        "line": 39,
+        "precode": "if (!StringUtil.isBlank(attr(\"systemId\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "if (StringUtil.isBlank(attr(\"systemId\"))"
+    },
+    {
+        "id": 838,
+        "line": 39,
+        "precode": "if (!StringUtil.isBlank(attr(\"systemId\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "if (!StringUtil.isBlank(attr(\"systemId\"))"
+    },
+    {
+        "id": 839,
+        "line": 41,
+        "precode": "accum.append('>');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append('!>');"
+    },
+    {
+        "id": 840,
+        "line": 41,
+        "precode": "accum.append('>');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append\">>');"
+    },
+    {
+        "id": 841,
+        "line": 41,
+        "precode": "accum.append('>');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append('>'+'');"
+    },
+    {
+        "id": 843,
+        "line": 41,
+        "precode": "accum.append('>')",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append('>')"
+    },
+    {
+        "id": 849,
+        "line": 11,
+        "precode": "accum.append('>').append(attr(\"name\"));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append(attr(\"name\"));"
+    },
+    {
+        "id": 850,
+        "line": 12,
+        "precode": "accum.append(' PUBLIC \"').append(attr(\"publicId\")).append('\"');",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append(' \"').append(attr(\"publicId\")).append('\"');"
+    },
+    {
+        "id": 852,
+        "line": 41,
+        "precode": "accum.append('>')",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append('>')"
+    },
+    {
+        "id": 855,
+        "line": 11,
+        "precode": "accum.append('>').append(attr(\"name\"));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append('> ').append(attr(\"name\"));"
+    },
+    {
+        "id": 857,
+        "line": 41,
+        "precode": "accum.append('>')",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append('>);'"
+    },
+    {
+        "id": 864,
+        "line": 45,
+        "precode": "void outerHtmlTail(StringBuilder accum, int depth, Document.OutputSettings out) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "void outerHtmlTail(StringBuilder accum, int depth, Document.OutputSettings out) {}"
+    },
+    {
+        "id": 865,
+        "line": 35,
+        "precode": "if (!StringUtil.isBlank(attr(\"name\"))",
+        "aftercode": "if (StringUtil.isBlank(attr(\"name\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 866,
+        "line": 37,
+        "precode": "if (!StringUtil.isBlank(attr(\"publicId\"))",
+        "aftercode": "if (StringUtil.isBlank(attr(\"publicId\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 867,
+        "line": 39,
+        "precode": "if (!StringUtil.isBlank(attr(\"systemId\"))",
+        "aftercode": "if (StringUtil.isBlank(attr(\"systemId\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java"
+    },
+    {
+        "id": 872,
+        "line": 41,
+        "precode": "accum.append('>')",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append(\" \")"
+    },
+    {
+        "id": 875,
+        "line": 41,
+        "precode": "accum.append('>')",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_40_fixed/src/main/java/org/jsoup/nodes/DocumentType.java",
+        "aftercode": "accum.append(\"#\")"
+    }
+]

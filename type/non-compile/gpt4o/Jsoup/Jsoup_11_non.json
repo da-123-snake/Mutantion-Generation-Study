@@ -1,0 +1,100 @@
+[
+    {
+        "id": 24,
+        "line": 234,
+        "precode": "} else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "} else if (false) {"
+    },
+    {
+        "id": 28,
+        "line": 186,
+        "precode": "throw new SelectorParseException(\"Could not parse query '%s': unexpected token at '%s'\", query, tq.remainder());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "throw new IllegalArgumentException(\"Invalid query '%s': unknown token '%s'\", query, tq.remainder());"
+    },
+    {
+        "id": 37,
+        "line": 318,
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "precode": "private static Elements filterForChildren(Collection<Element> parents, Collection<Element> candidates) {",
+        "aftercode": "private static Elements filterForChildren(Collection<Element> parents, Collection<Element> others) {"
+    },
+    {
+        "id": 38,
+        "line": 397,
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "precode": "for (Element c : candidates) {",
+        "aftercode": "for (Element c : parents) {"
+    },
+    {
+        "id": 43,
+        "line": 405,
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "precode": "return children;",
+        "aftercode": "return candidates;"
+    },
+    {
+        "id": 44,
+        "line": 397,
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "precode": "CHILD: for (Element c : candidates) {",
+        "aftercode": "for (Element c : candidates) {"
+    },
+    {
+        "id": 51,
+        "line": 414,
+        "precode": "if (el.equals(out)) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "if (el.contains(out)) {"
+    },
+    {
+        "id": 55,
+        "line": 420,
+        "precode": "output.add(el);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "output.add(out);"
+    },
+    {
+        "id": 58,
+        "line": 415,
+        "precode": "found = true;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "break;"
+    },
+    {
+        "id": 61,
+        "line": 419,
+        "precode": "if (!found)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "if (out.equals(el))"
+    },
+    {
+        "id": 62,
+        "line": 411,
+        "precode": "for (Element el: elements) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "for (Element el: root.getAllElements()) {"
+    },
+    {
+        "id": 69,
+        "line": 141,
+        "precode": "Elements output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "List<Element> output;"
+    },
+    {
+        "id": 90,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); output.forEach(ele -> elements.add(ele));"
+    },
+    {
+        "id": 92,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); output.stream().forEach(ele -> elements.add(ele));"
+    }
+]

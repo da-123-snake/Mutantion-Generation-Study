@@ -1,0 +1,93 @@
+[
+    {
+        "id": 619,
+        "line": 1378,
+        "precode": "                    tb.error(this);",
+        "aftercode": "                    return false;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 623,
+        "line": 167,
+        "precode": "                            tb.insert(start);",
+        "aftercode": "                            return tb.process(t);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 624,
+        "line": 12,
+        "precode": "                    boolean processed = tb.processEndTag(\"td\");",
+        "aftercode": "                    tb.processEndTag(\"th\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 689,
+        "line": 994,
+        "precode": "tb.insertEmpty(startTag);",
+        "aftercode": "return tb.process(t);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 690,
+        "line": 517,
+        "precode": "tb.framesetOk(false);",
+        "aftercode": "return tb.process(t);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 692,
+        "line": 458,
+        "precode": "if (tb.getFromStack(\"svg\") == null)",
+        "aftercode": "return tb.process(t);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 1098,
+        "line": 764,
+        "precode": "String name = t.asEndTag().name(); // matches with case sensitivity if enabled",
+        "aftercode": "String name = t.asEndTag().getName(); // matches with case sensitivity if enabled",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 1099,
+        "line": 99,
+        "precode": "} else if (t.isEOF()) {\n    // chillax! we're done\n}",
+        "aftercode": "} else if (t.isEndOfFile()) {\n    // chillax! we're done\n}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 1103,
+        "line": 94,
+        "precode": "        todo: implement. Also; how do we get here?",
+        "aftercode": "        // TODO: implement this part. How do we get here?",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 1141,
+        "line": 1081,
+        "precode": "            tb.clearStackToTableBodyContext();",
+        "aftercode": "tb.popStackToClose(name); // potential mutation 2",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 1143,
+        "line": 930,
+        "precode": "                tb.insert(new Token.Character().data(character));",
+        "aftercode": "tb.insert(new Token.Comment().data(character)); // potential mutation 4",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 1144,
+        "line": 798,
+        "precode": "    private static void closeCell(HtmlTreeBuilder tb) {",
+        "aftercode": "    private static void closeCell(HtmlTreeBuilder tb) { tb.transition(InBody); // potential mutation 5",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    },
+    {
+        "id": 1148,
+        "line": 1118,
+        "precode": "            } else if (name.equals(\"table\")) {",
+        "aftercode": "            } else if (name.equals(\"table\")) { tb.insertEmpty(startTag); // potential mutation 9",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_62_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java"
+    }
+]

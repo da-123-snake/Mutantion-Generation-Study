@@ -1,0 +1,72 @@
+[
+    {
+        "id": 126,
+        "line": 292,
+        "precode": "",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "    statesInitialized = true;"
+    },
+    {
+        "id": 127,
+        "line": 292,
+        "precode": "",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 129,
+        "line": 292,
+        "precode": "",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "SortedSet<EventState> occuringEvents = new TreeSet<EventState>(new Comparator<EventState>() {"
+    },
+    {
+        "id": 136,
+        "line": 330,
+        "precode": "if (isLastStep) {",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "if (isLastStep && currentY.length > 0) {"
+    },
+    {
+        "id": 140,
+        "line": 342,
+        "precode": "System.arraycopy(eventY, 0, y, 0, y.length);",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "y = Arrays.copyOf(eventY, eventY.length);"
+    },
+    {
+        "id": 143,
+        "line": 345,
+        "precode": "for (final EventState remaining : occuringEvents) {",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "for (final EventState remaining : occuringEvents.subList(0, occuringEvents.size() / 2)) {"
+    },
+    {
+        "id": 144,
+        "line": 348,
+        "precode": "return eventT;",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "return -eventT;"
+    },
+    {
+        "id": 145,
+        "line": 345,
+        "precode": "for (final EventState remaining : occuringEvents) {",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "for (final EventState remaining : occuringEvents) { remaining.stepAccepted(eventT, eventY); }"
+    },
+    {
+        "id": 147,
+        "line": 373,
+        "precode": "for (StepHandler handler : stepHandlers) {",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "for (StepHandler handler : stepHandlers.subList(0, stepHandlers.size() / 2)) {"
+    },
+    {
+        "id": 148,
+        "line": 348,
+        "precode": "return eventT;",
+        "filepath": "defects4j_fixed/Math/Math_44_fixed/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java",
+        "aftercode": "return -eventT / 2;"
+    }
+]

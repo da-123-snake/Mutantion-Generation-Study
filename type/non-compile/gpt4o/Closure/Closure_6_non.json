@@ -1,0 +1,72 @@
+[
+    {
+        "id": 86,
+        "line": 767,
+        "precode": "JSType jsType = n.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "JSType jsType = n.getBogusType();"
+    },
+    {
+        "id": 91,
+        "line": 773,
+        "precode": "return getNativeType(UNKNOWN_TYPE);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return getNativeType(ANY_TYPE);"
+    },
+    {
+        "id": 388,
+        "line": 365,
+        "precode": "!leftType.isNoType()",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "leftType.isNoType()"
+    },
+    {
+        "id": 389,
+        "line": 365,
+        "precode": "!rightType.canAssignTo(leftType)",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "rightType.canAssignTo(leftType)"
+    },
+    {
+        "id": 390,
+        "line": 372,
+        "precode": "if (ownerFn.isInterface()",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (!ownerFn.isInterface()"
+    },
+    {
+        "id": 392,
+        "line": 373,
+        "precode": "&& leftType.isFunctionType()",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "&& !leftType.isFunctionType()"
+    },
+    {
+        "id": 394,
+        "line": "mismatch",
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"error assigning property \" + propName + \" of \" + getReadableJSTypeName(owner, false), rightType, leftType);"
+    },
+    {
+        "id": 397,
+        "line": "if (ownerFn.isInterface() && rightType.isFunctionType() && leftType.isFunctionType()) {",
+        "precode": "if (ownerFn.isInterface() && rightType.isFunctionType() && leftType.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (ownerFn.isInterface() || rightType.isFunctionType() || leftType.isFunctionType()) {"
+    },
+    {
+        "id": 399,
+        "line": 365,
+        "precode": "if (!leftType.isNoType() && !rightType.canAssignTo(leftType)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (!leftType.isNoObjectType() && !rightType.canBeAssignedBy(leftType)) {"
+    },
+    {
+        "id": 406,
+        "line": 402,
+        "precode": "return false;",
+        "aftercode": "return mismatch(t, n, msg, rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java"
+    }
+]

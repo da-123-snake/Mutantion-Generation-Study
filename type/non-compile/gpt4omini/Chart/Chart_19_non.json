@@ -1,0 +1,79 @@
+[
+    {
+        "id": 16,
+        "line": 2168,
+        "precode": "Integer key = new Integer(index);",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "int key = index;"
+    },
+    {
+        "id": 17,
+        "line": 2170,
+        "precode": "result = (Collection) this.foregroundRangeMarkers.get(key);",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "result = (Collection) this.foregroundRangeMarkers.get(new Integer(key));"
+    },
+    {
+        "id": 19,
+        "line": 2173,
+        "precode": "result = (Collection) this.backgroundRangeMarkers.get(key);",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "result = (Collection) this.backgroundRangeMarkers.get(key + 1);"
+    },
+    {
+        "id": 32,
+        "line": 2476,
+        "precode": "space = xAxis.reserveSpace(g2, this, plotArea, edge, space);",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "space = xAxis.reserveSpace(g2, this, plotArea, edge, space + 10);"
+    },
+    {
+        "id": 35,
+        "line": 2292,
+        "precode": "    public void setRangeCrosshairValue(double value) {",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "    public void setRangeCrosshairValue(double value, boolean notifyListeners) {"
+    },
+    {
+        "id": 49,
+        "line": 1,
+        "precode": "protected AxisSpace calculateRangeAxisSpace(Graphics2D g2, Rectangle2D plotArea, AxisSpace space) {",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "protected AxisSpace calculateRangeAxisSpace(Graphics2D g2, Rectangle2D plotArea, AxisSpace space) throws Exception {"
+    },
+    {
+        "id": 50,
+        "line": 2499,
+        "precode": "space = new AxisSpace();",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "space = new AxisSpace(10);"
+    },
+    {
+        "id": 113,
+        "line": 698,
+        "precode": "if (axis == null) {",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (axis != null && this.domainAxes.contains(axis)) {"
+    },
+    {
+        "id": 115,
+        "line": 701,
+        "precode": "return this.domainAxes.indexOf(axis);",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "return this.domainAxes.lastIndexOf(axis);"
+    },
+    {
+        "id": 116,
+        "line": 698,
+        "precode": "if (axis == null) {",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (axis == null || this.domainAxes.isEmpty()) {"
+    },
+    {
+        "id": 119,
+        "line": 979,
+        "precode": "int result = this.rangeAxes.indexOf(axis);",
+        "filepath": "defects4j_fixed/Chart/Chart_19_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "int result = this.rangeAxes.lastIndexOf(axis);"
+    }
+]

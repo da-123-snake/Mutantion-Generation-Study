@@ -1,0 +1,128 @@
+[
+    {
+        "id": 102,
+        "line": 18,
+        "precode": "package org.apache.commons.cli;",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "package org.apache.commons.cli.modified;"
+    },
+    {
+        "id": 105,
+        "line": 20,
+        "precode": "import java.util.ArrayList;",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "import java.util.LinkedList;"
+    },
+    {
+        "id": 106,
+        "line": 21,
+        "precode": "import java.util.Arrays;",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "import java.util.Collections;"
+    },
+    {
+        "id": 107,
+        "line": 22,
+        "precode": "import java.util.Enumeration;",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "import java.util.Iterator;"
+    },
+    {
+        "id": 108,
+        "line": 21,
+        "precode": "import java.util.Arrays;",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "import java.util.ArrayList; // Removed Arrays"
+    },
+    {
+        "id": 110,
+        "line": 49,
+        "precode": "this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "this.requiredOptions = new HashSet(options.getRequiredOptions());"
+    },
+    {
+        "id": 111,
+        "line": 49,
+        "precode": "this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "this.requiredOptions = new ArrayList<>(Collections.singletonList(null));"
+    },
+    {
+        "id": 114,
+        "line": 48,
+        "precode": "this.options = options;",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "this.options = options.getDefaultOptions();"
+    },
+    {
+        "id": 313,
+        "line": 20,
+        "precode": "if (!(\"yes\".equalsIgnoreCase(value) || \"true\".equalsIgnoreCase(value) || \"1\".equalsIgnoreCase(value))) {",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (!(\"yes\".equalsIgnoreCase(value) && \"true\".equalsIgnoreCase(value) && \"1\".equalsIgnoreCase(value))) {"
+    },
+    {
+        "id": 314,
+        "line": 20,
+        "precode": "if (!(\"yes\".equalsIgnoreCase(value) || \"true\".equalsIgnoreCase(value) || \"1\".equalsIgnoreCase(value))) {",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (!(\"no\".equalsIgnoreCase(value) || \"false\".equalsIgnoreCase(value) || \"0\".equalsIgnoreCase(value))) {"
+    },
+    {
+        "id": 315,
+        "line": 20,
+        "precode": "if (!(\"yes\".equalsIgnoreCase(value) || \"true\".equalsIgnoreCase(value) || \"1\".equalsIgnoreCase(value))) {",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (\"yes\".equalsIgnoreCase(value) || \"true\".equalsIgnoreCase(value) || \"1\".equalsIgnoreCase(value)) {"
+    },
+    {
+        "id": 316,
+        "line": 20,
+        "precode": "if (!(\"yes\".equalsIgnoreCase(value) || \"true\".equalsIgnoreCase(value) || \"1\".equalsIgnoreCase(value))) {",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (!(\"yes\".equalsIgnoreCase(value) || \"true\".equalsIgnoreCase(value))) {"
+    },
+    {
+        "id": 317,
+        "line": 20,
+        "precode": "if (!(\"yes\".equalsIgnoreCase(value) || \"true\".equalsIgnoreCase(value) || \"1\".equalsIgnoreCase(value))) {",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (!(value.equalsIgnoreCase(\"yes\") || value.equalsIgnoreCase(\"true\"))) {"
+    },
+    {
+        "id": 358,
+        "line": 19,
+        "precode": "if (opt.hasArg()) {",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (!opt.hasArg()) {"
+    },
+    {
+        "id": 359,
+        "line": 293,
+        "precode": "cmd.addOption(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "cmd.removeOption(opt);"
+    },
+    {
+        "id": 361,
+        "line": 24,
+        "precode": "if (!(\"yes\".equalsIgnoreCase(value) ||",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (!(\"no\".equalsIgnoreCase(value) ||"
+    },
+    {
+        "id": 399,
+        "line": 16,
+        "precode": "if (opt.getValues() == null && !opt.hasOptionalArg()) {",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (opt.getValues() == null || opt.hasOptionalArg()) {"
+    },
+    {
+        "id": 400,
+        "line": 331,
+        "precode": "String str = (String) iter.next();",
+        "filepath": "defects4j_fixed/Cli/Cli_28_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "Object str = iter.next();"
+    }
+]

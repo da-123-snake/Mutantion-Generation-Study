@@ -1,0 +1,394 @@
+[
+    {
+        "id": 17,
+        "line": 439,
+        "precode": "if (tq.matchesAny(combinators)) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "if (tq.matchesAny(combinators)) {\nelements.add(root);\ncombinator(tq.consume());\n}"
+    },
+    {
+        "id": 18,
+        "line": 439,
+        "precode": "else if (tq.matches(\":has(\"))) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "else if (tq.matches(\":has(\"))) {\nelements.addAll(root.getAllElements());\n}"
+    },
+    {
+        "id": 19,
+        "line": 439,
+        "precode": "else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "else {\naddElements(findElements()); // chomp first element matcher off queue \n}"
+    },
+    {
+        "id": 20,
+        "line": 439,
+        "precode": "if (combinator == \">\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "if (combinator == \">\") {\noutput = filterForChildren(elements, select(subQuery, elements));\n}"
+    },
+    {
+        "id": 21,
+        "line": 439,
+        "precode": "else if (combinator == \" \")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "else if (combinator == \" \") {\noutput = filterForDescendants(elements, select(subQuery, elements));\n}"
+    },
+    {
+        "id": 22,
+        "line": 439,
+        "precode": "else if (combinator == \"+\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "else if (combinator == \"+\") {\noutput = filterForAdjacentSiblings(elements, select(subQuery, root));\n}"
+    },
+    {
+        "id": 23,
+        "line": 439,
+        "precode": "else if (combinator == \"~\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "else if (combinator == \"~\") {\noutput = filterForGeneralSiblings(elements, select(subQuery, root));\n}"
+    },
+    {
+        "id": 24,
+        "line": 439,
+        "precode": "if (cq.isEmpty()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "if (cq.isEmpty()) {\nreturn key.startsWith(\"^\")? root.getElementsByAttributeStarting(key.substring(1)) : root.getElementsByAttribute(key);\n}"
+    },
+    {
+        "id": 25,
+        "line": 439,
+        "precode": "if (tq.matchChomp(\"*\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return allElements();"
+    },
+    {
+        "id": 26,
+        "line": 439,
+        "precode": "else if (tq.matchChomp(\":lt(\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return indexLessThan();"
+    },
+    {
+        "id": 27,
+        "line": 439,
+        "precode": "else if (tq.matchChomp(\":gt(\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return indexGreaterThan();"
+    },
+    {
+        "id": 28,
+        "line": 439,
+        "precode": "else if (tq.matchChomp(\":eq(\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return indexEquals();"
+    },
+    {
+        "id": 29,
+        "line": 439,
+        "precode": "else if (tq.matchesWord()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return byTag();"
+    },
+    {
+        "id": 30,
+        "line": 439,
+        "precode": "else if (tq.matches(\"[\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return byAttribute();"
+    },
+    {
+        "id": 31,
+        "line": 439,
+        "precode": "else if (tq.matchChomp(\"*\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return allElements();"
+    },
+    {
+        "id": 32,
+        "line": 439,
+        "precode": "else if (tq.matchChomp(\":lt(\")",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return indexLessThan();"
+    },
+    {
+        "id": 33,
+        "line": 439,
+        "precode": "Elements byAttribute()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements byAttributeValue()"
+    },
+    {
+        "id": 34,
+        "line": 439,
+        "precode": "Elements byAttribute()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements byAttributeValueNot()"
+    },
+    {
+        "id": 35,
+        "line": 439,
+        "precode": "Elements byAttribute()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements byAttributeValueStarting()"
+    },
+    {
+        "id": 36,
+        "line": 439,
+        "precode": "Elements byAttribute()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements byAttributeValueEnding()"
+    },
+    {
+        "id": 37,
+        "line": 439,
+        "precode": "Elements byAttribute()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements byAttributeValueContaining()"
+    },
+    {
+        "id": 38,
+        "line": 439,
+        "precode": "Elements byAttribute()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements byAttributeValueMatching()"
+    },
+    {
+        "id": 39,
+        "line": 439,
+        "precode": "Elements byClass()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements byId()"
+    },
+    {
+        "id": 40,
+        "line": 439,
+        "precode": "Elements byTag()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements byClass()"
+    },
+    {
+        "id": 41,
+        "line": 439,
+        "precode": "Elements contains(boolean own)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements matches(boolean own)"
+    },
+    {
+        "id": 42,
+        "line": 439,
+        "precode": "Elements contains(boolean own)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements containsOwn(boolean own)"
+    },
+    {
+        "id": 43,
+        "line": 439,
+        "precode": "Elements matches(boolean own)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements matchesOwn(boolean own)"
+    },
+    {
+        "id": 44,
+        "line": 439,
+        "precode": "Elements not()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements contains(boolean own)"
+    },
+    {
+        "id": 45,
+        "line": 439,
+        "precode": "Elements not()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "Elements matches(boolean own)"
+    },
+    {
+        "id": 46,
+        "line": 439,
+        "precode": "Elements output;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return output;"
+    },
+    {
+        "id": 47,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return output;"
+    },
+    {
+        "id": 48,
+        "line": 439,
+        "precode": "Elements output = null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 49,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 50,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 51,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 52,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 53,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 54,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 55,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 56,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 57,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 58,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 59,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 60,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 61,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 62,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 63,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 64,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 65,
+        "line": 439,
+        "precode": "Elements output = new Elements(elements);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements(elements);"
+    },
+    {
+        "id": 66,
+        "line": 439,
+        "precode": "Elements output = new Elements();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return new Elements();"
+    },
+    {
+        "id": 67,
+        "line": 439,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 68,
+        "line": 439,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": " while (true) { "
+    },
+    {
+        "id": 69,
+        "line": 439,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 70,
+        "line": 439,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 71,
+        "line": 439,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 72,
+        "line": 439,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    }
+]

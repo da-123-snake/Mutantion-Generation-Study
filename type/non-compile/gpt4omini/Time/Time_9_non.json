@@ -1,0 +1,1444 @@
+[
+    {
+        "id": 147,
+        "line": 1176,
+        "precode": "if (offsetBefore <= offsetAfter) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (offsetBefore < offsetAfter) {"
+    },
+    {
+        "id": 148,
+        "line": 1181,
+        "precode": "long diff = offsetBefore - offsetAfter;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long diff = offsetAfter - offsetBefore;"
+    },
+    {
+        "id": 149,
+        "line": 1182,
+        "precode": "long transition = nextTransition(instantBefore);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long transition = nextTransition(instantAfter);"
+    },
+    {
+        "id": 150,
+        "line": 1183,
+        "precode": "long overlapStart = transition - diff;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long overlapStart = transition + diff;"
+    },
+    {
+        "id": 151,
+        "line": 1184,
+        "precode": "long overlapEnd = transition + diff;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long overlapEnd = transition - diff;"
+    },
+    {
+        "id": 152,
+        "line": 1185,
+        "precode": "if (instant < overlapStart || instant >= overlapEnd) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (instant <= overlapStart || instant > overlapEnd) {"
+    },
+    {
+        "id": 153,
+        "line": 1191,
+        "precode": "if (afterStart >= diff) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (afterStart > diff) {"
+    },
+    {
+        "id": 154,
+        "line": 1193,
+        "precode": "return earlierOrLater ? instant : instant - diff;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return earlierOrLater ? instant - diff : instant;"
+    },
+    {
+        "id": 155,
+        "line": 1196,
+        "precode": "return earlierOrLater ? instant + diff : instant;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return earlierOrLater ? instant : instant + diff;"
+    },
+    {
+        "id": 156,
+        "line": 1172,
+        "precode": "long instantBefore = instant - 3 * DateTimeConstants.MILLIS_PER_HOUR;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long instantBefore = instant - 2 * DateTimeConstants.MILLIS_PER_HOUR;"
+    },
+    {
+        "id": 157,
+        "line": 1173,
+        "precode": "long instantAfter = instant + 3 * DateTimeConstants.MILLIS_PER_HOUR;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long instantAfter = instant + 2 * DateTimeConstants.MILLIS_PER_HOUR;"
+    },
+    {
+        "id": 158,
+        "line": 1186,
+        "precode": "return instant;  // not an overlap",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return instant + 1;  // not an overlap"
+    },
+    {
+        "id": 159,
+        "line": 1181,
+        "precode": "long diff = offsetBefore - offsetAfter;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long diff = offsetAfter - offsetBefore;"
+    },
+    {
+        "id": 160,
+        "line": 1185,
+        "precode": "if (instant < overlapStart || instant >= overlapEnd) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (instant < overlapStart && instant >= overlapEnd) {"
+    },
+    {
+        "id": 161,
+        "line": 1190,
+        "precode": "long afterStart = instant - overlapStart;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long afterStart = overlapStart - instant;"
+    },
+    {
+        "id": 162,
+        "line": 1176,
+        "precode": "if (offsetBefore <= offsetAfter) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (offsetBefore < offsetAfter) {"
+    },
+    {
+        "id": 163,
+        "line": 1172,
+        "precode": "long instantBefore = instant - 3 * DateTimeConstants.MILLIS_PER_HOUR;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long instantBefore = instant - DateTimeConstants.MILLIS_PER_HOUR;"
+    },
+    {
+        "id": 164,
+        "line": 1173,
+        "precode": "long instantAfter = instant + 3 * DateTimeConstants.MILLIS_PER_HOUR;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long instantAfter = instant + 1 * DateTimeConstants.MILLIS_PER_HOUR;"
+    },
+    {
+        "id": 165,
+        "line": 1185,
+        "precode": "if (instant < overlapStart || instant >= overlapEnd) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (instant < overlapStart || instant > overlapEnd) {"
+    },
+    {
+        "id": 166,
+        "line": 1183,
+        "precode": "long overlapStart = transition - diff;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long overlapStart = transition / 2;"
+    },
+    {
+        "id": 167,
+        "line": 1182,
+        "precode": "long transition = nextTransition(instantBefore);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long transition = nextTransition(instantAfter);"
+    },
+    {
+        "id": 168,
+        "line": 1191,
+        "precode": "if (afterStart >= diff) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (afterStart <= diff) {"
+    },
+    {
+        "id": 169,
+        "line": 1196,
+        "precode": "return earlierOrLater ? instant + diff : instant;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return earlierOrLater ? instant - diff : instant;"
+    },
+    {
+        "id": 170,
+        "line": 1184,
+        "precode": "long overlapEnd = transition + diff;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long overlapEnd = transition - diff;"
+    },
+    {
+        "id": 171,
+        "line": 1176,
+        "precode": "if (offsetBefore <= offsetAfter) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (offsetBefore < offsetAfter) {"
+    },
+    {
+        "id": 172,
+        "line": 1193,
+        "precode": "return earlierOrLater ? instant : instant - diff;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return earlierOrLater ? instant + diff : instant;"
+    },
+    {
+        "id": 173,
+        "line": 1191,
+        "precode": "if (afterStart >= diff) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (afterStart == diff) {"
+    },
+    {
+        "id": 174,
+        "line": 1181,
+        "precode": "long diff = offsetBefore - offsetAfter;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long diff = offsetAfter + offsetBefore;"
+    },
+    {
+        "id": 175,
+        "line": 3,
+        "precode": "adjusts the offset to be the earlier or later one during an overlap.",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "adjusts the offset to be the earlier than or later one during an overlap."
+    },
+    {
+        "id": 176,
+        "line": 1172,
+        "precode": "long instantBefore = instant - 3 * DateTimeConstants.MILLIS_PER_HOUR;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long instantBefore = instant - 4 * DateTimeConstants.MILLIS_PER_HOUR;"
+    },
+    {
+        "id": 177,
+        "line": 1193,
+        "precode": "return earlierOrLater ? instant : instant - diff;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return earlierOrLater ? instant - diff : instant;"
+    },
+    {
+        "id": 178,
+        "line": 1168,
+        "precode": "public long adjustOffset(long instant, boolean earlierOrLater) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "public long adjustOffset(long instant, boolean earlier) {"
+    },
+    {
+        "id": 200,
+        "line": 897,
+        "precode": "if ((offsetLocal - offsetAdjusted) < 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((offsetLocal - offsetAdjusted) <= 0) {"
+    },
+    {
+        "id": 201,
+        "line": 901,
+        "precode": "long nextLocal = nextTransition(instantAdjusted);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long nextLocal = nextTransition(instantAdjusted + 1);"
+    },
+    {
+        "id": 202,
+        "line": 902,
+        "precode": "long nextAdjusted = nextTransition(instantLocal - offsetAdjusted);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long nextAdjusted = nextTransition(instantLocal + offsetAdjusted);"
+    },
+    {
+        "id": 203,
+        "line": 903,
+        "precode": "if (nextLocal != nextAdjusted) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (nextLocal == nextAdjusted) {"
+    },
+    {
+        "id": 204,
+        "line": 897,
+        "precode": "if ((offsetLocal - offsetAdjusted) < 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((offsetLocal - offsetAdjusted) <= 1) {"
+    },
+    {
+        "id": 205,
+        "line": 901,
+        "precode": "long nextLocal = nextTransition(instantAdjusted);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long nextLocal = nextTransition(instantAdjusted + 1000);"
+    },
+    {
+        "id": 206,
+        "line": 903,
+        "precode": "if (nextLocal != nextAdjusted) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (nextLocal == nextAdjusted + 1) {"
+    },
+    {
+        "id": 295,
+        "line": 570,
+        "precode": "map.put(\"GMT\", \"UTC\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"GMT\", \"GMT\");"
+    },
+    {
+        "id": 296,
+        "line": 571,
+        "precode": "map.put(\"WET\", \"WET\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"WET\", \"UTC\");"
+    },
+    {
+        "id": 297,
+        "line": 572,
+        "precode": "map.put(\"CET\", \"CET\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"CET\", \"CST\");"
+    },
+    {
+        "id": 298,
+        "line": 573,
+        "precode": "map.put(\"MET\", \"CET\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"MET\", \"GMT\");"
+    },
+    {
+        "id": 299,
+        "line": 575,
+        "precode": "map.put(\"EET\", \"EET\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"EET\", \"CET\");"
+    },
+    {
+        "id": 300,
+        "line": 577,
+        "precode": "map.put(\"HST\", \"Pacific/Honolulu\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"HST\", \"America/Honolulu\");"
+    },
+    {
+        "id": 301,
+        "line": 582,
+        "precode": "map.put(\"CST\", \"America/Chicago\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"CST\", \"UTC\");"
+    },
+    {
+        "id": 302,
+        "line": 580,
+        "precode": "map.put(\"MST\", \"America/Denver\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"MST\", \"America/Los_Angeles\");"
+    },
+    {
+        "id": 303,
+        "line": 593,
+        "precode": "map.put(\"PLT\", \"Asia/Karachi\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"PLT\", \"Asia/Tokyo\");"
+    },
+    {
+        "id": 304,
+        "line": 598,
+        "precode": "map.put(\"JST\", \"Asia/Tokyo\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"JST\", \"Asia/Seoul\");"
+    },
+    {
+        "id": 305,
+        "line": 602,
+        "precode": "map.put(\"NST\", \"Pacific/Auckland\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"NST\", \"Pacific/Fiji\");"
+    },
+    {
+        "id": 306,
+        "line": 574,
+        "precode": "map.put(\"ECT\", \"CET\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"ECT\", \"GMT\");"
+    },
+    {
+        "id": 307,
+        "line": 575,
+        "precode": "map.put(\"EET\", \"EET\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"EET\", \"UTC\");"
+    },
+    {
+        "id": 308,
+        "line": 576,
+        "precode": "map.put(\"MIT\", \"Pacific/Apia\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"MIT\", \"Pacific/Funafuti\");"
+    },
+    {
+        "id": 309,
+        "line": 577,
+        "precode": "map.put(\"HST\", \"Pacific/Honolulu\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"HST\", \"Pacific/Guadalcanal\");"
+    },
+    {
+        "id": 310,
+        "line": 578,
+        "precode": "map.put(\"AST\", \"America/Anchorage\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"AST\", \"America/Chicago\");"
+    },
+    {
+        "id": 311,
+        "line": 579,
+        "precode": "map.put(\"PST\", \"America/Los_Angeles\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"PST\", \"America/New_York\");"
+    },
+    {
+        "id": 312,
+        "line": 580,
+        "precode": "map.put(\"MST\", \"America/Denver\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"MST\", \"America/Phoenix\");"
+    },
+    {
+        "id": 313,
+        "line": 581,
+        "precode": "map.put(\"PNT\", \"America/Phoenix\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"PNT\", \"America/Los_Angeles\");"
+    },
+    {
+        "id": 314,
+        "line": 582,
+        "precode": "map.put(\"CST\", \"America/Chicago\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"CST\", \"America/Los_Angeles\");"
+    },
+    {
+        "id": 315,
+        "line": 583,
+        "precode": "map.put(\"EST\", \"America/New_York\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"EST\", \"America/Chicago\");"
+    },
+    {
+        "id": 316,
+        "line": 584,
+        "precode": "map.put(\"IET\", \"America/Indiana/Indianapolis\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"IET\", \"America/Puerto_Rico\");"
+    },
+    {
+        "id": 317,
+        "line": 585,
+        "precode": "map.put(\"PRT\", \"America/Puerto_Rico\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"PRT\", \"America/New_York\");"
+    },
+    {
+        "id": 318,
+        "line": 586,
+        "precode": "map.put(\"CNT\", \"America/St_Johns\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"CNT\", \"America/Chicago\");"
+    },
+    {
+        "id": 319,
+        "line": 587,
+        "precode": "map.put(\"AGT\", \"America/Argentina/Buenos_Aires\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"AGT\", \"America/Sao_Paulo\");"
+    },
+    {
+        "id": 320,
+        "line": 588,
+        "precode": "map.put(\"BET\", \"America/Sao_Paulo\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"BET\", \"America/Argentina/Buenos_Aires\");"
+    },
+    {
+        "id": 321,
+        "line": 589,
+        "precode": "map.put(\"ART\", \"Africa/Cairo\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"ART\", \"Asia/Moscow\");"
+    },
+    {
+        "id": 322,
+        "line": 590,
+        "precode": "map.put(\"CAT\", \"Africa/Harare\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"CAT\", \"Africa/Nairobi\");"
+    },
+    {
+        "id": 323,
+        "line": 591,
+        "precode": "map.put(\"EAT\", \"Africa/Addis_Ababa\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"EAT\", \"Asia/Dhaka\");"
+    },
+    {
+        "id": 324,
+        "line": 592,
+        "precode": "map.put(\"NET\", \"Asia/Yerevan\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "map.put(\"NET\", \"Asia/Baku\");"
+    },
+    {
+        "id": 336,
+        "line": 897,
+        "precode": "if ((offsetLocal - offsetAdjusted) < 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((offsetLocal - offsetAdjusted) <= 0) {"
+    },
+    {
+        "id": 337,
+        "line": 897,
+        "precode": "if ((offsetLocal - offsetAdjusted) < 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((offsetLocal - offsetAdjusted) > 0) {"
+    },
+    {
+        "id": 338,
+        "line": 901,
+        "precode": "long nextLocal = nextTransition(instantAdjusted);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long nextLocal = nextTransition(instantLocal);"
+    },
+    {
+        "id": 339,
+        "line": 902,
+        "precode": "long nextAdjusted = nextTransition(instantLocal - offsetAdjusted);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long nextAdjusted = nextTransition(instantAdjusted - offsetAdjusted);"
+    },
+    {
+        "id": 340,
+        "line": 904,
+        "precode": "return offsetLocal;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return offsetAdjusted;"
+    },
+    {
+        "id": 341,
+        "line": 907,
+        "precode": "else if (offsetLocal >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "else if (offsetLocal > 0) {"
+    },
+    {
+        "id": 342,
+        "line": 908,
+        "precode": "long prev = previousTransition(instantAdjusted);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long prev = previousTransition(instantLocal);"
+    },
+    {
+        "id": 343,
+        "line": 909,
+        "precode": "if (prev < instantAdjusted) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (prev <= instantAdjusted) {"
+    },
+    {
+        "id": 344,
+        "line": 910,
+        "precode": "int offsetPrev = getOffset(prev);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "int offsetPrev = getOffset(instantAdjusted);"
+    },
+    {
+        "id": 345,
+        "line": 912,
+        "precode": "if (instantAdjusted - prev <= diff) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (instantAdjusted - prev < diff) {"
+    },
+    {
+        "id": 346,
+        "line": 897,
+        "precode": "if ((offsetLocal - offsetAdjusted) < 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((offsetLocal - offsetAdjusted) == 0) {"
+    },
+    {
+        "id": 347,
+        "line": 904,
+        "precode": "return offsetLocal;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return -offsetLocal;"
+    },
+    {
+        "id": 348,
+        "line": 901,
+        "precode": "long nextLocal = nextTransition(instantAdjusted);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long nextLocal = nextTransition(prev);"
+    },
+    {
+        "id": 349,
+        "line": 910,
+        "precode": "int offsetPrev = getOffset(prev);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "int offsetPrev = getOffset(instantLocal);"
+    },
+    {
+        "id": 350,
+        "line": 912,
+        "precode": "if (instantAdjusted - prev <= diff) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (instantAdjusted - prev >= diff) {"
+    },
+    {
+        "id": 351,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) <= 0 && (instantUTC ^ offset) >= 0) {"
+    },
+    {
+        "id": 352,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) > 0) {"
+    },
+    {
+        "id": 353,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) != 0 && (instantUTC ^ offset) >= 0) {"
+    },
+    {
+        "id": 354,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) < 0 || (instantUTC ^ offset) >= 0) {"
+    },
+    {
+        "id": 355,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) <= 0 && (instantUTC ^ offset) > 0) {"
+    },
+    {
+        "id": 356,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) < 1 && (instantUTC ^ offset) >= 0) {"
+    },
+    {
+        "id": 357,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) > 0) {"
+    },
+    {
+        "id": 358,
+        "line": 935,
+        "precode": "throw new ArithmeticException(\"Adding time zone offset caused overflow\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "throw new IllegalArgumentException(\"Adding time zone offset caused overflow\");"
+    },
+    {
+        "id": 359,
+        "line": 935,
+        "precode": "throw new ArithmeticException(\"Adding time zone offset caused overflow\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "throw new ArithmeticException(\"Time zone offset addition overflow\");"
+    },
+    {
+        "id": 360,
+        "line": 935,
+        "precode": "throw new ArithmeticException(\"Adding time zone offset caused overflow\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "throw new ArithmeticException(\"Overflow in adding time zone offset\");"
+    },
+    {
+        "id": 361,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC & instantLocal) < 0 && (instantUTC ^ offset) >= 0) {"
+    },
+    {
+        "id": 362,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) > 0 && (instantUTC ^ offset) >= 0) {"
+    },
+    {
+        "id": 363,
+        "line": 935,
+        "precode": "throw new ArithmeticException(\"Adding time zone offset caused overflow\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return; // replaced exception with return statement"
+    },
+    {
+        "id": 364,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) <= 0 || (instantUTC ^ offset) >= 0) {"
+    },
+    {
+        "id": 365,
+        "line": 934,
+        "precode": "if ((instantUTC ^ instantLocal) < 0 && (instantUTC ^ offset) >= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if ((instantUTC ^ instantLocal) <= 0 && (instantUTC ^ offset) > 0) {"
+    },
+    {
+        "id": 366,
+        "line": 433,
+        "precode": "if (!UTC.equals(provider.getZone(\"UTC\"))) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (UTC.equals(provider.getZone(\"UTC\"))) {"
+    },
+    {
+        "id": 367,
+        "line": 433,
+        "precode": "if (!UTC.equals(provider.getZone(\"UTC\"))) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (provider.getZone(\"UTC\") == null) {"
+    },
+    {
+        "id": 368,
+        "line": 434,
+        "precode": "throw new IllegalArgumentException(\"Invalid UTC zone provided\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "throw new IllegalStateException(\"Invalid UTC zone provided\");"
+    },
+    {
+        "id": 369,
+        "line": 433,
+        "precode": "if (!UTC.equals(provider.getZone(\"UTC\"))) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (UTC.equals(provider.getZone(\"UTC\"))) {"
+    },
+    {
+        "id": 370,
+        "line": 434,
+        "precode": "throw new IllegalArgumentException(\"Invalid UTC zone provided\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return; // early exit instead of throwing an exception"
+    },
+    {
+        "id": 371,
+        "line": 434,
+        "precode": "throw new IllegalArgumentException(\"Invalid UTC zone provided\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "System.out.println(\"Invalid UTC zone provided\");"
+    },
+    {
+        "id": 372,
+        "line": 433,
+        "precode": "if (!UTC.equals(provider.getZone(\"UTC\"))) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (!UTC.equals(provider.getZone(\"GMT\"))) {"
+    },
+    {
+        "id": 373,
+        "line": 477,
+        "precode": "provider = new UTCProvider();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = new UTCProvider(); // This is a default provider that should always return UTC."
+    },
+    {
+        "id": 374,
+        "line": 480,
+        "precode": "return provider;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return null; // Altered to return null instead of the provider."
+    },
+    {
+        "id": 375,
+        "line": 455,
+        "precode": "if (providerClass != null) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (providerClass == null) { // Negated the if condition."
+    },
+    {
+        "id": 376,
+        "line": 468,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "while (true) { // Changed try block to an infinite loop."
+    },
+    {
+        "id": 377,
+        "line": 469,
+        "precode": "provider = new ZoneInfoProvider(\"org/joda/time/tz/data\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = new ZoneInfoProvider(\"org/joda/time/tz/invalid_data\"); // Incorrect path used."
+    },
+    {
+        "id": 378,
+        "line": 450,
+        "precode": "Provider provider = null;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "Provider provider = new UTCProvider(); // Initialized provider with UTCProvider directly."
+    },
+    {
+        "id": 379,
+        "line": 22,
+        "precode": "String providerClass = System.getProperty(\"org.joda.time.DateTimeZone.Provider\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "String providerClass = \"com.example.CustomProvider\"; // Hardcoded a different provider class."
+    },
+    {
+        "id": 380,
+        "line": 457,
+        "precode": "provider = (Provider) Class.forName(providerClass).newInstance();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = (Provider) Class.forName(providerClass).getDeclaredConstructor().newInstance();"
+    },
+    {
+        "id": 381,
+        "line": 457,
+        "precode": "provider = (Provider) Class.forName(providerClass).newInstance();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = (Provider) Class.forName(providerClass).factoryMethod();"
+    },
+    {
+        "id": 382,
+        "line": 470,
+        "precode": "} catch (Exception ex) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "} catch (Throwable ex) {"
+    },
+    {
+        "id": 383,
+        "line": 471,
+        "precode": "Thread thread = Thread.currentThread();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "Thread thread = new Thread();"
+    },
+    {
+        "id": 384,
+        "line": 472,
+        "precode": "thread.getThreadGroup().uncaughtException(thread, ex);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "thread.getThreadGroup().uncaughtException(Thread.currentThread(), ex);"
+    },
+    {
+        "id": 385,
+        "line": 469,
+        "precode": "provider = new ZoneInfoProvider(\"org/joda/time/tz/data\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = new ZoneInfoProvider(\"org/joda/time/tz/updated_data\");"
+    },
+    {
+        "id": 386,
+        "line": 477,
+        "precode": "provider = new UTCProvider();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = new LocalTimeProvider();"
+    },
+    {
+        "id": 387,
+        "line": 4,
+        "precode": "String providerClass = System.getProperty(\"org.joda.time.DateTimeZone.Provider\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "String providerClass = System.getEnv(\"org.joda.time.DateTimeZone.Provider\");"
+    },
+    {
+        "id": 388,
+        "line": 457,
+        "precode": "provider = (Provider) Class.forName(providerClass).newInstance();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = (Provider) Class.forName(providerClass).getMethod(\"instance\").invoke(null);"
+    },
+    {
+        "id": 389,
+        "line": 471,
+        "precode": "Thread thread = Thread.currentThread();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "Thread thread = new Thread().currentThread();"
+    },
+    {
+        "id": 390,
+        "line": 477,
+        "precode": "provider = new UTCProvider();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = new NullProvider();"
+    },
+    {
+        "id": 391,
+        "line": 468,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "try { if (true) {"
+    },
+    {
+        "id": 392,
+        "line": 5,
+        "precode": "String providerClass = System.getProperty(\"org.joda.time.DateTimeZone.Provider\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "String providerClass = System.getenv(\"org.joda.time.DateTimeZone.Provider\");"
+    },
+    {
+        "id": 393,
+        "line": 471,
+        "precode": "Thread thread = Thread.currentThread();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "Thread thread = Thread.ofVirtual().currentThread();"
+    },
+    {
+        "id": 394,
+        "line": 469,
+        "precode": "provider = new ZoneInfoProvider(\"org/joda/time/tz/data\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = new ZoneInfoProvider(\"org/joda/time/tz/data\"); // commented"
+    },
+    {
+        "id": 395,
+        "line": 455,
+        "precode": "if (providerClass != null) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (providerClass == null) {"
+    },
+    {
+        "id": 396,
+        "line": 468,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "try { // altered try block"
+    },
+    {
+        "id": 397,
+        "line": 471,
+        "precode": "Thread thread = Thread.currentThread();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "Thread thread = new Thread();"
+    },
+    {
+        "id": 398,
+        "line": 8,
+        "precode": "String providerClass = System.getProperty(\"org.joda.time.DateTimeZone.Provider\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "String providerClass = System.getProperty(\"org.joda.time.DateTimeZone.Provider\", \"default\");"
+    },
+    {
+        "id": 399,
+        "line": 477,
+        "precode": "provider = new UTCProvider();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "provider = new UTCProvider(); // fallback provider"
+    },
+    {
+        "id": 400,
+        "line": 480,
+        "precode": "return provider;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return provider == null ? new UTCProvider() : provider;"
+    },
+    {
+        "id": 401,
+        "line": 521,
+        "precode": "if (nameProvider == null) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (nameProvider != null) {"
+    },
+    {
+        "id": 402,
+        "line": 522,
+        "precode": "nameProvider = getDefaultNameProvider();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "nameProvider = someOtherNameProvider();"
+    },
+    {
+        "id": 403,
+        "line": 524,
+        "precode": "cNameProvider = nameProvider;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "cNameProvider = null;"
+    },
+    {
+        "id": 404,
+        "line": 521,
+        "precode": "if (nameProvider == null) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (nameProvider == null || nameProvider.isEmpty()) {"
+    },
+    {
+        "id": 405,
+        "line": 522,
+        "precode": "nameProvider = getDefaultNameProvider();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "nameProvider = null;"
+    },
+    {
+        "id": 406,
+        "line": 524,
+        "precode": "cNameProvider = nameProvider;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "cNameProvider = getDefaultNameProvider();"
+    },
+    {
+        "id": 407,
+        "line": 520,
+        "precode": "private static void setNameProvider0(NameProvider nameProvider) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "protected static void setNameProvider0(NameProvider nameProvider) {"
+    },
+    {
+        "id": 408,
+        "line": 538,
+        "precode": "String providerClass = System.getProperty(\"org.joda.time.DateTimeZone.NameProvider\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "String providerClass = System.getProperty(\"org.joda.time.DateTimeZone.NameProvider\", \"default\");"
+    },
+    {
+        "id": 409,
+        "line": 539,
+        "precode": "if (providerClass != null) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (providerClass == null) {"
+    },
+    {
+        "id": 410,
+        "line": 541,
+        "precode": "nameProvider = (NameProvider) Class.forName(providerClass).newInstance();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "nameProvider = (NameProvider) Class.forName(providerClass).getDeclaredConstructor().newInstance();"
+    },
+    {
+        "id": 411,
+        "line": 543,
+        "precode": "Thread thread = Thread.currentThread();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "Thread thread = new Thread();"
+    },
+    {
+        "id": 412,
+        "line": 544,
+        "precode": "thread.getThreadGroup().uncaughtException(thread, ex);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "thread.getThreadGroup().uncaughtException(Thread.currentThread(), ex);"
+    },
+    {
+        "id": 413,
+        "line": 552,
+        "precode": "nameProvider = new DefaultNameProvider();",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "nameProvider = new CustomNameProvider();"
+    },
+    {
+        "id": 414,
+        "line": 551,
+        "precode": "if (nameProvider == null) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (nameProvider != null) {"
+    },
+    {
+        "id": 415,
+        "line": 73,
+        "precode": " * and whether the location uses Daylight Saving Time.",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": " * and whether the location does not use Daylight Saving Time."
+    },
+    {
+        "id": 416,
+        "line": 123,
+        "precode": " * or Daylight Saving Time depending on the time of year",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": " * or Daylight Saving Time regardless of the time of year"
+    },
+    {
+        "id": 417,
+        "line": 126,
+        "precode": " * or Daylight Saving Time depending on the time of year",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": " * or Daylight Saving Time, which is always applied."
+    },
+    {
+        "id": 418,
+        "line": 77,
+        "precode": " * supports long format time zone ids. Thus EST and ECT are not accepted.",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": " * supports long format time zone ids. Therefore, EST and ECT are accepted."
+    },
+    {
+        "id": 419,
+        "line": 132,
+        "precode": " * long format time zone ids. Thus EST and ECT are not accepted.",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": " * long format time zone ids. Thus EST or ECT could be accepted."
+    },
+    {
+        "id": 420,
+        "line": 130,
+        "precode": " * Under no circumstances should it apply Daylight Saving Time.",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": " * Its rules will apply only for Standard Time."
+    },
+    {
+        "id": 601,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset + 1);"
+    },
+    {
+        "id": 602,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset - 1);"
+    },
+    {
+        "id": 603,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(-offset);"
+    },
+    {
+        "id": 604,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(Math.abs(offset));"
+    },
+    {
+        "id": 605,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(0);"
+    },
+    {
+        "id": 606,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset * 2);"
+    },
+    {
+        "id": 607,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset / 2);"
+    },
+    {
+        "id": 608,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset + 60);"
+    },
+    {
+        "id": 609,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset - 60);"
+    },
+    {
+        "id": 610,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset * -1);"
+    },
+    {
+        "id": 611,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset + minutesOffset);"
+    },
+    {
+        "id": 612,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset - minutesOffset);"
+    },
+    {
+        "id": 613,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(Math.max(0, offset));"
+    },
+    {
+        "id": 614,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(Math.min(0, offset));"
+    },
+    {
+        "id": 615,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 616,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset + 1000);"
+    },
+    {
+        "id": 617,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset - 1000);"
+    },
+    {
+        "id": 618,
+        "line": 2,
+        "precode": "public static final DateTimeZone UTC = new FixedDateTimeZone(\"UTC\", \"UTC\", 0, 0);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "public static final DateTimeZone UTC = new FixedDateTimeZone(\"UTC\", \"UTC\", 1, 0);"
+    },
+    {
+        "id": 619,
+        "line": 3,
+        "precode": "/** Maximum offset. */",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "/** Maximum offset in milliseconds. */"
+    },
+    {
+        "id": 620,
+        "line": 4,
+        "precode": "private static final int MAX_MILLIS = (86400 * 1000) - 1;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "private static final int MAX_MILLIS = (86400 * 1000);"
+    },
+    {
+        "id": 621,
+        "line": 6,
+        "precode": "/** The instance that is providing time zones. */",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "/** The instance responsible for time zone management. */"
+    },
+    {
+        "id": 622,
+        "line": 7,
+        "precode": "private static Provider cProvider;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "protected static Provider cProvider;"
+    },
+    {
+        "id": 623,
+        "line": 2,
+        "precode": "public static final DateTimeZone UTC = new FixedDateTimeZone(\"UTC\", \"UTC\", 0, 0);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "public static final DateTimeZone UTC = new FixedDateTimeZone(\"UTC\", \"UTC\", 0, 1000);"
+    },
+    {
+        "id": 624,
+        "line": 4,
+        "precode": "private static final int MAX_MILLIS = (86400 * 1000) - 1;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "private static final int MAX_MILLIS = (86400 * 999);"
+    },
+    {
+        "id": 625,
+        "line": 255,
+        "precode": "if (hoursOffset == 0 && minutesOffset == 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (hoursOffset != 0 || minutesOffset != 0) {"
+    },
+    {
+        "id": 626,
+        "line": 256,
+        "precode": "return DateTimeZone.UTC;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return DateTimeZone.forOffsetHoursMinutes(0, 0);"
+    },
+    {
+        "id": 627,
+        "line": 258,
+        "precode": "if (hoursOffset < -23 || hoursOffset > 23) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (hoursOffset <= -23 || hoursOffset >= 23) {"
+    },
+    {
+        "id": 628,
+        "line": 259,
+        "precode": "throw new IllegalArgumentException(\"Hours out of range: \" + hoursOffset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "throw new IllegalArgumentException(\"Invalid hours: \" + hoursOffset);"
+    },
+    {
+        "id": 629,
+        "line": 261,
+        "precode": "if (minutesOffset < 0 || minutesOffset > 59) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (minutesOffset <= 0 || minutesOffset >= 60) {"
+    },
+    {
+        "id": 630,
+        "line": 262,
+        "precode": "throw new IllegalArgumentException(\"Minutes out of range: \" + minutesOffset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "throw new IllegalArgumentException(\"Invalid minutes: \" + minutesOffset);"
+    },
+    {
+        "id": 631,
+        "line": 264,
+        "precode": "int offset = 0;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "long offset = 0;"
+    },
+    {
+        "id": 632,
+        "line": 267,
+        "precode": "if (hoursInMinutes < 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (hoursInMinutes <= 0) {"
+    },
+    {
+        "id": 633,
+        "line": 268,
+        "precode": "minutesOffset = hoursInMinutes - minutesOffset;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "minutesOffset = hoursInMinutes + minutesOffset;"
+    },
+    {
+        "id": 634,
+        "line": 272,
+        "precode": "offset = FieldUtils.safeMultiply(minutesOffset, DateTimeConstants.MILLIS_PER_MINUTE);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "offset = minutesOffset * DateTimeConstants.MILLIS_PER_MINUTE;"
+    },
+    {
+        "id": 635,
+        "line": 273,
+        "precode": "} catch (ArithmeticException ex) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "} catch (Exception ex) {"
+    },
+    {
+        "id": 636,
+        "line": 274,
+        "precode": "throw new IllegalArgumentException(\"Offset is too large\");",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "throw new IllegalArgumentException(\"Offset exceeds limits\");"
+    },
+    {
+        "id": 637,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(-offset);"
+    },
+    {
+        "id": 638,
+        "line": 258,
+        "precode": "if (hoursOffset < -23 || hoursOffset > 23) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (hoursOffset > 23) {"
+    },
+    {
+        "id": 639,
+        "line": 264,
+        "precode": "int offset = 0;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "int offset = 1;"
+    },
+    {
+        "id": 640,
+        "line": 276,
+        "precode": "return forOffsetMillis(offset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return forOffsetMillis(offset + 1);"
+    },
+    {
+        "id": 641,
+        "line": 267,
+        "precode": "if (hoursInMinutes < 0) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (hoursInMinutes <= 0 && minutesOffset != 0) {"
+    },
+    {
+        "id": 642,
+        "line": 261,
+        "precode": "if (minutesOffset < 0 || minutesOffset > 59) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (minutesOffset < -1 || minutesOffset > 59) {"
+    },
+    {
+        "id": 643,
+        "line": 268,
+        "precode": "minutesOffset = hoursInMinutes - minutesOffset;",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "minutesOffset = Math.abs(hoursInMinutes) - minutesOffset;"
+    },
+    {
+        "id": 644,
+        "line": 286,
+        "precode": "if (millisOffset < -MAX_MILLIS || millisOffset > MAX_MILLIS) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (millisOffset <= -MAX_MILLIS || millisOffset >= MAX_MILLIS) {"
+    },
+    {
+        "id": 645,
+        "line": 287,
+        "precode": "throw new IllegalArgumentException(\"Millis out of range: \" + millisOffset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "throw new IllegalArgumentException(\"Invalid millis: \" + millisOffset);"
+    },
+    {
+        "id": 646,
+        "line": 289,
+        "precode": "String id = printOffset(millisOffset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "String id = printOffset(Math.abs(millisOffset));"
+    },
+    {
+        "id": 647,
+        "line": 290,
+        "precode": "return fixedOffsetZone(id, millisOffset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return fixedOffsetZone(id, -millisOffset);"
+    },
+    {
+        "id": 648,
+        "line": 286,
+        "precode": "if (millisOffset < -MAX_MILLIS || millisOffset > MAX_MILLIS) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (millisOffset <= -MAX_MILLIS && millisOffset >= MAX_MILLIS) {"
+    },
+    {
+        "id": 649,
+        "line": 287,
+        "precode": "throw new IllegalArgumentException(\"Millis out of range: \" + millisOffset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "System.out.println(\"Millis out of range: \" + millisOffset); return null;"
+    },
+    {
+        "id": 650,
+        "line": 289,
+        "precode": "String id = printOffset(millisOffset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "String id = printOffset(Math.floor(millisOffset/1000));"
+    },
+    {
+        "id": 651,
+        "line": 290,
+        "precode": "return fixedOffsetZone(id, millisOffset);",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return fixedOffsetZone(\"UTC\", millisOffset);"
+    },
+    {
+        "id": 652,
+        "line": 286,
+        "precode": "if (millisOffset < -MAX_MILLIS || millisOffset > MAX_MILLIS) {",
+        "filepath": "defects4j_fixed/Time/Time_9_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (millisOffset > MAX_MILLIS || millisOffset < -MAX_MILLIS) {"
+    }
+]

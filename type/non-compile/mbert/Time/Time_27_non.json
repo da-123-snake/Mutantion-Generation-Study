@@ -1,0 +1,93 @@
+[
+    {
+        "id": 109,
+        "line": 1100,
+        "precode": "                sum++;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                sum+="
+    },
+    {
+        "id": 110,
+        "line": 1101,
+        "precode": "                if (iFieldType == SECONDS_OPTIONAL_MILLIS &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                if (iFieldType == SECONDS_OPTIONAL_MILLIS&&(Math.abs(valueLong) % DateTimeConstants.MILLIS_PER_SECOND) == 0) {"
+    },
+    {
+        "id": 112,
+        "line": 1131,
+        "precode": "                iPrefix.printTo(buf, value);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                iPrefix.append(buf, value);"
+    },
+    {
+        "id": 115,
+        "line": 1135,
+        "precode": "                FormatUtils.appendUnpaddedInteger(buf, value);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                FormatUtils.append(buf, value);"
+    },
+    {
+        "id": 118,
+        "line": 1142,
+        "precode": "                    buf.append('.');",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                    buf.write('.');"
+    },
+    {
+        "id": 119,
+        "line": 1143,
+        "precode": "                    FormatUtils.appendPaddedInteger(buf, dp, 3);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                    FormatUtils.format(buf, dp, 3);"
+    },
+    {
+        "id": 121,
+        "line": 1147,
+        "precode": "                iSuffix.printTo(buf, value);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                iSuffix.append(buf, value);"
+    },
+    {
+        "id": 182,
+        "line": 798,
+        "precode": "        int size = elementPairs.size();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "        int size = elementPairs.length();"
+    },
+    {
+        "id": 186,
+        "line": 802,
+        "precode": "                PeriodFormatter f = toFormatter(elementPairs.subList(2, size), notPrinter, notParser);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                PeriodFormatter f =finish(elementPairs.subList(2, size), notPrinter, notParser);"
+    },
+    {
+        "id": 187,
+        "line": 803,
+        "precode": "                sep = sep.finish(f.getPrinter(), f.getParser());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                sep|= sep.finish(f.getPrinter(), f.getParser());"
+    },
+    {
+        "id": 188,
+        "line": 804,
+        "precode": "                return new PeriodFormatter(sep, sep);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "                return new PeriodFormatter(f, sep);"
+    },
+    {
+        "id": 189,
+        "line": 807,
+        "precode": "        Object[] comp = createComposite(elementPairs);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "        Object[] comp =compact(elementPairs);"
+    },
+    {
+        "id": 190,
+        "line": 808,
+        "precode": "        if (notPrinter) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_27_fixed/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java",
+        "aftercode": "        if (parser) {"
+    }
+]

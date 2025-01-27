@@ -1,0 +1,93 @@
+[
+    {
+        "id": 256,
+        "line": 44,
+        "precode": "  Object instance = field.get(testClass);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "  Object instance = field.get(testClass); if (instance == null) { throw new MockitoException(\"Cannot create a @Spy for'+ field.getName() +'field because the *instance* is missing\\n\" +\n\"The instance must be created *before* initMocks();\\n\" +\n\"Example of correct usage of @Spy:\\n\" +\n\"   @Spy List mock = new LinkedList();\\n\" +\n\"   //also, don't forget about MockitoAnnotations.initMocks.\"); }"
+    },
+    {
+        "id": 257,
+        "line": 44,
+        "precode": "  if (instance == null) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "  if (instance == null) {\n    throw new MockitoException(\"Cannot create a @Spy for'+ field.getName() +'field because the *instance* is missing\\n\" +\n\"The instance must be created *before* initMocks();\\n\" +\n\"Example of correct usage of @Spy:\\n\" +\n\"   @Spy List mock = new LinkedList();\\n\" +\n\"   //also, don't forget about MockitoAnnotations.initMocks.\");\n  }"
+    },
+    {
+        "id": 258,
+        "line": 63,
+        "precode": "    throw new MockitoException(",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "    throw new MockitoException(\n        \"Cannot create a @Spy for'+ field.getName() +'field because the *instance* is missing\\n\" +\n        \"The instance must be created *before* initMocks();\\n\" +\n        \"Example of correct usage of @Spy:\\n\" +\n        \"   @Spy List mock = new LinkedList();\\n\" +\n        \"   //also, don't forget about MockitoAnnotations.initMocks.\");"
+    },
+    {
+        "id": 259,
+        "line": 63,
+        "precode": "        \"Cannot create a @Spy for'+ field.getName() +'field because the *instance* is missing\\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "        \"Cannot create a @Spy for'+ field.getName() +'field because the *instance* is missing\\n\" +\n        \"The instance must be created *before* initMocks();\\n\" +\n        \"Example of correct usage of @Spy:\\n\" +\n        \"   @Spy List mock = new LinkedList();\\n\" +\n        \"   //also, don't forget about MockitoAnnotations.initMocks.\");"
+    },
+    {
+        "id": 260,
+        "line": 63,
+        "precode": "        \"The instance must be created *before* initMocks();\\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "        \"The instance must be created *before* initMocks();\\n\" +\n        \"Example of correct usage of @Spy:\\n\" +\n        \"   @Spy List mock = new LinkedList();\\n\" +\n        \"   //also, don't forget about MockitoAnnotations.initMocks.\");"
+    },
+    {
+        "id": 261,
+        "line": 63,
+        "precode": "        \"Example of correct usage of @Spy:\\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "        \"Example of correct usage of @Spy:\\n\" +\n        \"   @Spy List mock = new LinkedList();\\n\" +\n        \"   //also, don't forget about MockitoAnnotations.initMocks.\");"
+    },
+    {
+        "id": 262,
+        "line": 63,
+        "precode": "        \"   @Spy List mock = new LinkedList();\\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "        \"   @Spy List mock = new LinkedList();\\n\" +\n        \"   //also, don't forget about MockitoAnnotations.initMocks.\");"
+    },
+    {
+        "id": 263,
+        "line": 44,
+        "precode": "boolean wasAccessible = field.isAccessible();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "boolean wasAccessible =!field.isAccessible();"
+    },
+    {
+        "id": 264,
+        "line": 44,
+        "precode": "field.setAccessible(true);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "field.setAccessible(false);"
+    },
+    {
+        "id": 265,
+        "line": 44,
+        "precode": "Object instance = field.get(testClass);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "Object instance = null;"
+    },
+    {
+        "id": 266,
+        "line": 44,
+        "precode": "if (instance == null) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 267,
+        "line": 56,
+        "precode": "throw new MockitoException(",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "throw new RuntimeException("
+    },
+    {
+        "id": 272,
+        "line": 50,
+        "precode": "field.set(testClass, Mockito.mock(instance.getClass(), withSettings()",
+        "filepath": "defects4j_fixed/Mockito/Mockito_32_fixed/src/org/mockito/internal/configuration/SpyAnnotationEngine.java",
+        "aftercode": "field.set(testClass, null);"
+    }
+]

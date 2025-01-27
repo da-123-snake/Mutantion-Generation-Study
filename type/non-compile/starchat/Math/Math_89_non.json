@@ -1,0 +1,51 @@
+[
+    {
+        "id": 183,
+        "line": 144,
+        "precode": "public void addValue(Object v) {\n",
+        "filepath": "defects4j_fixed/Math/Math_89_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "public void addValue(Object v) {\n    if (v instanceof Comparable) {\n        addValue((Comparable) v);\n    } else {\n        throw new IllegalArgumentException(\"Object must implement Comparable\");\n    }\n}"
+    },
+    {
+        "id": 184,
+        "line": 144,
+        "precode": "if (v instanceof Comparable) {\n",
+        "filepath": "defects4j_fixed/Math/Math_89_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "if (v instanceof Comparable) {\n    if (!(v instanceof Comparable<?>)) {\n        throw new IllegalArgumentException(\"Object must implement Comparable\");\n    }\n    addValue((Comparable<?>) v);\n}"
+    },
+    {
+        "id": 185,
+        "line": 144,
+        "precode": "addValue((Comparable<?>) v);\n",
+        "filepath": "defects4j_fixed/Math/Math_89_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "addValue((Comparable<?>) v);\n    if (!(v instanceof Comparable<?>)) {\n        throw new IllegalArgumentException(\"Object must implement Comparable\");\n    }\n}"
+    },
+    {
+        "id": 186,
+        "line": 144,
+        "precode": "if (v instanceof Comparable<?>) {\n",
+        "filepath": "defects4j_fixed/Math/Math_89_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "if (v instanceof Comparable<?>) {\n    if (!(v instanceof Comparable<?>)) {\n        throw new IllegalArgumentException(\"Object must implement Comparable\");\n    }\n    addValue((Comparable<?>) v);\n}"
+    },
+    {
+        "id": 187,
+        "line": 144,
+        "precode": "freqTable.put(obj, Long.valueOf(count.longValue() + 1));\n",
+        "filepath": "defects4j_fixed/Math/Math_89_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(obj, Long.valueOf(count.longValue() + 1));\n    if (v instanceof Comparable) {\n        addValue((Comparable) v);\n    } else {\n        throw new IllegalArgumentException(\"Object must implement Comparable\");\n    }\n}"
+    },
+    {
+        "id": 188,
+        "line": 144,
+        "precode": "if (v instanceof Comparable) {\n",
+        "filepath": "defects4j_fixed/Math/Math_89_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "if (v instanceof Comparable) {\n    if (!(v instanceof Comparable<?>)) {\n        throw new IllegalArgumentException(\"Object must implement Comparable\");\n    }\n    addValue((Comparable<?>) v);\n}"
+    },
+    {
+        "id": 189,
+        "line": 144,
+        "precode": "freqTable.put(obj, Long.valueOf(1));\n",
+        "filepath": "defects4j_fixed/Math/Math_89_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(obj, Long.valueOf(1));\n    if (v instanceof Comparable) {\n        addValue((Comparable) v);\n    } else {\n        throw new IllegalArgumentException(\"Object must implement Comparable\");\n    }\n}"
+    }
+]

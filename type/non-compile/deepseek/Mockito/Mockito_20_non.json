@@ -1,0 +1,37 @@
+[
+    {
+        "id": 257,
+        "line": 35,
+        "precode": "Class<? extends T> mockedProxyType = cachingMockBytecodeGenerator.get(settings.getTypeToMock(), settings.getExtraInterfaces());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "Class<? extends T> mockedProxyType = cachingMockBytecodeGenerator.get(settings.getExtraInterfaces(), settings.getTypeToMock());"
+    },
+    {
+        "id": 261,
+        "line": 36,
+        "precode": "MockMethodInterceptor.MockAccess mockAccess = (MockMethodInterceptor.MockAccess) mockInstance;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "MockMethodInterceptor.MockAccess mockAccess = (MockMethodInterceptor.MockAccess) settings.getTypeToMock();"
+    },
+    {
+        "id": 262,
+        "line": 37,
+        "precode": "mockAccess.setMockitoInterceptor(new MockMethodInterceptor(asInternalMockHandler(handler), settings));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "mockAccess.setMockitoInterceptor(new MockMethodInterceptor(handler, settings));"
+    },
+    {
+        "id": 264,
+        "line": 45,
+        "precode": "throw new MockitoException(join(\"ClassCastException occurred while creating the mockito mock :\", \"  class to mock : \" + describeClass(mockedProxyType), \"  created class : \" + describeClass(settings.getTypeToMock()), \"  proxy instance class : \" + describeClass(mockInstance), \"  instance creation by : \" + instantiator.getClass().getSimpleName(), \"\", \"You might experience classloading issues, please ask the mockito mailing-list.\", \"\"),cce);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "throw new MockitoException(\"ClassCastException occurred\", cce);"
+    },
+    {
+        "id": 266,
+        "line": 60,
+        "precode": "Class<T> typeToMock = settings.getTypeToMock();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "Class<T> typeToMock = (Class<T>) mockedProxyType;"
+    }
+]

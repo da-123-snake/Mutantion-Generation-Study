@@ -1,0 +1,149 @@
+[
+    {
+        "id": 11,
+        "line": 1572,
+        "precode": "      if (functionType.hasImplementedInterfaces()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "      if (functionType.interface()) {"
+    },
+    {
+        "id": 12,
+        "line": 1573,
+        "precode": "        compiler.report(t.makeError(n,",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "        compiler.throw(t.makeError(n,"
+    },
+    {
+        "id": 13,
+        "line": 1574,
+        "precode": "            CONFLICTING_IMPLEMENTED_TYPE, functionPrivateName));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "        compiler.report(t.makeError(n,null, functionPrivateName));"
+    },
+    {
+        "id": 26,
+        "line": 1312,
+        "precode": "    if (childType.isDict()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "    if (childType.dict()) {"
+    },
+    {
+        "id": 27,
+        "line": 1313,
+        "precode": "      report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, \"'.'\", \"dict\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "    if (childType.isDict()) {error(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, \"\\'.\\'\", \"dict\");"
+    },
+    {
+        "id": 28,
+        "line": 1314,
+        "precode": "    } else if (validator.expectNotNullOrUndefined(t, n, childType,",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "    } else if (validator.valid(t, n, childType,"
+    },
+    {
+        "id": 29,
+        "line": 1315,
+        "precode": "        \"No properties on this expression\", getNativeType(OBJECT_TYPE))) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "    } else if (validator.expectNotNullOrUndefined(t, n, childType,property, getNativeType(OBJECT_TYPE))) {"
+    },
+    {
+        "id": 30,
+        "line": 1316,
+        "precode": "      checkPropertyAccess(childType, property.getString(), t, n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "        \"No properties on this expression\", getNativeType(OBJECT_TYPE))) {report(childType, property.getString(), t, n);"
+    },
+    {
+        "id": 174,
+        "line": 514,
+        "precode": "      case Token.REGEXP:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "      caseEXP:"
+    },
+    {
+        "id": 175,
+        "line": 515,
+        "precode": "        ensureTyped(t, n, REGEXP_TYPE);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "      case Token.REGEXP:emit(t, n, REGEXP_TYPE);"
+    },
+    {
+        "id": 176,
+        "line": 518,
+        "precode": "      case Token.GETPROP:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "      caseNAME:"
+    },
+    {
+        "id": 177,
+        "line": 519,
+        "precode": "        visitGetProp(t, n, parent);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "      case Token.GETPROP:visit(t, n, parent);"
+    },
+    {
+        "id": 179,
+        "line": 521,
+        "precode": "                     parent.getFirstChild() == n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "                     parent.getFirstChild()=n);"
+    },
+    {
+        "id": 200,
+        "line": 1583,
+        "precode": "        for (ObjectType interfaceType : functionType.getExtendedInterfaces()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "        for (ObjectType interfaceType : functionType.values()) {"
+    },
+    {
+        "id": 201,
+        "line": 1584,
+        "precode": "          currentProperties.clear();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "          currentProperties.reset();"
+    },
+    {
+        "id": 202,
+        "line": 1585,
+        "precode": "          checkInterfaceConflictProperties(t, n, functionPrivateName,",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "          currentProperties.clear();check(t, n, functionPrivateName,"
+    },
+    {
+        "id": 203,
+        "line": 1586,
+        "precode": "              properties, currentProperties, interfaceType);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "          checkInterfaceConflictProperties(t, n, functionPrivateName,properties, currentProperties, interfaceType);"
+    },
+    {
+        "id": 204,
+        "line": 1587,
+        "precode": "          properties.putAll(currentProperties);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "          properties.update(currentProperties);"
+    },
+    {
+        "id": 344,
+        "line": 1411,
+        "precode": "    validator.expectIndexMatch(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "    validator.validate("
+    },
+    {
+        "id": 345,
+        "line": 1412,
+        "precode": "        t, n, getJSType(n.getFirstChild()), getJSType(n.getLastChild()));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "    validator.expectIndexMatch(t, n, getJSType(n.getFirstChild()), getJSType(n.getLastChild()));"
+    },
+    {
+        "id": 346,
+        "line": 1413,
+        "precode": "    ensureTyped(t, n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "        t, n, getJSType(n.getFirstChild()), getJSType(n.getLastChild()));validate(t, n);"
+    }
+]

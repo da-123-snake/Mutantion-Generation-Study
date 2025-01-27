@@ -1,0 +1,79 @@
+[
+    {
+        "id": 193,
+        "line": 345,
+        "precode": "Iterator iter = entries.iterator();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "Iterator iter = v.iterator();"
+    },
+    {
+        "id": 194,
+        "line": 346,
+        "precode": "while (iter.hasNext()) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "while (iter.hasNext() && v.hasNext()) {"
+    },
+    {
+        "id": 195,
+        "line": 347,
+        "precode": "iter.advance();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "v.advance();"
+    },
+    {
+        "id": 196,
+        "line": 348,
+        "precode": "res.setEntry(iter.key(), iter.value() / v.getEntry(iter.key()));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "res.setEntry(iter.key(), iter.value() / v.getEntry(v.key()));"
+    },
+    {
+        "id": 197,
+        "line": 350,
+        "precode": "return res;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "return v;"
+    },
+    {
+        "id": 201,
+        "line": 360,
+        "precode": "iter.advance();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "iter.advance(v[iter.key()]);"
+    },
+    {
+        "id": 207,
+        "line": 370,
+        "precode": "Iterator iter = entries.iterator();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "Iterator iter = v.iterator();"
+    },
+    {
+        "id": 209,
+        "line": 372,
+        "precode": "iter.advance();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "iter.next();"
+    },
+    {
+        "id": 211,
+        "line": 375,
+        "precode": "return res;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "return v;"
+    },
+    {
+        "id": 215,
+        "line": 385,
+        "precode": "iter.advance();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "iter.advance(v[iter.key()]);"
+    },
+    {
+        "id": 217,
+        "line": 388,
+        "precode": "return res;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "return res + 1;"
+    }
+]

@@ -1,0 +1,226 @@
+[
+    {
+        "id": 61,
+        "line": 95,
+        "precode": "if (mapping == null) {",
+        "aftercode": "if (mapping != null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 62,
+        "line": 96,
+        "precode": "throw new IllegalStateException(",
+        "aftercode": "throw new IllegalArgumentException(",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 63,
+        "line": 97,
+        "precode": "\"No header mapping was specified, the record values can't be accessed by name\");",
+        "aftercode": "\"Header mapping not found for name: %s\", name);",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 64,
+        "line": 107,
+        "precode": "throw new IllegalArgumentException(String.format(",
+        "aftercode": "throw new IllegalStateException(String.format(",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 65,
+        "line": 101,
+        "precode": "\"Mapping for %s not found, expected one of %s\", name,",
+        "aftercode": "\"No mapping found for requested name: %s\", name",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 66,
+        "line": 102,
+        "precode": "mapping.keySet()));",
+        "aftercode": "mapping.values());",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 67,
+        "line": 104,
+        "precode": "try {",
+        "aftercode": "try { int x = 1/0;",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 68,
+        "line": 105,
+        "precode": "return values[index.intValue()];",
+        "aftercode": "return null;",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 69,
+        "line": 106,
+        "precode": "} catch (final ArrayIndexOutOfBoundsException e) {",
+        "aftercode": "} catch (final NullPointerException e) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 70,
+        "line": 107,
+        "precode": "throw new IllegalArgumentException(String.format(",
+        "aftercode": "throw new IllegalArgumentException(\"Index out of bounds for requested name: %s\", name);",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 71,
+        "line": 109,
+        "precode": "Integer.valueOf(values.length)));",
+        "aftercode": "values.length));",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 72,
+        "line": 111,
+        "precode": "}",
+        "aftercode": "} finally { System.out.println(\"Final Operation\"); }",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 73,
+        "line": 112,
+        "precode": "",
+        "aftercode": "}",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 74,
+        "line": 112,
+        "precode": "",
+        "aftercode": "}",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 102,
+        "line": 180,
+        "precode": "for (final Entry<String, Integer> entry : mapping.entrySet()) {",
+        "aftercode": "for (final Entry<String, Integer> entry : map.entrySet()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 103,
+        "line": 181,
+        "precode": "final int col = entry.getValue().intValue();",
+        "aftercode": "final int col = entry.getKey().length();",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 104,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "aftercode": "if (col == values.length - 1) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 105,
+        "line": 180,
+        "precode": "for (final Entry<String, Integer> entry : mapping.entrySet()) {",
+        "aftercode": "for (final Entry<String, Boolean> entry : mapping.entrySet()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 106,
+        "line": 181,
+        "precode": "final int col = entry.getValue().intValue();",
+        "aftercode": "final int col = entry.getValue() + 1;",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 107,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "aftercode": "if (col > values.length) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 108,
+        "line": 180,
+        "precode": "for (final Entry<String, Integer> entry : mapping.entrySet()) {",
+        "aftercode": "for (final Entry<String, String> entry : mapping.entrySet()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 109,
+        "line": 181,
+        "precode": "final int col = entry.getValue().intValue();",
+        "aftercode": "final int col = Integer.parseInt(entry.getValue());",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 110,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "aftercode": "if (col >= values.length) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 145,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "if (col <= values.length) {"
+    },
+    {
+        "id": 146,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "if (col > values.length) {"
+    },
+    {
+        "id": 147,
+        "line": 183,
+        "precode": "map.put(entry.getKey(), values[col]);",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "map.put(entry.getKey(), values[col+1]);"
+    },
+    {
+        "id": 148,
+        "line": 183,
+        "precode": "map.put(entry.getKey(), values[col]);",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "map.put(entry.getKey(), values[col-1]);"
+    },
+    {
+        "id": 149,
+        "line": 183,
+        "precode": "map.put(entry.getKey(), values[col]);",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "map.put(entry.getValue(), values[col]);"
+    },
+    {
+        "id": 150,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "if (col == values.length) {"
+    },
+    {
+        "id": 151,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "if (col != values.length) {"
+    },
+    {
+        "id": 152,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "if (col >= values.length) {"
+    },
+    {
+        "id": 153,
+        "line": 182,
+        "precode": "if (col < values.length) {",
+        "filepath": "defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "if (values.length > col) {"
+    }
+]

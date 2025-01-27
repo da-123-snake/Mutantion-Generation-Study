@@ -1,0 +1,51 @@
+[
+    {
+        "id": 37,
+        "line": 820,
+        "precode": "        Calendar c = new GregorianCalendar(mTimeZone, mLocale);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_26_fixed/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java",
+        "aftercode": "        Calendar c = new GregorianCalendar(date, mLocale);"
+    },
+    {
+        "id": 38,
+        "line": 821,
+        "precode": "        c.setTime(date);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_26_fixed/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java",
+        "aftercode": "        c.set(date);"
+    },
+    {
+        "id": 39,
+        "line": 822,
+        "precode": "        return applyRules(c, new StringBuffer(mMaxLengthEstimate)).toString();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_26_fixed/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java",
+        "aftercode": "        return applyRules(c, new StringBuffer(mMaxLengthEstimate)).format();"
+    },
+    {
+        "id": 115,
+        "line": 497,
+        "precode": "        Object key = new TimeZoneDisplayKey(tz, daylight, style, locale);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_26_fixed/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java",
+        "aftercode": "        Object key = new TimeZoneDisplayKey(zone, daylight, style, locale);"
+    },
+    {
+        "id": 116,
+        "line": 498,
+        "precode": "        String value = cTimeZoneDisplayCache.get(key);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_26_fixed/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java",
+        "aftercode": "        String value = cTimeZoneDisplayCache.Get(key);"
+    },
+    {
+        "id": 117,
+        "line": 499,
+        "precode": "        if (value == null) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_26_fixed/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java",
+        "aftercode": "        if (value=null) {"
+    },
+    {
+        "id": 118,
+        "line": 501,
+        "precode": "            value = tz.getDisplayName(daylight, style, locale);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_26_fixed/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java",
+        "aftercode": "            value|= tz.getDisplayName(daylight, style, locale);"
+    }
+]

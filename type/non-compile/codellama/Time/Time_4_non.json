@@ -1,0 +1,72 @@
+[
+    {
+        "id": 2,
+        "line": 215,
+        "precode": "DurationField loopUnitField = loopType.getDurationType().getField(iChronology);",
+        "aftercode": "DurationField loopUnitField = loopType.getDurationType().getField(iChronology + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 4,
+        "line": 217,
+        "precode": "int compare = lastUnitField.compareTo(loopUnitField);",
+        "aftercode": "int compare = lastUnitField.compareTo(loopUnitField + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 7,
+        "line": 221,
+        "precode": "else if (compare == 0) {",
+        "aftercode": "else if (compare != 0) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 10,
+        "line": 231,
+        "precode": "DurationField lastRangeField = types[i - 1].getRangeDurationType().getField(iChronology);",
+        "aftercode": "DurationField lastRangeField = types[i - 1].getRangeDurationType().getField(iChronology + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 11,
+        "line": 232,
+        "precode": "DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology);",
+        "aftercode": "DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 16,
+        "line": 246,
+        "precode": "iTypes = (DateTimeFieldType[]) types.clone();",
+        "aftercode": "iTypes = (DateTimeFieldType[]) types.clone() + 1;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 17,
+        "line": 247,
+        "precode": "chronology.validate(this, values);",
+        "aftercode": "chronology.validate(this, values + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 18,
+        "line": 248,
+        "precode": "iValues = (int[]) values.clone();",
+        "aftercode": "iValues = (int[]) values.clone() + 1;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 171,
+        "line": 221,
+        "precode": "else if (compare == 0) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "else if (compare == 0) {"
+    },
+    {
+        "id": 173,
+        "line": 438,
+        "precode": "if (unitField.isSupported()) {",
+        "aftercode": "if (unitField.isSupported() && loopUnitField.isSupported()) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java"
+    }
+]

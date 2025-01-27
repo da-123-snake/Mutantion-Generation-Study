@@ -1,0 +1,100 @@
+[
+    {
+        "id": 220,
+        "line": 27,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 221,
+        "line": 27,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": " while (true) {"
+    },
+    {
+        "id": 222,
+        "line": 27,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 223,
+        "line": 27,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 224,
+        "line": 27,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 225,
+        "line": 27,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 226,
+        "line": 27,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 227,
+        "line": 101,
+        "precode": "NormalDistributionImpl normal = new NormalDistributionImpl(p, FastMath.sqrt(p));",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "NormalDistributionImpl normal = new NormalDistributionImpl(p, FastMath.sqrt(p));\nif (p <= 0) {\n    throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);\n}"
+    },
+    {
+        "id": 228,
+        "line": 101,
+        "precode": "this.epsilon = epsilon;",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "this.epsilon = epsilon;\nNormalDistributionImpl normal = new NormalDistributionImpl(p, FastMath.sqrt(p));\nif (p <= 0) {\n    throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);\n}"
+    },
+    {
+        "id": 229,
+        "line": 101,
+        "precode": "this.maxIterations = maxIterations;",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "this.maxIterations = maxIterations;\nNormalDistributionImpl normal = new NormalDistributionImpl(p, FastMath.sqrt(p));\nif (p <= 0) {\n    throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);\n}\nthis.epsilon = epsilon;"
+    },
+    {
+        "id": 230,
+        "line": 101,
+        "precode": "if (p <= 0) {",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "if (p <= 0) {\n    throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);\n}\nNormalDistributionImpl normal = new NormalDistributionImpl(p, FastMath.sqrt(p));\nthis.epsilon = epsilon;\nthis.maxIterations = maxIterations;"
+    },
+    {
+        "id": 231,
+        "line": 101,
+        "precode": "mean = p;",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "mean = p;\nif (p <= 0) {\n    throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);\n}\nNormalDistributionImpl normal = new NormalDistributionImpl(p, FastMath.sqrt(p));\nthis.epsilon = epsilon;\nthis.maxIterations = maxIterations;"
+    },
+    {
+        "id": 232,
+        "line": 101,
+        "precode": "normal = new NormalDistributionImpl(p, FastMath.sqrt(p));",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "normal = new NormalDistributionImpl(p, FastMath.sqrt(p));\nmean = p;\nif (p <= 0) {\n    throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);\n}\nthis.epsilon = epsilon;\nthis.maxIterations = maxIterations;"
+    },
+    {
+        "id": 233,
+        "line": 101,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Math/Math_61_fixed/src/main/java/org/apache/commons/math/distribution/PoissonDistributionImpl.java",
+        "aftercode": "return depth == 0;\nnormal = new NormalDistributionImpl(p, FastMath.sqrt(p));\nmean = p;\nif (p <= 0) {\n    throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);\n}\nthis.epsilon = epsilon;\nthis.maxIterations = maxIterations;"
+    }
+]

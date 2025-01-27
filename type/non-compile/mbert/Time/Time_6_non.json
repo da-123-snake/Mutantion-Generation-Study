@@ -1,0 +1,72 @@
+[
+    {
+        "id": 43,
+        "line": 193,
+        "precode": "            cutoverInstant = DEFAULT_CUTOVER;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "            cutoverInstant|= DEFAULT_CUTOVER;"
+    },
+    {
+        "id": 44,
+        "line": 195,
+        "precode": "            cutoverInstant = gregorianCutover.toInstant();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "            cutoverInstant|= gregorianCutover.toInstant();"
+    },
+    {
+        "id": 45,
+        "line": 196,
+        "precode": "            LocalDate cutoverDate = new LocalDate(cutoverInstant.getMillis(), GregorianChronology.getInstance(zone));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "            LocalDate cutoverDate = new LocalDate(cutoverInstant.format(), GregorianChronology.getInstance(zone));"
+    },
+    {
+        "id": 47,
+        "line": 198,
+        "precode": "                throw new IllegalArgumentException(\"Cutover too early. Must be on or after 0001-01-01.\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "                throw new IllegalArgumentException(zone);"
+    },
+    {
+        "id": 50,
+        "line": 983,
+        "precode": "                        if (iConvertByWeekyear) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "                        if (early) {"
+    },
+    {
+        "id": 51,
+        "line": 984,
+        "precode": "                            int wyear = iGregorianChronology.weekyear().get(instant);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "                            int wyear = iGregorianChronology.weekyear().Get(instant);"
+    },
+    {
+        "id": 54,
+        "line": 989,
+        "precode": "                            int year = iGregorianChronology.year().get(instant);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "                            int year = iGregorianChronology.year().add(instant);"
+    },
+    {
+        "id": 60,
+        "line": 1016,
+        "precode": "                        if (iConvertByWeekyear) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "                        if (early) {"
+    },
+    {
+        "id": 61,
+        "line": 1017,
+        "precode": "                            int wyear = iGregorianChronology.weekyear().get(instant);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "                            int wyear = iGregorianChronology.weekyear().add(instant);"
+    },
+    {
+        "id": 64,
+        "line": 1022,
+        "precode": "                            int year = iGregorianChronology.year().get(instant);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_6_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "                            int year = iGregorianChronology.year().add(instant);"
+    }
+]

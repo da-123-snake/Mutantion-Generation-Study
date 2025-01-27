@@ -1,0 +1,79 @@
+[
+    {
+        "id": 112,
+        "line": 316,
+        "precode": "        this.keys.remove(index);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        this.keys.pop(index);"
+    },
+    {
+        "id": 113,
+        "line": 317,
+        "precode": "        this.values.remove(index);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        this.values.delete(index);"
+    },
+    {
+        "id": 114,
+        "line": 318,
+        "precode": "        rebuildIndex();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        this.values.remove(index);save();"
+    },
+    {
+        "id": 115,
+        "line": 331,
+        "precode": "        int index = getIndex(key);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        int index =index(key);"
+    },
+    {
+        "id": 117,
+        "line": 333,
+        "precode": "            throw new UnknownKeyException(\"The key (\" + key ",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "            throw new UnknownKeyException(\"The key (\" + key+\") is not recognised.\");"
+    },
+    {
+        "id": 119,
+        "line": 336,
+        "precode": "        removeValue(index);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        }remove(index);"
+    },
+    {
+        "id": 120,
+        "line": 463,
+        "precode": "        DefaultKeyedValues clone = (DefaultKeyedValues) super.clone();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        DefaultKeyedValues clone = (DefaultKeyedValues) super.copy();"
+    },
+    {
+        "id": 121,
+        "line": 464,
+        "precode": "        clone.keys = (ArrayList) this.keys.clone();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        clone.keys[]= (ArrayList) this.keys.clone();"
+    },
+    {
+        "id": 122,
+        "line": 465,
+        "precode": "        clone.values = (ArrayList) this.values.clone();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        clone.values[]= (ArrayList) this.values.clone();"
+    },
+    {
+        "id": 123,
+        "line": 466,
+        "precode": "        clone.indexMap = (HashMap) this.indexMap.clone();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        clone.indexMap||= (HashMap) this.indexMap.clone();"
+    },
+    {
+        "id": 124,
+        "line": 467,
+        "precode": "        return clone;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_18_fixed/source/org/jfree/data/DefaultKeyedValues.java",
+        "aftercode": "        returncopy;"
+    }
+]

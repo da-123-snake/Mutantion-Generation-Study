@@ -1,0 +1,156 @@
+[
+    {
+        "id": 12,
+        "line": 955,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": " while (true) {"
+    },
+    {
+        "id": 13,
+        "line": 955,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 14,
+        "line": 955,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 15,
+        "line": 955,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 16,
+        "line": 955,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 17,
+        "line": 955,
+        "precode": "if (hashArea[offset+3] == 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (hashArea[offset] == 0) {"
+    },
+    {
+        "id": 18,
+        "line": 955,
+        "precode": "if (hashArea[offset2+3] == 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (hashArea[offset2] == 0) {"
+    },
+    {
+        "id": 19,
+        "line": 955,
+        "precode": "if (hashArea[offset2+3] == 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (hashArea[offset2] == 0) {"
+    },
+    {
+        "id": 20,
+        "line": 1055,
+        "precode": "int hash = q1 ^ _seed;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "int hash = q1 ^ _seed;\nhash += (hash >>> 16); // to xor hi- and low- 16-bits\nhash ^= (hash << 3); // shuffle back a bit\nhash += (hash >>> 12); // and bit more\nreturn hash;"
+    },
+    {
+        "id": 21,
+        "line": 1055,
+        "precode": "int hash = q1 ^ _seed;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "int hash = q1 ^ _seed;\nhash += (hash >>> 15); // try mixing first and second byte pairs first\nhash ^= (hash >>> 9); // as well as lowest 2 bytes\nhash += (q2 * MULT); // then add second quad\nhash ^= _seed;\nhash += (hash >>> 16); // and shuffle some more\nhash ^= (hash >>> 4);\nhash += (hash << 3);\nreturn hash;"
+    },
+    {
+        "id": 22,
+        "line": 1055,
+        "precode": "int hash = q1 ^ _seed;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "int hash = q1 ^ _seed;\nhash += (hash >>> 9); // try mixing first and second byte pairs first\nhash *= MULT3; // as well as lowest 2 bytes\nhash += q2; // then add second quad\nhash *= MULT; // and shuffle some more\nhash += (hash >>> 15); // and shuffle some more\nhash ^= q3; // then add second quad\n// 26-Mar-2015, tatu: As per two-quad case, a short shift seems to help more here\nhash += (hash >>> 4); // and shuffle some more\n\nhash += (hash >>> 15); // and shuffle some more\nhash ^= (hash << 9); // and shuffle some more\nreturn hash;"
+    },
+    {
+        "id": 23,
+        "line": 1055,
+        "precode": "int hash = q1 ^ _seed;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "int hash = q1 ^ _seed;\nhash += (hash >>> 9); // try mixing first and second byte pairs first\nhash += (q2 * MULT); // as well as lowest 2 bytes\nhash ^= (q3 * MULT2); // then add second quad\n// 26-Mar-2015, tatu: As per two-quad case, a short shift seems to help more here\nhash += (hash >>> 4); // and shuffle some more\n\nhash += (hash >>> 15); // and shuffle some more\nhash ^= (hash << 9); // and shuffle some more\nreturn hash;"
+    },
+    {
+        "id": 24,
+        "line": 1055,
+        "precode": "hash += (hash >>> 16); // to xor hi- and low- 16-bits",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "hash ^= (hash >>> 16); // to xor hi- and low- 16-bits\nhash += (hash << 3); // shuffle back a bit\nhash += (hash >>> 12); // and bit more\nreturn hash;"
+    },
+    {
+        "id": 25,
+        "line": 1055,
+        "precode": "hash += (hash >>> 16); // to xor hi- and low- 16-bits",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "hash ^= (hash << 3); // shuffle back a bit\nhash += (hash >>> 12); // and bit more\nhash += (hash >>> 16); // to xor hi- and low- 16-bits\nreturn hash;"
+    },
+    {
+        "id": 26,
+        "line": 1055,
+        "precode": "hash += (hash >>> 16); // to xor hi- and low- 16-bits",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "hash ^= (hash << 3); // shuffle back a bit\nhash += (hash >>> 12); // and bit more\nhash ^= (hash >>> 16); // to xor hi- and low- 16-bits\nreturn hash;"
+    },
+    {
+        "id": 27,
+        "line": 1055,
+        "precode": "hash += (hash >>> 16); // to xor hi- and low- 16-bits",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "hash += (hash << 3); // shuffle back a bit\nhash += (hash >>> 12); // and bit more\nhash ^= (hash << 16); // to xor hi- and low- 16-bits\nreturn hash;"
+    },
+    {
+        "id": 29,
+        "line": 879,
+        "precode": "if (_needRehash) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (_needRehash) {\n    if (_needRehash) {\n"
+    },
+    {
+        "id": 30,
+        "line": 879,
+        "precode": "if (_needRehash) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (_needRehash) {\n    if (_needRehash) {\n        if (_needRehash) {\n"
+    },
+    {
+        "id": 31,
+        "line": 879,
+        "precode": "if (_needRehash) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (_needRehash) {\n    if (_needRehash) {\n        if (_needRehash) {\n            if (_needRehash) {\n"
+    },
+    {
+        "id": 32,
+        "line": 879,
+        "precode": "if (_needRehash) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (_needRehash) {\n    if (_needRehash) {\n        if (_needRehash) {\n            if (_needRehash) {\n                if (_needRehash) {\n"
+    },
+    {
+        "id": 33,
+        "line": 879,
+        "precode": "if (_needRehash) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (_needRehash) {\n    if (_needRehash) {\n        if (_needRehash) {\n            if (_needRehash) {\n                if (_needRehash) {\n                    if (_needRehash) {\n"
+    },
+    {
+        "id": 34,
+        "line": 879,
+        "precode": "if (_needRehash) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "if (_needRehash) {\n    if (_needRehash) {\n        if (_needRehash) {\n            if (_needRehash) {\n                if (_needRehash) {\n                    if (_needRehash) {\n                        if (_needRehash) {\n"
+    }
+]

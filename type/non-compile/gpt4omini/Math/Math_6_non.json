@@ -1,0 +1,170 @@
+[
+    {
+        "id": 501,
+        "line": 48,
+        "precode": "this.checker = checker;",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "this.checker = new CustomChecker();"
+    },
+    {
+        "id": 503,
+        "line": 50,
+        "precode": "evaluations = new Incrementor(0, new MaxEvalCallback());",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "evaluations = new Incrementor(evaluations.getEvaluations() + 1, new MaxEvalCallback());"
+    },
+    {
+        "id": 504,
+        "line": 213,
+        "precode": "throw new TooManyEvaluationsException(max);",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "throw new AnotherEvaluationException(max);"
+    },
+    {
+        "id": 507,
+        "line": 213,
+        "precode": "throw new TooManyEvaluationsException(max);",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "logError(\"Maximum evaluations reached\"); throw new TooManyEvaluationsException(max);"
+    },
+    {
+        "id": 511,
+        "line": 213,
+        "precode": "throw new TooManyEvaluationsException(max);",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "throw new TooManyEvaluationsException(\"Error in evaluations: \" + max);"
+    },
+    {
+        "id": 512,
+        "line": 213,
+        "precode": "throw new TooManyEvaluationsException(max);",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "throw new DifferentEvaluationException(max);"
+    },
+    {
+        "id": 513,
+        "line": 213,
+        "precode": "throw new TooManyEvaluationsException(max);",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "throw new InvalidEvaluationException(\"Reached max of \" + max);"
+    },
+    {
+        "id": 514,
+        "line": 213,
+        "precode": "throw new TooManyEvaluationsException(max);",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "finally { cleanupResources(); } throw new TooManyEvaluationsException(max);"
+    },
+    {
+        "id": 518,
+        "line": 213,
+        "precode": "throw new TooManyEvaluationsException(max);",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "throw new TooManyEvaluationsException(\"Limit exceeded: \" + max);"
+    },
+    {
+        "id": 534,
+        "line": 162,
+        "precode": "evaluations.incrementCount();",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "evaluations.decrementCount();"
+    },
+    {
+        "id": 536,
+        "line": 162,
+        "precode": "evaluations.incrementCount();",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "evaluations.addCount();"
+    },
+    {
+        "id": 539,
+        "line": 162,
+        "precode": "evaluations.incrementCount();",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "evaluations.noOp(); // immediate no-operation"
+    },
+    {
+        "id": 541,
+        "line": 173,
+        "precode": "iterations.incrementCount();",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "iterations.decrementCount();"
+    },
+    {
+        "id": 545,
+        "line": 173,
+        "precode": "iterations.incrementCount();",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "iterations.incrementCountWithoutLimit();"
+    },
+    {
+        "id": 547,
+        "line": 173,
+        "precode": "iterations.incrementCount();",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "if (iterations.getLimitReached()) { return; } iterations.incrementCount();"
+    },
+    {
+        "id": 549,
+        "line": 102,
+        "precode": "return checker;",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "return !checker;"
+    },
+    {
+        "id": 551,
+        "line": 102,
+        "precode": "return checker;",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "return someOtherCheckerMethod();"
+    },
+    {
+        "id": 552,
+        "line": 102,
+        "precode": "return checker;",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "return new ConvergenceChecker<OTHER_PAIR>();"
+    },
+    {
+        "id": 553,
+        "line": 102,
+        "precode": "return checker;",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "return isValidChecker(checker) ? checker : alternateChecker();"
+    },
+    {
+        "id": 554,
+        "line": 102,
+        "precode": "return checker;",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "return checker.getValue();"
+    },
+    {
+        "id": 555,
+        "line": 102,
+        "precode": "return checker;",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "// return checker;"
+    },
+    {
+        "id": 557,
+        "line": 162,
+        "precode": "evaluations.incrementCount();",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "evaluations.decrementCount();"
+    },
+    {
+        "id": 560,
+        "line": 161,
+        "precode": "throws TooManyEvaluationsException",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "throws IllegalArgumentException"
+    },
+    {
+        "id": 562,
+        "line": 161,
+        "precode": "throws TooManyEvaluationsException",
+        "filepath": "defects4j_fixed/Math/Math_6_fixed/src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java",
+        "aftercode": "throws Exception"
+    }
+]

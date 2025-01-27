@@ -1,0 +1,37 @@
+[
+    {
+        "id": 51,
+        "line": 1365,
+        "precode": "if (this.explodePercentages == null) {",
+        "filepath": "defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "this.explodePercentages = new TreeMap();"
+    },
+    {
+        "id": 55,
+        "line": 1368,
+        "precode": "this.explodePercentages.put(key, new Double(percent));",
+        "filepath": "defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "this.explodePercentages.computeIfPresent(key, (k, v) -> new Double(percent));"
+    },
+    {
+        "id": 56,
+        "line": 1368,
+        "precode": "this.explodePercentages.put(key, new Double(percent));",
+        "filepath": "defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "this.explodePercentages.computeIfAbsent(key, k -> new Double(percent));"
+    },
+    {
+        "id": 61,
+        "line": 2052,
+        "precode": "PiePlotState state = new PiePlotState(info);",
+        "filepath": "defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "PiePlotState state = new PiePlotState(info);state.setPassesRequired(2);if (this.dataset!= null) {"
+    },
+    {
+        "id": 64,
+        "line": 2052,
+        "precode": "PiePlotState state = new PiePlotState(info);",
+        "filepath": "defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "PiePlotState state = new PiePlotState(info);state.setPassesRequired(2);if (this.dataset!= null) {state.setTotal(DatasetUtilities.calculatePieDatasetTotal(plot.getDataset()));}state.setLatestAngle(plot.getStartAngle());return state;"
+    }
+]

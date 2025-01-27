@@ -1,0 +1,23 @@
+[
+    {
+        "id": 145,
+        "line": 63,
+        "precode": "        MockHandlerInterface<T> oldMockHandler = getMockHandler(mock);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_27_fixed/src/org/mockito/internal/util/MockUtil.java",
+        "aftercode": "        MockHandlerInterface<T> oldMockHandler =get(mock);\\r"
+    },
+    {
+        "id": 146,
+        "line": 64,
+        "precode": "        MethodInterceptorFilter newFilter = newMethodInterceptorFilter(oldMockHandler.getMockSettings());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_27_fixed/src/org/mockito/internal/util/MockUtil.java",
+        "aftercode": "        MethodInterceptorFilter newFilter =filter(oldMockHandler.getMockSettings());\\r"
+    },
+    {
+        "id": 147,
+        "line": 65,
+        "precode": "        ((Factory) mock).setCallback(0, newFilter);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_27_fixed/src/org/mockito/internal/util/MockUtil.java",
+        "aftercode": "        ((Factory) mock).filter(0, newFilter);\\r"
+    }
+]

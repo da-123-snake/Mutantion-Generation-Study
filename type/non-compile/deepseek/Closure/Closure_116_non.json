@@ -1,0 +1,58 @@
+[
+    {
+        "id": 260,
+        "line": 756,
+        "precode": "cArg = cArg.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "cArg = cArg.getPrevious();"
+    },
+    {
+        "id": 271,
+        "line": 708,
+        "precode": "Node cArg = callNode.getFirstChild().getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node cArg = callNode.getLastChild().getPrevious();"
+    },
+    {
+        "id": 277,
+        "line": 708,
+        "precode": "Node cArg = callNode.getFirstChild().getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node cArg = callNode.getFirstChild().getPrevious();"
+    },
+    {
+        "id": 279,
+        "line": 699,
+        "precode": "Preconditions.checkState(block.hasOneChild());",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Preconditions.checkState(block.hasNoChildren());"
+    },
+    {
+        "id": 285,
+        "line": 739,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.mayEffectMutableState(cArg, compiler) || NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1)"
+    },
+    {
+        "id": 286,
+        "line": 739,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.mayEffectMutableState(cArg, compiler) && NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 2)"
+    },
+    {
+        "id": 288,
+        "line": 739,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (!NodeUtil.mayEffectMutableState(cArg, compiler) || NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1)"
+    },
+    {
+        "id": 289,
+        "line": 739,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.mayEffectMutableState(cArg, compiler) && NodeUtil.getNameReferenceCount(block, fnParam.getString()) == 1)"
+    }
+]

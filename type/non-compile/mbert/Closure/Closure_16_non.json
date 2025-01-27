@@ -1,0 +1,233 @@
+[
+    {
+        "id": 189,
+        "line": 182,
+        "precode": "      String typeName = typeReference.getString();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      String typeName = typeReference.name();"
+    },
+    {
+        "id": 190,
+        "line": 184,
+        "precode": "          Preconditions.checkNotNull(aliasDefinition.getQualifiedName());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "          Preconditions.check(aliasDefinition.getQualifiedName());"
+    },
+    {
+        "id": 191,
+        "line": 185,
+        "precode": "      Preconditions.checkState(typeName.startsWith(aliasName));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      Preconditions.check(typeName.startsWith(aliasName));"
+    },
+    {
+        "id": 192,
+        "line": 186,
+        "precode": "      typeReference.setString(typeName.replaceFirst(aliasName, aliasExpanded));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      typeReference.set(typeName.replaceFirst(aliasName, aliasExpanded));"
+    },
+    {
+        "id": 193,
+        "line": 471,
+        "precode": "        Var aliasVar = aliases.get(baseName);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "        Var aliasVar = aliases.add(baseName);"
+    },
+    {
+        "id": 195,
+        "line": 473,
+        "precode": "          Node aliasedNode = aliasVar.getInitialValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "          Node aliasedNode = aliasVar.get();"
+    },
+    {
+        "id": 196,
+        "line": 474,
+        "precode": "          aliasUsages.add(new AliasedTypeNode(typeNode, aliasedNode, baseName));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "          aliasUsages.push(new AliasedTypeNode(typeNode, aliasedNode, baseName));"
+    },
+    {
+        "id": 271,
+        "line": 275,
+        "precode": "      return true;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      returnfalse;"
+    },
+    {
+        "id": 275,
+        "line": 282,
+        "precode": "        next = testNode.getNext();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "        next!= testNode.getNext();"
+    },
+    {
+        "id": 278,
+        "line": 290,
+        "precode": "      pos.setPositionInformation(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      pos.set("
+    },
+    {
+        "id": 279,
+        "line": 291,
+        "precode": "          n.getLineno(), n.getCharno(), endLine, endChar);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "          n.line(), n.getCharno(), endLine, endChar);"
+    },
+    {
+        "id": 280,
+        "line": 292,
+        "precode": "      return pos;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      returnnull;"
+    },
+    {
+        "id": 281,
+        "line": 297,
+        "precode": "      compiler.report(t.makeError(n, error, arguments));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      compiler.error(t.makeError(n, error, arguments));"
+    },
+    {
+        "id": 459,
+        "line": 259,
+        "precode": "        renameNamespaceShadows(t);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      if (t.getScopeDepth() == 2) {traverse(t);"
+    },
+    {
+        "id": 460,
+        "line": 260,
+        "precode": "        aliases.clear();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "        aliases.remove();"
+    },
+    {
+        "id": 461,
+        "line": 261,
+        "precode": "        forbiddenLocals.clear();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "        forbiddenLocals.remove();"
+    },
+    {
+        "id": 462,
+        "line": 262,
+        "precode": "        transformation = null;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "        transformationList= null;"
+    },
+    {
+        "id": 463,
+        "line": 314,
+        "precode": "              aliasVar.getInitialValue().getQualifiedName();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "              aliasVar.getInitialValue().name();"
+    },
+    {
+        "id": 464,
+        "line": 315,
+        "precode": "          transformation.addAlias(name, qualifiedName);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "          transformation.put(name, qualifiedName);"
+    },
+    {
+        "id": 465,
+        "line": 317,
+        "precode": "          int rootIndex = qualifiedName.indexOf(\".\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "          int rootIndex = qualifiedName.find(\".\");"
+    },
+    {
+        "id": 467,
+        "line": 319,
+        "precode": "            String qNameRoot = qualifiedName.substring(0, rootIndex);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "            String qNameRoot = qualifiedName.slice(0, rootIndex);"
+    },
+    {
+        "id": 468,
+        "line": 320,
+        "precode": "            if (!aliases.containsKey(qNameRoot)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "            if (...aliases.containsKey(qNameRoot)) {"
+    },
+    {
+        "id": 597,
+        "line": 358,
+        "precode": "      if (hasNamespaceShadows) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      if (enabled) {"
+    },
+    {
+        "id": 598,
+        "line": 364,
+        "precode": "          renamer.addDeclaredName(s);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "          renamer.add(s);"
+    },
+    {
+        "id": 599,
+        "line": 367,
+        "precode": "            new MakeDeclaredNamesUnique(renamer);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "            new MakeDeclaredNamesUnique(t);"
+    },
+    {
+        "id": 600,
+        "line": 368,
+        "precode": "        NodeTraversal.traverse(compiler, t.getScopeRoot(), uniquifier);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "        NodeTraversal.walk(compiler, t.getScopeRoot(), uniquifier);"
+    },
+    {
+        "id": 602,
+        "line": 374,
+        "precode": "        preprocessorSymbolTable.addReference(n.getFirstChild());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "        preprocessorSymbolTable.add(n.getFirstChild());"
+    },
+    {
+        "id": 603,
+        "line": 376,
+        "precode": "      if (!parent.isExprResult()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      if (...parent.isExprResult()) {"
+    },
+    {
+        "id": 605,
+        "line": 384,
+        "precode": "        Node anonymousFnNode = n.getChildAtIndex(1);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "        Node anonymousFnNode = n.get(1);"
+    },
+    {
+        "id": 606,
+        "line": 385,
+        "precode": "        if (!anonymousFnNode.isFunction() ||",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "            NodeUtil.getFunctionName(anonymousFnNode)!= null&&NodeUtil.getFunctionParameters(anonymousFnNode).hasChildren()) {"
+    },
+    {
+        "id": 608,
+        "line": 387,
+        "precode": "            NodeUtil.getFunctionParameters(anonymousFnNode).hasChildren()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "            NodeUtil.getFunctionParameters(anonymousFnNode).size()) {"
+    },
+    {
+        "id": 609,
+        "line": 388,
+        "precode": "          report(t, anonymousFnNode, GOOG_SCOPE_HAS_BAD_PARAMETERS);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "            NodeUtil.getFunctionParameters(anonymousFnNode).hasChildren()) {report(t, anonymousFnNode, GOOG_SCOPE_HAS_BAD_PARAMETERS);"
+    },
+    {
+        "id": 610,
+        "line": 390,
+        "precode": "          scopeCalls.add(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_16_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "          scopeCalls.push(n);"
+    }
+]

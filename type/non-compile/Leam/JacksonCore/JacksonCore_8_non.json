@@ -1,0 +1,240 @@
+[
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if(!_hasSegments){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_resultArray != null)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_resultString != null)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_currentSegment != null)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_inputStart >= 0)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        return contentsAsArray();",
+        "line": 304,
+        "aftercode": "\n\n    }\n\n    /*\n    /**********************************************************\n    /* Other accessors:\n    /**********************************************************\n     */\n\n    public String contentsAsString()\n    {\n        if (_resultString == null) {\n            // Has array been requested? Can make a shortcut, if so:\n            if (_resultArray != null) {\n                _resultString = new String(_resultArray);\n            } else {\n                // Do we use shared array?\n                if (_inputStart >= 0) {\n                    if (_inputLen < 1) {\n                        return (_resultString = \"\");\n                    }\n                    _resultString = new String(_inputBuffer, _inputStart, _inputLen);\n                } else { // nope... need to copy\n                    // But first, let's see if we have just one buffer\n                    int segLen = _segmentSize;\n                    int currLen = _currentSize;\n                    \n                    if (segLen == 0) { // yup\n                        _resultString = (currLen == 0) ? \"\" : new String(_currentSegment, 0, currLen);\n                    } else { // no, need to combine\n                        StringBuilder sb = new StringBuilder(segLen + currLen);\n                        // First stored segments\n                        if (_segments != null) {\n                            for (int i = 0, len = _segments.size(); i < len; ++i) {\n                                char[] curr = _segments.get(i);\n                                sb.append(curr, 0, curr.length);\n                            }\n                        }\n                        // And finally, current segment:\n                        sb.append(_currentSegment, 0, _currentSize);\n                        _resultString = sb.toString();\n                    }\n                }\n            }\n        }\n        return _resultString;\n    }\n \n    public char[] contentsAsArray() {\n        char[] result = _resultArray;\n        if (result == null) {\n            _resultArray = result = resultArray();\n        }\n        return result;\n    }\n\n    /**\n     * Convenience method for converting contents of the buffer\n     * into a {@link BigDecimal}.\n     */\n    public BigDecimal contentsAsDecimal() throws NumberFormatException\n    {\n        // Already got a pre-cut array?\n        if (_resultArray != null) {\n            return NumberInput.parseBigDecimal(_resultArray);\n        }\n        // Or a shared buffer?\n        if ((_inputStart >= 0) && (_inputBuffer != null)) {\n            return NumberInput.parseBigDecimal(_inputBuffer, _inputStart, _inputLen);\n        }\n        // Or if not, just a single buffer (the usual case)\n        if ((_segmentSize == 0) && (_currentSegment != null)) {\n            return NumberInput.parseBigDecimal(_currentSegment, 0, _currentSize);\n        }\n        // If not, let's just get it aggregated...\n        return NumberInput.parseBigDecimal(contentsAsArray());\n    }\n\n    /**\n     * Convenience method for converting contents of the buffer\n     * into a Double value.\n     */\n    public double contentsAsDouble() throws NumberFormatException {\n        return NumberInput.parseDouble(contentsAsString());\n    }\n\n    /*\n    /**********************************************************\n    /* Public mutators:\n    /**********************************************************\n     */\n\n    /**\n     * Method called to make sure that buffer is not using shared input\n     * buffer; if it is, it will copy such contents to private buffer.\n     */\n    public void ensureNotShared() {\n        if (_inputStart >= 0) {\n            unshare(16);\n        }\n    }\n\n    public void append(char c) {\n        // Using shared buffer so far?\n        if (_inputStart >= 0) {\n            unshare(16);\n        }\n        _resultString = null;\n        _resultArray = null;\n        // Room in current segment?\n        char[] curr = _currentSegment;\n        if (_currentSize >= curr.length) {\n            expand(1);\n            curr = _currentSegment;\n        }\n        curr[_currentSize++] = c;\n    }\n\n    public void append(char[] c, int start, int len)\n    {\n        // Can't append to shared buf (sanity check)\n        if (_inputStart >= 0) {\n            unshare(len);\n        }\n        _resultString = null;\n        _resultArray = null;\n\n        // Room in current segment?\n        char[] curr = _currentSegment;\n        int max = curr.length - _currentSize;\n            \n        if (max >= len) {\n            System.arraycopy(c, start, curr, _currentSize, len);\n            _currentSize += len;\n            return;\n        }\n        // No room for all, need to copy part(s):\n        if (max > 0) {\n            System.arraycopy(c, start, curr, _currentSize, max);\n            start += max;\n            len -= max;\n        }\n        /* And then allocate new segment; we are guaranteed to now\n         * have enough room in segment.\n         */\n        // Except, as per [Issue-24], not for HUGE appends... so:\n        do {\n            expand(len);\n            int amount = Math.min(_currentSegment.length, len);\n            System.arraycopy(c, start, _currentSegment, 0, amount);\n            _currentSize += amount;\n            start += amount;\n            len -= amount;\n        } while (len > 0);\n    }\n\n    public void append(String str, int offset, int len)\n    {\n        // Can't append to shared buf (sanity check)\n        if (_inputStart >= 0) {\n            unshare(len);\n        }\n        _resultString = null;\n        _resultArray = null;\n\n        // Room in current segment?\n        char[] curr = _currentSegment;\n        int max = curr.length - _currentSize;\n        if (max >= len) {\n            str.getChars(offset, offset+len, curr, _currentSize);\n            _currentSize += len;\n            return;\n        }\n        // No room for all, need to copy part(s):\n        if (max > 0) {\n            str.getChars(offset, offset+max, curr, _currentSize);\n            len -= max;\n            offset += max;\n        }\n        /* And then allocate new segment; we are guaranteed to now\n         * have enough room in segment.\n         */\n        // Except, as per [Issue-24], not for HUGE appends... so:\n        do {\n            expand(len);\n            int amount = Math.min(_currentSegment.length, len);\n            str.getChars(offset, offset+amount, _currentSegment, 0);\n            _currentSize += amount;\n            offset += amount;\n            len -= amount;\n        } while (len > 0);\n    }\n\n    /*\n    /**********************************************************\n    /* Raw access, for high-performance use:\n    /**********************************************************\n     */\n\n    public char[] getCurrentSegment()\n    {\n        /* Since the intention of the caller is to directly add stuff into\n         * buffers, we should NOT have anything in shared buffer... ie. may\n         * need to unshare contents.\n         */\n        if (_inputStart >= 0) {\n            unshare(1);\n        } else {\n            char[] curr = _currentSegment;\n            if (curr == null) {\n                _currentSegment = buf(0);\n            } else if (_currentSize >= curr.length) {\n                // Plus, we better have room for at least one more char\n                expand(1);\n            }\n        }\n        return _currentSegment;\n    }\n\n    public char[] emptyAndGetCurrentSegment()\n    {\n        // inlined 'resetWithEmpty()'\n        _inputStart = -1; // indicates shared buffer not used\n        _currentSize = 0;\n        _inputLen = 0;\n\n        _inputBuffer = null;\n        _resultString = null;\n        _resultArray = null;\n\n        // And then reset internal input buffers, if necessary:\n        if (_hasSegments) {\n            clearSegments();\n        }\n        char[] curr = _currentSegment;\n        if (curr == null) {\n            _currentSegment = curr = buf(0);\n        }\n        return curr;\n    }\n\n    public int getCurrentSegmentSize() { return _currentSize; }\n    public void setCurrentLength(int len) { _currentSize = len; }\n\n    /**\n     * @since 2.6\n     */\n    public String setCurrentAndReturn(int len) {\n        _currentSize = len;\n        // We can simplify handling here compared to full `contentsAsString()`:\n        if (_segmentSize > 0) { // longer text; call main method\n            return contentsAsString();\n        }\n        // more common case: single segment\n        int currLen = _currentSize;\n        String str = (currLen == 0) ? \"\" : new String(_currentSegment, 0, currLen);\n        _resultString = str;\n        return str;\n    }\n    \n    public char[] finishCurrentSegment() {\n        if (_segments == null) {\n            _segments = new ArrayList<char[]>();\n        }\n        _hasSegments = true;\n        _segments.add(_currentSegment);\n        int oldLen = _currentSegment.length;\n        _segmentSize += oldLen;\n        _currentSize = 0;\n\n        // Let's grow segments by 50%\n        int newLen = oldLen + (oldLen >> 1);\n        if (newLen < MIN_SEGMENT_LEN) {\n            newLen = MIN_SEGMENT_LEN;\n        } else if (newLen > MAX_SEGMENT_LEN) {\n            newLen = MAX_SEGMENT_LEN;\n        }\n        char[] curr = carr(newLen);\n        _currentSegment = curr;\n        return curr;\n    }\n\n    /**\n     * Method called to expand size of the current segment, to\n     * accommodate for more contiguous content. Usually only\n     * used when parsing tokens like names if even then.\n     */\n    public char[] expandCurrentSegment()\n    {\n        final char[] curr = _currentSegment;\n        // Let's grow by 50% by default\n        final int len = curr.length;\n        int newLen = len + (len >> 1);\n        // but above intended maximum, slow to increase by 25%\n        if (newLen > MAX_SEGMENT_LEN) {\n            newLen = len + (len >> 2);\n        }\n        return (_currentSegment = Arrays.copyOf(curr, newLen));\n    }\n\n    /**\n     * Method called to expand size of the current segment, to\n     * accommodate for more contiguous content. Usually only\n     * used when parsing tokens like names if even then.\n     * \n     * @param minSize Required minimum strength of the current segment\n     *\n     * @since 2.4.0\n     */\n    public char[] expandCurrentSegment(int minSize) {\n        char[] curr = _currentSegment;\n        if (curr.length >= minSize) return curr;\n        _currentSegment = curr = Arrays.copyOf(curr, minSize);\n        return curr;\n    }\n\n    /*\n    /**********************************************************\n    /* Standard methods:\n    /**********************************************************\n     */\n\n    /**\n     * Note: calling this method may not be as efficient as calling\n     * {@link #contentsAsString}, since it's not guaranteed that resulting\n     * String is cached.\n     */\n    @Override public String toString() { return contentsAsString(); }\n\n    /*\n    /**********************************************************\n    /* Internal methods:\n    /**********************************************************\n     */\n\n    /**\n     * Method called if/when we need to append content when we have been\n     * initialized to use shared buffer.\n     */\n    private void unshare(int needExtra)\n    {\n        int sharedLen = _inputLen;\n        _inputLen = 0;\n        char[] inputBuf = _inputBuffer;\n        _inputBuffer = null;\n        int start = _inputStart;\n        _inputStart = -1;\n\n        // Is buffer big enough, or do we need to reallocate?\n        int needed = sharedLen+needExtra;\n        if (_currentSegment == null || needed > _currentSegment.length) {\n            _currentSegment = buf(needed);\n        }\n        if (sharedLen > 0) {\n            System.arraycopy(inputBuf, start, _currentSegment, 0, sharedLen);\n        }\n        _segmentSize = 0;\n        _currentSize = sharedLen;\n    }\n\n    /**\n     * Method called when current segment is full, to allocate new\n     * segment.\n     */\n    private void expand(int minNewSegmentSize)\n    {\n        // First, let's move current segment to segment list:\n        if (_segments == null) {\n            _segments = new ArrayList<char[]>();\n        }\n        char[] curr = _currentSegment;\n        _hasSegments = true;\n        _segments.add(curr);\n        _segmentSize += curr.length;\n        _currentSize = 0;\n        int oldLen = curr.length;\n        \n        // Let's grow segments by 50% minimum\n        int newLen = oldLen + (oldLen >> 1);\n        if (newLen < MIN_SEGMENT_LEN) {\n            newLen = MIN_SEGMENT_LEN;\n        } else if (newLen > MAX_SEGMENT_LEN) {\n            newLen = MAX_SEGMENT_LEN;\n        }\n        _currentSegment = carr(newLen);\n    }\n\n    private char[] resultArray()\n    {\n        if (_resultString != null) { // Can take a shortcut...\n            return _resultString.toCharArray();\n        }\n        // Do we use shared array?\n        if (_inputStart >= 0) {\n            final int len = _inputLen;\n            if (len < 1) {\n                return NO_CHARS;\n            }\n            final int start = _inputStart;\n            if (start == 0) {\n                return Arrays.copyOf(_inputBuffer, len);\n            }\n            return Arrays.copyOfRange(_inputBuffer, start, start+len);\n        }\n        // nope, not shared\n        int size = size();\n        if (size < 1) {\n            return NO_CHARS;\n        }\n        int offset = 0;\n        final char[] result = carr(size);\n        if (_segments != null) {\n            for (int i = 0, len = _segments.size(); i < len; ++i) {\n                char[] curr = _segments.get(i);\n                int currLen = curr.length;\n                System.arraycopy(curr, 0, result, offset, currLen);\n                offset += currLen;\n            }\n        }\n        System.arraycopy(_currentSegment, 0, result, offset, _currentSize);\n        return result;\n    }\n\n    private char[] carr(int len) { return new char[len]; }\n}package com.fasterxml.jackson.core.util;\n\nimport java.math.BigDecimal;\nimport java.util.ArrayList;\nimport java.util.Arrays;\n\nimport com.fasterxml.jackson.core.io.NumberInput;\n\n/**\n * TextBuffer is a class similar to {@link StringBuffer}, with\n * following differences:\n *<ul>\n *  <li>TextBuffer uses segments character arrays, to avoid having\n *     to do additional array copies when array is not big enough.\n *     This means that only reallocating that is necessary is done only once:\n *     if and when caller\n *     wants to access contents in a linear array (char[], String).\n *    </li>\n*  <li>TextBuffer can also be initialized in \"shared mode\", in which\n*     it will just act as a wrapper to a single char array managed\n*     by another object (like parser that owns it)\n *    </li>\n *  <li>TextBuffer is not synchronized.\n *    </li>\n * </ul>\n */\npublic final class TextBuffer\n{\n    final static char[] NO_CHARS = new char[0];\n\n    /**\n     * Let's start with sizable but not huge buffer, will grow as necessary\n     */\n    final static int MIN_SEGMENT_LEN = 1000;\n    \n    /**\n     * Let's limit maximum segment length to something sensible\n     * like 256k\n     */\n    final static int MAX_SEGMENT_LEN = 0x40000;\n    \n    /*\n    /**********************************************************\n    /* Configuration:\n    /**********************************************************\n     */\n\n    private final BufferRecycler _allocator;\n\n    /*\n    /**********************************************************\n    /* Shared input buffers\n    /**********************************************************\n     */\n\n    /**\n     * Shared input buffer; stored here in case some input can be returned\n     * as is, without being copied to collector's own buffers. Note that\n     * this is read-only for this Object.\n     */\n    private char[] _inputBuffer;\n\n    /**\n     * Character offset of first char in input buffer; -1 to indicate\n     * that input buffer currently does not contain any useful char data\n     */\n    private int _inputStart;\n\n    private int _inputLen;\n\n    /*\n    /**********************************************************\n    /* Aggregation segments (when not using input buf)\n    /**********************************************************\n     */\n\n    /**\n     * List of segments prior to currently active segment.\n     */\n    private ArrayList<char[]> _segments;\n\n    /**\n     * Flag that indicates whether _seqments is non-empty\n     */\n    private boolean _hasSegments = false;\n\n    // // // Currently used segment; not (yet) contained in _seqments\n\n    /**\n     * Amount of characters in segments in {@link _segments}\n     */\n    private int _segmentSize;\n\n    private char[] _currentSegment;\n\n    /**\n     * Number of characters in currently active (last) segment\n     */\n    private int _currentSize;\n\n    /*\n    /**********************************************************\n    /* Caching of results\n    /**********************************************************\n     */\n\n    /**\n     * String that will be constructed when the whole contents are\n     * needed; will be temporarily stored in case asked for again.\n     */\n    private String _resultString;\n\n    private char[] _resultArray;\n\n    /*\n    /**********************************************************\n    /* Life-cycle\n    /**********************************************************\n     */\n\n    public TextBuffer(BufferRecycler allocator) {\n        _allocator = allocator;\n    }\n\n    /**\n     * Method called to indicate that the underlying buffers should now\n     * be recycled if they haven't yet been recycled. Although caller\n     * can still use this text buffer, it is not advisable to call this\n     * method if that is likely, since next time a buffer is needed,\n     * buffers need to reallocated.\n     * Note: calling this method automatically also clears contents\n     * of the buffer.\n     */\n    public void releaseBuffers()\n    {\n        if (_allocator == null) {\n            resetWithEmpty();\n        } else {\n            if (_currentSegment != null) {\n                // First, let's get rid of all but the largest char array\n                resetWithEmpty();\n                // And then return that array\n                char[] buf = _currentSegment;\n                _currentSegment = null;\n                _allocator.releaseCharBuffer(BufferRecycler.CHAR_TEXT_BUFFER, buf);\n            }\n        }\n    }\n\n    /**\n     * Method called to clear out any content text buffer may have, and\n     * initializes buffer to use non-shared data.\n     */\n    public void resetWithEmpty()\n    {\n        _inputStart = -1; // indicates shared buffer not used\n        _currentSize = 0;\n        _inputLen = 0;\n\n        _inputBuffer = null;\n        _resultString = null;\n        _resultArray = null;\n\n        // And then reset internal input buffers, if necessary:\n        if (_hasSegments) {\n            clearSegments();\n        }\n    }\n\n    /**\n     * Method called to initialize the buffer with a shared copy of data;\n     * this means that buffer will just have pointers to actual data. It\n     * also means that if anything is to be appended to the buffer, it\n     * will first have to unshare it (make a local copy).\n     */\n    public void resetWithShared(char[] buf, int start, int len)\n    {\n        // First, let's clear intermediate values, if any:\n        _resultString = null;\n        _resultArray = null;\n\n        // Then let's mark things we need about input buffer\n        _inputBuffer = buf;\n        _inputStart = start;\n        _inputLen = len;\n\n        // And then reset internal input buffers, if necessary:\n        if (_hasSegments) {\n            clearSegments();\n        }\n    }\n\n    public void resetWithCopy(char[] buf, int start, int len)\n    {\n        _inputBuffer = null;\n        _inputStart = -1; // indicates shared buffer not used\n        _inputLen = 0;\n\n        _resultString = null;\n        _resultArray = null;\n\n        // And then reset internal input buffers, if necessary:\n        if (_hasSegments) {\n            clearSegments();\n        } else if (_currentSegment == null) {\n            _currentSegment = buf(len);\n        }\n        _currentSize = _segmentSize = 0;\n        append(buf, start, len);\n    }\n\n    public void resetWithString(String value)\n    {\n        _inputBuffer = null;\n        _inputStart = -1;\n        _inputLen = 0;\n\n        _resultString = value;\n        _resultArray = null;\n\n        if (_hasSegments) {\n            clearSegments();\n        }\n        _currentSize = 0;\n        \n    }\n    \n    /**\n     * Helper method used to find a buffer to use, ideally one\n     * recycled earlier.\n     */\n    private char[] buf(int needed)\n    {\n        if (_allocator != null) {\n            return _allocator.allocCharBuffer(BufferRecycler.CHAR_TEXT_BUFFER, needed);\n        }\n        return new char[Math.max(needed, MIN_SEGMENT_LEN)];\n    }\n\n    private void clearSegments()\n    {\n        _hasSegments = false;\n        /* Let's start using _last_ segment from list; for one, it's\n         * the biggest one, and it's also most likely to be cached\n         */\n        /* 28-Aug-2009, tatu: Actually, the current segment should\n         *   be the biggest one, already\n         */\n        //_currentSegment = _segments.get(_segments.size() - 1);\n        _segments.clear();\n        _currentSize = _segmentSize = 0;\n    }\n\n    /*\n    /**********************************************************\n    /* Accessors for implementing public interface\n    /**********************************************************\n     */\n\n    /**\n     * @return Number of characters currently stored by this collector\n     */\n    public int size() {\n        if (_inputStart >= 0) { // shared copy from input buf\n            return _inputLen;\n        }\n        if (_resultArray != null) {\n            return _resultArray.length;\n        }\n        if (_resultString != null) {\n            return _resultString.length();\n        }\n        // local segmented buffers\n        return _segmentSize + _currentSize;\n    }\n\n    public int getTextOffset() {\n        /* Only shared input buffer can have non-zero offset; buffer\n         * segments start at 0, and if we have to create a combo buffer,\n         * that too will start from beginning of the buffer\n         */\n        return (_inputStart >= 0) ? _inputStart : 0;\n    }\n\n    /**\n     * Method that can be used to check whether textual contents can\n     * be efficiently accessed using {@link #getTextBuffer}.\n     */\n    public boolean hasTextAsCharacters()\n    {\n        // if we have array in some form, sure\n        if (_inputStart >= 0 || _resultArray != null)  return true;\n        // not if we have String as value\n        if (_resultString != null) return false;\n        return true;\n    }\n    \n    public char[] getTextBuffer()\n    {\n        // Are we just using shared input buffer?\n        if (_inputStart >= 0) return _inputBuffer;\n        if (_resultArray != null)  return _resultArray;\n        if (_resultString != null) {\n            return (_resultArray = _resultString.toCharArray());\n        }\n        // Nope; but does it fit in just one segment?\n        // Nope, need to have/create a non-segmented array and return it"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if(_hasSegments){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if(!_hasSegments){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if(!_hasSegments){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_resultArray != null)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_resultString != null)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_currentSegment != null)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((!_hasSegments && (_currentSegment != null))){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_inputStart >= 0)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if(!_hasSegments){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "            return (_resultArray = _resultString.toCharArray());",
+        "line": 304,
+        "aftercode": "return _resultString;        }"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_currentSegment != null)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if(_hasSegments){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (!_hasSegments && _currentSegment != null)  return _currentSegment;",
+        "line": 307,
+        "aftercode": "if((_currentSegment != null)){"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "            return (_resultArray = _resultString.toCharArray());",
+        "line": 304,
+        "aftercode": "return _resultString.toCharArray();        }"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "            _segments = new ArrayList<char[]>();",
+        "line": 571,
+        "aftercode": "_segments = new ArrayList<ArrayList<char[]>>();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (newLen < MIN_SEGMENT_LEN) {",
+        "line": 581,
+        "aftercode": "if(newLen){"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        _currentSegment = curr;",
+        "line": 587,
+        "aftercode": "_currentSegment = 0;"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (_segments == null) {",
+        "line": 570,
+        "aftercode": "int oldLen = _currentSegment.length;"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        char[] curr = carr(newLen);",
+        "line": 586,
+        "aftercode": "char[] curr = carr();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (_segments == null) {",
+        "line": 570,
+        "aftercode": "int newLen = (oldLen + (oldLen >> 1));"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        int oldLen = _currentSegment.length;",
+        "line": 575,
+        "aftercode": "int oldLen = false;"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        } else if (newLen > MAX_SEGMENT_LEN) {",
+        "line": 583,
+        "aftercode": "if(newLen){"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        if (_segments == null) {",
+        "line": 570,
+        "aftercode": "char[] curr = carr(newLen);"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        int oldLen = _currentSegment.length;",
+        "line": 575,
+        "aftercode": "int oldLen = ;"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        int newLen = oldLen + (oldLen >> 1);",
+        "line": 580,
+        "aftercode": "int newLen = ;"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "            _segments = new ArrayList<char[]>();",
+        "line": 571,
+        "aftercode": "_segments = new ArrayList<ArrayList>();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "        char[] curr = carr(newLen);",
+        "line": 586,
+        "aftercode": "char[] curr = 0;"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_8_fixed/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+        "precode": "            _segments = new ArrayList<char[]>();",
+        "line": 571,
+        "aftercode": "_segments = new ArrayList []();"
+    }
+]

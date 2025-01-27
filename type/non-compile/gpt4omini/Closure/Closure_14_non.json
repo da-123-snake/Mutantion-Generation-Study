@@ -1,0 +1,23 @@
+[
+    {
+        "id": 478,
+        "line": 766,
+        "precode": "for (Node finallyNode : cfa.finallyMap.get(parent)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "for (Node finallyNode : cfa.finallyMap.getOrDefault(parent, new ArrayList<>())) {"
+    },
+    {
+        "id": 479,
+        "line": 767,
+        "precode": "cfa.createEdge(fromNode, Branch.ON_EX, finallyNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "cfa.createEdge(fromNode, Branch.DEFAULT, finallyNode);"
+    },
+    {
+        "id": 483,
+        "line": 766,
+        "precode": "for (Node finallyNode : cfa.finallyMap.get(parent)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "for (Node finallyNode : cfa.finallyMap.get(parent).stream().filter(node -> node != null).collect(Collectors.toList())) {"
+    }
+]

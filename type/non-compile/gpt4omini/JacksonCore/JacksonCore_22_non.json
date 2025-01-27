@@ -1,0 +1,51 @@
+[
+    {
+        "id": 168,
+        "line": 298,
+        "precode": "case ID_START_ARRAY:",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_22_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "case ID_START_OBJECT:"
+    },
+    {
+        "id": 449,
+        "line": 250,
+        "precode": "JsonToken t = ctxt.nextTokenToRead();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_22_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "JsonToken t = ctxt.getCurrentToken();"
+    },
+    {
+        "id": 465,
+        "line": 451,
+        "precode": "}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_22_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "return; // implicit return"
+    },
+    {
+        "id": 474,
+        "line": 603,
+        "precode": "return (_currToken = t);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_22_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "throw new RuntimeException('Mutant Exception');"
+    },
+    {
+        "id": 478,
+        "line": 600,
+        "precode": "(f == TokenFilter.INCLUDE_ALL)",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_22_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "(f != TokenFilter.INCLUDE_ALL)"
+    },
+    {
+        "id": 482,
+        "line": 72,
+        "precode": "if ((f == TokenFilter.INCLUDE_ALL) || ((f != null) && f.includeValue(delegate))) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_22_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "if ((f != TokenFilter.INCLUDE_ALL) && ((f != null) && f.includeValue(delegate))) {"
+    },
+    {
+        "id": 485,
+        "line": 73,
+        "precode": "if ((f == TokenFilter.INCLUDE_ALL) || ((f != null) && f.includeValue(delegate))) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_22_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "if ((f != null) && f.includeValue(delegate)) {"
+    }
+]

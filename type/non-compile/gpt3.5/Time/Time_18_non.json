@@ -1,0 +1,72 @@
+[
+    {
+        "id": 147,
+        "line": 18,
+        "precode": "instant = iGregorianChronology.getDateTimeMillis\n                (year, monthOfYear, dayOfMonth,\n                 hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iJulianChronology.getDateTimeMillis\n                (year, monthOfYear, dayOfMonth,\n                 hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);"
+    },
+    {
+        "id": 148,
+        "line": 21,
+        "precode": "instant = iJulianChronology.getDateTimeMillis\n                (year, monthOfYear, dayOfMonth,\n                 hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iGregorianChronology.getDateTimeMillis\n                (year, monthOfYear, dayOfMonth,\n                 hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);"
+    },
+    {
+        "id": 150,
+        "line": 379,
+        "precode": "if (instant < iCutoverMillis) {",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "// if (instant < iCutoverMillis) {"
+    },
+    {
+        "id": 151,
+        "line": 379,
+        "precode": "if (instant < iCutoverMillis) {",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "// if (instant < iCutoverMillis) {"
+    },
+    {
+        "id": 502,
+        "line": 220,
+        "precode": "        chrono = getInstance(DateTimeZone.UTC, cutoverInstant, minDaysInFirstWeek);",
+        "aftercode": "        chrono = getInstance(DateTimeZone.UTC, cutoverInstant, minDaysInFirstWeek); chrono = new GJChronology(GregorianChronology.getInstance(zone, minDaysInFirstWeek), JulianChronology.getInstance(zone, minDaysInFirstWeek), cutoverInstant);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java"
+    },
+    {
+        "id": 503,
+        "line": 221,
+        "precode": "        chrono = new GJChronology",
+        "aftercode": "        chrono = new GJChronology(zone, cutoverInstant, minDaysInFirstWeek);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java"
+    },
+    {
+        "id": 504,
+        "line": 221,
+        "precode": "        chrono = new GJChronology",
+        "aftercode": "        chrono = new GJChronology(GregorianChronology.getInstance(zone, minDaysInFirstWeek), JulianChronology.getInstance(zone, minDaysInFirstWeek), cutoverInstant); chrono = new GJChronology(zone, cutoverInstant, minDaysInFirstWeek);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java"
+    },
+    {
+        "id": 532,
+        "line": 1022,
+        "precode": "return iGregorianField.getDifference(minuendInstant, subtrahendInstant);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": ""
+    },
+    {
+        "id": 538,
+        "line": 1022,
+        "precode": "return iGregorianField.getDifference(minuendInstant, subtrahendInstant);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": ""
+    },
+    {
+        "id": 541,
+        "line": 957,
+        "precode": "super(julianField, gregorianField, cutoverMillis, convertByWeekyear);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": ""
+    }
+]

@@ -1,0 +1,205 @@
+[
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.add(new And(evaluators));",
+        "line": 59,
+        "aftercode": "this.evaluators.add(evaluators);"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "if(evaluators.size()){"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.addAll(evaluators);",
+        "line": 61,
+        "aftercode": "this.evaluators = evaluators;"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.add(new And(evaluators));",
+        "line": 59,
+        "aftercode": "this.evaluators = evaluators;"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            super();",
+        "line": 57,
+        "aftercode": "this.evaluators = evaluators;"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.addAll(evaluators);",
+        "line": 61,
+        "aftercode": "addAll(evaluators);"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "        Or(Collection<Evaluator> evaluators) {",
+        "line": 56,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "        Or(Collection<Evaluator> evaluators) {",
+        "line": 56,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            super();",
+        "line": 57,
+        "aftercode": "super(evaluators.size());"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "this.evaluators.add(new And(evaluators));"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "        Or(Collection<Evaluator> evaluators) {",
+        "line": 56,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "if((evaluators.size() > 1)){"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.add(new And(evaluators));",
+        "line": 59,
+        "aftercode": "this.evaluators = new And(evaluators);"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.addAll(evaluators);",
+        "line": 61,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "        Or(Collection<Evaluator> evaluators) {",
+        "line": 56,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.add(new And(evaluators));",
+        "line": 61,
+        "aftercode": "package org.jsoup.select;\n\nimport org.jsoup.helper.StringUtil;\nimport org.jsoup.nodes.Element;\n\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Collection;\nimport java.util.List;\n\n/**\n * Base combining (and, or) evaluator.\n */\nabstract class CombiningEvaluator extends Evaluator {\n    final List<Evaluator> evaluators;\n\n    CombiningEvaluator() {\n        super();\n        evaluators = new ArrayList<Evaluator>();\n    }\n\n    CombiningEvaluator(Collection<Evaluator> evaluators) {\n        this();\n        this.evaluators.addAll(evaluators);\n    }\n\n    static final class And extends CombiningEvaluator {\n        And(Collection<Evaluator> evaluators) {\n            super(evaluators);\n        }\n\n        And(Evaluator... evaluators) {\n            this(Arrays.asList(evaluators));\n        }\n\n        @Override\n        public boolean matches(Element root, Element node) {\n            for (Evaluator s : evaluators) {\n                if (!s.matches(root, node))\n                    return false;\n            }\n            return true;\n        }\n\n        @Override\n        public String toString() {\n            return StringUtil.join(evaluators, \" \");\n        }\n    }\n\n    static final class Or extends CombiningEvaluator {\n        /**\n         * Create a new Or evaluator. The initial evaluators are ANDed together and used as the first clause of the OR.\n         * @param evaluators initial OR clause (these are wrapped into an AND evaluator).\n         */\n        Or(Collection<Evaluator> evaluators) {\n            super();\n            if (evaluators.size() > 1)\nthis.evaluators = evaluators;\n            else // 0 or 1\n\nthis.evaluators = evaluators;\n        }\n\n        Or() {\n            super();\n        }\n\n        public void add(Evaluator e) {\n            evaluators.add(e);\n        }\n\n        @Override\n        public boolean matches(Element root, Element node) {\n            for (Evaluator s : evaluators) {\n                if (s.matches(root, node))\n                    return true;\n            }\n            return false;\n        }\n\n        @Override\n        public String toString() {\n            return String.format(\":or%s\", evaluators);\n        }\n    }\n}"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "if((evaluators > 1)){"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.add(new And(evaluators));",
+        "line": 59,
+        "aftercode": "evaluators.add(evaluators);"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "        Or(Collection<Evaluator> evaluators) {",
+        "line": 56,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "if(!evaluators.size()){"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "evaluators.size();"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "if((evaluators == 1)){"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "        Or(Collection<Evaluator> evaluators) {",
+        "line": 56,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "                this.evaluators.addAll(evaluators);",
+        "line": 61,
+        "aftercode": "this.evaluators.add(evaluators);"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "this.evaluators.addAll(evaluators);"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            super();",
+        "line": 57,
+        "aftercode": "super(0);"
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "        Or(Collection<Evaluator> evaluators) {",
+        "line": 56,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "        Or(Collection<Evaluator> evaluators) {",
+        "line": 56,
+        "aftercode": ""
+    },
+    {
+        "id": 6,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "precode": "            if (evaluators.size() > 1)",
+        "line": 58,
+        "aftercode": "if((evaluators.size() >= 1)){"
+    }
+]

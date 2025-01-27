@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "line": 464,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return new Number();"
+    },
+    {
+        "id": 12,
+        "line": 525,
+        "precode": "Float f = NumberUtils.createFloat(numeric);",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "Float f = NumberUtils.createDouble(numeric);"
+    },
+    {
+        "id": 13,
+        "line": 539,
+        "precode": "Double d = NumberUtils.createDouble(numeric);",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "Double d = NumberUtils.createLong(numeric);"
+    },
+    {
+        "id": 15,
+        "line": 589,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "catch (NumberFormatException nfe) {"
+    },
+    {
+        "id": 276,
+        "line": 591,
+        "precode": "if (!(d.isInfinite() || (d.doubleValue() == 0.0D && !allZeros))) {",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (d.isFinite() && (d.doubleValue() != 0.0D || !allZeros)) {"
+    },
+    {
+        "id": 279,
+        "line": 592,
+        "precode": "return d;",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return createBigDecimal(numeric);"
+    },
+    {
+        "id": 289,
+        "line": 592,
+        "precode": "return d;",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return (d == null) ? createBigDecimal(numeric) : d;"
+    },
+    {
+        "id": 290,
+        "line": 594,
+        "precode": "} catch (NumberFormatException nfe) {",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "// Catch all exceptions"
+    },
+    {
+        "id": 294,
+        "line": 598,
+        "precode": "return createBigDecimal(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return (BigDecimal) d;"
+    },
+    {
+        "id": 574,
+        "line": 717,
+        "precode": "if (str == null) {",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str == null) { throw new NullPointerException(\"String cannot be null\"); }"
+    },
+    {
+        "id": 585,
+        "line": 717,
+        "precode": "if (str == null) {",
+        "filepath": "defects4j_fixed/Lang/Lang_24_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (false) { throw new Exception(\"This should never happen\"); }"
+    }
+]

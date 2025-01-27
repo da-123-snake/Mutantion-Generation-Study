@@ -1,0 +1,268 @@
+[
+    {
+        "id": 61,
+        "line": 224,
+        "precode": "ObjectInputStream ois = null;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(objectData));"
+    },
+    {
+        "id": 62,
+        "line": 224,
+        "precode": "Object object = null;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "Object object = ois.readObject();"
+    },
+    {
+        "id": 63,
+        "line": 224,
+        "precode": "return object;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "return ois.readObject();"
+    },
+    {
+        "id": 64,
+        "line": 224,
+        "precode": "if (objectData == null) {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "if (objectData == null) throw new IllegalArgumentException(\"The byte[] must not be null\");"
+    },
+    {
+        "id": 65,
+        "line": 224,
+        "precode": "ByteArrayInputStream bais = null;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "ByteArrayInputStream bais = new ByteArrayInputStream(objectData);"
+    },
+    {
+        "id": 66,
+        "line": 224,
+        "precode": "return deserialize(bais);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "return deserialize(ois);"
+    },
+    {
+        "id": 67,
+        "line": 224,
+        "precode": "if (classLoader == null) {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "if (classLoader == null) classLoader = Thread.currentThread().getContextClassLoader();"
+    },
+    {
+        "id": 68,
+        "line": 224,
+        "precode": "return (T) object;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "return (T) ois.readObject();"
+    },
+    {
+        "id": 69,
+        "line": 264,
+        "precode": "super(in);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "supeer(in, classLoader);"
+    },
+    {
+        "id": 70,
+        "line": 264,
+        "precode": "this.classLoader = classLoader;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "this.classLoader = (classLoader == null)? ClassLoader.getSystemClassLoader() : classLoader;"
+    },
+    {
+        "id": 71,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"byte\", byte.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"byte\", Byte.class);"
+    },
+    {
+        "id": 72,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"short\", short.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"short\", Short.class);"
+    },
+    {
+        "id": 73,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"int\", int.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"int\", Integer.class);"
+    },
+    {
+        "id": 74,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"long\", long.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"long\", Long.class);"
+    },
+    {
+        "id": 75,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"float\", float.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"float\", Float.class);"
+    },
+    {
+        "id": 76,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"double\", double.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"double\", Double.class);"
+    },
+    {
+        "id": 77,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"boolean\", boolean.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"boolean\", Boolean.class);"
+    },
+    {
+        "id": 78,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"char\", char.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"char\", Character.class);"
+    },
+    {
+        "id": 79,
+        "line": 264,
+        "precode": "primitiveTypes.put(\"void\", void.class);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "primitiveTypes.put(\"void\", Void.class);"
+    },
+    {
+        "id": 80,
+        "line": 264,
+        "precode": "if (typeDesc.charAt(0) == '[') {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "if (typeDesc.charAt(0) == '[') {"
+    },
+    {
+        "id": 82,
+        "line": 264,
+        "precode": "while (typeDesc.charAt(dim) == '[') dim++;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "while (typeDesc.charAt(dim) == '[') dim++;"
+    },
+    {
+        "id": 83,
+        "line": 264,
+        "precode": "String elemType = typeDesc.substring(dim);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "String elemType = typeDesc.substring(dim + 1);"
+    },
+    {
+        "id": 84,
+        "line": 264,
+        "precode": "Class<?> cl = primitiveTypes.get(elemType);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "Class<?> cl = primitiveTypes.get(elemType);"
+    },
+    {
+        "id": 85,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 86,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 87,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 88,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 89,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 90,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 91,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 92,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 93,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 94,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 95,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 96,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 97,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 98,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 99,
+        "line": 292,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "try {"
+    }
+]

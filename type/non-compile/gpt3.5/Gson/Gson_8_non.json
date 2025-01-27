@@ -1,0 +1,30 @@
+[
+    {
+        "id": 161,
+        "line": 50,
+        "precode": "return (T) allocateInstance.invoke(unsafe, c);",
+        "aftercode": "return (T) newInstance.invoke(null, c, Object.class);",
+        "filepath": "defects4j_fixed/Gson/Gson_8_fixed/gson/src/main/java/com/google/gson/internal/UnsafeAllocator.java"
+    },
+    {
+        "id": 162,
+        "line": 24,
+        "precode": "final Method newInstance = ObjectStreamClass.class.getDeclaredMethod(\"newInstance\", Class.class, int.class);",
+        "aftercode": "final Method newInstance = ObjectStreamClass.class.getDeclaredMethod(\"newInstance\", Class.class, Object.class);",
+        "filepath": "defects4j_fixed/Gson/Gson_8_fixed/gson/src/main/java/com/google/gson/internal/UnsafeAllocator.java"
+    },
+    {
+        "id": 164,
+        "line": 94,
+        "precode": "return (T) newInstance.invoke(null, c, Object.class);",
+        "aftercode": "return (T) newInstance.invoke(null, c, Unsafe.class);",
+        "filepath": "defects4j_fixed/Gson/Gson_8_fixed/gson/src/main/java/com/google/gson/internal/UnsafeAllocator.java"
+    },
+    {
+        "id": 165,
+        "line": 94,
+        "precode": "return (T) newInstance.invoke(null, c, Object.class);",
+        "aftercode": "return (T) newInstance.invoke(null, c, Unsafe.class);",
+        "filepath": "defects4j_fixed/Gson/Gson_8_fixed/gson/src/main/java/com/google/gson/internal/UnsafeAllocator.java"
+    }
+]

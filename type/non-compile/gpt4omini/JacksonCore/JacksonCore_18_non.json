@@ -1,0 +1,65 @@
+[
+    {
+        "id": 291,
+        "line": 441,
+        "precode": "MAX_BIG_DECIMAL_SCALE",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "MAX_BIG_DECIMAL_SCALE / 2"
+    },
+    {
+        "id": 292,
+        "line": 439,
+        "precode": "String.format(",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "String.valueOf("
+    },
+    {
+        "id": 293,
+        "line": 440,
+        "precode": "with illegal scale (%d): needs to be between [-%d, %d]",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "with scale (%d): should be within [-%d, %d]"
+    },
+    {
+        "id": 296,
+        "line": 438,
+        "precode": "(scale < -MAX_BIG_DECIMAL_SCALE)",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "(scale <= -MAX_BIG_DECIMAL_SCALE)"
+    },
+    {
+        "id": 297,
+        "line": 434,
+        "precode": "protected String _asString(BigDecimal value) throws IOException {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "protected String _asString(BigDecimal value) {"
+    },
+    {
+        "id": 298,
+        "line": 435,
+        "precode": "Feature.WRITE_BIGDECIMAL_AS_PLAIN.enabledIn(_features)",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "Feature.WRITE_BIGDECIMAL_AS_PLAIN.enabledIn(_features) && false"
+    },
+    {
+        "id": 299,
+        "line": 438,
+        "precode": "scale > MAX_BIG_DECIMAL_SCALE",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "scale >= MAX_BIG_DECIMAL_SCALE"
+    },
+    {
+        "id": 300,
+        "line": 439,
+        "precode": "String.format(",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "String.join("
+    },
+    {
+        "id": 301,
+        "line": 440,
+        "precode": "with illegal scale (%d): needs to be between [-%d, %d]",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "with invalid scale (%d): should fall in the range [-%d, %d]"
+    }
+]

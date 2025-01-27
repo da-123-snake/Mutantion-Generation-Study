@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1057,
+        "line": 37,
+        "precode": "private FormElement formElement;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private FormElement formElement = new FormElement(Tag.valueOf(\"form\"), \"\");"
+    },
+    {
+        "id": 1064,
+        "line": 40,
+        "precode": "private List<String> pendingTableCharacters = new ArrayList<String>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private List<String> pendingTableCharacters = new LinkedList<String>();"
+    },
+    {
+        "id": 1065,
+        "line": 41,
+        "precode": "private Token.EndTag emptyEnd = new Token.EndTag();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private Token emptyEnd = new Token();"
+    },
+    {
+        "id": 1073,
+        "line": 115,
+        "precode": "return state.process(token, this);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "return state.otherProcess(token, this);"
+    },
+    {
+        "id": 1075,
+        "line": 119,
+        "precode": "this.state = state;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "logStateChange(); this.state = state;"
+    },
+    {
+        "id": 1077,
+        "line": 114,
+        "precode": "currentToken = token;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "log(token); currentToken = token;"
+    },
+    {
+        "id": 1093,
+        "line": 363,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (pos > 0) return null;"
+    },
+    {
+        "id": 1097,
+        "line": 367,
+        "precode": "int i = stack.lastIndexOf(after);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (stack.isEmpty()) { stack.add(in); } else { stack.add(stack.indexOf(after), in); }"
+    },
+    {
+        "id": 1106,
+        "line": 39,
+        "precode": "private ArrayList<Element> formattingElements = new ArrayList<Element>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private List<Element> formattingElements = new ArrayList<Element>();"
+    },
+    {
+        "id": 1107,
+        "line": 40,
+        "precode": "private List<String> pendingTableCharacters = new ArrayList<String>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private ArrayList<String> pendingTableCharacters = new ArrayList<String>();"
+    },
+    {
+        "id": 1112,
+        "line": 41,
+        "precode": "private Token.EndTag emptyEnd = new Token.EndTag();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_45_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private Token.EndTag emptyEnd = new Token.EndTag(\"div\");"
+    }
+]

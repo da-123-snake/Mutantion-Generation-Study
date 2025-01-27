@@ -1,0 +1,86 @@
+[
+    {
+        "id": 60,
+        "line": 246,
+        "precode": "GregorianCalendar cal = new GregorianCalendar();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "GregorianCalendar cal = new GregorianCalendar(GregorianCalendar.BC);"
+    },
+    {
+        "id": 61,
+        "line": 247,
+        "precode": "cal.setTime(date);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "cal.setTime(date, GregorianCalendar.BC);"
+    },
+    {
+        "id": 62,
+        "line": 248,
+        "precode": "return fromCalendarFields(cal);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "return fromCalendarFields(cal, GregorianCalendar.BC);"
+    },
+    {
+        "id": 71,
+        "line": 179,
+        "precode": "return formatter.parseLocalDate(str);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "return formatter.parseLocalDate(str.replaceAll(\"\\s\", \"\"));"
+    },
+    {
+        "id": 72,
+        "line": 179,
+        "precode": "return formatter.parseLocalDate(str);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "return formatter.parseLocalDate(str.replaceAll(\"\\d\", \"\"));"
+    },
+    {
+        "id": 73,
+        "line": 179,
+        "precode": "return formatter.parseLocalDate(str);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "return formatter.parseLocalDate(str.replaceAll(\"\\w\", \"\"));"
+    },
+    {
+        "id": 74,
+        "line": 179,
+        "precode": "return formatter.parseLocalDate(str);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "return formatter.parseLocalDate(str.replaceAll(\"\\W\", \"\"));"
+    },
+    {
+        "id": 75,
+        "line": 179,
+        "precode": "return formatter.parseLocalDate(str);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "return formatter.parseLocalDate(str.replaceAll(\"\\s\", \" \"));"
+    },
+    {
+        "id": 76,
+        "line": 179,
+        "precode": "return formatter.parseLocalDate(str);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "return formatter.parseLocalDate(str.replaceAll(\"\\d\", \" \"));"
+    },
+    {
+        "id": 77,
+        "line": 179,
+        "precode": "return formatter.parseLocalDate(str);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "return formatter.parseLocalDate(str.replaceAll(\"\\w\", \" \"));"
+    },
+    {
+        "id": 81,
+        "line": 248,
+        "precode": "return fromCalendarFields(cal);",
+        "aftercode": "return fromCalendarFields(cal, TimeZone.getTimeZone(\"UTC\"));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java"
+    },
+    {
+        "id": 82,
+        "line": 20,
+        "precode": "return new LocalDate(date.getYear() + 1900, date.getMonth() + 1, date.getDate());",
+        "aftercode": "return new LocalDate(date.getYear() + 1900, date.getMonth() + 1, date.getDate(), TimeZone.getTimeZone(\"UTC\"));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java"
+    }
+]

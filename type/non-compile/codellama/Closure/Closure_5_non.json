@@ -1,0 +1,51 @@
+[
+    {
+        "id": 463,
+        "line": 16,
+        "precode": "for (Node child = val.getFirstChild(); child != null; child = child.getNext()) {",
+        "aftercode": "for (Node child = val.getFirstChild(); child != null; child = child.getNext()) { if (parent.isGetProp()) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 470,
+        "line": 16,
+        "precode": "if (gramps.isCall() && gramps.getFirstChild() == parent) {",
+        "aftercode": "if (!gramps.isCall() || gramps.getFirstChild() != parent) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 476,
+        "line": 22,
+        "precode": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "aftercode": "if (!child.isGetterDef() && !child.isSetterDef()) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 479,
+        "line": 226,
+        "precode": "child.isSetterDef()) {",
+        "aftercode": "child.isSetterDef() ||",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 749,
+        "line": 176,
+        "precode": "if (gramps.isDelProp()) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (gramps.isDelProp()) { return false; }"
+    },
+    {
+        "id": 754,
+        "line": 15,
+        "precode": "// object literal, then the value is undefined. This is not true, because Object.prototype can have arbitrary properties on it.",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "// object literal, then the value is undefined. This is not true, because Object.prototype can have arbitrary properties on it. We short-circuit this problem by bailing out if we see a reference to a property that isn't defined on the object literal."
+    },
+    {
+        "id": 800,
+        "line": 1,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));"
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 4,
+        "line": 11,
+        "precode": "/** Safe line length for quoted printable encoded text. */",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "/** Safe line length for encoded text. */"
+    },
+    {
+        "id": 78,
+        "line": 235,
+        "precode": "(i > bytes.length - 2 && isWhitespace(b));",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "(i >= bytes.length - 2 || isWhitespace(b));"
+    },
+    {
+        "id": 79,
+        "line": 235,
+        "precode": "!printable.get(b)",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "!printable.clear(b)"
+    },
+    {
+        "id": 80,
+        "line": 235,
+        "precode": "isWhitespace(b)",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "isNumber(b)"
+    },
+    {
+        "id": 86,
+        "line": 233,
+        "precode": "b = getUnsignedOctet(i, bytes);",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "b = getRawOctet(i, bytes);"
+    },
+    {
+        "id": 91,
+        "line": 235,
+        "precode": "!printable.get(b)",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "printable.get(b)"
+    },
+    {
+        "id": 92,
+        "line": 235,
+        "precode": "isWhitespace(b)",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "isAlphabetic(b)"
+    },
+    {
+        "id": 99,
+        "line": 235,
+        "precode": "isWhitespace(b)",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "isLetterOrDigit(b)"
+    },
+    {
+        "id": 104,
+        "line": 190,
+        "precode": "public static final byte[] encodeQuotedPrintable(BitSet printable, byte[] bytes) {",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "public static byte[] encodeQuotedPrintable(BitSet set, byte[] input) {"
+    },
+    {
+        "id": 107,
+        "line": 229,
+        "precode": "buffer.write(CR);",
+        "filepath": "defects4j_fixed/Codec/Codec_11_fixed/src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java",
+        "aftercode": "buffer.write(CR, 1);"
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "id": 115,
+        "line": 21,
+        "precode": "CharacterReader(String input) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_51_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "CharacterReader(String input) : this(input) {}"
+    },
+    {
+        "id": 116,
+        "line": 22,
+        "precode": "Validate.notNull(input);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_51_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "Validate.isNull(input);"
+    },
+    {
+        "id": 251,
+        "line": 131,
+        "precode": "for (char c : chars) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_51_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int i = 0; i < chars.length; i++) {"
+    },
+    {
+        "id": 254,
+        "line": 121,
+        "precode": "return consumeToEnd();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_51_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return cacheString(pos, remaining - pos);"
+    },
+    {
+        "id": 1348,
+        "line": 271,
+        "precode": "for (int offset = 0; offset < scanLength; offset++)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_51_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int offset = 0; offset <= scanLength; offset++)"
+    }
+]

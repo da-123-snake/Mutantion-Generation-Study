@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "line": 2959,
+        "precode": "        final Class<?> type1 = array1.getClass().getComponentType();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_37_fixed/src/java/org/apache/commons/lang3/ArrayUtils.java",
+        "aftercode": "        final Class<?> type1 = array1.getClass().name();"
+    },
+    {
+        "id": 2,
+        "line": 2960,
+        "precode": "        T[] joinedArray = (T[]) Array.newInstance(type1, array1.length + array2.length);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_37_fixed/src/java/org/apache/commons/lang3/ArrayUtils.java",
+        "aftercode": "        T[] joinedArray = (T[]) Array.create(type1, array1.length + array2.length);"
+    },
+    {
+        "id": 3,
+        "line": 2961,
+        "precode": "        System.arraycopy(array1, 0, joinedArray, 0, array1.length);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_37_fixed/src/java/org/apache/commons/lang3/ArrayUtils.java",
+        "aftercode": "        System.copy(array1, 0, joinedArray, 0, array1.length);"
+    },
+    {
+        "id": 4,
+        "line": 2963,
+        "precode": "            System.arraycopy(array2, 0, joinedArray, array1.length, array2.length);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_37_fixed/src/java/org/apache/commons/lang3/ArrayUtils.java",
+        "aftercode": "            System.copy(array2, 0, joinedArray, array1.length, array2.length);"
+    },
+    {
+        "id": 5,
+        "line": 2966,
+        "precode": "            final Class<?> type2 = array2.getClass().getComponentType();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_37_fixed/src/java/org/apache/commons/lang3/ArrayUtils.java",
+        "aftercode": "            final Class<?> type2 = array2.getClass().name();"
+    },
+    {
+        "id": 7,
+        "line": 2968,
+        "precode": "                throw new IllegalArgumentException(\"Cannot store \"+type2.getName()+\" in an array of \"+type1.getName());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_37_fixed/src/java/org/apache/commons/lang3/ArrayUtils.java",
+        "aftercode": "                throw new IllegalArgumentException(\"Cannot store \"+type2.getName()+\" in an array of \"\"+type1.getName());"
+    },
+    {
+        "id": 8,
+        "line": 2970,
+        "precode": "            throw ase; // No, so rethrow original",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_37_fixed/src/java/org/apache/commons/lang3/ArrayUtils.java",
+        "aftercode": "            throworiginal; // No, so rethrow original"
+    },
+    {
+        "id": 9,
+        "line": 2972,
+        "precode": "        return joinedArray;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_37_fixed/src/java/org/apache/commons/lang3/ArrayUtils.java",
+        "aftercode": "        returnarray;"
+    }
+]

@@ -1,0 +1,317 @@
+[
+    {
+        "id": 32,
+        "line": 363,
+        "precode": "interpolator.shift();",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "interpolator.shift(Double.NaN);"
+    },
+    {
+        "id": 34,
+        "line": 363,
+        "precode": "if (firstTime ||!fsal) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (Double.isNaN(hNew) ||!fsal) {"
+    },
+    {
+        "id": 35,
+        "line": 363,
+        "precode": "if (firstTime) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (Double.isNaN(hNew)) {"
+    },
+    {
+        "id": 36,
+        "line": 363,
+        "precode": "double[] scale = new double[y0.length];",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "double[] scale = new double[y0.length + 1];"
+    },
+    {
+        "id": 37,
+        "line": 363,
+        "precode": "if (vecAbsoluteTolerance == null) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (Double.isNaN(hNew)) {"
+    },
+    {
+        "id": 38,
+        "line": 363,
+        "precode": "hNew = initializeStep(equations, forward, getOrder(), scale, stepStart, y, yDotK[0], yTmp, yDotK[1]);",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "hNew = initializeStep(equations, forward, getOrder(), scale, stepStart, y, yDotK[0], yTmp, yDotK[1], Double.NaN);"
+    },
+    {
+        "id": 39,
+        "line": 363,
+        "precode": "firstTime = false;",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "firstTime = Double.isNaN(hNew);"
+    },
+    {
+        "id": 40,
+        "line": 363,
+        "precode": "for (int k = 1; k < stages; ++k) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "for (int k = 1; k < stages - 1; ++k) {"
+    },
+    {
+        "id": 41,
+        "line": 363,
+        "precode": "for (int j = 0; j < y0.length; ++j) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "for (int j = 0; j < y0.length - 1; ++j) {"
+    },
+    {
+        "id": 42,
+        "line": 363,
+        "precode": "double sum = a[k-1][0] * yDotK[0][j];",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "double sum = a[k-1][0] * yDotK[0][j + 1];"
+    },
+    {
+        "id": 43,
+        "line": 363,
+        "precode": "for (int l = 1; l < k; ++l) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "for (int l = 1; l < k - 1; ++l) {"
+    },
+    {
+        "id": 44,
+        "line": 363,
+        "precode": "sum += a[k-1][l] * yDotK[l][j];",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "sum += a[k-1][l] * yDotK[l][j + 1];"
+    },
+    {
+        "id": 425,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = dt;\n}"
+    },
+    {
+        "id": 426,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = Math.abs(hNew);\n}"
+    },
+    {
+        "id": 427,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = Math.max(hNew, dt);\n}"
+    },
+    {
+        "id": 428,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = Math.min(hNew, dt);\n}"
+    },
+    {
+        "id": 429,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = Math.pow(hNew, 2);\n}"
+    },
+    {
+        "id": 430,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = Math.sqrt(hNew);\n}"
+    },
+    {
+        "id": 431,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = hNew / 2;\n}"
+    },
+    {
+        "id": 432,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = hNew * 2;\n}"
+    },
+    {
+        "id": 433,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = hNew + dt;\n}"
+    },
+    {
+        "id": 434,
+        "line": 363,
+        "precode": "if (error <= 1.0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (error <= 1.0) {\n    hNew = hNew - dt;\n}"
+    },
+    {
+        "id": 435,
+        "line": 182,
+        "precode": "public abstract int getOrder();",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "public abstract int getOrder() {\n\treturn 1;\n}"
+    },
+    {
+        "id": 436,
+        "line": 182,
+        "precode": "  public int compare(T o1, T o2) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "  public int compare(T o1, T o2) {\n\treturn 0;\n}"
+    },
+    {
+        "id": 437,
+        "line": 182,
+        "precode": "    return o1.getOrder() - o2.getOrder();",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "    return o1.getOrder() - o2.getOrder();\n\treturn 0;"
+    },
+    {
+        "id": 439,
+        "line": 182,
+        "precode": "    if (!(obj instanceof OrderComparator)) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "    if (!(obj instanceof OrderComparator)) {\n\treturn false;\n}"
+    },
+    {
+        "id": 440,
+        "line": 182,
+        "precode": "      return super.equals(obj);",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "      return super.equals(obj);\n\treturn false;"
+    },
+    {
+        "id": 441,
+        "line": 182,
+        "precode": "    }",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "    }\n\treturn false;"
+    },
+    {
+        "id": 442,
+        "line": 182,
+        "precode": "    int order = ((OrderComparator<T>) obj).getOrder();",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "    int order = ((OrderComparator<T>) obj).getOrder();\n\treturn order == 0;"
+    },
+    {
+        "id": 443,
+        "line": 182,
+        "precode": "    return order == 0;",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "    return order == 0;\n\treturn false;"
+    },
+    {
+        "id": 468,
+        "line": 363,
+        "precode": "final double[] yTmp = new double[y0.length];",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "final double[] yTmp = new double[y.length];"
+    },
+    {
+        "id": 469,
+        "line": 363,
+        "precode": "final boolean forward = t > t0;",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "final boolean forward = t >= t0;"
+    },
+    {
+        "id": 470,
+        "line": 363,
+        "precode": "final int stages = c.length + 1;",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "final int stages = c.length + 2;"
+    },
+    {
+        "id": 471,
+        "line": 363,
+        "precode": "if (y!= y0) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (y == y0) {"
+    },
+    {
+        "id": 472,
+        "line": 363,
+        "precode": "  System.arraycopy(y0, 0, y, 0, y0.length);",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "  System.arraycopy(y, 0, y0, 0, y0.length);"
+    },
+    {
+        "id": 473,
+        "line": 363,
+        "precode": "final double[][] yDotK = new double[stages][y0.length];",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "final double[][] yDotK = new double[stages][y.length];"
+    },
+    {
+        "id": 474,
+        "line": 363,
+        "precode": "final double[] yTmp = new double[y0.length];",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "final double[] yTmp = new double[y.length];"
+    },
+    {
+        "id": 475,
+        "line": 363,
+        "precode": "if (requiresDenseOutput() || (! eventsHandlersManager.isEmpty())) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (requiresDenseOutput() &&! eventsHandlersManager.isEmpty()) {"
+    },
+    {
+        "id": 476,
+        "line": 363,
+        "precode": "  final RungeKuttaStepInterpolator rki = (RungeKuttaStepInterpolator) prototype.copy();",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "  final RungeKuttaStepInterpolator rki = (RungeKuttaStepInterpolator) prototype.copy();"
+    },
+    {
+        "id": 477,
+        "line": 363,
+        "precode": "  rki.reinitialize(this, yTmp, yDotK, forward);",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "  rki.reinitialize(this, y, yDotK, forward); "
+    },
+    {
+        "id": 478,
+        "line": 363,
+        "precode": "  interpolator = rki;",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "  interpolator = rki;"
+    },
+    {
+        "id": 479,
+        "line": 363,
+        "precode": "if (requiresDenseOutput() || (! eventsHandlersManager.isEmpty())) {",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "if (requiresDenseOutput() && eventsHandlersManager.isEmpty()) {"
+    },
+    {
+        "id": 480,
+        "line": 363,
+        "precode": "  final RungeKuttaStepInterpolator rki = (RungeKuttaStepInterpolator) prototype.copy();",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "  final RungeKuttaStepInterpolator rki = (RungeKuttaStepInterpolator) prototype.copy();"
+    },
+    {
+        "id": 481,
+        "line": 363,
+        "precode": "  rki.reinitialize(this, yTmp, yDotK, forward);",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "  rki.reinitialize(this, y, yDotK, forward); "
+    },
+    {
+        "id": 482,
+        "line": 363,
+        "precode": "  interpolator = rki;",
+        "filepath": "defects4j_fixed/Math/Math_74_fixed/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java",
+        "aftercode": "  interpolator = rki;"
+    }
+]

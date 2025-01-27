@@ -1,0 +1,114 @@
+[
+    {
+        "id": 44,
+        "line": 1,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 129,
+        "line": 258,
+        "precode": "if (divisor.isZero) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor.isZero) { return isZero ? NaN : INF; }"
+    },
+    {
+        "id": 130,
+        "line": 262,
+        "precode": "if (divisor.isInfinite() && !isInfinite()) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor.isInfinite() && !isInfinite()) { return ZERO; }"
+    },
+    {
+        "id": 131,
+        "line": 266,
+        "precode": "final double c = divisor.getReal();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "final double c = divisor.getReal(); final double d = divisor.getImaginary();"
+    },
+    {
+        "id": 132,
+        "line": 267,
+        "precode": "final double d = divisor.getImaginary();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "final double d = divisor.getImaginary(); final double c = divisor.getReal();"
+    },
+    {
+        "id": 133,
+        "line": 269,
+        "precode": "if (FastMath.abs(c) < FastMath.abs(d)) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (FastMath.abs(c) > FastMath.abs(d)) { double q = c / d; double denominator = c * q + d; return createComplex((real * q + imaginary) / denominator, (imaginary * q - real) / denominator); }"
+    },
+    {
+        "id": 136,
+        "line": 294,
+        "precode": "if (divisor == 0d) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor == 0d) { return isZero ? NaN : INF; }"
+    },
+    {
+        "id": 137,
+        "line": 297,
+        "precode": "if (Double.isInfinite(divisor)) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (Double.isInfinite(divisor)) { return !isInfinite() ? ZERO : NaN; }"
+    },
+    {
+        "id": 138,
+        "line": 300,
+        "precode": "return createComplex(real / divisor,",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real / divisor, imaginary / divisor);"
+    },
+    {
+        "id": 139,
+        "line": 300,
+        "precode": "return createComplex(real / divisor,",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real / divisor, imaginary / divisor);"
+    },
+    {
+        "id": 140,
+        "line": 300,
+        "precode": "return createComplex(real / divisor,",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real / divisor, imaginary / divisor);"
+    },
+    {
+        "id": 141,
+        "line": 300,
+        "precode": "return createComplex(real / divisor,",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real / divisor, imaginary / divisor);"
+    },
+    {
+        "id": 142,
+        "line": 300,
+        "precode": "return createComplex(real / divisor,",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real / divisor, imaginary / divisor);"
+    },
+    {
+        "id": 143,
+        "line": 1,
+        "precode": "private final transient boolean isInfinite;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "private final transient boolean isInfinite = true;"
+    },
+    {
+        "id": 168,
+        "line": 300,
+        "precode": "return createComplex(real / divisor,",
+        "aftercode": "return createComplex(real / divisor, imaginary / divisor);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java"
+    },
+    {
+        "id": 170,
+        "line": 300,
+        "precode": "return createComplex(real / divisor,",
+        "aftercode": "return createComplex(real / divisor, imaginary / divisor);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java"
+    }
+]

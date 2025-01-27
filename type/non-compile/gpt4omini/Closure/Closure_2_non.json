@@ -1,0 +1,149 @@
+[
+    {
+        "id": 146,
+        "line": 1316,
+        "precode": "compiler.getCodingConvention().getAbstractMethodName();",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "compiler.getCodingConvention().getConcreteMethodName();"
+    },
+    {
+        "id": 147,
+        "line": 1319,
+        "precode": "String abstractMethodMessage = (abstractMethodName != null)",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "String abstractMethodMessage = (abstractMethodName == null) ? \"No Abstract Method\" : \"\";"
+    },
+    {
+        "id": 381,
+        "line": 25,
+        "precode": "HashMap<String, ObjectType> properties = new HashMap<String, ObjectType>();",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "HashMap<String, ObjectType> properties = new HashMap<>();"
+    },
+    {
+        "id": 383,
+        "line": 1667,
+        "precode": "currentProperties.clear();",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "currentProperties = new HashMap<>();"
+    },
+    {
+        "id": 384,
+        "line": 1670,
+        "precode": "properties.putAll(currentProperties);",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "properties.putAll(new HashMap<>(currentProperties));"
+    },
+    {
+        "id": 385,
+        "line": 23,
+        "precode": "HashMap<String, ObjectType> currentProperties = new HashMap<String, ObjectType>();",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "HashMap<String, ObjectType> currentProperties = new LinkedHashMap<>();"
+    },
+    {
+        "id": 558,
+        "line": 1570,
+        "precode": "ObjectType implicitProto = interfaceType.getImplicitPrototype();",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ObjectType implicitProto = interfaceType.getExplicitPrototype();"
+    },
+    {
+        "id": 560,
+        "line": 1575,
+        "precode": "currentPropertyNames = ImmutableSet.of();",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "currentPropertyNames = new HashSet<>();"
+    },
+    {
+        "id": 561,
+        "line": 1577,
+        "precode": "currentPropertyNames = implicitProto.getOwnPropertyNames();",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "currentPropertyNames = implicitProto.getAllPropertyNames();"
+    },
+    {
+        "id": 565,
+        "line": 23,
+        "precode": "interfaceType.getPropertyType(name).isEquivalentTo(oType.getPropertyType(name));",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "interfaceType.getPropertyType(name).isExactlyEquivalentTo(oType.getPropertyType(name));"
+    },
+    {
+        "id": 567,
+        "line": 28,
+        "precode": "checkInterfaceConflictProperties(t, n, functionName, properties, currentProperties, iType);",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "checkInterfaceConflictProperties(t, n, functionName, currentProperties, properties, iType);"
+    },
+    {
+        "id": 568,
+        "line": 1571,
+        "precode": "Set<String> currentPropertyNames;",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "List<String> currentPropertyNames;"
+    },
+    {
+        "id": 569,
+        "line": 1584,
+        "precode": "compiler.report(",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "compiler.warn("
+    },
+    {
+        "id": 570,
+        "line": 1585,
+        "precode": "t.makeError(n, INCOMPATIBLE_EXTENDED_PROPERTY_TYPE,",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "t.makeWarning(n, INCOMPATIBLE_EXTENDED_PROPERTY_TYPE,"
+    },
+    {
+        "id": 1425,
+        "line": 759,
+        "precode": "ensureTyped(t, n, BOOLEAN_TYPE);",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, n, ANY_TYPE);"
+    },
+    {
+        "id": 1463,
+        "line": 1584,
+        "precode": "compiler.report(",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "compiler.warn("
+    },
+    {
+        "id": 1465,
+        "line": 1592,
+        "precode": "for (ObjectType iType : interfaceType.getCtorExtendedInterfaces()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "for (ObjectType iType : interfaceType.getExtendedInterfaces()) {"
+    },
+    {
+        "id": 1468,
+        "line": 1571,
+        "precode": "Set<String> currentPropertyNames;",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "List<String> currentPropertyNames;"
+    },
+    {
+        "id": 1469,
+        "line": 1571,
+        "precode": "Set<String> currentPropertyNames;",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "Collection<String> currentPropertyNames;"
+    },
+    {
+        "id": 1470,
+        "line": 1583,
+        "precode": "oType.getPropertyType(name))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "oType.getPropertyType(name).isCastableTo("
+    },
+    {
+        "id": 1993,
+        "line": 22,
+        "precode": "if (!objectType.isEquivalentTo(typeRegistry.getNativeType(UNKNOWN_TYPE))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_2_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "if (objectType.isEquivalentTo(typeRegistry.getNativeType(UNKNOWN_TYPE))) {"
+    }
+]

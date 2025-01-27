@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1454,
+        "line": 44,
+        "precode": "key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_85_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "key = key.replace(' ', '');"
+    },
+    {
+        "id": 1455,
+        "line": 45,
+        "precode": "Validate.notEmpty(key);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_85_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "Validate.notTrue(key.isEmpty());"
+    },
+    {
+        "id": 1846,
+        "line": 64,
+        "precode": "Validate.notNull(key);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_85_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "Validate.isNull(key);"
+    },
+    {
+        "id": 1853,
+        "line": 88,
+        "precode": "String oldVal = parent.get(this.key);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_85_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String oldVal = parent.remove(this.key);"
+    },
+    {
+        "id": 1855,
+        "line": 90,
+        "precode": "int i = parent.indexOfKey(this.key);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_85_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "int i = parent.indexOfValue(val);"
+    }
+]

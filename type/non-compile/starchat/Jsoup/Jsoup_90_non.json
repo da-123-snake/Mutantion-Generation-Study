@@ -1,0 +1,114 @@
+[
+    {
+        "id": 551,
+        "line": 914,
+        "precode": "if (!protocol.equals(\"http\") &&!protocol.equals(\"https\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "if (!protocol.equals(\"HTTP\") &&!protocol.equals(\"HTTPS\"))"
+    },
+    {
+        "id": 554,
+        "line": 914,
+        "precode": "if (!methodHasBody) Validate.isFalse(hasRequestBody, \"Cannot set a request body for HTTP method \" + req.method());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "if (!methodHasBody) Validate.isFalse(hasRequestBody, \"Cannot set a request body for HTTP method \" + req.method());"
+    },
+    {
+        "id": 556,
+        "line": 914,
+        "precode": "if (req.data().size() > 0 && (!methodHasBody || hasRequestBody))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "if (req.data().size() > 0 && (!methodHasBody || hasRequestBody))"
+    },
+    {
+        "id": 557,
+        "line": 914,
+        "precode": "if (conn.getDoOutput())",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "if (conn.getDoOutput())"
+    },
+    {
+        "id": 558,
+        "line": 914,
+        "precode": "writePost(req, conn.getOutputStream(), mimeBoundary);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "writePost(req, conn.getOutputStream(), mimeBoundary);"
+    },
+    {
+        "id": 559,
+        "line": 914,
+        "precode": "int status = conn.getResponseCode();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "int status = conn.getResponseCode();"
+    },
+    {
+        "id": 560,
+        "line": 914,
+        "precode": "res = new Response(previousResponse);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "res = new Response(previousResponse);"
+    },
+    {
+        "id": 561,
+        "line": 914,
+        "precode": "res.setupFromConnection(conn, previousResponse);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "res.setupFromConnection(conn, previousResponse);"
+    },
+    {
+        "id": 562,
+        "line": 914,
+        "precode": "res.req = req;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "res.req = req;"
+    },
+    {
+        "id": 563,
+        "line": 914,
+        "precode": "if (res.hasHeader(LOCATION) && req.followRedirects())",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "if (res.hasHeader(LOCATION) && req.followRedirects())"
+    },
+    {
+        "id": 564,
+        "line": 914,
+        "precode": "String location = res.header(LOCATION);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "String location = res.header(LOCATION);"
+    },
+    {
+        "id": 565,
+        "line": 914,
+        "precode": "if (location.startsWith(\"http:/\") && location.charAt(6)!= '/')",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "if (location.startsWith(\"http://\") && location.charAt(7)!= '/')"
+    },
+    {
+        "id": 566,
+        "line": 914,
+        "precode": "URL redir = StringUtil.resolve(req.url(), location);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "URL redir = StringUtil.resolve(req.url(), location);"
+    },
+    {
+        "id": 567,
+        "line": 914,
+        "precode": "req.url(encodeUrl(redir));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "req.url(encodeUrl(redir));"
+    },
+    {
+        "id": 1471,
+        "line": 449,
+        "precode": "if (url.getHost()!= null) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "if (url.getHost() == null) {"
+    },
+    {
+        "id": 1473,
+        "line": 449,
+        "precode": "String encodedHost = encodeMimeName(host);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java",
+        "aftercode": "String encodedHost = encodeMimeName(host.toUpperCase());"
+    }
+]

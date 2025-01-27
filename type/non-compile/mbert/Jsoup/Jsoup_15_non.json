@@ -1,0 +1,37 @@
+[
+    {
+        "id": 241,
+        "line": 281,
+        "precode": "                                html.attributes().put(attribute);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_15_fixed/src/main/java/org/jsoup/parser/TreeBuilderState.java",
+        "aftercode": "                                html.attributes().add(attribute);"
+    },
+    {
+        "id": 242,
+        "line": 283,
+        "precode": "                    } else if (StringUtil.in(name, \"base\", \"basefont\", \"bgsound\", \"command\", \"link\", \"meta\", \"noframes\", \"script\", \"style\", \"title\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_15_fixed/src/main/java/org/jsoup/parser/TreeBuilderState.java",
+        "aftercode": "                    } else if (StringUtil.empty(name, \"base\", \"basefont\", \"bgsound\", \"command\", \"link\", \"meta\", \"noframes\", \"script\", \"style\", \"title\")) {"
+    },
+    {
+        "id": 243,
+        "line": 284,
+        "precode": "                        return tb.process(t, InHead);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_15_fixed/src/main/java/org/jsoup/parser/TreeBuilderState.java",
+        "aftercode": "                        return tb.error(t, InHead);"
+    },
+    {
+        "id": 244,
+        "line": 285,
+        "precode": "                    } else if (name.equals(\"body\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_15_fixed/src/main/java/org/jsoup/parser/TreeBuilderState.java",
+        "aftercode": "                    } else if (name.is(\"body\")) {"
+    },
+    {
+        "id": 245,
+        "line": 286,
+        "precode": "                        tb.error(this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_15_fixed/src/main/java/org/jsoup/parser/TreeBuilderState.java",
+        "aftercode": "                        tb.process(this);"
+    }
+]

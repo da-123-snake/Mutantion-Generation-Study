@@ -1,0 +1,128 @@
+[
+    {
+        "id": 467,
+        "line": 33,
+        "precode": "if (child.getType() == Token.GET ||\n              child.getType() == Token.SET) {",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (child.getType() != Token.GET &&\n              child.getType() != Token.SET) {"
+    },
+    {
+        "id": 469,
+        "line": 56,
+        "precode": "return parent.getType() == Token.VAR ||\n          (parent.getType() == Token.ASSIGN\n              && parent.getFirstChild() == n\n              && parent.getParent().getType() == Token.EXPR_RESULT);",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "return parent.getType() == Token.VAR &&\n          (parent.getType() == Token.ASSIGN\n              || parent.getFirstChild() == n\n              || parent.getParent().getType() == Token.EXPR_RESULT);"
+    },
+    {
+        "id": 471,
+        "line": 236,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "throw new Exception();\n}"
+    },
+    {
+        "id": 472,
+        "line": 179,
+        "precode": "Node val = ref.getAssignedValue();",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Node newValue = ref.getAssignedValue();"
+    },
+    {
+        "id": 478,
+        "line": 198,
+        "precode": "for (Node child = val.getFirstChild(); child != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "for (Node child = val.getFirstChild(); child != null; child = child.getNext()) {"
+    },
+    {
+        "id": 479,
+        "line": 200,
+        "precode": "if (child.getType() == Token.GET ||",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (child.getType() == Token.GET && child.getType() == Token.SET) {"
+    },
+    {
+        "id": 481,
+        "line": 216,
+        "precode": "refNode = refNode.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "refNode = refNode.getParentNode();"
+    },
+    {
+        "id": 853,
+        "line": 175,
+        "precode": "!isVarOrAssignExprLhs(name)",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "isVarOrAssignExprLhs(name)"
+    },
+    {
+        "id": 854,
+        "line": 180,
+        "precode": "val == null",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "val != null"
+    },
+    {
+        "id": 898,
+        "line": 356,
+        "precode": "replacement.copyInformationFromForTree(replace);",
+        "aftercode": "replacement.insertBefore(replace);",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 900,
+        "line": 20,
+        "precode": "replace.getParent().replaceChild(replace, NodeUtil.newExpr(replacement));",
+        "aftercode": "replace.getParent().replaceChild(replace.getParent(), NodeUtil.newExpr(replacement));",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 901,
+        "line": 347,
+        "precode": "new Node(Token.COMMA);",
+        "aftercode": "new Node(Token.OR);",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 905,
+        "line": 355,
+        "precode": "Node replace = ref.getParent();",
+        "aftercode": "Node replace = ref.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 907,
+        "line": 336,
+        "precode": "nodes.add(",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(Node.newString(Token.NAME, varmap.get(var))));"
+    },
+    {
+        "id": 908,
+        "line": 34,
+        "precode": "replacement = new Node(Token.COMMA);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "replacement = new Node(Token.COMMA, nodes.get(i), nodes.get(i + 1));\n"
+    },
+    {
+        "id": 911,
+        "line": 33,
+        "precode": "cur.addChildToFront(t);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "cur.addChildToBack(t);\n"
+    },
+    {
+        "id": 912,
+        "line": 345,
+        "precode": "for (i = 0; i < nodes.size() - 2;",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "for (i = 0; i <= nodes.size() - 2;"
+    },
+    {
+        "id": 913,
+        "line": 38,
+        "precode": "cur.addChildToFront(nodes.get(i + 1));\n",
+        "filepath": "defects4j_fixed/Closure/Closure_53_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "cur.addChildToFront(nodes.get(i));\n"
+    }
+]

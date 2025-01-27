@@ -1,0 +1,149 @@
+[
+    {
+        "id": 8,
+        "line": 90,
+        "precode": "indexOfActualTypeArgument = getIndex(classTypeVariables, fieldTypeVariable);",
+        "aftercode": "indexOfActualTypeArgument = getIndex(classTypeVariables, fieldTypeVariable) + 1;",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 9,
+        "line": 64,
+        "precode": "Type owner = castedType.getOwnerType();",
+        "aftercode": "// Type owner = castedType.getOwnerType();",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 11,
+        "line": 76,
+        "precode": "return actualType instanceof Class<?> ? TypeUtils.wrapWithArray(TypeUtils.toRawClass(actualType)) : new GenericArrayTypeImpl(actualType);",
+        "aftercode": "return actualType instanceof Class<?> ? new GenericArrayTypeImpl(actualType) : new GenericArrayTypeImpl(actualType);",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 14,
+        "line": 76,
+        "precode": "return actualType instanceof Class<?> ? TypeUtils.wrapWithArray(TypeUtils.toRawClass(actualType)) : new GenericArrayTypeImpl(actualType);",
+        "aftercode": "return actualType instanceof ParameterizedType ? TypeUtils.wrapWithArray(TypeUtils.toRawClass(actualType)) : new GenericArrayTypeImpl(actualType);",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 15,
+        "line": 64,
+        "precode": "return extractRealTypes(castedType.getActualTypeArguments(), parentType, rawParentClass);",
+        "aftercode": "return extractRealTypes(castedType.getActualTypeArguments(), (Type) parentType, rawParentClass);",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 19,
+        "line": 31,
+        "precode": "        return new ParameterizedTypeImpl(rawType, actualTypeParameters, owner);",
+        "aftercode": "        return new ParameterizedTypeImpl(rawType, actualTypeParameters, parentType);",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 20,
+        "line": 41,
+        "precode": "        Type actualType = getActualType(componentType, parentType, rawParentClass);",
+        "aftercode": "        Type actualType = componentType;",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 22,
+        "line": 58,
+        "precode": "            return castedType;",
+        "aftercode": "            return actualType;",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 23,
+        "line": 64,
+        "precode": "            throw new UnsupportedOperationException(\"Expecting parameterized type, got \" + parentType + \".\\n Are you missing the use of TypeToken idiom?\\n See \" + \"http://sites.google.com/site/gson/gson-user-guide#TOC-Serializing-and-Deserializing-Gener\");",
+        "aftercode": "            throw new UnsupportedOperationException(\"Expecting parameterized type, got \" + typeToEvaluate + \".\\n Are you missing the use of TypeToken idiom?\\n See \" + \"http://sites.google.com/site/gson/gson-user-guide#TOC-Serializing-and-Deserializing-Gener\");",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 24,
+        "line": 67,
+        "precode": "        WildcardType castedType = (WildcardType) typeToEvaluate;",
+        "aftercode": "        WildcardType castedType = null;",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 25,
+        "line": 71,
+        "precode": "        return getActualType(castedType.getUpperBounds()[0], parentType, rawParentClass);",
+        "aftercode": "        return getActualType(castedType.getUpperBounds()[0], typeToEvaluate, rawParentClass);",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 26,
+        "line": 79,
+        "precode": "        return retTypes[i] = getActualType(actualTypeArguments[i], parentType, rawParentClass);",
+        "aftercode": "        return retTypes[i] = getActualType(actualTypeArguments[i], typeToEvaluate, rawParentClass);",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 27,
+        "line": 87,
+        "precode": "        for (int i = 0; i < types.length; ++i) {",
+        "aftercode": "        for (int i = 0; i < types.length; --i) {",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 28,
+        "line": 91,
+        "precode": "        throw new IllegalStateException(\"How can the type variable not be present in the class declaration!\");",
+        "aftercode": "        throw new IllegalStateException(\"Unexpected absence of type variable in the class declaration!\");",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 30,
+        "line": 111,
+        "precode": "                    return null;",
+        "aftercode": "                    return extractedType;",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 32,
+        "line": 128,
+        "precode": "          Type[] actualTypeArguments = null;",
+        "aftercode": "          Type[] actualTypeArgs = null;",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 33,
+        "line": 137,
+        "precode": "            return searchedType;",
+        "aftercode": "            return extractedType;",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 34,
+        "line": 139,
+        "precode": "        if (superClass != null) {",
+        "aftercode": "        if (rawParentType != null) {",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 35,
+        "line": 152,
+        "precode": "    return searchedType;",
+        "aftercode": "    return extractedType;",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 36,
+        "line": 149,
+        "precode": "        for (int i = 0; i < actualTypeArguments.length; ++i) {",
+        "aftercode": "        for (int i = 0; i < actualTypeArgs.length; ++i) {",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    },
+    {
+        "id": 37,
+        "line": 159,
+        "precode": "        throw new IllegalStateException(\"Unexpected absence of type variable in the class declaration!\");",
+        "aftercode": "        throw new IllegalStateException(\"Error: Type variable not defined in the class declaration!\");",
+        "filepath": "defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java"
+    }
+]

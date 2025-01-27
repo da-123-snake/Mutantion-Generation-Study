@@ -1,0 +1,93 @@
+[
+    {
+        "id": 64,
+        "line": 784,
+        "precode": "return computeFallThrough(nextSibling);",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 66,
+        "line": 776,
+        "precode": "Node nextSibling = node.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "Node nextSibling = node.getPrevious();"
+    },
+    {
+        "id": 68,
+        "line": 779,
+        "precode": "while (nextSibling != null && nextSibling.isFunction()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "while (nextSibling != null && nextSibling.isObject()) {"
+    },
+    {
+        "id": 72,
+        "line": 787,
+        "precode": "return computeFollowNode(fromNode, parent, cfa);",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "return computeFallThrough(fromNode, parent, cfa);"
+    },
+    {
+        "id": 73,
+        "line": 766,
+        "precode": "for (Node finallyNode : cfa.finallyMap.get(parent)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "for (Node finallyNode : cfa.finallyMap.get(parent)) { cfa.createEdge(fromNode, Branch.ON_EX, finallyNode); }"
+    },
+    {
+        "id": 74,
+        "line": 785,
+        "precode": "} else {",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "} else if (parent.isStatement()) {"
+    },
+    {
+        "id": 75,
+        "line": 787,
+        "precode": "return computeFollowNode(fromNode, parent, cfa);",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "return computeFallThrough(fromNode)"
+    },
+    {
+        "id": 78,
+        "line": 787,
+        "precode": "return computeFollowNode(fromNode, parent, cfa);",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "return computeFallThrough(fromNode, parent, cfa);"
+    },
+    {
+        "id": 79,
+        "line": 787,
+        "precode": "return computeFollowNode(fromNode, parent, cfa);",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "return computeFallThrough(fromNode, parent, null);"
+    },
+    {
+        "id": 463,
+        "line": 764,
+        "precode": "if (parent.getLastChild() == node){",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": "if (parent.getLastChild() != node){"
+    },
+    {
+        "id": 467,
+        "line": 789,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": ""
+    },
+    {
+        "id": 468,
+        "line": 787,
+        "precode": "return computeFollowNode(fromNode, parent, cfa);",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": ""
+    },
+    {
+        "id": 469,
+        "line": 787,
+        "precode": "return computeFollowNode(fromNode, parent, cfa);",
+        "filepath": "defects4j_fixed/Closure/Closure_14_fixed/src/com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "aftercode": ""
+    }
+]

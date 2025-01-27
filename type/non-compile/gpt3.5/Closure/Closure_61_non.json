@@ -1,0 +1,240 @@
+[
+    {
+        "id": 10,
+        "line": 37,
+        "precode": "case Token.ASSIGN_MOD:\n    return Token.MOD;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.ASSIGN_MOD:\n    return Token.DIV;"
+    },
+    {
+        "id": 12,
+        "line": 35,
+        "precode": "case Token.ASSIGN_DIV:\n    return Token.DIV;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.ASSIGN_DIV:\n    return Token.MOD;"
+    },
+    {
+        "id": 13,
+        "line": 33,
+        "precode": "case Token.ASSIGN_MUL:\n    return Token.MUL;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.ASSIGN_MUL:\n    return Token.MOD;"
+    },
+    {
+        "id": 14,
+        "line": 31,
+        "precode": "case Token.ASSIGN_SUB:\n    return Token.SUB;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.ASSIGN_SUB:\n    return Token.DIV;"
+    },
+    {
+        "id": 15,
+        "line": 29,
+        "precode": "case Token.ASSIGN_ADD:\n    return Token.ADD;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.ASSIGN_ADD:\n    return Token.MUL;"
+    },
+    {
+        "id": 16,
+        "line": 27,
+        "precode": "case Token.ASSIGN_URSH:\n    return Token.URSH;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.ASSIGN_URSH:\n    return Token.BITOR;"
+    },
+    {
+        "id": 1060,
+        "line": 20,
+        "precode": "default:\n        return getPureBooleanValue(n);",
+        "aftercode": "default:\n        return TernaryValue.UNKNOWN;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java"
+    },
+    {
+        "id": 1062,
+        "line": 15,
+        "precode": "TernaryValue trueValue = getImpureBooleanValue(\n    n.getFirstChild().getNext());",
+        "aftercode": "TernaryValue trueValue = getImpureBooleanValue(n.getFirstChild());",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java"
+    },
+    {
+        "id": 1064,
+        "line": 88,
+        "precode": "case Token.OR:  {",
+        "aftercode": "case Token.AND:  {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java"
+    },
+    {
+        "id": 1065,
+        "line": 83,
+        "precode": "case Token.AND: {",
+        "aftercode": "case Token.OR: {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java"
+    },
+    {
+        "id": 1067,
+        "line": 24,
+        "precode": "if (\"undefined\".equals(name)\n            || \"NaN\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"undefined\".equals(name)\n            && \"NaN\".equals(name)) {"
+    },
+    {
+        "id": 1069,
+        "line": 24,
+        "precode": "if (\"undefined\".equals(name)\n            || \"NaN\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"undefined\".equals(name)\n            || \"Infinity\".equals(name)) {"
+    },
+    {
+        "id": 1071,
+        "line": 24,
+        "precode": "if (\"undefined\".equals(name)\n            || \"NaN\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"undefined\".equals(name)\n            && \"Infinity\".equals(name)) {"
+    },
+    {
+        "id": 1073,
+        "line": 24,
+        "precode": "if (\"undefined\".equals(name)\n            || \"NaN\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"undefined\".equals(name)\n            || \"Infinity\".equals(name)) {"
+    },
+    {
+        "id": 1075,
+        "line": 24,
+        "precode": "if (\"undefined\".equals(name)\n            || \"NaN\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"undefined\".equals(name)\n            && \"Infinity\".equals(name)) {"
+    },
+    {
+        "id": 1079,
+        "line": 958,
+        "precode": "nameNode.getFirstChild().getType() == Token.NAME",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "nameNode.getFirstChild().getType() == Token.STRING"
+    },
+    {
+        "id": 1080,
+        "line": 966,
+        "precode": "nameNode.getFirstChild().getType() == Token.REGEXP",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "nameNode.getFirstChild().getType() == Token.STRING"
+    },
+    {
+        "id": 1081,
+        "line": 969,
+        "precode": "nameNode.getFirstChild().getType() == Token.STRING",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "nameNode.getFirstChild().getType() == Token.REGEXP"
+    },
+    {
+        "id": 1084,
+        "line": 976,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1212,
+        "line": 317,
+        "precode": "if (rawJsString.contains(\"\\u000b\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (rawJsString.contains(\"\n\")) {"
+    },
+    {
+        "id": 1213,
+        "line": 317,
+        "precode": "if (rawJsString.contains(\"\\u000b\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (rawJsString.contains(\"\r\")) {"
+    },
+    {
+        "id": 1216,
+        "line": 269,
+        "precode": "      case Token.VOID:",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "      case Token.NAME:"
+    },
+    {
+        "id": 1217,
+        "line": 304,
+        "precode": "      case Token.STRING:",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "      case Token.TRUE:"
+    },
+    {
+        "id": 1218,
+        "line": 307,
+        "precode": "      case Token.ARRAYLIT:",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "      case Token.VOID:"
+    },
+    {
+        "id": 1219,
+        "line": 308,
+        "precode": "      case Token.OBJECTLIT:",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "      case Token.NULL:"
+    },
+    {
+        "id": 1222,
+        "line": 74,
+        "precode": "        return Double.parseDouble(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "        return Long.parseLong(s);"
+    },
+    {
+        "id": 1361,
+        "line": 1292,
+        "precode": " case Token.VOID:",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": " case Token.VOID: Mutant"
+    },
+    {
+        "id": 1362,
+        "line": 1301,
+        "precode": " return n.getType() == Token.NULL;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": " return n.getType() == Token.NULL; Mutant"
+    },
+    {
+        "id": 1364,
+        "line": 19,
+        "precode": "if (value.getBooleanProp(Node.INCRDECR_PROP)) {\n      return evaluatesToLocalValue(value.getFirstChild(), locals);\n  }",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (value.getBooleanProp(Node.INCRDECR_PROP)) {\n      return false;\n  }"
+    },
+    {
+        "id": 1365,
+        "line": 25,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1369,
+        "line": 51,
+        "precode": "throw new IllegalStateException(\n        \"Unexpected expression node\" + value +\n        \"\\n parent:\" + value.getParent());",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "throw new IllegalStateException(\n        \"Unexpected expression node\" + value +\n        \"\\n parent:\" + value);"
+    },
+    {
+        "id": 1493,
+        "line": 355,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "try {\n        return Double.valueOf(Integer.parseInt(s.substring(2), 16));"
+    },
+    {
+        "id": 1494,
+        "line": 355,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "try {\n        return Double.NaN;"
+    },
+    {
+        "id": 1501,
+        "line": 357,
+        "precode": "catch (NumberFormatException e) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "catch (Exception e) {"
+    }
+]

@@ -1,0 +1,93 @@
+[
+    {
+        "id": 352,
+        "line": 429,
+        "precode": "block.getParent()",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "ref.getBasicBlock().getParent()"
+    },
+    {
+        "id": 2010,
+        "line": 556,
+        "precode": "return sourceFile;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return new StaticSourceFile();"
+    },
+    {
+        "id": 2012,
+        "line": 561,
+        "precode": "Node grandparent = parent.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "Node grandparent = parent.getPreviousSibling();"
+    },
+    {
+        "id": 2017,
+        "line": 556,
+        "precode": "return sourceFile;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return sourceFile != null ? sourceFile : new StaticSourceFile();"
+    },
+    {
+        "id": 2020,
+        "line": 561,
+        "precode": "Node grandparent = parent.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "Node grandparent = parent.getNextSibling();"
+    },
+    {
+        "id": 2023,
+        "line": 26,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() || !getParent().isVar() && nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 2024,
+        "line": 567,
+        "precode": "boolean isVarDeclaration() {",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "boolean isVarDeclaration() { return getParent().isVar() && false; }"
+    },
+    {
+        "id": 2027,
+        "line": 26,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() || !getParent().isVar() && nameNode.getFirstChild() == null;"
+    },
+    {
+        "id": 2028,
+        "line": 567,
+        "precode": "boolean isVarDeclaration() {",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "boolean isVarDeclaration() { return !getParent().isVar(); }"
+    },
+    {
+        "id": 2029,
+        "line": 26,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() || getParent().isVar() && nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 2032,
+        "line": 26,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() || getParent().isVar() && !(nameNode.getFirstChild() != null);"
+    },
+    {
+        "id": 2034,
+        "line": 26,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 2036,
+        "line": 567,
+        "precode": "boolean isVarDeclaration() {",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "boolean isVarDeclaration() { return getParent().isVar() || nameNode.isFunc(); }"
+    }
+]

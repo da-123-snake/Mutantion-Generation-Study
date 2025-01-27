@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "line": 35,
+        "precode": "            Character c = string.charAt(pos);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            Character c = string.get(pos);"
+    },
+    {
+        "id": 2,
+        "line": 36,
+        "precode": "            if (map.containsKey(c))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            if (map.has(c))"
+    },
+    {
+        "id": 3,
+        "line": 37,
+        "precode": "                accum.append('&').append(map.get(c)).append(';');",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "                accum.append(\\'&\\').append(map.get(c)).append(\\';\\');"
+    },
+    {
+        "id": 4,
+        "line": 38,
+        "precode": "            else if (encoder.canEncode(c))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            else if (encoder.escape(c))"
+    },
+    {
+        "id": 5,
+        "line": 39,
+        "precode": "                accum.append(c.charValue());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "                accum.end(c.charValue());"
+    },
+    {
+        "id": 6,
+        "line": 41,
+        "precode": "                accum.append(\"&#\").append((int) c).append(';');",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "                accum.append(\"&#\").append((int) c).append(\\';\\');"
+    },
+    {
+        "id": 22,
+        "line": 70,
+        "precode": "                String c = Character.toString((char) charval);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "                String c = Character.escape((char) charval);"
+    },
+    {
+        "id": 23,
+        "line": 71,
+        "precode": "                m.appendReplacement(accum, c);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "                m.replace(accum, c);"
+    },
+    {
+        "id": 24,
+        "line": 73,
+        "precode": "                m.appendReplacement(accum, m.group(0)); // replace with original string",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "                m.replace(accum, m.group(0)); // replace with original string"
+    },
+    {
+        "id": 25,
+        "line": 65,
+        "precode": "                if (full.containsKey(name))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "                if (full.key(name))"
+    },
+    {
+        "id": 152,
+        "line": 65,
+        "precode": "                if (full.containsKey(name))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_4_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "                if (full.key(name))"
+    }
+]

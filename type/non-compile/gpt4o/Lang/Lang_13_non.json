@@ -1,0 +1,51 @@
+[
+    {
+        "id": 63,
+        "line": 221,
+        "precode": "ByteArrayInputStream bais = new ByteArrayInputStream(objectData);",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "ByteArrayInputStream bais = new ByteArrayInputStream(Arrays.copyOf(objectData, objectData.length));"
+    },
+    {
+        "id": 65,
+        "line": 240,
+        "precode": "new HashMap<String, Class<?>>();",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "new LinkedHashMap<String, Class<?>>();"
+    },
+    {
+        "id": 66,
+        "line": 241,
+        "precode": "private ClassLoader classLoader;",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "private ClassLoader threadClassLoader;"
+    },
+    {
+        "id": 67,
+        "line": 239,
+        "precode": "private static final Map<String, Class<?>> primitiveTypes =",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "private static final Map<String, Class<?>> defaultTypes ="
+    },
+    {
+        "id": 86,
+        "line": 278,
+        "precode": "catch (ClassNotFoundException ex) {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "catch (ClassNotFoundException | NoClassDefFoundError ex) {"
+    },
+    {
+        "id": 90,
+        "line": 281,
+        "precode": "catch (ClassNotFoundException cnfe) {",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "catch (ClassNotFoundException | NoClassDefFoundError cnfe) {"
+    },
+    {
+        "id": 95,
+        "line": 285,
+        "precode": "else",
+        "filepath": "defects4j_fixed/Lang/Lang_13_fixed/src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "aftercode": "else if (cls != null)"
+    }
+]

@@ -1,0 +1,79 @@
+[
+    {
+        "id": 103,
+        "line": 3,
+        "precode": "import org.mockito.exceptions.base.MockitoException;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "import org.mockito.exceptions.base.MockitoBaseException;"
+    },
+    {
+        "id": 104,
+        "line": 4,
+        "precode": "import org.mockito.internal.util.reflection.BeanPropertySetter;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "import org.mockito.internal.util.reflection.PropertySetterBean;"
+    },
+    {
+        "id": 105,
+        "line": 7,
+        "precode": "import java.lang.reflect.Field;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "import java.util.LinkedList;"
+    },
+    {
+        "id": 106,
+        "line": 1,
+        "precode": "package org.mockito.internal.configuration.injection;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "package org.mockito.internal.config.injection;"
+    },
+    {
+        "id": 107,
+        "line": 5,
+        "precode": "import org.mockito.internal.util.reflection.FieldSetter;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "import org.mockito.internal.util.reflection.SetterField;"
+    },
+    {
+        "id": 108,
+        "line": 7,
+        "precode": "import java.lang.reflect.Field;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "import java.lang.reflect.Method;"
+    },
+    {
+        "id": 109,
+        "line": 8,
+        "precode": "import java.util.Collection;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "import java.util.List;"
+    },
+    {
+        "id": 111,
+        "line": 27,
+        "precode": "new FieldSetter(fieldInstance, field).set(matchingMock);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "new FieldSetter(mockingFieldInstance, field).set(matchingMock);"
+    },
+    {
+        "id": 112,
+        "line": 26,
+        "precode": "if (!new BeanPropertySetter(fieldInstance, field).set(matchingMock)) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "if (!new BeanPropertySetter(fieldInstance, field).set(anotherMock)) {"
+    },
+    {
+        "id": 113,
+        "line": 29,
+        "precode": "} catch (Exception e) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "} catch (Throwable t) {"
+    },
+    {
+        "id": 115,
+        "line": 26,
+        "precode": "if (!new BeanPropertySetter(fieldInstance, field).set(matchingMock)) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_15_fixed/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java",
+        "aftercode": "if (new FieldSetter(fieldInstance, field).set(matchingMock)) {"
+    }
+]

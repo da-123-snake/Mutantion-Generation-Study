@@ -1,0 +1,247 @@
+[
+    {
+        "id": 136,
+        "line": 307,
+        "precode": "if (timeZone!= null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (timeZone == null) {\n"
+    },
+    {
+        "id": 137,
+        "line": 307,
+        "precode": "if (timeZone!= null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (timeZone.equals(TimeZone.getDefault())) {\n"
+    },
+    {
+        "id": 138,
+        "line": 307,
+        "precode": "if (timeZone!= null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (timeZone.getID().equals(TimeZone.getDefault().getID())) {\n"
+    },
+    {
+        "id": 139,
+        "line": 307,
+        "precode": "if (timeZone!= null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (timeZone.getDisplayName().equals(TimeZone.getDefault().getDisplayName())) {\n"
+    },
+    {
+        "id": 140,
+        "line": 307,
+        "precode": "if (locale!= null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (locale.equals(Locale.getDefault())) {\n"
+    },
+    {
+        "id": 141,
+        "line": 307,
+        "precode": "if (locale!= null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (locale.getLanguage().equals(Locale.getDefault().getLanguage())) {\n"
+    },
+    {
+        "id": 142,
+        "line": 307,
+        "precode": "if (locale!= null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (locale.getCountry().equals(Locale.getDefault().getCountry())) {\n"
+    },
+    {
+        "id": 143,
+        "line": 307,
+        "precode": "if (locale!= null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (locale.getDisplayName().equals(Locale.getDefault().getDisplayName())) {\n"
+    },
+    {
+        "id": 144,
+        "line": 307,
+        "precode": "Object key = new Integer(style);",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Double(style).intValue();"
+    },
+    {
+        "id": 145,
+        "line": 307,
+        "precode": "if (format == null) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (format == null) {\n"
+    },
+    {
+        "id": 146,
+        "line": 307,
+        "precode": "String pattern = formatter.toPattern();",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "String pattern = formatter.toLocalizedPattern();"
+    },
+    {
+        "id": 147,
+        "line": 307,
+        "precode": "return getInstance(pattern, timeZone, locale);",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "return getInstance(pattern, timeZone, locale.getCountry());"
+    },
+    {
+        "id": 148,
+        "line": 307,
+        "precode": "return (FastDateFormat) cDateInstanceCache.get(key);",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "return (FastDateFormat) cDateInstanceCache.get(key.toString());"
+    },
+    {
+        "id": 149,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (timeZone!= null) {\n    key = new Pair(key, timeZone);\n}"
+    },
+    {
+        "id": 150,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (timeZone!= null) {\n    key = new Pair(key.first, timeZone);\n}"
+    },
+    {
+        "id": 151,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (timeZone!= null) {\n    key = new Pair(key, timeZone.getID());\n}"
+    },
+    {
+        "id": 152,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (timeZone!= null) {\n    key = new Pair(key, timeZone.toString());\n}"
+    },
+    {
+        "id": 153,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (locale!= null) {\n    key = new Pair(key, locale);\n}"
+    },
+    {
+        "id": 154,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (locale!= null) {\n    key = new Pair(key.first, locale);\n}"
+    },
+    {
+        "id": 155,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (locale!= null) {\n    key = new Pair(key, locale.getCountry());\n}"
+    },
+    {
+        "id": 156,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (locale!= null) {\n    key = new Pair(key, locale.getLanguage());\n}"
+    },
+    {
+        "id": 157,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (locale!= null) {\n    key = new Pair(key, locale.getDisplayName());\n}"
+    },
+    {
+        "id": 158,
+        "line": 488,
+        "precode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "Object key = new Pair(new Integer(dateStyle), new Integer(timeStyle));\nif (locale!= null) {\n    key = new Pair(key, locale.toString());\n}"
+    },
+    {
+        "id": 159,
+        "line": 488,
+        "precode": "if (format == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (format == null)\n    format = getInstance(pattern, timeZone, locale);"
+    },
+    {
+        "id": 160,
+        "line": 488,
+        "precode": "if (format == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (format == null)\n    format = getInstance(pattern.replace(':', '_'), timeZone, locale);"
+    },
+    {
+        "id": 161,
+        "line": 488,
+        "precode": "if (format == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "if (format == null)\n    format = getInstance(pattern.replace(':', '_').replace('.', '_'), timeZone, locale);"
+    },
+    {
+        "id": 216,
+        "line": 136,
+        "precode": "private final boolean mLocaleForced;",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "private final boolean mLocaleForced =!mLocaleForced;"
+    },
+    {
+        "id": 220,
+        "line": 135,
+        "precode": " * ",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": " * "
+    },
+    {
+        "id": 222,
+        "line": 135,
+        "precode": " * ",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": " * "
+    },
+    {
+        "id": 227,
+        "line": 1019,
+        "precode": "public String toString() {",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "public String toString() {"
+    },
+    {
+        "id": 228,
+        "line": 1019,
+        "precode": "return \"FastDateFormat[\",",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "return \"FastDateFormat[\""
+    },
+    {
+        "id": 229,
+        "line": 1019,
+        "precode": "mPattern + \"]\";",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "mPattern + \"]\";"
+    },
+    {
+        "id": 234,
+        "line": 1019,
+        "precode": "A = B;",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "A =!B;"
+    },
+    {
+        "id": 235,
+        "line": 1019,
+        "precode": "B = A;",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "B =!A;"
+    },
+    {
+        "id": 236,
+        "line": 1019,
+        "precode": "C = A && B;",
+        "filepath": "defects4j_fixed/Lang/Lang_56_fixed/src/java/org/apache/commons/lang/time/FastDateFormat.java",
+        "aftercode": "C = A || B;"
+    }
+]

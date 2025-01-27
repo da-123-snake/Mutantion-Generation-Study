@@ -1,0 +1,128 @@
+[
+    {
+        "id": 225,
+        "line": 250,
+        "precode": "protected final double doSolve() {",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "protected final double doSolve() {"
+    },
+    {
+        "id": 229,
+        "line": 250,
+        "precode": "        double f0 = computeObjectiveValue(x0);",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        double f0 = computeObjectiveValue(x0);"
+    },
+    {
+        "id": 230,
+        "line": 250,
+        "precode": "        double f1 = computeObjectiveValue(x1);",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        double f1 = computeObjectiveValue(x1);"
+    },
+    {
+        "id": 233,
+        "line": 250,
+        "precode": "double f0 = computeObjectiveValue(x0);",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "double f0 = computeObjectiveValue(x0);\ndouble f1 = computeObjectiveValue(x1);"
+    },
+    {
+        "id": 234,
+        "line": 250,
+        "precode": "double f1 = computeObjectiveValue(x1);",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "double f0 = computeObjectiveValue(x0);\ndouble f1 = computeObjectiveValue(x1);"
+    },
+    {
+        "id": 235,
+        "line": 250,
+        "precode": "if (f0 == 0.0) {\n    return x0;",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "if (f0 == 0.0) {\n    return x0;\n    double x1 = getMax();"
+    },
+    {
+        "id": 236,
+        "line": 250,
+        "precode": "} else if (f1 == 0.0) {\n    return x1;",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "if (f0 == 0.0) {\n    return x0;\n    double x1 = getMax();\n} else if (f1 == 0.0) {\n    return x1;"
+    },
+    {
+        "id": 237,
+        "line": 250,
+        "precode": "if (f1 * fx < 0) {\n    // The value of x1 has switched to the other bound, thus inverting\n    // the interval.",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "if (f1 * fx < 0) {\n    // The value of x1 has switched to the other bound, thus inverting\n    // the interval.\n    double x0 = x1;\n    double f0 = f1;\n    boolean inverted =!inverted;"
+    },
+    {
+        "id": 238,
+        "line": 250,
+        "precode": "if (f1 * fx < 0) {\n    // The value of x1 has switched to the other bound, thus inverting\n    // the interval.",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "if (f1 * fx < 0) {\n    // The value of x1 has switched to the other bound, thus inverting\n    // the interval.\n    double x0 = x1;\n    double f0 = f1;\n    boolean inverted =!inverted;\n    double x1 = getMax();"
+    },
+    {
+        "id": 239,
+        "line": 250,
+        "precode": "switch (method) {\n    case ILLINOIS:",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "switch (method) {\n    case ILLINOIS:\n        f0 *= 0.5;\n        double x1 = getMax();"
+    },
+    {
+        "id": 240,
+        "line": 250,
+        "precode": "case PEGASUS:",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "case PEGASUS:\n        f0 *= f1 / (f1 + fx);\n        double x1 = getMax();"
+    },
+    {
+        "id": 241,
+        "line": 250,
+        "precode": "case REGULA_FALSI:",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "case REGULA_FALSI:\n        // Nothing.\n        double x1 = getMax();"
+    },
+    {
+        "id": 242,
+        "line": 250,
+        "precode": "default:",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "case REGULA_FALSI:\n        // Nothing.\n        double x1 = getMax();\n        default:\n            // Should never happen.\n            throw new MathInternalError();"
+    },
+    {
+        "id": 243,
+        "line": 250,
+        "precode": "while (true) {\n    // Calculate the next approximation.",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "while (true) {\n    // Calculate the next approximation.\n    double x = x1 - ((f1 * (x1 - x0)) / (f1 - f0));"
+    },
+    {
+        "id": 244,
+        "line": 250,
+        "precode": "if (fx == 0.0) {\n    // If the new approximation is the exact root, return it. Since\n    // this is not an under-approximation or an over-approximation, we can\n    // return it regardless of the allowed solutions.",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "if (fx == 0.0) {\n    // If the new approximation is the exact root, return it. Since\n    // this is not an under-approximation or an over-approximation, we can\n    // return it regardless of the allowed solutions.\n    return x;\n    double x1 = getMax();"
+    },
+    {
+        "id": 245,
+        "line": 250,
+        "precode": "if (f1 * fx < 0) {\n    // The value of x1 has switched to the other bound, thus inverting\n    // the interval.",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "if (f1 * fx < 0) {\n    // The value of x1 has switched to the other bound, thus inverting\n    // the interval.\n    double x0 = x1;\n    double f0 = f1;\n    boolean inverted =!inverted;\n    double x1 = getMax();"
+    },
+    {
+        "id": 246,
+        "line": 250,
+        "precode": "if (FastMath.abs(f1) <= ftol) {\n    // If the function value of the last approximation is too small,\n    // given the function value accuracy, then we can't get closer to\n    // the root than we already are.",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "if (FastMath.abs(f1) <= ftol) {\n    // If the function value of the last approximation is too small,\n    // given the function value accuracy, then we can't get closer to\n    // the root than we already are.\n    switch (allowed) {\n        case ANY_SIDE:\n            return x1;\n        case LEFT_SIDE:\n            if (inverted) {\n                return x1;\n            }\n            break;\n        case RIGHT_SIDE:\n            if (!inverted) {\n                return x1;\n            }\n            break;\n        case BELOW_SIDE:\n            if (f1 <= 0) {\n                return x1;\n            }\n            break;\n        case ABOVE_SIDE:\n            if (f1 >= 0) {\n                return x1;\n            }\n            break;\n        default:\n            throw new MathInternalError();\n    }\n    double x1 = getMax();"
+    },
+    {
+        "id": 247,
+        "line": 250,
+        "precode": "if (FastMath.abs(f1) <= ftol) {\n    // If the function value of the last approximation is too small,\n    // given the function value accuracy, then we can't get closer to\n    // the root than we already are.",
+        "filepath": "defects4j_fixed/Math/Math_50_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "if (FastMath.abs(f1) <= ftol) {\n    // If the function value of the last approximation is too small,\n    // given the function value accuracy, then we can't get closer to\n    // the root than we already are.\n    switch (allowed) {\n        case ANY_SIDE:\n            return x1;\n        case LEFT_SIDE:\n            if (inverted) {\n                return x1;\n            }\n            break;\n        case RIGHT_SIDE:\n            if (!inverted) {\n                return x1;\n            }\n            break;\n        case BELOW_SIDE:\n            if (f1 <= 0) {\n                return x1;\n            }\n            break;\n        case ABOVE_SIDE:\n            if (f1 >= 0) {\n                return x1;\n            }\n            break;\n        default:\n            throw new MathInternalError();\n    }\n    double x1 = getMax();\n    double x0 = getMin();"
+    }
+]

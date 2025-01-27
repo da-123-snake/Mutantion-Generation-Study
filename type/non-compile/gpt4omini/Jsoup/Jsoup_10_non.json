@@ -1,0 +1,65 @@
+[
+    {
+        "id": 73,
+        "line": 104,
+        "precode": "Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "Validate.isNotEmpty(attributeKey);"
+    },
+    {
+        "id": 74,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.containsKey(attributeKey);"
+    },
+    {
+        "id": 78,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.hasKey(attributeKey) || attributes.hasKey('default');"
+    },
+    {
+        "id": 80,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.isEmpty();"
+    },
+    {
+        "id": 83,
+        "line": 104,
+        "precode": "Validate.notNull(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "Validate.notBlank(attributeKey);"
+    },
+    {
+        "id": 534,
+        "line": 447,
+        "precode": "node.outerHtmlHead(accum, depth, out);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "node.outerHtmlHead(out, depth, accum);"
+    },
+    {
+        "id": 536,
+        "line": 452,
+        "precode": "node.outerHtmlTail(accum, depth, out);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "node.outerHtmlTail(out, depth, accum);"
+    },
+    {
+        "id": 537,
+        "line": 443,
+        "precode": "this.out = out;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "this.out = new Document.OutputSettings();"
+    },
+    {
+        "id": 758,
+        "line": 366,
+        "precode": "new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(this);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(getParentNode());"
+    }
+]

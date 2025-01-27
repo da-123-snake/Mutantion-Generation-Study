@@ -1,0 +1,93 @@
+[
+    {
+        "id": 686,
+        "line": 15,
+        "precode": "if (gramps.isCall() && gramps.getFirstChild() == parent) {",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (!gramps.isCall() || gramps.getFirstChild() != parent) {"
+    },
+    {
+        "id": 699,
+        "line": 184,
+        "precode": "if (NodeUtil.isVarOrSimpleAssignLhs(parent, gramps)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (NodeUtil.isAssignNode(parent)) {"
+    },
+    {
+        "id": 703,
+        "line": 186,
+        "precode": "else {",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "else if (true) {"
+    },
+    {
+        "id": 704,
+        "line": 184,
+        "precode": "if (NodeUtil.isVarOrSimpleAssignLhs(parent, gramps)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (NodeUtil.isVar(parent)) {"
+    },
+    {
+        "id": 1192,
+        "line": 328,
+        "precode": "List<Node> nodes = Lists.newArrayList();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "List<Node> nodes = new LinkedList<>();"
+    },
+    {
+        "id": 1193,
+        "line": 329,
+        "precode": "Node val = ref.getAssignedValue();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Node val = ref.getFirstAssignedValue();"
+    },
+    {
+        "id": 1194,
+        "line": 330,
+        "precode": "blacklistVarReferencesInTree(val, v.scope);",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "whitelistVarReferencesInTree(val, v.scope);"
+    },
+    {
+        "id": 1197,
+        "line": 335,
+        "precode": "String var = key.getString();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "String var = key.getValue();"
+    },
+    {
+        "id": 1198,
+        "line": 336,
+        "precode": "Node value = key.removeFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Node value = key.removeChildAtIndex(0);"
+    },
+    {
+        "id": 1200,
+        "line": 378,
+        "precode": "Node replace = ref.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Node replace = ref.getAncestor();"
+    },
+    {
+        "id": 1201,
+        "line": 21,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newNullNode()));"
+    },
+    {
+        "id": 1205,
+        "line": 365,
+        "precode": "replacement = new Node(Token.COMMA);",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "replacement = new Node(Token.SEMI);"
+    },
+    {
+        "id": 1207,
+        "line": 36,
+        "precode": "replace.getParent().replaceChild(replace, NodeUtil.newExpr(replacement));",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "replace.getParent().replaceChild(replace, NodeUtil.newExpr(IR.trueNode()));"
+    }
+]

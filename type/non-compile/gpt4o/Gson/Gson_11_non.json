@@ -1,0 +1,93 @@
+[
+    {
+        "id": 10,
+        "line": 830,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return new JsonPrimitive(\"\"); // Mutation: Returning an empty JsonPrimitive"
+    },
+    {
+        "id": 11,
+        "line": 720,
+        "precode": "case NUMBER:",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "case BOOLEAN: // Mutation: Changing case NUMBER to case BOOLEAN"
+    },
+    {
+        "id": 13,
+        "line": 374,
+        "precode": "throw new JsonSyntaxException(\"Expecting number, got: \" + jsonToken);",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "throw new JsonParseException(\"Unexpected token: \" + jsonToken); // Mutation: Throwing JsonParseException instead of JsonSyntaxException"
+    },
+    {
+        "id": 14,
+        "line": 830,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return new JsonPrimitive(false); // Mutation: Returning a JsonPrimitive with a false boolean value"
+    },
+    {
+        "id": 96,
+        "line": 830,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return new Object();"
+    },
+    {
+        "id": 101,
+        "line": 835,
+        "precode": "return (TypeAdapter<T>) new EnumTypeAdapter(rawType);",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return (TypeAdapter<T>) new EnumTypeAdapter<>(rawType);"
+    },
+    {
+        "id": 103,
+        "line": 879,
+        "precode": "return new TypeAdapterFactory() {",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 104,
+        "line": 881,
+        "precode": "@Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "@Override public TypeAdapter create(Gson gson, TypeToken typeToken) {"
+    },
+    {
+        "id": 105,
+        "line": 844,
+        "precode": "return typeToken.equals(type) ? (TypeAdapter<T>) typeAdapter : null;",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return typeToken.equals(type) ? (TypeAdapter<T>) typeAdapter : (TypeAdapter<T>) new EnumTypeAdapter(type);"
+    },
+    {
+        "id": 107,
+        "line": 890,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return this;"
+    },
+    {
+        "id": 111,
+        "line": 833,
+        "precode": "rawType = rawType.getSuperclass();",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "rawType = rawType.getEnclosingClass();"
+    },
+    {
+        "id": 113,
+        "line": 830,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return new NullPointerException();"
+    },
+    {
+        "id": 115,
+        "line": 835,
+        "precode": "return (TypeAdapter<T>) new EnumTypeAdapter(rawType);",
+        "filepath": "defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return (TypeAdapter<T>) new EnumTypeAdapter<>();"
+    }
+]

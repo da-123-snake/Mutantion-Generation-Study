@@ -1,0 +1,72 @@
+[
+    {
+        "id": 331,
+        "line": 349,
+        "precode": "SavedField[] savedFields = iSavedFields;",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "SavedField[] savedFields = (SavedField[]) iSavedFields.clone();"
+    },
+    {
+        "id": 332,
+        "line": 349,
+        "precode": "int count = iSavedFieldsCount;",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "int count = iSavedFields.length;"
+    },
+    {
+        "id": 333,
+        "line": 349,
+        "precode": "if (iSavedFieldsShared) {",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "if (!iSavedFieldsShared) {"
+    },
+    {
+        "id": 334,
+        "line": 384,
+        "precode": "    iSavedFields = savedFields = (SavedField[]) iSavedFields.clone();",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "    iSavedFieldsShared = false;"
+    },
+    {
+        "id": 335,
+        "line": 384,
+        "precode": "    iSavedFields = savedFields;",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "    iSavedFieldsShared = true;"
+    },
+    {
+        "id": 336,
+        "line": 349,
+        "precode": "sort(savedFields, count);",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "sort(savedFields, iSavedFields.length);"
+    },
+    {
+        "id": 337,
+        "line": 349,
+        "precode": "if (count > 0) {",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "if (iSavedFields.length > 0) {"
+    },
+    {
+        "id": 339,
+        "line": 384,
+        "precode": "    DurationField months = DurationFieldType.months().getField(iChrono);",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "    DurationField days = DurationFieldType.days().getField(iChrono);"
+    },
+    {
+        "id": 340,
+        "line": 384,
+        "precode": "    DurationField first = savedFields[0].iField.getDurationField();",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "    DurationField second = savedFields[1].iField.getDurationField();"
+    },
+    {
+        "id": 341,
+        "line": 384,
+        "precode": "    if (compareReverse(first, months) >= 0 && compareReverse(first, days) <= 0) {",
+        "filepath": "defects4j_fixed/Time/Time_24_fixed/src/main/java/org/joda/time/format/DateTimeParserBucket.java",
+        "aftercode": "    if (compareReverse(second, days) >= 0 && compareReverse(second, months) <= 0) {"
+    }
+]

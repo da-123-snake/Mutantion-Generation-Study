@@ -1,0 +1,100 @@
+[
+    {
+        "id": 156,
+        "line": 343,
+        "precode": "                final double[] eventY = interpolator.getInterpolatedState().clone();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                final double[] eventY = interpolator.getInterpolatedState().values();"
+    },
+    {
+        "id": 157,
+        "line": 346,
+        "precode": "                for (final EventState state : eventsStates) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                for (final EventState state :states) {"
+    },
+    {
+        "id": 158,
+        "line": 347,
+        "precode": "                    state.stepAccepted(eventT, eventY);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                    state.update(eventT, eventY);"
+    },
+    {
+        "id": 160,
+        "line": 352,
+        "precode": "                for (final StepHandler handler : stepHandlers) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                for (final StepHandler handler :handlers) {"
+    },
+    {
+        "id": 161,
+        "line": 356,
+        "precode": "                if (isLastStep) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                if (stop) {"
+    },
+    {
+        "id": 162,
+        "line": 358,
+        "precode": "                    System.arraycopy(eventY, 0, y, 0, y.length);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                    System.copy(eventY, 0, y, 0, y.length);"
+    },
+    {
+        "id": 163,
+        "line": 359,
+        "precode": "                    return eventT;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                    returnfalse;"
+    },
+    {
+        "id": 164,
+        "line": 362,
+        "precode": "                boolean needReset = false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                boolean needReset =true;"
+    },
+    {
+        "id": 165,
+        "line": 363,
+        "precode": "                for (final EventState state : eventsStates) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                for (final EventState state :states) {"
+    },
+    {
+        "id": 167,
+        "line": 366,
+        "precode": "                if (needReset) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                if (reset) {"
+    },
+    {
+        "id": 168,
+        "line": 369,
+        "precode": "                    System.arraycopy(eventY, 0, y, 0, y.length);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                    System.copy(eventY, 0, y, 0, y.length);"
+    },
+    {
+        "id": 169,
+        "line": 370,
+        "precode": "                    computeDerivatives(eventT, y, yDot);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                    System.arraycopy(eventY, 0, y, 0, y.length);rotate(eventT, y, yDot);"
+    },
+    {
+        "id": 170,
+        "line": 371,
+        "precode": "                    resetOccurred = true;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                    resetOccurred|= true;"
+    },
+    {
+        "id": 171,
+        "line": 372,
+        "precode": "                    return eventT;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "                    returnfalse;"
+    }
+]

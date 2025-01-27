@@ -1,0 +1,79 @@
+[
+    {
+        "id": 2,
+        "line": 215,
+        "precode": "DurationField loopUnitField = loopType.getDurationType().getField(iChronology);",
+        "aftercode": "DurationField loopUnitField = loopType.getDurationType().getField(iChronology + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 5,
+        "line": 226,
+        "precode": "int compare = lastUnitField.compareTo(loopUnitField);",
+        "aftercode": "int compare = lastUnitField.compareTo(loopUnitField + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 8,
+        "line": 230,
+        "precode": "if (compare == 0 && lastUnitField.equals(loopUnitField)) {",
+        "aftercode": "if (compare != 0 || !lastUnitField.equals(loopUnitField)) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 11,
+        "line": 241,
+        "precode": "DurationField lastRangeField = types[i - 1].getRangeDurationType().getField(iChronology);",
+        "aftercode": "DurationField lastRangeField = types[i - 1].getRangeDurationType().getField(iChronology + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 12,
+        "line": 242,
+        "precode": "DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology);",
+        "aftercode": "DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 16,
+        "line": 16,
+        "precode": "throw new IllegalArgumentException(\"Types array must not contain duplicate: \" + types[i - 1].getName() + \" and \" + loopType.getName());",
+        "aftercode": "throw new IllegalArgumentException(\"Types array must contain duplicate: \" + types[i - 1].getName() + \" and \" + loopType.getName());",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 19,
+        "line": 241,
+        "precode": "DurationField lastRangeField = types[i - 1].getRangeDurationType().getField(iChronology);",
+        "aftercode": "DurationField lastRangeField = types[i - 1].getRangeDurationType().getField(iChronology + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 20,
+        "line": 242,
+        "precode": "DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology);",
+        "aftercode": "DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology + 1);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java"
+    },
+    {
+        "id": 189,
+        "line": 15,
+        "precode": "if (lastUnitField.isSupported() == false) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "if (lastUnitField.isSupported() == false) {"
+    },
+    {
+        "id": 190,
+        "line": 16,
+        "precode": "throw new IllegalArgumentException(\"Types array must not contain duplicate unsupported: \" + types[i - 1].getName() + \" and \" + loopType.getName());",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "throw new IllegalArgumentException(\"Types array must not contain duplicate unsupported: \" + types[i - 1].getName() + \" and \" + loopType.getName());"
+    },
+    {
+        "id": 427,
+        "line": 463,
+        "precode": "if (rangeField.compareTo(loopRangeField) > 0) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_1_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "if (rangeField.compareTo(loopRangeField) == null) {"
+    }
+]

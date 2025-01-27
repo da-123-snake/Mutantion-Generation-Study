@@ -1,0 +1,37 @@
+[
+    {
+        "id": 85,
+        "line": 197,
+        "precode": "Class<?> toClass = getRawType(toParameterizedType);",
+        "filepath": "defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "Class<?> toClass = getRawType(toParameterizedType.getRawType());"
+    },
+    {
+        "id": 88,
+        "line": 226,
+        "precode": "if (fromTypeArg != null",
+        "filepath": "defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "if (fromTypeArg == null,"
+    },
+    {
+        "id": 90,
+        "line": 53,
+        "precode": "&& !(toTypeArg instanceof WildcardType && isAssignable(fromTypeArg, toTypeArg, typeVarAssigns))) {",
+        "filepath": "defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "&& (toTypeArg instanceof WildcardType && isAssignable(fromTypeArg, toTypeArg, typeVarAssigns))) {"
+    },
+    {
+        "id": 92,
+        "line": 219,
+        "precode": "for (TypeVariable<?> var : toTypeVarAssigns.keySet()) {",
+        "filepath": "defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "for (Type var : toTypeVarAssigns.values()) {"
+    },
+    {
+        "id": 93,
+        "line": 221,
+        "precode": "Type fromTypeArg = unrollVariableAssignments(var, fromTypeVarAssigns);",
+        "filepath": "defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "Type fromTypeArg = unrollVariableAssignments(var, new HashMap<>(fromTypeVarAssigns));"
+    }
+]

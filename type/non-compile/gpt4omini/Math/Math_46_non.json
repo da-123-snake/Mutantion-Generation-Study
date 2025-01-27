@@ -1,0 +1,135 @@
+[
+    {
+        "id": 31,
+        "line": 1027,
+        "precode": "if (isNaN) {",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (isNaN || d == 0) {"
+    },
+    {
+        "id": 32,
+        "line": 1035,
+        "precode": "MathUtils.sinh(real2) / d,",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "MathUtils.sinh(real2 + 1) / d,"
+    },
+    {
+        "id": 33,
+        "line": 1035,
+        "precode": "MathUtils.sinh(real2) / d,",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "MathUtils.sinh(real2) / (d + 1),"
+    },
+    {
+        "id": 40,
+        "line": 1035,
+        "precode": "MathUtils.sinh(real2) / d,",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "MathUtils.sinh(real2) * d,"
+    },
+    {
+        "id": 41,
+        "line": 1036,
+        "precode": "FastMath.sin(imaginary2) / d);",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "FastMath.sin(imaginary2) / (d - d);"
+    },
+    {
+        "id": 56,
+        "line": 1094,
+        "precode": "result.add(NaN);",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "result.add(createComplex(NaN, NaN));"
+    },
+    {
+        "id": 57,
+        "line": 1103,
+        "precode": "final double nthRootOfAbs = FastMath.pow(abs(), 1.0 / n);",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "final double nthRootOfAbs = FastMath.e; // using Euler's number"
+    },
+    {
+        "id": 179,
+        "line": 1,
+        "precode": "private final transient boolean isInfinite;",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "private final transient boolean isFinite;"
+    },
+    {
+        "id": 181,
+        "line": 1,
+        "precode": "private final transient boolean isInfinite;",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "private final transient boolean isInfinite = false;"
+    },
+    {
+        "id": 183,
+        "line": 1,
+        "precode": "private final transient boolean isInfinite;",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "private final transient boolean isInfinite = true;"
+    },
+    {
+        "id": 185,
+        "line": 1,
+        "precode": "private final transient boolean isInfinite;",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "private transient boolean isInfinite;"
+    },
+    {
+        "id": 198,
+        "line": 258,
+        "precode": "if (divisor.isZero) {",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor.isZero() || divisor.equals(ZERO)) {"
+    },
+    {
+        "id": 200,
+        "line": 260,
+        "precode": "return NaN;",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return -NaN;"
+    },
+    {
+        "id": 293,
+        "line": 164,
+        "precode": "return createComplex(real + addend.getReal(),",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real, 0);"
+    },
+    {
+        "id": 295,
+        "line": 164,
+        "precode": "return createComplex(real + addend.getReal(),",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(NaN, imaginary + addend.getImaginary());"
+    },
+    {
+        "id": 296,
+        "line": 164,
+        "precode": "return createComplex(real + addend.getReal(),",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real + 1, imaginary + addend.getImaginary());"
+    },
+    {
+        "id": 297,
+        "line": 164,
+        "precode": "return createComplex(real + addend.getReal(),",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real + addend.getImaginary(), imaginary + addend.getReal());"
+    },
+    {
+        "id": 298,
+        "line": 159,
+        "precode": "MathUtils.checkNotNull(addend);",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return NaN;"
+    },
+    {
+        "id": 299,
+        "line": 164,
+        "precode": "return createComplex(real + addend.getReal(),",
+        "filepath": "defects4j_fixed/Math/Math_46_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real / 2 + addend.getReal(), imaginary + addend.getImaginary());"
+    }
+]

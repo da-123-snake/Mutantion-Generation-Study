@@ -1,0 +1,135 @@
+[
+    {
+        "id": 199,
+        "line": 786,
+        "precode": "    return n.isName() && \"eval\".equals(n.getString()) &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "    return n.isName() && \"eval\".equals(n.getString())&&!n.getBooleanProp(Node.DIRECT_EVAL);"
+    },
+    {
+        "id": 200,
+        "line": 787,
+        "precode": "        !n.getBooleanProp(Node.DIRECT_EVAL);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "    return n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(Node.DIRECT_EVAL);"
+    },
+    {
+        "id": 465,
+        "line": 742,
+        "precode": "    Node firstNonOperator = n.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "    Node firstNonOperator = n.next();"
+    },
+    {
+        "id": 467,
+        "line": 744,
+        "precode": "      firstNonOperator = firstNonOperator.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "      firstNonOperator!= firstNonOperator.getFirstChild();"
+    },
+    {
+        "id": 468,
+        "line": 747,
+        "precode": "    addExpr(firstNonOperator, leftPrecedence, context);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "    }push(firstNonOperator, leftPrecedence, context);"
+    },
+    {
+        "id": 574,
+        "line": 282,
+        "precode": "          Preconditions.checkState(childCount == 1);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "          Preconditions.check(childCount == 1);"
+    },
+    {
+        "id": 576,
+        "line": 287,
+        "precode": "      case Token.FUNCTION:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "      caseNode:"
+    },
+    {
+        "id": 616,
+        "line": 1042,
+        "precode": "              ((s.charAt(i - 1) == '-' && s.charAt(i - 2) == '-') ||",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "              ((s.charAt(i - 1) == \\'-\\' && s.charAt(i - 2) == \\'-\\')||(s.charAt(i - 1) == \\']\\' && s.charAt(i - 2) == \\']\\'))) {"
+    },
+    {
+        "id": 617,
+        "line": 1043,
+        "precode": "               (s.charAt(i - 1) == ']' && s.charAt(i - 2) == ']'))) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "               (s.charAt(i - 1) == \\']\\'&&s.charAt(i - 2) == \\']\\'))) {"
+    },
+    {
+        "id": 619,
+        "line": 1046,
+        "precode": "            sb.append(c);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "            sb.end(c);"
+    },
+    {
+        "id": 645,
+        "line": 119,
+        "precode": "        cc.addOp(opstr, true);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "        cc.add(opstr, true);"
+    },
+    {
+        "id": 646,
+        "line": 120,
+        "precode": "        addExpr(last, p, rhsContext);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "        cc.addOp(opstr, true);add(last, p, rhsContext);"
+    },
+    {
+        "id": 647,
+        "line": 122,
+        "precode": "        unrollBinaryOperator(n, type, opstr, context, rhsContext, p, p + 1);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "      } else {add(n, type, opstr, context, rhsContext, p, p + 1);"
+    },
+    {
+        "id": 649,
+        "line": 751,
+        "precode": "      current = current.getParent();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "      current!= current.getParent();"
+    },
+    {
+        "id": 650,
+        "line": 752,
+        "precode": "      cc.addOp(opStr, true);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "      cc.append(opStr, true);"
+    },
+    {
+        "id": 651,
+        "line": 753,
+        "precode": "      addExpr(current.getFirstChild().getNext(), rightPrecedence, rhsContext);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "      cc.addOp(opStr, true);push(current.getFirstChild().getNext(), rightPrecedence, rhsContext);"
+    },
+    {
+        "id": 653,
+        "line": 331,
+        "precode": "        Node body = fn.getLastChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "        Node body = fn.body();"
+    },
+    {
+        "id": 654,
+        "line": 334,
+        "precode": "        if (!n.isQuotedString() &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "            TokenStream.isJSIdentifier(name)||NodeUtil.isLatin(name)) {"
+    },
+    {
+        "id": 655,
+        "line": 335,
+        "precode": "            TokenStream.isJSIdentifier(name) &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "            TokenStream.escape(name) &&"
+    }
+]

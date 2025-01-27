@@ -1,0 +1,212 @@
+[
+    {
+        "id": 115,
+        "line": 21,
+        "precode": "private final char[] charBuf;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "private final char[] charBuf = new char[0];"
+    },
+    {
+        "id": 121,
+        "line": 97,
+        "precode": "bufPos--;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufPos = rand();"
+    },
+    {
+        "id": 242,
+        "line": 4,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "// bufferUp();"
+    },
+    {
+        "id": 243,
+        "line": 6,
+        "precode": "for (int i = bufPos; i < bufLength; i++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int i = bufPos; i <= bufLength; i++) {"
+    },
+    {
+        "id": 244,
+        "line": 7,
+        "precode": "if (c == charBuf[i])",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (c != charBuf[i])"
+    },
+    {
+        "id": 245,
+        "line": 8,
+        "precode": "return i - bufPos;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return bufPos - i;"
+    },
+    {
+        "id": 246,
+        "line": 9,
+        "precode": "return -1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 247,
+        "line": 12,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "// bufferUp();"
+    },
+    {
+        "id": 248,
+        "line": 14,
+        "precode": "char startChar = seq.charAt(0);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "char startChar = seq.charAt(seq.length() - 1);"
+    },
+    {
+        "id": 249,
+        "line": 16,
+        "precode": "if (c == charBuf[i])",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (c != charBuf[i])"
+    },
+    {
+        "id": 250,
+        "line": 17,
+        "precode": "return i - bufPos;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return bufPos - i;"
+    },
+    {
+        "id": 251,
+        "line": 18,
+        "precode": "return -1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 252,
+        "line": 19,
+        "precode": "for (int i = bufPos; i < bufLength; i++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int i = bufPos + 1; i < bufLength; i++) {"
+    },
+    {
+        "id": 253,
+        "line": 21,
+        "precode": "char startChar = seq.charAt(0);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "char startChar = seq.charAt(1);"
+    },
+    {
+        "id": 254,
+        "line": 23,
+        "precode": "if (c == charBuf[i])",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (c < charBuf[i])"
+    },
+    {
+        "id": 255,
+        "line": 24,
+        "precode": "return i - bufPos;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return i + bufPos;"
+    },
+    {
+        "id": 256,
+        "line": 26,
+        "precode": "return -1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return 1;"
+    },
+    {
+        "id": 257,
+        "line": 6,
+        "precode": "for (int i = bufPos; i < bufLength; i++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int i = bufPos; i <= bufLength; i += 2) {"
+    },
+    {
+        "id": 258,
+        "line": 8,
+        "precode": "return i - bufPos;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return Math.abs(i - bufPos);"
+    },
+    {
+        "id": 259,
+        "line": 24,
+        "precode": "return i - bufPos;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (i - bufPos) * 2;"
+    },
+    {
+        "id": 260,
+        "line": 9,
+        "precode": "return -1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return Integer.MAX_VALUE;"
+    },
+    {
+        "id": 261,
+        "line": 21,
+        "precode": "char startChar = seq.charAt(0);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "char startChar = seq.charAt(seq.length() - 2);"
+    },
+    {
+        "id": 262,
+        "line": 17,
+        "precode": "if (c == charBuf[i])",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (c >= charBuf[i])"
+    },
+    {
+        "id": 263,
+        "line": 19,
+        "precode": "return -1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return i;"
+    },
+    {
+        "id": 264,
+        "line": 18,
+        "precode": "return -1;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return (i - bufPos) + 1;"
+    },
+    {
+        "id": 265,
+        "line": 7,
+        "precode": "if (c == charBuf[i])",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (c < charBuf[i] && c > charBuf[i-1])"
+    },
+    {
+        "id": 266,
+        "line": 8,
+        "precode": "return i - bufPos;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return bufPos + 1;"
+    },
+    {
+        "id": 837,
+        "line": 4,
+        "precode": "else break;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "else continue;"
+    },
+    {
+        "id": 1433,
+        "line": 386,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if(bufferUp()) {}"
+    },
+    {
+        "id": 1438,
+        "line": 160,
+        "precode": "public String consumeTo(char c) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "public String consumeTo(char c = 'a') {"
+    }
+]

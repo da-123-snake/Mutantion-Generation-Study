@@ -1,0 +1,100 @@
+[
+    {
+        "id": 148,
+        "line": 318,
+        "precode": "if (exponent == -1023) {",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 149,
+        "line": 318,
+        "precode": "if (exponent == 1024) {",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 150,
+        "line": 318,
+        "precode": "if ((bits & 0x8000000000000000L)!= 0) {",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 151,
+        "line": 318,
+        "precode": "Dfp xdfp = new Dfp(field, mantissa);",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "Dfp xdfp = new Dfp(field, 0);"
+    },
+    {
+        "id": 152,
+        "line": 318,
+        "precode": "xdfp = xdfp.divide(new Dfp(field, 4503599627370496l)).add(field.getOne());",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "xdfp = xdfp.divide(new Dfp(field, 4503599627370496l)).add(field.getOne());"
+    },
+    {
+        "id": 153,
+        "line": 318,
+        "precode": "xdfp = xdfp.multiply(DfpMath.pow(field.getTwo(), exponent));",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "xdfp = xdfp.multiply(DfpMath.pow(field.getTwo(), exponent));"
+    },
+    {
+        "id": 154,
+        "line": 318,
+        "precode": "System.arraycopy(xdfp.mant, 0, mant, 0, mant.length);",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "System.arraycopy(new int[mant.length], 0, mant, 0, mant.length);"
+    },
+    {
+        "id": 158,
+        "line": 2391,
+        "precode": "if (cmp0 == 0) {",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "if (cmp0 == 0) {"
+    },
+    {
+        "id": 159,
+        "line": 2391,
+        "precode": "return sign < 0? -0.0 : +0.0;",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "return sign < 0? -negate().doubleValue() : posify(0.0).doubleValue();"
+    },
+    {
+        "id": 160,
+        "line": 2391,
+        "precode": "} else if (cmp0 < 0) {",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "} else if (cmp0 < 0) {"
+    },
+    {
+        "id": 161,
+        "line": 2391,
+        "precode": "y = negate();",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "y = posify(y.doubleValue());"
+    },
+    {
+        "id": 162,
+        "line": 2391,
+        "precode": "int exponent = (int)(y.log10() * 3.32);",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "int exponent = (int)(y.log10() * 3.32) + 1;"
+    },
+    {
+        "id": 163,
+        "line": 2391,
+        "precode": "Dfp tempDfp = DfpMath.pow(getTwo(), exponent);",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "Dfp tempDfp = DfpMath.pow(getTwo(), exponent + 1);"
+    },
+    {
+        "id": 164,
+        "line": 2391,
+        "precode": "while (tempDfp.lessThan(y) || tempDfp.equals(y)) {",
+        "filepath": "defects4j_fixed/Math/Math_54_fixed/src/main/java/org/apache/commons/math/dfp/Dfp.java",
+        "aftercode": "while (tempDfp.lessThan(y) || tempDfp.equals(y)) {"
+    }
+]

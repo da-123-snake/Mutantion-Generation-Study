@@ -1,0 +1,79 @@
+[
+    {
+        "id": 218,
+        "line": 576,
+        "precode": "            return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "            returntrue;"
+    },
+    {
+        "id": 521,
+        "line": 301,
+        "precode": "      if (!maybeModifiedArguments &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "         !staleVars.contains(v) && referenceInfo.isWellDefined()&&referenceInfo.isAssignedOnceInLifetime()) {"
+    },
+    {
+        "id": 522,
+        "line": 302,
+        "precode": "          !staleVars.contains(v) && referenceInfo.isWellDefined() &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "      if (!maybeModifiedArguments &&(staleVars.contains(v) && referenceInfo.isWellDefined() &&"
+    },
+    {
+        "id": 523,
+        "line": 303,
+        "precode": "          referenceInfo.isAssignedOnceInLifetime()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "          referenceInfo.next()) {"
+    },
+    {
+        "id": 524,
+        "line": 304,
+        "precode": "        List<Reference> refs = referenceInfo.references;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "        List<Reference> refs =references;"
+    },
+    {
+        "id": 526,
+        "line": 306,
+        "precode": "          Node nameNode = refs.get(i).getNode();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "          Node nameNode = refs.get(i).node();"
+    },
+    {
+        "id": 527,
+        "line": 307,
+        "precode": "          if (aliasCandidates.containsKey(nameNode)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "          if (aliasCandidates.has(nameNode)) {"
+    },
+    {
+        "id": 528,
+        "line": 308,
+        "precode": "            AliasCandidate candidate = aliasCandidates.get(nameNode);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "            AliasCandidate candidate = aliasCandidates.pop(nameNode);"
+    },
+    {
+        "id": 529,
+        "line": 309,
+        "precode": "            if (!staleVars.contains(candidate.alias) &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "            if (!staleVars.contains(candidate.alias)&&!isVarInlineForbidden(candidate.alias)) {"
+    },
+    {
+        "id": 530,
+        "line": 310,
+        "precode": "                !isVarInlineForbidden(candidate.alias)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "            if (!staleVars.contains(candidate.alias) &&!isVarInlineForbidden(candidate.alias)) {"
+    },
+    {
+        "id": 531,
+        "line": 312,
+        "precode": "              aliasInit = candidate.refInfo.getInitializingReference();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_36_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "              aliasInit|= candidate.refInfo.getInitializingReference();"
+    }
+]

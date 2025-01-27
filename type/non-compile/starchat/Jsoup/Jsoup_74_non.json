@@ -1,0 +1,121 @@
+[
+    {
+        "id": 19,
+        "line": 135,
+        "precode": "public static boolean isActuallyWhitespace(int c){",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "public static boolean isActuallyWhitespace(int c){\n\treturn c == 160;\n\t// 160 is &nbsp; (non-breaking space). Not in the spec but expected."
+    },
+    {
+        "id": 20,
+        "line": 135,
+        "precode": "\treturn c =='' || c == '\t' || c == '\n' || c == '\f' || c == '\r'",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "\treturn c =='' || c == '\t' || c == '\n' || c == '\f' || c == '\r' || c == 160;"
+    },
+    {
+        "id": 21,
+        "line": 135,
+        "precode": "\t\t|| c == 160",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "\t\t|| c == 160\n\t\t// 160 is &nbsp; (non-breaking space). Not in the spec but expected."
+    },
+    {
+        "id": 22,
+        "line": 135,
+        "precode": "public static boolean isInvisibleChar(int c) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "public static boolean isInvisibleChar(int c) {\n\treturn Character.getType(c) == 16 && (c == 8203 || c == 8204 || c == 8205 || c == 173);\n\t// zero width sp, zw non join, zw join, soft hyphen"
+    },
+    {
+        "id": 23,
+        "line": 135,
+        "precode": "\treturn Character.getType(c) == 16 && (c == 8203 || c == 8204 || c == 8205 || c == 173)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "\treturn Character.getType(c) == 16 && (c == 8203 || c == 8204 || c == 8205 || c == 173)\n\t// zero width sp, zw non join, zw join, soft hyphen"
+    },
+    {
+        "id": 24,
+        "line": 135,
+        "precode": "\t\t&& (c == 8203 || c == 8204 || c == 8205 || c == 173)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "\t\t&& (c == 8203 || c == 8204 || c == 8205 || c == 173)\n\t\t// zero width sp, zw non join, zw join, soft hyphen"
+    },
+    {
+        "id": 25,
+        "line": 135,
+        "precode": "\t\t\t|| c == 8203 || c == 8204 || c == 8205 || c == 173",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "\t\t\t|| c == 8203 || c == 8204 || c == 8205 || c == 173\n\t\t\t// zero width sp, zw non join, zw join, soft hyphen"
+    },
+    {
+        "id": 26,
+        "line": 135,
+        "precode": "\t\t\t\t&& (c == 8203 || c == 8204 || c == 8205 || c == 173)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "\t\t\t\t&& (c == 8203 || c == 8204 || c == 8205 || c == 173)\n\t\t\t\t// zero width sp, zw non join, zw join, soft hyphen"
+    },
+    {
+        "id": 27,
+        "line": 135,
+        "precode": "\t\t\t\t\t|| c == 8203 || c == 8204 || c == 8205 || c == 173",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "\t\t\t\t\t|| c == 8203 || c == 8204 || c == 8205 || c == 173\n\t\t\t\t\t// zero width sp, zw non join, zw join, soft hyphen"
+    },
+    {
+        "id": 28,
+        "line": 135,
+        "precode": "\t\t\t\t\t\t&& (c == 8203 || c == 8204 || c == 8205 || c == 173)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "\t\t\t\t\t\t&& (c == 8203 || c == 8204 || c == 8205 || c == 173)\n\t\t\t\t\t\t// zero width sp, zw non join, zw join, soft hyphen"
+    },
+    {
+        "id": 29,
+        "line": 188,
+        "precode": "    while (c <'') {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "    while (c <='') {"
+    },
+    {
+        "id": 30,
+        "line": 188,
+        "precode": "    while (c <='') {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "    while (c <'') {"
+    },
+    {
+        "id": 31,
+        "line": 188,
+        "precode": "    while (c <'') {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "    while (c <='') {"
+    },
+    {
+        "id": 32,
+        "line": 188,
+        "precode": "    while (c <'') {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "    while (c <'') {"
+    },
+    {
+        "id": 33,
+        "line": 188,
+        "precode": "    while (c <='') {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "    while (c <'') {"
+    },
+    {
+        "id": 34,
+        "line": 188,
+        "precode": "    while (c <'') {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "    while (c <='') {"
+    },
+    {
+        "id": 35,
+        "line": 188,
+        "precode": "    while (c <='') {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_74_fixed/src/main/java/org/jsoup/helper/StringUtil.java",
+        "aftercode": "    while (c <='') {"
+    }
+]

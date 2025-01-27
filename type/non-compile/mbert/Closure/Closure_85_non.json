@@ -1,0 +1,163 @@
+[
+    {
+        "id": 205,
+        "line": 169,
+        "precode": "          Preconditions.checkState(outEdges.get(0).getValue() == Branch.UNCOND);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "          Preconditions.check(outEdges.get(0).getValue() == Branch.UNCOND);"
+    },
+    {
+        "id": 206,
+        "line": 170,
+        "precode": "          Node fallThrough = computeFollowing(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "          Node fallThrough =next(n);"
+    },
+    {
+        "id": 207,
+        "line": 171,
+        "precode": "          Node nextCfgNode = outEdges.get(0).getDestination().getValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "          Node nextCfgNode = outEdges.get(0).getDestination().next();"
+    },
+    {
+        "id": 209,
+        "line": 173,
+        "precode": "            removeDeadExprStatementSafely(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "          if (nextCfgNode == fallThrough) {remove(n);"
+    },
+    {
+        "id": 210,
+        "line": 174,
+        "precode": "            return fallThrough;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "            returnn;"
+    },
+    {
+        "id": 211,
+        "line": 178,
+        "precode": "    return n;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "    returnnull;"
+    },
+    {
+        "id": 212,
+        "line": 182,
+        "precode": "    Node next = ControlFlowAnalysis.computeFollowNode(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "    Node next = ControlFlowAnalysis.next(n);"
+    },
+    {
+        "id": 214,
+        "line": 184,
+        "precode": "      if (next.hasChildren()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "      if (next.block()) {"
+    },
+    {
+        "id": 215,
+        "line": 185,
+        "precode": "        next = next.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "        next!= next.getFirstChild();"
+    },
+    {
+        "id": 216,
+        "line": 187,
+        "precode": "        next = computeFollowing(next);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "        next|= computeFollowing(next);"
+    },
+    {
+        "id": 528,
+        "line": 150,
+        "precode": "      return n;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "      returnnull;"
+    },
+    {
+        "id": 529,
+        "line": 153,
+        "precode": "    switch (n.getType()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "    switch (n.type()) {"
+    },
+    {
+        "id": 530,
+        "line": 154,
+        "precode": "      case Token.RETURN:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "      caseCASE:"
+    },
+    {
+        "id": 531,
+        "line": 155,
+        "precode": "        if (n.hasChildren()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "        if (n.continue()) {"
+    },
+    {
+        "id": 533,
+        "line": 169,
+        "precode": "          Preconditions.checkState(outEdges.get(0).getValue() == Branch.UNCOND);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "          Preconditions.check(outEdges.get(0).getValue() == Branch.UNCOND);"
+    },
+    {
+        "id": 534,
+        "line": 170,
+        "precode": "          Node fallThrough = computeFollowing(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "          Node fallThrough =next(n);"
+    },
+    {
+        "id": 535,
+        "line": 171,
+        "precode": "          Node nextCfgNode = outEdges.get(0).getDestination().getValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "          Node nextCfgNode = outEdges.get(0).getDestination().next();"
+    },
+    {
+        "id": 537,
+        "line": 173,
+        "precode": "            removeDeadExprStatementSafely(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "          if (nextCfgNode == fallThrough) {remove(n);"
+    },
+    {
+        "id": 538,
+        "line": 182,
+        "precode": "    Node next = ControlFlowAnalysis.computeFollowNode(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "    Node next = ControlFlowAnalysis.next(n);"
+    },
+    {
+        "id": 540,
+        "line": 184,
+        "precode": "      if (next.hasChildren()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "      if (next.block()) {"
+    },
+    {
+        "id": 541,
+        "line": 185,
+        "precode": "        next = next.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "        next!= next.getFirstChild();"
+    },
+    {
+        "id": 542,
+        "line": 187,
+        "precode": "        next = computeFollowing(next);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "        next|= computeFollowing(next);"
+    },
+    {
+        "id": 543,
+        "line": 190,
+        "precode": "    return next;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "    returnn;"
+    }
+]

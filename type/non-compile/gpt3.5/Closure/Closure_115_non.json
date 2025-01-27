@@ -1,0 +1,58 @@
+[
+    {
+        "id": 230,
+        "line": 695,
+        "precode": "Node block = fnNode.getLastChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_115_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node block = fnNode.getSecondChild();"
+    },
+    {
+        "id": 231,
+        "line": 698,
+        "precode": "Node cArg = callNode.getFirstChild().getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_115_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node cArg = callNode.getPrevious().getNext();"
+    },
+    {
+        "id": 232,
+        "line": 30,
+        "precode": "      if (NodeUtil.mayEffectMutableState(cArg, compiler)\n          && NodeUtil.getNameReferenceCount(\n              block, fnParam.getString()) > 1) {",
+        "aftercode": "      if (NodeUtil.mayEffectMutableState(cArg, compiler)\n          && NodeUtil.getNameReferenceCount(\n              block, fnParam.getString()) < 1) {",
+        "filepath": "defects4j_fixed/Closure/Closure_115_fixed/src/com/google/javascript/jscomp/FunctionInjector.java"
+    },
+    {
+        "id": 233,
+        "line": 30,
+        "precode": "      if (NodeUtil.mayEffectMutableState(cArg, compiler)\n          && NodeUtil.getNameReferenceCount(\n              block, fnParam.getString()) > 1) {",
+        "aftercode": "      if (NodeUtil.mayEffectMutableState(cArg, compiler)\n          && NodeUtil.getNameReferenceCount(\n              block, fnParam.getString()) >= 1) {",
+        "filepath": "defects4j_fixed/Closure/Closure_115_fixed/src/com/google/javascript/jscomp/FunctionInjector.java"
+    },
+    {
+        "id": 239,
+        "line": 704,
+        "precode": "if (NodeUtil.isFunctionObjectCall(callNode)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_115_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "// Commented out condition check\n// if (NodeUtil.isFunctionObjectCall(callNode)) {"
+    },
+    {
+        "id": 240,
+        "line": 706,
+        "precode": "if (cArg == null || !cArg.isThis()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_115_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "// Commented out condition check\n// if (cArg == null || !cArg.isThis()) {"
+    },
+    {
+        "id": 241,
+        "line": 31,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\n      && NodeUtil.getNameReferenceCount(\n          block, fnParam.getString()) > 1) {",
+        "filepath": "defects4j_fixed/Closure/Closure_115_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "// Commented out condition check\n// if (NodeUtil.mayEffectMutableState(cArg, compiler)\n//     && NodeUtil.getNameReferenceCount(\n//         block, fnParam.getString()) > 1) {"
+    },
+    {
+        "id": 242,
+        "line": 739,
+        "precode": "if (NodeUtil.mayHaveSideEffects(cArg, compiler)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_115_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "// Commented out condition check\n// if (NodeUtil.mayHaveSideEffects(cArg, compiler)) {"
+    }
+]

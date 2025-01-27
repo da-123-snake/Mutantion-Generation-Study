@@ -1,0 +1,23 @@
+[
+    {
+        "id": 40,
+        "line": "types[i - 1].getName() + \" < \" + loopType.getName()",
+        "precode": "throw new IllegalArgumentException(\"Types array must be in order largest-smallest: \" + types[i - 1].getName() + \" < \" + loopType.getName());",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "throw new IllegalArgumentException(\"Types array must be in order smallest-largest: \" + types[i - 1].getName() + \" < \" + loopType.getName());"
+    },
+    {
+        "id": 42,
+        "line": "throw new IllegalArgumentException",
+        "precode": "throw new IllegalArgumentException(\"Types array must be in order largest-smallest: \" + types[i - 1].getName() + \" < \" + loopType.getName());",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "throw new RuntimeException(\"Types array must be in order largest-smallest: \" + types[i - 1].getName() + \" < \" + loopType.getName());"
+    },
+    {
+        "id": 44,
+        "line": 215,
+        "precode": "DurationField loopUnitField = loopType.getDurationType().getField(iChronology);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "DurationField loopUnitField = loopType.getFieldType().getField(iChronology);"
+    }
+]

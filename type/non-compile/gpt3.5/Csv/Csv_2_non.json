@@ -1,0 +1,100 @@
+[
+    {
+        "id": 47,
+        "line": 82,
+        "precode": "                    \"No header mapping was specified, the record values can't be accessed by name\");",
+        "aftercode": "                    \"Mapping for header is missing, the record values can't be accessed by name\");",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 48,
+        "line": 84,
+        "precode": "        final Integer index = mapping.get(name);",
+        "aftercode": "        final Integer idx = mapping.get(name);",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 49,
+        "line": 86,
+        "precode": "            return index != null ? values[index.intValue()] : null;",
+        "aftercode": "            return idx != null ? values[idx.intValue()] : null;",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 50,
+        "line": 88,
+        "precode": "            throw new IllegalArgumentException(",
+        "aftercode": "            throw new IllegalArgumentException(",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 51,
+        "line": 89,
+        "precode": "                    String.format(",
+        "aftercode": "                    String.format(",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 52,
+        "line": 90,
+        "precode": "                            \"Index for header '%s' is %d but CSVRecord only has %d values!\",",
+        "aftercode": "                            \"Index for '%s' is %d but CSVRecord has %d values!\",",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 53,
+        "line": 91,
+        "precode": "                            name, index.intValue(), values.length));",
+        "aftercode": "                            name, idx.intValue(), values.length));",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 54,
+        "line": 14,
+        "precode": "            }",
+        "aftercode": "            } // Error check for index validity",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 55,
+        "line": 16,
+        "precode": "    /**",
+        "aftercode": "    /** Method to get a record value using the header name */",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 56,
+        "line": 79,
+        "precode": "    public String get(final String name) {",
+        "aftercode": "    public String getRecordValue(final String headerName) {",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 57,
+        "line": 80,
+        "precode": "        if (mapping == null) {",
+        "aftercode": "        if (headerMapping == null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 58,
+        "line": 81,
+        "precode": "            throw new IllegalStateException(",
+        "aftercode": "            throw new IllegalStateException(",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 59,
+        "line": 82,
+        "precode": "                    \"No header mapping was specified, the record values can't be accessed by name\");",
+        "aftercode": "                    \"Header mapping missing, unable to access record values by name\");",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    },
+    {
+        "id": 60,
+        "line": 92,
+        "precode": "        }",
+        "aftercode": "        } // Error handling for missing mapping",
+        "filepath": "defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java"
+    }
+]

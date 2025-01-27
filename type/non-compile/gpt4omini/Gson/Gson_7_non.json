@@ -1,0 +1,121 @@
+[
+    {
+        "id": 21,
+        "line": 723,
+        "precode": "fitsInLong &= value > MIN_INCOMPLETE_INTEGER",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "fitsInLong |= value > MIN_INCOMPLETE_INTEGER;"
+    },
+    {
+        "id": 163,
+        "line": 469,
+        "precode": "if (peekStack == JsonScope.NONEMPTY_ARRAY) {",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "if (peekStack != JsonScope.NONEMPTY_ARRAY) {"
+    },
+    {
+        "id": 164,
+        "line": 17,
+        "precode": "peekStack = JsonScope.DANGLING_NAME;",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "peekStack = JsonScope.EMPTY_OBJECT;"
+    },
+    {
+        "id": 169,
+        "line": 482,
+        "precode": "else if (peekStack == JsonScope.EMPTY_OBJECT || peekStack == JsonScope.NONEMPTY_OBJECT) {",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "else if (peekStack == JsonScope.NONEMPTY_OBJECT || peekStack == JsonScope.EMPTY_OBJECT) {"
+    },
+    {
+        "id": 172,
+        "line": 749,
+        "precode": "switch (c) {",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "if (c == '}') {"
+    },
+    {
+        "id": 173,
+        "line": 757,
+        "precode": "case '}':",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "case ']':"
+    },
+    {
+        "id": 175,
+        "line": 752,
+        "precode": "case ';':",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "case ':':"
+    },
+    {
+        "id": 178,
+        "line": 768,
+        "precode": "default:",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "case '{':"
+    },
+    {
+        "id": 179,
+        "line": 761,
+        "precode": "case ',':",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "case ' ':"
+    },
+    {
+        "id": 180,
+        "line": 667,
+        "precode": "break;",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 181,
+        "line": 667,
+        "precode": "break;",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "throw new Exception();"
+    },
+    {
+        "id": 186,
+        "line": 520,
+        "precode": "else if (peekStack == JsonScope.DANGLING_NAME) {",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "if (peekStack == JsonScope.DANGLING_NAME) {"
+    },
+    {
+        "id": 187,
+        "line": 517,
+        "precode": "throw syntaxError(\"Expected name\");",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "return syntaxError(\"Name expected\");"
+    },
+    {
+        "id": 188,
+        "line": 521,
+        "precode": "stack[stackSize - 1] = JsonScope.NONEMPTY_OBJECT;",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "stack[stackSize - 1] = JsonScope.BEGIN_OBJECT;"
+    },
+    {
+        "id": 231,
+        "line": 1184,
+        "precode": "peekedString = new String(buffer, pos, peekedNumberLength);",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "peekedString = buffer.substring(pos, pos + peekedNumberLength);"
+    },
+    {
+        "id": 232,
+        "line": 1186,
+        "precode": "else if (p == PEEKED_SINGLE_QUOTED || p == PEEKED_DOUBLE_QUOTED || p == PEEKED_UNQUOTED) {",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "else if (p == PEEKED_SINGLE_QUOTED || p == PEEKED_UNQUOTED || p == PEEKED_DOUBLE_QUOTED) {"
+    },
+    {
+        "id": 237,
+        "line": 1186,
+        "precode": "else if (p == PEEKED_SINGLE_QUOTED || p == PEEKED_DOUBLE_QUOTED || p == PEEKED_UNQUOTED) {",
+        "filepath": "defects4j_fixed/Gson/Gson_7_fixed/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+        "aftercode": "if (p == PEEKED_DOUBLE_QUOTED || p == PEEKED_SINGLE_QUOTED) {"
+    }
+]

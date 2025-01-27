@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1203,
+        "line": 214,
+        "precode": "Node newNode = NodeUtil.newVarNode(name, newValue)",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "Node newNode = NodeUtil.newVarNode(name, newValue).copyInformationFromForTree(newValue.cloneTree());"
+    },
+    {
+        "id": 1206,
+        "line": 213,
+        "precode": "Node newValue = entry.getValue().cloneTree();",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "Node newValue = entry.getValue().deepClone();"
+    },
+    {
+        "id": 1207,
+        "line": 214,
+        "precode": "Node newNode = NodeUtil.newVarNode(name, newValue)",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "Node newNode = NodeUtil.createVarNode(name, newValue);"
+    }
+]

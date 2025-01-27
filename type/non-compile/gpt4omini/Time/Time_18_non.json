@@ -1,0 +1,121 @@
+[
+    {
+        "id": 180,
+        "line": 372,
+        "precode": "instant = iGregorianChronology.getDateTimeMillis",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iGregorianChronology.getDateTimeMillisWithAdjustment"
+    },
+    {
+        "id": 182,
+        "line": 372,
+        "precode": "instant = iGregorianChronology.getDateTimeMillis",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iGregorianChronology.computeDateTimeMillis"
+    },
+    {
+        "id": 185,
+        "line": 381,
+        "precode": "instant = iJulianChronology.getDateTimeMillis",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iJulianChronology.computeDateTimeMillis"
+    },
+    {
+        "id": 188,
+        "line": 372,
+        "precode": "instant = iGregorianChronology.getDateTimeMillis",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iGregorianChronology.getMillisForDateTime"
+    },
+    {
+        "id": 190,
+        "line": 376,
+        "precode": "throw ex;",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "throw new Exception(\"Invalid date values\", ex);"
+    },
+    {
+        "id": 191,
+        "line": 381,
+        "precode": "instant = iJulianChronology.getDateTimeMillis",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iJulianChronology.fetchDateTimeMillis"
+    },
+    {
+        "id": 195,
+        "line": 381,
+        "precode": "instant = iJulianChronology.getDateTimeMillis",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iJulianChronology.calculateDateTimeMillis"
+    },
+    {
+        "id": 198,
+        "line": 372,
+        "precode": "instant = iGregorianChronology.getDateTimeMillis",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "instant = iGregorianChronology.retrieveDateTimeMillis"
+    },
+    {
+        "id": 529,
+        "line": 194,
+        "precode": "cutoverInstant = gregorianCutover.toInstant();",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "cutoverInstant = gregorianCutover.toInstant().plusMillis(1);"
+    },
+    {
+        "id": 530,
+        "line": 199,
+        "precode": "ArrayList<GJChronology> chronos = cCache.get(zone);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "Set<GJChronology> chronos = new HashSet<>(cCache.get(zone));"
+    },
+    {
+        "id": 535,
+        "line": 221,
+        "precode": "chrono = new GJChronology",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "chrono = new GJChronologyWithLogging"
+    },
+    {
+        "id": 537,
+        "line": 184,
+        "precode": "synchronized",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "unsynchronized"
+    },
+    {
+        "id": 538,
+        "line": 17,
+        "precode": "cutoverInstant.equals(chrono.getGregorianCutover()) {",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "!cutoverInstant.equals(chrono.getGregorianCutover()) {"
+    },
+    {
+        "id": 540,
+        "line": 985,
+        "precode": "long value) {",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "long value = 1) {"
+    },
+    {
+        "id": 557,
+        "line": 1033,
+        "precode": "minuendInstant = gregorianToJulian(minuendInstant);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "minuendInstant = convertToJulian(minuendInstant);"
+    },
+    {
+        "id": 559,
+        "line": 1041,
+        "precode": "minuendInstant = julianToGregorian(minuendInstant);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "minuendInstant = conversJulianToGregorian(minuendInstant);"
+    },
+    {
+        "id": 562,
+        "line": 1017,
+        "precode": "return iJulianField.getDifference(minuendInstant, subtrahendInstant);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "return iJulianField.getDifferenceAsLong(minuendInstant, subtrahendInstant);"
+    }
+]

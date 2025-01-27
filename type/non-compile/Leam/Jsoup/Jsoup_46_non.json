@@ -1,0 +1,429 @@
+[
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                    accum.append(c);",
+        "line": 149,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                    accum.append(c);",
+        "line": 149,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                if (encoder.canEncode(c)) // uses fallback encoder for simplicity",
+        "line": 148,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(c);",
+        "line": 140,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&#x\").append(Integer.toHexString(codePoint)).append(';');",
+        "line": 144,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                    accum.append(\"&#x\").append(Integer.toHexString(codePoint)).append(';');",
+        "line": 151,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                if (encoder.canEncode(c)) // uses fallback encoder for simplicity",
+        "line": 148,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            if (codePoint < Character.MIN_SUPPLEMENTARY_CODE_POINT) {",
+        "line": 107,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append('&').append(map.get(c)).append(';');",
+        "line": 142,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                final String c = new String(Character.toChars(codePoint));",
+        "line": 147,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&quot;\");",
+        "line": 134,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append('&').append(map.get(c)).append(';');",
+        "line": 142,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(c);",
+        "line": 115,
+        "aftercode": "\n\n                        else if (map.containsKey(c))\n                            accum.append('&').append(map.get(c)).append(';');\n                        else\n                            accum.append(\"&#x\").append(Integer.toHexString(codePoint)).append(';');\n                }\n            } else {\n                final String c = new String(Character.toChars(codePoint));\n                if (encoder.canEncode(c)) // uses fallback encoder for simplicity\n                    accum.append(c);\n                else\n                    accum.append(\"&#x\").append(Integer.toHexString(codePoint)).append(';');\n            }\n        }\n    }\n\n    static String unescape(String string) {\n        return unescape(string, false);\n    }\n\n    /**\n     * Unescape the input string.\n     * @param string to un-HTML-escape\n     * @param strict if \"strict\" (that is, requires trailing ';' char, otherwise that's optional)\n     * @return unescaped string\n     */\n    static String unescape(String string, boolean strict) {\n        return Parser.unescapeEntities(string, strict);\n    }\n\n    /*\n     * Provides a fast-path for Encoder.canEncode, which drastically improves performance on Android post JellyBean.\n     * After KitKat, the implementation of canEncode degrades to the point of being useless. For non ASCII or UTF,\n     * performance may be bad. We can add more encoders for common character sets that are impacted by performance\n     * issues on Android if required.\n     *\n     * Benchmarks:     *\n     * OLD toHtml() impl v New (fastpath) in millis\n     * Wiki: 1895, 16\n     * CNN: 6378, 55\n     * Alterslash: 3013, 28\n     * Jsoup: 167, 2\n     */\n\n    private static boolean canEncode(final CoreCharset charset, final char c, final CharsetEncoder fallback) {\n        // todo add more charset tests if impacted by Android's bad perf in canEncode\n        switch (charset) {\n            case ascii:\n                return c < 0x80;\n            case utf:\n                return true; // real is:!(Character.isLowSurrogate(c) || Character.isHighSurrogate(c)); - but already check above\n            default:\n                return fallback.canEncode(c);\n        }\n    }\n\n    private enum CoreCharset {\n        ascii, utf, fallback;\n\n        private static CoreCharset byName(String name) {\n            if (name.equals(\"US-ASCII\"))\n                return ascii;\n            if (name.startsWith(\"UTF-\")) // covers UTF-8, UTF-16, et al\n                return utf;\n            return fallback;\n        }\n    }\n\n\n    // xhtml has restricted entities\n    private static final Object[][] xhtmlArray = {\n            {\"quot\", 0x00022},\n            {\"amp\", 0x00026},\n            {\"lt\", 0x0003C},\n            {\"gt\", 0x0003E}\n    };\n\n    static {\n        xhtmlByVal = new HashMap<Character, String>();\n        base = loadEntities(\"entities-base.properties\");  // most common / default\n        baseByVal = toCharacterKey(base);\n        full = loadEntities(\"entities-full.properties\"); // extended and overblown.\n        fullByVal = toCharacterKey(full);\n\n        for (Object[] entity : xhtmlArray) {\n            Character c = Character.valueOf((char) ((Integer) entity[1]).intValue());\n            xhtmlByVal.put(c, ((String) entity[0]));\n        }\n    }\n\n    private static Map<String, Character> loadEntities(String filename) {\n        Properties properties = new Properties();\n        Map<String, Character> entities = new HashMap<String, Character>();\n        try {\n            InputStream in = Entities.class.getResourceAsStream(filename);\n            properties.load(in);\n            in.close();\n        } catch (IOException e) {\n            throw new MissingResourceException(\"Error loading entities resource: \" + e.getMessage(), \"Entities\", filename);\n        }\n\n        for (Map.Entry entry: properties.entrySet()) {\n            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));\n            String name = (String) entry.getKey();\n            entities.put(name, val);\n        }\n        return entities;\n    }\n\n    private static Map<Character, String> toCharacterKey(Map<String, Character> inMap) {\n        Map<Character, String> outMap = new HashMap<Character, String>();\n        for (Map.Entry<String, Character> entry: inMap.entrySet()) {\n            Character character = entry.getValue();\n            String name = entry.getKey();\n\n            if (outMap.containsKey(character)) {\n                // dupe, prefer the lower case version\n                if (name.toLowerCase().equals(name))\n                    outMap.put(character, name);\n            } else {\n                outMap.put(character, name);\n            }\n        }\n        return outMap;\n    }\n}package org.jsoup.nodes;\n\nimport org.jsoup.helper.StringUtil;\nimport org.jsoup.parser.Parser;\n\nimport java.io.IOException;\nimport java.io.InputStream;\nimport java.nio.charset.CharsetEncoder;\nimport java.util.*;\n\n/**\n * HTML entities, and escape routines.\n * Source: <a href=\"http://www.w3.org/TR/html5/named-character-references.html#named-character-references\">W3C HTML\n * named character references</a>.\n */\npublic class Entities {\n    public enum EscapeMode {\n        /** Restricted entities suitable for XHTML output: lt, gt, amp, and quot only. */\n        xhtml(xhtmlByVal),\n        /** Default HTML output entities. */\n        base(baseByVal),\n        /** Complete HTML entities. */\n        extended(fullByVal);\n\n        private Map<Character, String> map;\n\n        EscapeMode(Map<Character, String> map) {\n            this.map = map;\n        }\n\n        public Map<Character, String> getMap() {\n            return map;\n        }\n    }\n\n    private static final Map<String, Character> full;\n    private static final Map<Character, String> xhtmlByVal;\n    private static final Map<String, Character> base;\n    private static final Map<Character, String> baseByVal;\n    private static final Map<Character, String> fullByVal;\n\n    private Entities() {}\n\n    /**\n     * Check if the input is a known named entity\n     * @param name the possible entity name (e.g. \"lt\" or \"amp\")\n     * @return true if a known named entity\n     */\n    public static boolean isNamedEntity(String name) {\n        return full.containsKey(name);\n    }\n\n    /**\n     * Check if the input is a known named entity in the base entity set.\n     * @param name the possible entity name (e.g. \"lt\" or \"amp\")\n     * @return true if a known named entity in the base set\n     * @see #isNamedEntity(String)\n     */\n    public static boolean isBaseNamedEntity(String name) {\n        return base.containsKey(name);\n    }\n\n    /**\n     * Get the Character value of the named entity\n     * @param name named entity (e.g. \"lt\" or \"amp\")\n     * @return the Character value of the named entity (e.g. '{@literal <}' or '{@literal &}')\n     */\n    public static Character getCharacterByName(String name) {\n        return full.get(name);\n    }\n    \n    static String escape(String string, Document.OutputSettings out) {\n        StringBuilder accum = new StringBuilder(string.length() * 2);\n        escape(accum, string, out, false, false, false);\n        return accum.toString();\n    }\n\n    // this method is ugly, and does a lot. but other breakups cause rescanning and stringbuilder generations\n    static void escape(StringBuilder accum, String string, Document.OutputSettings out,\n                       boolean inAttribute, boolean normaliseWhite, boolean stripLeadingWhite) {\n\n        boolean lastWasWhite = false;\n        boolean reachedNonWhite = false;\n        final EscapeMode escapeMode = out.escapeMode();\n        final CharsetEncoder encoder = out.encoder();\n        final CoreCharset coreCharset = CoreCharset.byName(encoder.charset().name());\n        final Map<Character, String> map = escapeMode.getMap();\n        final int length = string.length();\n\n        int codePoint;\n        for (int offset = 0; offset < length; offset += Character.charCount(codePoint)) {\n            codePoint = string.codePointAt(offset);\n\n            if (normaliseWhite) {\n                if (StringUtil.isWhitespace(codePoint)) {\n                    if ((stripLeadingWhite && !reachedNonWhite) || lastWasWhite)\n                        continue;\n                    accum.append(' ');\n                    lastWasWhite = true;\n                    continue;\n                } else {\n                    lastWasWhite = false;\n                    reachedNonWhite = true;\n                }\n            }\n            // surrogate pairs, split implementation for efficiency on single char common case (saves creating strings, char[]):\n            if (codePoint < Character.MIN_SUPPLEMENTARY_CODE_POINT) {\n                final char c = (char) codePoint;\n                // html specific and required escapes:\n                switch (c) {\n                    case '&':\n                        accum.append(\"&amp;\");\n                        break;\n                    case 0xA0:\n                        if (escapeMode != EscapeMode.xhtml)\n                            accum.append(\"&nbsp;\");\n                        else\n                            accum.append(\"&#xa0;\");\n                        break;\n                    case '<':\n                        if (!inAttribute)\n                            accum.append(\"&lt;\");\n                        else\n                            accum.append(c);\n                        break;\n                    case '>':\n                        if (!inAttribute)\n                            accum.append(\"&gt;\");\n                        else\n                            accum.append(c);\n                        break;\n                    case '\"':\n                        if (inAttribute)\n                            accum.append(\"&quot;\");\n                        else\n                            accum.append(c);\n                    default:\n                        if (canEncode(coreCharset, c, encoder))"
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&#x\").append(Integer.toHexString(codePoint)).append(';');",
+        "line": 144,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                        else if (map.containsKey(c))",
+        "line": 141,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                        if (canEncode(coreCharset, c, encoder))",
+        "line": 139,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                        if (inAttribute)",
+        "line": 133,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&gt;\");",
+        "line": 128,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&lt;\");",
+        "line": 122,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                final String c = new String(Character.toChars(codePoint));",
+        "line": 147,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&#x\").append(Integer.toHexString(codePoint)).append(';');",
+        "line": 144,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(c);",
+        "line": 140,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                        if (!inAttribute)",
+        "line": 127,
+        "aftercode": ""
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "        Map<String, Character> entities = new HashMap<String, Character>();",
+        "line": 232,
+        "aftercode": "Map<String, Character> entities = new Map<String, Character>();"
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&nbsp;\");",
+        "line": 116,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&quot;\");",
+        "line": 134,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                        else if (map.containsKey(c))",
+        "line": 141,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                        if (!inAttribute)",
+        "line": 121,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&quot;\");",
+        "line": 134,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append('&').append(map.get(c)).append(';');",
+        "line": 142,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            if (codePoint < Character.MIN_SUPPLEMENTARY_CODE_POINT) {",
+        "line": 107,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&quot;\");",
+        "line": 134,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&#x\").append(Integer.toHexString(codePoint)).append(';');",
+        "line": 144,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                final String c = new String(Character.toChars(codePoint));",
+        "line": 147,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(\"&#x\").append(Integer.toHexString(codePoint)).append(';');",
+        "line": 144,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                        if (inAttribute)",
+        "line": 133,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            if (codePoint < Character.MIN_SUPPLEMENTARY_CODE_POINT) {",
+        "line": 107,
+        "aftercode": ""
+    },
+    {
+        "id": 13,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "                            accum.append(c);",
+        "line": 140,
+        "aftercode": ""
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            properties.load(in);",
+        "line": 235,
+        "aftercode": "properties.load(filename);"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            properties.load(in);",
+        "line": 235,
+        "aftercode": "properties.load(\"null\");"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            InputStream in = Entities.class.getResourceAsStream(filename);",
+        "line": 234,
+        "aftercode": "InputStream in = new Entities();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));",
+        "line": 242,
+        "aftercode": "Character val = Integer.parseInt((String)entry.getValue(), 16);"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "        Properties properties = new Properties();",
+        "line": 231,
+        "aftercode": "Properties properties = new Map<String, Character>();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            InputStream in = Entities.class.getResourceAsStream(filename);",
+        "line": 234,
+        "aftercode": "InputStream in = Entities;"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));",
+        "line": 242,
+        "aftercode": "Character val = Character.valueOf(entry.getValue());"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));",
+        "line": 242,
+        "aftercode": "Character val = Character.valueOf((String)entry.getValue(), 16);"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "        Properties properties = new Properties();",
+        "line": 231,
+        "aftercode": "Map<String, Character> properties = new Map<String, Character>();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            entities.put(name, val);",
+        "line": 244,
+        "aftercode": "entities.put();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "        Map<String, Character> entities = new HashMap<String, Character>();",
+        "line": 232,
+        "aftercode": "Map<String, Character> entities = new Entities();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "        for (Map.Entry entry: properties.entrySet()) {",
+        "line": 241,
+        "aftercode": "(Entry entry = ;"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "        Properties properties = new Properties();",
+        "line": 231,
+        "aftercode": "Properties properties = new HashMap();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            InputStream in = Entities.class.getResourceAsStream(filename);",
+        "line": 234,
+        "aftercode": "Entities in = EntitiesgetResourceAsStream(filename);"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            entities.put(name, val);",
+        "line": 244,
+        "aftercode": "entities.put(name);"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            properties.load(in);",
+        "line": 235,
+        "aftercode": "properties.load();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));",
+        "line": 242,
+        "aftercode": "Character val = Character.valueOf();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));",
+        "line": 242,
+        "aftercode": "Character val = Integer.valueOf((char)Integer.parseInt((String)entry.getValue(), 16));"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "        Map<String, Character> entities = new HashMap<String, Character>();",
+        "line": 232,
+        "aftercode": "Map<String, Character> entities = new MissingResourceException();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "        Map<String, Character> entities = new HashMap<String, Character>();",
+        "line": 232,
+        "aftercode": "Map<String, Character> entities = new Properties();"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));",
+        "line": 242,
+        "aftercode": "Character val = Character.valueOf(filename);"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));",
+        "line": 242,
+        "aftercode": "Character val = valueOf((char)Integer.parseInt((String)entry.getValue(), 16));"
+    },
+    {
+        "id": 14,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "precode": "            entities.put(name, val);",
+        "line": 244,
+        "aftercode": "entities.put(val);"
+    }
+]

@@ -1,0 +1,79 @@
+[
+    {
+        "id": 722,
+        "line": 62,
+        "precode": "return process(new Token.StartTag().name(name));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "return process(new Token.StartTag().namespace(name));"
+    },
+    {
+        "id": 725,
+        "line": 69,
+        "precode": "return process(new Token.StartTag().nameAttr(name, attrs));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "return process(new Token.StartTag().attributes(name, attrs));"
+    },
+    {
+        "id": 727,
+        "line": 71,
+        "precode": "start.reset();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "start.resync();"
+    },
+    {
+        "id": 728,
+        "line": 72,
+        "precode": "start.nameAttr(name, attrs);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "start.nameAttr(attrs, name);"
+    },
+    {
+        "id": 729,
+        "line": 72,
+        "precode": "start.nameAttr(name, attrs);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "start.nameAttr(name.toLower(), attrs);"
+    },
+    {
+        "id": 732,
+        "line": 78,
+        "precode": "return process(new Token.EndTag().name(name));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "return process(new Token.EndTag().identifier(name));"
+    },
+    {
+        "id": 733,
+        "line": 80,
+        "precode": "return process(end.reset().name(name));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "return process(end.reset().identifier(name));"
+    },
+    {
+        "id": 737,
+        "line": 69,
+        "precode": "return process(new Token.StartTag().nameAttr(name, attrs));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "return process(new Token.StartTag().name(name).attributes(attrs));"
+    },
+    {
+        "id": 739,
+        "line": 80,
+        "precode": "return process(end.reset().name(name));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "return process(end.reset().name(name).attributes(null));"
+    },
+    {
+        "id": 744,
+        "line": 62,
+        "precode": "return process(new Token.StartTag().name(name));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "return process(new Token.Start(name));"
+    },
+    {
+        "id": 745,
+        "line": 72,
+        "precode": "start.nameAttr(name, attrs);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_44_fixed/src/main/java/org/jsoup/parser/TreeBuilder.java",
+        "aftercode": "start.setNameAttr(name, attrs);"
+    }
+]

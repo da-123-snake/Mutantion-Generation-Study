@@ -1,0 +1,37 @@
+[
+    {
+        "id": 194,
+        "line": 121,
+        "precode": "}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_16_fixed/src/main/java/com/fasterxml/jackson/core/util/JsonParserSequence.java",
+        "aftercode": "JsonToken backup = delegate.currentToken(); }"
+    },
+    {
+        "id": 199,
+        "line": 121,
+        "precode": "}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_16_fixed/src/main/java/com/fasterxml/jackson/core/util/JsonParserSequence.java",
+        "aftercode": "if (t == null) break; }"
+    },
+    {
+        "id": 201,
+        "line": 102,
+        "precode": "do { delegate.close(); } while (switchToNext());",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_16_fixed/src/main/java/com/fasterxml/jackson/core/util/JsonParserSequence.java",
+        "aftercode": "do { switchToNext(); } while (delegate.close() != null);"
+    },
+    {
+        "id": 206,
+        "line": 117,
+        "precode": "t = delegate.hasCurrentToken()",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_16_fixed/src/main/java/com/fasterxml/jackson/core/util/JsonParserSequence.java",
+        "aftercode": "t = !delegate.hasCurrentToken() ? delegate.nextToken() : null;"
+    },
+    {
+        "id": 208,
+        "line": 112,
+        "precode": "_suppressNextToken = false;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_16_fixed/src/main/java/com/fasterxml/jackson/core/util/JsonParserSequence.java",
+        "aftercode": "_suppressNextToken = null;"
+    }
+]

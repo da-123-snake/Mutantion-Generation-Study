@@ -1,0 +1,44 @@
+[
+    {
+        "id": 4,
+        "line": 182,
+        "precode": "return new RealMatrixImpl(jTj).inverse().getData();",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "return new RealMatrixImpl(jTj).getData().inverse();"
+    },
+    {
+        "id": 5,
+        "line": 21,
+        "precode": "throw new EstimationException(\"unable to compute covariances: singular problem\",\n                                        new Object[0]);",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "throw new EstimationException(\"unable to compute covariances: singular problem\",\n                                        new Object[] {});"
+    },
+    {
+        "id": 6,
+        "line": 165,
+        "precode": "final int rows = problem.getMeasurements().length;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "final int rows = problem.getMeasurements().size();"
+    },
+    {
+        "id": 7,
+        "line": 166,
+        "precode": "final int cols = problem.getUnboundParameters().length;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "final int cols = problem.getUnboundParameters().size();"
+    },
+    {
+        "id": 15,
+        "line": 202,
+        "precode": "int p = problem.getUnboundParameters().length;",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "int p = problem.getParameters().length;"
+    },
+    {
+        "id": 19,
+        "line": 199,
+        "precode": "public double[] guessParametersErrors(EstimationProblem problem)",
+        "filepath": "defects4j_fixed/Math/Math_100_fixed/src/java/org/apache/commons/math/estimation/AbstractEstimator.java",
+        "aftercode": "private double[] guessParametersErrors(EstimationProblem problem)"
+    }
+]

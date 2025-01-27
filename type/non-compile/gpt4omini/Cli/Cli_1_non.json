@@ -1,0 +1,233 @@
+[
+    {
+        "id": 1,
+        "line": 16,
+        "precode": "package org.apache.commons.cli;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "package org.apache.commons.args;"
+    },
+    {
+        "id": 2,
+        "line": 18,
+        "precode": "import java.util.Collection;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "import java.util.List;"
+    },
+    {
+        "id": 3,
+        "line": 19,
+        "precode": "import java.util.Iterator;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "import java.util.Enumeration;"
+    },
+    {
+        "id": 4,
+        "line": 20,
+        "precode": "import java.util.LinkedList;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "import java.util.ArrayList;"
+    },
+    {
+        "id": 5,
+        "line": 21,
+        "precode": "import java.util.List;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "import java.util.Queue;"
+    },
+    {
+        "id": 6,
+        "line": 22,
+        "precode": "import java.util.Set;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "import java.util.Map;"
+    },
+    {
+        "id": 7,
+        "line": 23,
+        "precode": "import java.util.HashSet;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "import java.util.HashMap;"
+    },
+    {
+        "id": 12,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private List args = new ArrayList();"
+    },
+    {
+        "id": 16,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private List args = new LinkedList<>(Arrays.asList(\"arg1\", \"arg2\"));"
+    },
+    {
+        "id": 17,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private ArrayList args = new LinkedList();"
+    },
+    {
+        "id": 18,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private Set args = new HashSet();"
+    },
+    {
+        "id": 19,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private List argsCollection = new LinkedList();"
+    },
+    {
+        "id": 20,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private List args = new Vector();"
+    },
+    {
+        "id": 21,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private Queue args = new LinkedList();"
+    },
+    {
+        "id": 35,
+        "line": 92,
+        "precode": "if (option == null)",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "if (option == null || option.isEmpty())"
+    },
+    {
+        "id": 36,
+        "line": 94,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return new Option();"
+    },
+    {
+        "id": 40,
+        "line": 92,
+        "precode": "if (option == null)",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "if (option == null) { return null; } else { return new Object(); }"
+    },
+    {
+        "id": 50,
+        "line": 148,
+        "precode": "Option key = resolveOption( opt );",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "Option key = options.get(0);"
+    },
+    {
+        "id": 57,
+        "line": 179,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return option;"
+    },
+    {
+        "id": 68,
+        "line": 179,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return option != null ? option : null;"
+    },
+    {
+        "id": 72,
+        "line": 175,
+        "precode": "return option;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return option.getValue();"
+    },
+    {
+        "id": 75,
+        "line": 179,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return option != null ? option : new Option();"
+    },
+    {
+        "id": 79,
+        "line": 288,
+        "precode": "options.add(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "options.add(opt.clone());"
+    },
+    {
+        "id": 80,
+        "line": 288,
+        "precode": "options.add(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "options.add(opt == null ? new Option() : opt);"
+    },
+    {
+        "id": 82,
+        "line": 288,
+        "precode": "options.add(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "options.add(opt.getName());"
+    },
+    {
+        "id": 83,
+        "line": 288,
+        "precode": "options.add(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "options.add(opt != null ? opt : dummyOption);"
+    },
+    {
+        "id": 85,
+        "line": 299,
+        "precode": "return options.iterator();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return Collections.emptyIterator();"
+    },
+    {
+        "id": 86,
+        "line": 299,
+        "precode": "return options.iterator();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return options.listIterator();"
+    },
+    {
+        "id": 87,
+        "line": 299,
+        "precode": "return options.iterator();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return new ArrayList<>(options).iterator();"
+    },
+    {
+        "id": 88,
+        "line": 299,
+        "precode": "return options.iterator();",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "System.out.println('Returning iterator'); return options.iterator();"
+    },
+    {
+        "id": 91,
+        "line": 309,
+        "precode": "Collection processed = options;",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "List processed = options;"
+    },
+    {
+        "id": 93,
+        "line": 315,
+        "precode": "return (Option[]) processed.toArray(optionsArray);",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return processed.toArray(new Option[0]);"
+    },
+    {
+        "id": 95,
+        "line": 312,
+        "precode": "Option[] optionsArray = new Option[processed.size()];",
+        "filepath": "defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "Option optionsArray = new Option();"
+    }
+]

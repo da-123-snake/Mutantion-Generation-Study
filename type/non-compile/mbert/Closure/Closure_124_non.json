@@ -1,0 +1,44 @@
+[
+    {
+        "id": 257,
+        "line": 211,
+        "precode": "    Preconditions.checkArgument(node.isGetProp());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_124_fixed/src/com/google/javascript/jscomp/ExploitAssigns.java",
+        "aftercode": "    Preconditions.check(node.isGetProp());"
+    },
+    {
+        "id": 258,
+        "line": 213,
+        "precode": "    while (node.isGetProp()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_124_fixed/src/com/google/javascript/jscomp/ExploitAssigns.java",
+        "aftercode": "    while (node.next()) {"
+    },
+    {
+        "id": 259,
+        "line": 214,
+        "precode": "      node = node.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_124_fixed/src/com/google/javascript/jscomp/ExploitAssigns.java",
+        "aftercode": "      node|= node.getFirstChild();"
+    },
+    {
+        "id": 260,
+        "line": 216,
+        "precode": "    if (node.isName()",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_124_fixed/src/com/google/javascript/jscomp/ExploitAssigns.java",
+        "aftercode": "    if (node.isName()&&isNameAssignedTo(node.getString(), replacement)) {"
+    },
+    {
+        "id": 261,
+        "line": 217,
+        "precode": "        && isNameAssignedTo(node.getString(), replacement)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_124_fixed/src/com/google/javascript/jscomp/ExploitAssigns.java",
+        "aftercode": "        &&matches(node.getString(), replacement)) {"
+    },
+    {
+        "id": 262,
+        "line": 218,
+        "precode": "      return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_124_fixed/src/com/google/javascript/jscomp/ExploitAssigns.java",
+        "aftercode": "      returntrue;"
+    }
+]

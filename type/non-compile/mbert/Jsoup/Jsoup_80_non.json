@@ -1,0 +1,65 @@
+[
+    {
+        "id": 205,
+        "line": 88,
+        "precode": "            String data = comment.getData();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "            String data = comment.data();"
+    },
+    {
+        "id": 206,
+        "line": 89,
+        "precode": "            if (data.length() > 1 && (data.startsWith(\"!\") || data.startsWith(\"?\"))) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "            if (data.length() > 1AND(data.startsWith(\"!\") || data.startsWith(\"?\"))) {"
+    },
+    {
+        "id": 207,
+        "line": 90,
+        "precode": "                Document doc = Jsoup.parse(\"<\" + data.substring(1, data.length() -1) + \">\", baseUri, Parser.xmlParser());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "                Document doc = Jsoup.load(\"<\" + data.substring(1, data.length() -1) + \">\", baseUri, Parser.xmlParser());"
+    },
+    {
+        "id": 209,
+        "line": 92,
+        "precode": "                    Element el = doc.child(0);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "                    Element el = doc.item(0);"
+    },
+    {
+        "id": 210,
+        "line": 93,
+        "precode": "                    insert = new XmlDeclaration(settings.normalizeTag(el.tagName()), data.startsWith(\"!\"));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "                    insert*= new XmlDeclaration(settings.normalizeTag(el.tagName()), data.startsWith(\"!\"));"
+    },
+    {
+        "id": 211,
+        "line": 94,
+        "precode": "                    insert.attributes().addAll(el.attributes());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "                    insert.attributes().add(el.attributes());"
+    },
+    {
+        "id": 212,
+        "line": 98,
+        "precode": "        insertNode(insert);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "        }return(insert);"
+    },
+    {
+        "id": 267,
+        "line": 119,
+        "precode": "        String elName = settings.normalizeTag(endTag.tagName);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "        String elName = settings.get(endTag.tagName);"
+    },
+    {
+        "id": 268,
+        "line": 120,
+        "precode": "        Element firstFound = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "        Element firstFound =this;"
+    }
+]

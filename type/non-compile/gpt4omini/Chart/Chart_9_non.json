@@ -1,0 +1,23 @@
+[
+    {
+        "id": 92,
+        "line": 859,
+        "precode": "TimeSeries clone = (TimeSeries) super.clone();",
+        "filepath": "defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "TimeSeries clone = (TimeSeries) super.clone(); clone.data = (List) ObjectUtilities.shallowClone(this.data);"
+    },
+    {
+        "id": 95,
+        "line": 860,
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "filepath": "defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "clone.data = (List) ObjectUtilities.deepClone(this.data); this.data = new ArrayList();"
+    },
+    {
+        "id": 96,
+        "line": 859,
+        "precode": "TimeSeries clone = (TimeSeries) super.clone();",
+        "filepath": "defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "TimeSeries clone = (TimeSeries) super.clone(); ObjectUtilities.logMessage('Cloning');"
+    }
+]

@@ -1,0 +1,163 @@
+[
+    {
+        "id": 48,
+        "line": 289,
+        "precode": "return this.headerMap == null ? null : new LinkedHashMap<String, Integer>(this.headerMap);",
+        "aftercode": "return this.headerMap == null ? null : null;",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 49,
+        "line": 290,
+        "precode": "}",
+        "aftercode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 51,
+        "line": 290,
+        "precode": "}",
+        "aftercode": "}",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 53,
+        "line": 291,
+        "precode": "",
+        "aftercode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 55,
+        "line": 358,
+        "precode": "final CSVRecord nextRecord = this.nextRecord();",
+        "aftercode": "final CSVRecord nextRecord = new CSVRecord();",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 57,
+        "line": 360,
+        "precode": "header = nextRecord.values();",
+        "aftercode": "header = new String[0];",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 82,
+        "line": 289,
+        "precode": "return this.headerMap == null ? null : new LinkedHashMap<String, Integer>(this.headerMap);",
+        "aftercode": "return new LinkedHashMap<String, Integer>(this.headerMap);",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 106,
+        "line": 29,
+        "precode": "import java.net.URL;",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.nio.charset.Charset;"
+    },
+    {
+        "id": 107,
+        "line": 30,
+        "precode": "import java.nio.charset.Charset;",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.ArrayList;"
+    },
+    {
+        "id": 108,
+        "line": 31,
+        "precode": "import java.util.ArrayList;",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.Arrays;"
+    },
+    {
+        "id": 109,
+        "line": 32,
+        "precode": "import java.util.Arrays;",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.Collection;"
+    },
+    {
+        "id": 110,
+        "line": 33,
+        "precode": "import java.util.Collection;",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.Iterator;"
+    },
+    {
+        "id": 111,
+        "line": 34,
+        "precode": "import java.util.Iterator;",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "import java.util.LinkedHashMap;"
+    },
+    {
+        "id": 112,
+        "line": 35,
+        "precode": "import java.util.LinkedHashMap;",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "// Mutation - Commenting out the import statement for LinkedHashMap"
+    },
+    {
+        "id": 113,
+        "line": 372,
+        "precode": " if (hdrMap.containsKey(header[i])) {",
+        "aftercode": " if (!hdrMap.containsKey(header[i])) {",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 114,
+        "line": 375,
+        "precode": " hdrMap.put(header[i], Integer.valueOf(i));",
+        "aftercode": " hdrMap.put(header.length, Integer.valueOf(i));",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 115,
+        "line": 375,
+        "precode": " hdrMap.put(header[i], Integer.valueOf(i));",
+        "aftercode": " hdrMap.put(header[i], Integer.valueOf(i+1));",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 116,
+        "line": 372,
+        "precode": " if (hdrMap.containsKey(header[i])) {",
+        "aftercode": " if (hdrMap.containsValue(i)) {",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 117,
+        "line": 373,
+        "precode": " throw new IllegalStateException(\"The header contains duplicate names: \" + Arrays.toString(header));",
+        "aftercode": " throw new IllegalStateException(\"The header does not contain the names: \" + Arrays.toString(header));",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 118,
+        "line": 375,
+        "precode": " hdrMap.put(header[i], Integer.valueOf(i));",
+        "aftercode": " hdrMap.put(Integer.valueOf(i), header[i]);",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 119,
+        "line": 375,
+        "precode": " hdrMap.put(header[i], Integer.valueOf(i));",
+        "aftercode": " hdrMap.put(header[i], null);",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 120,
+        "line": 375,
+        "precode": " hdrMap.put(header[i], Integer.valueOf(i));",
+        "aftercode": " hdrMap.remove(header[i]);",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    },
+    {
+        "id": 121,
+        "line": 375,
+        "precode": " hdrMap.put(header[i], Integer.valueOf(i));",
+        "aftercode": " hdrMap.computeIfAbsent(header[i], k -> Integer.valueOf(i));",
+        "filepath": "defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java"
+    }
+]

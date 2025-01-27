@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "line": 318,
+        "precode": "            while (iter.hasNext())",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "            while (iter.next())"
+    },
+    {
+        "id": 2,
+        "line": 320,
+        "precode": "                buff.append(iter.next());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "                buff.end(iter.next());"
+    },
+    {
+        "id": 3,
+        "line": 321,
+        "precode": "                buff.append(\", \");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "                buff.join(\", \");"
+    },
+    {
+        "id": 4,
+        "line": 324,
+        "precode": "            throw new MissingOptionException(buff.substring(0, buff.length() - 2));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "            throw new MissingOptionException(buff.ring(0, buff.length() - 2));"
+    },
+    {
+        "id": 11,
+        "line": 292,
+        "precode": "                cmd.addOption(opt);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "                cmd.add(opt);"
+    },
+    {
+        "id": 21,
+        "line": 46,
+        "precode": "        this.options = options;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "        this.options== options;"
+    },
+    {
+        "id": 22,
+        "line": 47,
+        "precode": "        this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "        this.requiredOptionsList= new ArrayList(options.getRequiredOptions());"
+    }
+]

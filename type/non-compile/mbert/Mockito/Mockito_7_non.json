@@ -1,0 +1,58 @@
+[
+    {
+        "id": 32,
+        "line": 77,
+        "precode": "            if (actualTypeArgument instanceof WildcardType) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_7_fixed/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java",
+        "aftercode": "            if (actualTypeArgument!=WildcardType) {"
+    },
+    {
+        "id": 33,
+        "line": 78,
+        "precode": "                contextualActualTypeParameters.put(typeParameter, boundsOf((WildcardType) actualTypeArgument));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_7_fixed/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java",
+        "aftercode": "                contextualActualTypeParameters.add(typeParameter, boundsOf((WildcardType) actualTypeArgument));"
+    },
+    {
+        "id": 34,
+        "line": 79,
+        "precode": "            } else if (typeParameter != actualTypeArgument) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_7_fixed/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java",
+        "aftercode": "            } else if (typeParameter==actualTypeArgument) {"
+    },
+    {
+        "id": 35,
+        "line": 80,
+        "precode": "                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_7_fixed/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java",
+        "aftercode": "                contextualActualTypeParameters.add(typeParameter, actualTypeArgument);"
+    },
+    {
+        "id": 169,
+        "line": 376,
+        "precode": "            for (Type type : typeVariable.getBounds()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_7_fixed/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java",
+        "aftercode": "            for (Type type : typeVariable.types()) {"
+    },
+    {
+        "id": 170,
+        "line": 377,
+        "precode": "                registerTypeVariablesOn(type);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_7_fixed/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java",
+        "aftercode": "            for (Type type : typeVariable.getBounds()) {read(type);"
+    },
+    {
+        "id": 171,
+        "line": 379,
+        "precode": "            registerTypeParametersOn(new TypeVariable[] { typeVariable });",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_7_fixed/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java",
+        "aftercode": "            }read(new TypeVariable[] { typeVariable });"
+    },
+    {
+        "id": 172,
+        "line": 380,
+        "precode": "            registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_7_fixed/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java",
+        "aftercode": "            registerTypeParametersOn(new TypeVariable[] { typeVariable });add(getActualTypeArgumentFor(typeVariable));"
+    }
+]

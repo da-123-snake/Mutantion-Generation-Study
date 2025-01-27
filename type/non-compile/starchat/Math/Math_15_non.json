@@ -1,0 +1,345 @@
+[
+    {
+        "id": 42,
+        "line": 7,
+        "precode": "/** Constant: {@value}. */",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "/** Constant: {@value}. */\nprivate static final double F_1_3 = 1d / 3.0;"
+    },
+    {
+        "id": 45,
+        "line": 7,
+        "precode": "/** Constant: {@value}. */",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "/** Constant: {@value}. */\nprivate static final double F_1_3 = 1d / 3.0000000000000001;"
+    },
+    {
+        "id": 47,
+        "line": 1602,
+        "precode": "if (x < 0) {",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= 0) {"
+    },
+    {
+        "id": 49,
+        "line": 1602,
+        "precode": "    if (y >= TWO_POWER_53 || y <= -TWO_POWER_53) {",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "    if (y < TWO_POWER_53 || y > -TWO_POWER_53) {"
+    },
+    {
+        "id": 50,
+        "line": 1602,
+        "precode": "        return pow(-x, y);",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "        return pow(x, y);"
+    },
+    {
+        "id": 51,
+        "line": 1602,
+        "precode": "    } else if (y == (long) y) {",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "    } else if (y!= (long) y) {"
+    },
+    {
+        "id": 53,
+        "line": 1602,
+        "precode": "        return ((long)y & 1) == 0? pow(-x, y) : -pow(-x, y);",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "        return ((long)y & 1) == 1? pow(-x, y) : -pow(-x, y);"
+    },
+    {
+        "id": 56,
+        "line": 16,
+        "precode": "return depth == 0;",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 57,
+        "line": 21,
+        "precode": "ArrayList r = new ArrayList();\n r.add(first);\n r.addAll(subset); to_add(r);",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 61,
+        "line": 450,
+        "precode": "if (x > 20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x > 20) {\n    if (x >= LOG_MAX_VALUE) {\n        // Avoid overflow (MATH-905).\n        final double t = exp(0.5 * x);\n        return (0.5 * t) * t;\n    } else {\n        return 0.5 * exp(x);\n    }\n}"
+    },
+    {
+        "id": 62,
+        "line": 450,
+        "precode": "if (x < -20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x < -20) {\n    if (x <= -LOG_MAX_VALUE) {\n        // Avoid overflow (MATH-905).\n        final double t = exp(-0.5 * x);\n        return (0.5 * t) * t;\n    } else {\n        return 0.5 * exp(-x);\n    }\n}"
+    },
+    {
+        "id": 63,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Double.isNaN(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 64,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Float.isNaN(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 65,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Integer.isNaN(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 66,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Long.isNaN(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 67,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isLetter(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 68,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isDigit(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 69,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isWhitespace(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 70,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isISOControl(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 71,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isUpperCase(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 72,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isLowerCase(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 73,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isTitleCase(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 74,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isSpaceChar(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 75,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isUnicodeIdentifierPart(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 76,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.isUnicodeIdentifierStart(x)) {\n    return x;\n}"
+    },
+    {
+        "id": 77,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.getType(x) == Character.OTHER_SYMBOL) {\n    return x;\n}"
+    },
+    {
+        "id": 78,
+        "line": 450,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (Character.UnicodeBlock.of(x) == UnicodeBlock.BASIC_LATIN) {\n    return x;\n}"
+    },
+    {
+        "id": 79,
+        "line": 575,
+        "precode": "if (x > 20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= LOG_MAX_VALUE) {\n  final double t = exp(0.5 * x);\n  return (0.5 * t) * t;\n}\nelse {\n  return 0.5 * exp(x);\n}\n"
+    },
+    {
+        "id": 80,
+        "line": 575,
+        "precode": "if (x < -20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x <= -LOG_MAX_VALUE) {\n  final double t = exp(-0.5 * x);\n  return (-0.5 * t) * t;\n}\nelse {\n  return -0.5 * exp(-x);\n}\n"
+    },
+    {
+        "id": 81,
+        "line": 575,
+        "precode": "if (x == 0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 82,
+        "line": 575,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 83,
+        "line": 575,
+        "precode": "if (x > 20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= LOG_MAX_VALUE) {\n  final double t = exp(0.5 * x);\n  return (0.5 * t) * t;\n}\n"
+    },
+    {
+        "id": 84,
+        "line": 575,
+        "precode": "if (x < -20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x <= -LOG_MAX_VALUE) {\n  final double t = exp(-0.5 * x);\n  return (-0.5 * t) * t;\n}\n"
+    },
+    {
+        "id": 85,
+        "line": 575,
+        "precode": "if (x == 0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 86,
+        "line": 575,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 87,
+        "line": 575,
+        "precode": "if (x > 20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= LOG_MAX_VALUE) {\n  final double t = exp(0.5 * x);\n  return (0.5 * t) * t;\n}\nelse {\n  return 0.5 * exp(x);\n}\n"
+    },
+    {
+        "id": 88,
+        "line": 575,
+        "precode": "if (x < -20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x <= -LOG_MAX_VALUE) {\n  final double t = exp(-0.5 * x);\n  return (-0.5 * t) * t;\n}\nelse {\n  return -0.5 * exp(-x);\n}\n"
+    },
+    {
+        "id": 89,
+        "line": 575,
+        "precode": "if (x == 0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 90,
+        "line": 575,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 91,
+        "line": 575,
+        "precode": "if (x > 20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= LOG_MAX_VALUE) {\n  final double t = exp(0.5 * x);\n  return (0.5 * t) * t;\n}\n"
+    },
+    {
+        "id": 92,
+        "line": 575,
+        "precode": "if (x < -20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x <= -LOG_MAX_VALUE) {\n  final double t = exp(-0.5 * x);\n  return (-0.5 * t) * t;\n}\n"
+    },
+    {
+        "id": 93,
+        "line": 575,
+        "precode": "if (x == 0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 94,
+        "line": 575,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 95,
+        "line": 575,
+        "precode": "if (x > 20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= LOG_MAX_VALUE) {\n  final double t = exp(0.5 * x);\n  return (0.5 * t) * t;\n}\nelse {\n  return 0.5 * exp(x);\n}\n"
+    },
+    {
+        "id": 96,
+        "line": 575,
+        "precode": "if (x < -20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x <= -LOG_MAX_VALUE) {\n  final double t = exp(-0.5 * x);\n  return (-0.5 * t) * t;\n}\nelse {\n  return -0.5 * exp(-x);\n}\n"
+    },
+    {
+        "id": 97,
+        "line": 575,
+        "precode": "if (x == 0) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 98,
+        "line": 575,
+        "precode": "if (x!= x) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return x;\n"
+    },
+    {
+        "id": 99,
+        "line": 575,
+        "precode": "if (x > 20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= LOG_MAX_VALUE) {\n  final double t = exp(0.5 * x);\n  return (0.5 * t) * t;\n}\n"
+    },
+    {
+        "id": 100,
+        "line": 575,
+        "precode": "if (x < -20) {\n",
+        "filepath": "defects4j_fixed/Math/Math_15_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x <= -LOG_MAX_VALUE) {\n  final double t = exp(-0.5 * x);\n  return (-0.5 * t) * t;\n}\n"
+    }
+]

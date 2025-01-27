@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1467,
+        "line": 75,
+        "precode": "String data = getData();",
+        "aftercode": "String data = getXmlData();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_86_fixed/src/main/java/org/jsoup/nodes/Comment.java"
+    },
+    {
+        "id": 1469,
+        "line": 77,
+        "precode": "XmlDeclaration decl = null;",
+        "aftercode": "XmlDeclaration decl = new XmlDeclaration();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_86_fixed/src/main/java/org/jsoup/nodes/Comment.java"
+    },
+    {
+        "id": 1470,
+        "line": 78,
+        "precode": "if (doc.children().size() > 0) {",
+        "aftercode": "if (doc.children().length() > 0) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_86_fixed/src/main/java/org/jsoup/nodes/Comment.java"
+    },
+    {
+        "id": 1472,
+        "line": 80,
+        "precode": "decl = new XmlDeclaration(NodeUtils.parser(doc).settings().normalizeTag(el.tagName()), data.startsWith(\"!\"));",
+        "aftercode": "decl = new XmlDeclaration(NodeUtils.parser(doc), data.startsWith(\"!\"));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_86_fixed/src/main/java/org/jsoup/nodes/Comment.java"
+    },
+    {
+        "id": 1473,
+        "line": 81,
+        "precode": "decl.attributes().addAll(el.attributes());",
+        "aftercode": "decl.attributes().addAll(el.getAttributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_86_fixed/src/main/java/org/jsoup/nodes/Comment.java"
+    }
+]

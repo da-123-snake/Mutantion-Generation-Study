@@ -1,0 +1,107 @@
+[
+    {
+        "id": 47,
+        "line": 783,
+        "precode": "              (!mayHaveSideEffects(cond) ||",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "              (!mayHaveSideEffects(cond)||(thenOp.isAssign() && thenOp.getFirstChild().isName()))) {"
+    },
+    {
+        "id": 49,
+        "line": 786,
+        "precode": "            n.removeChild(cond);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "            n.push(cond);"
+    },
+    {
+        "id": 50,
+        "line": 787,
+        "precode": "            Node assignName = thenOp.removeFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "            Node assignName = thenOp.next();"
+    },
+    {
+        "id": 363,
+        "line": 222,
+        "precode": "      Node value = callTarget.getNext();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "      Node value = callTarget.next();"
+    },
+    {
+        "id": 364,
+        "line": 223,
+        "precode": "      if (value != null && value.getNext() == null &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "      if (value!= null && value.getNext() == null&&NodeUtil.isImmutableValue(value)) {"
+    },
+    {
+        "id": 365,
+        "line": 224,
+        "precode": "          NodeUtil.isImmutableValue(value)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "          NodeUtil.empty(value)) {"
+    },
+    {
+        "id": 634,
+        "line": 520,
+        "precode": "    Node follow = ControlFlowAnalysis.computeFollowNode(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "    Node follow = ControlFlowAnalysis.follow(n);"
+    },
+    {
+        "id": 636,
+        "line": 525,
+        "precode": "    follow = skipFinallyNodes(follow);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "    follow|= skipFinallyNodes(follow);"
+    },
+    {
+        "id": 638,
+        "line": 528,
+        "precode": "      if (!isPure(exitExpr)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "      if (.isPure(exitExpr)) {"
+    },
+    {
+        "id": 639,
+        "line": 530,
+        "precode": "        return n;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "        returnnull;"
+    },
+    {
+        "id": 641,
+        "line": 536,
+        "precode": "      return n;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "      returnnull;"
+    },
+    {
+        "id": 643,
+        "line": 542,
+        "precode": "      n.detachFromParent();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "      n.break();"
+    },
+    {
+        "id": 644,
+        "line": 543,
+        "precode": "      reportCodeChange();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "      n.detachFromParent();break();"
+    },
+    {
+        "id": 645,
+        "line": 544,
+        "precode": "      return null;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "      returnn;"
+    },
+    {
+        "id": 646,
+        "line": 547,
+        "precode": "    return n;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_132_fixed/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java",
+        "aftercode": "    returnnull;"
+    }
+]

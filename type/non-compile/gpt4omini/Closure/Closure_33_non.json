@@ -1,0 +1,37 @@
+[
+    {
+        "id": 813,
+        "line": 571,
+        "precode": "for (String prop : constraintObj.getOwnPropertyNames()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_33_fixed/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java",
+        "aftercode": "for (String prop : constraintObj.getOwnPropertyNames().toArray()) {"
+    },
+    {
+        "id": 814,
+        "line": 572,
+        "precode": "JSType propType = constraintObj.getPropertyType(prop);",
+        "filepath": "defects4j_fixed/Closure/Closure_33_fixed/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java",
+        "aftercode": "JSType propType = constraintObj.getPropertyType(prop).getLeastSupertype();"
+    },
+    {
+        "id": 816,
+        "line": 574,
+        "precode": "typeToInfer = propType;",
+        "filepath": "defects4j_fixed/Closure/Closure_33_fixed/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java",
+        "aftercode": "typeToInfer = getNativeType(JSTypeNative.NUMBER_TYPE);"
+    },
+    {
+        "id": 817,
+        "line": 579,
+        "precode": "defineInferredProperty(prop, typeToInfer, null);",
+        "filepath": "defects4j_fixed/Closure/Closure_33_fixed/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java",
+        "aftercode": "defineInferredProperty(prop, typeToInfer, new PropertyInitializer());"
+    },
+    {
+        "id": 891,
+        "line": 385,
+        "precode": "break;",
+        "filepath": "defects4j_fixed/Closure/Closure_33_fixed/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java",
+        "aftercode": "return;"
+    }
+]

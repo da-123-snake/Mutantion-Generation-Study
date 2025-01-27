@@ -1,0 +1,44 @@
+[
+    {
+        "id": 380,
+        "line": 204,
+        "precode": "            lhs = lhs.getLastChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_58_fixed/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java",
+        "aftercode": "            lhs!= lhs.getLastChild();"
+    },
+    {
+        "id": 381,
+        "line": 206,
+        "precode": "          if (NodeUtil.isName(lhs)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_58_fixed/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java",
+        "aftercode": "          if (NodeUtil.null(lhs)) {"
+    },
+    {
+        "id": 382,
+        "line": 207,
+        "precode": "            addToSetIfLocal(lhs, kill);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_58_fixed/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java",
+        "aftercode": "          if (NodeUtil.isName(lhs)) {kill(lhs, kill);"
+    },
+    {
+        "id": 383,
+        "line": 208,
+        "precode": "            addToSetIfLocal(lhs, gen);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_58_fixed/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java",
+        "aftercode": "            addToSetIfLocal(lhs, kill);kill(lhs, gen);"
+    },
+    {
+        "id": 384,
+        "line": 210,
+        "precode": "            computeGenKill(lhs, gen, kill, conditional);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_58_fixed/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java",
+        "aftercode": "          } else {kill(lhs, gen, kill, conditional);"
+    },
+    {
+        "id": 385,
+        "line": 212,
+        "precode": "          computeGenKill(rhs, gen, kill, conditional);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_58_fixed/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java",
+        "aftercode": "          }kill(rhs, gen, kill, conditional);"
+    }
+]

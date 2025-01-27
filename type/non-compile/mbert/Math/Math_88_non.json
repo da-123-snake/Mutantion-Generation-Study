@@ -1,0 +1,51 @@
+[
+    {
+        "id": 89,
+        "line": 327,
+        "precode": "            getBasicRow(getNumObjectiveFunctions() + getOriginalNumDecisionVariables());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "        Integer basicRow =get(getNumObjectiveFunctions() + getOriginalNumDecisionVariables());"
+    },
+    {
+        "id": 97,
+        "line": 339,
+        "precode": "                    (basicRow == null ? 0 : getEntry(basicRow, getRhsOffset())) -",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "                    (basicRow == null? 0 : getEntry(basicRow, getRhsOffset()))+(restrictToNonNegative? 0 : mostNegative);"
+    },
+    {
+        "id": 99,
+        "line": 343,
+        "precode": "        return new RealPointValuePair(coefficients, f.getValue(coefficients));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "        return new RealPointValuePair(f, f.getValue(coefficients));"
+    },
+    {
+        "id": 109,
+        "line": 274,
+        "precode": "        for (int i = getNumObjectiveFunctions(); i < getHeight(); i++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "        for (int i =0(); i < getHeight(); i++) {"
+    },
+    {
+        "id": 110,
+        "line": 275,
+        "precode": "            if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "            if (BasicMathUtils.equals(getEntry(i, col), 0.0, epsilon)) {"
+    },
+    {
+        "id": 111,
+        "line": 276,
+        "precode": "                if (row == null) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "                if (row=null) {"
+    },
+    {
+        "id": 113,
+        "line": 279,
+        "precode": "                    return null;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_88_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "                    returnrow;"
+    }
+]

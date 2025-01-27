@@ -1,0 +1,44 @@
+[
+    {
+        "id": 399,
+        "line": 180,
+        "precode": "if (inlineAliasIfPossible(ref, namespace)) {",
+        "aftercode": "{\n        if (inlineAliasIfImpossible(ref, namespace)) {\n           break;\n        }\n      }",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java"
+    },
+    {
+        "id": 1679,
+        "line": 481,
+        "precode": "JSType type = n.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "JSType type = compiler.getJSType();"
+    },
+    {
+        "id": 1681,
+        "line": 482,
+        "precode": "if (type != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "if (type == 0) {"
+    },
+    {
+        "id": 1682,
+        "line": 482,
+        "precode": "if (type != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "if (type == undefined) {"
+    },
+    {
+        "id": 1689,
+        "line": 44,
+        "precode": "Node refNode = IR.name(propAlias);",
+        "aftercode": "Node refNode = IR.name(alias + propAlias);",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java"
+    },
+    {
+        "id": 1692,
+        "line": 74,
+        "precode": "if (value.isFunction()) {\n      checkForHosedThisReferences(value, value.getJSDocInfo(), p);\n}",
+        "aftercode": "if (value.isFunction()) {\n     checkForHosedThisReferences(value, null, p);\n}",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java"
+    }
+]

@@ -1,0 +1,93 @@
+[
+    {
+        "id": 264,
+        "line": 15,
+        "precode": "if (type.toObjectType() != null &&\n         type.toObjectType().getConstructor() != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (type.toObjectType() == null ||\n         type.toObjectType().getConstructor() == null) {"
+    },
+    {
+        "id": 266,
+        "line": 27,
+        "precode": "if (objectType.getConstructor() != null &&\n            objectType.getConstructor().isInterface()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (objectType.getConstructor() == null ||\n            !objectType.getConstructor().isInterface()) {"
+    },
+    {
+        "id": 268,
+        "line": 771,
+        "precode": "if (type.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (!type.isFunctionType()) {"
+    },
+    {
+        "id": 280,
+        "line": 68,
+        "precode": "return type.toString() + \".\" + propName;",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return propName;"
+    },
+    {
+        "id": 1241,
+        "line": 32,
+        "precode": "mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +\n          getReadableJSTypeName(owner, true),\n          rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "// Mutated: commented out the mismatch function call"
+    },
+    {
+        "id": 1242,
+        "line": 32,
+        "precode": "mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +\n          getReadableJSTypeName(owner, true),\n          rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return false; // Mutated: added return false statement after mismatch function call"
+    },
+    {
+        "id": 1243,
+        "line": 32,
+        "precode": "mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +\n          getReadableJSTypeName(owner, true),\n          rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +\n          getReadableJSTypeName(owner, true),\n          leftType, leftType); // Mutated: swapped rightType and leftType in mismatch function call"
+    },
+    {
+        "id": 1248,
+        "line": 15,
+        "precode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" + owner + \" failed\",\n          rightType, leftType);"
+    },
+    {
+        "id": 1249,
+        "line": 15,
+        "precode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      mismatch(t, n,\n          \"property assignment \" + propName + \" of \" + owner + \" failed\",\n          rightType, leftType);"
+    },
+    {
+        "id": 1250,
+        "line": 15,
+        "precode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" + owner + \" failed\",\n          leftType, rightType);"
+    },
+    {
+        "id": 1251,
+        "line": 15,
+        "precode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of the object \" + owner + \" failed\",\n          rightType, leftType);"
+    },
+    {
+        "id": 1252,
+        "line": 15,
+        "precode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" +",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "      mismatch(t, n,\n          \"assignment to property \" + propName + \" of \" + owner + \" failed\",\n          rightType, null);"
+    },
+    {
+        "id": 1259,
+        "line": 406,
+        "precode": "mismatch(t, n, msg, rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_117_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return true;\n"
+    }
+]

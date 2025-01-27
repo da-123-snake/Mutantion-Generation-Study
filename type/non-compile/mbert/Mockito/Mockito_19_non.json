@@ -1,0 +1,44 @@
+[
+    {
+        "id": 147,
+        "line": 112,
+        "precode": "        for (Iterator<Field> it = orderedInstanceFields.iterator(); it.hasNext(); ) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_19_fixed/src/org/mockito/internal/configuration/injection/PropertyAndSetterInjection.java",
+        "aftercode": "        for (Iterator<Field> it = orderedInstanceFields.iter(); it.hasNext(); ) {"
+    },
+    {
+        "id": 148,
+        "line": 113,
+        "precode": "            Field field = it.next();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_19_fixed/src/org/mockito/internal/configuration/injection/PropertyAndSetterInjection.java",
+        "aftercode": "            Field field = it.Next();"
+    },
+    {
+        "id": 149,
+        "line": 114,
+        "precode": "            Object injected = mockCandidateFilter.filterCandidate(mocks, field, orderedInstanceFields, instance).thenInject();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_19_fixed/src/org/mockito/internal/configuration/injection/PropertyAndSetterInjection.java",
+        "aftercode": "            Object injected = mockCandidateFilter.filterCandidate(mocks, field, orderedInstanceFields, instance).get();"
+    },
+    {
+        "id": 150,
+        "line": 115,
+        "precode": "            if (injected != null) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_19_fixed/src/org/mockito/internal/configuration/injection/PropertyAndSetterInjection.java",
+        "aftercode": "            if (injected==null) {"
+    },
+    {
+        "id": 151,
+        "line": 116,
+        "precode": "                injectionOccurred |= true;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_19_fixed/src/org/mockito/internal/configuration/injection/PropertyAndSetterInjection.java",
+        "aftercode": "                injectionOccurred||= true;"
+    },
+    {
+        "id": 152,
+        "line": 117,
+        "precode": "                mocks.remove(injected);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_19_fixed/src/org/mockito/internal/configuration/injection/PropertyAndSetterInjection.java",
+        "aftercode": "                mocks.add(injected);"
+    }
+]

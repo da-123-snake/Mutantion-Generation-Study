@@ -1,0 +1,44 @@
+[
+    {
+        "id": 674,
+        "line": 290,
+        "precode": "returnType = info.getReturnType().evaluate(scope, typeRegistry);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "returnType = typeRegistry.evaluate(info.getReturnType(), scope);"
+    },
+    {
+        "id": 686,
+        "line": 16,
+        "precode": "parameterType = info.getParameterType(argumentName).evaluate(scope, typeRegistry);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parameterType = typeRegistry.getNativeType(STRING_TYPE);"
+    },
+    {
+        "id": 687,
+        "line": 17,
+        "precode": "} else if (oldParameterType != null && oldParameterType.getJSType() != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "} else if (oldParameterType == null || oldParameterType.getJSType() == null) {"
+    },
+    {
+        "id": 688,
+        "line": 491,
+        "precode": "parameterType = oldParameterType.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parameterType = typeRegistry.getNativeType(BOOLEAN_TYPE);"
+    },
+    {
+        "id": 1347,
+        "line": 185,
+        "precode": "              typeRegistry.getNativeType(OBJECT_TYPE))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "              typeRegistry.getNativeType(FUNCTION_TYPE))) {"
+    },
+    {
+        "id": 1350,
+        "line": 184,
+        "precode": "if (!type.restrictByNotNullOrUndefined().isSubtype(",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (type.restrictByNotNullOrUndefined().isObject()) {"
+    }
+]

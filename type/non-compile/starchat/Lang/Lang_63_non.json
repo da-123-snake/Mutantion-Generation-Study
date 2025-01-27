@@ -1,0 +1,44 @@
+[
+    {
+        "id": 310,
+        "line": 427,
+        "precode": "static String format(Token[] tokens, int years, int months, int days, int hours, int minutes, int seconds, int milliseconds, boolean padWithZeros) {",
+        "filepath": "defects4j_fixed/Lang/Lang_63_fixed/src/java/org/apache/commons/lang/time/DurationFormatUtils.java",
+        "aftercode": "static String format(Token[] tokens, int years, int months, int days, int hours, int minutes, int seconds, int milliseconds, boolean padWithZeros) {\n\tStringBuffer buffer = new StringBuffer();\n\tboolean lastOutputSeconds = false;\n\tint sz = tokens.length;\n\tfor (int i = 0; i < sz; i++) {\n\t\tToken token = tokens[i];\n\t\tObject value = token.getValue();\n\t\tint count = token.getCount();\n\t\tif (value instanceof StringBuffer) {\n\t\t\tbuffer.append(value.toString());\n\t\t} else {\n\t\t\tif (value == y) {\n\t\t\t\tbuffer.append(padWithZeros? StringUtils.leftPad(Integer.toString(years), count, '0') : Integer.toString(years));\n\t\t\t\tlastOutputSeconds = false;\n\t\t\t} else if (value == M) {\n\t\t\t\tbuffer.append(padWithZeros? StringUtils.leftPad(Integer.toString(months), count, '0') : Integer.toString(months));\n\t\t\t\tlastOutputSeconds = false;\n\t\t\t} else if (value == d) {\n\t\t\t\tbuffer.append(padWithZeros? StringUtils.leftPad(Integer.toString(days), count, '0') : Integer.toString(days));\n\t\t\t\tlastOutputSeconds = false;\n\t\t\t} else if (value == H) {\n\t\t\t\tbuffer.append(padWithZeros? StringUtils.leftPad(Integer.toString(hours), count, '0') : Integer.toString(hours));\n\t\t\t\tlastOutputSeconds = false;\n\t\t\t} else if (value == m) {\n\t\t\t\tbuffer.append(padWithZeros? StringUtils.leftPad(Integer.toString(minutes), count, '0') : Integer.toString(minutes));\n\t\t\t\tlastOutputSeconds = false;\n\t\t\t} else if (value == s) {\n\t\t\t\tbuffer.append(padWithZeros? StringUtils.leftPad(Integer.toString(seconds), count, '0') : Integer.toString(seconds));\n\t\t\t\tlastOutputSeconds = true;\n\t\t\t} else if (value == S) {\n\t\t\t\tif (lastOutputSeconds) {\n\t\t\t\t\tmilliseconds += 1000;\n\t\t\t\t\tString str = padWithZeros? StringUtils.leftPad(Integer.toString(milliseconds), count, '0') : Integer.toString(milliseconds);\n\t\t\t\t\tbuffer.append(str.substring(1));\n\t\t\t\t} else {\n\t\t\t\t\tbuffer.append(padWithZeros? StringUtils.leftPad(Integer.toString(milliseconds), count, '0') : Integer.toString(milliseconds));\n\t\t\t\t}\n\t\t\t\tlastOutputSeconds = false;\n\t\t\t}\n\t\t}\n\t}\n\treturn buffer.toString();\n}"
+    },
+    {
+        "id": 311,
+        "line": 428,
+        "precode": "static final Object y = \"y\";",
+        "filepath": "defects4j_fixed/Lang/Lang_63_fixed/src/java/org/apache/commons/lang/time/DurationFormatUtils.java",
+        "aftercode": "static final Object y = \"y\";\nstatic final Object M = \"M\";\nstatic final Object d = \"d\";\nstatic final Object H = \"H\";\nstatic final Object m = \"m\";\nstatic final Object s = \"s\";\nstatic final Object S = \"S\";"
+    },
+    {
+        "id": 312,
+        "line": 429,
+        "precode": "static final Object M = \"M\";",
+        "filepath": "defects4j_fixed/Lang/Lang_63_fixed/src/java/org/apache/commons/lang/time/DurationFormatUtils.java",
+        "aftercode": "static final Object y = \"y\";\nstatic final Object M = \"M\";\nstatic final Object d = \"d\";\nstatic final Object H = \"H\";\nstatic final Object m = \"m\";\nstatic final Object s = \"s\";\nstatic final Object S = \"S\";"
+    },
+    {
+        "id": 313,
+        "line": 430,
+        "precode": "static final Object d = \"d\";",
+        "filepath": "defects4j_fixed/Lang/Lang_63_fixed/src/java/org/apache/commons/lang/time/DurationFormatUtils.java",
+        "aftercode": "static final Object y = \"y\";\nstatic final Object M = \"M\";\nstatic final Object d = \"d\";\nstatic final Object H = \"H\";\nstatic final Object m = \"m\";\nstatic final Object s = \"s\";\nstatic final Object S = \"S\";"
+    },
+    {
+        "id": 314,
+        "line": 431,
+        "precode": "static final Object H = \"H\";",
+        "filepath": "defects4j_fixed/Lang/Lang_63_fixed/src/java/org/apache/commons/lang/time/DurationFormatUtils.java",
+        "aftercode": "static final Object y = \"y\";\nstatic final Object M = \"M\";\nstatic final Object d = \"d\";\nstatic final Object H = \"H\";\nstatic final Object m = \"m\";\nstatic final Object s = \"s\";\nstatic final Object S = \"S\";"
+    },
+    {
+        "id": 315,
+        "line": 432,
+        "precode": "static final Object m = \"m\";",
+        "filepath": "defects4j_fixed/Lang/Lang_63_fixed/src/java/org/apache/commons/lang/time/DurationFormatUtils.java",
+        "aftercode": "static final Object y = \"y\";\nstatic final Object M = \"M\";\nstatic final Object d = \"d\";\nstatic final Object H = \"H\";\nstatic final Object m = \"m\";\nstatic final Object s = \"s\";\nstatic final Object S = \"S\";"
+    }
+]

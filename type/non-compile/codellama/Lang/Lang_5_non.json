@@ -1,0 +1,23 @@
+[
+    {
+        "id": 29,
+        "line": 89,
+        "precode": "if (str == null) {",
+        "aftercode": "if (str == null) { return null; }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_5_fixed/src/main/java/org/apache/commons/lang3/LocaleUtils.java"
+    },
+    {
+        "id": 31,
+        "line": 96,
+        "precode": "final char ch0 = str.charAt(0);",
+        "aftercode": "final char ch0 = str.charAt(0); if (ch0 == '_') { if (len < 3) { throw new IllegalArgumentException(\"Invalid locale format: \" + str); }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_5_fixed/src/main/java/org/apache/commons/lang3/LocaleUtils.java"
+    },
+    {
+        "id": 35,
+        "line": 122,
+        "precode": "return new Locale(str);",
+        "aftercode": "return new Locale(str); if (len < 2) { throw new IllegalArgumentException(\"Invalid locale format: \" + str); }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_5_fixed/src/main/java/org/apache/commons/lang3/LocaleUtils.java"
+    }
+]

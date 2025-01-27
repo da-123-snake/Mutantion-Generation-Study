@@ -1,0 +1,44 @@
+[
+    {
+        "id": 27,
+        "line": 447,
+        "precode": "                            DurationField rangeField = fieldType.getRangeDurationType().getField(iChronology);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "                            DurationField rangeField = fieldType.getRangeDurationType().field(iChronology);"
+    },
+    {
+        "id": 28,
+        "line": 448,
+        "precode": "                            DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "                            DurationField loopRangeField = loopType.getRangeDurationType().field(iChronology);"
+    },
+    {
+        "id": 86,
+        "line": 461,
+        "precode": "            System.arraycopy(iValues, i, newValues, i + 1, newValues.length - i - 1);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "            System.copy(iValues, i, newValues, i + 1, newValues.length - i - 1);"
+    },
+    {
+        "id": 87,
+        "line": 464,
+        "precode": "            Partial newPartial = new Partial(newTypes, newValues, iChronology);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "            Partial newPartial = new Partial(this, newValues, iChronology);"
+    },
+    {
+        "id": 88,
+        "line": 465,
+        "precode": "            iChronology.validate(newPartial, newValues);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "            iChronology.apply(newPartial, newValues);"
+    },
+    {
+        "id": 89,
+        "line": 466,
+        "precode": "            return newPartial;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "            returnthis;"
+    }
+]

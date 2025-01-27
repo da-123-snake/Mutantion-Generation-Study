@@ -1,0 +1,464 @@
+[
+    {
+        "id": 118,
+        "line": 121,
+        "precode": "doc.outputSettings().charset(charsetName);",
+        "aftercode": "doc.outputSettings().charset(foundCharset);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 582,
+        "line": 1,
+        "precode": "import org.jsoup.helper;",
+        "aftercode": "import org.jsoup.helpers;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 583,
+        "line": 5,
+        "precode": "import org.jsoup.parser.Parser;",
+        "aftercode": "import org.jsoup.parser.ParserUtil;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 584,
+        "line": 8,
+        "precode": "import java.nio.ByteBuffer;",
+        "aftercode": "import java.nio.Buffer;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 585,
+        "line": 9,
+        "precode": "import java.nio.charset.Charset;",
+        "aftercode": "import java.nio.charset.Encoding;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 586,
+        "line": 11,
+        "precode": "import java.util.regex.Matcher;",
+        "aftercode": "import java.util.regex.PatternMatcher;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 587,
+        "line": 12,
+        "precode": "import java.util.regex.Pattern;",
+        "aftercode": "import java.util.regex.PatternUtil;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 588,
+        "line": 13,
+        "precode": "import java.util.Locale;",
+        "aftercode": "import java.util.LocaleUtil;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 591,
+        "line": 11,
+        "precode": "            ",
+        "aftercode": "//            ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 592,
+        "line": 11,
+        "precode": "//            ",
+        "aftercode": "            ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 593,
+        "line": 12,
+        "precode": "            ",
+        "aftercode": "//            ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 594,
+        "line": 12,
+        "precode": "//            ",
+        "aftercode": "            ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 595,
+        "line": 13,
+        "precode": "            ",
+        "aftercode": "//            ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 604,
+        "line": 121,
+        "precode": "doc.outputSettings().charset(charsetName);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "doc.outputSettings().charset(foundCharset);"
+    },
+    {
+        "id": 617,
+        "line": 169,
+        "precode": "        Matcher m = charsetPattern.matcher(contentType);",
+        "aftercode": "        Matcher m = Charset.forName(charset).newEncoder();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 619,
+        "line": 171,
+        "precode": "            String charset = m.group(1).trim();",
+        "aftercode": "            String charset = m.replaceFirst(\"charset=\", \"\").trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 625,
+        "line": 167,
+        "precode": "static String getCharsetFromContentType(String contentType) {",
+        "aftercode": "static String retrieveCharset(String contentType) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 626,
+        "line": 174,
+        "precode": "            try {",
+        "aftercode": "            try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 627,
+        "line": 170,
+        "precode": "        if (m.find()) {",
+        "aftercode": "        if (m.dropWhile(Charset.isSupported).findAny().isPresent()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 628,
+        "line": 170,
+        "precode": "        if (m.find()) {",
+        "aftercode": "        if (m.stripped().find()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 629,
+        "line": 167,
+        "precode": "static String getCharsetFromContentType(String contentType) {",
+        "aftercode": "private static Charset extractCharset(String contentType) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 631,
+        "line": 167,
+        "precode": "static String getCharsetFromContentType(String contentType) {",
+        "aftercode": "public String parseCharset(String contentType) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 740,
+        "line": 25,
+        "precode": "                            byteData.rewind();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                            byteData.position(0);"
+    },
+    {
+        "id": 741,
+        "line": 34,
+        "precode": "                            doc = null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                            doc = parser.parseInput(docData, baseUri);"
+    },
+    {
+        "id": 742,
+        "line": 38,
+        "precode": "                            charsetName = foundCharset;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                            charsetName = \"UTF-16\";"
+    },
+    {
+        "id": 743,
+        "line": 39,
+        "precode": "                            byteData.rewind();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                            byteData.position(0);"
+    },
+    {
+        "id": 744,
+        "line": 44,
+        "precode": "                    if (foundCharset != null && foundCharset.length() != 0 && !foundCharset.equals(defaultCharset)) { // need to re-decode",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                    if (foundCharset != null && foundCharset.length() != 0 && foundCharset.equals(defaultCharset)) { // need to re-encode"
+    },
+    {
+        "id": 748,
+        "line": 109,
+        "precode": "        } else { // specified by content type header (or by user on file load)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "        } // specified by content type header (or by user on file load)"
+    },
+    {
+        "id": 749,
+        "line": 97,
+        "precode": "                } else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                } // end of charset detection"
+    },
+    {
+        "id": 753,
+        "line": 101,
+        "precode": "                doc.outputSettings().charset(charsetName);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                doc.outputSettings().charset(\"UTF-16\");"
+    },
+    {
+        "id": 754,
+        "line": 109,
+        "precode": "                return doc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "                return new Document(\"<html><head></head><body></body></html>\");"
+    },
+    {
+        "id": 755,
+        "line": 109,
+        "precode": "        } else { // specified by content type header (or by user on file load)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "    } // end of parseByteData method"
+    },
+    {
+        "id": 760,
+        "line": 138,
+        "precode": "int read;",
+        "aftercode": "int read2;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 761,
+        "line": 139,
+        "precode": "int remaining = maxSize;",
+        "aftercode": "int remaining2 = maxSize;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 762,
+        "line": 141,
+        "precode": "while (true) {",
+        "aftercode": "while (false) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 770,
+        "line": 123,
+        "precode": "return doc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "return doc.outputSettings().indentAmount(4);"
+    },
+    {
+        "id": 771,
+        "line": 123,
+        "precode": "return doc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "return doc.outputSettings().prettyPrint(true);"
+    },
+    {
+        "id": 773,
+        "line": 35,
+        "precode": "FileInputStream inStream = null;",
+        "aftercode": "InputStreamReader inStream = null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 774,
+        "line": 37,
+        "precode": "inStream = new FileInputStream(in);",
+        "aftercode": "inStream = new InputStreamReader(in);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 775,
+        "line": 38,
+        "precode": "ByteBuffer byteData = readToByteBuffer(inStream);",
+        "aftercode": "ByteBuffer byteData = readToByteBuffer(in);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 777,
+        "line": 40,
+        "precode": "} finally {",
+        "aftercode": "} // finally {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 779,
+        "line": 13,
+        "precode": "public static Document load(InputStream in, String charsetName, String baseUri) throws IOException {",
+        "aftercode": "private static Document load(InputStream in, String charsetName, String baseUri) throws IOException {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 780,
+        "line": 14,
+        "precode": "ByteBuffer byteData = readToByteBuffer(in);",
+        "aftercode": "ByteBuffer byteData = readToByteBuffer(inStream);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 781,
+        "line": 39,
+        "precode": "return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());",
+        "aftercode": "return parseByteData(byteData, charsetName, baseUri, Parser.parse());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 782,
+        "line": 44,
+        "precode": "}",
+        "aftercode": "//}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 784,
+        "line": 18,
+        "precode": " * Parses a Document from an input steam.",
+        "aftercode": " * Processes a Document from an input steam.",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 785,
+        "line": 19,
+        "precode": " * @param in input stream to parse. You will need to close it.",
+        "aftercode": " * @param in input stream to process. You will need to close it.",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 786,
+        "line": 20,
+        "precode": " * @param charsetName character set of input",
+        "aftercode": " * @param charsetName character set of the input",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 787,
+        "line": 21,
+        "precode": " * @param baseUri base URI of document, to resolve relative links against",
+        "aftercode": " * @param baseUri base URL of document, to resolve relative links against",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 788,
+        "line": 22,
+        "precode": " * @return Document",
+        "aftercode": " * @return ParsedDocument",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 789,
+        "line": 4,
+        "precode": "import org.jsoup.nodes.Element;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "import org.jsoup.nodes.Node;"
+    },
+    {
+        "id": 790,
+        "line": 8,
+        "precode": "java.nio.ByteBuffer;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "java.nio.file.Files;"
+    },
+    {
+        "id": 791,
+        "line": 11,
+        "precode": "import java.util.regex.Matcher;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "import java.util.regex.Pattern;"
+    },
+    {
+        "id": 792,
+        "line": 13,
+        "precode": "java.util.Locale;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "java.util.Calendar;"
+    },
+    {
+        "id": 793,
+        "line": 3,
+        "precode": "import org.jsoup.nodes.Document;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "import org.jsoup.select.Elements;"
+    },
+    {
+        "id": 794,
+        "line": 7,
+        "precode": "import java.io.*;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "import java.nio.file.*;"
+    },
+    {
+        "id": 797,
+        "line": 85,
+        "precode": "String foundCharset;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "//String foundCharset;"
+    },
+    {
+        "id": 1160,
+        "line": 153,
+        "precode": "ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+        "aftercode": "return ByteBuffer.wrap(buffer);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    },
+    {
+        "id": 1187,
+        "line": 10,
+        "precode": "import java.nio.charset.IllegalCharsetNameException;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "// import java.nio.charset.IllegalCharsetNameException;"
+    },
+    {
+        "id": 1188,
+        "line": 11,
+        "precode": "import java.util.regex.Matcher;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "// import java.util.regex.Matcher;"
+    },
+    {
+        "id": 1189,
+        "line": 13,
+        "precode": "import java.util.Locale;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "// import java.util.Locale;"
+    },
+    {
+        "id": 1190,
+        "line": 4,
+        "precode": "import org.jsoup.nodes.Element;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "// import org.jsoup.nodes.Element;"
+    },
+    {
+        "id": 1191,
+        "line": 5,
+        "precode": "import org.jsoup.parser.Parser;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "// import org.jsoup.parser.Parser;"
+    },
+    {
+        "id": 1192,
+        "line": 7,
+        "precode": "import java.io.*;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "// import java.io.*;"
+    },
+    {
+        "id": 1193,
+        "line": 1,
+        "precode": "package org.jsoup.helper;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java",
+        "aftercode": "// package org.jsoup.helper;"
+    },
+    {
+        "id": 1196,
+        "line": 137,
+        "precode": "ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);",
+        "aftercode": "OutputStream outStream = new ByteArrayOutputStream(bufferSize);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_36_fixed/src/main/java/org/jsoup/helper/DataUtil.java"
+    }
+]

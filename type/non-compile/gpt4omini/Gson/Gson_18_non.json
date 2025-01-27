@@ -1,0 +1,44 @@
+[
+    {
+        "id": 56,
+        "line": 352,
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "toResolve = resolveTypeVariable(contextRawType, context, typeVariable);"
+    },
+    {
+        "id": 58,
+        "line": 373,
+        "precode": "if (toResolve instanceof ParameterizedType) {",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (toResolve instanceof ParameterizedType && false) {"
+    },
+    {
+        "id": 77,
+        "line": 283,
+        "precode": "return resolve(context, contextRawType,",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "return resolve(context, contextRawType, contextRawType.getGenericSuperclass());"
+    },
+    {
+        "id": 81,
+        "line": 277,
+        "precode": "static Type getSupertype(Type context, Class<?> contextRawType, Class<?> supertype) {",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "static Type fetchSupertype(Type context, Class<?> contextRawType, Class<?> supertype) {"
+    },
+    {
+        "id": 83,
+        "line": 283,
+        "precode": "return resolve(context, contextRawType,",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "return resolve(context, contextRawType, supertype.getGenericInterfaces()[0]);"
+    },
+    {
+        "id": 84,
+        "line": 284,
+        "precode": "$Gson$Types.getGenericSupertype(context, contextRawType, supertype));",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "$Gson$Types.getGenericSupertype(context, contextRawType, supertype, true));"
+    }
+]

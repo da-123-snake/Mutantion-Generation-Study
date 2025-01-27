@@ -1,0 +1,142 @@
+[
+    {
+        "id": 49,
+        "line": 78,
+        "precode": "VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl.getInvocations(), invocationMatcher);",
+        "aftercode": "VerificationDataImpl data = new VerificationDataImpl(Collections.emptyList(), invocationMatcher);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java"
+    },
+    {
+        "id": 59,
+        "line": 17,
+        "precode": "import org.mockito.internal.stubbing.OngoingStubbingImpl;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.internal.stubbing.OngoingStubbing;"
+    },
+    {
+        "id": 60,
+        "line": 18,
+        "precode": "import org.mockito.internal.stubbing.StubbedInvocationMatcher;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.internal.stubbing.StubbedInvocation;"
+    },
+    {
+        "id": 61,
+        "line": 19,
+        "precode": "import org.mockito.internal.stubbing.VoidMethodStubbableImpl;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.internal.stubbing.VoidMethodStubbable;"
+    },
+    {
+        "id": 62,
+        "line": 20,
+        "precode": "import org.mockito.internal.verification.MockAwareVerificationMode;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.internal.verification.VerificationMode;"
+    },
+    {
+        "id": 63,
+        "line": 21,
+        "precode": "import org.mockito.internal.verification.VerificationDataImpl;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.verification.VerificationData;"
+    },
+    {
+        "id": 64,
+        "line": 22,
+        "precode": "import org.mockito.stubbing.Answer;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.stubbing.StubbingAnswer;"
+    },
+    {
+        "id": 65,
+        "line": 23,
+        "precode": "import org.mockito.stubbing.VoidMethodStubbable;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.stubbing.VoidMethod;"
+    },
+    {
+        "id": 70,
+        "line": 78,
+        "precode": "VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl.getInvocations(), invocationMatcher);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "VerificationDataImpl data = new VerificationDataImpl(invocationMatcher, invocationContainerImpl.getInvocations());"
+    },
+    {
+        "id": 71,
+        "line": 79,
+        "precode": "verificationMode.verify(data);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "data.verify(verificationMode);"
+    },
+    {
+        "id": 74,
+        "line": 84,
+        "precode": "invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher.withMatchers(null));"
+    },
+    {
+        "id": 75,
+        "line": 84,
+        "precode": "invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher.withMatchers(invocationMatcher.getMatchers()));"
+    },
+    {
+        "id": 76,
+        "line": 84,
+        "precode": "invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher.withMatchers(invocationMatcher.getMatchers().clone()));"
+    },
+    {
+        "id": 77,
+        "line": 20,
+        "precode": "import org.mockito.internal.verification.MockAwareVerificationMode;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.internal.verification.VerificationDataImpl;"
+    },
+    {
+        "id": 78,
+        "line": 21,
+        "precode": "import org.mockito.internal.verification.VerificationDataImpl;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.internal.verification.MockAwareVerificationMode;"
+    },
+    {
+        "id": 79,
+        "line": 22,
+        "precode": "import org.mockito.stubbing.Answer;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.stubbing.VoidMethodStubbable;"
+    },
+    {
+        "id": 80,
+        "line": 23,
+        "precode": "import org.mockito.stubbing.VoidMethodStubbable;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.stubbing.Answer;"
+    },
+    {
+        "id": 81,
+        "line": 24,
+        "precode": "import org.mockito.verification.VerificationMode;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.internal.verification.MockAwareVerificationMode;"
+    },
+    {
+        "id": 82,
+        "line": 20,
+        "precode": "import org.mockito.internal.verification.MockAwareVerificationMode;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.stubbing.Answer;"
+    },
+    {
+        "id": 83,
+        "line": 21,
+        "precode": "import org.mockito.internal.verification.VerificationDataImpl;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_14_fixed/src/org/mockito/internal/MockHandler.java",
+        "aftercode": "import org.mockito.verification.VerificationMode;"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 550,
+        "line": 725,
+        "precode": "Element adopter = new Element(formatEl.tag(), tb.getBaseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "Element adopter = new Element(tb.getBaseUri(), formatEl.tag());"
+    },
+    {
+        "id": 551,
+        "line": 726,
+        "precode": "adopter.attributes().addAll(formatEl.attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "adopter.attributes().clear();"
+    },
+    {
+        "id": 552,
+        "line": 726,
+        "precode": "adopter.attributes().addAll(formatEl.attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "adopter.attributes().removeAll();"
+    },
+    {
+        "id": 553,
+        "line": 726,
+        "precode": "adopter.attributes().addAll(formatEl.attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "adopter.attributes().mergeAttributes(formatEl.attributes());"
+    },
+    {
+        "id": 555,
+        "line": 728,
+        "precode": "for (Node childNode : childNodes) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "while (childNodes.length > 0) {"
+    },
+    {
+        "id": 556,
+        "line": 729,
+        "precode": "adopter.appendChild(childNode); // append will reparent. thus the clone to avoid concurrent mod.",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "adopter.removeChild(childNode);"
+    }
+]

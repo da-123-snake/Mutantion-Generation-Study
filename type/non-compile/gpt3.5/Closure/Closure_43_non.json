@@ -1,0 +1,548 @@
+[
+    {
+        "id": 409,
+        "line": 1288,
+        "precode": "return rValue.getJSType();",
+        "aftercode": "return rValue.getJSType().dereferencedType();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 412,
+        "line": 1294,
+        "precode": "Node firstClause = rValue.getFirstChild();",
+        "aftercode": "Node secondClause = rValue.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 413,
+        "line": 1294,
+        "precode": "Node firstClause = rValue.getFirstChild();",
+        "aftercode": "Node secondClause = rValue.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 416,
+        "line": 20,
+        "precode": "boolean namesMatch = firstClause.isName()\n                    && lValue.isName()\n                    && firstClause.getString().equals(lValue.getString());",
+        "aftercode": "boolean namesMatch = lValue.isName()\n                    && firstClause.getString().equals(lValue.getString());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 417,
+        "line": 20,
+        "precode": "boolean namesMatch = firstClause.isName()\n                    && lValue.isName()\n                    && firstClause.getString().equals(lValue.getString());",
+        "aftercode": "boolean namesMatch = firstClause.isName()\n                    && firstClause.getString().equals(lValue.getString());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 418,
+        "line": 22,
+        "precode": "if (namesMatch && secondClause.getJSType() != null\n                    && !secondClause.getJSType().isUnknownType()) {",
+        "aftercode": "if (secondClause.getJSType() != null\n                    && !secondClause.getJSType().isUnknownType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 419,
+        "line": 22,
+        "precode": "if (namesMatch && secondClause.getJSType() != null\n                    && !secondClause.getJSType().isUnknownType()) {",
+        "aftercode": "if (namesMatch && secondClause.getJSType() != null\n                    && secondClause.getJSType().isUnknownType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 799,
+        "line": 420,
+        "precode": "private List<Node> lentObjectLiterals = null;",
+        "aftercode": "// Type-less stubs.",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 800,
+        "line": 421,
+        "precode": "",
+        "aftercode": "private List<Node> lentObjectLiterals = null; // Type-less stubs.",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 801,
+        "line": 420,
+        "precode": "private List<Node> lentObjectLiterals = null;",
+        "aftercode": "private List<Node> lentObjectLiterals = new ArrayList<>();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 802,
+        "line": 421,
+        "precode": "",
+        "aftercode": "private List<Node> lentObjectLiterals = new ArrayList<>();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 803,
+        "line": 408,
+        "precode": "private final List<Node> nonExternFunctions = Lists.newArrayList();",
+        "aftercode": "// private final List<Node> nonExternFunctions = Lists.newArrayList();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java"
+    },
+    {
+        "id": 810,
+        "line": 94,
+        "precode": "if (info != null &&\n  info.getLendsName() != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (info != null && info.getLendsName().length() != 0 &&\n  info.getLendsName() != null) {"
+    },
+    {
+        "id": 815,
+        "line": 124,
+        "precode": "JSDocInfo info = NodeUtil.getBestJSDocInfo(objectLit);\nString lValueName = NodeUtil.getBestLValueName(lValue);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "//JSDocInfo info = NodeUtil.getBestJSDocInfo(objectLit);\n//String lValueName = NodeUtil.getBestLValueName(lValue);"
+    },
+    {
+        "id": 818,
+        "line": 645,
+        "precode": "setDeferredType(objectLit, type);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "setDeferredType(objectLit, type); time++"
+    },
+    {
+        "id": 819,
+        "line": 38,
+        "precode": "if (n.isFunction() ||\n          n.isScript()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (n.isFunction()) {"
+    },
+    {
+        "id": 820,
+        "line": 41,
+        "precode": "boolean descend = parent == null || !parent.isFunction() ||\n      n == parent.getFirstChild() || parent == scope.getRootNode();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "boolean descend = parent == null || !parent.isFunction() || n == parent.getFirstChild();"
+    },
+    {
+        "id": 822,
+        "line": 63,
+        "precode": "if (n.isQualifiedName()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (n.isQualifiedName() && !n.isGetProp()) {"
+    },
+    {
+        "id": 823,
+        "line": 77,
+        "precode": "if (parent.isExprResult() &&\n          n.isQualifiedName()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (parent.isExprResult() && n.isQualifiedName() && !n.isGetProp()) {"
+    },
+    {
+        "id": 825,
+        "line": 95,
+        "precode": "JSType type = null;\n  JSDocInfo info = objectLit.getJSDocInfo();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "JSType type = null;\n  JSDocInfo info = NodeUtil.getBestJSDocInfo(objectLit);"
+    },
+    {
+        "id": 827,
+        "line": 99,
+        "precode": "if (info != null &&\n        info.hasEnumParameterType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (info != null && info.hasEnumParameterType() && !info.getLendsName() != null) {"
+    },
+    {
+        "id": 828,
+        "line": 645,
+        "precode": "setDeferredType(objectLit, type);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "setDeferredType(objectLit, type.cast());"
+    },
+    {
+        "id": 829,
+        "line": 642,
+        "precode": "type = typeRegistry.createAnonymousObjectType();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "type = typeRegistry.createAnonymousStringType();"
+    },
+    {
+        "id": 830,
+        "line": 501,
+        "precode": "attachLiteralTypes(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "attachLiteralTypes(t, n, parent);"
+    },
+    {
+        "id": 831,
+        "line": 144,
+        "precode": "case Token.REGEXP:\n  n.setJSType(getNativeType(REGEXP_TYPE));\n  break;",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "case Token.REGEXP:\n  n.setJSType(getNativeType(REGEXP_TYPE));\n  n = null;\n  break;"
+    },
+    {
+        "id": 833,
+        "line": 171,
+        "precode": "if (n.getParent() != null && NodeUtil.isStatement(n) &&\n      lentObjectLiterals != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (n.getParent() != null && NodeUtil.isStatement(n) &&\n      lentObjectLiterals != null && !NodeUtil.isNewLabelNode(n)) {"
+    },
+    {
+        "id": 904,
+        "line": 1493,
+        "precode": "ObjectType qVarType = ObjectType.cast(qVar.getType());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "ObjectType qVarType = ObjectType.cast(rhsValue.getType());"
+    },
+    {
+        "id": 906,
+        "line": 41,
+        "precode": "stubDeclarations.add(new StubDeclaration(n, t.getInput() != null && t.getInput().isExtern(), ownerName));",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "stubDeclarations.add(new StubDeclaration(n, t.getInput() != null && t.getInput().isExtern(), qName));"
+    },
+    {
+        "id": 907,
+        "line": 57,
+        "precode": "if ((!ownerType.hasOwnProperty(propName) || ownerType.isPropertyTypeInferred(propName)) && ((isExtern && !ownerType.isNativeObjectType()) || !ownerType.isInstanceType())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if ((!ownerType.hasOwnProperty(propName) || !ownerType.isPropertyTypeInferred(propName)) && ((isExtern && !ownerType.isNativeObjectType()) || !ownerType.isInstanceType())) {"
+    },
+    {
+        "id": 908,
+        "line": 67,
+        "precode": "boolean inferred = isQualifiedNameInferred(qName, n, info, rhsValue, valueType);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "boolean inferred = isOwnerNameInferred(ownerName, rhsValue, valueType);"
+    },
+    {
+        "id": 910,
+        "line": 1543,
+        "precode": "defineSlot(n, parent, valueType, inferred);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "defineSlot(ownerName, parent, valueType, inferred);"
+    },
+    {
+        "id": 912,
+        "line": 1549,
+        "precode": "JSType ownerTypeOfThis = ownerType.getTypeOfThis();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "JSType ownerTypeOfThis = ownerType.getTypeOfParameter(0);"
+    },
+    {
+        "id": 914,
+        "line": 1521,
+        "precode": "return;",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 915,
+        "line": 118,
+        "precode": "typeRegistry.resetImplicitPrototype(rhsValue.getJSType(), qVarType.getImplicitPrototype());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "typeRegistry.resetImplicitPrototype(ownerName.getJSType(), qVarType.getImplicitPrototype());"
+    },
+    {
+        "id": 916,
+        "line": 1508,
+        "precode": "scope.undeclare(qVar);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "scope.undeclare(ownerName);"
+    },
+    {
+        "id": 1018,
+        "line": 16,
+        "precode": "codingConvention.applyDelegateRelationship(delegateSuperObject, delegateBaseObject, delegatorObject, delegateProxy, findDelegate);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "codingConvention.applyDelegateRelationship(delegateSuperObject, delegateBaseObject, delegatorObject, delegateProxy, null);"
+    },
+    {
+        "id": 1020,
+        "line": 1441,
+        "precode": "",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "FunctionType delegateSuperCtor = delegateSuperObject.getConstructor();"
+    },
+    {
+        "id": 1021,
+        "line": 19,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "return delegateProxy;"
+    },
+    {
+        "id": 1025,
+        "line": 16,
+        "precode": "codingConvention.applyDelegateRelationship(delegateSuperObject, delegateBaseObject, delegatorObject, delegateProxy, findDelegate);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "codingConvention.applyDelegateRelationship(delegateSuperObject, delegateBaseObject, delegatorObject, null, findDelegate);"
+    },
+    {
+        "id": 1027,
+        "line": 383,
+        "precode": "registry.identifyNonNullableName(nameNode.getQualifiedName());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "registry.identifyNullableName(nameNode.getQualifiedName());"
+    },
+    {
+        "id": 1028,
+        "line": 383,
+        "precode": "registry.identifyNonNullableName(nameNode.getQualifiedName());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "registry.identifyNullableName(nameNode.getQualifiedName());"
+    },
+    {
+        "id": 1029,
+        "line": 378,
+        "precode": "nameNode.isQualifiedName()",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "!nameNode.isQualifiedName()"
+    },
+    {
+        "id": 1031,
+        "line": 383,
+        "precode": "registry.identifyNonNullableName(nameNode.getQualifiedName());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "registry.identifyNullableName(nameNode.getQualifiedName());"
+    },
+    {
+        "id": 1033,
+        "line": 42,
+        "precode": "identifyNameNode(firstChild.getFirstChild(), firstChild.getLastChild(), firstChild.getJSDocInfo());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "identifyNameNode(firstChild, null, firstChild.getJSDocInfo());"
+    },
+    {
+        "id": 1034,
+        "line": 42,
+        "precode": "identifyNameNode(firstChild, null, firstChild.getJSDocInfo());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "identifyNameNode(firstChild.getFirstChild(), firstChild.getLastChild(), firstChild.getJSDocInfo());"
+    },
+    {
+        "id": 1035,
+        "line": 396,
+        "precode": "",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 1036,
+        "line": 44,
+        "precode": "return;",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1037,
+        "line": 44,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1038,
+        "line": 44,
+        "precode": "return true;",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 1039,
+        "line": 396,
+        "precode": "",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "boolean isQualifiedName = nameNode.isQualifiedName();"
+    },
+    {
+        "id": 1040,
+        "line": 46,
+        "precode": "boolean isQualifiedName = nameNode.isQualifiedName();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "boolean isNotQualifiedName = !nameNode.isQualifiedName();"
+    },
+    {
+        "id": 1041,
+        "line": 396,
+        "precode": "",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "boolean isInfoNull = (info == null);"
+    },
+    {
+        "id": 1042,
+        "line": 47,
+        "precode": "boolean isInfoNull = (info == null);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "boolean isInfoNotNull = (info != null);"
+    },
+    {
+        "id": 1044,
+        "line": 49,
+        "precode": "if (!info.hasEnumParameterType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (info.hasEnumParameterType()) {"
+    },
+    {
+        "id": 1045,
+        "line": 383,
+        "precode": "registry.identifyNonNullableName(nameNode.getQualifiedName());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "registry.removeNonNullableName(nameNode.getQualifiedName());"
+    },
+    {
+        "id": 1046,
+        "line": 50,
+        "precode": "registry.removeNonNullableName(nameNode.getQualifiedName());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "registry.identifyNonNullableName(nameNode.getQualifiedName());"
+    },
+    {
+        "id": 1047,
+        "line": 382,
+        "precode": "if (info.hasTypedefType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (!info.hasTypedefType()) {"
+    },
+    {
+        "id": 1048,
+        "line": 52,
+        "precode": "if (!info.hasTypedefType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "if (info.hasTypedefType()) {"
+    },
+    {
+        "id": 1049,
+        "line": 383,
+        "precode": "registry.identifyNonNullableName(nameNode.getQualifiedName());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "registry.removeNonNullableName(nameNode.getQualifiedName());"
+    },
+    {
+        "id": 1050,
+        "line": 53,
+        "precode": "registry.removeNonNullableName(nameNode.getQualifiedName());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "registry.identifyNonNullableName(nameNode.getQualifiedName());"
+    },
+    {
+        "id": 1229,
+        "line": 1742,
+        "precode": "private GlobalScopeBuilder(Scope scope) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1230,
+        "line": 1742,
+        "precode": "private GlobalScopeBuilder(Scope scope) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1231,
+        "line": 1742,
+        "precode": "private GlobalScopeBuilder(Scope scope) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1232,
+        "line": 1742,
+        "precode": "private GlobalScopeBuilder(Scope scope) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1233,
+        "line": 1742,
+        "precode": "private GlobalScopeBuilder(Scope scope) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1234,
+        "line": 1742,
+        "precode": "private GlobalScopeBuilder(Scope scope) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1235,
+        "line": 1742,
+        "precode": "private GlobalScopeBuilder(Scope scope) {",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1639,
+        "line": 18,
+        "precode": "overriddenPropType = findOverriddenFunction(ownerType, propName);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "overriddenPropType = findOverriddenProp(ownerType, propName);"
+    },
+    {
+        "id": 1641,
+        "line": 897,
+        "precode": "ownerVar = scope.getVar(ownerName);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "ownerVar = scope.findVar(ownerName);"
+    },
+    {
+        "id": 1644,
+        "line": 929,
+        "precode": "builder.inferThisType(info, ownerNode.getJSType());",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "builder.inferThisType(info, ownerNode.getType());"
+    },
+    {
+        "id": 1645,
+        "line": 39,
+        "precode": "functionType = builder.inferParameterTypes(parametersNode, info).buildAndRegister();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "functionType = builder.inferParameterTypes(parametersNode).build();"
+    },
+    {
+        "id": 1646,
+        "line": 885,
+        "precode": "functionType.setJSDocInfo(info);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "functionType.setJSDoc(info);"
+    },
+    {
+        "id": 1647,
+        "line": 923,
+        "precode": "boolean searchedForThisType = false;",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "boolean foundThisType = false;"
+    },
+    {
+        "id": 1648,
+        "line": 930,
+        "precode": "searchedForThisType = true;",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "foundThisType = true;"
+    },
+    {
+        "id": 1649,
+        "line": 934,
+        "precode": "builder.inferThisType(info);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "builder.inferThisType();"
+    },
+    {
+        "id": 1650,
+        "line": 918,
+        "precode": ".inferReturnType(info)",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ".inferReturnType()"
+    },
+    {
+        "id": 1651,
+        "line": 919,
+        "precode": ".inferInheritance(info);",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": ".inferInheritance()"
+    },
+    {
+        "id": 1652,
+        "line": 110,
+        "precode": "functionType = builder.inferParameterTypes(parametersNode, info).buildAndRegister();",
+        "filepath": "defects4j_fixed/Closure/Closure_43_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "functionType = builder.inferParameterTypes(parametersNode).build();"
+    }
+]

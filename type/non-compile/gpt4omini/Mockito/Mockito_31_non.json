@@ -1,0 +1,93 @@
+[
+    {
+        "id": 285,
+        "line": 7,
+        "precode": "import java.io.Serializable;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "import java.lang.Serializable;"
+    },
+    {
+        "id": 286,
+        "line": 8,
+        "precode": "import java.lang.reflect.Method;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "import java.reflect.Method;"
+    },
+    {
+        "id": 287,
+        "line": 9,
+        "precode": "import java.util.Arrays;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "import java.util.ArrayList;"
+    },
+    {
+        "id": 288,
+        "line": 11,
+        "precode": "import org.mockito.Mockito;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "import org.mockito.MockitoUtil;"
+    },
+    {
+        "id": 289,
+        "line": 12,
+        "precode": "import org.mockito.cglib.proxy.MethodInterceptor;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "import org.mockito.cglib.proxy.MethodInterceptorImpl;"
+    },
+    {
+        "id": 290,
+        "line": 15,
+        "precode": "import org.mockito.internal.creation.jmock.ClassImposterizer;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "import org.mockito.internal.creation.jmock.ClassImposterization;"
+    },
+    {
+        "id": 291,
+        "line": 16,
+        "precode": "import org.mockito.internal.debugging.Location;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "import org.mockito.internal.debugging.DebugLocation;"
+    },
+    {
+        "id": 293,
+        "line": 7,
+        "precode": "return invocation.getMethod().getName() + \"(\" + args.substring(1, args.length() - 1) + \")\";",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "return invocation.getMethod().getName() + \"(\" + args + \")\";"
+    },
+    {
+        "id": 294,
+        "line": 7,
+        "precode": "return invocation.getMethod().getName() + \"(\" + args.substring(1, args.length() - 1) + \")\";",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "return \"Method: \" + invocation.getMethod().getName() + \" with args: \" + args.substring(1, args.length() - 1) + \" call.\";"
+    },
+    {
+        "id": 295,
+        "line": 7,
+        "precode": "return invocation.getMethod().getName() + \"(\" + args.substring(1, args.length() - 1) + \")\";",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "return invocation.getMethod().getName() + \" called with arguments: \" + args + \";\";"
+    },
+    {
+        "id": 297,
+        "line": 61,
+        "precode": "String args = Arrays.toString(invocation.getArguments());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "String args = Stream.of(invocation.getArguments()).map(Object::toString).collect(Collectors.joining(\", \"));"
+    },
+    {
+        "id": 298,
+        "line": 7,
+        "precode": "return invocation.getMethod().getName() + \"(\" + args.substring(1, args.length() - 1) + \")\";",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "return invocation.getMethod().getName() + \"(\" + args.substring(0, args.length() - 2) + \")\";"
+    },
+    {
+        "id": 299,
+        "line": 61,
+        "precode": "String args = Arrays.toString(invocation.getArguments());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_31_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java",
+        "aftercode": "String args = String.join(\", \", Arrays.stream(invocation.getArguments()).map(Object::toString).toArray(String[]::new));"
+    }
+]

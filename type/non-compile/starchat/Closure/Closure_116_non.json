@@ -1,0 +1,233 @@
+[
+    {
+        "id": 185,
+        "line": 762,
+        "precode": "    if (!block.hasChildren()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    if (block.hasChildren() && block.getChildCount() == 2) {"
+    },
+    {
+        "id": 186,
+        "line": 762,
+        "precode": "      return CanInlineResult.NO;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      return CanInlineResult.YES;"
+    },
+    {
+        "id": 187,
+        "line": 762,
+        "precode": "      Node stmt = block.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      Node stmt = block.getLastChild();"
+    },
+    {
+        "id": 188,
+        "line": 762,
+        "precode": "        if (stmt.isReturn()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "        if (stmt.isReturn() && stmt.getFirstChild().isIf()) {"
+    },
+    {
+        "id": 189,
+        "line": 762,
+        "precode": "          hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "          hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild().getLastChild(), compiler);"
+    },
+    {
+        "id": 190,
+        "line": 762,
+        "precode": "cArg = cArg.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "cArg = cArg.getPrevious();"
+    },
+    {
+        "id": 191,
+        "line": 762,
+        "precode": "if (!NodeUtil.isFunctionObjectApply(callNode)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.isFunctionObjectApply(callNode)) {"
+    },
+    {
+        "id": 192,
+        "line": 762,
+        "precode": "if (cArg == null ||!cArg.isThis()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (cArg == null || cArg.isThis()) {"
+    },
+    {
+        "id": 193,
+        "line": 762,
+        "precode": "if (NodeUtil.mayHaveSideEffects(cArg, compiler)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (!NodeUtil.mayHaveSideEffects(cArg, compiler)) {"
+    },
+    {
+        "id": 194,
+        "line": 762,
+        "precode": "if (NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (!NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler)) {"
+    },
+    {
+        "id": 195,
+        "line": 762,
+        "precode": "if (hasSideEffects && NodeUtil.canBeSideEffected(cArg)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (hasSideEffects &&!NodeUtil.canBeSideEffected(cArg)) {"
+    },
+    {
+        "id": 197,
+        "line": 762,
+        "precode": "    if (!block.hasChildren()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    if (block.hasChildren()) {"
+    },
+    {
+        "id": 198,
+        "line": 762,
+        "precode": "      return CanInlineResult.NO;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      return CanInlineResult.YES;"
+    },
+    {
+        "id": 199,
+        "line": 762,
+        "precode": "    if (!block.hasOneChild()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    if (block.hasOneChild()) {"
+    },
+    {
+        "id": 200,
+        "line": 762,
+        "precode": "      return CanInlineResult.NO;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      return CanInlineResult.YES;"
+    },
+    {
+        "id": 201,
+        "line": 762,
+        "precode": "    Node stmt = block.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    Node stmt = block.getLastChild();"
+    },
+    {
+        "id": 202,
+        "line": 762,
+        "precode": "      if (!stmt.isReturn()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      if (stmt.isReturn()) {"
+    },
+    {
+        "id": 203,
+        "line": 762,
+        "precode": "        return CanInlineResult.NO;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "        return CanInlineResult.YES;"
+    },
+    {
+        "id": 204,
+        "line": 762,
+        "precode": "      if (!stmt.hasOneChild()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      if (stmt.hasOneChild()) {"
+    },
+    {
+        "id": 205,
+        "line": 762,
+        "precode": "        return CanInlineResult.NO;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "        return CanInlineResult.YES;"
+    },
+    {
+        "id": 206,
+        "line": 762,
+        "precode": "        Node retNode = stmt.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "        Node retNode = stmt.getLastChild();"
+    },
+    {
+        "id": 207,
+        "line": 762,
+        "precode": "          if (!NodeUtil.mayHaveSideEffects(retNode, compiler)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "          if (NodeUtil.mayHaveSideEffects(retNode, compiler)) {"
+    },
+    {
+        "id": 208,
+        "line": 762,
+        "precode": "            hasSideEffects = true;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "            hasSideEffects = false;"
+    },
+    {
+        "id": 209,
+        "line": 762,
+        "precode": "          }",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "          else {"
+    },
+    {
+        "id": 210,
+        "line": 762,
+        "precode": "            hasSideEffects = false;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "            hasSideEffects = true;"
+    },
+    {
+        "id": 211,
+        "line": 762,
+        "precode": "          }",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "          } else {"
+    },
+    {
+        "id": 212,
+        "line": 762,
+        "precode": "if (!NodeUtil.isFunctionObjectApply(callNode)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 214,
+        "line": 762,
+        "precode": "  Node fnParam = NodeUtil.getFunctionParameters(fnNode).getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "  Node fnParam = NodeUtil.getFunctionParameters(fnNode).getLastChild();"
+    },
+    {
+        "id": 216,
+        "line": 762,
+        "precode": "    if (fnParam!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    if (true) {"
+    },
+    {
+        "id": 217,
+        "line": 762,
+        "precode": "      if (cArg!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      if (true) {"
+    },
+    {
+        "id": 218,
+        "line": 762,
+        "precode": "        if (NodeUtil.mayHaveSideEffects(cArg, compiler)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "        if (true) {"
+    },
+    {
+        "id": 219,
+        "line": 762,
+        "precode": "          return CanInlineResult.NO;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "          return CanInlineResult.YES;"
+    },
+    {
+        "id": 220,
+        "line": 762,
+        "precode": "  return CanInlineResult.YES;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "  return CanInlineResult.NO;"
+    }
+]

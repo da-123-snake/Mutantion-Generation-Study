@@ -1,0 +1,135 @@
+[
+    {
+        "id": 601,
+        "line": 166,
+        "precode": "return doc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "return new Document();"
+    },
+    {
+        "id": 1080,
+        "line": 367,
+        "precode": " } else if (\"td\".equals(name) || \"th\".... ) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": " } else if (\"td\".equals(name) && !last) {"
+    },
+    {
+        "id": 1085,
+        "line": 42,
+        "precode": "private boolean baseUriSetFromDoc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private int baseUriSetFromDoc;"
+    },
+    {
+        "id": 1087,
+        "line": 44,
+        "precode": "private FormElement formElement; // the current form element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private FormElement activeFormElement; // the current form element"
+    },
+    {
+        "id": 1091,
+        "line": 69,
+        "precode": "formElement = null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "formElement = new FormElement(Tag.valueOf(\"form\"), baseUri, new Attributes());"
+    },
+    {
+        "id": 1093,
+        "line": 71,
+        "precode": "formattingElements = new ArrayList<>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "formattingElements = new LinkedList<>();"
+    },
+    {
+        "id": 1094,
+        "line": 540,
+        "precode": "pendingTableCharacters = new ArrayList<>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "pendingTableCharacters = new Vector<>();"
+    },
+    {
+        "id": 1095,
+        "line": 73,
+        "precode": "emptyEnd = new Token.EndTag();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "emptyEnd = new Token.StartTag();"
+    },
+    {
+        "id": 1097,
+        "line": 116,
+        "precode": "if (parent instanceof FormElement) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (!(parent instanceof DivElement)) {"
+    },
+    {
+        "id": 1101,
+        "line": 115,
+        "precode": "for (Element parent: contextChain) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "System.out.println(parent.nodeName());"
+    },
+    {
+        "id": 1130,
+        "line": 39,
+        "precode": "private HtmlTreeBuilderState state; // the current state",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private State state; // the current state"
+    },
+    {
+        "id": 1131,
+        "line": 40,
+        "precode": "private HtmlTreeBuilderState originalState; // original / marked state",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private HtmlTreeBuilderState previousState; // original / marked state"
+    },
+    {
+        "id": 1132,
+        "line": 42,
+        "precode": "private boolean baseUriSetFromDoc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private boolean isBaseUriSet;"
+    },
+    {
+        "id": 1133,
+        "line": 43,
+        "precode": "private Element headElement; // the current head element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private HTMLElement headElement; // the current head element"
+    },
+    {
+        "id": 1134,
+        "line": 44,
+        "precode": "private FormElement formElement; // the current form element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private InputElement formElement; // the current form element"
+    },
+    {
+        "id": 1135,
+        "line": 45,
+        "precode": "private Element contextElement; // fragment parse context -- could be null even if fragment parsing",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private BaseElement contextElement; // fragment parse context -- could be null"
+    },
+    {
+        "id": 1141,
+        "line": 512,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "return !StringUtil.in(elName, extraTypes);"
+    },
+    {
+        "id": 1145,
+        "line": 132,
+        "precode": "if (StringUtil.in(elName, baseTypes)) return false;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (!StringUtil.in(elName, baseTypes) && elName.equals(\"baseType\")) return true;"
+    },
+    {
+        "id": 1149,
+        "line": 465,
+        "precode": "if (StringUtil.in(elName, targetNames))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (StringUtil.in(baseTypes, elName))"
+    }
+]

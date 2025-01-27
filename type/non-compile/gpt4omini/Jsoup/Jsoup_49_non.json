@@ -1,0 +1,58 @@
+[
+    {
+        "id": 61,
+        "line": 99,
+        "precode": "public Node attr(String attributeKey, String attributeValue) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "public Node attribute(String key, String value) {"
+    },
+    {
+        "id": 62,
+        "line": 100,
+        "precode": "attributes.put(attributeKey, attributeValue);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "attributes.merge(attributeKey, attributeValue, (oldValue, newValue) -> newValue);"
+    },
+    {
+        "id": 1301,
+        "line": 334,
+        "precode": "Validate.notEmpty(html);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "Validate.isNotBlank(html);"
+    },
+    {
+        "id": 1304,
+        "line": 343,
+        "precode": "Element deepest = getDeepChild(wrap);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "Element deepest = wrap.childrenSize() > 0 ? wrap.child(0) : wrap;"
+    },
+    {
+        "id": 1307,
+        "line": 351,
+        "precode": "remainder.parentNode.removeChild(remainder);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "remainder.parentNode.detachChild(remainder);"
+    },
+    {
+        "id": 1308,
+        "line": 352,
+        "precode": "wrap.appendChild(remainder);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "wrap.addChild(remainder);"
+    },
+    {
+        "id": 1310,
+        "line": 377,
+        "precode": "parentNode.addChildren(siblingIndex, this.childNodesAsArray());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "parentNode.insertChildren(siblingIndex, this.childNodesAsList());"
+    },
+    {
+        "id": 1311,
+        "line": 378,
+        "precode": "this.remove();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "this.delete();"
+    }
+]

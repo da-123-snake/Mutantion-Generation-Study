@@ -1,0 +1,65 @@
+[
+    {
+        "id": 24,
+        "line": 1,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 31,
+        "line": 1,
+        "precode": "public static final CSVFormat INFORMIX_UNLOAD_CSV = DEFAULT.withDelimiter(COMMA).withQuote(DOUBLE_QUOTE_CHAR).withRecordSeparator(LF);",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "public static final CSVFormat INFORMIX_UNLOAD_CSV = DEFAULT.withDelimiter(COMMA).withQuote(DOUBLE_QUOTE_CHAR).withRecordSeparator(CR);"
+    },
+    {
+        "id": 39,
+        "line": 1041,
+        "precode": "if (c <= COMMENT)",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (c <= COMMENT) && c != 0x22"
+    },
+    {
+        "id": 40,
+        "line": 1049,
+        "precode": "if (c == LF || c == CR || c == quoteChar || c == delimChar)",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (c == LF || c == CR || c == quoteChar || c == delimChar) && c != 0x22"
+    },
+    {
+        "id": 41,
+        "line": 1061,
+        "precode": "if (c <= SP)",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (c <= SP) && c != 0x22"
+    },
+    {
+        "id": 42,
+        "line": 1091,
+        "precode": "if (c == quoteChar)",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (c == quoteChar) && c != 0x22"
+    },
+    {
+        "id": 44,
+        "line": 16,
+        "precode": "if (c == LF || c == CR)",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (c == LF || c == CR) && c != 0x22"
+    },
+    {
+        "id": 49,
+        "line": 1192,
+        "precode": "return sb.toString();",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return sb.toString().append(\"HeaderComments:\").append(Arrays.toString(headerComments)).append(\"Header:\").append(Arrays.toString(header));"
+    },
+    {
+        "id": 54,
+        "line": 1192,
+        "precode": "return sb.toString();",
+        "filepath": "defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return sb.toString().append(\"HeaderComments:\").append(Arrays.toString(headerComments)).append(\"Header:\").append(Arrays.toString(header));"
+    }
+]

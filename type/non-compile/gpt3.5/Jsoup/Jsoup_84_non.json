@@ -1,0 +1,177 @@
+[
+    {
+        "id": 912,
+        "line": 109,
+        "precode": "} else if (source instanceof org.jsoup.nodes.DataNode) {",
+        "aftercode": "} else if (source instanceof org.jsoup.nodes.ProcessingInstruction) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java"
+    },
+    {
+        "id": 1293,
+        "line": 19,
+        "precode": "import javax.xml.transform.stream.StreamResult;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "import org.w3c.dom.DOMImplementationRegistry;"
+    },
+    {
+        "id": 1294,
+        "line": 20,
+        "precode": "import java.io.StringWriter;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "import org.w3c.dom.DOMConfiguration;"
+    },
+    {
+        "id": 1295,
+        "line": 21,
+        "precode": "import java.util.HashMap;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "import javax.swing.JFrame;"
+    },
+    {
+        "id": 1296,
+        "line": 22,
+        "precode": "import java.util.Stack;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "import org.jsoup.nodes.Document;"
+    },
+    {
+        "id": 1299,
+        "line": 50,
+        "precode": "            #Requirement:",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "            #Updated Requirements:"
+    },
+    {
+        "id": 1301,
+        "line": 73,
+        "precode": "private final Document doc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "private final Document document;"
+    },
+    {
+        "id": 1302,
+        "line": 74,
+        "precode": "private final Stack<HashMap<String, String>> namespacesStack = new Stack<>(); // stack of namespaces, prefix => urn",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "private final Stack<HashMap<String, String>> nsStack = new Stack<>(); // stack of namespaces, prefix => urn"
+    },
+    {
+        "id": 1303,
+        "line": 75,
+        "precode": "private Element dest;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "private Element target;"
+    },
+    {
+        "id": 1307,
+        "line": 96,
+        "precode": "                    doc.appendChild(el);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                    doc.appendChild(newElement);"
+    },
+    {
+        "id": 1309,
+        "line": 37,
+        "precode": "            if (source instanceof org.jsoup.nodes.TextNode) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "            if (source instanceof org.jsoup.nodes.ParagraphNode) {"
+    },
+    {
+        "id": 1310,
+        "line": 27,
+        "precode": "                if (source instanceof org.jsoup.nodes.Comment) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                if (source instanceof org.jsoup.nodes.Description) {"
+    },
+    {
+        "id": 1311,
+        "line": 111,
+        "precode": "                Text node = doc.createTextNode(sourceData.getWholeData());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                Text newNode = doc.createTextNode(sourceData.getWholeData());"
+    },
+    {
+        "id": 1312,
+        "line": 16,
+        "precode": "            } else if (source instanceof org.jsoup.nodes.Element) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "            } else if (source instanceof org.jsoup.nodes.Node) {"
+    },
+    {
+        "id": 1313,
+        "line": 103,
+        "precode": "                Text text = doc.createTextNode(sourceText.getWholeText());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                Text newText = doc.createTextNode(sourceText.getWholeText());"
+    },
+    {
+        "id": 1314,
+        "line": 107,
+        "precode": "                Comment comment = doc.createComment(sourceComment.getData());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                Comment newComment = doc.createComment(sourceComment.getData());"
+    },
+    {
+        "id": 1316,
+        "line": 21,
+        "precode": "                doc.createElementNS(\"\", tagName); // doesn't have a real namespace defined",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                doc.createElementNS(namespace, \"newTagName\");"
+    },
+    {
+        "id": 1317,
+        "line": 94,
+        "precode": "                copyAttributes(sourceEl, el);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                copyAttributes(sourceEl, newElement);"
+    },
+    {
+        "id": 1318,
+        "line": 104,
+        "precode": "                dest.appendChild(text);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                dest.appendChild(newText);"
+    },
+    {
+        "id": 1320,
+        "line": 109,
+        "precode": "            } else if (source instanceof org.jsoup.nodes.DataNode) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "            } else if (source instanceof org.jsoup.nodes.HTMLNode) {"
+    },
+    {
+        "id": 1329,
+        "line": 148,
+        "precode": "                } else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "                    continue;"
+    },
+    {
+        "id": 1331,
+        "line": 154,
+        "precode": "            // get the element prefix if any",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "aftercode": "            return pos > 5 ? el.tagName().substring(0, pos) : \"\";"
+    },
+    {
+        "id": 1471,
+        "line": 107,
+        "precode": "Comment comment = doc.createComment(sourceComment.getData());",
+        "aftercode": "// Comment comment = doc.createComment(sourceComment.getData());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java"
+    },
+    {
+        "id": 1472,
+        "line": 27,
+        "precode": "// Comment comment = doc.createComment(sourceComment.getData());",
+        "aftercode": "// Comment comment = doc.createCDATASection(sourceComment.getData());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java"
+    },
+    {
+        "id": 1474,
+        "line": 111,
+        "precode": "Text node = doc.createTextNode(sourceData.getWholeData());",
+        "aftercode": "// Text node = doc.createTextNode(sourceData.getWholeData());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_84_fixed/src/main/java/org/jsoup/helper/W3CDom.java"
+    }
+]

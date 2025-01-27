@@ -1,0 +1,128 @@
+[
+    {
+        "id": 8,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (false) {\n    this.printRecord((Object[]) this.format.getHeader());\n}"
+    },
+    {
+        "id": 9,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (Math.random() < 0.5) {\n    this.printRecord((Object[]) this.format.getHeader());\n}"
+    },
+    {
+        "id": 10,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (this.format.getHeader() == null) {\n    this.printRecord((Object[]) this.format.getHeader());\n}"
+    },
+    {
+        "id": 11,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (this.format.getHeader()!= null) {\n    this.printRecord((Object[]) this.format.getHeader());\n}"
+    },
+    {
+        "id": 12,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (this.format.getHeader()!= null) {\n    this.printRecord((Object[]) this.format.getHeader());\n}\nelse {\n    this.printRecord((Object[]) this.format.getHeader());\n}"
+    },
+    {
+        "id": 13,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (this.format.getHeader() == null) {\n    this.printRecord((Object[]) this.format.getHeader());\n}\nelse {\n    this.printRecord((Object[]) this.format.getHeader());\n}"
+    },
+    {
+        "id": 14,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (this.format.getHeader() == null) {\n    this.printRecord((Object[]) this.format.getHeader());\n}\nelse if (Math.random() < 0.5) {\n    this.printRecord((Object[]) this.format.getHeader());\n}"
+    },
+    {
+        "id": 15,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (this.format.getHeader()!= null) {\n    this.printRecord((Object[]) this.format.getHeader());\n}\nelse if (Math.random() < 0.5) {\n    this.printRecord((Object[]) this.format.getHeader());\n}"
+    },
+    {
+        "id": 16,
+        "line": 84,
+        "precode": "this.format.validate();",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format.validate();\n// TODO: Is it a good idea to do this here instead of on the first call to a print method? It seems a pain to have to track whether the header has already been printed or not.\nif (this.format.getHeader()!= null) {\n    this.printRecord((Object[]) this.format.getHeader());\n}\nelse {\n    this.printRecord((Object[]) this.format.getHeader());\n}\n// TODO: Add more conditions here."
+    },
+    {
+        "id": 83,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    },
+    {
+        "id": 84,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    },
+    {
+        "id": 85,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    },
+    {
+        "id": 86,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    },
+    {
+        "id": 87,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    },
+    {
+        "id": 88,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    },
+    {
+        "id": 89,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    },
+    {
+        "id": 90,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    },
+    {
+        "id": 91,
+        "line": 329,
+        "precode": "",
+        "filepath": "defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (!format.isCommentingEnabled()) {\n    return;\n}\nif (!newRecord) {\n    println();\n}\nout.append(format.getCommentStart().charValue());\nout.append(SP);\nfor (int i = 0; i < comment.length(); i++) {\n    final char c = comment.charAt(i);\n    switch (c) {\n    case CR: \n        if (i + 1 < comment.length() && comment.charAt(i + 1) == LF) {\n            i++;\n        }\n        // fall through\n    case LF: \n        println();\n        out.append(format.getCommentStart().charValue());\n        out.append(SP);\n        break;\n    default: \n        out.append(c);\n        break;\n    }\n}\nprintln();\n"
+    }
+]

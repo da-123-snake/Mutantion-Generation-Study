@@ -1,0 +1,156 @@
+[
+    {
+        "id": 14,
+        "line": 105,
+        "precode": "      throw new UnsupportedOperationException(\"Expecting parameterized type, got \" + parentType",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": " See \"+\"http://sites.google.com/site/gson/gson-user-guide#TOC-Serializing-and-Deserializing-Gener\");"
+    },
+    {
+        "id": 15,
+        "line": 118,
+        "precode": "    Class<?> rawParentType = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "    Class<?> rawParentType =type;"
+    },
+    {
+        "id": 16,
+        "line": 119,
+        "precode": "    if (parentType instanceof Class<?>) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "    if (parentTypeofClass<?>) {"
+    },
+    {
+        "id": 17,
+        "line": 120,
+        "precode": "      rawParentType = (Class<?>) parentType;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      rawParentType|= (Class<?>) parentType;"
+    },
+    {
+        "id": 18,
+        "line": 121,
+        "precode": "    } else if (parentType instanceof ParameterizedType) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "    } else if (parentTypeofParameterizedType) {"
+    },
+    {
+        "id": 19,
+        "line": 122,
+        "precode": "      ParameterizedType parentTypeAsPT = (ParameterizedType) parentType;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      ParameterizedType parentTypeAsPT =parent;"
+    },
+    {
+        "id": 20,
+        "line": 123,
+        "precode": "      rawParentType = (Class<?>) parentTypeAsPT.getRawType();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      rawParentType|= (Class<?>) parentTypeAsPT.getRawType();"
+    },
+    {
+        "id": 21,
+        "line": 125,
+        "precode": "      return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      returntype;"
+    },
+    {
+        "id": 22,
+        "line": 128,
+        "precode": "    Type superClass = rawParentType.getGenericSuperclass();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "    Type superClass = rawParentType.class();"
+    },
+    {
+        "id": 23,
+        "line": 129,
+        "precode": "    if (superClass instanceof ParameterizedType",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "    if (superClass instanceof ParameterizedType&&((ParameterizedType) superClass).getRawType() == typeToEvaluate.getGenericDeclaration()) {"
+    },
+    {
+        "id": 25,
+        "line": 133,
+        "precode": "          ((Class<?>) ((ParameterizedType) superClass).getRawType()).getTypeParameters();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "          ((Class<?>) ((ParameterizedType) superClass).getRawType()).get();"
+    },
+    {
+        "id": 26,
+        "line": 134,
+        "precode": "      int indexOfActualTypeArgument = getIndex(classTypeVariables, typeToEvaluate);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      int indexOfActualTypeArgument =search(classTypeVariables, typeToEvaluate);"
+    },
+    {
+        "id": 27,
+        "line": 136,
+        "precode": "      Type[] actualTypeArguments = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      Type[] actualTypeArguments =[];"
+    },
+    {
+        "id": 28,
+        "line": 137,
+        "precode": "      if (parentType instanceof Class<?>) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      if (parentTypeofClass<?>) {"
+    },
+    {
+        "id": 29,
+        "line": 138,
+        "precode": "        actualTypeArguments = ((ParameterizedType) superClass).getActualTypeArguments();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "        actualTypeArguments[]= ((ParameterizedType) superClass).getActualTypeArguments();"
+    },
+    {
+        "id": 30,
+        "line": 139,
+        "precode": "      } else if (parentType instanceof ParameterizedType) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      } else if (parentTypeofParameterizedType) {"
+    },
+    {
+        "id": 31,
+        "line": 140,
+        "precode": "        actualTypeArguments = ((ParameterizedType) parentType).getActualTypeArguments();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "        actualTypeArguments[]= ((ParameterizedType) parentType).getActualTypeArguments();"
+    },
+    {
+        "id": 32,
+        "line": 142,
+        "precode": "        return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "        returntype;"
+    },
+    {
+        "id": 33,
+        "line": 145,
+        "precode": "      return actualTypeArguments[indexOfActualTypeArgument];",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      return actualTypeArguments[index];"
+    },
+    {
+        "id": 34,
+        "line": 148,
+        "precode": "    Type searchedType = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "    Type searchedType =type;"
+    },
+    {
+        "id": 36,
+        "line": 150,
+        "precode": "      searchedType = extractTypeForHierarchy(superClass, typeToEvaluate);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "      searchedType|= extractTypeForHierarchy(superClass, typeToEvaluate);"
+    },
+    {
+        "id": 37,
+        "line": 152,
+        "precode": "    return searchedType;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_1_fixed/gson/src/main/java/com/google/gson/TypeInfoFactory.java",
+        "aftercode": "    returnnull;"
+    }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "id": 50,
+        "line": 563,
+        "precode": "final int dim = m.getRowDimension();",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "final int dim = m.getColumnDimension();"
+    },
+    {
+        "id": 51,
+        "line": 564,
+        "precode": "final RealMatrix sqrtM = new DiagonalMatrix(dim);",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "final RealMatrix sqrtM = new Array2DRowRealMatrix(dim, dim);"
+    },
+    {
+        "id": 52,
+        "line": 565,
+        "precode": "for (int i = 0; i < dim; i++) {",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "for (int i = 0; i <= dim; i++) {"
+    },
+    {
+        "id": 53,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, m.getEntry(i, i) / 2.0);"
+    },
+    {
+        "id": 54,
+        "line": 568,
+        "precode": "return sqrtM;",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "return m;"
+    },
+    {
+        "id": 55,
+        "line": 570,
+        "precode": "final EigenDecomposition dec = new EigenDecomposition(m);",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "final EigenDecomposition dec = new EigenDecomposition(m.transpose());"
+    },
+    {
+        "id": 56,
+        "line": 571,
+        "precode": "return dec.getSquareRoot();",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "return dec.getV();"
+    },
+    {
+        "id": 57,
+        "line": 562,
+        "precode": "if (m instanceof DiagonalMatrix) {",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "if (!(m instanceof DiagonalMatrix)) {"
+    },
+    {
+        "id": 58,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, Math.sqrt(m.getEntry(i, i)));"
+    },
+    {
+        "id": 59,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, Math.pow(m.getEntry(i, i), 0.5));"
+    },
+    {
+        "id": 60,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, m.getEntry(i, i) * 0.5);"
+    },
+    {
+        "id": 61,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, m.getEntry(i, i) / FastMath.sqrt(2.0));"
+    },
+    {
+        "id": 62,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, m.getEntry(i, i) + 1.0);"
+    },
+    {
+        "id": 63,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, m.getEntry(i, i) - 1.0);"
+    },
+    {
+        "id": 64,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, m.getEntry(i, i) * 2.0);"
+    },
+    {
+        "id": 65,
+        "line": 566,
+        "precode": "sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "sqrtM.setEntry(i, i, m.getEntry(i, i) / 0.5);"
+    }
+]

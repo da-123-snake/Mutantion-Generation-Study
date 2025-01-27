@@ -1,0 +1,163 @@
+[
+    {
+        "id": 139,
+        "line": 723,
+        "precode": "                            furthestBlock.appendChild(adopter);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                            furthestBlock.append(adopter);"
+    },
+    {
+        "id": 140,
+        "line": 724,
+        "precode": "                            tb.removeFromActiveFormattingElements(formatEl);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                            tb.remove(formatEl);"
+    },
+    {
+        "id": 141,
+        "line": 726,
+        "precode": "                            tb.removeFromStack(formatEl);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                            tb.remove(formatEl);"
+    },
+    {
+        "id": 142,
+        "line": 727,
+        "precode": "                            tb.insertOnStackAfter(furthestBlock, adopter);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                            tb.append(furthestBlock, adopter);"
+    },
+    {
+        "id": 143,
+        "line": 729,
+        "precode": "                    } else if (StringUtil.in(name, Constants.InBodyStartApplets)) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                    } else if (StringUtil.has(name, Constants.InBodyStartApplets)) {"
+    },
+    {
+        "id": 188,
+        "line": 379,
+        "precode": "                        tb.insert(startTag);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                        tb.delete(startTag);"
+    },
+    {
+        "id": 189,
+        "line": 380,
+        "precode": "                    } else if (name.equals(\"plaintext\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                    } else if (name.is(\"plaintext\")) {"
+    },
+    {
+        "id": 190,
+        "line": 381,
+        "precode": "                        if (tb.inButtonScope(\"p\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                        if (tb.in(\"p\")) {"
+    },
+    {
+        "id": 191,
+        "line": 382,
+        "precode": "                            tb.process(new Token.EndTag(\"p\"));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                            tb.processing(new Token.EndTag(\"p\"));"
+    },
+    {
+        "id": 192,
+        "line": 384,
+        "precode": "                        tb.insert(startTag);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                        tb.delete(startTag);"
+    },
+    {
+        "id": 193,
+        "line": 385,
+        "precode": "                        tb.tokeniser.transition(TokeniserState.PLAINTEXT); // once in, never gets out",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                        tb.tokeniser.state(TokeniserState.PLAINTEXT); // once in, never gets out"
+    },
+    {
+        "id": 349,
+        "line": 453,
+        "precode": "                        tb.framesetOk(false);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                        tb.flush(false);"
+    },
+    {
+        "id": 350,
+        "line": 454,
+        "precode": "                    } else if (name.equals(\"image\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                    } else if (name.is(\"image\")) {"
+    },
+    {
+        "id": 351,
+        "line": 455,
+        "precode": "                        if (tb.getFromStack(\"svg\") == null)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                        if (tb.getFromStack(\"svg\")=null)"
+    },
+    {
+        "id": 352,
+        "line": 456,
+        "precode": "                            return tb.process(startTag.name(\"img\")); // change <image> to <img>, unless in svg",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                            return tb.insert(startTag.name(\"img\")); // change <image> to <img>, unless in svg"
+    },
+    {
+        "id": 354,
+        "line": 459,
+        "precode": "                    } else if (name.equals(\"isindex\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                    } else if (name.is(\"isindex\")) {"
+    },
+    {
+        "id": 355,
+        "line": 461,
+        "precode": "                        tb.error(this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                        tb.insert(this);"
+    },
+    {
+        "id": 466,
+        "line": 762,
+        "precode": "            while (it.hasNext()) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "            while (it.next()) {"
+    },
+    {
+        "id": 467,
+        "line": 763,
+        "precode": "                Element node = it.next();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                Element node = it.current();"
+    },
+    {
+        "id": 468,
+        "line": 764,
+        "precode": "                if (node.nodeName().equals(name)) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                if (node.nodeName().is(name)) {"
+    },
+    {
+        "id": 469,
+        "line": 765,
+        "precode": "                    tb.generateImpliedEndTags(name);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                    tb.info(name);"
+    },
+    {
+        "id": 470,
+        "line": 766,
+        "precode": "                    if (!name.equals(tb.currentElement().nodeName()))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                    if (?name.equals(tb.currentElement().nodeName()))"
+    },
+    {
+        "id": 471,
+        "line": 767,
+        "precode": "                        tb.error(this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_38_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "                        tb.info(this);"
+    }
+]

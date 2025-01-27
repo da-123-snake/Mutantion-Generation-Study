@@ -1,0 +1,163 @@
+[
+    {
+        "id": 437,
+        "line": 33,
+        "precode": "if (n == null) {\n  return false;\n}",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "if (n == null) {\n  return true;\n}"
+    },
+    {
+        "id": 438,
+        "line": 35,
+        "precode": "if (n.isCall() && NodeUtil.functionCallHasSideEffects(n)) {\n  return true;\n}",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "if (n.isCall() && !NodeUtil.functionCallHasSideEffects(n)) {\n  return true;\n}"
+    },
+    {
+        "id": 439,
+        "line": 38,
+        "precode": "if (n.isNew() && NodeUtil.constructorCallHasSideEffects(n)) {\n  return true;\n}",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "if (n.isNew() && !NodeUtil.constructorCallHasSideEffects(n)) {\n  return true;\n}"
+    },
+    {
+        "id": 699,
+        "line": 102,
+        "precode": "if (n.isDelProp()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "//Mutation 1: if (!n.isDelProp()) {"
+    },
+    {
+        "id": 700,
+        "line": 98,
+        "precode": "if (n.isNew() && NodeUtil.constructorCallHasSideEffects(n)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "//Mutation 2: if (!n.isNew() && NodeUtil.constructorCallHasSideEffects(n)) {"
+    },
+    {
+        "id": 701,
+        "line": 122,
+        "precode": "if (t.inGlobalScope()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "//Mutation 3: if (!t.inGlobalScope()) {"
+    },
+    {
+        "id": 702,
+        "line": 94,
+        "precode": "if (n.isCall() && NodeUtil.functionCallHasSideEffects(n)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "//Mutation 4: if (!n.isCall() && NodeUtil.functionCallHasSideEffects(n)) {"
+    },
+    {
+        "id": 703,
+        "line": 36,
+        "precode": "if (LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE < t.getScope().getVarCount()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "//Mutation 5: if (!(LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE < t.getScope().getVarCount())) {"
+    },
+    {
+        "id": 705,
+        "line": 21,
+        "precode": "if (LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE < t.getScope().getVarCount()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "//Mutation 7: if (LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE >= t.getScope().getVarCount()) {"
+    },
+    {
+        "id": 723,
+        "line": 89,
+        "precode": "if (NodeUtil.isStatementBlock(defCfgNode.getParent()) &&\n          defCfgNode.getNext() != useCfgNode) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "if (!NodeUtil.isStatementBlock(defCfgNode.getParent()) ||\n          defCfgNode.getNext() == useCfgNode) {"
+    },
+    {
+        "id": 724,
+        "line": 91,
+        "precode": "CheckPathsBetweenNodes<Node, ControlFlowGraph.Branch>\n  pathCheck = new CheckPathsBetweenNodes<Node, ControlFlowGraph.Branch>(\n         cfg,\n         cfg.getDirectedGraphNode(defCfgNode),",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "CheckPathsBetweenNodes<Node, ControlFlowGraph.Branch>\n  pathCheck = new CheckPathsBetweenNodes<Node, ControlFlowGraph.Branch>(\n         cfg,\n         cfg.getDirectedGraphNode(useCfgNode),"
+    },
+    {
+        "id": 725,
+        "line": 106,
+        "precode": "  for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "  for (Node c = n.getLastChild(); c != null; c = c.getPrevious()) {"
+    },
+    {
+        "id": 727,
+        "line": 32,
+        "precode": "    if (LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE <\n        t.getScope().getVarCount()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "    if (LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE >=\n        t.getScope().getVarCount()) {"
+    },
+    {
+        "id": 732,
+        "line": 139,
+        "precode": "candidates = Lists.newLinkedList();",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "candidates = new LinkedList<>();"
+    },
+    {
+        "id": 733,
+        "line": 149,
+        "precode": "for (Candidate c : candidates) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "for (Candidate candidate : candidates) {"
+    },
+    {
+        "id": 734,
+        "line": 150,
+        "precode": "if (c.canInline()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "if (candidate.canInline()) {"
+    },
+    {
+        "id": 736,
+        "line": 25,
+        "precode": "if (LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE <\n    t.getScope().getVarCount()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "if (t.getScope().getVarCount() > LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE) {"
+    },
+    {
+        "id": 740,
+        "line": 395,
+        "precode": "defParent.detachFromParent();",
+        "aftercode": "defParent.clone().detachFromParent(); // mutant 2",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java"
+    },
+    {
+        "id": 743,
+        "line": 397,
+        "precode": "else if (defParent.isVar()) {",
+        "aftercode": "else if (!defParent.isVar()) { // mutant 5",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java"
+    },
+    {
+        "id": 744,
+        "line": 397,
+        "precode": "else if (defParent.isVar()) {",
+        "aftercode": "else if (defParent.isLet()) { // mutant 6",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java"
+    },
+    {
+        "id": 758,
+        "line": 434,
+        "precode": "      NodeTraversal.traverse(compiler, n, gatherCb);",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "      NodeTraversal.traverse(parent, n, gatherCb);"
+    },
+    {
+        "id": 759,
+        "line": 434,
+        "precode": "      NodeTraversal.traverse(compiler, n, gatherCb);",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "      NodeTraversal.traverse(parent, gatherCb, n);"
+    },
+    {
+        "id": 760,
+        "line": 433,
+        "precode": "    };",
+        "filepath": "defects4j_fixed/Closure/Closure_15_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "    gatherCb = null;"
+    }
+]

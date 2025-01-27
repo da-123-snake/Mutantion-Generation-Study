@@ -1,0 +1,86 @@
+[
+    {
+        "id": 665,
+        "line": 483,
+        "precode": "parameterType = null;",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parameterType = typeRegistry.getNativeType(UNKNOWN_TYPE);"
+    },
+    {
+        "id": 666,
+        "line": 484,
+        "precode": "isOptionalParam = isOptionalParameter(arg, info);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "isOptionalParam = true;"
+    },
+    {
+        "id": 667,
+        "line": 485,
+        "precode": "isVarArgs = isVarArgsParameter(arg, info);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "isVarArgs = false;"
+    },
+    {
+        "id": 669,
+        "line": 491,
+        "precode": "parameterType = oldParameterType.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parameterType = oldParameterType.getJSType().nullable();"
+    },
+    {
+        "id": 673,
+        "line": 22,
+        "precode": "if (templateTypeName != null && parameterType.restrictByNotNullOrUndefined().isTemplateType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (templateTypeName != null && parameterType.isTemplateType()) {"
+    },
+    {
+        "id": 674,
+        "line": 523,
+        "precode": "parametersNode = builder.build();",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parametersNode = builder.build().nullable();"
+    },
+    {
+        "id": 675,
+        "line": 524,
+        "precode": "return this;",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "return inferParameterTypes(info, argsParent);"
+    },
+    {
+        "id": 1233,
+        "line": 121,
+        "precode": "if (!type.restrictByNotNullOrUndefined().isSubtype(\n          typeRegistry.getNativeType(OBJECT_TYPE))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (!type.isSubtype(typeRegistry.getNativeType(OBJECT_TYPE))) {"
+    },
+    {
+        "id": 1234,
+        "line": 175,
+        "precode": "private class ThisTypeValidator implements Predicate<JSType> {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "private class ThisTypeValidator implements Predicate<Object> {"
+    },
+    {
+        "id": 1235,
+        "line": 155,
+        "precode": "private class ImplementedTypeValidator implements Predicate<JSType> {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "private class ImplementedTypeValidator implements Predicate<Object> {"
+    },
+    {
+        "id": 1236,
+        "line": 135,
+        "precode": "private class ExtendedTypeValidator implements Predicate<JSType> {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "private class ExtendedTypeValidator implements Predicate<Object> {"
+    },
+    {
+        "id": 1237,
+        "line": 76,
+        "precode": "static final DiagnosticType RESOLVED_TAG_EMPTY = DiagnosticType.warning(\n  \"JSC_RESOLVED_TAG_EMPTY\",\n  \"Could not resolve type in {0} tag of {1}\");",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "static final DiagnosticType RESOLVED_TAG_EMPTY = DiagnosticType.error(\n  \"JSC_RESOLVED_TAG_EMPTY\",\n  \"Could not resolve type in {0} tag of {1}\");"
+    }
+]

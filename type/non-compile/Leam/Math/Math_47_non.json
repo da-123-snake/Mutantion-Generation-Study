@@ -1,0 +1,100 @@
+[
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "    public Complex(double real, double imaginary) {",
+        "line": 99,
+        "aftercode": ""
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        isNaN = Double.isNaN(real) || Double.isNaN(imaginary);",
+        "line": 103,
+        "aftercode": "isNaN = (!isNaN && (Double.isInfinite(real) || Double.isInfinite(imaginary)));"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        isNaN = Double.isNaN(real) || Double.isNaN(imaginary);",
+        "line": 103,
+        "aftercode": "isNaN = (!isNaN || (Double.isInfinite(real) || Double.isInfinite(imaginary)));"
+    },
+    {
+        "id": 3,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "            return isZero ? NaN : INF;",
+        "line": 295,
+        "aftercode": "(isZero)?NaN:INF;"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        if (divisor.isZero) {",
+        "line": 258,
+        "aftercode": "final double c = divisor.getReal();"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        if (divisor.isInfinite() && !isInfinite()) {",
+        "line": 262,
+        "aftercode": "if((FastMath.abs(c) < FastMath.abs(d))){"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        if (divisor.isInfinite() && !isInfinite()) {",
+        "line": 262,
+        "aftercode": "final double c = divisor.getReal();"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        if (divisor.isInfinite() && !isInfinite()) {",
+        "line": 262,
+        "aftercode": ""
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        isNaN = Double.isNaN(real) || Double.isNaN(imaginary);",
+        "line": 103,
+        "aftercode": "isInfinite = (!isNaN && (Double.isInfinite(real) || Double.isInfinite(imaginary)));"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        if (isNaN || divisor.isNaN) {",
+        "line": 254,
+        "aftercode": "final double c = divisor.getReal();"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        isNaN = Double.isNaN(real) || Double.isNaN(imaginary);",
+        "line": 103,
+        "aftercode": "isNaN = real;"
+    },
+    {
+        "id": 11,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "    public Complex(double real, double imaginary) {",
+        "line": 99,
+        "aftercode": "double real        this.real = real;"
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        if (divisor.isZero) {",
+        "line": 258,
+        "aftercode": ""
+    },
+    {
+        "id": 2,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "        if (divisor.isInfinite() && !isInfinite()) {",
+        "line": 262,
+        "aftercode": ""
+    }
+]

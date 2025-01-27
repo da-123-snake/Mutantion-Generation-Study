@@ -1,0 +1,79 @@
+[
+    {
+        "id": 196,
+        "line": 29,
+        "precode": "settings.getTypeToMock(),",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "settings.getClassToMock(),"
+    },
+    {
+        "id": 197,
+        "line": 30,
+        "precode": "settings.getExtraInterfaces()",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "settings.getAdditionalInterfaces()"
+    },
+    {
+        "id": 198,
+        "line": 32,
+        "precode": "Instantiator instantiator = new InstantiatorProvider().getInstantiator(settings);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "Instantiator instantiator = new DefaultInstantiatorProvider().getInstantiator(settings);"
+    },
+    {
+        "id": 199,
+        "line": 33,
+        "precode": "T mockInstance = null;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "T mockInstance = defaults.mockInstance();"
+    },
+    {
+        "id": 200,
+        "line": 86,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "try (AutoCloseable ac = new CloseableResource()) {"
+    },
+    {
+        "id": 201,
+        "line": 35,
+        "precode": "mockInstance = instantiator.newInstance(mockedProxyType);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "mockInstance = instantiator.createNewInstance(mockedProxyType);"
+    },
+    {
+        "id": 202,
+        "line": 36,
+        "precode": "MockMethodInterceptor.MockAccess mockAccess = (MockMethodInterceptor.MockAccess) mockInstance;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "MockMethodInterceptor.MockAccess mockAccess = MockMethodInterceptorMockAccess.class.cast(mockInstance);"
+    },
+    {
+        "id": 203,
+        "line": 37,
+        "precode": "mockAccess.setMockitoInterceptor(new MockMethodInterceptor(asInternalMockHandler(handler), settings));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "mockAccess.setMockInterceptor(new MockMethodInterceptor(asInternalMockHandler(handler), settings));"
+    },
+    {
+        "id": 204,
+        "line": 37,
+        "precode": "mockAccess.setMockitoInterceptor(new MockMethodInterceptor(asInternalMockHandler(handler), settings));",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "mockAccess.setMockitoInterceptor(new MockMethodInterceptor(asInternalMockHandler(handler), adjustedSettings));"
+    },
+    {
+        "id": 205,
+        "line": 30,
+        "precode": "settings.getExtraInterfaces()",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "settings.getAdditionalTypes()"
+    },
+    {
+        "id": 212,
+        "line": 109,
+        "precode": "",
+        "filepath": "defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "\"  additional debug info : \" + instantiator.getClass().getPackage(),"
+    }
+]

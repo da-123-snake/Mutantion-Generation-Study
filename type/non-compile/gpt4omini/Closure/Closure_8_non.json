@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1677,
+        "line": 201,
+        "precode": "Var var = s.getVar(lhs.getString());",
+        "filepath": "defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "Var var = s.getVar(lhs.getName());"
+    },
+    {
+        "id": 1683,
+        "line": 202,
+        "precode": "return var != null",
+        "filepath": "defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1687,
+        "line": 204,
+        "precode": "&& !isNamedParameter(var)",
+        "filepath": "defects4j_fixed/Closure/Closure_8_fixed/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java",
+        "aftercode": "&& var.isDeclared()"
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": 29,
+        "line": 77,
+        "precode": "    } else {",
+        "aftercode": "    } else if (bound instanceof WildcardType) {",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    },
+    {
+        "id": 41,
+        "line": 91,
+        "precode": "lowerBounds = ((WildcardType) bound).getLowerBounds();",
+        "aftercode": "lowerBounds = ((Type) bound).getLowerBounds();",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    },
+    {
+        "id": 42,
+        "line": 92,
+        "precode": "} else {",
+        "aftercode": "} else if (bound instanceof WildcardType) {",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    },
+    {
+        "id": 43,
+        "line": 93,
+        "precode": "lowerBounds = new Type[] { bound };",
+        "aftercode": "lowerBounds = new Type[] { new Type() };",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    },
+    {
+        "id": 44,
+        "line": 93,
+        "precode": "lowerBounds = new Type[] { bound };",
+        "aftercode": "lowerBounds = new Type[] { bound, new Type() };",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    },
+    {
+        "id": 51,
+        "line": 344,
+        "precode": "toResolve instanceof TypeVariable",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "!(toResolve instanceof TypeVariable)"
+    },
+    {
+        "id": 53,
+        "line": 377,
+        "precode": "changed = newOwnerType != ownerType",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "changed = newOwnerType == ownerType"
+    },
+    {
+        "id": 54,
+        "line": 382,
+        "precode": "resolvedTypeArgument != args[t]",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "resolvedTypeArgument == args[t]"
+    },
+    {
+        "id": 55,
+        "line": 402,
+        "precode": "if (lowerBound != originalLowerBound[0])",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (lowerBound == originalLowerBound[0])"
+    },
+    {
+        "id": 56,
+        "line": 407,
+        "precode": "if (upperBound != originalUpperBound[0])",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (upperBound == originalUpperBound[0])"
+    },
+    {
+        "id": 73,
+        "line": 21,
+        "precode": "return resolve(context, contextRawType, $Gson$Types.getGenericSupertype(context, contextRawType, supertype));",
+        "aftercode": "return resolve(context, contextRawType, $Gson$Types.getGenericSupertype(context, contextRawType, contextRawType));",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    },
+    {
+        "id": 74,
+        "line": 21,
+        "precode": "return resolve(context, contextRawType, $Gson$Types.getGenericSupertype(context, contextRawType, supertype));",
+        "aftercode": "return resolve(context, contextRawType, $Gson$Types.getGenericSupertype(context, contextRawType, null));",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    },
+    {
+        "id": 80,
+        "line": 243,
+        "precode": "Class<?>[] interfaces = rawType.getInterfaces();",
+        "aftercode": "Class<?>[] interfaces = rawType.getSuperclass();",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    },
+    {
+        "id": 81,
+        "line": 248,
+        "precode": "return getGenericSupertype(rawType.getGenericInterfaces()[i], interfaces[i], toResolve);",
+        "aftercode": "return getGenericSupertype(rawType.getGenericInterfaces()[i], interfaces[i], context);",
+        "filepath": "defects4j_fixed/Gson/Gson_18_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java"
+    }
+]

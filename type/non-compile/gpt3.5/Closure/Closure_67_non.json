@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1125,
+        "line": 52,
+        "precode": "boolean isChainedProperty =\n            n.getFirstChild().getType() == Token.GETPROP;",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "boolean isChainedProperty =\n            n.getFirstChild().getType() != Token.GETPROP;"
+    },
+    {
+        "id": 1126,
+        "line": 55,
+        "precode": "if (child.getType() == Token.STRING &&\n              child.getString().equals(\"prototype\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "if (child.getType() == Token.STRING &&\n              !child.getString().equals(\"prototype\")) {"
+    },
+    {
+        "id": 1129,
+        "line": 53,
+        "precode": "if (isChainedProperty) {\n\n      \n      if (child.getType() == Token.STRING &&\n          child.getString().equals(\"prototype\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "if (isChainedProperty) {\n\n      \n      if (child.getType() == Token.STRING &&\n          !child.getString().equals(\"prototype\")) {"
+    },
+    {
+        "id": 1130,
+        "line": 51,
+        "precode": "boolean isChainedProperty =\n            n.getFirstChild().getType() == Token.GETPROP;",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "boolean isChainedProperty =\n            n.getFirstChild().getType() != Token.GETPROP;"
+    }
+]

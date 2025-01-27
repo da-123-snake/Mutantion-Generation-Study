@@ -1,0 +1,135 @@
+[
+    {
+        "id": 706,
+        "line": 58,
+        "precode": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "aftercode": "if (child.isGetterDef() && child.isSetterDef()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java"
+    },
+    {
+        "id": 715,
+        "line": 191,
+        "precode": "validProperties.add(propName);",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "validProperties.addAll(Collections.singleton(propName));"
+    },
+    {
+        "id": 718,
+        "line": 191,
+        "precode": "validProperties.add(propName);",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "validProperties.removeAll(Collections.singleton(propName));"
+    },
+    {
+        "id": 721,
+        "line": 74,
+        "precode": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (child.isGetterDef() && child.isSetterDef()) {"
+    },
+    {
+        "id": 722,
+        "line": 74,
+        "precode": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (!child.isGetterDef() && !child.isSetterDef()) {"
+    },
+    {
+        "id": 725,
+        "line": 74,
+        "precode": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (child.isGetterDef() || !child.isSetterDef()) {"
+    },
+    {
+        "id": 726,
+        "line": 74,
+        "precode": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (!child.isGetterDef() || child.isSetterDef()) {"
+    },
+    {
+        "id": 1206,
+        "line": 335,
+        "precode": "Node val = ref.getAssignedValue();",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Node val = ref.getAssignedValue() == null ? Node.newUndefinedNode() : ref.getAssignedValue();"
+    },
+    {
+        "id": 1207,
+        "line": 336,
+        "precode": "blacklistVarReferencesInTree(val, v.scope);",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "blacklistVarReferencesInTree(val == null ? Node.newUndefinedNode() : val, v.scope);"
+    },
+    {
+        "id": 1209,
+        "line": 20,
+        "precode": "for (Node key = val.getFirstChild(); key != null; key = key.getNext()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "for (Node key = val.getFirstChild(); key == null; key = key.getNext()) {"
+    },
+    {
+        "id": 1212,
+        "line": 29,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), value));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var) + \"_mutated\"), value));"
+    },
+    {
+        "id": 1213,
+        "line": 35,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var) + \"_mutated\"), NodeUtil.newUndefinedNode(null)));"
+    },
+    {
+        "id": 1215,
+        "line": 35,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), IR.nullNode()));"
+    },
+    {
+        "id": 1216,
+        "line": 35,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), IR.falseNode()));"
+    },
+    {
+        "id": 1217,
+        "line": 35,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), IR.number(0)));"
+    },
+    {
+        "id": 1218,
+        "line": 35,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), IR.string(\"\")));"
+    },
+    {
+        "id": 1219,
+        "line": 35,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), IR.emptyNode()));"
+    },
+    {
+        "id": 1220,
+        "line": 35,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), IR.number(1)));"
+    },
+    {
+        "id": 1221,
+        "line": 35,
+        "precode": "nodes.add(IR.assign(IR.name(varmap.get(var)), NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_5_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "nodes.add(IR.assign(IR.name(varmap.get(var)), IR.trueNode()));"
+    }
+]

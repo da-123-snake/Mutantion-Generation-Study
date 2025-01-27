@@ -1,0 +1,93 @@
+[
+    {
+        "id": 52,
+        "line": 5,
+        "precode": "if (attributeKey.startsWith(\"abs:\")) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "if (!attributeKey.startsWith(\"abs:\")) {"
+    },
+    {
+        "id": 53,
+        "line": 6,
+        "precode": "String key = attributeKey.substring(\"abs:\".length());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "String key = attributeKey.substring(0, \"abs:\".length());"
+    },
+    {
+        "id": 54,
+        "line": 7,
+        "precode": "if (attributes.hasKey(key) && !absUrl(key).equals(\"\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "if (attributes.hasKey(key) || !absUrl(key).equals(\"\"))"
+    },
+    {
+        "id": 55,
+        "line": 5,
+        "precode": "if (attributeKey.startsWith(\"abs:\")) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "if (attributeKey.contains(\"abs:\")) {"
+    },
+    {
+        "id": 56,
+        "line": 6,
+        "precode": "String key = attributeKey.substring(\"abs:\".length());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "String key = attributeKey.substring(\"abs:\".length(), attributeKey.length());"
+    },
+    {
+        "id": 57,
+        "line": 7,
+        "precode": "if (attributes.hasKey(key) && !absUrl(key).equals(\"\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "if (attributes.hasKey(key) && absUrl(key).equals(\"\"))"
+    },
+    {
+        "id": 58,
+        "line": 5,
+        "precode": "if (attributeKey.startsWith(\"abs:\")) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "if (attributeKey.endsWith(\"abs:\")) {"
+    },
+    {
+        "id": 59,
+        "line": 6,
+        "precode": "String key = attributeKey.substring(\"abs:\".length());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "String key = attributeKey.replaceFirst(\"abs:\", \"\");"
+    },
+    {
+        "id": 60,
+        "line": 7,
+        "precode": "if (attributes.hasKey(key) && !absUrl(key).equals(\"\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "if (!attributes.hasKey(key) && !absUrl(key).equals(\"\"))"
+    },
+    {
+        "id": 61,
+        "line": 5,
+        "precode": "if (attributeKey.startsWith(\"abs:\")) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "if (attributeKey.equals(\"abs:\")) {"
+    },
+    {
+        "id": 62,
+        "line": 6,
+        "precode": "String key = attributeKey.substring(\"abs:\".length());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "String key = attributeKey.substring(0);"
+    },
+    {
+        "id": 813,
+        "line": 445,
+        "precode": "reindexChildren(index);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "for (int i = start; i < childNodes.size(); i++) childNodes.get(i).setSiblingIndex(i);"
+    },
+    {
+        "id": 1325,
+        "line": 374,
+        "precode": "Validate.notNull(parentNode);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_49_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "Validate.notEmpty(parentNode);"
+    }
+]

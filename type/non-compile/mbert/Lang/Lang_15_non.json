@@ -1,0 +1,44 @@
+[
+    {
+        "id": 36,
+        "line": 216,
+        "precode": "                toClass, typeVarAssigns);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "        Map<TypeVariable<?>, Type> toTypeVarAssigns = getTypeArguments(toParameterizedType,null, typeVarAssigns);"
+    },
+    {
+        "id": 37,
+        "line": 219,
+        "precode": "        for (TypeVariable<?> var : toTypeVarAssigns.keySet()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "        for (TypeVariable<?> var : toTypeVarAssigns.values()) {"
+    },
+    {
+        "id": 38,
+        "line": 220,
+        "precode": "            Type toTypeArg = unrollVariableAssignments(var, toTypeVarAssigns);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "            Type toTypeArg =convert(var, toTypeVarAssigns);"
+    },
+    {
+        "id": 39,
+        "line": 221,
+        "precode": "            Type fromTypeArg = unrollVariableAssignments(var, fromTypeVarAssigns);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "            Type fromTypeArg =resolve(var, fromTypeVarAssigns);"
+    },
+    {
+        "id": 41,
+        "line": 675,
+        "precode": "        if (toClass.equals(cls)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "        if (toClass.is(cls)) {"
+    },
+    {
+        "id": 42,
+        "line": 676,
+        "precode": "            return typeVarAssigns;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "            returnnull;"
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": 27,
+        "line": 2,
+        "precode": "private static final long serialVersionUID = 9386874258972L;",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "private static final long serialVersionUID = 9386874258973L;"
+    },
+    {
+        "id": 28,
+        "line": 2,
+        "precode": "private static final long serialVersionUID = 9386874258972L;",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "private static final long serialVersionUID = 9386874258971L;"
+    },
+    {
+        "id": 29,
+        "line": 4,
+        "precode": "private static final long START_1972 = 2L * 365L * 86400L * 1000L;",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "private static final long START_1972 = 3L * 365L * 86400L * 1000L;"
+    },
+    {
+        "id": 30,
+        "line": 4,
+        "precode": "private static final long START_1972 = 2L * 365L * 86400L * 1000L;",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "private static final long START_1972 = 2L * 366L * 86400L * 1000L;"
+    },
+    {
+        "id": 31,
+        "line": 6,
+        "precode": "private volatile int iPeriod;",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "private int iPeriod;"
+    },
+    {
+        "id": 32,
+        "line": 6,
+        "precode": "private volatile int iPeriod;",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "private volatile long iPeriod;"
+    },
+    {
+        "id": 33,
+        "line": 4,
+        "precode": "private static final long START_1972 = 2L * 365L * 86400L * 1000L;",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "private static final long START_1972 = 2L * 365L * 86400L * 1001L;"
+    },
+    {
+        "id": 34,
+        "line": 102,
+        "precode": "throw new IllegalArgumentException(\"ReadablePartial objects must be contiguous\");",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "throw new IllegalArgumentException(\"ReadablePartial objects must not be null\");"
+    },
+    {
+        "id": 35,
+        "line": 102,
+        "precode": "throw new IllegalArgumentException(\"ReadablePartial objects must be contiguous\");",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "throw new RuntimeException(\"ReadablePartial objects must be contiguous\");"
+    },
+    {
+        "id": 36,
+        "line": 104,
+        "precode": "Chronology chrono = DateTimeUtils.getChronology(start.getChronology()).withUTC();",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "Chronology chrono = DateTimeUtils.getChronology(start.getChronology()).withZone(DateTimeZone.getDefault());"
+    },
+    {
+        "id": 37,
+        "line": 105,
+        "precode": "int[] values = chrono.get(zeroInstance, chrono.set(start, START_1972), chrono.set(end, START_1972));",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "int[] values = chrono.get(zeroInstance, chrono.set(end, START_1972), chrono.set(start, START_1972));"
+    },
+    {
+        "id": 38,
+        "line": 106,
+        "precode": "return values[0];",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "return values[1];"
+    },
+    {
+        "id": 39,
+        "line": 104,
+        "precode": "Chronology chrono = DateTimeUtils.getChronology(start.getChronology()).withUTC();",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "Chronology chrono = DateTimeUtils.getChronology(end.getChronology()).withUTC();"
+    },
+    {
+        "id": 40,
+        "line": 105,
+        "precode": "int[] values = chrono.get(zeroInstance, chrono.set(start, START_1972), chrono.set(end, START_1972));",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "int[] values = chrono.get(zeroInstance, chrono.set(start, START_1972), chrono.set(end, START_1972))[0];"
+    }
+]

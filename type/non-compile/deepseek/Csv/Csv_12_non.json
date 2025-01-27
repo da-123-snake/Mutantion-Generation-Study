@@ -1,0 +1,121 @@
+[
+    {
+        "id": 28,
+        "line": 219,
+        "precode": "public static final CSVFormat EXCEL = DEFAULT.withIgnoreEmptyLines(false).withAllowMissingColumnNames(true);",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "public static final CSVFormat EXCEL = DEFAULT.withAllowEmptyLines(true);"
+    },
+    {
+        "id": 31,
+        "line": 309,
+        "precode": "public static CSVFormat newFormat(final char delimiter) {",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "public static CSVFormat newFormat(final int delimiter) {"
+    },
+    {
+        "id": 32,
+        "line": 309,
+        "precode": "public static CSVFormat newFormat(final char delimiter) {",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "public static CSVFormat newFormat(final String delimiter) {"
+    },
+    {
+        "id": 38,
+        "line": 154,
+        "precode": "private final boolean ignoreSurroundingSpaces; // Should leading/trailing spaces be ignored around values?",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final boolean ignoreSurroundingSpaces = true; // Should leading/trailing spaces be ignored around values?"
+    },
+    {
+        "id": 39,
+        "line": 155,
+        "precode": "private final boolean allowMissingColumnNames;",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final boolean allowMissingColumnNames = true;"
+    },
+    {
+        "id": 40,
+        "line": 156,
+        "precode": "private final boolean ignoreEmptyLines;",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final boolean ignoreEmptyLines = true;"
+    },
+    {
+        "id": 41,
+        "line": 157,
+        "precode": "private final String recordSeparator; // for outputs",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final String recordSeparator = \"\\n\"; // for outputs"
+    },
+    {
+        "id": 42,
+        "line": 158,
+        "precode": "private final String nullString; // the string to be used for null values",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final String nullString = \"NULL\"; // the string to be used for null values"
+    },
+    {
+        "id": 43,
+        "line": 159,
+        "precode": "private final String[] header; // array of header column names",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final String[] header = new String[0]; // array of header column names"
+    },
+    {
+        "id": 44,
+        "line": 160,
+        "precode": "private final boolean skipHeaderRecord;",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final boolean skipHeaderRecord = true;"
+    },
+    {
+        "id": 45,
+        "line": 149,
+        "precode": "private final char delimiter;",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final char delimiter = ',';"
+    },
+    {
+        "id": 46,
+        "line": 150,
+        "precode": "private final Character quoteCharacter; // null if quoting is disabled",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final Character quoteCharacter = '\"'; // null if quoting is disabled"
+    },
+    {
+        "id": 134,
+        "line": 310,
+        "precode": "return new CSVFormat(delimiter, null, null, null, null, false, false, null, null, null, false, false);",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return new CSVFormat(delimiter, null, null, null, '\\', false, false, null, null, null, false, false);"
+    },
+    {
+        "id": 136,
+        "line": 310,
+        "precode": "return new CSVFormat(delimiter, null, null, null, null, false, false, null, null, null, false, false);",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return new CSVFormat(delimiter, null, null, null, null, false, false, null, ISO_8859_1, null, false, false);"
+    },
+    {
+        "id": 137,
+        "line": 310,
+        "precode": "return new CSVFormat(delimiter, null, null, null, null, false, false, null, null, null, false, false);",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return new CSVFormat(delimiter, null, null, null, null, false, false, null, null, StandardCharsets.UTF_16, false, false);"
+    },
+    {
+        "id": 143,
+        "line": 670,
+        "precode": "return new CSVPrinter(out, this);",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return this;"
+    },
+    {
+        "id": 144,
+        "line": 670,
+        "precode": "return new CSVPrinter(out, this);",
+        "filepath": "defects4j_fixed/Csv/Csv_12_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return new CSVPrinter(out, this).print(out);"
+    }
+]

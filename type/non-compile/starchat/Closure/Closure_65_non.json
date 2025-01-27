@@ -1,0 +1,247 @@
+[
+    {
+        "id": 20,
+        "line": 1082,
+        "precode": "static String strEscape(String s, char quote, ",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String backslashEscape, String singlequoteEscape, String doublequoteEscape, CharsetEncoder outputCharsetEncoder) {"
+    },
+    {
+        "id": 21,
+        "line": 1082,
+        "precode": "StringBuilder sb = new StringBuilder(s.length() + 2);",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "sb = new StringBuilder(s.length() + 3);"
+    },
+    {
+        "id": 22,
+        "line": 1082,
+        "precode": "sb.append(quote);",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "sb.append(quote).append('\\\\');"
+    },
+    {
+        "id": 23,
+        "line": 1085,
+        "precode": "for (int i = 0; i < s.length(); i++) {",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "for (int j = 0; j < s.length(); j++) {"
+    },
+    {
+        "id": 24,
+        "line": 1086,
+        "precode": "char c = s.charAt(i);",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "char c = s.charAt(j); "
+    },
+    {
+        "id": 25,
+        "line": 1082,
+        "precode": "switch (c) {",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "switch (c) {\ncase '\\0':\n    sb.append(\"\\\\000\");\n    break;"
+    },
+    {
+        "id": 26,
+        "line": 1082,
+        "precode": "case '\n':",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "case '\\n':\n    sb.append(\"\\\\n\");\n    break;"
+    },
+    {
+        "id": 520,
+        "line": 984,
+        "precode": "String cached = ESCAPED_JS_STRINGS.get(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String cached = ESCAPED_JS_STRINGS.get(s)!= null? ESCAPED_JS_STRINGS.get(s) : jsString(s);"
+    },
+    {
+        "id": 521,
+        "line": 984,
+        "precode": "String cached = ESCAPED_JS_STRINGS.get(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String cached = s == null? null : ESCAPED_JS_STRINGS.get(s)!= null? ESCAPED_JS_STRINGS.get(s) : jsString(s);"
+    },
+    {
+        "id": 522,
+        "line": 984,
+        "precode": "if (cached == null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (s == null) return null;"
+    },
+    {
+        "id": 523,
+        "line": 984,
+        "precode": "cached = jsString(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "cached = s == null? null : jsString(s);"
+    },
+    {
+        "id": 524,
+        "line": 984,
+        "precode": "ESCAPED_JS_STRINGS.put(s, cached);",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "ESCAPED_JS_STRINGS.put(s, s == null? null : jsString(s));"
+    },
+    {
+        "id": 525,
+        "line": 984,
+        "precode": "add(cached);",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "add(s == null? null : jsString(s));"
+    },
+    {
+        "id": 526,
+        "line": 984,
+        "precode": "return cached;",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "return s == null? null : jsString(s);"
+    },
+    {
+        "id": 554,
+        "line": 1082,
+        "precode": "String strEscape(",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String strEscape("
+    },
+    {
+        "id": 555,
+        "line": 1082,
+        "precode": "String s, char quote, ",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s, char quote, "
+    },
+    {
+        "id": 556,
+        "line": 1082,
+        "precode": "String doublequoteEscape, ",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String doublequoteEscape, "
+    },
+    {
+        "id": 557,
+        "line": 1082,
+        "precode": "String singlequoteEscape, ",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String singlequoteEscape, "
+    },
+    {
+        "id": 558,
+        "line": 1082,
+        "precode": "String backslashEscape, ",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String backslashEscape, "
+    },
+    {
+        "id": 559,
+        "line": 1082,
+        "precode": "CharsetEncoder outputCharsetEncoder) {",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "CharsetEncoder outputCharsetEncoder) {"
+    },
+    {
+        "id": 560,
+        "line": 1084,
+        "precode": "StringBuilder sb = new StringBuilder(",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "StringBuilder sb = new StringBuilder("
+    },
+    {
+        "id": 732,
+        "line": 834,
+        "precode": "if (n.getType() == Token.BLOCK) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {\n"
+    },
+    {
+        "id": 734,
+        "line": 834,
+        "precode": "if (count == 0) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {\n"
+    },
+    {
+        "id": 735,
+        "line": 834,
+        "precode": "if (cc.shouldPreserveExtraBlocks()) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {\n"
+    },
+    {
+        "id": 736,
+        "line": 834,
+        "precode": "cc.beginBlock();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "cc.beginBlock();\n"
+    },
+    {
+        "id": 737,
+        "line": 834,
+        "precode": "cc.endBlock(cc.breakAfterBlockFor(n, context == Context.STATEMENT));\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "cc.endBlock(cc.breakAfterBlockFor(true, context == Context.STATEMENT));\n"
+    },
+    {
+        "id": 738,
+        "line": 834,
+        "precode": "} else {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "} else {\n"
+    },
+    {
+        "id": 739,
+        "line": 834,
+        "precode": "cc.endStatement(true);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "cc.endStatement(true);\n"
+    },
+    {
+        "id": 740,
+        "line": 834,
+        "precode": "if (n.getType() == Token.BLOCK) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {\n"
+    },
+    {
+        "id": 742,
+        "line": 834,
+        "precode": "if (count == 0) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {\n"
+    },
+    {
+        "id": 743,
+        "line": 834,
+        "precode": "if (cc.shouldPreserveExtraBlocks()) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {\n"
+    },
+    {
+        "id": 744,
+        "line": 834,
+        "precode": "cc.beginBlock();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "cc.beginBlock();\n"
+    },
+    {
+        "id": 745,
+        "line": 834,
+        "precode": "cc.endBlock(cc.breakAfterBlockFor(n, context == Context.STATEMENT));\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "cc.endBlock(cc.breakAfterBlockFor(true, context == Context.STATEMENT));\n"
+    },
+    {
+        "id": 746,
+        "line": 834,
+        "precode": "} else {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "} else {\n"
+    },
+    {
+        "id": 747,
+        "line": 834,
+        "precode": "cc.endStatement(true);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_65_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "cc.endStatement(true);\n"
+    }
+]

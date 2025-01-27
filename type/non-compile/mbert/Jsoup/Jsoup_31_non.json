@@ -1,0 +1,51 @@
+[
+    {
+        "id": 176,
+        "line": 64,
+        "precode": "                    attribute = new Attribute(pendingAttributeName, pendingAttributeValue.toString());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "                    attribute|= new Attribute(pendingAttributeName, pendingAttributeValue.toString());"
+    },
+    {
+        "id": 177,
+        "line": 65,
+        "precode": "                attributes.put(attribute);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "                attributes.add(attribute);"
+    },
+    {
+        "id": 178,
+        "line": 67,
+        "precode": "            pendingAttributeName = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "            pendingAttributeName!= null;"
+    },
+    {
+        "id": 180,
+        "line": 69,
+        "precode": "                pendingAttributeValue.delete(0, pendingAttributeValue.length());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "                pendingAttributeValue.set(0, pendingAttributeValue.length());"
+    },
+    {
+        "id": 237,
+        "line": 105,
+        "precode": "            appendTagName(String.valueOf(append));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "\n\n{'masked_seq':'void appendTagName(char append) {append(String.valueOf(append));"
+    },
+    {
+        "id": 238,
+        "line": 109,
+        "precode": "            pendingAttributeName = pendingAttributeName == null ? append : pendingAttributeName.concat(append);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "            pendingAttributeName.= pendingAttributeName == null? append : pendingAttributeName.concat(append);"
+    },
+    {
+        "id": 239,
+        "line": 117,
+        "precode": "            pendingAttributeValue = pendingAttributeValue == null ? new StringBuilder(append) : pendingAttributeValue.append(append);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "            pendingAttributeValue||= pendingAttributeValue == null? new StringBuilder(append) : pendingAttributeValue.append(append);"
+    }
+]

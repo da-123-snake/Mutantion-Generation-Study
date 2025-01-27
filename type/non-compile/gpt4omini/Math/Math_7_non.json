@@ -1,0 +1,51 @@
+[
+    {
+        "id": 564,
+        "line": 391,
+        "precode": "for (final EventState state : eventsStates) {",
+        "filepath": "defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "for (final EventState state : eventsStates) { if (state != null) {"
+    },
+    {
+        "id": 566,
+        "line": 352,
+        "precode": "for (final StepHandler handler : stepHandlers) {",
+        "filepath": "defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "for (final StepHandler handler : stepHandlers) { if (handler != null) {"
+    },
+    {
+        "id": 569,
+        "line": 390,
+        "precode": "currentY = interpolator.getInterpolatedState();",
+        "filepath": "defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "currentY = interpolator.getInterpolatedState().clone();"
+    },
+    {
+        "id": 581,
+        "line": 356,
+        "precode": "if (isLastStep) {",
+        "filepath": "defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "if (isLastStep && !state.stop()) {"
+    },
+    {
+        "id": 584,
+        "line": 369,
+        "precode": "System.arraycopy(eventY, 0, y, 0, y.length);",
+        "filepath": "defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "y = eventY.clone();"
+    },
+    {
+        "id": 588,
+        "line": 369,
+        "precode": "System.arraycopy(eventY, 0, y, 0, y.length);",
+        "filepath": "defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "Arrays.copyOf(eventY, eventY.length);"
+    },
+    {
+        "id": 589,
+        "line": 356,
+        "precode": "if (isLastStep) {",
+        "filepath": "defects4j_fixed/Math/Math_7_fixed/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java",
+        "aftercode": "if (isLastStep && state.stop()) {"
+    }
+]

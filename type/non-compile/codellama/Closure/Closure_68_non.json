@@ -1,0 +1,51 @@
+[
+    {
+        "id": 86,
+        "line": 1,
+        "precode": "n = (n & (n - 1));",
+        "aftercode": "n = (n ^ (n - 1));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_68_fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java"
+    },
+    {
+        "id": 848,
+        "line": 1686,
+        "precode": "if (token == JsDocToken.STAR) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_68_fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java",
+        "aftercode": "if (token == JsDocToken.STAR) { return newNode(Token.STAR); }"
+    },
+    {
+        "id": 849,
+        "line": 1688,
+        "precode": "if (token == JsDocToken.LB) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_68_fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java",
+        "aftercode": "if (token == JsDocToken.LB) { skipEOLs(); return parseArrayType(next()); }"
+    },
+    {
+        "id": 850,
+        "line": 1691,
+        "precode": "if (token == JsDocToken.LC) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_68_fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java",
+        "aftercode": "if (token == JsDocToken.LC) { skipEOLs(); return parseRecordType(next()); }"
+    },
+    {
+        "id": 851,
+        "line": 1694,
+        "precode": "if (token == JsDocToken.LP) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_68_fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java",
+        "aftercode": "if (token == JsDocToken.LP) { skipEOLs(); return parseUnionType(next()); }"
+    },
+    {
+        "id": 852,
+        "line": 1697,
+        "precode": "if (token == JsDocToken.STRING) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_68_fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java",
+        "aftercode": "if (token == JsDocToken.STRING) { String string = stream.getString(); if (\"function\".equals(string)) { skipEOLs(); return parseFunctionType(next()); } else if (\"null\".equals(string) || \"undefined\".equals(string)) { return newStringNode(string); } else { return parseTypeName(token); } }"
+    },
+    {
+        "id": 853,
+        "line": 1709,
+        "precode": "restoreLookAhead(token);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_68_fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java",
+        "aftercode": "restoreLookAhead(token); return reportGenericTypeSyntaxWarning();"
+    }
+]

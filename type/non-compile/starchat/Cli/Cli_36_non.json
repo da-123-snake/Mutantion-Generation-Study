@@ -1,0 +1,128 @@
+[
+    {
+        "id": 90,
+        "line": 25,
+        "precode": "package org.apache.commons.cli;",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "package org.apache.commons.cli;\n\nimport java.io.Serializable;\n\npublic class CLI {\n    public static void main(String[] args) {\n        n = (n & (n - 1));\n    }\n}"
+    },
+    {
+        "id": 91,
+        "line": 25,
+        "precode": "import java.io.Serializable;",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "import java.io.Serializable;\n\nimport java.util.Collection;\nimport java.util.Iterator;\nimport java.util.LinkedHashMap;\nimport java.util.Map;\n\npublic class CLI {\n    public static void main(String[] args) {\n        n = (n & (n - 1));\n    }\n}"
+    },
+    {
+        "id": 92,
+        "line": 25,
+        "precode": "import java.util.Collection;",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "import java.util.Collection;\n\nimport java.util.Iterator;\nimport java.util.LinkedHashMap;\nimport java.util.Map;\n\npublic class CLI {\n    public static void main(String[] args) {\n        n = (n & (n - 1));\n    }\n}"
+    },
+    {
+        "id": 93,
+        "line": 25,
+        "precode": "import java.util.Iterator;",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "import java.util.Iterator;\n\nimport java.util.LinkedHashMap;\nimport java.util.Map;\n\npublic class CLI {\n    public static void main(String[] args) {\n        n = (n & (n - 1));\n    }\n}"
+    },
+    {
+        "id": 94,
+        "line": 25,
+        "precode": "import java.util.LinkedHashMap;",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "import java.util.LinkedHashMap;\n\nimport java.util.Map;\n\npublic class CLI {\n    public static void main(String[] args) {\n        n = (n & (n - 1));\n    }\n}"
+    },
+    {
+        "id": 95,
+        "line": 25,
+        "precode": "public class CLI {\n",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "public class CLI implements Serializable {\n    public static void main(String[] args) {\n        n = (n & (n - 1));\n    }\n}"
+    },
+    {
+        "id": 96,
+        "line": 25,
+        "precode": "public static void main(String[] args) {\n",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "public static void main(String[] args) implements Serializable {\n        n = (n & (n - 1));\n    }\n}"
+    },
+    {
+        "id": 97,
+        "line": 25,
+        "precode": "n = (n & (n - 1));",
+        "aftercode": "n = (n ^ (n - 1));",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java"
+    },
+    {
+        "id": 100,
+        "line": 34,
+        "precode": "private static final long serialVersionUID = 1L;",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "private static final long serialVersionUID = 0b10101010;"
+    },
+    {
+        "id": 101,
+        "line": 34,
+        "precode": "private static final long serialVersionUID = 1L;",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "private static final long serialVersionUID = 1.0;"
+    },
+    {
+        "id": 103,
+        "line": 34,
+        "precode": "private static final long serialVersionUID = 1L;",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "private static final long serialVersionUID = \"a\";"
+    },
+    {
+        "id": 105,
+        "line": 59,
+        "precode": "OptionGroup addOption(Option option) {\n",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "OptionGroup addOption(Option option) {\n    // key   - option name\n    // value - the option\n    optionMap.put(option.getKey(), option);\n\n    return this;\n}"
+    },
+    {
+        "id": 106,
+        "line": 59,
+        "precode": "OptionGroup addOption(Option option) {\n",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "OptionGroup addOption(Option option) {\n    // key   - option name\n    // value - the option\n    optionMap.put(option.getKey() ^ (option.getKey() - 1), option);\n\n    return this;\n}"
+    },
+    {
+        "id": 107,
+        "line": 59,
+        "precode": "    // key   - option name\n",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "    // key   - option name\n    // value - the option\n    optionMap.put(option.getKey(), option);\n\n    return this;\n}"
+    },
+    {
+        "id": 108,
+        "line": 59,
+        "precode": "    // key   - option name\n",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "    // key   - option name\n    // value - the option\n    optionMap.put(option.getKey() ^ (option.getKey() - 1), option);\n\n    return this;\n}"
+    },
+    {
+        "id": 109,
+        "line": 59,
+        "precode": "    optionMap.put(option.getKey(), option);\n",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "    optionMap.put(option.getKey() ^ (option.getKey() - 1), option);\n\n    return this;\n}"
+    },
+    {
+        "id": 110,
+        "line": 59,
+        "precode": "    optionMap.put(option.getKey(), option);\n",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "    optionMap.put(option.getKey(), option);\n\n    return this;\n}"
+    },
+    {
+        "id": 111,
+        "line": 59,
+        "precode": "    return this;\n}",
+        "filepath": "defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "    return true;\n}"
+    }
+]

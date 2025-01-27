@@ -1,0 +1,86 @@
+[
+    {
+        "id": 269,
+        "line": 51,
+        "precode": "return null;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "return (T) new Object();"
+    },
+    {
+        "id": 272,
+        "line": 9,
+        "precode": "public ConstructorInstantiator(Object outerClassInstance) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "public ConstructorInstantiator() {"
+    },
+    {
+        "id": 275,
+        "line": 27,
+        "precode": "return (T) constructor.newInstance(params);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "return (T) constructor.newInstance(new Object[]{outerClassInstance});"
+    },
+    {
+        "id": 276,
+        "line": 26,
+        "precode": "paramsMatch(types, params)",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "types.length == params.length"
+    },
+    {
+        "id": 277,
+        "line": 26,
+        "precode": "paramsMatch(types, params)",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "paramsMatch(params, types)  // Change order"
+    },
+    {
+        "id": 286,
+        "line": 57,
+        "precode": "throw new InstantationException(",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "throw new RuntimeException("
+    },
+    {
+        "id": 289,
+        "line": 38,
+        "precode": "Please ensure that the outer instance has correct type and that the target class has parameter-less constructor.",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "Please check the outer instance and ensure the class has a valid constructor."
+    },
+    {
+        "id": 290,
+        "line": 26,
+        "precode": "paramsMatch(types, params)",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "paramsMatch(params, types)"
+    },
+    {
+        "id": 291,
+        "line": 15,
+        "precode": "return noArgConstructor(cls);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "return (T) constructor.newInstance(null);"
+    },
+    {
+        "id": 292,
+        "line": 33,
+        "precode": "throw paramsException(cls, null);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "throw new InstantationException(\"Uncaught Exception\");"
+    },
+    {
+        "id": 294,
+        "line": 20,
+        "precode": "private static <T> T withParams(Class<T> cls, Object... params) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "private static <T> T withParams(Class<T> cls, Object params) {"
+    },
+    {
+        "id": 296,
+        "line": 9,
+        "precode": "public ConstructorInstantiator(Object outerClassInstance) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java",
+        "aftercode": "public ConstructorInstantiator(Object outerClassInstance, boolean flag) {"
+    }
+]

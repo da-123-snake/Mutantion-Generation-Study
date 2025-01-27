@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "line": 825,
+        "precode": "        long len = getEncodeLength(binaryData, MIME_CHUNK_SIZE, CHUNK_SEPARATOR);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "        long len =encode(binaryData, MIME_CHUNK_SIZE, CHUNK_SEPARATOR);"
+    },
+    {
+        "id": 3,
+        "line": 827,
+        "precode": "            throw new IllegalArgumentException(\"Input array too big, the output array would be bigger (\" +",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "                \") than the specified maxium size of \"+maxResultSize);"
+    },
+    {
+        "id": 4,
+        "line": 828,
+        "precode": "                len +",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "            throw new IllegalArgumentException(\"Input array too big, the output array would be bigger (\" +len +"
+    },
+    {
+        "id": 7,
+        "line": 418,
+        "precode": "                buffer = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "                buffer!= null;"
+    },
+    {
+        "id": 8,
+        "line": 420,
+        "precode": "            return len;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "            returnbuffer;"
+    },
+    {
+        "id": 9,
+        "line": 670,
+        "precode": "        return StringUtils.newStringUtf8(encodeBase64(binaryData, false));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "        return StringUtils.escape(encodeBase64(binaryData, false));"
+    },
+    {
+        "id": 20,
+        "line": 585,
+        "precode": "        if (eof && modulus != 0) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "        if (eof_modulus!= 0) {"
+    },
+    {
+        "id": 22,
+        "line": 587,
+        "precode": "                resizeBuffer();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "            if (buffer == null || buffer.length - pos < decodeSize) {close();"
+    },
+    {
+        "id": 24,
+        "line": 591,
+        "precode": "            switch (modulus) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Codec/Codec_7_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "            switch (type) {"
+    }
+]

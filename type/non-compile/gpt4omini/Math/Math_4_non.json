@@ -1,0 +1,37 @@
+[
+    {
+        "id": 474,
+        "line": 113,
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "filepath": "defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Vector3D v1D = line.intersection(subLine.line.add(new Vector3D(0, 1, 0)));"
+    },
+    {
+        "id": 475,
+        "line": 119,
+        "precode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D));",
+        "filepath": "defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D.scale(2)));"
+    },
+    {
+        "id": 479,
+        "line": 122,
+        "precode": "Location loc2 = subLine.remainingRegion.checkPoint(subLine.line.toSubSpace(v1D));",
+        "filepath": "defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Location loc2 = subLine.remainingRegion.checkPoint(subLine.line.toSubSpace(v1D.sub(new Vector3D(1, 0, 0))));"
+    },
+    {
+        "id": 481,
+        "line": 119,
+        "precode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D));",
+        "filepath": "defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D.scale(2.0)));"
+    },
+    {
+        "id": 482,
+        "line": 122,
+        "precode": "Location loc2 = subLine.remainingRegion.checkPoint(subLine.line.toSubSpace(v1D));",
+        "filepath": "defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Location loc2 = subLine.remainingRegion.checkPoint(subLine.line.toSubSpace(v1D.scale(3.0)));"
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 54,
+        "line": 927,
+        "precode": "            if (_failOnDoS) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "            if (report) {"
+    },
+    {
+        "id": 55,
+        "line": 928,
+        "precode": "                _reportTooManyCollisions();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "            if (_failOnDoS) {fail();"
+    },
+    {
+        "id": 56,
+        "line": 984,
+        "precode": "        hash += (hash >>> 16); // to xor hi- and low- 16-bits",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        hash^+= (hash >>> 16); // to xor hi- and low- 16-bits"
+    },
+    {
+        "id": 57,
+        "line": 985,
+        "precode": "        hash ^= (hash << 3); // shuffle back a bit",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        hash&^= (hash << 3); // shuffle back a bit"
+    },
+    {
+        "id": 58,
+        "line": 986,
+        "precode": "        hash += (hash >>> 12); // and bit more",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        hash^+= (hash >>> 12); // and bit more"
+    },
+    {
+        "id": 59,
+        "line": 987,
+        "precode": "        return hash;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        return0;"
+    },
+    {
+        "id": 74,
+        "line": 879,
+        "precode": "        if (_needRehash) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        if (dirty) {"
+    },
+    {
+        "id": 75,
+        "line": 880,
+        "precode": "            rehash();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_10_fixed/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java",
+        "aftercode": "        if (_needRehash) {refresh();"
+    }
+]

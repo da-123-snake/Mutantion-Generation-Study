@@ -1,0 +1,338 @@
+[
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    el.setAttribute(key, attribute.getValue());",
+        "line": 127,
+        "aftercode": "el.setAttribute(key);"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 125,
+        "aftercode": "String key = attribute.replaceAll();"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 123,
+        "aftercode": "package org.jsoup.helper;\n\nimport org.jsoup.nodes.Attribute;\nimport org.jsoup.nodes.Attributes;\nimport org.jsoup.select.NodeTraversor;\nimport org.jsoup.select.NodeVisitor;\nimport org.w3c.dom.Comment;\nimport org.w3c.dom.Document;\nimport org.w3c.dom.Element;\nimport org.w3c.dom.Text;\n\nimport javax.xml.parsers.DocumentBuilder;\nimport javax.xml.parsers.DocumentBuilderFactory;\nimport javax.xml.parsers.ParserConfigurationException;\nimport javax.xml.transform.Transformer;\nimport javax.xml.transform.TransformerException;\nimport javax.xml.transform.TransformerFactory;\nimport javax.xml.transform.dom.DOMSource;\nimport javax.xml.transform.stream.StreamResult;\nimport java.io.StringWriter;\nimport java.util.HashMap;\n\n/**\n * Helper class to transform a {@link org.jsoup.nodes.Document} to a {@link org.w3c.dom.Document org.w3c.dom.Document},\n * for integration with toolsets that use the W3C DOM.\n * <p>\n * This class is currently <b>experimental</b>, please provide feedback on utility and any problems experienced.\n * </p>\n */\npublic class W3CDom {\n    protected DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();\n\n    /**\n     * Convert a jsoup Document to a W3C Document.\n     * @param in jsoup doc\n     * @return w3c doc\n     */\n    public Document fromJsoup(org.jsoup.nodes.Document in) {\n        Validate.notNull(in);\n        DocumentBuilder builder;\n        try {\n        \t//set the factory to be namespace-aware\n        \tfactory.setNamespaceAware(true);\n            builder = factory.newDocumentBuilder();\n            Document out = builder.newDocument();\n            convert(in, out);\n            return out;\n        } catch (ParserConfigurationException e) {\n            throw new IllegalStateException(e);\n        }\n    }\n\n    /**\n     * Converts a jsoup document into the provided W3C Document. If required, you can set options on the output document\n     * before converting.\n     * @param in jsoup doc\n     * @param out w3c doc\n     * @see org.jsoup.helper.W3CDom#fromJsoup(org.jsoup.nodes.Document)\n     */\n    public void convert(org.jsoup.nodes.Document in, Document out) {\n        if (!StringUtil.isBlank(in.location()))\n            out.setDocumentURI(in.location());\n\n        org.jsoup.nodes.Element rootEl = in.child(0); // skip the #root node\n        NodeTraversor traversor = new NodeTraversor(new W3CBuilder(out));\n        traversor.traverse(rootEl);\n    }\n\n    /**\n     * Implements the conversion by walking the input.\n     */\n    protected static class W3CBuilder implements NodeVisitor {\n        private static final String xmlnsKey = \"xmlns\";\n        private static final String xmlnsPrefix = \"xmlns:\";\n\n        private final Document doc;\n        private final HashMap<String, String> namespaces = new HashMap<String, String>(); // prefix => urn\n        private Element dest;\n\n        public W3CBuilder(Document doc) {\n            this.doc = doc;\n        }\n\n        public void head(org.jsoup.nodes.Node source, int depth) {\n            if (source instanceof org.jsoup.nodes.Element) {\n                org.jsoup.nodes.Element sourceEl = (org.jsoup.nodes.Element) source;\n\n                String prefix = updateNamespaces(sourceEl);\n                String namespace = namespaces.get(prefix);\n\n                Element el = doc.createElementNS(namespace, sourceEl.tagName());\n                copyAttributes(sourceEl, el);\n                if (dest == null) { // sets up the root\n                    doc.appendChild(el);\n                } else {\n                    dest.appendChild(el);\n                }\n                dest = el; // descend\n            } else if (source instanceof org.jsoup.nodes.TextNode) {\n                org.jsoup.nodes.TextNode sourceText = (org.jsoup.nodes.TextNode) source;\n                Text text = doc.createTextNode(sourceText.getWholeText());\n                dest.appendChild(text);\n            } else if (source instanceof org.jsoup.nodes.Comment) {\n                org.jsoup.nodes.Comment sourceComment = (org.jsoup.nodes.Comment) source;\n                Comment comment = doc.createComment(sourceComment.getData());\n                dest.appendChild(comment);\n            } else if (source instanceof org.jsoup.nodes.DataNode) {\n                org.jsoup.nodes.DataNode sourceData = (org.jsoup.nodes.DataNode) source;\n                Text node = doc.createTextNode(sourceData.getWholeData());\n                dest.appendChild(node);\n            } else {\n                // unhandled\n            }\n        }\n\n        public void tail(org.jsoup.nodes.Node source, int depth) {\n            if (source instanceof org.jsoup.nodes.Element && dest.getParentNode() instanceof Element) {\n                dest = (Element) dest.getParentNode(); // undescend. cromulent.\n            }\n        }\n\n        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {\n            for (Attribute attribute : source.attributes()) {\n                // valid xml attribute names are: ^[a-zA-Z_:][-a-zA-Z0-9_:.]\nString key = attribute.getKey();\n                if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))\n\nel.setAttribute(key);\n            }\n        }\n\n        /**\n         * Finds any namespaces defined in this element. Returns any tag prefix.\n         */\n        private String updateNamespaces(org.jsoup.nodes.Element el) {\n            // scan the element for namespace declarations\n            // like: xmlns=\"blah\" or xmlns:prefix=\"blah\"\n            Attributes attributes = el.attributes();\n            for (Attribute attr : attributes) {\n                String key = attr.getKey();\n                String prefix;\n                if (key.equals(xmlnsKey)) {\n                    prefix = \"\";\n                } else if (key.startsWith(xmlnsPrefix)) {\n                    prefix = key.substring(xmlnsPrefix.length());\n                } else {\n                    continue;\n                }\n                namespaces.put(prefix, attr.getValue());\n            }\n\n            // get the element prefix if any\n            int pos = el.tagName().indexOf(\":\");\n            return pos > 0 ? el.tagName().substring(0, pos) : \"\";\n        }\n\n    }\n\n    /**\n     * Serialize a W3C document to a String.\n     * @param doc Document\n     * @return Document as string\n     */\n    public String asString(Document doc) {\n        try {\n            DOMSource domSource = new DOMSource(doc);\n            StringWriter writer = new StringWriter();\n            StreamResult result = new StreamResult(writer);\n            TransformerFactory tf = TransformerFactory.newInstance();\n            Transformer transformer = tf.newTransformer();\n            transformer.transform(domSource, result);\n            return writer.toString();\n        } catch (TransformerException e) {\n            throw new IllegalStateException(e);\n        }\n    }\n}"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "            for (Attribute attribute : source.attributes()) {",
+        "line": 123,
+        "aftercode": "(Attribute attribute = ;"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {",
+        "line": 122,
+        "aftercode": "org source            for (Attribute attribute : source.attributes()) {"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 125,
+        "aftercode": "attribute.getKey().replaceAll(\"null\", \"null\");"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    el.setAttribute(key, attribute.getValue());",
+        "line": 127,
+        "aftercode": "el.setAttribute(attribute);"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    el.setAttribute(key, attribute.getValue());",
+        "line": 127,
+        "aftercode": ""
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "            for (Attribute attribute : source.attributes()) {",
+        "line": 123,
+        "aftercode": "(Attribute attribute = ;"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {",
+        "line": 122,
+        "aftercode": "org source            for (Attribute attribute : source.attributes()) {"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))",
+        "line": 126,
+        "aftercode": "if(key.matches(\"null\")){"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 125,
+        "aftercode": "String key = attribute.getKey().replaceAll(\"null\");"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    prefix = key.substring(xmlnsPrefix.length());",
+        "line": 144,
+        "aftercode": "key.substring(xmlnsPrefix.length());"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))",
+        "line": 126,
+        "aftercode": "if(key.matches()){"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {",
+        "line": 122,
+        "aftercode": "org source            for (Attribute attribute : source.attributes()) {"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                } else if (key.startsWith(xmlnsPrefix)) {",
+        "line": 143,
+        "aftercode": "if(key.startsWith(\"null\")){"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "            for (Attribute attribute : source.attributes()) {",
+        "line": 123,
+        "aftercode": "(Attribute attribute = ;"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 125,
+        "aftercode": "String key = attribute.attributes();"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {",
+        "line": 122,
+        "aftercode": "org source            for (Attribute attribute : source.attributes()) {"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 125,
+        "aftercode": "String key = attribute.replaceAll(\"null\", \"null\");"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                namespaces.put(prefix, attr.getValue());",
+        "line": 148,
+        "aftercode": "namespaces.put(prefix);"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    continue;",
+        "line": 146,
+        "aftercode": ""
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 123,
+        "aftercode": "package org.jsoup.helper;\n\nimport org.jsoup.nodes.Attribute;\nimport org.jsoup.nodes.Attributes;\nimport org.jsoup.select.NodeTraversor;\nimport org.jsoup.select.NodeVisitor;\nimport org.w3c.dom.Comment;\nimport org.w3c.dom.Document;\nimport org.w3c.dom.Element;\nimport org.w3c.dom.Text;\n\nimport javax.xml.parsers.DocumentBuilder;\nimport javax.xml.parsers.DocumentBuilderFactory;\nimport javax.xml.parsers.ParserConfigurationException;\nimport javax.xml.transform.Transformer;\nimport javax.xml.transform.TransformerException;\nimport javax.xml.transform.TransformerFactory;\nimport javax.xml.transform.dom.DOMSource;\nimport javax.xml.transform.stream.StreamResult;\nimport java.io.StringWriter;\nimport java.util.HashMap;\n\n/**\n * Helper class to transform a {@link org.jsoup.nodes.Document} to a {@link org.w3c.dom.Document org.w3c.dom.Document},\n * for integration with toolsets that use the W3C DOM.\n * <p>\n * This class is currently <b>experimental</b>, please provide feedback on utility and any problems experienced.\n * </p>\n */\npublic class W3CDom {\n    protected DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();\n\n    /**\n     * Convert a jsoup Document to a W3C Document.\n     * @param in jsoup doc\n     * @return w3c doc\n     */\n    public Document fromJsoup(org.jsoup.nodes.Document in) {\n        Validate.notNull(in);\n        DocumentBuilder builder;\n        try {\n        \t//set the factory to be namespace-aware\n        \tfactory.setNamespaceAware(true);\n            builder = factory.newDocumentBuilder();\n            Document out = builder.newDocument();\n            convert(in, out);\n            return out;\n        } catch (ParserConfigurationException e) {\n            throw new IllegalStateException(e);\n        }\n    }\n\n    /**\n     * Converts a jsoup document into the provided W3C Document. If required, you can set options on the output document\n     * before converting.\n     * @param in jsoup doc\n     * @param out w3c doc\n     * @see org.jsoup.helper.W3CDom#fromJsoup(org.jsoup.nodes.Document)\n     */\n    public void convert(org.jsoup.nodes.Document in, Document out) {\n        if (!StringUtil.isBlank(in.location()))\n            out.setDocumentURI(in.location());\n\n        org.jsoup.nodes.Element rootEl = in.child(0); // skip the #root node\n        NodeTraversor traversor = new NodeTraversor(new W3CBuilder(out));\n        traversor.traverse(rootEl);\n    }\n\n    /**\n     * Implements the conversion by walking the input.\n     */\n    protected static class W3CBuilder implements NodeVisitor {\n        private static final String xmlnsKey = \"xmlns\";\n        private static final String xmlnsPrefix = \"xmlns:\";\n\n        private final Document doc;\n        private final HashMap<String, String> namespaces = new HashMap<String, String>(); // prefix => urn\n        private Element dest;\n\n        public W3CBuilder(Document doc) {\n            this.doc = doc;\n        }\n\n        public void head(org.jsoup.nodes.Node source, int depth) {\n            if (source instanceof org.jsoup.nodes.Element) {\n                org.jsoup.nodes.Element sourceEl = (org.jsoup.nodes.Element) source;\n\n                String prefix = updateNamespaces(sourceEl);\n                String namespace = namespaces.get(prefix);\n\n                Element el = doc.createElementNS(namespace, sourceEl.tagName());\n                copyAttributes(sourceEl, el);\n                if (dest == null) { // sets up the root\n                    doc.appendChild(el);\n                } else {\n                    dest.appendChild(el);\n                }\n                dest = el; // descend\n            } else if (source instanceof org.jsoup.nodes.TextNode) {\n                org.jsoup.nodes.TextNode sourceText = (org.jsoup.nodes.TextNode) source;\n                Text text = doc.createTextNode(sourceText.getWholeText());\n                dest.appendChild(text);\n            } else if (source instanceof org.jsoup.nodes.Comment) {\n                org.jsoup.nodes.Comment sourceComment = (org.jsoup.nodes.Comment) source;\n                Comment comment = doc.createComment(sourceComment.getData());\n                dest.appendChild(comment);\n            } else if (source instanceof org.jsoup.nodes.DataNode) {\n                org.jsoup.nodes.DataNode sourceData = (org.jsoup.nodes.DataNode) source;\n                Text node = doc.createTextNode(sourceData.getWholeData());\n                dest.appendChild(node);\n            } else {\n                // unhandled\n            }\n        }\n\n        public void tail(org.jsoup.nodes.Node source, int depth) {\n            if (source instanceof org.jsoup.nodes.Element && dest.getParentNode() instanceof Element) {\n                dest = (Element) dest.getParentNode(); // undescend. cromulent.\n            }\n        }\n\n        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {\n            for (Attribute attribute : source.attributes()) {\n                // valid xml attribute names are: ^[a-zA-Z_:][-a-zA-Z0-9_:.]\nString key = attribute.replaceAll();\n                if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))\n\nel.setAttribute(key);\n            }\n        }\n\n        /**\n         * Finds any namespaces defined in this element. Returns any tag prefix.\n         */\n        private String updateNamespaces(org.jsoup.nodes.Element el) {\n            // scan the element for namespace declarations\n            // like: xmlns=\"blah\" or xmlns:prefix=\"blah\"\n            Attributes attributes = el.attributes();\n            for (Attribute attr : attributes) {\n                String key = attr.getKey();\n                String prefix;\n                if (key.equals(xmlnsKey)) {\n                    prefix = \"\";\n                } else if (key.startsWith(xmlnsPrefix)) {\n                    prefix = key.substring(xmlnsPrefix.length());\n                } else {\n                    continue;\n                }\n                namespaces.put(prefix, attr.getValue());\n            }\n\n            // get the element prefix if any\n            int pos = el.tagName().indexOf(\":\");\n            return pos > 0 ? el.tagName().substring(0, pos) : \"\";\n        }\n\n    }\n\n    /**\n     * Serialize a W3C document to a String.\n     * @param doc Document\n     * @return Document as string\n     */\n    public String asString(Document doc) {\n        try {\n            DOMSource domSource = new DOMSource(doc);\n            StringWriter writer = new StringWriter();\n            StreamResult result = new StreamResult(writer);\n            TransformerFactory tf = TransformerFactory.newInstance();\n            Transformer transformer = tf.newTransformer();\n            transformer.transform(domSource, result);\n            return writer.toString();\n        } catch (TransformerException e) {\n            throw new IllegalStateException(e);\n        }\n    }\n}"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {",
+        "line": 122,
+        "aftercode": "org source            for (Attribute attribute : source.attributes()) {"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 123,
+        "aftercode": "package org.jsoup.helper;\n\nimport org.jsoup.nodes.Attribute;\nimport org.jsoup.nodes.Attributes;\nimport org.jsoup.select.NodeTraversor;\nimport org.jsoup.select.NodeVisitor;\nimport org.w3c.dom.Comment;\nimport org.w3c.dom.Document;\nimport org.w3c.dom.Element;\nimport org.w3c.dom.Text;\n\nimport javax.xml.parsers.DocumentBuilder;\nimport javax.xml.parsers.DocumentBuilderFactory;\nimport javax.xml.parsers.ParserConfigurationException;\nimport javax.xml.transform.Transformer;\nimport javax.xml.transform.TransformerException;\nimport javax.xml.transform.TransformerFactory;\nimport javax.xml.transform.dom.DOMSource;\nimport javax.xml.transform.stream.StreamResult;\nimport java.io.StringWriter;\nimport java.util.HashMap;\n\n/**\n * Helper class to transform a {@link org.jsoup.nodes.Document} to a {@link org.w3c.dom.Document org.w3c.dom.Document},\n * for integration with toolsets that use the W3C DOM.\n * <p>\n * This class is currently <b>experimental</b>, please provide feedback on utility and any problems experienced.\n * </p>\n */\npublic class W3CDom {\n    protected DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();\n\n    /**\n     * Convert a jsoup Document to a W3C Document.\n     * @param in jsoup doc\n     * @return w3c doc\n     */\n    public Document fromJsoup(org.jsoup.nodes.Document in) {\n        Validate.notNull(in);\n        DocumentBuilder builder;\n        try {\n        \t//set the factory to be namespace-aware\n        \tfactory.setNamespaceAware(true);\n            builder = factory.newDocumentBuilder();\n            Document out = builder.newDocument();\n            convert(in, out);\n            return out;\n        } catch (ParserConfigurationException e) {\n            throw new IllegalStateException(e);\n        }\n    }\n\n    /**\n     * Converts a jsoup document into the provided W3C Document. If required, you can set options on the output document\n     * before converting.\n     * @param in jsoup doc\n     * @param out w3c doc\n     * @see org.jsoup.helper.W3CDom#fromJsoup(org.jsoup.nodes.Document)\n     */\n    public void convert(org.jsoup.nodes.Document in, Document out) {\n        if (!StringUtil.isBlank(in.location()))\n            out.setDocumentURI(in.location());\n\n        org.jsoup.nodes.Element rootEl = in.child(0); // skip the #root node\n        NodeTraversor traversor = new NodeTraversor(new W3CBuilder(out));\n        traversor.traverse(rootEl);\n    }\n\n    /**\n     * Implements the conversion by walking the input.\n     */\n    protected static class W3CBuilder implements NodeVisitor {\n        private static final String xmlnsKey = \"xmlns\";\n        private static final String xmlnsPrefix = \"xmlns:\";\n\n        private final Document doc;\n        private final HashMap<String, String> namespaces = new HashMap<String, String>(); // prefix => urn\n        private Element dest;\n\n        public W3CBuilder(Document doc) {\n            this.doc = doc;\n        }\n\n        public void head(org.jsoup.nodes.Node source, int depth) {\n            if (source instanceof org.jsoup.nodes.Element) {\n                org.jsoup.nodes.Element sourceEl = (org.jsoup.nodes.Element) source;\n\n                String prefix = updateNamespaces(sourceEl);\n                String namespace = namespaces.get(prefix);\n\n                Element el = doc.createElementNS(namespace, sourceEl.tagName());\n                copyAttributes(sourceEl, el);\n                if (dest == null) { // sets up the root\n                    doc.appendChild(el);\n                } else {\n                    dest.appendChild(el);\n                }\n                dest = el; // descend\n            } else if (source instanceof org.jsoup.nodes.TextNode) {\n                org.jsoup.nodes.TextNode sourceText = (org.jsoup.nodes.TextNode) source;\n                Text text = doc.createTextNode(sourceText.getWholeText());\n                dest.appendChild(text);\n            } else if (source instanceof org.jsoup.nodes.Comment) {\n                org.jsoup.nodes.Comment sourceComment = (org.jsoup.nodes.Comment) source;\n                Comment comment = doc.createComment(sourceComment.getData());\n                dest.appendChild(comment);\n            } else if (source instanceof org.jsoup.nodes.DataNode) {\n                org.jsoup.nodes.DataNode sourceData = (org.jsoup.nodes.DataNode) source;\n                Text node = doc.createTextNode(sourceData.getWholeData());\n                dest.appendChild(node);\n            } else {\n                // unhandled\n            }\n        }\n\n        public void tail(org.jsoup.nodes.Node source, int depth) {\n            if (source instanceof org.jsoup.nodes.Element && dest.getParentNode() instanceof Element) {\n                dest = (Element) dest.getParentNode(); // undescend. cromulent.\n            }\n        }\n\n        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {\n            for (Attribute attribute : source.attributes()) {\n                // valid xml attribute names are: ^[a-zA-Z_:][-a-zA-Z0-9_:.]\nString key = attribute.getKey();\n                if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))\n\nel.setAttribute(attribute.getValue());\n            }\n        }\n\n        /**\n         * Finds any namespaces defined in this element. Returns any tag prefix.\n         */\n        private String updateNamespaces(org.jsoup.nodes.Element el) {\n            // scan the element for namespace declarations\n            // like: xmlns=\"blah\" or xmlns:prefix=\"blah\"\n            Attributes attributes = el.attributes();\n            for (Attribute attr : attributes) {\n                String key = attr.getKey();\n                String prefix;\n                if (key.equals(xmlnsKey)) {\n                    prefix = \"\";\n                } else if (key.startsWith(xmlnsPrefix)) {\n                    prefix = key.substring(xmlnsPrefix.length());\n                } else {\n                    continue;\n                }\n                namespaces.put(prefix, attr.getValue());\n            }\n\n            // get the element prefix if any\n            int pos = el.tagName().indexOf(\":\");\n            return pos > 0 ? el.tagName().substring(0, pos) : \"\";\n        }\n\n    }\n\n    /**\n     * Serialize a W3C document to a String.\n     * @param doc Document\n     * @return Document as string\n     */\n    public String asString(Document doc) {\n        try {\n            DOMSource domSource = new DOMSource(doc);\n            StringWriter writer = new StringWriter();\n            StreamResult result = new StreamResult(writer);\n            TransformerFactory tf = TransformerFactory.newInstance();\n            Transformer transformer = tf.newTransformer();\n            transformer.transform(domSource, result);\n            return writer.toString();\n        } catch (TransformerException e) {\n            throw new IllegalStateException(e);\n        }\n    }\n}"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    continue;",
+        "line": 146,
+        "aftercode": ""
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    el.setAttribute(key, attribute.getValue());",
+        "line": 127,
+        "aftercode": "el.setAttribute(\"null\");"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))",
+        "line": 126,
+        "aftercode": "if(!key.matches(\"null\")){"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    el.setAttribute(key, attribute.getValue());",
+        "line": 127,
+        "aftercode": "el.setAttribute(attribute.getValue());"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                } else if (key.startsWith(xmlnsPrefix)) {",
+        "line": 143,
+        "aftercode": "if(key.startsWith()){"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    prefix = key.substring(xmlnsPrefix.length());",
+        "line": 144,
+        "aftercode": "prefix = key.substring(xmlnsPrefix);"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                String key = attribute.getKey().replaceAll(\"[^-a-zA-Z0-9_:.]\", \"\");",
+        "line": 125,
+        "aftercode": "key = attribute.getKey().replaceAll(\"null\", \"null\");"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    el.setAttribute(key, attribute.getValue());",
+        "line": 127,
+        "aftercode": "el.setAttribute(key, attribute);"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    prefix = key.substring(xmlnsPrefix.length());",
+        "line": 144,
+        "aftercode": "namespaces.put(prefix, attr.getValue());"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                namespaces.put(prefix, attr.getValue());",
+        "line": 148,
+        "aftercode": "namespaces.put(\"null\");"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "            for (Attribute attribute : source.attributes()) {",
+        "line": 123,
+        "aftercode": "package org.jsoup.helper;\n\nimport org.jsoup.nodes.Attribute;\nimport org.jsoup.nodes.Attributes;\nimport org.jsoup.select.NodeTraversor;\nimport org.jsoup.select.NodeVisitor;\nimport org.w3c.dom.Comment;\nimport org.w3c.dom.Document;\nimport org.w3c.dom.Element;\nimport org.w3c.dom.Text;\n\nimport javax.xml.parsers.DocumentBuilder;\nimport javax.xml.parsers.DocumentBuilderFactory;\nimport javax.xml.parsers.ParserConfigurationException;\nimport javax.xml.transform.Transformer;\nimport javax.xml.transform.TransformerException;\nimport javax.xml.transform.TransformerFactory;\nimport javax.xml.transform.dom.DOMSource;\nimport javax.xml.transform.stream.StreamResult;\nimport java.io.StringWriter;\nimport java.util.HashMap;\n\n/**\n * Helper class to transform a {@link org.jsoup.nodes.Document} to a {@link org.w3c.dom.Document org.w3c.dom.Document},\n * for integration with toolsets that use the W3C DOM.\n * <p>\n * This class is currently <b>experimental</b>, please provide feedback on utility and any problems experienced.\n * </p>\n */\npublic class W3CDom {\n    protected DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();\n\n    /**\n     * Convert a jsoup Document to a W3C Document.\n     * @param in jsoup doc\n     * @return w3c doc\n     */\n    public Document fromJsoup(org.jsoup.nodes.Document in) {\n        Validate.notNull(in);\n        DocumentBuilder builder;\n        try {\n        \t//set the factory to be namespace-aware\n        \tfactory.setNamespaceAware(true);\n            builder = factory.newDocumentBuilder();\n            Document out = builder.newDocument();\n            convert(in, out);\n            return out;\n        } catch (ParserConfigurationException e) {\n            throw new IllegalStateException(e);\n        }\n    }\n\n    /**\n     * Converts a jsoup document into the provided W3C Document. If required, you can set options on the output document\n     * before converting.\n     * @param in jsoup doc\n     * @param out w3c doc\n     * @see org.jsoup.helper.W3CDom#fromJsoup(org.jsoup.nodes.Document)\n     */\n    public void convert(org.jsoup.nodes.Document in, Document out) {\n        if (!StringUtil.isBlank(in.location()))\n            out.setDocumentURI(in.location());\n\n        org.jsoup.nodes.Element rootEl = in.child(0); // skip the #root node\n        NodeTraversor traversor = new NodeTraversor(new W3CBuilder(out));\n        traversor.traverse(rootEl);\n    }\n\n    /**\n     * Implements the conversion by walking the input.\n     */\n    protected static class W3CBuilder implements NodeVisitor {\n        private static final String xmlnsKey = \"xmlns\";\n        private static final String xmlnsPrefix = \"xmlns:\";\n\n        private final Document doc;\n        private final HashMap<String, String> namespaces = new HashMap<String, String>(); // prefix => urn\n        private Element dest;\n\n        public W3CBuilder(Document doc) {\n            this.doc = doc;\n        }\n\n        public void head(org.jsoup.nodes.Node source, int depth) {\n            if (source instanceof org.jsoup.nodes.Element) {\n                org.jsoup.nodes.Element sourceEl = (org.jsoup.nodes.Element) source;\n\n                String prefix = updateNamespaces(sourceEl);\n                String namespace = namespaces.get(prefix);\n\n                Element el = doc.createElementNS(namespace, sourceEl.tagName());\n                copyAttributes(sourceEl, el);\n                if (dest == null) { // sets up the root\n                    doc.appendChild(el);\n                } else {\n                    dest.appendChild(el);\n                }\n                dest = el; // descend\n            } else if (source instanceof org.jsoup.nodes.TextNode) {\n                org.jsoup.nodes.TextNode sourceText = (org.jsoup.nodes.TextNode) source;\n                Text text = doc.createTextNode(sourceText.getWholeText());\n                dest.appendChild(text);\n            } else if (source instanceof org.jsoup.nodes.Comment) {\n                org.jsoup.nodes.Comment sourceComment = (org.jsoup.nodes.Comment) source;\n                Comment comment = doc.createComment(sourceComment.getData());\n                dest.appendChild(comment);\n            } else if (source instanceof org.jsoup.nodes.DataNode) {\n                org.jsoup.nodes.DataNode sourceData = (org.jsoup.nodes.DataNode) source;\n                Text node = doc.createTextNode(sourceData.getWholeData());\n                dest.appendChild(node);\n            } else {\n                // unhandled\n            }\n        }\n\n        public void tail(org.jsoup.nodes.Node source, int depth) {\n            if (source instanceof org.jsoup.nodes.Element && dest.getParentNode() instanceof Element) {\n                dest = (Element) dest.getParentNode(); // undescend. cromulent.\n            }\n        }\n\n        private void copyAttributes(org.jsoup.nodes.Node source, Element el) {\n(Attribute attribute = ;\n:source.attributes())                // valid xml attribute names are: ^[a-zA-Z_:][-a-zA-Z0-9_:.]\n\nString key = attribute.getKey();\n                if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))\n                    el.setAttribute(key, attribute.getValue());\n            }\n        }\n\n        /**\n         * Finds any namespaces defined in this element. Returns any tag prefix.\n         */\n        private String updateNamespaces(org.jsoup.nodes.Element el) {\n            // scan the element for namespace declarations\n            // like: xmlns=\"blah\" or xmlns:prefix=\"blah\"\n            Attributes attributes = el.attributes();\n            for (Attribute attr : attributes) {\n                String key = attr.getKey();\n                String prefix;\n                if (key.equals(xmlnsKey)) {\n                    prefix = \"\";\n                } else if (key.startsWith(xmlnsPrefix)) {\n                    prefix = key.substring(xmlnsPrefix.length());\n                } else {\n                    continue;\n                }\n                namespaces.put(prefix, attr.getValue());\n            }\n\n            // get the element prefix if any\n            int pos = el.tagName().indexOf(\":\");\n            return pos > 0 ? el.tagName().substring(0, pos) : \"\";\n        }\n\n    }\n\n    /**\n     * Serialize a W3C document to a String.\n     * @param doc Document\n     * @return Document as string\n     */\n    public String asString(Document doc) {\n        try {\n            DOMSource domSource = new DOMSource(doc);\n            StringWriter writer = new StringWriter();\n            StreamResult result = new StreamResult(writer);\n            TransformerFactory tf = TransformerFactory.newInstance();\n            Transformer transformer = tf.newTransformer();\n            transformer.transform(domSource, result);\n            return writer.toString();\n        } catch (TransformerException e) {\n            throw new IllegalStateException(e);\n        }\n    }\n}"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                namespaces.put(prefix, attr.getValue());",
+        "line": 148,
+        "aftercode": "namespaces.put(xmlnsPrefix);"
+    },
+    {
+        "id": 33,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                if (key.matches(\"[a-zA-Z_:]{1}[-a-zA-Z0-9_:.]*\"))",
+        "line": 126,
+        "aftercode": "if((key == null)){"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    prefix = \"\";",
+        "line": 142,
+        "aftercode": ""
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                if (key.equals(xmlnsKey)) {",
+        "line": 141,
+        "aftercode": "if(key.equals()){"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    continue;",
+        "line": 146,
+        "aftercode": "return;"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    prefix = key.substring(xmlnsPrefix.length());",
+        "line": 144,
+        "aftercode": "key.substring(xmlnsPrefix.length());"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    prefix = key.substring(xmlnsPrefix.length());",
+        "line": 144,
+        "aftercode": "prefix = key.substring(\"null\");"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                namespaces.put(prefix, attr.getValue());",
+        "line": 148,
+        "aftercode": "namespaces.put(attr.getValue());"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                namespaces.put(prefix, attr.getValue());",
+        "line": 148,
+        "aftercode": "namespaces.put(xmlnsKey);"
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    continue;",
+        "line": 146,
+        "aftercode": ""
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    continue;",
+        "line": 146,
+        "aftercode": ""
+    },
+    {
+        "id": 17,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_54_fixed/src/main/java/org/jsoup/helper/W3CDom.java",
+        "precode": "                    prefix = key.substring(xmlnsPrefix.length());",
+        "line": 144,
+        "aftercode": "prefix = key.substring(xmlnsKey);"
+    }
+]

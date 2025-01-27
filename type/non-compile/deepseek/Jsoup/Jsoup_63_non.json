@@ -1,0 +1,114 @@
+[
+    {
+        "id": 608,
+        "line": 166,
+        "precode": "return doc;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "return new Document();"
+    },
+    {
+        "id": 1092,
+        "line": 228,
+        "precode": "tokeniser.error(\"Tag cannot be self closing; not a void tag\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "tokeniser.warning(\"Tag cannot be self closing; not a void tag\");"
+    },
+    {
+        "id": 1093,
+        "line": 231,
+        "precode": "tag.setSelfClosing();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "tag.unsetSelfClosing();"
+    },
+    {
+        "id": 1097,
+        "line": 228,
+        "precode": "tokeniser.error(\"Tag cannot be self closing; not a void tag\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "// tokeniser.error(\"Tag cannot be self closing; not a void tag\");"
+    },
+    {
+        "id": 1098,
+        "line": 231,
+        "precode": "tag.setSelfClosing();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "// tag.setSelfClosing();"
+    },
+    {
+        "id": 1109,
+        "line": 44,
+        "precode": "private FormElement formElement; // the current form element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private FormElement formElement = new FormElement(Tag.valueOf(\"form\"), \"\"); // the current form element"
+    },
+    {
+        "id": 1113,
+        "line": 69,
+        "precode": "formElement = null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "formElement = new FormElement(Tag.valueOf(\"form\"), baseUri);"
+    },
+    {
+        "id": 1115,
+        "line": 71,
+        "precode": "formattingElements = new ArrayList<>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "formattingElements = new LinkedList<>();"
+    },
+    {
+        "id": 1116,
+        "line": 540,
+        "precode": "pendingTableCharacters = new ArrayList<>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "pendingTableCharacters = new LinkedList<>();"
+    },
+    {
+        "id": 1117,
+        "line": 73,
+        "precode": "emptyEnd = new Token.EndTag();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "emptyEnd = new Token.StartTag();"
+    },
+    {
+        "id": 1134,
+        "line": 359,
+        "precode": "void clearStackToTableBodyContext() {",
+        "aftercode": "void clearStackToTableBodyContext(boolean force) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1138,
+        "line": 367,
+        "precode": "private void clearStackToContext(String... nodeNames) {",
+        "aftercode": "private void clearStackToContext(List<String> nodeNames) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1141,
+        "line": 505,
+        "precode": "String elName = el.nodeName();",
+        "aftercode": "String elName = el.getAttribute(\"name\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1142,
+        "line": 430,
+        "precode": "if (StringUtil.in(elName, nodeNames) || elName.equals(\"html\"))",
+        "aftercode": "if (!StringUtil.in(elName, nodeNames) && !elName.equals(\"html\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1144,
+        "line": 446,
+        "precode": "else",
+        "aftercode": "if (pos % 2 == 0)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 1156,
+        "line": 44,
+        "precode": "private FormElement formElement; // the current form element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_63_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private FormElement formElement = new FormElement(Tag.valueOf(\"form\", ParseSettings.htmlDefault), \"\"); // the current form element"
+    }
+]

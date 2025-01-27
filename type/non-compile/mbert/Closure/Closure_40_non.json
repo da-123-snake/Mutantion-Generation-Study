@@ -1,0 +1,79 @@
+[
+    {
+        "id": 67,
+        "line": 575,
+        "precode": "        createName(ns.name);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "        Preconditions.checkNotNull(ns, \"NameInformation is null\");name(ns.name);"
+    },
+    {
+        "id": 68,
+        "line": 576,
+        "precode": "      } else if (NodeUtil.isFunctionDeclaration(n)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "      } else if (NodeUtil.name(n)) {"
+    },
+    {
+        "id": 69,
+        "line": 577,
+        "precode": "        Node nameNode = n.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "        Node nameNode = n.next();"
+    },
+    {
+        "id": 70,
+        "line": 578,
+        "precode": "        NameInformation ns = createNameInformation(t, nameNode, n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "        NameInformation ns =visit(t, nameNode, n);"
+    },
+    {
+        "id": 71,
+        "line": 579,
+        "precode": "        Preconditions.checkNotNull(ns, \"NameInformation is null\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "        Preconditions.check(ns, \"NameInformation is null\");"
+    },
+    {
+        "id": 72,
+        "line": 580,
+        "precode": "        createName(nameNode.getString());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "        Preconditions.checkNotNull(ns, \"NameInformation is null\");name(nameNode.getString());"
+    },
+    {
+        "id": 533,
+        "line": 632,
+        "precode": "        Node nameNode = n.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "        Node nameNode = n.next();"
+    },
+    {
+        "id": 534,
+        "line": 633,
+        "precode": "        NameInformation ns = createNameInformation(t, nameNode, n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "        NameInformation ns =create(t, nameNode, n);"
+    },
+    {
+        "id": 536,
+        "line": 635,
+        "precode": "          JsName name = getName(ns.name, true);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "          JsName name =name(ns.name, true);"
+    },
+    {
+        "id": 537,
+        "line": 636,
+        "precode": "          refNodes.add(new ClassDefiningFunctionNode(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "          refNodes.push(new ClassDefiningFunctionNode("
+    },
+    {
+        "id": 538,
+        "line": 637,
+        "precode": "              name, n, parent, parent.getParent()));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_40_fixed/src/com/google/javascript/jscomp/NameAnalyzer.java",
+        "aftercode": "          refNodes.add(new ClassDefiningFunctionNode(t, n, parent, parent.getParent()));"
+    }
+]

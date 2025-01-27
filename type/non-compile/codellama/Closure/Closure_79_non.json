@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1012,
+        "line": 15,
+        "precode": "new NodeTraversal(compiler, new NormalizeStatements(compiler, assertOnChange))",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "new NodeTraversal(compiler, new NormalizeStatements(compiler, !assertOnChange))"
+    },
+    {
+        "id": 1013,
+        "line": 16,
+        "precode": "new NodeTraversal(compiler, new NormalizeStatements(compiler, assertOnChange))",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "new NodeTraversal(compiler, new NormalizeStatements(compiler, false))"
+    },
+    {
+        "id": 1015,
+        "line": 124,
+        "precode": "MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique(true);"
+    },
+    {
+        "id": 1016,
+        "line": 125,
+        "precode": "NodeTraversal t = new NodeTraversal(compiler, renamer);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "NodeTraversal t = new NodeTraversal(compiler, renamer, true);"
+    },
+    {
+        "id": 1017,
+        "line": 126,
+        "precode": "t.traverseRoots(externs, root);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "t.traverseRoots(externs, root, true);"
+    },
+    {
+        "id": 1018,
+        "line": 142,
+        "precode": "removeDuplicateDeclarations(externs, root);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "removeDuplicateDeclarations(externs, root, true);"
+    }
+]

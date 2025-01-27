@@ -1,0 +1,37 @@
+[
+    {
+        "id": 226,
+        "line": 1050,
+        "precode": "if (start < 0) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if (start < 0) { throw new IllegalArgumentException(\"Requires start >= 0.\");"
+    },
+    {
+        "id": 227,
+        "line": 1053,
+        "precode": "if (end < start) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if (end < start) { throw new IllegalArgumentException(\"Requires start <= end.\");"
+    },
+    {
+        "id": 231,
+        "line": 1059,
+        "precode": "copy.data = new java.util.ArrayList();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "copy.data = new java.util.ArrayList(); if (this.data.size() > 0) {"
+    },
+    {
+        "id": 232,
+        "line": 1061,
+        "precode": "for (int index = start; index <= end; index++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "for (int index = start; index <= end; index++) { TimeSeriesDataItem item = (TimeSeriesDataItem) this.data.get(index); TimeSeriesDataItem clone = (TimeSeriesDataItem) item.clone(); try { copy.add(clone); } catch (SeriesException e) { e.printStackTrace(); } }"
+    },
+    {
+        "id": 367,
+        "line": 905,
+        "precode": "if (this.data.isEmpty()) {",
+        "aftercode": "if (this.data.isEmpty()) { return; }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java"
+    }
+]

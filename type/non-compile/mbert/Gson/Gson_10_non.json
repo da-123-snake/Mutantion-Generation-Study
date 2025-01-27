@@ -1,0 +1,30 @@
+[
+    {
+        "id": 50,
+        "line": 121,
+        "precode": "        Object fieldValue = field.get(value);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "        Object fieldValue = field.set(value);"
+    },
+    {
+        "id": 51,
+        "line": 122,
+        "precode": "        TypeAdapter t = jsonAdapterPresent ? typeAdapter",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "        TypeAdapter t =adapter;"
+    },
+    {
+        "id": 52,
+        "line": 123,
+        "precode": "            : new TypeAdapterRuntimeTypeWrapper(context, typeAdapter, fieldType.getType());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "            : new TypeAdapterRuntimeTypeWrapper(this, typeAdapter, fieldType.getType());"
+    },
+    {
+        "id": 53,
+        "line": 124,
+        "precode": "        t.write(writer, fieldValue);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "        t.Write(writer, fieldValue);"
+    }
+]

@@ -1,0 +1,345 @@
+[
+    {
+        "id": 327,
+        "line": 435,
+        "precode": "if (block.isLoop) {",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "if (block.isLoop && ref.getSymbol().getScope() != ref.scope) {"
+    },
+    {
+        "id": 328,
+        "line": 435,
+        "precode": "if (block.isLoop) {",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "if (block.isLoop && ref.getSymbol().getScope() == ref.scope) {"
+    },
+    {
+        "id": 330,
+        "line": 428,
+        "precode": "for (BasicBlock block = ref.getBasicBlock();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "for (BasicBlock block = ref.getBasicBlock(); block != null && ref.getSymbol().getScope() != ref.scope; block = block.getParent()) {"
+    },
+    {
+        "id": 331,
+        "line": 428,
+        "precode": "for (BasicBlock block = ref.getBasicBlock();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "for (BasicBlock block = ref.getBasicBlock(); block != null && ref.getSymbol().getScope() == ref.scope; block = block.getParent()) {"
+    },
+    {
+        "id": 332,
+        "line": 428,
+        "precode": "for (BasicBlock block = ref.getBasicBlock();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "for (BasicBlock block = ref.getBasicBlock(); block != null && !block.isFunction; block = block.getParent()) {"
+    },
+    {
+        "id": 333,
+        "line": 428,
+        "precode": "for (BasicBlock block = ref.getBasicBlock();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "for (BasicBlock block = ref.getBasicBlock(); block != null && !block.isLoop; block = block.getParent()) {"
+    },
+    {
+        "id": 334,
+        "line": 428,
+        "precode": "for (BasicBlock block = ref.getBasicBlock();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "for (BasicBlock block = ref.getBasicBlock().getParent(); block != null; block = block.getParent()) {"
+    },
+    {
+        "id": 1835,
+        "line": 359,
+        "precode": "if (maybeInit.isInitializingDeclaration()) {",
+        "aftercode": "if (!maybeInit.isInitializingDeclaration()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1836,
+        "line": 359,
+        "precode": "if (maybeInit.isInitializingDeclaration()) {",
+        "aftercode": "if (maybeInit.isInitializingDeclaration() && !maybeInit.isRecursive()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1837,
+        "line": 360,
+        "precode": "// This is a declaration that represents the initial value.",
+        "aftercode": "// This might be a declaration that represents the initial value.",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1838,
+        "line": 361,
+        "precode": "// Specifically, var declarations without assignments such as \"var a;\"",
+        "aftercode": "// Specifically, var declarations without assignments like \"var a;\"",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1839,
+        "line": 361,
+        "precode": "// Specifically, var declarations without assignments such as \"var a;\"",
+        "aftercode": "// Specifically, var declarations without assignments such as \"let a;\"",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1840,
+        "line": 362,
+        "precode": "// are not.",
+        "aftercode": "// do not initialize values.",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1841,
+        "line": 358,
+        "precode": "Reference maybeInit = references.get(index);",
+        "aftercode": "Reference maybeInit = references.get(index - 1);",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1842,
+        "line": 358,
+        "precode": "Reference maybeInit = references.get(index);",
+        "aftercode": "Reference maybeInit = references.get(index + 1);",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1843,
+        "line": 358,
+        "precode": "Reference maybeInit = references.get(index);",
+        "aftercode": "Reference maybeInit2 = references.get(index);",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1844,
+        "line": 365,
+        "precode": "return false;",
+        "aftercode": "return maybeInit.isReferencingAssignment();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1845,
+        "line": 365,
+        "precode": "return false;",
+        "aftercode": "return !maybeInit.isReferencingAssignment();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1846,
+        "line": 365,
+        "precode": "return false;",
+        "aftercode": "return maybeInit.isReferencingAssignment() && !maybeInit.isRecursive();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1847,
+        "line": 365,
+        "precode": "return false;",
+        "aftercode": "return maybeInit.isReferencingAssignment() && !maybeInit.isRecursive() && maybeInit.isDeprecated();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1848,
+        "line": 365,
+        "precode": "return false;",
+        "aftercode": "return maybeInit.isAssigningDeclaration() && !maybeInit.isRecursive();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java"
+    },
+    {
+        "id": 1849,
+        "line": 551,
+        "precode": "return inputId;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return sourceFile;"
+    },
+    {
+        "id": 1850,
+        "line": 16,
+        "precode": "return grandparent.isFunction();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return !grandparent.isFunction();"
+    },
+    {
+        "id": 1851,
+        "line": 15,
+        "precode": "return parent.isParamList() && grandparent.isFunction();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return !parent.isParamList() && grandparent.isFunction();"
+    },
+    {
+        "id": 1852,
+        "line": 10,
+        "precode": "return DECLARATION_PARENTS.contains(parent.getType()) || parent.isParamList() && grandparent.isFunction();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return !DECLARATION_PARENTS.contains(parent.getType()) || parent.isParamList() && grandparent.isFunction();"
+    },
+    {
+        "id": 1853,
+        "line": 542,
+        "precode": "return scope.getVar(nameNode.getString());",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return scope.getVar(\"mutant\");"
+    },
+    {
+        "id": 1854,
+        "line": 10,
+        "precode": "return DECLARATION_PARENTS.contains(parent.getType()) || parent.isParamList() && grandparent.isFunction();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return DECLARATION_PARENTS.contains(parent.getType()) && parent.isParamList() && grandparent.isFunction();"
+    },
+    {
+        "id": 1855,
+        "line": 568,
+        "precode": "return getParent().isVar();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return !getParent().isVar();"
+    },
+    {
+        "id": 1856,
+        "line": 572,
+        "precode": "return NodeUtil.isHoistedFunctionDeclaration(getParent());",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1857,
+        "line": 10,
+        "precode": "return DECLARATION_PARENTS.contains(parent.getType()) || parent.isParamList() && grandparent.isFunction();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return !DECLARATION_PARENTS.contains(parent.getType()) && parent.isParamList() && grandparent.isFunction();"
+    },
+    {
+        "id": 1858,
+        "line": 551,
+        "precode": "return inputId;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return sourceFile.getParent();"
+    },
+    {
+        "id": 1859,
+        "line": 568,
+        "precode": "return getParent().isVar();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return getParent().isFunction();"
+    },
+    {
+        "id": 1860,
+        "line": 572,
+        "precode": "return NodeUtil.isHoistedFunctionDeclaration(getParent());",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return getParent().isFunction();"
+    },
+    {
+        "id": 1861,
+        "line": 568,
+        "precode": "return getParent().isVar();",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return !getParent().isVar();"
+    },
+    {
+        "id": 1862,
+        "line": 572,
+        "precode": "return NodeUtil.isHoistedFunctionDeclaration(getParent());",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return !NodeUtil.isHoistedFunctionDeclaration(getParent());"
+    },
+    {
+        "id": 1863,
+        "line": 572,
+        "precode": "return NodeUtil.isHoistedFunctionDeclaration(getParent());",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return NodeUtil.isHoistedFunctionDeclaration(getParent()) && false;"
+    },
+    {
+        "id": 1864,
+        "line": 572,
+        "precode": "return NodeUtil.isHoistedFunctionDeclaration(getParent());",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return NodeUtil.isHoistedFunctionDeclaration(getParent()) || true;"
+    },
+    {
+        "id": 1865,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return !isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 1866,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && getParent().isVar() || nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 1867,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 1868,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() || !getParent().isVar() || nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 1869,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && nameNode.getFirstChild() == null;"
+    },
+    {
+        "id": 1870,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && nameNode.getFirstChild() != null && true;"
+    },
+    {
+        "id": 1871,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && nameNode.getFirstChild() != null && false;"
+    },
+    {
+        "id": 1872,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && false || nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 1873,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && true || nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 1874,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && false && nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 1875,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && true && nameNode.getFirstChild() != null;"
+    },
+    {
+        "id": 1876,
+        "line": 46,
+        "precode": "return isDeclaration() && !getParent().isVar() || nameNode.getFirstChild() != null;",
+        "filepath": "defects4j_fixed/Closure/Closure_120_fixed/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java",
+        "aftercode": "return isDeclaration() && !getParent().isVar() && nameNode.getFirstChild() != null || false;"
+    }
+]

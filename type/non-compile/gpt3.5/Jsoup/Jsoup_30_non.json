@@ -1,0 +1,114 @@
+[
+    {
+        "id": 266,
+        "line": 48,
+        "precode": "return clean;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "return new Document();"
+    },
+    {
+        "id": 476,
+        "line": 3,
+        "precode": "import org.jsoup.helper.Validate;",
+        "aftercode": "import org.jsoup.helper.ValidateTest;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 477,
+        "line": 4,
+        "precode": "import org.jsoup.nodes.*;",
+        "aftercode": "import org.jsoup.nodes.NodeTest;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 478,
+        "line": 5,
+        "precode": "import org.jsoup.parser.Tag;",
+        "aftercode": "import org.jsoup.parser.TagHelper;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 479,
+        "line": 6,
+        "precode": "import org.jsoup.select.NodeTraversor;",
+        "aftercode": "import org.jsoup.select.NodeTraversorUtil;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 480,
+        "line": 7,
+        "precode": "import org.jsoup.select.NodeVisitor;",
+        "aftercode": "import org.jsoup.select.NodeVisitorTest;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 501,
+        "line": 89,
+        "precode": "destination.appendChild(destChild);",
+        "aftercode": "destination.appendChild(new Element(Tag.valueOf(sourceTag), sourceEl.baseUri(), new Attributes()));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 506,
+        "line": 97,
+        "precode": "TextNode sourceText = (TextNode) source;",
+        "aftercode": "TextNode destText = new TextNode(sourceText.getWholeText(), source.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 507,
+        "line": 98,
+        "precode": "TextNode destText = new TextNode(sourceText.getWholeText(), source.baseUri());",
+        "aftercode": "Element destElem = new Element(Tag.valueOf(sourceEl.tagName()), sourceEl.baseUri(), new Attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 508,
+        "line": 99,
+        "precode": "destination.appendChild(destText);",
+        "aftercode": "destination.appendChild(destElem);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 513,
+        "line": 146,
+        "precode": "}",
+        "aftercode": "throw new IllegalStateException();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 519,
+        "line": 121,
+        "precode": "Attributes destAttrs = new Attributes();",
+        "aftercode": "Attributes destAttrs = new Attributes(sourceEl.attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 523,
+        "line": 126,
+        "precode": "for (Attribute sourceAttr : sourceAttrs) {",
+        "aftercode": "for (int i = 0; i < sourceAttrs.size(); i++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 525,
+        "line": 128,
+        "precode": "destAttrs.put(sourceAttr);",
+        "aftercode": "destAttrs.put(sourceAttrs.get(i));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 528,
+        "line": 133,
+        "precode": "destAttrs.addAll(enforcedAttrs);",
+        "aftercode": "destAttrs.removeAll(enforcedAttrs);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 531,
+        "line": 144,
+        "precode": "this.numAttribsDiscarded = numAttribsDiscarded;",
+        "aftercode": "this.numAttribsDiscarded = sourceEl.attributes().size();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    }
+]

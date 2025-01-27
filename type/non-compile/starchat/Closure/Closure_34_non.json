@@ -1,0 +1,359 @@
+[
+    {
+        "id": 28,
+        "line": 1012,
+        "precode": "static String regexpEscape(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "static String regexpEscape(String s, String regexpEscape)"
+    },
+    {
+        "id": 29,
+        "line": 1012,
+        "precode": "String s) {",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s, String regexpEscape)"
+    },
+    {
+        "id": 30,
+        "line": 1012,
+        "precode": "return regexpEscape(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "return regexpEscape(s, null)"
+    },
+    {
+        "id": 31,
+        "line": 1012,
+        "precode": "String s) {",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s)"
+    },
+    {
+        "id": 32,
+        "line": 1012,
+        "precode": "return s.replace(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "return s.replace(quote, escapedQuote)"
+    },
+    {
+        "id": 33,
+        "line": 1012,
+        "precode": "s, quote, doublequoteEscape, singlequoteEscape, backslashEscape",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "s, quote, doublequoteEscape, singlequoteEscape, backslashEscape, regexpEscape)"
+    },
+    {
+        "id": 34,
+        "line": 1012,
+        "precode": "return s;",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "return s.replace(regexpEscape, escapedRegexpEscape);"
+    },
+    {
+        "id": 252,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 253,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "n = (n << 1);"
+    },
+    {
+        "id": 254,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "n = (n + 1);"
+    },
+    {
+        "id": 255,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "n = (n / 2);"
+    },
+    {
+        "id": 256,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "n = (n % 2);"
+    },
+    {
+        "id": 257,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "n = (n * 2);"
+    },
+    {
+        "id": 258,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "n = (n - 1);"
+    },
+    {
+        "id": 553,
+        "line": 993,
+        "precode": "String s = n.getString();",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s = n.getJSString();"
+    },
+    {
+        "id": 554,
+        "line": 993,
+        "precode": "boolean useSlashV = n.getBooleanProp(Node.SLASH_V);",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "boolean useSlashV =!n.getBooleanProp(Node.SLASH_V);"
+    },
+    {
+        "id": 555,
+        "line": 993,
+        "precode": "if (useSlashV) {",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (!useSlashV) {"
+    },
+    {
+        "id": 556,
+        "line": 993,
+        "precode": "String cached = ESCAPED_JS_STRINGS.get(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String cached = ESCAPED_JS_STRINGS.get(n.getString());"
+    },
+    {
+        "id": 557,
+        "line": 993,
+        "precode": "if (cached == null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (cached == null) {"
+    },
+    {
+        "id": 558,
+        "line": 993,
+        "precode": "cached = jsString(n.getString(), useSlashV);",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "cached = jsString(n.getJSString(),!n.getBooleanProp(Node.SLASH_V));"
+    },
+    {
+        "id": 559,
+        "line": 993,
+        "precode": "ESCAPED_JS_STRINGS.put(s, cached);",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "ESCAPED_JS_STRINGS.put(n.getString(), cached);"
+    },
+    {
+        "id": 622,
+        "line": 1100,
+        "precode": "String s = \"hello world\";",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s = \\\"hello world\\\";"
+    },
+    {
+        "id": 623,
+        "line": 1100,
+        "precode": "String s = \"hello \\\"world\\\"\";",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s = \\\"hello \\\\\\\"world\\\\\\\"\\\";"
+    },
+    {
+        "id": 624,
+        "line": 1100,
+        "precode": "String s = \"hello \\\\world\\\\\";",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s = \\\"hello \\\\\\\\world\\\\\\\";"
+    },
+    {
+        "id": 625,
+        "line": 1100,
+        "precode": "String s = \"hello \\/world\\\";",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s = \\\"hello \\\\\\\"world\\\\\\\";"
+    },
+    {
+        "id": 626,
+        "line": 1100,
+        "precode": "String s = \"hello \bworld\";",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s = \\\"hello \\\\bworld\\\";"
+    },
+    {
+        "id": 627,
+        "line": 1100,
+        "precode": "String s = \"hello \fworld\";",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s = \\\"hello \\\\fworld\\\";"
+    },
+    {
+        "id": 628,
+        "line": 1100,
+        "precode": "String s = \"hello \u000bworld\";",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "String s = \\\"hello \\\\x0Bworld\\\";"
+    },
+    {
+        "id": 831,
+        "line": 781,
+        "precode": "if (!isIndirectEval(n)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 832,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 833,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 834,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 835,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 836,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 837,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 838,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 839,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 840,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 841,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 842,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 843,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 844,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 845,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 846,
+        "line": 781,
+        "precode": "if (n.isName() && \"eval\".equals(n.getString()) &&!n.getBooleanProp(",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 968,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 969,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 970,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 971,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 972,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 973,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 974,
+        "line": 781,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_34_fixed/src/com/google/javascript/jscomp/CodeGenerator.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    }
+]

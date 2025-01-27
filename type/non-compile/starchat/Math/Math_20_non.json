@@ -1,0 +1,380 @@
+[
+    {
+        "id": 89,
+        "line": 941,
+        "precode": "if (n == 0) {",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (n == 1) {"
+    },
+    {
+        "id": 90,
+        "line": 941,
+        "precode": "while (n > 0) {",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "while (n == 1) {"
+    },
+    {
+        "id": 91,
+        "line": 941,
+        "precode": "n = n >>> 1;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "n = n / 2;"
+    },
+    {
+        "id": 92,
+        "line": 941,
+        "precode": "return n;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "return 1;"
+    },
+    {
+        "id": 93,
+        "line": 941,
+        "precode": "for (int i = 0; i < n; i++) {",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 1; i <= n; i++) {"
+    },
+    {
+        "id": 94,
+        "line": 941,
+        "precode": "res[i] = x[i] - min;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = x[i] - max;"
+    },
+    {
+        "id": 95,
+        "line": 941,
+        "precode": "if (res[i] < 0) {",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (res[i] > 0) {"
+    },
+    {
+        "id": 96,
+        "line": 959,
+        "precode": "if (boundaries!= null && isRepairMode) {",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 97,
+        "line": 959,
+        "precode": "double[] repaired = repair(point);",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "double[] repaired = point;"
+    },
+    {
+        "id": 98,
+        "line": 959,
+        "precode": "value = CMAESOptimizer.this",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "value = 0;"
+    },
+    {
+        "id": 99,
+        "line": 959,
+        "precode": "computeObjectiveValue(decode(repaired)) +",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "computeObjectiveValue(0) + "
+    },
+    {
+        "id": 100,
+        "line": 959,
+        "precode": "penalty(point, repaired);",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "penalty(point, point); "
+    },
+    {
+        "id": 101,
+        "line": 959,
+        "precode": "return isMinimize? value : -value;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 102,
+        "line": 959,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 103,
+        "line": 1003,
+        "precode": "this.valueRange = valueRange;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "this.valueRange = valueRange;\nif (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 104,
+        "line": 1003,
+        "precode": "if (valueRange < 0) {\n    valueRange = 0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 105,
+        "line": 1003,
+        "precode": "if (valueRange > 1.0) {\n    valueRange = 1.0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 106,
+        "line": 1003,
+        "precode": "this.valueRange = valueRange;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "this.valueRange = valueRange;\nif (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 107,
+        "line": 1003,
+        "precode": "if (valueRange < 0) {\n    valueRange = 0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 108,
+        "line": 1003,
+        "precode": "if (valueRange > 1.0) {\n    valueRange = 1.0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 109,
+        "line": 1003,
+        "precode": "this.valueRange = valueRange;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "this.valueRange = valueRange;\nif (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 110,
+        "line": 1003,
+        "precode": "if (valueRange < 0) {\n    valueRange = 0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 111,
+        "line": 1003,
+        "precode": "if (valueRange > 1.0) {\n    valueRange = 1.0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 112,
+        "line": 1003,
+        "precode": "this.valueRange = valueRange;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "this.valueRange = valueRange;\nif (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 113,
+        "line": 1003,
+        "precode": "if (valueRange < 0) {\n    valueRange = 0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 114,
+        "line": 1003,
+        "precode": "if (valueRange > 1.0) {\n    valueRange = 1.0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 115,
+        "line": 1003,
+        "precode": "this.valueRange = valueRange;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "this.valueRange = valueRange;\nif (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 116,
+        "line": 1003,
+        "precode": "if (valueRange < 0) {\n    valueRange = 0;\n}",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (valueRange < 0) {\n    valueRange = 0;\n}\nif (valueRange > 1.0) {\n    valueRange = 1.0;\n}"
+    },
+    {
+        "id": 117,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters2();"
+    },
+    {
+        "id": 118,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters3();"
+    },
+    {
+        "id": 119,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters4();"
+    },
+    {
+        "id": 120,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters5();"
+    },
+    {
+        "id": 121,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters6();"
+    },
+    {
+        "id": 122,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters7();"
+    },
+    {
+        "id": 123,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters8();"
+    },
+    {
+        "id": 124,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters9();"
+    },
+    {
+        "id": 125,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters10();"
+    },
+    {
+        "id": 126,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters11();"
+    },
+    {
+        "id": 127,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters12();"
+    },
+    {
+        "id": 128,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters13();"
+    },
+    {
+        "id": 129,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters14();"
+    },
+    {
+        "id": 130,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters15();"
+    },
+    {
+        "id": 131,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters16();"
+    },
+    {
+        "id": 132,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters17();"
+    },
+    {
+        "id": 133,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters18();"
+    },
+    {
+        "id": 134,
+        "line": 554,
+        "precode": "checkParameters();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "checkParameters19();"
+    },
+    {
+        "id": 142,
+        "line": 925,
+        "precode": "if (n == 0) {",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (n == 1) {"
+    },
+    {
+        "id": 143,
+        "line": 925,
+        "precode": "while (n > 0) {",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "while (n == 1) {"
+    },
+    {
+        "id": 144,
+        "line": 925,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 145,
+        "line": 925,
+        "precode": "if ((n & 1) == 0) {",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if ((n & 1)!= 1) {"
+    },
+    {
+        "id": 146,
+        "line": 925,
+        "precode": "return depth == 0;",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 147,
+        "line": 925,
+        "precode": "ArrayList r = new ArrayList();",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "ArrayList r = new ArrayList();r.add(first);"
+    },
+    {
+        "id": 148,
+        "line": 925,
+        "precode": "r.addll(subset);",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "r.addAll(subset);"
+    },
+    {
+        "id": 149,
+        "line": 925,
+        "precode": "to_add(r);",
+        "filepath": "defects4j_fixed/Math/Math_20_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "to_add.addAll(subset);"
+    }
+]

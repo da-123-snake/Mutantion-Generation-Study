@@ -1,0 +1,114 @@
+[
+    {
+        "id": 294,
+        "line": 237,
+        "precode": "  if (name.globalSets == 1 && name.localSets == 0 &&",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "  if (name.globalSets == 1 && name.localSets == 1 &&"
+    },
+    {
+        "id": 295,
+        "line": 237,
+        "precode": "      name.aliasingGets > 0) {",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "      name.aliasingGets > 1) {"
+    },
+    {
+        "id": 296,
+        "line": 237,
+        "precode": "      List<Ref> refs = Lists.newArrayList(name.refs);",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "      List<Ref> refs = Lists.newArrayList(name.refs, new Ref(name, 1));"
+    },
+    {
+        "id": 297,
+        "line": 237,
+        "precode": "      for (Ref ref : refs) {",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "      for (Ref ref : refs.subList(0, refs.size() - 1)) {"
+    },
+    {
+        "id": 298,
+        "line": 237,
+        "precode": "        if (ref.type == Type.ALIASING_GET && ref.scope.isLocal()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "        if (ref.type == Type.ALIASING_GET && ref.scope.isLocal() && ref.node.getParent().getType() == Token.NAME) {"
+    },
+    {
+        "id": 299,
+        "line": 237,
+        "precode": "        if (inlineAliasIfPossible(ref, namespace)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "        if (inlineAliasIfPossible(ref, namespace) && ref.node.getParent().getType() == Token.NAME) {"
+    },
+    {
+        "id": 300,
+        "line": 237,
+        "precode": "      }",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "      } else if (name.type == Name.Type.OBJECTLIT || name.type == Name.Type.FUNCTION) {"
+    },
+    {
+        "id": 1031,
+        "line": 544,
+        "precode": "Node greatGramps = gramps.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "Node greatGramps = greatGramps.getParent();"
+    },
+    {
+        "id": 1032,
+        "line": 544,
+        "precode": "Node greatGreatGramps = greatGramps.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "Node greatGreatGramps = greatGreatGramps.getParent();"
+    },
+    {
+        "id": 1033,
+        "line": 544,
+        "precode": "if (rvalue!= null && rvalue.getType() == Token.FUNCTION) {",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "if (rvalue!= null && rvalue.getType() == Token.FUNCTION) {"
+    },
+    {
+        "id": 1034,
+        "line": 544,
+        "precode": "checkForHosedThisReferences(rvalue, refName.docInfo, refName);",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "checkForHosedThisReferences(rvalue, refName.docInfo, refName);"
+    },
+    {
+        "id": 1036,
+        "line": 544,
+        "precode": "Node nameNode = NodeUtil.newName(",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "Node nameNode = NodeUtil.newName("
+    },
+    {
+        "id": 1037,
+        "line": 544,
+        "precode": "compiler.getCodingConvention(), alias, gramps.getFirstChild(),",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "compiler.getCodingConvention(), alias, greatGramps.getFirstChild(),"
+    },
+    {
+        "id": 1038,
+        "line": 544,
+        "precode": "refName.fullName());",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "refName.fullName());"
+    },
+    {
+        "id": 1039,
+        "line": 544,
+        "precode": "NodeUtil.copyNameAnnotations(ref.node.getLastChild(), nameNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "NodeUtil.copyNameAnnotations(ref.node.getLastChild(), nameNode);"
+    },
+    {
+        "id": 1040,
+        "line": 544,
+        "precode": "if (gramps.getType() == Token.EXPR_RESULT) {",
+        "filepath": "defects4j_fixed/Closure/Closure_89_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "if (greatGramps.getType() == Token.EXPR_RESULT) {"
+    }
+]

@@ -1,0 +1,156 @@
+[
+    {
+        "id": 147,
+        "line": 1312,
+        "precode": "if (childType.isDict()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "if (childType.isArray()) {"
+    },
+    {
+        "id": 383,
+        "line": 1664,
+        "precode": "Node parameter = null;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "Node parameter = new Node();"
+    },
+    {
+        "id": 384,
+        "line": 1662,
+        "precode": "Iterator<Node> parameters = functionType.getParameters().iterator();",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "Iterator<Node> parameters = functionType.getParameters().listIterator();"
+    },
+    {
+        "id": 385,
+        "line": 1659,
+        "precode": "Iterator<Node> arguments = call.children().iterator();",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "List<Node> arguments = new ArrayList<>(call.children());"
+    },
+    {
+        "id": 552,
+        "line": 46,
+        "precode": "compiler.report(t.makeError(n, CONFLICTING_IMPLEMENTED_TYPE, functionPrivateName));",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "compiler.report(t.makeError(n, \"CONFLICTING_TYPE\", functionPrivateName));"
+    },
+    {
+        "id": 556,
+        "line": 53,
+        "precode": "checkInterfaceConflictProperties(t, n, functionPrivateName, properties, currentProperties, interfaceType);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "checkInterfaceConflictProperties(t, n, functionPrivateName, currentProperties, properties, interfaceType);"
+    },
+    {
+        "id": 562,
+        "line": 53,
+        "precode": "checkInterfaceConflictProperties(t, n, functionPrivateName, properties, currentProperties, interfaceType);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "checkInterfaceConflictProperties(t, n, functionPrivateName, properties, properties, interfaceType);"
+    },
+    {
+        "id": 1404,
+        "line": 47,
+        "precode": "typeable = !(parent.isAssign() && parent.getFirstChild() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "typeable = parent.isAssign() || parent.getFirstChild() != n;"
+    },
+    {
+        "id": 1405,
+        "line": 47,
+        "precode": "typeable = !(parent.isAssign() && parent.getFirstChild() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "typeable = parent.isAssign() && parent.getFirstChild() != n;"
+    },
+    {
+        "id": 1406,
+        "line": 47,
+        "precode": "typeable = !(parent.isAssign() && parent.getFirstChild() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "typeable = !parent.isAssign() || parent.getFirstChild() == n;"
+    },
+    {
+        "id": 1407,
+        "line": 47,
+        "precode": "typeable = !(parent.isAssign() && parent.getFirstChild() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "typeable = !parent.isAssign() && parent.getFirstChild() != n;"
+    },
+    {
+        "id": 1408,
+        "line": 47,
+        "precode": "typeable = !(parent.isAssign() && parent.getFirstChild() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "typeable = true;"
+    },
+    {
+        "id": 1409,
+        "line": 47,
+        "precode": "typeable = !(parent.isAssign() && parent.getFirstChild() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "typeable = false;"
+    },
+    {
+        "id": 1442,
+        "line": 72,
+        "precode": "HashMap<String, ObjectType> properties = new HashMap<String, ObjectType>();",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "HashMap<String, ObjectType> properties = new LinkedHashMap<String, ObjectType>();"
+    },
+    {
+        "id": 1443,
+        "line": 73,
+        "precode": "HashMap<String, ObjectType> currentProperties = new HashMap<String, ObjectType>();",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "HashMap<String, ObjectType> currentProperties = new LinkedHashMap<String, ObjectType>();"
+    },
+    {
+        "id": 1444,
+        "line": 1583,
+        "precode": "for (ObjectType interfaceType : functionType.getExtendedInterfaces()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "for (ObjectType interfaceType : new ArrayList<ObjectType>(functionType.getExtendedInterfaces())) {"
+    },
+    {
+        "id": 1446,
+        "line": 76,
+        "precode": "checkInterfaceConflictProperties(t, n, functionPrivateName, properties, currentProperties, interfaceType);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "checkInterfaceConflictProperties(t, n, functionPrivateName, currentProperties, properties, interfaceType);"
+    },
+    {
+        "id": 1449,
+        "line": 1583,
+        "precode": "for (ObjectType interfaceType : functionType.getExtendedInterfaces()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "for (ObjectType interfaceType : functionType.getExtendedInterfaces().stream().collect(Collectors.toList())) {"
+    },
+    {
+        "id": 1450,
+        "line": 1584,
+        "precode": "currentProperties.clear();",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "currentProperties.removeAll();"
+    },
+    {
+        "id": 1451,
+        "line": 76,
+        "precode": "checkInterfaceConflictProperties(t, n, functionPrivateName, properties, currentProperties, interfaceType);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "checkInterfaceConflictProperties(t, n, functionPrivateName, new HashMap<String, ObjectType>(properties), currentProperties, interfaceType);"
+    },
+    {
+        "id": 1452,
+        "line": 1587,
+        "precode": "properties.putAll(currentProperties);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "for (Map.Entry<String, ObjectType> entry : currentProperties.entrySet()) { properties.put(entry.getKey(), entry.getValue()); }"
+    },
+    {
+        "id": 1980,
+        "line": 1413,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, t);"
+    }
+]

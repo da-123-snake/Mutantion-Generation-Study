@@ -1,0 +1,114 @@
+[
+    {
+        "id": 140,
+        "line": 725,
+        "precode": "DateTimeParser parser = requireParser();",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "DateTimeParser parser = requireParser();\nDateTimeParser parser2 = requireParser();"
+    },
+    {
+        "id": 141,
+        "line": 725,
+        "precode": "if (instant == null) {",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "if (instant == null) {\n    if (instant2 == null) {"
+    },
+    {
+        "id": 142,
+        "line": 725,
+        "precode": "throw new IllegalArgumentException(\"Instant must not be null\");",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "throw new IllegalArgumentException(\"Instant must not be null\");\nthrow new IllegalArgumentException(\"Instant2 must not be null\");"
+    },
+    {
+        "id": 143,
+        "line": 725,
+        "precode": "long instantMillis = instant.getMillis();",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantMillis = instant.getMillis();\nlong instantMillis2 = instant2.getMillis();"
+    },
+    {
+        "id": 144,
+        "line": 725,
+        "precode": "Chronology chrono = instant.getChronology();",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "Chronology chrono = instant.getChronology();\nChronology chrono2 = instant2.getChronology();"
+    },
+    {
+        "id": 145,
+        "line": 725,
+        "precode": "long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);\nlong instantLocal2 = instantMillis2 + chrono2.getZone().getOffset(instantMillis2);"
+    },
+    {
+        "id": 146,
+        "line": 725,
+        "precode": "chrono = selectChronology(chrono);",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "chrono = selectChronology(chrono);\nchrono = selectChronology(chrono2);"
+    },
+    {
+        "id": 549,
+        "line": 725,
+        "precode": "DateTimeParser parser = requireParser();",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "DateTimeParser parser = requireParser();\nDateTimeParser parser = requireParser();"
+    },
+    {
+        "id": 550,
+        "line": 725,
+        "precode": "if (instant == null) {",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "if (instant == null) {\nif (instant == null) {"
+    },
+    {
+        "id": 551,
+        "line": 725,
+        "precode": "throw new IllegalArgumentException(\"Instant must not be null\");",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "throw new IllegalArgumentException(\"Instant must not be null\");\nthrow new IllegalArgumentException(\"Instant must not be null\");"
+    },
+    {
+        "id": 552,
+        "line": 725,
+        "precode": "long instantMillis = instant.getMillis();",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantMillis = instant.getMillis();\nlong instantMillis = instant.getMillis();"
+    },
+    {
+        "id": 553,
+        "line": 725,
+        "precode": "Chronology chrono = instant.getChronology();",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "Chronology chrono = instant.getChronology();\nChronology chrono = instant.getChronology();"
+    },
+    {
+        "id": 554,
+        "line": 725,
+        "precode": "long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);\nlong instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);"
+    },
+    {
+        "id": 555,
+        "line": 725,
+        "precode": "chrono = selectChronology(chrono);",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "chrono = selectChronology(chrono);\nchrono = selectChronology(chrono);"
+    },
+    {
+        "id": 556,
+        "line": 725,
+        "precode": "DateTimeParserBucket bucket = new DateTimeParserBucket(",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "DateTimeParserBucket bucket = new DateTimeParserBucket(\nDateTimeParserBucket bucket = new DateTimeParserBucket("
+    },
+    {
+        "id": 557,
+        "line": 725,
+        "precode": "return newPos;",
+        "filepath": "defects4j_fixed/Time/Time_16_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "return newPos;\nreturn newPos;"
+    }
+]

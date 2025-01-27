@@ -1,0 +1,23 @@
+[
+    {
+        "id": 27,
+        "line": 92,
+        "precode": "        for(Field field : orderedInstanceFieldsFrom(awaitingInjectionClazz)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_28_fixed/src/org/mockito/internal/configuration/DefaultInjectionEngine.java",
+        "aftercode": "        for(Field field :fields(awaitingInjectionClazz)) {\\r"
+    },
+    {
+        "id": 28,
+        "line": 93,
+        "precode": "            Object injected = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_28_fixed/src/org/mockito/internal/configuration/DefaultInjectionEngine.java",
+        "aftercode": "            Object injected = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).get();\\r"
+    },
+    {
+        "id": 29,
+        "line": 94,
+        "precode": "            mocks.remove(injected);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_28_fixed/src/org/mockito/internal/configuration/DefaultInjectionEngine.java",
+        "aftercode": "            mocks.add(injected);\\r"
+    }
+]

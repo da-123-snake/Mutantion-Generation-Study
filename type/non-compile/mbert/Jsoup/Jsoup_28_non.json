@@ -1,0 +1,107 @@
+[
+    {
+        "id": 40,
+        "line": 72,
+        "precode": "        return full.get(name);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "        return full.char(name);"
+    },
+    {
+        "id": 41,
+        "line": 63,
+        "precode": "        return base.containsKey(name);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "        return base.has(name);"
+    },
+    {
+        "id": 42,
+        "line": 107,
+        "precode": "        return Parser.unescapeEntities(string, strict);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "        return Parser.escape(string, strict);"
+    },
+    {
+        "id": 43,
+        "line": 136,
+        "precode": "            InputStream in = Entities.class.getResourceAsStream(filename);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            InputStream in = Entities.class.create(filename);"
+    },
+    {
+        "id": 44,
+        "line": 137,
+        "precode": "            properties.load(in);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            properties.read(in);"
+    },
+    {
+        "id": 45,
+        "line": 138,
+        "precode": "            in.close();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            in.flush();"
+    },
+    {
+        "id": 46,
+        "line": 136,
+        "precode": "            InputStream in = Entities.class.getResourceAsStream(filename);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            InputStream in = Entities.class.create(filename);"
+    },
+    {
+        "id": 47,
+        "line": 137,
+        "precode": "            properties.load(in);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            properties.read(in);"
+    },
+    {
+        "id": 48,
+        "line": 138,
+        "precode": "            in.close();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            in.flush();"
+    },
+    {
+        "id": 49,
+        "line": 140,
+        "precode": "            throw new MissingResourceException(\"Error loading entities resource: \" + e.getMessage(), \"Entities\", filename);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            throw new MissingResourceException(\"Error loading entities resource: \"+(e.getMessage(), \"Entities\", filename);"
+    },
+    {
+        "id": 50,
+        "line": 143,
+        "precode": "        for (Map.Entry entry: properties.entrySet()) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "        for (Map.Entry entry: properties.values()) {"
+    },
+    {
+        "id": 51,
+        "line": 144,
+        "precode": "            Character val = Character.valueOf((char) Integer.parseInt((String) entry.getValue(), 16));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            Character val = Character.escape((char) Integer.parseInt((String) entry.getValue(), 16));"
+    },
+    {
+        "id": 52,
+        "line": 145,
+        "precode": "            String name = (String) entry.getKey();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            String name = (String) entry.name();"
+    },
+    {
+        "id": 53,
+        "line": 146,
+        "precode": "            entities.put(name, val);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "            entities.add(name, val);"
+    },
+    {
+        "id": 252,
+        "line": 63,
+        "precode": "        return base.containsKey(name);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "        return base.has(name);"
+    }
+]

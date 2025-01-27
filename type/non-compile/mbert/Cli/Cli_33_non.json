@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "line": 939,
+        "precode": "        if (((pos = text.indexOf('\\n', startPos)) != -1 && pos <= width)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "', startPos))!= -1 && pos <= width)||((pos = text.indexOf('\\\\t', startPos))!= -1 && pos <= width))"
+    },
+    {
+        "id": 8,
+        "line": 653,
+        "precode": "            buff.append(\"--\").append(option.getLongOpt());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            buff.append(\"--\").join(option.getLongOpt());"
+    },
+    {
+        "id": 10,
+        "line": 659,
+        "precode": "            buff.append(option.getOpt() == null ? longOptSeparator : \" \");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            buff.end(option.getOpt() == null? longOptSeparator : \" \");"
+    },
+    {
+        "id": 12,
+        "line": 728,
+        "precode": "        StringBuffer sb = new StringBuffer(text.length());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        StringBuffer sb = new StringBuffer(text.split());"
+    },
+    {
+        "id": 13,
+        "line": 730,
+        "precode": "        renderWrappedTextBlock(sb, width, nextLineTabStop, text);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        StringBuffer sb = new StringBuffer(text.length());print(sb, width, nextLineTabStop, text);"
+    },
+    {
+        "id": 15,
+        "line": 902,
+        "precode": "            BufferedReader in = new BufferedReader(new StringReader(text));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            BufferedReader in = new BufferedReader(new StringReader(txt));"
+    },
+    {
+        "id": 19,
+        "line": 907,
+        "precode": "                    sb.append(getNewLine());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                    sb.write(getNewLine());"
+    },
+    {
+        "id": 21,
+        "line": 911,
+        "precode": "                renderWrappedText(sb, width, nextLineTabStop, line);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                }render(sb, width, nextLineTabStop, line);"
+    },
+    {
+        "id": 22,
+        "line": 917,
+        "precode": "        return sb;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        returnline;"
+    }
+]

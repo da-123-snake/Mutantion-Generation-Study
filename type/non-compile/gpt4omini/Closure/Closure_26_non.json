@@ -1,0 +1,93 @@
+[
+    {
+        "id": 644,
+        "line": 128,
+        "precode": "private Set<String> modulesWithExports = Sets.newHashSet();",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "private Set<String> modulesWithExports = new HashSet<>();"
+    },
+    {
+        "id": 647,
+        "line": 212,
+        "precode": "Node moduleExportsProp = IR.getprop(IR.name(moduleName),",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "Node moduleExportsProp = IR.getprop(IR.name(moduleName), IR.string(\"exports\"));"
+    },
+    {
+        "id": 648,
+        "line": 213,
+        "precode": "IR.string(\"module$exports\")",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "IR.string(\"module.exports\")"
+    },
+    {
+        "id": 650,
+        "line": 216,
+        "precode": "IR.block(IR.exprResult(IR.assign(IR.name(moduleName),",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "IR.block(IR.exprResult(IR.assign(IR.name(moduleName), null,"
+    },
+    {
+        "id": 651,
+        "line": 217,
+        "precode": "moduleExportsProp.cloneTree())))).copyInformationFromForTree(",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "moduleExportsProp.cloneTree()).copyInformationFromForTree("
+    },
+    {
+        "id": 652,
+        "line": 218,
+        "precode": "script));",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "script.getLastChild());"
+    },
+    {
+        "id": 653,
+        "line": 206,
+        "precode": "private void emitOptionalModuleExportsOverride(Node script,",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "private void emitOptionalModuleExportsOverride(Node script, String moduleName, boolean isOverride) {"
+    },
+    {
+        "id": 654,
+        "line": 209,
+        "precode": "return;",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 659,
+        "line": 230,
+        "precode": "exports.putProp(Node.ORIGINALNAME_PROP, \"exports\");",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "exports.putProp(Node.EXPORTS_PROP, \"exports\");"
+    },
+    {
+        "id": 1815,
+        "line": 183,
+        "precode": "ci.addProvide(moduleName);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "ci.addProvide(moduleName + 'Extra');"
+    },
+    {
+        "id": 1816,
+        "line": 184,
+        "precode": "JSModule m = new JSModule(moduleName);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "JSModule m = new JSModule(moduleName + 'Module');"
+    },
+    {
+        "id": 1817,
+        "line": 185,
+        "precode": "m.addAndOverrideModule(ci);",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "m.addModule(ci);"
+    },
+    {
+        "id": 1818,
+        "line": 186,
+        "precode": "module = m;",
+        "filepath": "defects4j_fixed/Closure/Closure_26_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "module = new JSModule(moduleName + 'Override');"
+    }
+]

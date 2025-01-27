@@ -1,0 +1,142 @@
+[
+    {
+        "id": 276,
+        "line": 7,
+        "precode": "import java.nio.charset.CharsetEncoder;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import java.nio.charset.Charset;"
+    },
+    {
+        "id": 278,
+        "line": 17,
+        "precode": "Charset charset = Charset.forName(\"UTF-8\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "Charset charset = Charset.forName(\"ISO-8859-1\");"
+    },
+    {
+        "id": 279,
+        "line": 19,
+        "precode": "List<String> list = new ArrayList<>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "List<String> list = new LinkedList<>();"
+    },
+    {
+        "id": 280,
+        "line": 21,
+        "precode": "Map<String, String> map = new HashMap<>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "Map<String, String> map = new TreeMap<>();"
+    },
+    {
+        "id": 281,
+        "line": 23,
+        "precode": "for (String value : list) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "for (int i = 0; i < list.size(); i++) { String value = list.get(i);"
+    },
+    {
+        "id": 321,
+        "line": 137,
+        "precode": "properties.load(in);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "properties.load(new BufferedInputStream(in));"
+    },
+    {
+        "id": 675,
+        "line": 3,
+        "precode": "{\"gt\", 0x0003E},",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"gt\", 0x0003F},"
+    },
+    {
+        "id": 677,
+        "line": 3,
+        "precode": "{\"gt\", 0x0003E},",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"gt\", 0x0003D},"
+    },
+    {
+        "id": 679,
+        "line": 3,
+        "precode": "{\"gt\", 0x0003E},",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"gt\", 0x0003C},"
+    },
+    {
+        "id": 681,
+        "line": 120,
+        "precode": "xhtmlByVal = new HashMap<Character, String>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "xhtmlByVal = new HashMap<String, Character>();"
+    },
+    {
+        "id": 683,
+        "line": 122,
+        "precode": "baseByVal = toCharacterKey(base);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "baseByVal = toCharacterKey(full);"
+    },
+    {
+        "id": 686,
+        "line": 126,
+        "precode": "for (Object[] entity : xhtmlArray) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "for (Object entity : xhtmlArray) {"
+    },
+    {
+        "id": 908,
+        "line": 84,
+        "precode": "Character c = string.charAt(pos);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "int codePoint = string.codePointAt(pos);"
+    },
+    {
+        "id": 1502,
+        "line": 37,
+        "precode": "private static final Map<String, Character> full;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<String, Character> full = new HashMap<>();"
+    },
+    {
+        "id": 1503,
+        "line": 38,
+        "precode": "private static final Map<Character, String> xhtmlByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<Character, String> xhtmlByVal = new TreeMap<>();"
+    },
+    {
+        "id": 1504,
+        "line": 39,
+        "precode": "private static final Map<String, Character> base;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<String, Character> base = null;"
+    },
+    {
+        "id": 1505,
+        "line": 40,
+        "precode": "private static final Map<Character, String> baseByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<Character, String> baseByVal = new HashMap<>();"
+    },
+    {
+        "id": 1506,
+        "line": 41,
+        "precode": "private static final Map<Character, String> fullByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<Character, String> fullByVal = new LinkedHashMap<>();"
+    },
+    {
+        "id": 1507,
+        "line": 7,
+        "precode": "private static final Pattern unescapePattern = Pattern.compile(\"&#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]+\\d*\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Pattern unescapePattern = Pattern.compile(\"&[a-zA-Z]+;?\");"
+    },
+    {
+        "id": 1508,
+        "line": 8,
+        "precode": "private static final Pattern strictUnescapePattern = Pattern.compile(\"&(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]+\\d*);;\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_28_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Pattern strictUnescapePattern = Pattern.compile(\"&[a-zA-Z]+;\");"
+    }
+]

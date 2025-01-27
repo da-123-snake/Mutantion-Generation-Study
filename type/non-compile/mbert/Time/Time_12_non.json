@@ -1,0 +1,86 @@
+[
+    {
+        "id": 10,
+        "line": 207,
+        "precode": "        if (calendar == null) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "        if (calendar=null) {"
+    },
+    {
+        "id": 11,
+        "line": 208,
+        "precode": "            throw new IllegalArgumentException(\"The calendar must not be null\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "            throw new IllegalArgumentException(null);"
+    },
+    {
+        "id": 12,
+        "line": 210,
+        "precode": "        int era = calendar.get(Calendar.ERA);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "        int era = calendar.has(Calendar.ERA);"
+    },
+    {
+        "id": 13,
+        "line": 211,
+        "precode": "        int yearOfEra = calendar.get(Calendar.YEAR);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "        int yearOfEra = calendar.set(Calendar.YEAR);"
+    },
+    {
+        "id": 14,
+        "line": 213,
+        "precode": "            (era == GregorianCalendar.AD ? yearOfEra : 1 - yearOfEra),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "        return new LocalDate(year,"
+    },
+    {
+        "id": 16,
+        "line": 215,
+        "precode": "            calendar.get(Calendar.DAY_OF_MONTH)",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "            calendar.has(Calendar.DAY_OF_MONTH)"
+    },
+    {
+        "id": 17,
+        "line": 241,
+        "precode": "        if (date == null) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "        if (date=null) {"
+    },
+    {
+        "id": 18,
+        "line": 242,
+        "precode": "            throw new IllegalArgumentException(\"The date must not be null\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "            throw new IllegalArgumentException(null);"
+    },
+    {
+        "id": 20,
+        "line": 247,
+        "precode": "            cal.setTime(date);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "            cal.add(date);"
+    },
+    {
+        "id": 21,
+        "line": 248,
+        "precode": "            return fromCalendarFields(cal);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "            returncreate(cal);"
+    },
+    {
+        "id": 24,
+        "line": 241,
+        "precode": "        if (date == null) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "        if (date=null) {"
+    },
+    {
+        "id": 25,
+        "line": 242,
+        "precode": "            throw new IllegalArgumentException(\"The date must not be null\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_12_fixed/src/main/java/org/joda/time/LocalDate.java",
+        "aftercode": "            throw new IllegalArgumentException(null);"
+    }
+]

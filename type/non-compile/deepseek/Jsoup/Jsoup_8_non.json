@@ -1,0 +1,51 @@
+[
+    {
+        "id": 77,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.containsKey(attributeKey);"
+    },
+    {
+        "id": 81,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.contains(attributeKey);"
+    },
+    {
+        "id": 82,
+        "line": 105,
+        "precode": "return attributes.hasKey(attributeKey);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return attributes.exists(attributeKey);"
+    },
+    {
+        "id": 744,
+        "line": 358,
+        "precode": "outerHtml(accum);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "innerHtml(accum);"
+    },
+    {
+        "id": 745,
+        "line": 363,
+        "precode": "new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(this);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "new NodeTraversor(new InnerHtmlVisitor(accum, getOutputSettings())).traverse(this);"
+    },
+    {
+        "id": 750,
+        "line": 363,
+        "precode": "new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(this);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "new NodeTraversor(new OuterHtmlVisitor(accum, new Document.OutputSettings())).traverse(this);"
+    },
+    {
+        "id": 751,
+        "line": 368,
+        "precode": "return ownerDocument() != null ? ownerDocument().outputSettings() : (new Document(\"\")).outputSettings();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_8_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "return ownerDocument() != null ? ownerDocument().outputSettings() : new Document.OutputSettings();"
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 180,
+        "line": 373,
+        "precode": "year, monthOfYear, 28,",
+        "aftercode": "year, monthOfYear, 1,",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java"
+    },
+    {
+        "id": 185,
+        "line": 382,
+        "precode": "year, monthOfYear, dayOfMonth,",
+        "aftercode": "year, monthOfYear, dayOfMonth + 1,",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java"
+    },
+    {
+        "id": 512,
+        "line": 194,
+        "precode": "cutoverInstant = gregorianCutover.toInstant();",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "cutoverInstant = gregorianCutover.toDateTime();"
+    },
+    {
+        "id": 513,
+        "line": 199,
+        "precode": "ArrayList<GJChronology> chronos = cCache.get(zone);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "LinkedList<GJChronology> chronos = cCache.get(zone);"
+    },
+    {
+        "id": 515,
+        "line": 202,
+        "precode": "cCache.put(zone, chronos);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "chronos.add(zone);"
+    },
+    {
+        "id": 516,
+        "line": 194,
+        "precode": "cutoverInstant = gregorianCutover.toInstant();",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "cutoverInstant = gregorianCutover.toDateMidnight();"
+    },
+    {
+        "id": 517,
+        "line": 201,
+        "precode": "chronos = new ArrayList<GJChronology>(2);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "chronos = new Vector<GJChronology>(2);"
+    },
+    {
+        "id": 543,
+        "line": 1017,
+        "precode": "return iJulianField.getDifference(minuendInstant, subtrahendInstant);",
+        "filepath": "defects4j_fixed/Time/Time_18_fixed/src/main/java/org/joda/time/chrono/GJChronology.java",
+        "aftercode": "return iJulianField.getDifferenceAsLong(minuendInstant, subtrahendInstant);"
+    }
+]

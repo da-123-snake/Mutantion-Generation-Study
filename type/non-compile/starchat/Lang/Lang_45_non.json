@@ -1,0 +1,58 @@
+[
+    {
+        "id": 74,
+        "line": 646,
+        "precode": "if (lower > str.length()) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_45_fixed/src/java/org/apache/commons/lang/WordUtils.java",
+        "aftercode": "if (lower >= str.length()) {\n"
+    },
+    {
+        "id": 75,
+        "line": 646,
+        "precode": "\tlower = str.length();\n",
+        "filepath": "defects4j_fixed/Lang/Lang_45_fixed/src/java/org/apache/commons/lang/WordUtils.java",
+        "aftercode": "\tlower = Math.min(lower, str.length());\n"
+    },
+    {
+        "id": 76,
+        "line": 646,
+        "precode": "if (upper == -1 || upper > str.length()) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_45_fixed/src/java/org/apache/commons/lang/WordUtils.java",
+        "aftercode": "if (upper == -1 || upper >= str.length()) {\n"
+    },
+    {
+        "id": 77,
+        "line": 646,
+        "precode": "\tupper = str.length();\n",
+        "filepath": "defects4j_fixed/Lang/Lang_45_fixed/src/java/org/apache/commons/lang/WordUtils.java",
+        "aftercode": "\tupper = Math.min(upper, str.length());\n"
+    },
+    {
+        "id": 79,
+        "line": 646,
+        "precode": "int index = StringUtils.indexOf(str, \" \", lower);\n",
+        "filepath": "defects4j_fixed/Lang/Lang_45_fixed/src/java/org/apache/commons/lang/WordUtils.java",
+        "aftercode": "int index = str.indexOf(' ', lower);\n"
+    },
+    {
+        "id": 80,
+        "line": 646,
+        "precode": "if (index == -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_45_fixed/src/java/org/apache/commons/lang/WordUtils.java",
+        "aftercode": "if (index < 0) {\n"
+    },
+    {
+        "id": 81,
+        "line": 646,
+        "precode": "\tresult.append(str.substring(0, upper));\n",
+        "filepath": "defects4j_fixed/Lang/Lang_45_fixed/src/java/org/apache/commons/lang/WordUtils.java",
+        "aftercode": "\tresult.append(str.substring(0, index));\n"
+    },
+    {
+        "id": 83,
+        "line": 646,
+        "precode": "\tif (upper!= str.length()) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_45_fixed/src/java/org/apache/commons/lang/WordUtils.java",
+        "aftercode": "\tif (index < upper) {\n"
+    }
+]

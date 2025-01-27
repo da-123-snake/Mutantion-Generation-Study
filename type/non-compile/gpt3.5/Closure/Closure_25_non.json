@@ -1,0 +1,142 @@
+[
+    {
+        "id": 173,
+        "line": 20,
+        "precode": "FlowScope rightScope = reverseInterpreter.\n    getPreciserScopeKnowingConditionOutcome(\n        left, leftLiterals.getOutcomeFlowScope(left.getType(), condition),\n        condition);",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "rightScope = reverseInterpreter.\n    getPreciserScopeKnowingConditionOutcome(\n        right, leftLiterals.getOutcomeFlowScope(left.getType(), condition),\n        condition);"
+    },
+    {
+        "id": 174,
+        "line": 23,
+        "precode": "BooleanOutcomePair rightLiterals =\n    traverseWithinShortCircuitingBinOp(\n        right, rightScope.createChildFlowScope());",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "BooleanOutcomePair rightLiterals =\n    new BooleanOutcomePair(\n        BooleanLiteralSet.EMPTY, BooleanLiteralSet.EMPTY,\n        rightScope.createChildFlowScope(), rightScope.createChildFlowScope());"
+    },
+    {
+        "id": 180,
+        "line": 1246,
+        "precode": "case Token.AND:",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "case Token.OR:"
+    },
+    {
+        "id": 183,
+        "line": 59,
+        "precode": "if (literals.booleanValues == BooleanLiteralSet.EMPTY &&\n      getNativeType(BOOLEAN_TYPE).isSubtype(type)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "if (literals.booleanValues != BooleanLiteralSet.EMPTY &&\n      getNativeType(BOOLEAN_TYPE).isSubtype(type)) {"
+    },
+    {
+        "id": 184,
+        "line": 67,
+        "precode": "FlowScope rightScope = reverseInterpreter.\n    getPreciserScopeKnowingConditionOutcome(\n        left, leftLiterals.getOutcomeFlowScope(left.getType(), condition),\n        condition);",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "FlowScope rightScope = null;"
+    },
+    {
+        "id": 185,
+        "line": 74,
+        "precode": "rightLiterals =\n    traverseWithinShortCircuitingBinOp(\n        right, rightScope.createChildFlowScope());",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "rightLiterals =\n    traverseWithinShortCircuitingBinOp(\n        left, rightScope.createChildFlowScope());"
+    },
+    {
+        "id": 559,
+        "line": 1081,
+        "precode": "n.setJSType(type);",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "n.setJSType(getNativeType(type));"
+    },
+    {
+        "id": 560,
+        "line": 1071,
+        "precode": "return scope;",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "return n.getJSType();"
+    },
+    {
+        "id": 561,
+        "line": 1071,
+        "precode": "return scope;",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "return type;"
+    },
+    {
+        "id": 564,
+        "line": 1081,
+        "precode": "n.setJSType(type);",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "n.setJSType(objType.getInstanceType());"
+    },
+    {
+        "id": 565,
+        "line": 1094,
+        "precode": "return dereferencePointer(n.getFirstChild(), scope);",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "return dereferencePointer(n.getFirstChild(), objType);"
+    },
+    {
+        "id": 566,
+        "line": 68,
+        "precode": "n.setJSType(getPropertyType(objNode.getJSType(), property.getString(), n, scope));",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "n.setJSType(getPropertyType(objNode.getJSType(), property.getString(), n, null));"
+    },
+    {
+        "id": 567,
+        "line": 1043,
+        "precode": "if (constructorType.isUnknownType()) {",
+        "aftercode": "if (constructorType.isUnknown()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 572,
+        "line": 1068,
+        "precode": "for (Node el = n.getFirstChild(); el != null; el = el.getNext()) {",
+        "aftercode": "for (Node el : n.getChildren()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 575,
+        "line": 63,
+        "precode": "getPropertyType(objNode.getJSType(), property.getString(), n, scope));",
+        "aftercode": "getPropertyType(null, property.getString(), n, scope));",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 576,
+        "line": 946,
+        "precode": "private void updateTypeOfThisOnClosure(Node n, FunctionType fnType) {",
+        "aftercode": "// private void updateTypeOfThisOnClosure(Node n, FunctionType fnType) {",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 577,
+        "line": 949,
+        "precode": "if (fnType.getTemplateTypeName() == null) {",
+        "aftercode": "// if (fnType.getTemplateTypeName() == null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 779,
+        "line": 1119,
+        "precode": "if (constraintObj != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "if (constraintObj) {"
+    },
+    {
+        "id": 781,
+        "line": 1120,
+        "precode": "type.matchConstraint(constraintObj);",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "type.matchConstraint();"
+    },
+    {
+        "id": 782,
+        "line": 1113,
+        "precode": "if (type == null || constraint == null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_25_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "if (type || constraint == null) {"
+    }
+]

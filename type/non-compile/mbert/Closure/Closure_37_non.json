@@ -1,0 +1,37 @@
+[
+    {
+        "id": 109,
+        "line": 540,
+        "precode": "    Preconditions.checkState(body.getNext() == null &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_37_fixed/src/com/google/javascript/jscomp/NodeTraversal.java",
+        "aftercode": "    Preconditions.check(body.getNext() == null &&"
+    },
+    {
+        "id": 110,
+        "line": 541,
+        "precode": "            body.isBlock(), body);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_37_fixed/src/com/google/javascript/jscomp/NodeTraversal.java",
+        "aftercode": "            body.next(), body);"
+    },
+    {
+        "id": 111,
+        "line": 542,
+        "precode": "    traverseBranch(body, n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_37_fixed/src/com/google/javascript/jscomp/NodeTraversal.java",
+        "aftercode": "            body.isBlock(), body);traverse(body, n);"
+    },
+    {
+        "id": 112,
+        "line": 544,
+        "precode": "    popScope();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_37_fixed/src/com/google/javascript/jscomp/NodeTraversal.java",
+        "aftercode": "    traverseBranch(body, n);pop();"
+    },
+    {
+        "id": 113,
+        "line": 671,
+        "precode": "    return JSError.make(getSourceName(), n, level, type, arguments);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_37_fixed/src/com/google/javascript/jscomp/NodeTraversal.java",
+        "aftercode": "    return JSError.create(getSourceName(), n, level, type, arguments);"
+    }
+]

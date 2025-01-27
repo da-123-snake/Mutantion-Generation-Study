@@ -1,0 +1,23 @@
+[
+    {
+        "id": 430,
+        "line": 124,
+        "precode": "Node c = node.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_13_fixed/src/com/google/javascript/jscomp/PeepholeOptimizationsPass.java",
+        "aftercode": "Node c = node.getChildAt(0);"
+    },
+    {
+        "id": 431,
+        "line": 127,
+        "precode": "traverse(c);",
+        "filepath": "defects4j_fixed/Closure/Closure_13_fixed/src/com/google/javascript/jscomp/PeepholeOptimizationsPass.java",
+        "aftercode": "traverse(c.getPrevious());"
+    },
+    {
+        "id": 432,
+        "line": 126,
+        "precode": "Node next = c.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_13_fixed/src/com/google/javascript/jscomp/PeepholeOptimizationsPass.java",
+        "aftercode": "Node next = c.getChildAt(c.getChildCount() - 1);"
+    }
+]

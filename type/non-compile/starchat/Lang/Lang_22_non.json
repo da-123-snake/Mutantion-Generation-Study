@@ -1,0 +1,100 @@
+[
+    {
+        "id": 148,
+        "line": 634,
+        "precode": "if ((u == 0) || (v == 0)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "if ((u == 0) || (v == 0)) {\n    if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {\n        throw new ArithmeticException(\"overflow: gcd is 2^31\");\n    }\n    return Math.abs(u) + Math.abs(v);\n}"
+    },
+    {
+        "id": 149,
+        "line": 634,
+        "precode": "if (Math.abs(u) == 1 || Math.abs(v) == 1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "if (Math.abs(u) == 1 || Math.abs(v) == 1) {\n    return 1;\n}"
+    },
+    {
+        "id": 150,
+        "line": 634,
+        "precode": "// keep u and v negative, as negative integers range down to",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// keep u and v negative, as negative integers range down to\n// if either operand is abs 1, return 1:\nif (Math.abs(u) == 1 || Math.abs(v) == 1) {\n    return 1;\n}\n// keep u and v negative, as negative integers range down to"
+    },
+    {
+        "id": 151,
+        "line": 634,
+        "precode": "// while u and v are both even...",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// while u and v are both even...\n// B1. [Find power of 2]\nint k=0;\nwhile ((u & 1) == 0 && (v & 1) == 0 && k < 31) {\n    u /= 2;\n    v /= 2;\n    k++;\n}\nif (k == 31) {\n    throw new ArithmeticException(\"overflow: gcd is 2^31\");\n}\n// B2. Initialize:\nu and v have been divided by 2^k and at least\n//     one is odd."
+    },
+    {
+        "id": 152,
+        "line": 634,
+        "precode": "// B4/B3: cast out twos from t.",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// B4/B3: cast out twos from t.\n// B2. Initialize:\nu and v have been divided by 2^k and at least\n//     one is odd.\nint t = ((u & 1) == 1)? v : -(u / 2)/*B3*/;\n// t negative: u was odd, v may be even (t replaces v)\n// t positive: u was even, v is odd (t replaces u)"
+    },
+    {
+        "id": 153,
+        "line": 634,
+        "precode": "// B5 [reset max(u,v)]",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// B5 [reset max(u,v)]\n// B6/B3. at this point both u and v should be odd.\nint t = (v - u) / 2;\n// |u| larger: t positive (replace u)\n// |v| larger: t negative (replace v)"
+    },
+    {
+        "id": 154,
+        "line": 634,
+        "precode": "// gcd is u*2^k",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// gcd is u*2^k\nreturn -u * (1 << k);"
+    },
+    {
+        "id": 155,
+        "line": 634,
+        "precode": "if ((u == 0) || (v == 0)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "if ((u == 0) || (v == 0)) {\n    if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {\n        throw new ArithmeticException(\"overflow: gcd is 2^31\");\n    }\n    return Math.abs(u) + Math.abs(v);\n}\n// if either operand is abs 1, return 1:"
+    },
+    {
+        "id": 156,
+        "line": 634,
+        "precode": "if (Math.abs(u) == 1 || Math.abs(v) == 1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "if (Math.abs(u) == 1 || Math.abs(v) == 1) {\n    return 1;\n}\n// if either operand is abs 1, return 1:\nif (Math.abs(u) == 1 || Math.abs(v) == 1) {\n    return 1;\n}\n// keep u and v negative, as negative integers range down to"
+    },
+    {
+        "id": 157,
+        "line": 634,
+        "precode": "// keep u and v negative, as negative integers range down to",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// keep u and v negative, as negative integers range down to\n// if either operand is abs 1, return 1:\nif (Math.abs(u) == 1 || Math.abs(v) == 1) {\n    return 1;\n}\n// if either operand is abs 1, return 1:\nif (Math.abs(u) == 1 || Math.abs(v) == 1) {\n    return 1;\n}\n// keep u and v negative, as negative integers range down to"
+    },
+    {
+        "id": 158,
+        "line": 634,
+        "precode": "// while u and v are both even...",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// while u and v are both even...\n// B1. [Find power of 2]\nint k=0;\nwhile ((u & 1) == 0 && (v & 1) == 0 && k < 31) {\n    u /= 2;\n    v /= 2;\n    k++;\n}\nif (k == 31) {\n    throw new ArithmeticException(\"overflow: gcd is 2^31\");\n}\n// B2. Initialize:\nu and v have been divided by 2^k and at least\n//     one is odd."
+    },
+    {
+        "id": 159,
+        "line": 634,
+        "precode": "// B4/B3: cast out twos from t.",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// B4/B3: cast out twos from t.\n// B2. Initialize:\nu and v have been divided by 2^k and at least\n//     one is odd.\nint t = ((u & 1) == 1)? v : -(u / 2)/*B3*/;\n// t negative: u was odd, v may be even (t replaces v)\n// t positive: u was even, v is odd (t replaces u)"
+    },
+    {
+        "id": 160,
+        "line": 634,
+        "precode": "// B5 [reset max(u,v)]",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// B5 [reset max(u,v)]\n// B6/B3. at this point both u and v should be odd.\nint t = (v - u) / 2;\n// |u| larger: t positive (replace u)\n// |v| larger: t negative (replace v)"
+    },
+    {
+        "id": 161,
+        "line": 634,
+        "precode": "// gcd is u*2^k",
+        "filepath": "defects4j_fixed/Lang/Lang_22_fixed/src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "aftercode": "// gcd is u*2^k\nreturn -u * (1 << k);\n// gcd is u*2^k"
+    }
+]

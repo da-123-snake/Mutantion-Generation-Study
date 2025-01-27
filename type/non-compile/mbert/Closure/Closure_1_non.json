@@ -1,0 +1,58 @@
+[
+    {
+        "id": 645,
+        "line": 733,
+        "precode": "        Var var = maybeUnreferenced.get(current);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "        Var var = maybeUnreferenced.item(current);"
+    },
+    {
+        "id": 647,
+        "line": 735,
+        "precode": "          maybeUnreferenced.remove(current);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "          maybeUnreferenced.add(current);"
+    },
+    {
+        "id": 650,
+        "line": 741,
+        "precode": "          if (var.getParentNode().isVar() &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "          if (var.getParentNode().isVar()&&!NodeUtil.isForIn(var.getParentNode().getParent())) {"
+    },
+    {
+        "id": 651,
+        "line": 742,
+        "precode": "              !NodeUtil.isForIn(var.getParentNode().getParent())) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "          if (var.getParentNode().isVar() &&!NodeUtil.isForIn(var.getParentNode().getParent())) {"
+    },
+    {
+        "id": 652,
+        "line": 743,
+        "precode": "            Node value = var.getInitialValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "            Node value = var.value();"
+    },
+    {
+        "id": 654,
+        "line": 745,
+        "precode": "                !NodeUtil.isLiteralValue(value, true);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "            assignedToUnknownValue = value!= null &&!NodeUtil.isLiteralValue(value, true);"
+    },
+    {
+        "id": 689,
+        "line": 379,
+        "precode": "    if (!removeGlobals) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "    if (unremoveGlobals) {"
+    },
+    {
+        "id": 690,
+        "line": 383,
+        "precode": "    Node function = fnScope.getRootNode();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_1_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "    Node function = fnScope.function();"
+    }
+]

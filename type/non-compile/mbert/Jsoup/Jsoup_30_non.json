@@ -1,0 +1,135 @@
+[
+    {
+        "id": 284,
+        "line": 42,
+        "precode": "        Validate.notNull(dirtyDocument);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        Validate.clean(dirtyDocument);"
+    },
+    {
+        "id": 285,
+        "line": 44,
+        "precode": "        Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        Document clean = Document.create(dirtyDocument.baseUri());"
+    },
+    {
+        "id": 287,
+        "line": 46,
+        "precode": "            copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        if (dirtyDocument.body()!= null) // frameset documents won't have a body. the clean doc will have empty body.replace(dirtyDocument.body(), clean.body());"
+    },
+    {
+        "id": 293,
+        "line": 83,
+        "precode": "            if (source instanceof Element) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "            if (sourceIsElement) {"
+    },
+    {
+        "id": 294,
+        "line": 84,
+        "precode": "                Element sourceEl = (Element) source;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                Element sourceEl =source;"
+    },
+    {
+        "id": 295,
+        "line": 89,
+        "precode": "                    destination.appendChild(destChild);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                    destination.append(destChild);"
+    },
+    {
+        "id": 296,
+        "line": 91,
+        "precode": "                    numDiscarded += meta.numAttribsDiscarded;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                    numDiscarded*+= meta.numAttribsDiscarded;"
+    },
+    {
+        "id": 297,
+        "line": 92,
+        "precode": "                    destination = destChild;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                    destination!= destChild;"
+    },
+    {
+        "id": 298,
+        "line": 93,
+        "precode": "                } else if (source != root) { // not a safe tag, so don't add. don't count root against discarded.",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                } else if (source.root) { // not a safe tag, so don't add. don't count root against discarded."
+    },
+    {
+        "id": 299,
+        "line": 94,
+        "precode": "                    numDiscarded++;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                    numDiscarded++"
+    },
+    {
+        "id": 300,
+        "line": 96,
+        "precode": "            } else if (source instanceof TextNode) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "            } else if (sourceIsTextNode) {"
+    },
+    {
+        "id": 301,
+        "line": 97,
+        "precode": "                TextNode sourceText = (TextNode) source;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                TextNode sourceText =source;"
+    },
+    {
+        "id": 303,
+        "line": 99,
+        "precode": "                destination.appendChild(destText);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                destination.append(destText);"
+    },
+    {
+        "id": 304,
+        "line": 101,
+        "precode": "                numDiscarded++;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                numDiscarded++"
+    },
+    {
+        "id": 306,
+        "line": 107,
+        "precode": "                destination = destination.parent(); // would have descended, so pop destination stack",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                destinationParent= destination.parent(); // would have descended, so pop destination stack"
+    },
+    {
+        "id": 307,
+        "line": 113,
+        "precode": "        CleaningVisitor cleaningVisitor = new CleaningVisitor(source, dest);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        CleaningVisitor cleaningVisitor = new CleaningVisitor(src, dest);"
+    },
+    {
+        "id": 308,
+        "line": 114,
+        "precode": "        NodeTraversor traversor = new NodeTraversor(cleaningVisitor);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        NodeTraversor traversor = new NodeTraversor(dest);"
+    },
+    {
+        "id": 309,
+        "line": 115,
+        "precode": "        traversor.traverse(source);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        traversor.copy(source);"
+    },
+    {
+        "id": 310,
+        "line": 116,
+        "precode": "        return cleaningVisitor.numDiscarded;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_30_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        returndest;"
+    }
+]

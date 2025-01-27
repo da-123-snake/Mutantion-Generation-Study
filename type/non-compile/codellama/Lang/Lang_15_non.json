@@ -1,0 +1,65 @@
+[
+    {
+        "id": 113,
+        "line": 181,
+        "precode": "if (type == null) {",
+        "aftercode": "if (type == null) { return true; }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+    },
+    {
+        "id": 114,
+        "line": 187,
+        "precode": "if (toParameterizedType == null) {",
+        "aftercode": "if (toParameterizedType == null) { return false; }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+    },
+    {
+        "id": 115,
+        "line": 192,
+        "precode": "if (toParameterizedType.equals(type)) {",
+        "aftercode": "if (toParameterizedType.equals(type)) { return true; }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+    },
+    {
+        "id": 116,
+        "line": 197,
+        "precode": "Class<?> toClass = getRawType(toParameterizedType);",
+        "aftercode": "Class<?> toClass = getRawType(toParameterizedType); return true;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+    },
+    {
+        "id": 117,
+        "line": 200,
+        "precode": "Map<TypeVariable<?>, Type> fromTypeVarAssigns = getTypeArguments(type, toClass, null);",
+        "aftercode": "Map<TypeVariable<?>, Type> fromTypeVarAssigns = getTypeArguments(type, toClass, null); return true;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+    },
+    {
+        "id": 118,
+        "line": 203,
+        "precode": "if (fromTypeVarAssigns == null) {",
+        "aftercode": "if (fromTypeVarAssigns == null) { return false; }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+    },
+    {
+        "id": 119,
+        "line": 210,
+        "precode": "if (fromTypeVarAssigns.isEmpty()) {",
+        "aftercode": "if (fromTypeVarAssigns.isEmpty()) { return true; }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+    },
+    {
+        "id": 121,
+        "line": 219,
+        "precode": "for (TypeVariable<?> var : toTypeVarAssigns.keySet()) {",
+        "aftercode": "for (TypeVariable<?> var : toTypeVarAssigns.keySet()) { return true; }",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+    },
+    {
+        "id": 122,
+        "line": 1,
+        "precode": "HashMap<TypeVariable<?>, Type> typeVarAssigns = subtypeVarAssigns == null ? new HashMap<TypeVariable<?>, Type>() : new HashMap<TypeVariable<?>, Type>(subtypeVarAssigns);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_15_fixed/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "aftercode": "HashMap<TypeVariable<?>, Type> typeVarAssigns = subtypeVarAssigns == null ? new HashMap<TypeVariable<?>, Type>() : new HashMap<TypeVariable<?>, Type>(subtypeVarAssigns);"
+    }
+]

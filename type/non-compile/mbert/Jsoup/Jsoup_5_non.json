@@ -1,0 +1,51 @@
+[
+    {
+        "id": 107,
+        "line": 204,
+        "precode": "            return Attribute.createFromEncoded(key, value);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_5_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "            return Attribute.create(key, value);"
+    },
+    {
+        "id": 109,
+        "line": 207,
+        "precode": "                tq.advance();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_5_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "                tq.pop();"
+    },
+    {
+        "id": 110,
+        "line": 209,
+        "precode": "            return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_5_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "            returnvalue;"
+    },
+    {
+        "id": 255,
+        "line": 145,
+        "precode": "        Element child = new Element(tag, baseUri, attributes);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_5_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "        Element child = new Element(name, baseUri, attributes);"
+    },
+    {
+        "id": 256,
+        "line": 147,
+        "precode": "        boolean isEmptyElement = tag.isEmpty(); // empty element if empty tag (e.g. img) or self-closed el (<div/>",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_5_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "        boolean isEmptyElement = tag.empty(); // empty element if empty tag (e.g. img) or self-closed el (<div/>"
+    },
+    {
+        "id": 257,
+        "line": 148,
+        "precode": "        if (tq.matchChomp(\"/>\")) { // close empty element or tag",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_5_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "        if (tq.match(\"/>\")) { // close empty element or tag"
+    },
+    {
+        "id": 260,
+        "line": 151,
+        "precode": "                tag.setSelfClosing();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_5_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "                tag.close();"
+    }
+]

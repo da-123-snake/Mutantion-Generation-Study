@@ -1,0 +1,604 @@
+[
+    {
+        "id": 10,
+        "line": 1417,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 11,
+        "line": 1417,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 12,
+        "line": 1417,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 13,
+        "line": 1417,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 14,
+        "line": 1417,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 15,
+        "line": 1417,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 16,
+        "line": 1417,
+        "precode": "if (a[i] == pivot) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (a[i]!= pivot) {"
+    },
+    {
+        "id": 825,
+        "line": 141,
+        "precode": "return TernaryValue.forBoolean(n.getDouble()!= 0);",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return TernaryValue.forBoolean(n.getDouble() == 0);"
+    },
+    {
+        "id": 826,
+        "line": 141,
+        "precode": "return TernaryValue.forBoolean(n.getString().length() > 0);",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return TernaryValue.forBoolean(n.getString().length() == 0);"
+    },
+    {
+        "id": 827,
+        "line": 141,
+        "precode": "switch (n.getType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "switch (n.getType()) {\ncase Token.NUMBER:\n    return TernaryValue.forBoolean(n.getDouble()!= 0);\ncase Token.STRING:\n    return TernaryValue.forBoolean(n.getString().length() > 0);\ndefault:\n    return TernaryValue.UNKNOWN;"
+    },
+    {
+        "id": 828,
+        "line": 141,
+        "precode": "case Token.NULL:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.NULL:\n    return TernaryValue.FALSE;"
+    },
+    {
+        "id": 829,
+        "line": 141,
+        "precode": "case Token.FALSE:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.FALSE:\n    return TernaryValue.FALSE;"
+    },
+    {
+        "id": 830,
+        "line": 141,
+        "precode": "case Token.VOID:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.VOID:\n    return TernaryValue.FALSE;"
+    },
+    {
+        "id": 831,
+        "line": 141,
+        "precode": "case Token.NAME:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.NAME:\n    String name = n.getString();\n    if (\"undefined\".equals(name) || \"NaN\".equals(name)) {\n        // We assume here that programs don't change the value of the keyword\n        // undefined to something other than the value undefined.\n        return TernaryValue.FALSE;\n    } else if (\"Infinity\".equals(name)) {\n        return TernaryValue.TRUE;\n    }\n    break;"
+    },
+    {
+        "id": 832,
+        "line": 141,
+        "precode": "case Token.TRUE:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.TRUE:\n    return TernaryValue.TRUE;"
+    },
+    {
+        "id": 833,
+        "line": 141,
+        "precode": "case Token.ARRAYLIT:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.ARRAYLIT:\n    return TernaryValue.TRUE;"
+    },
+    {
+        "id": 834,
+        "line": 141,
+        "precode": "case Token.OBJECTLIT:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.OBJECTLIT:\n    return TernaryValue.TRUE;"
+    },
+    {
+        "id": 835,
+        "line": 141,
+        "precode": "case Token.REGEXP:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.REGEXP:\n    return TernaryValue.TRUE;"
+    },
+    {
+        "id": 836,
+        "line": 971,
+        "precode": "return Token.ADD;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.SUB;"
+    },
+    {
+        "id": 837,
+        "line": 971,
+        "precode": "return Token.ASSIGN_SUB;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.ASSIGN_MUL;"
+    },
+    {
+        "id": 838,
+        "line": 971,
+        "precode": "return Token.ASSIGN_MUL;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.ASSIGN_DIV;"
+    },
+    {
+        "id": 839,
+        "line": 971,
+        "precode": "return Token.ASSIGN_DIV;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.ASSIGN_MOD;"
+    },
+    {
+        "id": 840,
+        "line": 971,
+        "precode": "return Token.ASSIGN_MOD;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.ADD;"
+    },
+    {
+        "id": 841,
+        "line": 971,
+        "precode": "return Token.SUB;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.MUL;"
+    },
+    {
+        "id": 842,
+        "line": 971,
+        "precode": "return Token.MUL;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.DIV;"
+    },
+    {
+        "id": 843,
+        "line": 971,
+        "precode": "return Token.DIV;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.MOD;"
+    },
+    {
+        "id": 844,
+        "line": 971,
+        "precode": "return Token.MOD;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.ADD;"
+    },
+    {
+        "id": 845,
+        "line": 971,
+        "precode": "return Token.ADD;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.SUB;"
+    },
+    {
+        "id": 846,
+        "line": 971,
+        "precode": "return Token.ASSIGN_SUB;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.ASSIGN_MUL;"
+    },
+    {
+        "id": 847,
+        "line": 971,
+        "precode": "return Token.ASSIGN_MUL;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Token.ASSIGN_DIV;"
+    },
+    {
+        "id": 922,
+        "line": 313,
+        "precode": "  switch (n.getType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "    switch (n.getType()) {"
+    },
+    {
+        "id": 923,
+        "line": 313,
+        "precode": "    case Token.ARRAYLIT:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "    case Token.ARRAYLIT:"
+    },
+    {
+        "id": 924,
+        "line": 313,
+        "precode": "    case Token.OBJECTLIT:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "    case Token.OBJECTLIT:"
+    },
+    {
+        "id": 925,
+        "line": 313,
+        "precode": "    case Token.REGEXP:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "    case Token.REGEXP:"
+    },
+    {
+        "id": 927,
+        "line": 313,
+        "precode": "      for (Node child = n.getFirstChild(); child!= null;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "      for (Node child = n.getFirstChild(); child!= null;"
+    },
+    {
+        "id": 928,
+        "line": 313,
+        "precode": "        if (!isLiteralValue(child, includeFunctions)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "        if (!isLiteralValue(child, includeFunctions)) {"
+    },
+    {
+        "id": 929,
+        "line": 313,
+        "precode": "          return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "          return false;"
+    },
+    {
+        "id": 930,
+        "line": 313,
+        "precode": "      default:",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "      default:"
+    },
+    {
+        "id": 931,
+        "line": 313,
+        "precode": "        return isImmutableValue(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "        return isImmutableValue(n);"
+    },
+    {
+        "id": 932,
+        "line": 389,
+        "precode": "if (n.getType()!= Token.BLOCK) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (n.getType()!= Token.BLOCK && n.getType()!= Token.EMPTY) {"
+    },
+    {
+        "id": 933,
+        "line": 389,
+        "precode": "for (Node n = block.getFirstChild(); n!= null; n = n.getNext()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "for (Node n = block.getFirstChild(); n!= null; n = n.getNext()) {\n\tif (n.getType()!= Token.EMPTY) {"
+    },
+    {
+        "id": 934,
+        "line": 389,
+        "precode": "if (n.getType()!= Token.EMPTY) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (n.getType() == Token.EMPTY) {"
+    },
+    {
+        "id": 935,
+        "line": 389,
+        "precode": "if (n.getType()!= Token.BLOCK) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (n.getType()!= Token.BLOCK && n.getType()!= Token.EMPTY) {"
+    },
+    {
+        "id": 936,
+        "line": 389,
+        "precode": "if (n.getType()!= Token.EMPTY) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (n.getType() == Token.EMPTY) {"
+    },
+    {
+        "id": 937,
+        "line": 389,
+        "precode": "if (n.getType()!= Token.BLOCK) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (n.getType()!= Token.BLOCK && n.getType()!= Token.EMPTY) {"
+    },
+    {
+        "id": 938,
+        "line": 389,
+        "precode": "if (n.getType()!= Token.EMPTY) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (n.getType() == Token.EMPTY) {"
+    },
+    {
+        "id": 1012,
+        "line": 1261,
+        "precode": "static boolean isReferenceName(Node n) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "static boolean isReferenceName(Node n) {"
+    },
+    {
+        "id": 1013,
+        "line": 1261,
+        "precode": "static boolean isReferenceName(Node n) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "static boolean isReferenceName(Node n) {return false;}"
+    },
+    {
+        "id": 1014,
+        "line": 1261,
+        "precode": "static boolean isReferenceName(Node n) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "static boolean isReferenceName(Node n) {return!n.getString().isEmpty();}"
+    },
+    {
+        "id": 1015,
+        "line": 1261,
+        "precode": "static boolean isReferenceName(Node n) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "static boolean isReferenceName(Node n) {return!n.getString().equals(\"\");}"
+    },
+    {
+        "id": 1016,
+        "line": 1261,
+        "precode": "static boolean isReferenceName(Node n) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "static boolean isReferenceName(Node n) {return!n.getString().isBlank();}"
+    },
+    {
+        "id": 1017,
+        "line": 1261,
+        "precode": "static boolean isReferenceName(Node n) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "static boolean isReferenceName(Node n) {return n.getString().length() > 0;}"
+    },
+    {
+        "id": 1018,
+        "line": 1261,
+        "precode": "static boolean isReferenceName(Node n) {",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "static boolean isReferenceName(Node n) {return n.getString().length()!= 0;}"
+    },
+    {
+        "id": 1105,
+        "line": 367,
+        "precode": "",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1106,
+        "line": 367,
+        "precode": "return ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1107,
+        "line": 367,
+        "precode": "return!",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1108,
+        "line": 367,
+        "precode": "return! ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1109,
+        "line": 367,
+        "precode": "return!true",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1110,
+        "line": 367,
+        "precode": "return!false",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1111,
+        "line": 367,
+        "precode": "return! (",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1112,
+        "line": 367,
+        "precode": "return! (true",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1113,
+        "line": 367,
+        "precode": "return! (false",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1114,
+        "line": 367,
+        "precode": "return! (true ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1115,
+        "line": 367,
+        "precode": "return! (false ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1116,
+        "line": 367,
+        "precode": "return! (true &&",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1117,
+        "line": 367,
+        "precode": "return! (false &&",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1118,
+        "line": 367,
+        "precode": "return! (true && ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1119,
+        "line": 367,
+        "precode": "return! (false && ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1120,
+        "line": 367,
+        "precode": "return! (true ||",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1121,
+        "line": 367,
+        "precode": "return! (false ||",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1122,
+        "line": 367,
+        "precode": "return! (true || ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1123,
+        "line": 367,
+        "precode": "return! (false || ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1124,
+        "line": 367,
+        "precode": "return! (true? ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1125,
+        "line": 367,
+        "precode": "return! (false? ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1126,
+        "line": 367,
+        "precode": "return! (true? ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1127,
+        "line": 367,
+        "precode": "return! (false? ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1128,
+        "line": 367,
+        "precode": "return! (true : ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1129,
+        "line": 367,
+        "precode": "return! (false : ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1130,
+        "line": 367,
+        "precode": "return! (1 + ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1131,
+        "line": 367,
+        "precode": "return! (1 - ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1132,
+        "line": 367,
+        "precode": "return! (1 * ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1133,
+        "line": 367,
+        "precode": "return! (1 / ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1134,
+        "line": 367,
+        "precode": "return! (1 % ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1135,
+        "line": 367,
+        "precode": "return! (1 & ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1136,
+        "line": 367,
+        "precode": "return! (1 | ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1137,
+        "line": 367,
+        "precode": "return! (1 ^ ",
+        "filepath": "defects4j_fixed/Closure/Closure_94_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    }
+]

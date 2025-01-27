@@ -1,0 +1,807 @@
+[
+    {
+        "id": 16,
+        "line": 1137,
+        "precode": "        Element clone = (Element) super.clone();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element clone = (Element) super.copy();"
+    },
+    {
+        "id": 17,
+        "line": 1138,
+        "precode": "        clone.classNames = null; // derived on first hit, otherwise gets a pointer to source classnames",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        clone.classNames()= null; // derived on first hit, otherwise gets a pointer to source classnames"
+    },
+    {
+        "id": 18,
+        "line": 1139,
+        "precode": "        return clone;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returncopy;"
+    },
+    {
+        "id": 60,
+        "line": 137,
+        "precode": "        return attributes.dataset();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return attributes.data();"
+    },
+    {
+        "id": 61,
+        "line": 142,
+        "precode": "        return (Element) parentNode;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnparent;"
+    },
+    {
+        "id": 62,
+        "line": 314,
+        "precode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.name(tagName), baseUri());"
+    },
+    {
+        "id": 63,
+        "line": 315,
+        "precode": "        appendChild(child);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());append(child);"
+    },
+    {
+        "id": 64,
+        "line": 316,
+        "precode": "        return child;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnull;"
+    },
+    {
+        "id": 65,
+        "line": 339,
+        "precode": "        TextNode node = new TextNode(text, baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode node = new TextNode(Text, baseUri());"
+    },
+    {
+        "id": 66,
+        "line": 340,
+        "precode": "        appendChild(node);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode node = new TextNode(text, baseUri());append(node);"
+    },
+    {
+        "id": 67,
+        "line": 352,
+        "precode": "        prependChild(node);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode node = new TextNode(text, baseUri());append(node);"
+    },
+    {
+        "id": 68,
+        "line": 353,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnode;"
+    },
+    {
+        "id": 69,
+        "line": 377,
+        "precode": "        Validate.notNull(html);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.string(html);"
+    },
+    {
+        "id": 70,
+        "line": 379,
+        "precode": "        List<Node> nodes = Parser.parseFragment(html, this, baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        List<Node> nodes = Parser.parse(html, this, baseUri());"
+    },
+    {
+        "id": 71,
+        "line": 380,
+        "precode": "        addChildren(0, nodes.toArray(new Node[nodes.size()]));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        List<Node> nodes = Parser.parseFragment(html, this, baseUri());insert(0, nodes.toArray(new Node[nodes.size()]));"
+    },
+    {
+        "id": 72,
+        "line": 381,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnodes;"
+    },
+    {
+        "id": 73,
+        "line": 476,
+        "precode": "        if (parentNode == null) return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        if (parentNode=null) return null;"
+    },
+    {
+        "id": 74,
+        "line": 477,
+        "precode": "        List<Element> siblings = parent().children();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        List<Element> siblings = parent().iblings();"
+    },
+    {
+        "id": 75,
+        "line": 478,
+        "precode": "        Integer index = indexInList(this, siblings);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Integer index =index(this, siblings);"
+    },
+    {
+        "id": 76,
+        "line": 479,
+        "precode": "        Validate.notNull(index);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.valid(index);"
+    },
+    {
+        "id": 77,
+        "line": 518,
+        "precode": "       if (parent() == null) return 0;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "       if (parent()=null) return 0;"
+    },
+    {
+        "id": 78,
+        "line": 519,
+        "precode": "       return indexInList(this, parent().children()); ",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "       returncompare(this, parent().children()); "
+    },
+    {
+        "id": 79,
+        "line": 567,
+        "precode": "        Validate.notEmpty(id);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.id(id);"
+    },
+    {
+        "id": 80,
+        "line": 569,
+        "precode": "        Elements elements = Collector.collect(new Evaluator.Id(id), this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Elements elements = Collector.parse(new Evaluator.Id(id), this);"
+    },
+    {
+        "id": 82,
+        "line": 571,
+        "precode": "            return elements.get(0);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            return elements.item(0);"
+    },
+    {
+        "id": 83,
+        "line": 573,
+        "precode": "            return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            returnelement;"
+    },
+    {
+        "id": 84,
+        "line": 616,
+        "precode": "        return Collector.collect(new Evaluator.AttributeStarting(keyPrefix), this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return Collector.Collect(new Evaluator.AttributeStarting(keyPrefix), this);"
+    },
+    {
+        "id": 85,
+        "line": 649,
+        "precode": "        return Collector.collect(new Evaluator.AttributeWithValueStarting(key, valuePrefix), this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return Collector.Collect(new Evaluator.AttributeWithValueStarting(key, valuePrefix), this);"
+    },
+    {
+        "id": 86,
+        "line": 314,
+        "precode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.name(tagName), baseUri());"
+    },
+    {
+        "id": 87,
+        "line": 315,
+        "precode": "        appendChild(child);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());append(child);"
+    },
+    {
+        "id": 88,
+        "line": 316,
+        "precode": "        return child;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnull;"
+    },
+    {
+        "id": 89,
+        "line": 339,
+        "precode": "        TextNode node = new TextNode(text, baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode node = new TextNode(Text, baseUri());"
+    },
+    {
+        "id": 90,
+        "line": 340,
+        "precode": "        appendChild(node);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode node = new TextNode(text, baseUri());append(node);"
+    },
+    {
+        "id": 91,
+        "line": 341,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnode;"
+    },
+    {
+        "id": 92,
+        "line": 351,
+        "precode": "        TextNode node = new TextNode(text, baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode node = new TextNode(Text, baseUri());"
+    },
+    {
+        "id": 93,
+        "line": 352,
+        "precode": "        prependChild(node);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode node = new TextNode(text, baseUri());append(node);"
+    },
+    {
+        "id": 94,
+        "line": 353,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnode;"
+    },
+    {
+        "id": 96,
+        "line": 528,
+        "precode": "        return siblings.size() > 1 ? siblings.get(siblings.size() - 1) : null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnsiblings;"
+    },
+    {
+        "id": 97,
+        "line": 532,
+        "precode": "        Validate.notNull(search);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.null(search);"
+    },
+    {
+        "id": 98,
+        "line": 533,
+        "precode": "        Validate.notNull(elements);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.null(elements);"
+    },
+    {
+        "id": 100,
+        "line": 536,
+        "precode": "            E element = elements.get(i);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            E element = elements.item(i);"
+    },
+    {
+        "id": 101,
+        "line": 537,
+        "precode": "            if (element.equals(search))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            if (element.is(search))"
+    },
+    {
+        "id": 102,
+        "line": 538,
+        "precode": "                return i;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "                returnelement;"
+    },
+    {
+        "id": 103,
+        "line": 540,
+        "precode": "        return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return0;"
+    },
+    {
+        "id": 104,
+        "line": 571,
+        "precode": "            return elements.get(0);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            return elements.item(0);"
+    },
+    {
+        "id": 105,
+        "line": 573,
+        "precode": "            return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            returnelement;"
+    },
+    {
+        "id": 106,
+        "line": 600,
+        "precode": "        Validate.notEmpty(key);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.key(key);"
+    },
+    {
+        "id": 107,
+        "line": 601,
+        "precode": "        key = key.trim().toLowerCase();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        key|= key.trim().toLowerCase();"
+    },
+    {
+        "id": 108,
+        "line": 660,
+        "precode": "        return Collector.collect(new Evaluator.AttributeWithValueEnding(key, valueSuffix), this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return Collector.Collect(new Evaluator.AttributeWithValueEnding(key, valueSuffix), this);"
+    },
+    {
+        "id": 109,
+        "line": 696,
+        "precode": "            throw new IllegalArgumentException(\"Pattern syntax error: \" + regex, e);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            throw new IllegalArgumentException(\"Pattern syntax error: \"\"+regex, e);"
+    },
+    {
+        "id": 110,
+        "line": 698,
+        "precode": "        return getElementsByAttributeValueMatching(key, pattern);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnfind(key, pattern);"
+    },
+    {
+        "id": 111,
+        "line": 747,
+        "precode": "        return Collector.collect(new Evaluator.ContainsOwnText(searchText), this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return Collector.run(new Evaluator.ContainsOwnText(searchText), this);"
+    },
+    {
+        "id": 112,
+        "line": 769,
+        "precode": "            pattern = Pattern.compile(regex);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            pattern|= Pattern.compile(regex);"
+    },
+    {
+        "id": 113,
+        "line": 771,
+        "precode": "            throw new IllegalArgumentException(\"Pattern syntax error: \" + regex, e);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            throw new IllegalArgumentException(\"Pattern syntax error: \"//regex, e);"
+    },
+    {
+        "id": 114,
+        "line": 773,
+        "precode": "        return getElementsMatchingText(pattern);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnmatch(pattern);"
+    },
+    {
+        "id": 116,
+        "line": 896,
+        "precode": "        Validate.notNull(text);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.text(text);"
+    },
+    {
+        "id": 117,
+        "line": 898,
+        "precode": "        empty();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.notNull(text);validate();"
+    },
+    {
+        "id": 118,
+        "line": 899,
+        "precode": "        TextNode textNode = new TextNode(text, baseUri);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode textNode = new TextNode(Text, baseUri);"
+    },
+    {
+        "id": 119,
+        "line": 900,
+        "precode": "        appendChild(textNode);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        TextNode textNode = new TextNode(text, baseUri);text(textNode);"
+    },
+    {
+        "id": 120,
+        "line": 952,
+        "precode": "        return attr(\"class\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnname(\"class\");"
+    },
+    {
+        "id": 121,
+        "line": 1004,
+        "precode": "        classNames(classes);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        classes.add(className);add(classes);"
+    },
+    {
+        "id": 122,
+        "line": 1006,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnclasses;"
+    },
+    {
+        "id": 123,
+        "line": 1015,
+        "precode": "        Validate.notNull(className);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.class(className);"
+    },
+    {
+        "id": 124,
+        "line": 1017,
+        "precode": "        Set<String> classes = classNames();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Set<String> classes =classes();"
+    },
+    {
+        "id": 126,
+        "line": 1019,
+        "precode": "        classNames(classes);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        classes.remove(className);add(classes);"
+    },
+    {
+        "id": 127,
+        "line": 1021,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnclasses;"
+    },
+    {
+        "id": 149,
+        "line": 571,
+        "precode": "            return elements.get(0);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            return elements.item(0);"
+    },
+    {
+        "id": 150,
+        "line": 573,
+        "precode": "            return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            returnelement;"
+    },
+    {
+        "id": 159,
+        "line": 89,
+        "precode": "        return tag;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnull;"
+    },
+    {
+        "id": 267,
+        "line": 435,
+        "precode": "        childNodes.clear();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        childNodes.empty();"
+    },
+    {
+        "id": 268,
+        "line": 436,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnull;"
+    },
+    {
+        "id": 269,
+        "line": 456,
+        "precode": "        if (parentNode == null)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        if (parentNode=null)"
+    },
+    {
+        "id": 271,
+        "line": 447,
+        "precode": "        return (Element) super.wrap(html);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return (Element) super.tag(html);"
+    },
+    {
+        "id": 272,
+        "line": 476,
+        "precode": "        if (parentNode == null) return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        if (parentNode=null) return null;"
+    },
+    {
+        "id": 273,
+        "line": 477,
+        "precode": "        List<Element> siblings = parent().children();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        List<Element> siblings = parent().iblings();"
+    },
+    {
+        "id": 274,
+        "line": 478,
+        "precode": "        Integer index = indexInList(this, siblings);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Integer index =index(this, siblings);"
+    },
+    {
+        "id": 275,
+        "line": 479,
+        "precode": "        Validate.notNull(index);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.valid(index);"
+    },
+    {
+        "id": 277,
+        "line": 481,
+        "precode": "            return siblings.get(index+1);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            return siblings.item(index+1);"
+    },
+    {
+        "id": 334,
+        "line": 267,
+        "precode": "        addChildren(child);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.notNull(child);append(child);"
+    },
+    {
+        "id": 335,
+        "line": 268,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnchild;"
+    },
+    {
+        "id": 336,
+        "line": 314,
+        "precode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.name(tagName), baseUri());"
+    },
+    {
+        "id": 337,
+        "line": 315,
+        "precode": "        appendChild(child);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());append(child);"
+    },
+    {
+        "id": 338,
+        "line": 316,
+        "precode": "        return child;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnull;"
+    },
+    {
+        "id": 339,
+        "line": 78,
+        "precode": "        Validate.notEmpty(tagName, \"Tag name must not be empty.\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.string(tagName, \"Tag name must not be empty.\");"
+    },
+    {
+        "id": 340,
+        "line": 79,
+        "precode": "        tag = Tag.valueOf(tagName);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        tagName= Tag.valueOf(tagName);"
+    },
+    {
+        "id": 341,
+        "line": 80,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returntag;"
+    },
+    {
+        "id": 342,
+        "line": 230,
+        "precode": "        for (Node node : childNodes) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        for (Node node :nodes) {"
+    },
+    {
+        "id": 343,
+        "line": 231,
+        "precode": "            if (node instanceof DataNode)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            if (node==DataNode)"
+    },
+    {
+        "id": 344,
+        "line": 232,
+        "precode": "                dataNodes.add((DataNode) node);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "                dataNodes.push((DataNode) node);"
+    },
+    {
+        "id": 345,
+        "line": 265,
+        "precode": "        Validate.notNull(child);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.validate(child);"
+    },
+    {
+        "id": 346,
+        "line": 267,
+        "precode": "        addChildren(child);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.notNull(child);append(child);"
+    },
+    {
+        "id": 347,
+        "line": 268,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnchild;"
+    },
+    {
+        "id": 348,
+        "line": 99,
+        "precode": "        return tag.isBlock();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return tag.block();"
+    },
+    {
+        "id": 349,
+        "line": 156,
+        "precode": "        Element parent = el.parent();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element parent = el.Parent();"
+    },
+    {
+        "id": 351,
+        "line": 158,
+        "precode": "            parents.add(parent);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            parents.push(parent);"
+    },
+    {
+        "id": 352,
+        "line": 159,
+        "precode": "            accumulateParents(parent, parents);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            parents.add(parent);accumulate(parent, parents);"
+    },
+    {
+        "id": 353,
+        "line": 230,
+        "precode": "        for (Node node : childNodes) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        for (Node node :nodes) {"
+    },
+    {
+        "id": 354,
+        "line": 231,
+        "precode": "            if (node instanceof DataNode)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            if (node==DataNode)"
+    },
+    {
+        "id": 355,
+        "line": 232,
+        "precode": "                dataNodes.add((DataNode) node);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "                dataNodes.push((DataNode) node);"
+    },
+    {
+        "id": 356,
+        "line": 234,
+        "precode": "        return Collections.unmodifiableList(dataNodes);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return Collections.List(dataNodes);"
+    },
+    {
+        "id": 357,
+        "line": 295,
+        "precode": "        Validate.notNull(children, \"Children collection to be inserted must not be null.\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.not(children, \"Children collection to be inserted must not be null.\");"
+    },
+    {
+        "id": 358,
+        "line": 296,
+        "precode": "        int currentSize = childNodeSize();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        int currentSize =size();"
+    },
+    {
+        "id": 360,
+        "line": 298,
+        "precode": "        Validate.isTrue(index >= 0 && index <= currentSize, \"Insert position out of bounds.\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Validate.true(index >= 0 && index <= currentSize, \"Insert position out of bounds.\");"
+    },
+    {
+        "id": 362,
+        "line": 301,
+        "precode": "        Node[] nodeArray = nodes.toArray(new Node[nodes.size()]);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Node[] nodeArray = nodes.slice(new Node[nodes.size()]);"
+    },
+    {
+        "id": 363,
+        "line": 302,
+        "precode": "        addChildren(index, nodeArray);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Node[] nodeArray = nodes.toArray(new Node[nodes.size()]);insert(index, nodeArray);"
+    },
+    {
+        "id": 364,
+        "line": 303,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnode;"
+    },
+    {
+        "id": 365,
+        "line": 314,
+        "precode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.name(tagName), baseUri());"
+    },
+    {
+        "id": 366,
+        "line": 315,
+        "precode": "        appendChild(child);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());append(child);"
+    },
+    {
+        "id": 367,
+        "line": 316,
+        "precode": "        return child;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        returnnull;"
+    },
+    {
+        "id": 368,
+        "line": 327,
+        "precode": "        Element child = new Element(Tag.valueOf(tagName), baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        Element child = new Element(Tag.name(tagName), baseUri());"
+    },
+    {
+        "id": 416,
+        "line": 1097,
+        "precode": "        html(accum); ",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        StringBuilder accum = new StringBuilder();html(accum); "
+    },
+    {
+        "id": 417,
+        "line": 1098,
+        "precode": "        return accum.toString().trim();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return accum.toString().html();"
+    },
+    {
+        "id": 418,
+        "line": 1098,
+        "precode": "        return accum.toString().trim();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        return accum.toString().html();"
+    },
+    {
+        "id": 419,
+        "line": 1102,
+        "precode": "        for (Node node : childNodes)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "        for (Node node :nodes)"
+    },
+    {
+        "id": 420,
+        "line": 1103,
+        "precode": "            node.outerHtml(accum);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_32_fixed/src/main/java/org/jsoup/nodes/Element.java",
+        "aftercode": "            node.html(accum);"
+    }
+]

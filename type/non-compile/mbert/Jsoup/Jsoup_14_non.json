@@ -1,0 +1,65 @@
+[
+    {
+        "id": 2,
+        "line": 194,
+        "precode": "        return tagPending.tagName.equals(lastStartTag.tagName);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "        return tagPending.tagName.after(lastStartTag.tagName);"
+    },
+    {
+        "id": 3,
+        "line": 198,
+        "precode": "        return lastStartTag.tagName;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "        returnnull;"
+    },
+    {
+        "id": 4,
+        "line": 202,
+        "precode": "        return trackErrors;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "        returntrue;"
+    },
+    {
+        "id": 5,
+        "line": 215,
+        "precode": "        if (trackErrors)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "        if (errors)"
+    },
+    {
+        "id": 6,
+        "line": 216,
+        "precode": "            errors.add(new ParseError(\"Unexpectedly reached end of file (EOF)\", state, reader.pos()));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "            errors.push(new ParseError(\"Unexpectedly reached end of file (EOF)\", state, reader.pos()));"
+    },
+    {
+        "id": 7,
+        "line": 220,
+        "precode": "        if (trackErrors)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "        if (errors)"
+    },
+    {
+        "id": 8,
+        "line": 221,
+        "precode": "            errors.add(new ParseError(\"Invalid character reference\", reader.pos()));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "            errors.push(new ParseError(\"Invalid character reference\", reader.pos()));"
+    },
+    {
+        "id": 9,
+        "line": 225,
+        "precode": "        if (trackErrors)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "        if (debug)"
+    },
+    {
+        "id": 10,
+        "line": 226,
+        "precode": "            errors.add(new ParseError(errorMsg, reader.pos()));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_14_fixed/src/main/java/org/jsoup/parser/Tokeniser.java",
+        "aftercode": "            errors.push(new ParseError(errorMsg, reader.pos()));"
+    }
+]

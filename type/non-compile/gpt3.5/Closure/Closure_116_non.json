@@ -1,0 +1,247 @@
+[
+    {
+        "id": 242,
+        "line": 695,
+        "precode": "Node block = fnNode.getLastChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node block = fnNode.getFirstChild();"
+    },
+    {
+        "id": 243,
+        "line": 697,
+        "precode": "boolean hasSideEffects = false;  // empty function case",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "boolean hasSideEffects = true;  // empty function case"
+    },
+    {
+        "id": 244,
+        "line": 698,
+        "precode": "if (block.hasChildren()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (!block.hasChildren()) {"
+    },
+    {
+        "id": 245,
+        "line": 699,
+        "precode": "Preconditions.checkState(block.hasOneChild());",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Preconditions.checkState(!block.hasOneChild());"
+    },
+    {
+        "id": 246,
+        "line": 708,
+        "precode": "Node cArg = callNode.getFirstChild().getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node cArg = callNode.getFirstChild();"
+    },
+    {
+        "id": 247,
+        "line": 747,
+        "precode": "fnParam = fnParam.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "fnParam = null;"
+    },
+    {
+        "id": 248,
+        "line": 713,
+        "precode": "if (!callNode.getFirstChild().isName()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (callNode.getFirstChild().isCall()) {"
+    },
+    {
+        "id": 249,
+        "line": 714,
+        "precode": "if (NodeUtil.isFunctionObjectCall(callNode)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.isFunctionObjectApply(callNode)) {"
+    },
+    {
+        "id": 250,
+        "line": 716,
+        "precode": "if (cArg == null || !cArg.isThis()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (cArg == null || cArg.isThis()) {"
+    },
+    {
+        "id": 251,
+        "line": 40,
+        "precode": "if (!NodeUtil.isFunctionObjectApply(callNode)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.isFunctionObjectApply(callNode)) {"
+    },
+    {
+        "id": 252,
+        "line": 49,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\n              && NodeUtil.getNameReferenceCount(\n                  block, fnParam.getString()) > 1) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (!NodeUtil.mayEffectMutableState(cArg, compiler)\n              && NodeUtil.getNameReferenceCount(\n                  block, fnParam.getString()) > 1) {"
+    },
+    {
+        "id": 253,
+        "line": 760,
+        "precode": "return CanInlineResult.YES;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "return CanInlineResult.NO;"
+    },
+    {
+        "id": 254,
+        "line": 695,
+        "precode": "Node block = fnNode.getLastChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node block = fnNode.getFirstChild();"
+    },
+    {
+        "id": 255,
+        "line": 697,
+        "precode": "boolean hasSideEffects = false;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "boolean hasSideEffects = true;"
+    },
+    {
+        "id": 256,
+        "line": 698,
+        "precode": "if (block.hasChildren()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (!block.hasChildren()) {"
+    },
+    {
+        "id": 257,
+        "line": 699,
+        "precode": "Preconditions.checkState(block.hasOneChild());",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Preconditions.checkState(!block.hasOneChild());"
+    },
+    {
+        "id": 258,
+        "line": 13,
+        "precode": "hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "hasSideEffects = !NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);"
+    },
+    {
+        "id": 259,
+        "line": 708,
+        "precode": "Node cArg = callNode.getFirstChild().getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node cArg = callNode.getFirstChild();"
+    },
+    {
+        "id": 260,
+        "line": 713,
+        "precode": "if (!callNode.getFirstChild().isName()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (callNode.getFirstChild().isName()) {"
+    },
+    {
+        "id": 261,
+        "line": 727,
+        "precode": "fnParam = NodeUtil.getFunctionParameters(fnNode).getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "fnParam = NodeUtil.getFunctionParameters(fnNode).getFirstChild().getNext();"
+    },
+    {
+        "id": 262,
+        "line": 730,
+        "precode": "if (fnParam != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (fnParam == null) {"
+    },
+    {
+        "id": 263,
+        "line": 747,
+        "precode": "fnParam = fnParam.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "fnParam = fnParam.getFirstChild();"
+    },
+    {
+        "id": 264,
+        "line": 752,
+        "precode": "if (cArg != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (cArg == null) {"
+    },
+    {
+        "id": 266,
+        "line": 59,
+        "precode": "if (!NodeUtil.mayHaveSideEffects(cArg, compiler)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.mayHaveSideEffects(cArg, compiler)) {"
+    },
+    {
+        "id": 267,
+        "line": 760,
+        "precode": "return CanInlineResult.YES;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "return CanInlineResult.NO;"
+    },
+    {
+        "id": 268,
+        "line": 760,
+        "precode": "return CanInlineResult.YES;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "return CanInlineResult.MAYBE;"
+    },
+    {
+        "id": 269,
+        "line": 50,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\r\n              && NodeUtil.getNameReferenceCount(\r\n                  block, fnParam.getString()) > 1) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\r\n              && NodeUtil.getNameReferenceCount(\r\n                  block, fnParam.getString()) < 1) {"
+    },
+    {
+        "id": 270,
+        "line": 50,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\r\n              && NodeUtil.getNameReferenceCount(\r\n                  block, fnParam.getString()) > 1) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\r\n              && NodeUtil.getNameReferenceCount(\r\n                  block, fnParam.getString()) == 0) {"
+    },
+    {
+        "id": 271,
+        "line": 50,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\r\n              && NodeUtil.getNameReferenceCount(\r\n                  block, fnParam.getString()) > 1) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\r\n              && NodeUtil.getNameReferenceCount(\r\n                  block, fnParam.getString()) != 1) {"
+    },
+    {
+        "id": 272,
+        "line": 50,
+        "precode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\r\n              && NodeUtil.getNameReferenceCount(\r\n                  block, fnParam.getString()) > 1) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (NodeUtil.mayEffectMutableState(cArg, compiler)\r\n              && NodeUtil.getNameReferenceCount(\r\n                  block, fnParam.getString()) >= 1) {"
+    },
+    {
+        "id": 273,
+        "line": 754,
+        "precode": "return CanInlineResult.NO;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "return CanInlineResult.YES;"
+    },
+    {
+        "id": 274,
+        "line": 754,
+        "precode": "return CanInlineResult.NO;",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "return CanInlineResult.MAYBE;"
+    },
+    {
+        "id": 275,
+        "line": 708,
+        "precode": "Node cArg = callNode.getFirstChild().getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node cArg = callNode.getFirstChild();"
+    },
+    {
+        "id": 276,
+        "line": 708,
+        "precode": "Node cArg = callNode.getFirstChild().getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "Node cArg = callNode.getFirstChild().getFirstChild();"
+    },
+    {
+        "id": 277,
+        "line": 713,
+        "precode": "if (!callNode.getFirstChild().isName()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "if (callNode.getFirstChild().isName()) {"
+    }
+]

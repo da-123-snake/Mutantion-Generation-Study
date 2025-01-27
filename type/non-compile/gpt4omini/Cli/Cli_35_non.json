@@ -1,0 +1,30 @@
+[
+    {
+        "id": 114,
+        "line": 237,
+        "precode": "List<String> matchingOpts = new ArrayList<String>();",
+        "filepath": "defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "aftercode": "List<String> matchingOpts = new LinkedList<String>();"
+    },
+    {
+        "id": 117,
+        "line": 244,
+        "precode": "for (String longOpt : longOpts.keySet())",
+        "filepath": "defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "aftercode": "for (String longOpt : new HashSet<>(longOpts.keySet()))"
+    },
+    {
+        "id": 120,
+        "line": 241,
+        "precode": "return Collections.singletonList(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "aftercode": "return Arrays.asList(opt);"
+    },
+    {
+        "id": 121,
+        "line": 244,
+        "precode": "for (String longOpt : longOpts.keySet())",
+        "filepath": "defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "aftercode": "for (String longOpt : longOpts.values())"
+    }
+]

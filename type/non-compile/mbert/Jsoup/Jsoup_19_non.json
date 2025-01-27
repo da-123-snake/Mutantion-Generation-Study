@@ -1,0 +1,30 @@
+[
+    {
+        "id": 165,
+        "line": 341,
+        "precode": "        String value = el.absUrl(attr.getKey());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_19_fixed/src/main/java/org/jsoup/safety/Whitelist.java",
+        "aftercode": "        String value = el.get(attr.getKey());"
+    },
+    {
+        "id": 167,
+        "line": 343,
+        "precode": "            value = attr.getValue(); // if it could not be made abs, run as-is to allow custom unknown protocols",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_19_fixed/src/main/java/org/jsoup/safety/Whitelist.java",
+        "aftercode": "            value||= attr.getValue(); // if it could not be made abs, run as-is to allow custom unknown protocols"
+    },
+    {
+        "id": 168,
+        "line": 344,
+        "precode": "        if (!preserveRelativeLinks)",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_19_fixed/src/main/java/org/jsoup/safety/Whitelist.java",
+        "aftercode": "        if (--preserveRelativeLinks)"
+    },
+    {
+        "id": 169,
+        "line": 345,
+        "precode": "            attr.setValue(value);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_19_fixed/src/main/java/org/jsoup/safety/Whitelist.java",
+        "aftercode": "            attr.set(value);"
+    }
+]

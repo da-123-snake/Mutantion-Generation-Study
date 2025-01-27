@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1335,
+        "line": 124,
+        "precode": "MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();",
+        "filepath": "defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique(true);"
+    },
+    {
+        "id": 1340,
+        "line": 147,
+        "precode": "compiler.setLifeCycleStage(LifeCycleStage.NORMALIZED);",
+        "filepath": "defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "compiler.setLifeCycleStage(LifeCycleStage.UNNORMALIZED);"
+    },
+    {
+        "id": 1346,
+        "line": 221,
+        "precode": "Node externsAndJs = root.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "Node externsAndJs = root.getPreviousSibling();"
+    },
+    {
+        "id": 1347,
+        "line": 222,
+        "precode": "Preconditions.checkState(externsAndJs != null);",
+        "filepath": "defects4j_fixed/Closure/Closure_79_fixed/src/com/google/javascript/jscomp/Normalize.java",
+        "aftercode": "Preconditions.checkState(externsAndJs.getType() == Token.EXTERNAL);"
+    }
+]

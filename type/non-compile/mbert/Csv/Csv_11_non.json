@@ -1,0 +1,44 @@
+[
+    {
+        "id": 15,
+        "line": 383,
+        "precode": "                    final boolean containsHeader = hdrMap.containsKey(header);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "                    final boolean containsHeader = hdrMap.get(header);"
+    },
+    {
+        "id": 16,
+        "line": 384,
+        "precode": "                    final boolean emptyHeader = header == null || header.trim().isEmpty();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "                    final boolean emptyHeader = header == null?header.trim().isEmpty();"
+    },
+    {
+        "id": 18,
+        "line": 386,
+        "precode": "                        throw new IllegalArgumentException(\"The header contains a duplicate name: \\\"\" + header +",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "                                \"\\\\\" in \"+Arrays.toString(headerRecord));"
+    },
+    {
+        "id": 19,
+        "line": 387,
+        "precode": "                                \"\\\" in \" + Arrays.toString(headerRecord));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "                        throw new IllegalArgumentException(\"The header contains a duplicate name: \\\\\"\" + header +\" + Arrays.toString(headerRecord));"
+    },
+    {
+        "id": 25,
+        "line": 286,
+        "precode": "        return this.lexer.getCurrentLineNumber();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "        return this.lexer.position();"
+    },
+    {
+        "id": 26,
+        "line": 286,
+        "precode": "        return this.lexer.getCurrentLineNumber();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "        return this.lexer.position();"
+    }
+]

@@ -1,0 +1,163 @@
+[
+    {
+        "id": 116,
+        "line": 105,
+        "precode": "private static final Map<NameType, Lang> Langs = new EnumMap<NameType, Lang>(NameType.class);",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "private static final Map<NameType, Lang> Langs = new EnumMap<NameType, Lang>(NameType.class){};"
+    },
+    {
+        "id": 117,
+        "line": 105,
+        "precode": "private static final String LANGUAGE_RULES_RN = \"org/apache/commons/codec/language/bm/%s_lang.txt\";",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "private static final String LANGUAGE_RULES_RN = \"\";"
+    },
+    {
+        "id": 118,
+        "line": 105,
+        "precode": "static {",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "static {"
+    },
+    {
+        "id": 119,
+        "line": 105,
+        "precode": "for (final NameType s : NameType.values()) {",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "for (final NameType s : NameType.values()) {"
+    },
+    {
+        "id": 120,
+        "line": 105,
+        "precode": "Langs.put(s, loadFromResource(String.format(LANGUAGE_RULES_RN, s.getName()), Languages.getInstance(s)));",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "Langs.put(s, loadFromResource(String.format(LANGUAGE_RULES_RN, s.getName()), Languages.getInstance(s)));"
+    },
+    {
+        "id": 121,
+        "line": 105,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 122,
+        "line": 105,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 123,
+        "line": 105,
+        "precode": "private static final class LangRule {",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "private static final class LangRule {"
+    },
+    {
+        "id": 124,
+        "line": 105,
+        "precode": "private final boolean acceptOnMatch;",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "private final boolean acceptOnMatch;"
+    },
+    {
+        "id": 125,
+        "line": 105,
+        "precode": "private final Set<String> languages;",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "private final Set<String> languages;"
+    },
+    {
+        "id": 126,
+        "line": 105,
+        "precode": "private final Pattern pattern;",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "private final Pattern pattern;"
+    },
+    {
+        "id": 127,
+        "line": 105,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 132,
+        "line": 32,
+        "precode": "    while (!queue.isEmpty()) {",
+        "aftercode": "    while (true) {",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java"
+    },
+    {
+        "id": 133,
+        "line": 32,
+        "precode": "        c = bin_op.apply(b, a);",
+        "aftercode": "        c = bin_op.apply(a, b);",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java"
+    },
+    {
+        "id": 134,
+        "line": 32,
+        "precode": "    if (depth == 0) {",
+        "aftercode": "    return true;",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java"
+    },
+    {
+        "id": 135,
+        "line": 194,
+        "precode": "final InputStream lRulesIS = Lang.class.getClassLoader().getResourceAsStream(languageRulesResourceName);",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "final InputStream lRulesIS = Lang.class.getClassLoader().getResourceAsStream(languageRulesResourceName + \"1\");"
+    },
+    {
+        "id": 136,
+        "line": 194,
+        "precode": "if (lRulesIS == null) {",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "if (lRulesIS == null) {"
+    },
+    {
+        "id": 137,
+        "line": 194,
+        "precode": "throw new IllegalStateException(\"Unable to resolve required resource:\");",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "throw new IllegalStateException(\"Unable to resolve required resource:\")"
+    },
+    {
+        "id": 138,
+        "line": 194,
+        "precode": "final List<LangRule> rules = new ArrayList<LangRule>();",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "final List<LangRule> rules = new ArrayList<LangRule>();"
+    },
+    {
+        "id": 139,
+        "line": 194,
+        "precode": "final Scanner scanner = new Scanner(lRulesIS, ResourceConstants.ENCODING);",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "final Scanner scanner = new Scanner(lRulesIS, ResourceConstants.ENCODING);"
+    },
+    {
+        "id": 141,
+        "line": 194,
+        "precode": "while (scanner.hasNextLine()) {",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "while (scanner.hasNextLine()) {"
+    },
+    {
+        "id": 142,
+        "line": 194,
+        "precode": "final String rawLine = scanner.nextLine();",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "final String rawLine = scanner.nextLine();"
+    },
+    {
+        "id": 143,
+        "line": 194,
+        "precode": "String line = rawLine;",
+        "filepath": "defects4j_fixed/Codec/Codec_14_fixed/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+        "aftercode": "String line = rawLine;"
+    }
+]

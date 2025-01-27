@@ -1,0 +1,184 @@
+[
+    {
+        "id": 17,
+        "line": 18,
+        "precode": "if (!(pType == Token.BLOCK ||\r\n            pType == Token.SCRIPT ||\r\n            pType == Token.NAME ||\r\n            pType == Token.ASSIGN ||\r\n\r\n            // object literal keys",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (!(pType == Token.BLOCK ||\r\n            pType == Token.SCRIPT ||\r\n            pType == Token.NAME ||\r\n            pType == Token.ASSIGN ||\r\n\r\n            // object literal keys ||\r\n            parent.getType() == Token.STRING ||\r\n            parent.getType() == Token.NUMBER"
+    },
+    {
+        "id": 18,
+        "line": 19,
+        "precode": "pType == Token.STRING ||\r\n            pType == Token.NUMBER)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "pType == Token.STRING ||\r\n            pType == Token.NUMBER ||\r\n            parent.getType() == Token.VAR) {"
+    },
+    {
+        "id": 22,
+        "line": 18,
+        "precode": "if (!(pType == Token.BLOCK ||\r\n            pType == Token.SCRIPT ||\r\n            pType == Token.NAME ||\r\n            pType == Token.ASSIGN ||\r\n\r\n            // object literal keys",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (!(pType == Token.BLOCK ||\r\n            pType == Token.SCRIPT ||\r\n            pType == Token.NAME ||\r\n            pType == Token.ASSIGN ||\r\n\r\n            // object literal keys\r\n            parent.getType() == Token.EXPR_VOID ||\r\n            parent.getType() == Token.GETELEM"
+    },
+    {
+        "id": 23,
+        "line": 19,
+        "precode": "pType == Token.STRING ||\r\n            pType == Token.NUMBER)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "pType == Token.STRING ||\r\n            pType == Token.NUMBER ||\r\n            parent.getType() == Token.EXPR_RESULT) {"
+    },
+    {
+        "id": 27,
+        "line": 18,
+        "precode": "if (!(pType == Token.BLOCK ||\r\n            pType == Token.SCRIPT ||\r\n            pType == Token.NAME ||\r\n            pType == Token.ASSIGN ||\r\n\r\n            // object literal keys",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (!(pType == Token.BLOCK ||\r\n            pType == Token.SCRIPT ||\r\n            pType == Token.NAME ||\r\n            pType == Token.ASSIGN ||\r\n\r\n            // object literal keys\r\n            parent.getType() == Token.EXPR_VOID ||\r\n            parent.getType() == Token.GETELEM ||\r\n            parent.getType() == Token.VAR ||\r\n            parent.getType() == Token.FOR ||\r\n            parent.getType() == Token.FOR_IN"
+    },
+    {
+        "id": 28,
+        "line": 19,
+        "precode": "pType == Token.STRING ||\r\n            pType == Token.NUMBER)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "pType == Token.STRING ||\r\n            pType == Token.NUMBER ||\r\n            parent.getType() == Token.EXPR_RESULT ||\r\n            parent.getType() == Token.VAR ||\r\n            parent.getType() == Token.FOR ||\r\n            parent.getType() == Token.FOR_IN) {"
+    },
+    {
+        "id": 29,
+        "line": 18,
+        "precode": "if (!(pType == Token.BLOCK ||\r\n            pType == Token.SCRIPT ||\r\n            pType == Token.NAME ||\r\n            pType == Token.ASSIGN ||\r\n\r\n            // object literal keys",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (!(pType == Token.BLOCK ||\r\n            pType == Token.SCRIPT ||\r\n            pType == Token.NAME ||\r\n            pType == Token.ASSIGN ||\r\n\r\n            // object literal keys\r\n            parent.getType() == Token.EXPR_VOID ||\r\n            parent.getType() == Token.GETELEM ||\r\n            parent.getType() == Token.VAR ||\r\n            parent.getType() == Token.FOR ||\r\n            parent.getType() == Token.FOR_IN ||\r\n            parent.getType() == Token.CATCH"
+    },
+    {
+        "id": 32,
+        "line": 173,
+        "precode": "NodeUtil.isGet(parent)",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "!NodeUtil.isGet(parent)"
+    },
+    {
+        "id": 1273,
+        "line": 20,
+        "precode": "if (lhs.getType() == Token.GETPROP && lhs.getLastChild().getString().equals(\"prototype\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (lhs.getType() == Token.GETPROP && lhs.getFirstChild().getString().equals(\"prototype\")) {"
+    },
+    {
+        "id": 1274,
+        "line": 20,
+        "precode": "if (lhs.getType() == Token.GETPROP && lhs.getLastChild().getString().equals(\"prototype\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (lhs.getType() == Token.GETPROP && lhs.getLastChild().getString().equals(\"function\")) {"
+    },
+    {
+        "id": 1275,
+        "line": 22,
+        "precode": "if (llhs.getType() == Token.GETPROP && llhs.getLastChild().getString().equals(\"prototype\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (llhs.getType() == Token.GETPROP && llhs.getLastChild().getString().equals(\"constructor\")) {"
+    },
+    {
+        "id": 1276,
+        "line": 22,
+        "precode": "if (llhs.getType() == Token.GETPROP && llhs.getLastChild().getString().equals(\"prototype\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (llhs.getType() == Token.GETPROP && llhs.getLastChild().getString().equals(\"object\")) {"
+    },
+    {
+        "id": 1277,
+        "line": 158,
+        "precode": "if (n.getType() == Token.THIS && shouldReportThis(n, parent)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (n.getType() == Token.THAT && shouldReportThat(n, parent)) {"
+    },
+    {
+        "id": 1278,
+        "line": 173,
+        "precode": "return parent != null && NodeUtil.isGet(parent);",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "return parent != null && NodeUtil.isSet(parent);"
+    },
+    {
+        "id": 1280,
+        "line": 173,
+        "precode": "return parent != null && NodeUtil.isGet(parent);",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "return parent != null && NodeUtil.isDelete(parent);"
+    },
+    {
+        "id": 1281,
+        "line": 173,
+        "precode": "return parent != null && NodeUtil.isGet(parent);",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "return parent != null && NodeUtil.isPropAccess(parent);"
+    },
+    {
+        "id": 1282,
+        "line": 173,
+        "precode": "return parent != null && NodeUtil.isGet(parent);",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "return parent != null && NodeUtil.isVarDecl(parent);"
+    },
+    {
+        "id": 1283,
+        "line": 173,
+        "precode": "return parent != null && NodeUtil.isGet(parent);",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "return parent != null && NodeUtil.isClassDef(parent);"
+    },
+    {
+        "id": 1404,
+        "line": 89,
+        "precode": "(jsDoc.isConstructor() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "!jsDoc.isConstructor() ||"
+    },
+    {
+        "id": 1405,
+        "line": 89,
+        "precode": "(jsDoc.isConstructor() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "!jsDoc.isInterface() ||"
+    },
+    {
+        "id": 1406,
+        "line": 89,
+        "precode": "(jsDoc.isConstructor() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "!jsDoc.hasThisType() ||"
+    },
+    {
+        "id": 1412,
+        "line": 159,
+        "precode": "compiler.report(t.makeError(n, level, GLOBAL_THIS));",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "compiler.report(t.makeError(n, level, GLOBAL_THAT));"
+    },
+    {
+        "id": 1413,
+        "line": 161,
+        "precode": "if (n == assignLhsChild) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (n == assignRhsChild) {"
+    },
+    {
+        "id": 1420,
+        "line": 15,
+        "precode": "if (!(pType == Token.BLOCK ||\n          pType == Token.SCRIPT ||\n          pType == Token.NAME ||\n          pType == Token.ASSIGN ||\n\n          // object literal keys\n          pType == Token.STRING ||\n          pType == Token.NUMBER)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (pType == Token.BLOCK ||\n          pType == Token.SCRIPT ||\n          pType == Token.NAME ||\n          pType == Token.ASSIGN ||\n\n          // object literal keys\n          pType == Token.STRING ||\n          pType == Token.NUMBER) {"
+    },
+    {
+        "id": 1421,
+        "line": 15,
+        "precode": "if (!(pType == Token.BLOCK ||\n          pType == Token.SCRIPT ||\n          pType == Token.NAME ||\n          pType == Token.ASSIGN ||\n\n          // object literal keys\n          pType == Token.STRING ||\n          pType == Token.NUMBER)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (!(pType == Token.BLOCK ||\n          pType == Token.SCRIPT ||\n          pType == Token.NAME ||\n          pType == Token.ASSIGN) ||\n\n          // object literal keys\n          pType == Token.STRING ||\n          pType == Token.NUMBER) {"
+    },
+    {
+        "id": 1422,
+        "line": 15,
+        "precode": "if (!(pType == Token.BLOCK ||\n          pType == Token.SCRIPT ||\n          pType == Token.NAME ||\n          pType == Token.ASSIGN ||\n\n          // object literal keys\n          pType == Token.STRING ||\n          pType == Token.NUMBER)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_91_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "if (!(pType == Token.SCRIPT ||\n          pType == Token.NAME ||\n          pType == Token.ASSIGN ||\n\n          // object literal keys\n          pType == Token.STRING ||\n          pType == Token.NUMBER)) {"
+    }
+]

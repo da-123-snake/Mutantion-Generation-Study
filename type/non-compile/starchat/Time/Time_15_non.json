@@ -1,0 +1,72 @@
+[
+    {
+        "id": 123,
+        "line": 153,
+        "precode": "switch (val2) {\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "switch (val2) {\ncase -1:\nif (val1 == Long.MIN_VALUE) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn -val1;\ndefault:\nreturn 0L;\n}"
+    },
+    {
+        "id": 124,
+        "line": 153,
+        "precode": "case 0:\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "case 0:\nreturn 0L;\ncase -1:\nif (val1 == Long.MIN_VALUE) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn -val1;\ndefault:\nreturn 0L;\n}"
+    },
+    {
+        "id": 125,
+        "line": 153,
+        "precode": "switch (val2) {\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "switch (val2) {\ncase 1:\nreturn val1;\ncase -1:\nif (val1 == Long.MIN_VALUE) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn -val1;\ndefault:\nreturn 0L;\n}"
+    },
+    {
+        "id": 126,
+        "line": 153,
+        "precode": "case 1:\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "case 1:\nreturn val1;\ncase -1:\nif (val1 == Long.MIN_VALUE) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn -val1;\ndefault:\nreturn 0L;\n}"
+    },
+    {
+        "id": 127,
+        "line": 153,
+        "precode": "if (total / val2!= val1) {\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "if (total % val2!= 0) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn total;\n}"
+    },
+    {
+        "id": 128,
+        "line": 153,
+        "precode": "long total = val1 * val2;\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "long total = val1 * val2;\nif (total % val2!= 0) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn total;"
+    },
+    {
+        "id": 129,
+        "line": 153,
+        "precode": "if (total / val2!= val1) {\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "if (total < 0 && (total / val2)!= (val1 - 1)) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn total;\n}"
+    },
+    {
+        "id": 130,
+        "line": 153,
+        "precode": "long total = val1 * val2;\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "long total = val1 * val2;\nif (total < 0 && (total / val2)!= (val1 - 1)) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn total;"
+    },
+    {
+        "id": 131,
+        "line": 153,
+        "precode": "if (total / val2!= val1) {\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "if (total % val2!= 0) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn total;\n}"
+    },
+    {
+        "id": 132,
+        "line": 153,
+        "precode": "long total = val1 * val2;\n",
+        "filepath": "defects4j_fixed/Time/Time_15_fixed/src/main/java/org/joda/time/field/FieldUtils.java",
+        "aftercode": "long total = val1 * val2;\nif (total % val2!= 0) {\nthrow new ArithmeticException(\"Multiplication overflows a long: \" + val1 + \" * \" + val2);\n}\nreturn total;"
+    }
+]

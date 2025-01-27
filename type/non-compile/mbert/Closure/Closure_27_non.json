@@ -1,0 +1,72 @@
+[
+    {
+        "id": 742,
+        "line": 108,
+        "precode": "    return block;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    returnnode;"
+    },
+    {
+        "id": 743,
+        "line": 112,
+        "precode": "    return new Node(Token.BLOCK, stmt);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    return new Node(block, stmt);"
+    },
+    {
+        "id": 744,
+        "line": 227,
+        "precode": "    Preconditions.checkState(tryBody.isBlock());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    Preconditions.check(tryBody.isBlock());"
+    },
+    {
+        "id": 745,
+        "line": 228,
+        "precode": "    Preconditions.checkState(finallyBody.isBlock());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    Preconditions.check(finallyBody.isBlock());"
+    },
+    {
+        "id": 746,
+        "line": 229,
+        "precode": "    Node catchBody = block().copyInformationFrom(tryBody);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    Node catchBody = block().catch(tryBody);"
+    },
+    {
+        "id": 747,
+        "line": 230,
+        "precode": "    return new Node(Token.TRY, tryBody, catchBody, finallyBody);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    return new Node(block, tryBody, catchBody, finallyBody);"
+    },
+    {
+        "id": 748,
+        "line": 234,
+        "precode": "    Preconditions.checkState(tryBody.isBlock());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    Preconditions.check(tryBody.isBlock());"
+    },
+    {
+        "id": 749,
+        "line": 235,
+        "precode": "    Preconditions.checkState(catchNode.isCatch());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    Preconditions.check(catchNode.isCatch());"
+    },
+    {
+        "id": 750,
+        "line": 236,
+        "precode": "    Node catchBody = blockUnchecked(catchNode).copyInformationFrom(catchNode);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    Node catchBody = blockUnchecked(catchNode).catch(catchNode);"
+    },
+    {
+        "id": 751,
+        "line": 237,
+        "precode": "    return new Node(Token.TRY, tryBody, catchBody);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_27_fixed/src/com/google/javascript/rhino/IR.java",
+        "aftercode": "    return new Node(block, tryBody, catchBody);"
+    }
+]

@@ -1,0 +1,303 @@
+[
+    {
+        "id": 1184,
+        "line": 19,
+        "precode": "if (\"undefined\".equals(name) || \"NaN\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"undefined\".equals(name) && \"NaN\".equals(name)) {"
+    },
+    {
+        "id": 1186,
+        "line": 142,
+        "precode": "else if (\"Infinity\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"Infinity\".equals(name)) {"
+    },
+    {
+        "id": 1188,
+        "line": 19,
+        "precode": "if (\"undefined\".equals(name) || \"NaN\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"undefined\".equals(name) ^ \"NaN\".equals(name)) {"
+    },
+    {
+        "id": 1189,
+        "line": 142,
+        "precode": "else if (\"Infinity\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "else if (!\"Infinity\".equals(name)) {"
+    },
+    {
+        "id": 1190,
+        "line": 19,
+        "precode": "if (\"undefined\".equals(name) || \"NaN\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (\"undefined\".equals(name) | \"NaN\".equals(name)) {"
+    },
+    {
+        "id": 1192,
+        "line": 142,
+        "precode": "else if (\"Infinity\".equals(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "else if (\"Infinity\".equals(name) || true) {"
+    },
+    {
+        "id": 1203,
+        "line": 969,
+        "precode": "if (nameNode.getFirstChild().getType() == Token.STRING",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (nameNode.getFirstChild().getType() != Token.STRING"
+    },
+    {
+        "id": 1204,
+        "line": 969,
+        "precode": "if (nameNode.getFirstChild().getType() == Token.STRING",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (nameNode.getFirstChild().getType() == Token.REGEXP"
+    },
+    {
+        "id": 1511,
+        "line": 1266,
+        "precode": "case Token.TRUE:",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.FALSE:"
+    },
+    {
+        "id": 1512,
+        "line": 1267,
+        "precode": "case Token.FALSE:",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.TRUE:"
+    },
+    {
+        "id": 1513,
+        "line": 1281,
+        "precode": "case Token.NOT:",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.DELPROP:"
+    },
+    {
+        "id": 1519,
+        "line": 16,
+        "precode": "return evaluatesToLocalValue(value.getFirstChild(), locals) && evaluatesToLocalValue(value.getLastChild(), locals);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return evaluatesToLocalValue(value.getFirstChild(), locals) || evaluatesToLocalValue(value.getLastChild(), locals);"
+    },
+    {
+        "id": 1520,
+        "line": 19,
+        "precode": "return evaluatesToLocalValue(value.getFirstChild().getNext(), locals) && evaluatesToLocalValue(value.getLastChild(), locals);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return evaluatesToLocalValue(value.getFirstChild().getNext(), locals) || evaluatesToLocalValue(value.getLastChild(), locals);"
+    },
+    {
+        "id": 1523,
+        "line": 37,
+        "precode": "return callHasLocalResult(value) || isToStringMethodCall(value) || locals.apply(value);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return callHasLocalResult(value) && isToStringMethodCall(value) && locals.apply(value);"
+    },
+    {
+        "id": 1628,
+        "line": 16,
+        "precode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && isLatin(name);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return TokenStream.isJSIdentifier(name) || !TokenStream.isKeyword(name) && isLatin(name);"
+    },
+    {
+        "id": 1629,
+        "line": 16,
+        "precode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && isLatin(name);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return TokenStream.isJSIdentifier(name) && TokenStream.isKeyword(name) && isLatin(name);"
+    },
+    {
+        "id": 1630,
+        "line": 16,
+        "precode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && isLatin(name);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) || isLatin(name);"
+    },
+    {
+        "id": 1631,
+        "line": 16,
+        "precode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && isLatin(name);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return !TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && isLatin(name);"
+    },
+    {
+        "id": 1632,
+        "line": 16,
+        "precode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && isLatin(name);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && !isLatin(name);"
+    },
+    {
+        "id": 1633,
+        "line": 16,
+        "precode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && isLatin(name);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 1634,
+        "line": 16,
+        "precode": "return TokenStream.isJSIdentifier(name) && !TokenStream.isKeyword(name) && isLatin(name);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 1731,
+        "line": 42,
+        "precode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 3 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {"
+    },
+    {
+        "id": 1732,
+        "line": 42,
+        "precode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 2 && s.charAt(0) == '1' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {"
+    },
+    {
+        "id": 1733,
+        "line": 42,
+        "precode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'y' || s.charAt(1) == 'Y')) {"
+    },
+    {
+        "id": 1737,
+        "line": 52,
+        "precode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 4 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {"
+    },
+    {
+        "id": 1738,
+        "line": 52,
+        "precode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 3 && (s.charAt(0) == '*' || s.charAt(0) == '/') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {"
+    },
+    {
+        "id": 1739,
+        "line": 52,
+        "precode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '1' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {"
+    },
+    {
+        "id": 1740,
+        "line": 52,
+        "precode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'y' || s.charAt(2) == 'Y')) {"
+    },
+    {
+        "id": 1742,
+        "line": 60,
+        "precode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"+infinity\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"infinity\")) {"
+    },
+    {
+        "id": 1743,
+        "line": 60,
+        "precode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"+infinity\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"Infinity\") || s.equals(\"-Infinity\") || s.equals(\"+Infinity\")) {"
+    },
+    {
+        "id": 1744,
+        "line": 60,
+        "precode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"+infinity\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"infinity\")) {"
+    },
+    {
+        "id": 1745,
+        "line": 356,
+        "precode": "return Double.parseDouble(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Float.parseFloat(s);"
+    },
+    {
+        "id": 1746,
+        "line": 356,
+        "precode": "return Double.parseDouble(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Integer.parseInt(s);"
+    },
+    {
+        "id": 1748,
+        "line": 42,
+        "precode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'Y')) {"
+    },
+    {
+        "id": 1749,
+        "line": 42,
+        "precode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'x')) {"
+    },
+    {
+        "id": 1753,
+        "line": 52,
+        "precode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'x')) {"
+    },
+    {
+        "id": 1754,
+        "line": 52,
+        "precode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 3 && (s.charAt(0) == '-' || s.charAt(0) == '+') && s.charAt(1) == '0' && (s.charAt(2) == 'x' || s.charAt(2) == 'Y')) {"
+    },
+    {
+        "id": 1756,
+        "line": 60,
+        "precode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"+infinity\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"infinity\")) {"
+    },
+    {
+        "id": 1757,
+        "line": 60,
+        "precode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"+infinity\")) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"infinity\") || s.equals(\"-infinity\") || s.equals(\"Infinity\")) {"
+    },
+    {
+        "id": 1758,
+        "line": 356,
+        "precode": "return Double.parseDouble(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Long.parseLong(s);"
+    },
+    {
+        "id": 1759,
+        "line": 356,
+        "precode": "return Double.parseDouble(s);",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Short.parseShort(s);"
+    },
+    {
+        "id": 1761,
+        "line": 42,
+        "precode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'Z')) {"
+    },
+    {
+        "id": 1762,
+        "line": 42,
+        "precode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {",
+        "filepath": "defects4j_fixed/Closure/Closure_61_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.length() > 2 && s.charAt(0) == '0' && (s.charAt(1) == 'x' || s.charAt(1) == 'a')) {"
+    }
+]

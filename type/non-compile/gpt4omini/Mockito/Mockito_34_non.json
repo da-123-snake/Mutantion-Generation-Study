@@ -1,0 +1,58 @@
+[
+    {
+        "id": 205,
+        "line": 96,
+        "precode": "return invocation.getLocation();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_34_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return invocation.getLocation().clone();"
+    },
+    {
+        "id": 206,
+        "line": 100,
+        "precode": "return invocation.toString(matchers, printSettings);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_34_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return invocation.toString(printSettings, matchers);"
+    },
+    {
+        "id": 208,
+        "line": 105,
+        "precode": "for (Matcher m : matchers) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_34_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (Matcher m : new ArrayList<>(matchers)) {"
+    },
+    {
+        "id": 212,
+        "line": 105,
+        "precode": "for (Matcher m : matchers) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_34_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (int j = 0; j < matchers.size(); j++) {"
+    },
+    {
+        "id": 216,
+        "line": 96,
+        "precode": "return invocation.getLocation();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_34_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return invocation.getLocation() == null ? getDefaultLocation() : invocation.getLocation();"
+    },
+    {
+        "id": 219,
+        "line": 96,
+        "precode": "return invocation.getLocation();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_34_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return invocation.getLocation().toString();"
+    },
+    {
+        "id": 225,
+        "line": 105,
+        "precode": "for (Matcher m : matchers) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_34_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (Matcher m : matchers) { continue; }"
+    },
+    {
+        "id": 229,
+        "line": 105,
+        "precode": "for (Matcher m : matchers) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_34_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (Matcher m : matchers) { if (m == null) continue; }"
+    }
+]

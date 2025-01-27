@@ -1,0 +1,1130 @@
+[
+    {
+        "id": 35,
+        "line": 724,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_parsingContext.expectComma()) {\n    i = _skipComma(i);\n}"
+    },
+    {
+        "id": 36,
+        "line": 724,
+        "precode": "if (inObject) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (inObject) {\n    // First, field name itself:\n    _updateNameLocation();\n    String name = (i == INT_QUOTE)? _parseName() : _handleOddName(i);\n    _parsingContext.setCurrentName(name);\n    _currToken = JsonToken.FIELD_NAME;\n    i = _skipColon();\n}"
+    },
+    {
+        "id": 37,
+        "line": 724,
+        "precode": "if (i == INT_RBRACKET) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (i == INT_RBRACKET) {\n    _updateLocation();\n    if (!_parsingContext.inArray()) {\n        _reportMismatchedEndMarker(i, ']');\n    }\n    _parsingContext = _parsingContext.getParent();\n    return (_currToken = JsonToken.END_ARRAY);\n}"
+    },
+    {
+        "id": 38,
+        "line": 724,
+        "precode": "if (i == INT_RCURLY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (i == INT_RCURLY) {\n    _updateLocation();\n    if (!_parsingContext.inObject()) {\n        _reportMismatchedEndMarker(i, ']');\n    }\n    _parsingContext = _parsingContext.getParent();\n    return (_currToken = JsonToken.END_OBJECT);\n}"
+    },
+    {
+        "id": 39,
+        "line": 724,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_parsingContext.expectComma()) {\n    i = _skipComma(i);\n}"
+    },
+    {
+        "id": 40,
+        "line": 724,
+        "precode": "if (!inObject) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (!inObject) {\n    _parsingContext = _parsingContext.createChildObjectContext(_tokenInputRow, _tokenInputCol);\n}"
+    },
+    {
+        "id": 42,
+        "line": 724,
+        "precode": "// First, field name itself:",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "// First, field name itself:\nString name = (i == INT_QUOTE)? _parseName() : _handleOddName(i);"
+    },
+    {
+        "id": 43,
+        "line": 724,
+        "precode": "_updateNameLocation();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "_updateNameLocation();\nString name = (i == INT_QUOTE)? _parseName() : _handleOddName(i);"
+    },
+    {
+        "id": 44,
+        "line": 724,
+        "precode": "String name = (i == INT_QUOTE)? _parseName() : _handleOddName(i);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "String name = (i == INT_QUOTE)? _parseName() : _handleOddName(i);\n_parsingContext.setCurrentName(name);"
+    },
+    {
+        "id": 45,
+        "_comment": "This mutant is identical to mutant 4.",
+        "line": 724,
+        "precode": "_parsingContext.setCurrentName(name);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "_parsingContext.setCurrentName(name);\n_currToken = JsonToken.FIELD_NAME;"
+    },
+    {
+        "id": 46,
+        "line": 724,
+        "precode": "_currToken = JsonToken.FIELD_NAME;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "_currToken = JsonToken.FIELD_NAME;\ni = _skipColon();"
+    },
+    {
+        "id": 47,
+        "line": 724,
+        "precode": "i = _skipColon();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "i = _skipColon();\n_updateLocation();"
+    },
+    {
+        "id": 48,
+        "line": 724,
+        "precode": "// Ok: we must have a value... what is it?",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "// Ok: we must have a value... what is it?\nswitch (i) {"
+    },
+    {
+        "id": 49,
+        "line": 724,
+        "precode": "switch (i) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "switch (i) {\ncase \"\":\n    _tokenIncomplete = true;\n    t = JsonToken.VALUE_STRING;\n    break;"
+    },
+    {
+        "id": 50,
+        "line": 724,
+        "precode": "case \"\":\n    _tokenIncomplete = true;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "case \"\":\n    _tokenIncomplete = true;\n    t = JsonToken.VALUE_STRING;\n    break;\ncase \"[\":\n    if (!inObject) {\n        _parsingContext = _parsingContext.createChildArrayContext(_tokenInputRow, _tokenInputCol);\n    }\n    t = JsonToken.START_ARRAY;\n    break;"
+    },
+    {
+        "id": 51,
+        "line": 724,
+        "precode": "case \"[\":\n    if (!inObject) {\n        _parsingContext = _parsingContext.createChildArrayContext(_tokenInputRow, _tokenInputCol);\n    }\n    t = JsonToken.START_ARRAY;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "case \"[\":\n    if (!inObject) {\n        _parsingContext = _parsingContext.createChildArrayContext(_tokenInputRow, _tokenInputCol);\n    }\n    t = JsonToken.START_ARRAY;\n    break;\ncase \"{\":\n    if (!inObject) {\n        _parsingContext = _parsingContext.createChildObjectContext(_tokenInputRow, _tokenInputCol);\n    }\n    t = JsonToken.START_OBJECT;\n    break;"
+    },
+    {
+        "id": 52,
+        "line": 724,
+        "precode": "case \"{\":\n    if (!inObject) {\n        _parsingContext = _parsingContext.createChildObjectContext(_tokenInputRow, _tokenInputCol);\n    }\n    t = JsonToken.START_OBJECT;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "case \"{\":\n    if (!inObject) {\n        _parsingContext = _parsingContext.createChildObjectContext(_tokenInputRow, _tokenInputCol);\n    }\n    t = JsonToken.START_OBJECT;\n    break;\ndefault: // neither is valid at this point; valid closers have been handled earlier\n    _reportUnexpectedChar(i, \"expected a value\");\ncase \"]\":\ncase \"}\":\n    // Error: neither is valid at this point; valid closers have been handled earlier\n    break;"
+    },
+    {
+        "id": 53,
+        "line": 724,
+        "precode": "default: // neither is valid at this point; valid closers have been handled earlier\n    _reportUnexpectedChar(i, \"expected a value\");",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "default: // neither is valid at this point; valid closers have been handled earlier\n    _reportUnexpectedChar(i, \"expected a value\");\ncase 't':\n    _matchTrue();\n    t = JsonToken.VALUE_TRUE;\n    break;"
+    },
+    {
+        "id": 54,
+        "line": 1168,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_parsingContext.expectComma() == false) {\n"
+    },
+    {
+        "id": 55,
+        "line": 1168,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_parsingContext.expectComma() == null) {\n"
+    },
+    {
+        "id": 56,
+        "line": 1168,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_parsingContext.expectComma() == true) {\n"
+    },
+    {
+        "id": 57,
+        "line": 1168,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_parsingContext.expectComma() == false) {\n"
+    },
+    {
+        "id": 58,
+        "line": 1168,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_parsingContext.expectComma() == null) {\n"
+    },
+    {
+        "id": 59,
+        "line": 1168,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_parsingContext.expectComma() == true) {\n"
+    },
+    {
+        "id": 60,
+        "line": 1168,
+        "precode": "i = _skipComma(i);\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "i = _skipComma(i) + 1;\n"
+    },
+    {
+        "id": 61,
+        "line": 1168,
+        "precode": "i = _skipComma(i);\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "i = _skipComma(i) - 1;\n"
+    },
+    {
+        "id": 62,
+        "line": 1168,
+        "precode": "i = _skipComma(i);\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "i = _skipComma(i) * 2;\n"
+    },
+    {
+        "id": 63,
+        "line": 1168,
+        "precode": "i = _skipComma(i);\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "i = _skipComma(i) / 2;\n"
+    },
+    {
+        "id": 64,
+        "line": 1168,
+        "precode": "i = _skipComma(i);\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "i = _skipComma(i) % 2;\n"
+    },
+    {
+        "id": 65,
+        "line": 1168,
+        "precode": "if (!_parsingContext.inObject()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (!_parsingContext.inObject() == false) {\n"
+    },
+    {
+        "id": 66,
+        "line": 1168,
+        "precode": "if (!_parsingContext.inObject()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (!_parsingContext.inObject() == null) {\n"
+    },
+    {
+        "id": 67,
+        "line": 1168,
+        "precode": "if (!_parsingContext.inObject()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (!_parsingContext.inObject() == true) {\n"
+    },
+    {
+        "id": 68,
+        "line": 1168,
+        "precode": "if (_parsingContext.expectComma()) {\n",
+        "aftercode": "if (!(_parsingContext.expectComma())) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"
+    },
+    {
+        "id": 69,
+        "line": 1168,
+        "precode": "i = _skipComma(i);\n",
+        "aftercode": "i = _skipComma(i); // no-op\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"
+    },
+    {
+        "id": 70,
+        "line": 1168,
+        "precode": "if (!_parsingContext.inObject()) {\n",
+        "aftercode": "if (_parsingContext.inObject()) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"
+    },
+    {
+        "id": 73,
+        "line": 1168,
+        "precode": "if (_currToken == JsonToken.FIELD_NAME) {\n",
+        "aftercode": "if (!(_currToken == JsonToken.FIELD_NAME)) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"
+    },
+    {
+        "id": 78,
+        "line": 1168,
+        "precode": "if (t == JsonToken.VALUE_STRING) {\n",
+        "aftercode": "if (!t.equals(JsonToken.VALUE_STRING)) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"
+    },
+    {
+        "id": 82,
+        "line": 1168,
+        "precode": "if (_currToken == JsonToken.VALUE_NUMBER_INT) {\n",
+        "aftercode": "if (!(_currToken == JsonToken.VALUE_NUMBER_INT)) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"
+    },
+    {
+        "id": 84,
+        "line": 1168,
+        "precode": "if (_currToken == JsonToken.START_ARRAY) {\n",
+        "aftercode": "if (!(_currToken == JsonToken.START_ARRAY)) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"
+    },
+    {
+        "id": 86,
+        "line": 1168,
+        "precode": "if (_currToken == JsonToken.FIELD_NAME) {\n",
+        "aftercode": "if (!(_currToken == JsonToken.FIELD_NAME)) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"
+    },
+    {
+        "id": 88,
+        "line": 1168,
+        "precode": "int i = _skipWSOrEnd();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "int i = _skipWSOrEnd2();"
+    },
+    {
+        "id": 89,
+        "line": 1168,
+        "precode": "if (i < 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (i < 0) {"
+    },
+    {
+        "id": 90,
+        "line": 1168,
+        "precode": "if (_tokenIncomplete) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_tokenIncomplete) {"
+    },
+    {
+        "id": 91,
+        "line": 1168,
+        "precode": "_skipString();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "_skipString2();"
+    },
+    {
+        "id": 92,
+        "line": 1168,
+        "precode": "if (i == INT_RBRACKET) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (i == INT_RBRACKET) {"
+    },
+    {
+        "id": 93,
+        "line": 1168,
+        "precode": "if (i == INT_RCURLY) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (i == INT_RCURLY) {"
+    },
+    {
+        "id": 94,
+        "line": 1168,
+        "precode": "if (!_parsingContext.inObject()) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (!_parsingContext.inObject()) {"
+    },
+    {
+        "id": 95,
+        "line": 2709,
+        "precode": "final Object src = _ioContext.getSourceReference();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "final Object src = _ioContext.getSourceReference();\nif (_currToken == JsonToken.FIELD_NAME) {"
+    },
+    {
+        "id": 96,
+        "line": 2709,
+        "precode": "if (_currToken == JsonToken.FIELD_NAME) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_currToken == JsonToken.FIELD_NAME) {\n    return new JsonLocation(src, -1L, _nameInputTotal, _nameInputRow, _tokenInputCol);"
+    },
+    {
+        "id": 97,
+        "line": 2709,
+        "precode": "return new JsonLocation(src, -1L, _tokenInputTotal, _tokenInputRow, ",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "return new JsonLocation(src, -1L, _tokenInputTotal, _tokenInputRow, getTokenColumnNr());"
+    },
+    {
+        "id": 98,
+        "line": 2709,
+        "precode": "return new JsonLocation(src, -1L, _tokenInputTotal, _tokenInputRow, ",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "return new JsonLocation(src, -1L, _tokenInputTotal, _tokenInputRow, getTokenColumnNr());"
+    },
+    {
+        "id": 99,
+        "line": 2709,
+        "precode": "return new JsonLocation(src, -1L, _tokenInputTotal, _tokenInputRow, ",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "return new JsonLocation(src, -1L, _tokenInputTotal, _tokenInputRow, getTokenColumnNr());"
+    },
+    {
+        "id": 100,
+        "line": 2709,
+        "precode": "return new JsonLocation(src, -1L, _tokenInputTotal, _tokenInputRow, ",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "return new JsonLocation(src, -1L, _tokenInputTotal, _tokenInputRow, getTokenColumnNr());"
+    },
+    {
+        "id": 101,
+        "line": 2709,
+        "precode": "final Object src = _ioContext.getSourceReference();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "final Object src = _ioContext.getSourceReference();\nwhile (true) {"
+    },
+    {
+        "id": 102,
+        "line": 2709,
+        "precode": "while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "while (true) {\n    if (true) break;"
+    },
+    {
+        "id": 103,
+        "line": 2709,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 104,
+        "line": 2709,
+        "precode": "final Object src = _ioContext.getSourceReference();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "final Object src = _ioContext.getSourceReference();\nArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)"
+    },
+    {
+        "id": 105,
+        "line": 2709,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 106,
+        "line": 2709,
+        "precode": "final Object src = _ioContext.getSourceReference();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "final Object src = _ioContext.getSourceReference();\nc = bin_op.apply(b,a);"
+    },
+    {
+        "id": 107,
+        "line": 2709,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 234,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c <= INT_9 && c >= INT_0) {"
+    },
+    {
+        "id": 235,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c!= INT_0 && c <= INT_9) {"
+    },
+    {
+        "id": 236,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c!= INT_0 && c!= INT_9) {"
+    },
+    {
+        "id": 237,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c!= INT_0 && c!= INT_9 && c <= INT_9) {"
+    },
+    {
+        "id": 238,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c!= INT_0 && c!= INT_9 && c!= INT_8) {"
+    },
+    {
+        "id": 239,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c!= INT_0 && c!= INT_9 && c!= INT_8 && c <= INT_9) {"
+    },
+    {
+        "id": 240,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c!= INT_0 && c!= INT_9 && c!= INT_8 && c!= INT_7) {"
+    },
+    {
+        "id": 241,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c!= INT_0 && c!= INT_9 && c!= INT_8 && c!= INT_7 && c <= INT_9) {"
+    },
+    {
+        "id": 242,
+        "line": 1484,
+        "precode": "if (c < INT_0 || c > INT_9) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c!= INT_0 && c!= INT_9 && c!= INT_8 && c!= INT_7 && c!= INT_6) {"
+    },
+    {
+        "id": 243,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 'i') {\n"
+    },
+    {
+        "id": 244,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 'l') {\n"
+    },
+    {
+        "id": 245,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 'o') {\n"
+    },
+    {
+        "id": 246,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch =='s') {\n"
+    },
+    {
+        "id": 247,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 't') {\n"
+    },
+    {
+        "id": 248,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 'N') {\n"
+    },
+    {
+        "id": 249,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 'n') {\n"
+    },
+    {
+        "id": 250,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 'N') {\n"
+    },
+    {
+        "id": 251,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 'f') {\n"
+    },
+    {
+        "id": 252,
+        "line": 1562,
+        "precode": "if (ch == 'I') {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == 't') {\n"
+    },
+    {
+        "id": 253,
+        "line": 1168,
+        "precode": "0",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 254,
+        "line": 1168,
+        "precode": "1",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 255,
+        "line": 1168,
+        "precode": "2",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 256,
+        "line": 1168,
+        "precode": "3",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)"
+    },
+    {
+        "id": 257,
+        "line": 1168,
+        "precode": "4",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 258,
+        "line": 1168,
+        "precode": "5",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 259,
+        "line": 1168,
+        "precode": "6",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 260,
+        "line": 1168,
+        "precode": "7",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 261,
+        "line": 1168,
+        "precode": "8",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 262,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (true) {\n"
+    },
+    {
+        "id": 263,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (false) {\n"
+    },
+    {
+        "id": 264,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (t == JsonToken.VALUE_STRING) {\n"
+    },
+    {
+        "id": 265,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (t == JsonToken.VALUE_NUMBER_INT) {\n"
+    },
+    {
+        "id": 266,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (t == JsonToken.VALUE_TRUE) {\n"
+    },
+    {
+        "id": 267,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (t == JsonToken.VALUE_FALSE) {\n"
+    },
+    {
+        "id": 268,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (t == JsonToken.FIELD_NAME) {\n"
+    },
+    {
+        "id": 269,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (t == JsonToken.END_ARRAY) {\n"
+    },
+    {
+        "id": 270,
+        "line": 1168,
+        "precode": "if (t == JsonToken.START_ARRAY) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (t == JsonToken.END_OBJECT) {\n"
+    },
+    {
+        "id": 272,
+        "line": 1354,
+        "precode": "int ch = (int) _inputBuffer[ptr++];\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "int ch = (int) _inputBuffer[ptr++] + 1;\n"
+    },
+    {
+        "id": 273,
+        "line": 1354,
+        "precode": "if (ch == INT_PERIOD || ch == INT_e || ch == INT_E) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch == INT_PERIOD || ch == INT_e || ch == INT_E + 1) {\n"
+    },
+    {
+        "id": 274,
+        "line": 1354,
+        "precode": "if (ptr >= inputLen) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ptr >= inputLen + 1) {\n"
+    },
+    {
+        "id": 275,
+        "line": 1354,
+        "precode": "if (ch < INT_0 || ch > INT_9) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ch < INT_0 || ch > INT_9 + 1) {\n"
+    },
+    {
+        "id": 276,
+        "line": 1354,
+        "precode": "++intLen;\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "++intLen + 1;\n"
+    },
+    {
+        "id": 277,
+        "line": 1354,
+        "precode": "if (fractLen == 0) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (fractLen == 1) {\n"
+    },
+    {
+        "id": 278,
+        "line": 1354,
+        "precode": "if (ptr >= inputLen) {\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (ptr >= inputLen + 2) {\n"
+    },
+    {
+        "id": 279,
+        "line": 1354,
+        "precode": "++fractLen;\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "++fractLen + 1;\n"
+    },
+    {
+        "id": 280,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) ^ 1];"
+    },
+    {
+        "id": 281,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) + 1];"
+    },
+    {
+        "id": 282,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) - 1];"
+    },
+    {
+        "id": 283,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) * 2];"
+    },
+    {
+        "id": 284,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) / 2];"
+    },
+    {
+        "id": 285,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) % 2];"
+    },
+    {
+        "id": 286,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) << 2];"
+    },
+    {
+        "id": 287,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) >> 2];"
+    },
+    {
+        "id": 288,
+        "line": 1354,
+        "precode": "ch = (int) _inputBuffer[ptr++];",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "ch = (int) _inputBuffer[(ptr++) >>> 2];"
+    },
+    {
+        "id": 289,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = false;\nbreak fract_loop;\n}"
+    },
+    {
+        "id": 290,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\ncontinue fract_loop;\n}"
+    },
+    {
+        "id": 291,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = false;\ncontinue fract_loop;\n}"
+    },
+    {
+        "id": 292,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nreturn;\n}"
+    },
+    {
+        "id": 293,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = false;\nreturn;\n}"
+    },
+    {
+        "id": 294,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak;\n}"
+    },
+    {
+        "id": 295,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = false;\nbreak;\n}"
+    },
+    {
+        "id": 296,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = false;\ncontinue;\n}"
+    },
+    {
+        "id": 297,
+        "line": 1484,
+        "precode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = true;\nbreak fract_loop;\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd &&!loadMore()) {\neof = false;\nreturn;\n}"
+    },
+    {
+        "id": 298,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == '!') { // yes, fraction\n"
+    },
+    {
+        "id": 299,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == '/') { // yes, fraction\n"
+    },
+    {
+        "id": 300,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == '\\') { // yes, fraction\n"
+    },
+    {
+        "id": 301,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c =='') { // yes, fraction\n"
+    },
+    {
+        "id": 302,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == '\t') { // yes, fraction\n"
+    },
+    {
+        "id": 303,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == '\n') { // yes, fraction\n"
+    },
+    {
+        "id": 304,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == '\r') { // yes, fraction\n"
+    },
+    {
+        "id": 305,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'a') { // yes, fraction\n"
+    },
+    {
+        "id": 306,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'b') { // yes, fraction\n"
+    },
+    {
+        "id": 307,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'c') { // yes, fraction\n"
+    },
+    {
+        "id": 308,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'd') { // yes, fraction\n"
+    },
+    {
+        "id": 309,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'e') { // yes, fraction\n"
+    },
+    {
+        "id": 310,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'f') { // yes, fraction\n"
+    },
+    {
+        "id": 311,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'g') { // yes, fraction\n"
+    },
+    {
+        "id": 312,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'h') { // yes, fraction\n"
+    },
+    {
+        "id": 313,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'i') { // yes, fraction\n"
+    },
+    {
+        "id": 314,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'j') { // yes, fraction\n"
+    },
+    {
+        "id": 315,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'k') { // yes, fraction\n"
+    },
+    {
+        "id": 316,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'l') { // yes, fraction\n"
+    },
+    {
+        "id": 317,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c =='m') { // yes, fraction\n"
+    },
+    {
+        "id": 318,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'n') { // yes, fraction\n"
+    },
+    {
+        "id": 319,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'o') { // yes, fraction\n"
+    },
+    {
+        "id": 320,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'p') { // yes, fraction\n"
+    },
+    {
+        "id": 321,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'q') { // yes, fraction\n"
+    },
+    {
+        "id": 322,
+        "line": 1484,
+        "precode": "    if (c == '.') { // yes, fraction\n",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "    if (c == 'r') { // yes, fraction\n"
+    },
+    {
+        "id": 323,
+        "line": 2666,
+        "precode": "if (_inputPtr >= _inputEnd) {\nloadMoreGuaranteed();\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd) {\n_inputPtr++;\n}"
+    },
+    {
+        "id": 324,
+        "line": 2666,
+        "precode": "if (_inputPtr >= _inputEnd) {\nloadMoreGuaranteed();\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd) {\n_inputPtr = _inputEnd;\n}"
+    },
+    {
+        "id": 325,
+        "line": 2666,
+        "precode": "if (_inputPtr >= _inputEnd) {\nloadMoreGuaranteed();\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd) {\n_inputPtr = _inputEnd + 1;\n}"
+    },
+    {
+        "id": 326,
+        "line": 2666,
+        "precode": "if (_inputPtr >= _inputEnd) {\nloadMoreGuaranteed();\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd) {\n_inputPtr = _inputEnd - 1;\n}"
+    },
+    {
+        "id": 327,
+        "line": 2666,
+        "precode": "if (_inputPtr >= _inputEnd) {\nloadMoreGuaranteed();\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd) {\n_inputPtr = _inputEnd + 2;\n}"
+    },
+    {
+        "id": 328,
+        "line": 2666,
+        "precode": "if (_inputPtr >= _inputEnd) {\nloadMoreGuaranteed();\n}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (_inputPtr >= _inputEnd) {\n_inputPtr = _inputEnd - 2;\n}"
+    },
+    {
+        "id": 469,
+        "line": 1975,
+        "precode": "c = _decodeEscaped();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "c = _decodeEscaped2();"
+    },
+    {
+        "id": 470,
+        "line": 1975,
+        "precode": "}",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 471,
+        "line": 1975,
+        "precode": "if (c == '\\') {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (c == '\\') {"
+    },
+    {
+        "id": 472,
+        "line": 1975,
+        "precode": "if (i < INT_SPACE) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (i < INT_SPACE) {"
+    },
+    {
+        "id": 473,
+        "line": 1975,
+        "precode": "outBuf = _textBuffer.finishCurrentSegment();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "outBuf = _textBuffer.finishCurrentSegment2();"
+    },
+    {
+        "id": 474,
+        "line": 1975,
+        "precode": "if (outPtr >= outBuf.length) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "if (outPtr >= outBuf.length) {"
+    },
+    {
+        "id": 475,
+        "line": 1975,
+        "precode": "outBuf[outPtr++] = c;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_12_fixed/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java",
+        "aftercode": "outBuf[outPtr++] = c;"
+    }
+]

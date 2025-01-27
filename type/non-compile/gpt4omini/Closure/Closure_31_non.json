@@ -1,0 +1,149 @@
+[
+    {
+        "id": 511,
+        "line": 1352,
+        "precode": "for (CompilerInput input : inputs) {",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (CompilerInput input : inputs) { if (input != null) {"
+    },
+    {
+        "id": 512,
+        "line": 1289,
+        "precode": "for (String provide : input.getProvides()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (String provide : input.getProvides()) { if (provide != null) {"
+    },
+    {
+        "id": 514,
+        "line": 20,
+        "precode": "inputs = (moduleGraph == null ? new JSModuleGraph(modules) : moduleGraph).manageDependencies(options.dependencyOptions, inputs);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "inputs = (moduleGraph == null ? new JSModuleGraph(modules) : moduleGraph).manageDependencies(options.dependencyOptions, new ArrayList<>(inputs));"
+    },
+    {
+        "id": 516,
+        "line": 1237,
+        "precode": "boolean devMode = options.devMode != DevMode.OFF;",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "boolean devMode = options.devMode == DevMode.ON;"
+    },
+    {
+        "id": 778,
+        "line": 1290,
+        "precode": "getTypeRegistry().forwardDeclareType(provide);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "getTypeRegistry().registerType(provide);"
+    },
+    {
+        "id": 779,
+        "line": 88,
+        "precode": "inputs = (moduleGraph == null ? new JSModuleGraph(modules) : moduleGraph)",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "inputs = (moduleGraph == null ? new JSModuleGraph(modules) : new JSModuleGraph(modules))"
+    },
+    {
+        "id": 1287,
+        "line": 15,
+        "precode": "options.checkGlobalThisLevel.isOn() && !options.disables(DiagnosticGroups.GLOBAL_THIS)",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "!options.checkGlobalThisLevel.isOn() || options.disables(DiagnosticGroups.GLOBAL_THIS)"
+    },
+    {
+        "id": 1288,
+        "line": 16,
+        "precode": "options.setWarningLevel(DiagnosticGroups.GLOBAL_THIS, options.checkGlobalThisLevel);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "options.setWarningLevel(DiagnosticGroups.GLOBAL_THIS, CheckLevel.OFF);"
+    },
+    {
+        "id": 1289,
+        "line": 18,
+        "precode": "options.setWarningLevel(DiagnosticGroups.ES5_STRICT, CheckLevel.ERROR);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "options.setWarningLevel(DiagnosticGroups.ES5_STRICT, CheckLevel.WARNING);"
+    },
+    {
+        "id": 1290,
+        "line": 23,
+        "precode": "if (!options.checkSymbols && !composedGuards.enables(DiagnosticGroups.CHECK_VARIABLES)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "if (options.checkSymbols || composedGuards.enables(DiagnosticGroups.CHECK_VARIABLES)) {"
+    },
+    {
+        "id": 1360,
+        "line": 1430,
+        "precode": "if (dependency == null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "if (dependency != null) continue;"
+    },
+    {
+        "id": 1362,
+        "line": 107,
+        "precode": "SourceFile.fromCode(\" [synthetic:\" + (++syntheticCodeId) + \"] \", js);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "SourceFile.fromCode(\" [synthetic:\" + (syntheticCodeId++) + \"] \", js);"
+    },
+    {
+        "id": 1363,
+        "line": 107,
+        "precode": "SourceFile.fromCode(\" [synthetic:\" + (++syntheticCodeId) + \"] \", js);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "SourceFile.fromCode(\" [synthetic:\" + (syntheticCodeId + 1) + \"] \", js);"
+    },
+    {
+        "id": 1364,
+        "line": 1464,
+        "precode": "putCompilerInput(input.getInputId(), input);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "putCompilerInput(input.getInputId() + 1, input);"
+    },
+    {
+        "id": 1367,
+        "line": 107,
+        "precode": "SourceFile.fromCode(\" [synthetic:\" + (++syntheticCodeId) + \"] \", js);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "SourceFile.fromCode(\" [synthetic:\" + (syntheticCodeId + 10) + \"] \", js);"
+    },
+    {
+        "id": 1368,
+        "line": 107,
+        "precode": "SourceFile.fromCode(\" [synthetic:\" + (++syntheticCodeId) + \"] \", js);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "SourceFile.fromCode(\" [synthetic:\" + syntheticCodeId + \"] \", js);"
+    },
+    {
+        "id": 1369,
+        "line": 1464,
+        "precode": "putCompilerInput(input.getInputId(), input);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "putCompilerInput(input.getInputId() - 1, input);"
+    },
+    {
+        "id": 1370,
+        "line": 1465,
+        "precode": "return input.getAstRoot(this);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "return new Node();"
+    },
+    {
+        "id": 1372,
+        "line": 107,
+        "precode": "SourceFile.fromCode(\" [synthetic:\" + (++syntheticCodeId) + \"] \", js);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "SourceFile.fromCode(\" [synthetic:\" + (--syntheticCodeId) + \"] \", js);"
+    },
+    {
+        "id": 1375,
+        "line": 1464,
+        "precode": "putCompilerInput(input.getInputId(), input);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "putCompilerInput(-1, input);"
+    },
+    {
+        "id": 1377,
+        "line": 107,
+        "precode": "SourceFile.fromCode(\" [synthetic:\" + (++syntheticCodeId) + \"] \", js);",
+        "filepath": "defects4j_fixed/Closure/Closure_31_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "SourceFile.fromCode(js + \" [synthetic:\" + (++syntheticCodeId) + \"] \", js);"
+    }
+]

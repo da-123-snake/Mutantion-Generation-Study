@@ -1,0 +1,44 @@
+[
+    {
+        "id": 4,
+        "line": 309,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "if (numStr == null) throw new NumberFormatException(\"Input is null\");"
+    },
+    {
+        "id": 8,
+        "line": 293,
+        "precode": "public static BigDecimal parseBigDecimal(String numStr) throws NumberFormatException",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "public static BigDecimal parseBigDecimal(String numStr):"
+    },
+    {
+        "id": 10,
+        "line": 311,
+        "precode": "catch (NumberFormatException e) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "catch (Exception e) {"
+    },
+    {
+        "id": 14,
+        "line": 310,
+        "precode": "return new BigDecimal(buffer, offset, len);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "return new BigDecimal(String.valueOf(buffer), offset, len);"
+    },
+    {
+        "id": 19,
+        "line": 312,
+        "precode": "throw _badBigDecimal(new String(buffer, offset, len));",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "throw _badBigDecimal(new String(buffer, offset, len).replace(' ', ''));"
+    },
+    {
+        "id": 21,
+        "line": 311,
+        "precode": "catch (NumberFormatException e) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "catch (Exception e) {"
+    }
+]

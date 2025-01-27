@@ -1,0 +1,30 @@
+[
+    {
+        "id": 313,
+        "line": 62,
+        "precode": "public <T> void resetMock(T mock) {",
+        "aftercode": "public <T> void resetMock(T mock) { return; ",
+        "filepath": "defects4j_fixed/Mockito/Mockito_27_fixed/src/org/mockito/internal/util/MockUtil.java"
+    },
+    {
+        "id": 314,
+        "line": 65,
+        "precode": "((Factory) mock).setCallback(0, newFilter);",
+        "aftercode": "((Factory) mock).setCallback(0, oldMockHandler);",
+        "filepath": "defects4j_fixed/Mockito/Mockito_27_fixed/src/org/mockito/internal/util/MockUtil.java"
+    },
+    {
+        "id": 315,
+        "line": 64,
+        "precode": "MethodInterceptorFilter newFilter = newMethodInterceptorFilter(oldMockHandler.getMockSettings());",
+        "aftercode": "MethodInterceptorFilter newFilter = new MethodInterceptorFilter();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_27_fixed/src/org/mockito/internal/util/MockUtil.java"
+    },
+    {
+        "id": 316,
+        "line": 65,
+        "precode": "((Factory) mock).setCallback(0, newFilter);",
+        "aftercode": "((Factory) mock).setCallback(0, oldMockHandler.getMockSettings());",
+        "filepath": "defects4j_fixed/Mockito/Mockito_27_fixed/src/org/mockito/internal/util/MockUtil.java"
+    }
+]

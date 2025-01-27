@@ -1,0 +1,282 @@
+[
+    {
+        "id": 132,
+        "line": 107,
+        "precode": "        if (tq.matchesAny(combinators)) { // if starts with a combinator, use root as elements",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        if (tq.has(combinators)) { // if starts with a combinator, use root as elements"
+    },
+    {
+        "id": 133,
+        "line": 108,
+        "precode": "            elements.add(root);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            elements.push(root);"
+    },
+    {
+        "id": 134,
+        "line": 109,
+        "precode": "            combinator(tq.consume());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            elements.add(root);select(tq.consume());"
+    },
+    {
+        "id": 135,
+        "line": 110,
+        "precode": "        } else if (tq.matches(\":has(\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        } else if (tq.match(\":has(\")) {"
+    },
+    {
+        "id": 136,
+        "line": 111,
+        "precode": "            elements.addAll(root.getAllElements());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            elements.add(root.getAllElements());"
+    },
+    {
+        "id": 137,
+        "line": 113,
+        "precode": "            addElements(findElements()); // chomp first element matcher off queue ",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        } else {select(findElements()); // chomp first element matcher off queue "
+    },
+    {
+        "id": 138,
+        "line": 180,
+        "precode": "        } else if (tq.matchChomp(\"*\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        } else if (tq.match(\"*\")) {"
+    },
+    {
+        "id": 139,
+        "line": 181,
+        "precode": "            return allElements();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            returncount();"
+    },
+    {
+        "id": 140,
+        "line": 182,
+        "precode": "        } else if (tq.matchChomp(\":lt(\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        } else if (tq.match(\":lt(\")) {"
+    },
+    {
+        "id": 141,
+        "line": 183,
+        "precode": "            return indexLessThan();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            returnindex();"
+    },
+    {
+        "id": 142,
+        "line": 184,
+        "precode": "        } else if (tq.matchChomp(\":gt(\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        } else if (tq.match(\":gt(\")) {"
+    },
+    {
+        "id": 143,
+        "line": 185,
+        "precode": "            return indexGreaterThan();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            returngreater();"
+    },
+    {
+        "id": 144,
+        "line": 186,
+        "precode": "        } else if (tq.matchChomp(\":eq(\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        } else if (tq.match(\":eq(\")) {"
+    },
+    {
+        "id": 145,
+        "line": 187,
+        "precode": "            return indexEquals();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            returneq();"
+    },
+    {
+        "id": 146,
+        "line": 307,
+        "precode": "        tq.consume(own ? \":containsOwn\" : \":contains\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        tq.push(own? \":containsOwn\" : \":contains\");"
+    },
+    {
+        "id": 147,
+        "line": 308,
+        "precode": "        String searchText = TokenQueue.unescape(tq.chompBalanced('(',')'));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        String searchText = TokenQueue.escape(tq.chompBalanced(\\'(\\',\\')\\'));"
+    },
+    {
+        "id": 148,
+        "line": 309,
+        "precode": "        Validate.notEmpty(searchText, \":contains(text) query must not be empty\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        Validate.required(searchText, \":contains(text) query must not be empty\");"
+    },
+    {
+        "id": 149,
+        "line": 311,
+        "precode": "        return own ? root.getElementsContainingOwnText(searchText) : root.getElementsContainingText(searchText);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        returntrue;"
+    },
+    {
+        "id": 150,
+        "line": 316,
+        "precode": "        tq.consume(own? \":matchesOwn\" : \":matches\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        tq.match(own? \":matchesOwn\" : \":matches\");"
+    },
+    {
+        "id": 151,
+        "line": 317,
+        "precode": "        String regex = tq.chompBalanced('(', ')'); // don't unescape, as regex bits will be escaped",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        String regex = tq.join(\\'(\\', \\')\\'); // don\\'t unescape, as regex bits will be escaped"
+    },
+    {
+        "id": 152,
+        "line": 318,
+        "precode": "        Validate.notEmpty(regex, \":matches(regex) query must not be empty\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        Validate.string(regex, \":matches(regex) query must not be empty\");"
+    },
+    {
+        "id": 153,
+        "line": 406,
+        "precode": "        return output;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        returnresult;"
+    },
+    {
+        "id": 154,
+        "line": 412,
+        "precode": "        CHILD: for (Element c : candidates) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        CHILD: for (Element c :candidate) {"
+    },
+    {
+        "id": 155,
+        "line": 413,
+        "precode": "            for (Element p : parents) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            for (Element p :parent) {"
+    },
+    {
+        "id": 156,
+        "line": 414,
+        "precode": "                if (c.equals(p)) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "                if (c.is(p)) {"
+    },
+    {
+        "id": 157,
+        "line": 415,
+        "precode": "                    children.add(c);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "                    children.push(c);"
+    },
+    {
+        "id": 158,
+        "line": 420,
+        "precode": "        return children;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        returnchild;"
+    },
+    {
+        "id": 159,
+        "line": 426,
+        "precode": "        for (Element el: elements) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        for (Element el:element) {"
+    },
+    {
+        "id": 247,
+        "line": 138,
+        "precode": "        tq.consumeWhitespace();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        tq.clear();"
+    },
+    {
+        "id": 248,
+        "line": 139,
+        "precode": "        String subQuery = consumeSubQuery(); // support multi > childs",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        String subQuery =select(); // support multi > childs"
+    },
+    {
+        "id": 249,
+        "line": 142,
+        "precode": "        if (combinator == '>')",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        if (combinator==\\'>\\')"
+    },
+    {
+        "id": 250,
+        "line": 153,
+        "precode": "        elements.clear(); elements.addAll(output);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        elements.sort(); elements.addAll(output);"
+    },
+    {
+        "id": 252,
+        "line": 159,
+        "precode": "            if (tq.matches(\"(\"))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            if (tq.match(\"(\"))"
+    },
+    {
+        "id": 253,
+        "line": 160,
+        "precode": "                sq.append(\"(\").append(tq.chompBalanced('(', ')')).append(\")\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "                sq.append(\"(\").append(tq.chompBalanced(\\'(\\', \\')\\')).append(\")\");"
+    },
+    {
+        "id": 254,
+        "line": 161,
+        "precode": "            else if (tq.matches(\"[\"))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            else if (tq.match(\"[\"))"
+    },
+    {
+        "id": 255,
+        "line": 162,
+        "precode": "                sq.append(\"[\").append(tq.chompBalanced('[', ']')).append(\"]\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "                sq.append(\"[\").append(tq.chompBalanced(\\'[\\', \\']\\')).append(\"]\");"
+    },
+    {
+        "id": 256,
+        "line": 163,
+        "precode": "            else if (tq.matchesAny(combinators))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "            else if (tq.match(combinators))"
+    },
+    {
+        "id": 257,
+        "line": 166,
+        "precode": "                sq.append(tq.consume());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "                sq.push(tq.consume());"
+    },
+    {
+        "id": 258,
+        "line": 168,
+        "precode": "        return sq.toString();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        return sq.build();"
+    },
+    {
+        "id": 259,
+        "line": 172,
+        "precode": "        if (tq.matchChomp(\"#\")) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_12_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "        if (tq.match(\"#\")) {"
+    }
+]

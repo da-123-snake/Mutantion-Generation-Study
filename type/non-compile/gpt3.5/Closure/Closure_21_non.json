@@ -1,0 +1,107 @@
+[
+    {
+        "id": 501,
+        "line": 111,
+        "precode": "boolean isResultUsed = NodeUtil.isExpressionResultUsed(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "boolean isResultUsed = NodeUtil.isUnaryOperatorType(n.getType());"
+    },
+    {
+        "id": 502,
+        "line": 114,
+        "precode": "isSimpleOp || !NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "isSimpleOp && !NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {"
+    },
+    {
+        "id": 503,
+        "line": 114,
+        "precode": "isSimpleOp || !NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "!isSimpleOp || !NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {"
+    },
+    {
+        "id": 506,
+        "line": 23,
+        "precode": "msg = \"The result of the '\" + Token.name(n.getType()).toLowerCase() +\n            \"' operator is not being used.\";",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "msg = \"The result of the '\" + Token.name(n.getType()).toLowerCase() +\n            \"' operator may not be used.\";"
+    },
+    {
+        "id": 510,
+        "line": 20,
+        "precode": "if (!isResultUsed &&\n    (isSimpleOp || !NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "if (!isResultUsed) {"
+    },
+    {
+        "id": 511,
+        "line": 20,
+        "precode": "if (!isResultUsed &&\n    (isSimpleOp || !NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "if (isSimpleOp) {"
+    },
+    {
+        "id": 512,
+        "line": 115,
+        "precode": "msg = \"This code lacks side-effects. Is there a bug?\";",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "msg = \"Is there a missing '+' on the next line?\";"
+    },
+    {
+        "id": 513,
+        "line": 115,
+        "precode": "msg = \"This code lacks side-effects. Is there a bug?\";",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "msg = \"Is there a missing '=' on the next line?\";"
+    },
+    {
+        "id": 514,
+        "line": 27,
+        "precode": "t.getCompiler().report(\nt.makeError(n, level, USELESS_CODE_ERROR, msg));",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "t.getCompiler().report(\nt.makeWarning(n, level, USELESS_CODE_ERROR, msg));"
+    },
+    {
+        "id": 516,
+        "line": 39,
+        "precode": "if (n.isBlock()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "if (n.isExprResult()) {"
+    },
+    {
+        "id": 517,
+        "line": 39,
+        "precode": "if (n.isBlock()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "if (n.isQualifiedName()) {"
+    },
+    {
+        "id": 518,
+        "line": 42,
+        "precode": "if (n.getJSDocInfo() != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "if (n.getJSDocInfo() == null) {"
+    },
+    {
+        "id": 519,
+        "line": 46,
+        "precode": "if (isSimpleOp || !NodeUtil.mayHaveSideEffects(n, t.getCompiler())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "if (!isSimpleOp || NodeUtil.mayHaveSideEffects(n, t.getCompiler())) {"
+    },
+    {
+        "id": 520,
+        "line": 46,
+        "precode": "if (isSimpleOp || !NodeUtil.mayHaveSideEffects(n, t.getCompiler())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "if (!isSimpleOp && NodeUtil.mayHaveSideEffects(n, t.getCompiler())) {"
+    },
+    {
+        "id": 523,
+        "line": 53,
+        "precode": "t.getCompiler().report(\nt.makeError(n, level, USELESS_CODE_ERROR, msg));",
+        "filepath": "defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "t.getCompiler().report(\nt.makeWarning(n, level, USELESS_CODE_ERROR, msg));"
+    }
+]

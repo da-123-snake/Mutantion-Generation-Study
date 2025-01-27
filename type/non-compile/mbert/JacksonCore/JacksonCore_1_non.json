@@ -1,0 +1,37 @@
+[
+    {
+        "id": 38,
+        "line": 296,
+        "precode": "            return new BigDecimal(numStr);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "            return new BigDecimal(num);"
+    },
+    {
+        "id": 39,
+        "line": 298,
+        "precode": "            throw _badBigDecimal(numStr);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "            throwparse(numStr);"
+    },
+    {
+        "id": 40,
+        "line": 310,
+        "precode": "            return new BigDecimal(buffer, offset, len);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "            return new BigDecimal(Buffer, offset, len);"
+    },
+    {
+        "id": 41,
+        "line": 312,
+        "precode": "            throw _badBigDecimal(new String(buffer, offset, len));",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "            throwparse(new String(buffer, offset, len));"
+    },
+    {
+        "id": 42,
+        "line": 317,
+        "precode": "        return new NumberFormatException(\"Value \\\"\"+str+\"\\\" can not be represented as BigDecimal\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_1_fixed/src/main/java/com/fasterxml/jackson/core/io/NumberInput.java",
+        "aftercode": "        return new NumberFormatException(\"Value \\\\\"\"+str+\"\\\\\" can not be represented as BigDecimal\");"
+    }
+]

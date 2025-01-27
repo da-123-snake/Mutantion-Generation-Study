@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1346,
+        "line": 120,
+        "precode": "Element firstFound = null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "Element firstFound = new Element(Tag.valueOf(\"default\"), baseUri, settings);"
+    },
+    {
+        "id": 1398,
+        "line": 3,
+        "precode": "Document doc = Jsoup.parse(\"<\" + data.substring(1, data.length() - 1) + \">\", baseUri, Parser.xmlParser());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "Document doc = Jsoup.parse(\"<\" + data.substring(1) + \">\", baseUri, Parser.xmlParser());"
+    },
+    {
+        "id": 1402,
+        "line": 94,
+        "precode": "insert.attributes().addAll(el.attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "insert.attributes().addAll(el.attributes().asList());"
+    },
+    {
+        "id": 1406,
+        "line": 94,
+        "precode": "insert.attributes().addAll(el.attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_80_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java",
+        "aftercode": "insert.attributes().retainAll(el.attributes());"
+    }
+]

@@ -1,0 +1,128 @@
+[
+    {
+        "id": 260,
+        "line": 99,
+        "precode": "          return true;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "          returnfalse;"
+    },
+    {
+        "id": 261,
+        "line": 102,
+        "precode": "        for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "        for (Node c = n.next(); c!= null; c = c.getNext()) {"
+    },
+    {
+        "id": 262,
+        "line": 103,
+        "precode": "          if (!ControlFlowGraph.isEnteringNewCfgNode(c) && apply(c)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "          if (!ControlFlowGraph.isEnteringNewCfgNode(c).apply(c)) {"
+    },
+    {
+        "id": 263,
+        "line": 104,
+        "precode": "            return true;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "            returnfalse;"
+    },
+    {
+        "id": 264,
+        "line": 107,
+        "precode": "        return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "        returntrue;"
+    },
+    {
+        "id": 296,
+        "line": 157,
+        "precode": "    (new NodeTraversal(compiler, this)).traverseRoots(externs, root);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "    (new NodeTraversal(compiler, this)).process(externs, root);"
+    },
+    {
+        "id": 297,
+        "line": 395,
+        "precode": "      compiler.reportCodeChange();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "      compiler.exit();"
+    },
+    {
+        "id": 298,
+        "line": 439,
+        "precode": "          if (n.isName() && n.getString().equals(varName) &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "          if (n.isName() && n.getString().equals(varName)&&!(parent.isAssign() &&"
+    },
+    {
+        "id": 350,
+        "line": 157,
+        "precode": "    (new NodeTraversal(compiler, this)).traverseRoots(externs, root);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "    (new NodeTraversal(compiler, this)).process(externs, root);"
+    },
+    {
+        "id": 351,
+        "line": 282,
+        "precode": "      if (checkLeftOf(use, useCfgNode, SIDE_EFFECT_PREDICATE)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "      if (check(use, useCfgNode, SIDE_EFFECT_PREDICATE)) {"
+    },
+    {
+        "id": 352,
+        "line": 283,
+        "precode": "        return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "        returntrue;"
+    },
+    {
+        "id": 353,
+        "line": 376,
+        "precode": "      Node defParent = def.getParent();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "      Node defParent = def.parent();"
+    },
+    {
+        "id": 354,
+        "line": 377,
+        "precode": "      Node useParent = use.getParent();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "      Node useParent = use.parent();"
+    },
+    {
+        "id": 355,
+        "line": 378,
+        "precode": "      if (def.isAssign()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "      if (def.block()) {"
+    },
+    {
+        "id": 356,
+        "line": 379,
+        "precode": "        Node rhs = def.getLastChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "        Node rhs = def.parent();"
+    },
+    {
+        "id": 357,
+        "line": 380,
+        "precode": "        rhs.detachFromParent();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "        rhs.remove();"
+    },
+    {
+        "id": 358,
+        "line": 382,
+        "precode": "        Preconditions.checkState(defParent.isExprResult());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "        Preconditions.check(defParent.isExprResult());"
+    },
+    {
+        "id": 359,
+        "line": 383,
+        "precode": "        while (defParent.getParent().isLabel()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_30_fixed/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java",
+        "aftercode": "        while (defParent.getParent().next()) {"
+    }
+]

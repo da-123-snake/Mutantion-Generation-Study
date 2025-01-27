@@ -1,0 +1,135 @@
+[
+    {
+        "id": 143,
+        "line": 25,
+        "precode": "Class<?>[] types = constructor.getParameterTypes();",
+        "aftercode": "Class<?>[] types = constructor.getDeclaredParameterTypes();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 144,
+        "line": 26,
+        "precode": "if (paramsMatch(types, params)) {",
+        "aftercode": "if (paramsMatch(types, params) && params.length == types.length) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 145,
+        "line": 27,
+        "precode": "return (T) constructor.newInstance(params);",
+        "aftercode": "return (T) constructor.newInstance(params, types);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 146,
+        "line": 60,
+        "precode": "}",
+        "aftercode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 147,
+        "line": 60,
+        "precode": "}",
+        "aftercode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 148,
+        "line": 31,
+        "precode": "throw paramsException(cls, e);",
+        "aftercode": "throw paramsException(cls, null);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 149,
+        "line": 60,
+        "precode": "}",
+        "aftercode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 150,
+        "line": 33,
+        "precode": "throw paramsException(cls, null);",
+        "aftercode": "throw paramsException(cls, e);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 151,
+        "line": 60,
+        "precode": "}",
+        "aftercode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 152,
+        "line": 53,
+        "precode": "private static <T> T noArgConstructor(Class<T> cls) {",
+        "aftercode": "private static <T> T noArgConstructor(Class<T> cls, Object... params) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 153,
+        "line": 54,
+        "precode": "try {",
+        "aftercode": "try {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 154,
+        "line": 55,
+        "precode": "return cls.newInstance();",
+        "aftercode": "return cls.newInstance(params);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 155,
+        "line": 60,
+        "precode": "}",
+        "aftercode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 156,
+        "line": 56,
+        "precode": "catch (Exception e) {",
+        "aftercode": "catch (Exception e) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 157,
+        "line": 25,
+        "precode": "throw new InstantationException(\"Unable to create mock instance of '\" + cls.getSimpleName() + \"'.\nPlease ensure it has parameter-less constructor.\", e);",
+        "aftercode": "throw new InstantationException(\"Unable to create mock instance of '\" + cls.getSimpleName() + \"'.\nPlease ensure it has parameter-less constructor.\", null);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 158,
+        "line": 60,
+        "precode": "}",
+        "aftercode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 159,
+        "line": 60,
+        "precode": "}",
+        "aftercode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 160,
+        "line": 36,
+        "precode": "private static <T> InstantationException paramsException(Class<T> cls, Exception e) {",
+        "aftercode": "private static <T> InstantationException paramsException(Class<T> cls, Exception e, Object... params) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    },
+    {
+        "id": 161,
+        "line": 29,
+        "precode": "return new InstantationException(\"Unable to create mock instance of '\" + cls.getSimpleName() + \"'.\nPlease ensure that the outer instance has correct type and that the target class has parameter-less constructor.\", e);",
+        "aftercode": "return new InstantationException(\"Unable to create mock instance of '\" + cls.getSimpleName() + \"'.\nPlease ensure that the outer instance has correct type and that the target class has parameter-less constructor.\", null);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_21_fixed/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java"
+    }
+]

@@ -1,0 +1,289 @@
+[
+    {
+        "id": 730,
+        "line": 599,
+        "precode": "  if (literalNode.isDestructuring()) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    reportDestructuringAssign(literalNode);\n"
+    },
+    {
+        "id": 731,
+        "line": 599,
+        "precode": "    Node node = newNode(Token.ARRAYLIT);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    Node node = newNode(Token.ARRAYLIT);\n    for (AstNode child : literalNode.getElements()) {\n      Node c = transform(child);\n      node.addChildToBack(c);\n    }\n    return node;\n"
+    },
+    {
+        "id": 732,
+        "line": 599,
+        "precode": "  } else if (n instanceof NumberLiteral) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "  } else if (n instanceof StringLiteral) {\n"
+    },
+    {
+        "id": 733,
+        "line": 599,
+        "precode": "    ret = transformNumberAsString((NumberLiteral) n);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    ret = transformNumberAsString((NumberLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n"
+    },
+    {
+        "id": 734,
+        "line": 599,
+        "precode": "  } else {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "  } else if (n instanceof BooleanLiteral) {\n"
+    },
+    {
+        "id": 735,
+        "line": 599,
+        "precode": "    ret = transformBooleanAsString((BooleanLiteral) n);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    ret = transformBooleanAsString((BooleanLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n"
+    },
+    {
+        "id": 736,
+        "line": 599,
+        "precode": "  }\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "  } else {\n    ret = transform(n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  }\n"
+    },
+    {
+        "id": 737,
+        "line": 599,
+        "precode": "  Node ret;\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "  Node ret;\n  if (n instanceof Name) {\n    ret = transformNameAsString((Name) n);\n  } else if (n instanceof StringLiteral) {\n    ret = transformStringAsString((StringLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  } else {\n    ret = transform(n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  }\n  Preconditions.checkState(ret.isString());\n  return ret;\n"
+    },
+    {
+        "id": 738,
+        "line": 599,
+        "precode": "  if (n instanceof Name) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "  } else if (n instanceof StringLiteral) {\n    ret = transformStringAsString((StringLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  } else {\n    ret = transform(n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  }\n  Preconditions.checkState(ret.isString());\n  return ret;\n"
+    },
+    {
+        "id": 739,
+        "line": 599,
+        "precode": "    Node ret;\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    Node ret;\n    if (n instanceof Name) {\n      ret = transformNameAsString((Name) n);\n    } else if (n instanceof NumberLiteral) {\n      ret = transformNumberAsString((NumberLiteral) n);\n      ret.putBooleanProp(Node.QUOTED_PROP, true);\n    } else {\n      ret = transform(n);\n      ret.putBooleanProp(Node.QUOTED_PROP, true);\n    }\n    Preconditions.checkState(ret.isString());\n    return ret;\n"
+    },
+    {
+        "id": 740,
+        "line": 599,
+        "precode": "  } else if (n instanceof NumberLiteral) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "  } else if (n instanceof StringLiteral) {\n    ret = transformStringAsString((StringLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  } else {\n    ret = transform(n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  }\n  Preconditions.checkState(ret.isString());\n  return ret;\n"
+    },
+    {
+        "id": 741,
+        "line": 599,
+        "precode": "    ret = transformNumberAsString((NumberLiteral) n);\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    ret = transformNumberAsString((NumberLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n    ret = transformStringAsString((StringLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  }\n  Preconditions.checkState(ret.isString());\n  return ret;\n"
+    },
+    {
+        "id": 742,
+        "line": 599,
+        "precode": "  }\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "  } else {\n    ret = transform(n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n    ret = transformStringAsString((StringLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  }\n  Preconditions.checkState(ret.isString());\n  return ret;\n"
+    },
+    {
+        "id": 743,
+        "line": 599,
+        "precode": "  Node ret;\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "  Node ret;\n  if (n instanceof Name) {\n    ret = transformNameAsString((Name) n);\n  } else if (n instanceof NumberLiteral) {\n    ret = transformNumberAsString((NumberLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n    ret = transformStringAsString((StringLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  } else {\n    ret = transform(n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n    ret = transformStringAsString((StringLiteral) n);\n    ret.putBooleanProp(Node.QUOTED_PROP, true);\n  }\n  Preconditions.checkState(ret.isString());\n  return ret;\n"
+    },
+    {
+        "id": 744,
+        "line": 599,
+        "precode": "    Node ret;\n",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    Node ret;\n    if (n instanceof Name) {\n      ret = transformNameAsString((Name) n);\n    } else if (n instanceof NumberLiteral) {\n      ret = transformNumberAsString((NumberLiteral) n);\n      ret.putBooleanProp(Node.QUOTED_PROP, true);\n      ret = transformStringAsString((StringLiteral) n);\n      ret.putBooleanProp(Node.QUOTED_PROP, true);\n    } else {\n      ret = transform(n);\n      ret.putBooleanProp(Node.QUOTED_PROP, true);\n      ret = transformStringAsString((StringLiteral) n);\n      ret.putBooleanProp(Node.QUOTED_PROP, true);\n    }\n    Preconditions.checkState(ret.isString());\n    return ret;\n"
+    },
+    {
+        "id": 1251,
+        "line": 538,
+        "precode": "    while (n > 0) {",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    while (n == 0) {"
+    },
+    {
+        "id": 1252,
+        "line": 538,
+        "precode": "      n = n >>> 1;",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "      n = n >>> 2;"
+    },
+    {
+        "id": 1253,
+        "line": 538,
+        "precode": "    }",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    }"
+    },
+    {
+        "id": 1255,
+        "line": 538,
+        "precode": "    while (n > 0) {",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    while (n == 0) {"
+    },
+    {
+        "id": 1256,
+        "line": 538,
+        "precode": "      n = n >>> 1;",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "      n = n >>> 2;"
+    },
+    {
+        "id": 1257,
+        "line": 538,
+        "precode": "    }",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    n = 1;"
+    },
+    {
+        "id": 1259,
+        "line": 538,
+        "precode": "    while (n > 0) {",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    while (n == 0) {"
+    },
+    {
+        "id": 1260,
+        "line": 538,
+        "precode": "      n = n >>> 1;",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "      n = n >>> 2;"
+    },
+    {
+        "id": 1261,
+        "line": 538,
+        "precode": "    }",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "    n = 2;"
+    },
+    {
+        "id": 1283,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno());int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1284,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno());int lparenCharno = functionNode.getLp() - functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1285,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() + 1);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1286,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() - 1);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1287,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() * 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1288,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() / 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1289,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() % 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1290,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() << 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1291,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() >> 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1292,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() >>> 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1293,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() & 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1294,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() | 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1295,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() ^ 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1296,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() && 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1297,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() || 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1298,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno()? 2 : 3);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    },
+    {
+        "id": 1299,
+        "line": 1005,
+        "precode": "Node lp = newNode(Token.PARAM_LIST);",
+        "filepath": "defects4j_fixed/Closure/Closure_122_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node lp = newNode(Token.PARAM_LIST);lp.setLineno(functionNode.getLineno() : 2);int lparenCharno = functionNode.getLp() + functionNode.getAbsolutePosition();lp.setCharno(position2charno(lparenCharno));"
+    }
+]

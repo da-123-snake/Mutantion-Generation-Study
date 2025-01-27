@@ -1,0 +1,37 @@
+[
+    {
+        "id": 672,
+        "line": 185,
+        "precode": "script.addChildToFront(IR.var(IR.name(moduleName), IR.objectlit())",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "script.addChildToFront(IR.var(IR.name(moduleName), IR.stringlit(\"default\"))"
+    },
+    {
+        "id": 675,
+        "line": 195,
+        "precode": "IR.call(IR.getprop(IR.name(\"goog\"), IR.string(\"provide\"))",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "IR.call(IR.getprop(IR.name(\"goog\"), IR.string(\"require\"))"
+    },
+    {
+        "id": 676,
+        "line": 20,
+        "precode": "NodeTraversal.traverse(compiler, script, new SuffixVarsCallback(moduleName));",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "NodeTraversal.traverse(compiler, script, new SuffixVarsCallback(moduleName + \"_suffix\"));"
+    },
+    {
+        "id": 679,
+        "line": 194,
+        "precode": "script.addChildToFront(IR.exprResult(",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "script.addChildToFront(IR.exprResult(IR.call(IR.getprop(IR.name(\"goog\"), IR.string(\"provide\"))));"
+    },
+    {
+        "id": 1887,
+        "line": 188,
+        "precode": "CompilerInput ci = t.getInput();",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "CompilerInput ci = t.getInput().clone();"
+    }
+]

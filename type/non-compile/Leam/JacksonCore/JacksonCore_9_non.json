@@ -1,0 +1,205 @@
+[
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        return defaultValue;",
+        "line": 261,
+        "aftercode": ""
+    },
+    {
+        "id": 23,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (t == JsonToken.VALUE_NUMBER_INT) {",
+        "line": 315,
+        "aftercode": "JsonToken t = _currToken;"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (_hasTextualNull(str)) {",
+        "line": 291,
+        "aftercode": "if(str){"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (\"true\".equals(str)) {",
+        "line": 235,
+        "aftercode": "if(\"null\"){"
+    },
+    {
+        "id": 23,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (t == JsonToken.VALUE_NUMBER_FLOAT) {",
+        "line": 318,
+        "aftercode": "JsonToken t = _currToken;"
+    },
+    {
+        "id": 20,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (_currToken == JsonToken.VALUE_STRING) {",
+        "line": 389,
+        "aftercode": "if(_currToken){"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (t == JsonToken.VALUE_NUMBER_INT) {",
+        "line": 281,
+        "aftercode": "JsonToken t = _currToken;"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                break;",
+        "line": 251,
+        "aftercode": "package com.fasterxml.jackson.core.base;\n\nimport java.io.IOException;\n\nimport com.fasterxml.jackson.core.*;\nimport com.fasterxml.jackson.core.JsonParser.Feature;\nimport com.fasterxml.jackson.core.io.NumberInput;\nimport com.fasterxml.jackson.core.util.ByteArrayBuilder;\nimport com.fasterxml.jackson.core.util.VersionUtil;\n\nimport static com.fasterxml.jackson.core.JsonTokenId.*;\n\n/**\n * Intermediate base class used by all Jackson {@link JsonParser}\n * implementations, but does not add any additional fields that depend\n * on particular method of obtaining input.\n *<p>\n * Note that 'minimal' here mostly refers to minimal number of fields\n * (size) and functionality that is specific to certain types\n * of parser implementations; but not necessarily to number of methods.\n */\npublic abstract class ParserMinimalBase extends JsonParser\n{\n    // Control chars:\n    protected final static int INT_TAB = '\\t';\n    protected final static int INT_LF = '\\n';\n    protected final static int INT_CR = '\\r';\n    protected final static int INT_SPACE = 0x0020;\n\n    // Markup\n    protected final static int INT_LBRACKET = '[';\n    protected final static int INT_RBRACKET = ']';\n    protected final static int INT_LCURLY = '{';\n    protected final static int INT_RCURLY = '}';\n    protected final static int INT_QUOTE = '\"';\n    protected final static int INT_BACKSLASH = '\\\\';\n    protected final static int INT_SLASH = '/';\n    protected final static int INT_COLON = ':';\n    protected final static int INT_COMMA = ',';\n    protected final static int INT_HASH = '#';\n\n    // fp numbers\n    protected final static int INT_PERIOD = '.';\n    protected final static int INT_e = 'e';\n    protected final static int INT_E = 'E';\n\n    /*\n    /**********************************************************\n    /* Minimal generally useful state\n    /**********************************************************\n     */\n    \n    /**\n     * Last token retrieved via {@link #nextToken}, if any.\n     * Null before the first call to <code>nextToken()</code>,\n     * as well as if token has been explicitly cleared\n     */\n    protected JsonToken _currToken;\n\n    /**\n     * Last cleared token, if any: that is, value that was in\n     * effect when {@link #clearCurrentToken} was called.\n     */\n    protected JsonToken _lastClearedToken;\n\n    /*\n    /**********************************************************\n    /* Life-cycle\n    /**********************************************************\n     */\n\n    protected ParserMinimalBase() { }\n    protected ParserMinimalBase(int features) { super(features); }\n\n    // NOTE: had base impl in 2.3 and before; but shouldn't\n    // public abstract Version version();\n\n    /*\n    /**********************************************************\n    /* Configuration overrides if any\n    /**********************************************************\n     */\n\n    // from base class:\n\n    //public void enableFeature(Feature f)\n    //public void disableFeature(Feature f)\n    //public void setFeature(Feature f, boolean state)\n    //public boolean isFeatureEnabled(Feature f)\n\n    /*\n    /**********************************************************\n    /* JsonParser impl\n    /**********************************************************\n     */\n\n    @Override public abstract JsonToken nextToken() throws IOException;\n    @Override public JsonToken getCurrentToken() { return _currToken; }\n\n    @Override public final int getCurrentTokenId() {\n        final JsonToken t = _currToken;\n        return (t == null) ? JsonTokenId.ID_NO_TOKEN : t.id();\n    }\n\n    @Override public boolean hasCurrentToken() { return _currToken != null; }\n    @Override public boolean hasTokenId(int id) {\n        final JsonToken t = _currToken;\n        if (t == null) {\n            return (JsonTokenId.ID_NO_TOKEN == id);\n        }\n        return t.id() == id;\n    }\n\n    @Override public final boolean hasToken(JsonToken t) {\n        return (_currToken == t);\n    }\n    \n    @Override public boolean isExpectedStartArrayToken() { return _currToken == JsonToken.START_ARRAY; }\n    @Override public boolean isExpectedStartObjectToken() { return _currToken == JsonToken.START_OBJECT; }\n    \n    @Override\n    public JsonToken nextValue() throws IOException {\n        /* Implementation should be as trivial as follows; only\n         * needs to change if we are to skip other tokens (for\n         * example, if comments were exposed as tokens)\n         */\n        JsonToken t = nextToken();\n        if (t == JsonToken.FIELD_NAME) {\n            t = nextToken();\n        }\n        return t;\n    }\n\n    @Override\n    public JsonParser skipChildren() throws IOException\n    {\n        if (_currToken != JsonToken.START_OBJECT\n            && _currToken != JsonToken.START_ARRAY) {\n            return this;\n        }\n        int open = 1;\n\n        /* Since proper matching of start/end markers is handled\n         * by nextToken(), we'll just count nesting levels here\n         */\n        while (true) {\n            JsonToken t = nextToken();\n            if (t == null) {\n                _handleEOF();\n                /* given constraints, above should never return;\n                 * however, FindBugs doesn't know about it and\n                 * complains... so let's add dummy break here\n                 */\n                return this;\n            }\n            if (t.isStructStart()) {\n                ++open;\n            } else if (t.isStructEnd()) {\n                if (--open == 0) {\n                    return this;\n                }\n            }\n        }\n    }\n\n    /**\n     * Method sub-classes need to implement\n     */\n    protected abstract void _handleEOF() throws JsonParseException;\n\n    //public JsonToken getCurrentToken()\n    //public boolean hasCurrentToken()\n\n    @Override public abstract String getCurrentName() throws IOException;\n    @Override public abstract void close() throws IOException;\n    @Override public abstract boolean isClosed();\n\n    @Override public abstract JsonStreamContext getParsingContext();\n\n//    public abstract JsonLocation getTokenLocation();\n\n//   public abstract JsonLocation getCurrentLocation();\n\n    /*\n    /**********************************************************\n    /* Public API, token state overrides\n    /**********************************************************\n     */\n\n    @Override public void clearCurrentToken() {\n        if (_currToken != null) {\n            _lastClearedToken = _currToken;\n            _currToken = null;\n        }\n    }\n\n    @Override public JsonToken getLastClearedToken() { return _lastClearedToken; }\n\n    @Override public abstract void overrideCurrentName(String name);\n    \n    /*\n    /**********************************************************\n    /* Public API, access to token information, text\n    /**********************************************************\n     */\n\n    @Override public abstract String getText() throws IOException;\n    @Override public abstract char[] getTextCharacters() throws IOException;\n    @Override public abstract boolean hasTextCharacters();\n    @Override public abstract int getTextLength() throws IOException;\n    @Override public abstract int getTextOffset() throws IOException;  \n\n    /*\n    /**********************************************************\n    /* Public API, access to token information, binary\n    /**********************************************************\n     */\n\n    @Override public abstract byte[] getBinaryValue(Base64Variant b64variant) throws IOException;\n\n    /*\n    /**********************************************************\n    /* Public API, access with conversion/coercion\n    /**********************************************************\n     */\n\n    @Override\n    public boolean getValueAsBoolean(boolean defaultValue) throws IOException\n    {\n        JsonToken t = _currToken;\n        if (t != null) {\n            switch (t.id()) {\n            case ID_STRING:\n                String str = getText().trim();\n                if (\"true\".equals(str)) {\n                    return true;\n                }\n                if (\"false\".equals(str)) {\n                    return false;\n                }\n                if (_hasTextualNull(str)) {\n                    return false;\n                }\n                break;\n            case ID_NUMBER_INT:\n                return getIntValue() != 0;\n            case ID_TRUE:\n                return true;\n            case ID_FALSE:\n            case ID_NULL:\n                return false;\n            case ID_EMBEDDED_OBJECT:\n                Object value = this.getEmbeddedObject();\n                if (value instanceof Boolean) {\n                    return (Boolean) value;\n                }\nif((value instanceof Boolean)){\n                break;            default:\n}\n            }\n        }\n        return defaultValue;\n    }\n\n    @Override\n    public int getValueAsInt() throws IOException\n    {\n        JsonToken t = _currToken;\n        if (t == JsonToken.VALUE_NUMBER_INT) {\n            return getIntValue();\n        }\n        if (t == JsonToken.VALUE_NUMBER_FLOAT) {\n            return getIntValue();\n        }\n        return getValueAsInt(0);\n    }\n\n    @Override\n    public int getValueAsInt(int defaultValue) throws IOException\n    {\n        JsonToken t = _currToken;\n        if (t == JsonToken.VALUE_NUMBER_INT) {\n            return getIntValue();\n        }\n        if (t == JsonToken.VALUE_NUMBER_FLOAT) {\n            return getIntValue();\n        }\n        if (t != null) {\n            switch (t.id()) {\n            case ID_STRING:\n                String str = getText();\n                if (_hasTextualNull(str)) {\n                    return 0;\n                }\n                return NumberInput.parseAsInt(str, defaultValue);\n            case ID_TRUE:\n                return 1;\n            case ID_FALSE:\n                return 0;\n            case ID_NULL:\n                return 0;\n            case ID_EMBEDDED_OBJECT:\n                Object value = this.getEmbeddedObject();\n                if (value instanceof Number) {\n                    return ((Number) value).intValue();\n                }\n            }\n        }\n        return defaultValue;\n    }\n\n    @Override\n    public long getValueAsLong() throws IOException\n    {\n        JsonToken t = _currToken;\n        if (t == JsonToken.VALUE_NUMBER_INT) {\n            return getLongValue();\n        }\n        if (t == JsonToken.VALUE_NUMBER_FLOAT) {\n            return getLongValue();\n        }\n        return getValueAsLong(0L);\n    }\n    \n    @Override\n    public long getValueAsLong(long defaultValue) throws IOException\n    {\n        JsonToken t = _currToken;\n        if (t == JsonToken.VALUE_NUMBER_INT) {\n            return getLongValue();\n        }\n        if (t == JsonToken.VALUE_NUMBER_FLOAT) {\n            return getLongValue();\n        }\n        if (t != null) {\n            switch (t.id()) {\n            case ID_STRING:\n                String str = getText();\n                if (_hasTextualNull(str)) {\n                    return 0L;\n                }\n                return NumberInput.parseAsLong(str, defaultValue);\n            case ID_TRUE:\n                return 1L;\n            case ID_FALSE:\n            case ID_NULL:\n                return 0L;\n            case ID_EMBEDDED_OBJECT:\n                Object value = this.getEmbeddedObject();\n                if (value instanceof Number) {\n                    return ((Number) value).longValue();\n                }\n            }\n        }\n        return defaultValue;\n    }\n\n    @Override\n    public double getValueAsDouble(double defaultValue) throws IOException\n    {\n        JsonToken t = _currToken;\n        if (t != null) {\n            switch (t.id()) {\n            case ID_STRING:\n                String str = getText();\n                if (_hasTextualNull(str)) {\n                    return 0L;\n                }\n                return NumberInput.parseAsDouble(str, defaultValue);\n            case ID_NUMBER_INT:\n            case ID_NUMBER_FLOAT:\n                return getDoubleValue();\n            case ID_TRUE:\n                return 1.0;\n            case ID_FALSE:\n            case ID_NULL:\n                return 0.0;\n            case ID_EMBEDDED_OBJECT:\n                Object value = this.getEmbeddedObject();\n                if (value instanceof Number) {\n                    return ((Number) value).doubleValue();\n                }\n            }\n        }\n        return defaultValue;\n    }\n\n    @Override\n    public String getValueAsString() throws IOException {\n        if (_currToken == JsonToken.VALUE_STRING) {\n            return getText();\n        }\n        if (_currToken == JsonToken.FIELD_NAME) {\n            return getCurrentName();\n        }\n        return getValueAsString(null);\n    }\n    \n    @Override\n    public String getValueAsString(String defaultValue) throws IOException {\n        if (_currToken == JsonToken.VALUE_STRING) {\n            return getText();\n        }\n        if (_currToken == JsonToken.FIELD_NAME) {\n            return getCurrentName();\n        }\n        if (_currToken == null || _currToken == JsonToken.VALUE_NULL || !_currToken.isScalarValue()) {\n            return defaultValue;\n        }\n        return getText();\n    }\n    \n    /*\n    /**********************************************************\n    /* Base64 decoding\n    /**********************************************************\n     */\n\n    /**\n     * Helper method that can be used for base64 decoding in cases where\n     * encoded content has already been read as a String.\n     */\n    protected void _decodeBase64(String str, ByteArrayBuilder builder, Base64Variant b64variant) throws IOException\n    {\n        // just call helper method introduced in 2.2.3\n        try {\n            b64variant.decode(str, builder);\n        } catch (IllegalArgumentException e) {\n            _reportError(e.getMessage());\n        }\n    }\n\n    /**\n     * @param bindex Relative index within base64 character unit; between 0\n     *   and 3 (as unit has exactly 4 characters)\n     *   \n     * @deprecated in 2.2.3; should migrate away\n     */\n    @Deprecated\n    protected void _reportInvalidBase64(Base64Variant b64variant, char ch, int bindex, String msg)\n        throws JsonParseException\n    {\n        String base;\n        if (ch <= INT_SPACE) {\n            base = \"Illegal white space character (code 0x\"+Integer.toHexString(ch)+\") as character #\"+(bindex+1)+\" of 4-char base64 unit: can only used between units\";\n        } else if (b64variant.usesPaddingChar(ch)) {\n            base = \"Unexpected padding character ('\"+b64variant.getPaddingChar()+\"') as character #\"+(bindex+1)+\" of 4-char base64 unit: padding only legal as 3rd or 4th character\";\n        } else if (!Character.isDefined(ch) || Character.isISOControl(ch)) {\n            // Not sure if we can really get here... ? (most illegal xml chars are caught at lower level)\n            base = \"Illegal character (code 0x\"+Integer.toHexString(ch)+\") in base64 content\";\n        } else {\n            base = \"Illegal character '\"+ch+\"' (code 0x\"+Integer.toHexString(ch)+\") in base64 content\";\n        }\n        if (msg != null) {\n            base = base + \": \" + msg;\n        }\n        throw _constructError(base);\n    }\n\n    /**\n     *   \n     * @deprecated in 2.2.3; should migrate away\n     */\n    @Deprecated\n    protected void _reportBase64EOF() throws JsonParseException {\n        throw _constructError(\"Unexpected end-of-String in base64 content\");\n    }\n\n    /*\n    /**********************************************************\n    /* Coercion helper methods (overridable)\n    /**********************************************************\n     */\n    \n    /**\n     * Helper method used to determine whether we are currently pointing to\n     * a String value of \"null\" (NOT a null token); and, if so, that parser\n     * is to recognize and return it similar to if it was real null token.\n     * \n     * @since 2.3\n     */\n    protected boolean _hasTextualNull(String value) { return \"null\".equals(value); }\n    \n    /*\n    /**********************************************************\n    /* Error reporting\n    /**********************************************************\n     */\n    \n    protected void _reportUnexpectedChar(int ch, String comment) throws JsonParseException\n    {\n        if (ch < 0) { // sanity check\n            _reportInvalidEOF();\n        }\n        String msg = \"Unexpected character (\"+_getCharDesc(ch)+\")\";\n        if (comment != null) {\n            msg += \": \"+comment;\n        }\n        _reportError(msg);\n    }\n\n    protected void _reportInvalidEOF() throws JsonParseException {\n        _reportInvalidEOF(\" in \"+_currToken);\n    }\n\n    protected void _reportInvalidEOF(String msg) throws JsonParseException {\n        _reportError(\"Unexpected end-of-input\"+msg);\n    }\n\n    protected void _reportInvalidEOFInValue() throws JsonParseException {\n        _reportInvalidEOF(\" in a value\");\n    }\n\n    protected void _reportMissingRootWS(int ch) throws JsonParseException {\n        _reportUnexpectedChar(ch, \"Expected space separating root-level values\");\n    }\n    \n    protected void _throwInvalidSpace(int i) throws JsonParseException {\n        char c = (char) i;\n        String msg = \"Illegal character (\"+_getCharDesc(c)+\"): only regular white space (\\\\r, \\\\n, \\\\t) is allowed between tokens\";\n        _reportError(msg);\n    }\n\n    /**\n     * Method called to report a problem with unquoted control character.\n     * Note: starting with version 1.4, it is possible to suppress\n     * exception by enabling {@link Feature#ALLOW_UNQUOTED_CONTROL_CHARS}.\n     */\n    protected void _throwUnquotedSpace(int i, String ctxtDesc) throws JsonParseException {\n        // JACKSON-208; possible to allow unquoted control chars:\n        if (!isEnabled(Feature.ALLOW_UNQUOTED_CONTROL_CHARS) || i > INT_SPACE) {\n            char c = (char) i;\n            String msg = \"Illegal unquoted character (\"+_getCharDesc(c)+\"): has to be escaped using backslash to be included in \"+ctxtDesc;\n            _reportError(msg);\n        }\n    }\n\n    protected char _handleUnrecognizedCharacterEscape(char ch) throws JsonProcessingException {\n        // as per [JACKSON-300]\n        if (isEnabled(Feature.ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER)) {\n            return ch;\n        }\n        // and [JACKSON-548]\n        if (ch == '\\'' && isEnabled(Feature.ALLOW_SINGLE_QUOTES)) {\n            return ch;\n        }\n        _reportError(\"Unrecognized character escape \"+_getCharDesc(ch));\n        return ch;\n    }\n    \n    /*\n    /**********************************************************\n    /* Error reporting, generic\n    /**********************************************************\n     */\n\n    protected final static String _getCharDesc(int ch)\n    {\n        char c = (char) ch;\n        if (Character.isISOControl(c)) {\n            return \"(CTRL-CHAR, code \"+ch+\")\";\n        }\n        if (ch > 255) {\n            return \"'\"+c+\"' (code \"+ch+\" / 0x\"+Integer.toHexString(ch)+\")\";\n        }\n        return \"'\"+c+\"' (code \"+ch+\")\";\n    }\n\n    protected final void _reportError(String msg) throws JsonParseException {\n        throw _constructError(msg);\n    }\n\n    protected final void _wrapError(String msg, Throwable t) throws JsonParseException {\n        throw _constructError(msg, t);\n    }\n\n    protected final void _throwInternal() {\n        VersionUtil.throwInternal();\n    }\n\n    protected final JsonParseException _constructError(String msg, Throwable t) {\n        return new JsonParseException(msg, getCurrentLocation(), t);\n    }\n\n    protected static byte[] _asciiBytes(String str) {\n        byte[] b = new byte[str.length()];\n        for (int i = 0, len = str.length(); i < len; ++i) {\n            b[i] = (byte) str.charAt(i);\n        }\n        return b;\n    }\n    \n    protected static String _ascii(byte[] b) {\n        try {\n            return new String(b, \"US-ASCII\");\n        } catch (IOException e) { // never occurs\n            throw new RuntimeException(e);\n        }\n    }\n}"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (_hasTextualNull(str)) {",
+        "line": 241,
+        "aftercode": "if(str){"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (t != null) {",
+        "line": 287,
+        "aftercode": "String str = getText();"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (_hasTextualNull(str)) {",
+        "line": 241,
+        "aftercode": "if(\"null\"){"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (\"false\".equals(str)) {",
+        "line": 238,
+        "aftercode": "if(\"null\"){"
+    },
+    {
+        "id": 23,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        return getValueAsLong(0L);",
+        "line": 321,
+        "aftercode": "getValueAsLong(0L);"
+    },
+    {
+        "id": 20,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (_currToken == JsonToken.FIELD_NAME) {",
+        "line": 392,
+        "aftercode": "if(_currToken){"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        return defaultValue;",
+        "line": 261,
+        "aftercode": ""
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (_hasTextualNull(str)) {",
+        "line": 241,
+        "aftercode": "if((value instanceof Boolean)){"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (\"false\".equals(str)) {",
+        "line": 238,
+        "aftercode": "if((value instanceof Boolean)){"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (t == JsonToken.VALUE_NUMBER_FLOAT) {",
+        "line": 284,
+        "aftercode": "JsonToken t = _currToken;"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                break;",
+        "line": 257,
+        "aftercode": "(Boolean)value;"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        return defaultValue;",
+        "line": 261,
+        "aftercode": ""
+    },
+    {
+        "id": 20,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        return getValueAsString(null);",
+        "line": 395,
+        "aftercode": "getValueAsString(null);"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (_hasTextualNull(str)) {",
+        "line": 241,
+        "aftercode": "Object value = this.getEmbeddedObject();"
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (\"true\".equals(str)) {",
+        "line": 235,
+        "aftercode": "if((value instanceof Boolean)){"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        return defaultValue;",
+        "line": 261,
+        "aftercode": ""
+    },
+    {
+        "id": 21,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (t != null) {",
+        "line": 231,
+        "aftercode": "JsonToken t = _currToken;"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (t != null) {",
+        "line": 287,
+        "aftercode": "if(_hasTextualNull(str)){"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "                if (_hasTextualNull(str)) {",
+        "line": 291,
+        "aftercode": "if(t){"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        if (t == JsonToken.VALUE_NUMBER_FLOAT) {",
+        "line": 284,
+        "aftercode": "String str = getText();"
+    },
+    {
+        "id": 22,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/JacksonCore/JacksonCore_9_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserMinimalBase.java",
+        "precode": "        return defaultValue;",
+        "line": 261,
+        "aftercode": ""
+    }
+]

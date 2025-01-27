@@ -1,0 +1,282 @@
+[
+    {
+        "id": 15,
+        "line": 218,
+        "precode": "return StringUtils.EMPTY;",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\";"
+    },
+    {
+        "id": 18,
+        "line": 218,
+        "precode": "if (className.startsWith(\"[\"])) {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "if (className.charAt(0) == '[') {"
+    },
+    {
+        "id": 19,
+        "line": 218,
+        "precode": "while (className.charAt(0) == '[') {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "while (className.startsWith(\"[\"])) {"
+    },
+    {
+        "id": 21,
+        "line": 218,
+        "precode": "if (className.charAt(0) == 'L' && className.charAt(className.length() - 1) == ';') {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "if (className.startsWith(\"L\") && className.endsWith(\";\")) {"
+    },
+    {
+        "id": 22,
+        "line": 218,
+        "precode": "className = className.substring(1, className.length() - 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "className = className.substring(1);"
+    },
+    {
+        "id": 23,
+        "line": 218,
+        "precode": "arrayPrefix.append(\"[]\");",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "arrayPrefix.append(\"[]\");"
+    },
+    {
+        "id": 24,
+        "line": 218,
+        "precode": "if (reverseAbbreviationMap.containsKey(className)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "if (reverseAbbreviationMap.containsValue(className)) {"
+    },
+    {
+        "id": 25,
+        "line": 218,
+        "precode": "if (reverseAbbreviationMap.containsKey(className)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "if (reverseAbbreviationMap.contains(className)) {"
+    },
+    {
+        "id": 26,
+        "line": 218,
+        "precode": "int lastDotIdx = className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "int lastDotIdx = className.lastIndexOf(\".\");"
+    },
+    {
+        "id": 27,
+        "line": 218,
+        "precode": "int innerIdx = className.indexOf(INNER_CLASS_SEPARATOR_CHAR, lastDotIdx == -1? 0 : lastDotIdx + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "int innerIdx = className.indexOf(\"$\", lastDotIdx == -1? 0 : lastDotIdx + 1); // Changed INNER_CLASS_SEPARATOR_CHAR to '$'"
+    },
+    {
+        "id": 28,
+        "line": 218,
+        "precode": "String out = className.substring(lastDotIdx + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "String out = className.substring(lastDotIdx + 1).toLowerCase();"
+    },
+    {
+        "id": 29,
+        "line": 218,
+        "precode": "if (innerIdx!= -1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "if (innerIdx!= -1) {"
+    },
+    {
+        "id": 30,
+        "line": 218,
+        "precode": "out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "out = out.replace(\"$\", \".\"); // Changed INNER_CLASS_SEPARATOR_CHAR to \".\""
+    },
+    {
+        "id": 31,
+        "line": 218,
+        "precode": "return out + arrayPrefix;",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return out + arrayPrefix.toString();"
+    },
+    {
+        "id": 32,
+        "line": 218,
+        "precode": "return StringUtils.EMPTY;",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\";"
+    },
+    {
+        "id": 33,
+        "line": 218,
+        "precode": "if (innerIdx!= -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR);\nreturn out + arrayPrefix;\n}"
+    },
+    {
+        "id": 34,
+        "line": 218,
+        "precode": "if (innerIdx!= -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR); return out + arrayPrefix;\n}"
+    },
+    {
+        "id": 35,
+        "line": 218,
+        "precode": "if (innerIdx!= -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR); return out + arrayPrefix;\n}"
+    },
+    {
+        "id": 36,
+        "line": 218,
+        "precode": "if (innerIdx!= -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR);return out + arrayPrefix;\n}"
+    },
+    {
+        "id": 37,
+        "line": 218,
+        "precode": "if (innerIdx!= -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR);return out + arrayPrefix;\n}"
+    },
+    {
+        "id": 38,
+        "line": 218,
+        "precode": "if (innerIdx!= -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR);return out + arrayPrefix;\n}"
+    },
+    {
+        "id": 39,
+        "line": 218,
+        "precode": "if (innerIdx!= -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR);return out + arrayPrefix;\n}"
+    },
+    {
+        "id": 40,
+        "line": 277,
+        "precode": "if (className == null || className.length() == 0) {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 41,
+        "line": 277,
+        "precode": "while (className.charAt(0) == '[') {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 42,
+        "line": 277,
+        "precode": "if (className.charAt(0) == 'L' && className.charAt(className.length() - 1) == ';') {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 43,
+        "line": 277,
+        "precode": "int i = className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return className.substring(0, i);"
+    },
+    {
+        "id": 44,
+        "line": 277,
+        "precode": "if (i == -1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 45,
+        "line": 277,
+        "precode": "if (className == null || className.length() == 0) {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 46,
+        "line": 277,
+        "precode": "while (className.charAt(0) == '[') {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 47,
+        "line": 277,
+        "precode": "if (className.charAt(0) == 'L' && className.charAt(className.length() - 1) == ';') {",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 48,
+        "line": 277,
+        "precode": "String result = className.substring(0, i);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return result;"
+    },
+    {
+        "id": 49,
+        "line": 277,
+        "precode": "return result;",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 50,
+        "line": 277,
+        "precode": "return className.substring(i + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 51,
+        "line": 277,
+        "precode": "return className.substring(i + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 52,
+        "line": 277,
+        "precode": "return className.substring(i + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 53,
+        "line": 277,
+        "precode": "return className.substring(i + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 54,
+        "line": 277,
+        "precode": "return className.substring(i + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 55,
+        "line": 277,
+        "precode": "return className.substring(i + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 56,
+        "line": 277,
+        "precode": "return className.substring(i + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    },
+    {
+        "id": 57,
+        "line": 277,
+        "precode": "return className.substring(i + 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_41_fixed/src/java/org/apache/commons/lang/ClassUtils.java",
+        "aftercode": "return \"\""
+    }
+]

@@ -1,0 +1,93 @@
+[
+    {
+        "id": 321,
+        "line": 1663,
+        "precode": "returnType = getNativeType(VOID_TYPE);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "returnType = getInstanceType(VOID_TYPE);"
+    },
+    {
+        "id": 325,
+        "line": 1663,
+        "precode": "returnType = getNativeType(VOID_TYPE);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "returnType = getNativeType(ANY_TYPE);"
+    },
+    {
+        "id": 468,
+        "line": 1572,
+        "precode": "functionType.getReturnType().isUnknownType() ||",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "functionType.getReturnType().isVoidType() &&"
+    },
+    {
+        "id": 478,
+        "line": 1546,
+        "precode": "JSType childType = getJSType(child).restrictByNotNullOrUndefined();",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "JSType childType = getJSType(child).restrictByNotUndefined();"
+    },
+    {
+        "id": 1243,
+        "line": 514,
+        "precode": "if (!NodeUtil.isObjectLitKey(n, n.getParent())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "if (NodeUtil.isObjectLitKey(n, n.getParent())) { ensureTyped(t, n, STRING_TYPE); }"
+    },
+    {
+        "id": 1245,
+        "line": 583,
+        "precode": "ensureTyped(t, n, STRING_TYPE);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, n, ANY_TYPE);"
+    },
+    {
+        "id": 1249,
+        "line": 514,
+        "precode": "if (!NodeUtil.isObjectLitKey(n, n.getParent())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "if (!NodeUtil.isObjectLitKey(n, n.getParent())) { ensureTyped(t, n, STRING_TYPE); ensureTyped(t, n, BOOLEAN_TYPE); }"
+    },
+    {
+        "id": 1285,
+        "line": 1585,
+        "precode": "report(t, n, EXPECTED_THIS_TYPE, functionType.toString());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "report(t, n, EXPECTED_THIS_TYPE, functionType.getName());"
+    },
+    {
+        "id": 1286,
+        "line": 1588,
+        "precode": "visitParameterList(t, n, functionType);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "visitParameterList(t, n, childType);"
+    },
+    {
+        "id": 1287,
+        "line": 1589,
+        "precode": "ensureTyped(t, n, functionType.getReturnType());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, n, JSType.UNKNOWN);"
+    },
+    {
+        "id": 1288,
+        "line": 1582,
+        "precode": "!functionType.getTypeOfThis().isNativeObjectType() &&",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "!functionType.getTypeOfThis().isBaseType() &&"
+    },
+    {
+        "id": 1290,
+        "line": 1589,
+        "precode": "ensureTyped(t, n, functionType.getReturnType());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, n, child.getType().getReturnType());"
+    },
+    {
+        "id": 1776,
+        "line": 1407,
+        "precode": "Node constructor = n.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "Node constructor = n.getSecondChild();"
+    }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "id": 256,
+        "line": 824,
+        "precode": "text = padding + text.substring(pos).trim();",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "text = padding.repeat(2) + text.substring(pos).trim();"
+    },
+    {
+        "id": 274,
+        "line": 27,
+        "precode": "if ((text.length() > width) && (pos == nextLineTabStop - 1))",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if ((text.length() <= width) || (pos != nextLineTabStop - 1))"
+    },
+    {
+        "id": 281,
+        "line": 27,
+        "precode": "if ((text.length() > width) && (pos == nextLineTabStop - 1))",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if ((text.length() <= width) || (pos != nextLineTabStop - 1))"
+    },
+    {
+        "id": 365,
+        "line": 1,
+        "precode": "public void printHelp(PrintWriter pw, int width, String cmdLineSyntax, String header, Options options, int leftPad, int descPad, String footer)",
+        "aftercode": "public void printHelp(PrintWriter pw, int width, String cmdLineSyntax, String header, Options options, int leftPad, int descPad, String footer, boolean extraParam)",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java"
+    },
+    {
+        "id": 368,
+        "line": 441,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, 0);",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java"
+    },
+    {
+        "id": 369,
+        "line": 441,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, null);",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java"
+    },
+    {
+        "id": 370,
+        "line": 441,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, \"false\");",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java"
+    },
+    {
+        "id": 371,
+        "line": 441,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, 1);",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java"
+    },
+    {
+        "id": 372,
+        "line": 441,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, -1);",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java"
+    },
+    {
+        "id": 373,
+        "line": 441,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, new Object());",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java"
+    },
+    {
+        "id": 374,
+        "line": 441,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, 'f');",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java"
+    },
+    {
+        "id": 377,
+        "line": 508,
+        "precode": "final Collection processedGroups = new ArrayList();",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "final Collection processedGroups = new HashSet();"
+    },
+    {
+        "id": 378,
+        "line": 511,
+        "precode": "Option option;",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "Object option;"
+    },
+    {
+        "id": 379,
+        "line": 513,
+        "precode": "List optList = new ArrayList(options.getOptions());",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "List optList = new LinkedList(options.getOptions());"
+    },
+    {
+        "id": 381,
+        "line": 505,
+        "precode": "StringBuffer buff = new StringBuffer(defaultSyntaxPrefix).append(app).append(\" \");",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "StringBuilder buff = new StringBuilder(defaultSyntaxPrefix).append(app).append(\" \");"
+    },
+    {
+        "id": 383,
+        "line": 513,
+        "precode": "List optList = new ArrayList(options.getOptions());",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "Collection optList = new ArrayList(options.getOptions());"
+    }
+]

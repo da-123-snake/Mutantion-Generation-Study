@@ -1,0 +1,107 @@
+[
+    {
+        "id": 537,
+        "line": 1328,
+        "precode": "for (CompilerInput input : inputs) {",
+        "aftercode": "for (int i = 0; i < inputs.size(); i++) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java"
+    },
+    {
+        "id": 538,
+        "line": 1293,
+        "precode": "getTypeRegistry().forwardDeclareType(provide);",
+        "aftercode": "getTypeRegistry().declareType(provide);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java"
+    },
+    {
+        "id": 539,
+        "line": 54,
+        "precode": "inputs = (moduleGraph == null ? new JSModuleGraph(modules) : moduleGraph).manageDependencies(options.dependencyOptions, inputs);",
+        "aftercode": "inputs = moduleGraph.manageDependencies(options.dependencyOptions, inputs);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java"
+    },
+    {
+        "id": 541,
+        "line": 59,
+        "precode": "report(JSError.make(JSModule.CIRCULAR_DEPENDENCY_ERROR, e.getMessage()));",
+        "aftercode": "report(JSError.make(MISSING_ENTRY_ERROR, e.getMessage()));",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java"
+    },
+    {
+        "id": 1370,
+        "line": 1432,
+        "precode": "fillEmptyModules(modules);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "fillEmptyModules(new ArrayList<>());"
+    },
+    {
+        "id": 1371,
+        "line": 1433,
+        "precode": "rebuildInputsFromModules();",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "rebuildInputsFromModules(true);"
+    },
+    {
+        "id": 1372,
+        "line": 1432,
+        "precode": "fillEmptyModules(modules);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "fillEmptyModules(Collections.emptyList());"
+    },
+    {
+        "id": 1373,
+        "line": 1433,
+        "precode": "rebuildInputsFromModules();",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "rebuildInputsFromModules(false);"
+    },
+    {
+        "id": 1374,
+        "line": 1432,
+        "precode": "fillEmptyModules(modules);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "fillEmptyModules(modules.clone());"
+    },
+    {
+        "id": 1375,
+        "line": 1,
+        "precode": "ProcessCommonJSModules cjs = new ProcessCommonJSModules(this, options.commonJSModulePathPrefix);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "ProcessCommonJSModules cjs = new ProcessCommonJSModules(null, options.commonJSModulePathPrefix);"
+    },
+    {
+        "id": 1381,
+        "line": 1514,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "// No operation"
+    },
+    {
+        "id": 1387,
+        "line": 1514,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "// No operation"
+    },
+    {
+        "id": 1388,
+        "line": 1474,
+        "precode": "for (JSModule module : modules) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (JSModule module : Collections.emptyList()) {"
+    },
+    {
+        "id": 1389,
+        "line": 1475,
+        "precode": "for (CompilerInput input : module.getInputs()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (CompilerInput input : Collections.emptyList()) {"
+    },
+    {
+        "id": 1390,
+        "line": 1476,
+        "precode": "for (String require : input.getRequires()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (String require : Collections.emptyList()) {"
+    }
+]

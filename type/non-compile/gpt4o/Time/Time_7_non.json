@@ -1,0 +1,30 @@
+[
+    {
+        "id": 62,
+        "line": 707,
+        "precode": "Chronology chrono = instant.getChronology();",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "Chronology chrono = null;"
+    },
+    {
+        "id": 63,
+        "line": 708,
+        "precode": "int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "int defaultYear = DateTimeUtils.getChronology(chrono).year().get(instantMillis - 1);"
+    },
+    {
+        "id": 66,
+        "line": 712,
+        "precode": "DateTimeParserBucket bucket = new DateTimeParserBucket(",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "DateTimeParserBucket bucket = null;"
+    },
+    {
+        "id": 67,
+        "line": 710,
+        "precode": "chrono = selectChronology(chrono);",
+        "filepath": "defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "chrono = Chronology.getIsoChronology();"
+    }
+]

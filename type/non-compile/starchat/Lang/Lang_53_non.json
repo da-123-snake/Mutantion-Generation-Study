@@ -1,0 +1,219 @@
+[
+    {
+        "id": 197,
+        "line": 745,
+        "precode": "int millisecs = val.get(Calendar.MILLISECOND);",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "int millisecs = (val.get(Calendar.MILLISECOND) & (val.get(Calendar.MILLISECOND) - 1));"
+    },
+    {
+        "id": 198,
+        "line": 745,
+        "precode": "if (!round || millisecs < 500) {",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (!(round || millisecs < 500)) {"
+    },
+    {
+        "id": 199,
+        "line": 745,
+        "precode": "time = time - millisecs;",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "time = time - (millisecs & (millisecs - 1));"
+    },
+    {
+        "id": 200,
+        "line": 745,
+        "precode": "if (field == Calendar.SECOND) {",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.SECOND) {"
+    },
+    {
+        "id": 201,
+        "line": 745,
+        "precode": "int seconds = val.get(Calendar.SECOND);",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "int seconds = (val.get(Calendar.SECOND) & (val.get(Calendar.SECOND) - 1));"
+    },
+    {
+        "id": 202,
+        "line": 745,
+        "precode": "if (!done && (!round || seconds < 30)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (!(done && (round || seconds >= 30))) {"
+    },
+    {
+        "id": 203,
+        "line": 745,
+        "precode": "time = time - (seconds * 1000L);",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "time = time - (seconds & (seconds - 1) * 1000L);"
+    },
+    {
+        "id": 204,
+        "line": 745,
+        "precode": "if (field == Calendar.MINUTE) {",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.MINUTE) {"
+    },
+    {
+        "id": 205,
+        "line": 745,
+        "precode": "int minutes = val.get(Calendar.MINUTE);",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "int minutes = (val.get(Calendar.MINUTE) & (val.get(Calendar.MINUTE) - 1));"
+    },
+    {
+        "id": 210,
+        "line": 745,
+        "precode": "Date date = val.getTime();",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "Date date = new Date(val.getTimeInMillis());"
+    },
+    {
+        "id": 211,
+        "line": 745,
+        "precode": "long time = date.getTime();",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "long time = date.getTime() & (date.getTime() - 1);"
+    },
+    {
+        "id": 214,
+        "line": 745,
+        "precode": "int millisecs = val.get(Calendar.MILLISECOND);",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "int millisecs = (val.get(Calendar.MILLISECOND) ^ (val.get(Calendar.MILLISECOND) - 1));"
+    },
+    {
+        "id": 215,
+        "line": 745,
+        "precode": "if (!round || millisecs < 500) {",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (!(round || millisecs >= 500)) {"
+    },
+    {
+        "id": 353,
+        "line": 745,
+        "precode": "if (val.get(Calendar.YEAR) > 280000000) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (val.get(Calendar.YEAR) > 280000000) {\nthrow new ArithmeticException(\"Calendar value too large for accurate calculations\");\n}"
+    },
+    {
+        "id": 354,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.MILLISECOND) {\nreturn;\n}"
+    },
+    {
+        "id": 355,
+        "line": 745,
+        "precode": "if (field == Calendar.YEAR) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.YEAR) {\nthrow new ArithmeticException(\"Calendar value too large for accurate calculations\");\n}"
+    },
+    {
+        "id": 356,
+        "line": 745,
+        "precode": "if (field == Calendar.MONTH) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.MONTH) {\nthrow new ArithmeticException(\"Calendar value too large for accurate calculations\");\n}"
+    },
+    {
+        "id": 357,
+        "line": 745,
+        "precode": "if (field == Calendar.DATE) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.DATE) {\nthrow new ArithmeticException(\"Calendar value too large for accurate calculations\");\n}"
+    },
+    {
+        "id": 358,
+        "line": 745,
+        "precode": "if (field == Calendar.HOUR) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.HOUR) {\nthrow new ArithmeticException(\"Calendar value too large for accurate calculations\");\n}"
+    },
+    {
+        "id": 359,
+        "line": 745,
+        "precode": "if (field == Calendar.MINUTE) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.MINUTE) {\nthrow new ArithmeticException(\"Calendar value too large for accurate calculations\");\n}"
+    },
+    {
+        "id": 360,
+        "line": 745,
+        "precode": "if (field == Calendar.SECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.SECOND) {\nthrow new ArithmeticException(\"Calendar value too large for accurate calculations\");\n}"
+    },
+    {
+        "id": 361,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "if (field == Calendar.MILLISECOND) {\nreturn;\n}"
+    },
+    {
+        "id": 362,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "return;\n"
+    },
+    {
+        "id": 363,
+        "line": 745,
+        "precode": "if (val.get(Calendar.YEAR) > 280000000) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "throw new ArithmeticException(\"Calendar value too large for accurate calculations\");\n"
+    },
+    {
+        "id": 364,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "return;\n"
+    },
+    {
+        "id": 365,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "return;\n"
+    },
+    {
+        "id": 366,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "return;\n"
+    },
+    {
+        "id": 367,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "return;\n"
+    },
+    {
+        "id": 368,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "return;\n"
+    },
+    {
+        "id": 369,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "return;\n"
+    },
+    {
+        "id": 370,
+        "line": 745,
+        "precode": "if (field == Calendar.MILLISECOND) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_53_fixed/src/java/org/apache/commons/lang/time/DateUtils.java",
+        "aftercode": "return;\n"
+    }
+]

@@ -1,0 +1,219 @@
+[
+    {
+        "id": 1255,
+        "line": 320,
+        "precode": "            private Attribute attr;",
+        "aftercode": "            private Attribute newAttr;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1256,
+        "line": 323,
+        "precode": "                attr = attrIter.next();",
+        "aftercode": "                newAttr = attrIter.next();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1257,
+        "line": 324,
+        "precode": "                if (attr.isDataAttribute()) return true;",
+        "aftercode": "                if (newAttr.isDataAttribute()) return true;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1258,
+        "line": 330,
+        "precode": "            return new Attribute(attr.getKey().substring(dataPrefix.length()), attr.getValue());",
+        "aftercode": "            return new Attribute(newAttr.getKey().substring(dataPrefix.length()), newAttr.getValue());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1259,
+        "line": 322,
+        "precode": "Remove()",
+        "aftercode": "Delete()",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1260,
+        "line": 334,
+        "precode": "                attributes.remove(attr.getKey());",
+        "aftercode": "                attributes.delete(attr.getKey());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1261,
+        "line": 336,
+        "precode": "        }",
+        "aftercode": "        } no",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1750,
+        "line": 14,
+        "precode": "import java.util.Map;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "import java.util.LinkedHashMap;"
+    },
+    {
+        "id": 1751,
+        "line": 15,
+        "precode": "import java.util.Set;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "import java.util.AbstractSet;"
+    },
+    {
+        "id": 1752,
+        "line": 10,
+        "precode": "import java.util.Collections;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "import java.util.ArrayList;"
+    },
+    {
+        "id": 1753,
+        "line": 4,
+        "precode": "import org.jsoup.helper.Validate;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "import org.jsoup.SerializationException;"
+    },
+    {
+        "id": 1754,
+        "line": 15,
+        "precode": "import org.jsoup.SerializableException;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "import org.jsoup.SerializationException;"
+    },
+    {
+        "id": 1756,
+        "line": 6,
+        "precode": "import java.io.IOException;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "import java.util.AbstractMap;"
+    },
+    {
+        "id": 1759,
+        "line": 122,
+        "precode": "for (Iterator<String> it = attributes.keySet().iterator(); it.hasNext(); ) {",
+        "aftercode": "for (Iterator<String> it = attributes.keySet().iterator(); it.hasNext(); ) {}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1760,
+        "line": 122,
+        "precode": "for (Iterator<String> it = attributes.keySet().iterator(); it.hasNext(); ) {",
+        "aftercode": "for (String key : attributes.keySet()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1768,
+        "line": 127,
+        "precode": "}",
+        "aftercode": "// extra comment after closing brace for testing",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1769,
+        "line": 220,
+        "precode": "accum.toString();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "accum.toString().trim();"
+    },
+    {
+        "id": 1770,
+        "line": 227,
+        "precode": "for (Map.Entry<String, Attribute> entry : attributes.entrySet()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "for (Map.Entry<String, Attribute> entry : attributes.sortedEntrySet()) {"
+    },
+    {
+        "id": 1773,
+        "line": 235,
+        "precode": "public String toString() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "protected String toString() {"
+    },
+    {
+        "id": 1776,
+        "line": 235,
+        "precode": "public String toString() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "public Void toString() {"
+    },
+    {
+        "id": 1777,
+        "line": 225,
+        "precode": "return;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 1781,
+        "line": 196,
+        "precode": "return Collections.unmodifiableList(list);",
+        "aftercode": "return Collections.unmodifiableList(attributes.values());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1782,
+        "line": 196,
+        "precode": "return Collections.unmodifiableList(list);",
+        "aftercode": "return Collections.unmodifiableList(new ArrayList<>(list));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1783,
+        "line": 196,
+        "precode": "return Collections.unmodifiableList(list);",
+        "aftercode": "return Collections.unmodifiableList(new ArrayList<>(attributes.values()));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1784,
+        "line": 196,
+        "precode": "return Collections.unmodifiableList(list);",
+        "aftercode": "return Collections.unmodifiableList(new ArrayList<>(attributes.values()));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1785,
+        "line": 196,
+        "precode": "return Collections.unmodifiableList(list);",
+        "aftercode": "return Collections.unmodifiableList(Collections.emptyList());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1787,
+        "line": 196,
+        "precode": "return Collections.unmodifiableList(list);",
+        "aftercode": "return Collections.unmodifiableList(attributes.values());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1788,
+        "line": 196,
+        "precode": "return Collections.unmodifiableList(list);",
+        "aftercode": "return Collections.unmodifiableList(new ArrayList<>(list));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1789,
+        "line": 196,
+        "precode": "return Collections.unmodifiableList(list);",
+        "aftercode": "return Collections.unmodifiableList(new ArrayList<>(attributes.values()));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1791,
+        "line": 33,
+        "precode": "private LinkedHashMap<String, Attribute> attributes = null;",
+        "aftercode": "private HashMap<String, Attribute> attributes = new HashMap<>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    },
+    {
+        "id": 1799,
+        "line": 107,
+        "precode": "public void remove(String key) {",
+        "aftercode": "public void removeIgnoreCase(String key) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_57_fixed/src/main/java/org/jsoup/nodes/Attributes.java"
+    }
+]

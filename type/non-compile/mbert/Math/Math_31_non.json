@@ -1,0 +1,86 @@
+[
+    {
+        "id": 20,
+        "line": 138,
+        "precode": "            final double a = getA(n, x);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            final double a =get(n, x);"
+    },
+    {
+        "id": 21,
+        "line": 139,
+        "precode": "            final double b = getB(n, x);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            final double b =b(n, x);"
+    },
+    {
+        "id": 22,
+        "line": 141,
+        "precode": "            double dN = a + b * dPrev;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            double dN = a*b * dPrev;"
+    },
+    {
+        "id": 23,
+        "line": 142,
+        "precode": "            if (Precision.equals(dN, 0.0, small)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            if (Precision.equal(dN, 0.0, small)) {"
+    },
+    {
+        "id": 25,
+        "line": 145,
+        "precode": "            double cN = a + b / cPrev;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            double cN = a*b / cPrev;"
+    },
+    {
+        "id": 26,
+        "line": 146,
+        "precode": "            if (Precision.equals(cN, 0.0, small)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            if (Precision.equal(cN, 0.0, small)) {"
+    },
+    {
+        "id": 28,
+        "line": 150,
+        "precode": "            dN = 1 / dN;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            dN*= 1 / dN;"
+    },
+    {
+        "id": 29,
+        "line": 151,
+        "precode": "            final double deltaN = cN * dN;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            final double deltaN = cN/dN;"
+    },
+    {
+        "id": 31,
+        "line": 154,
+        "precode": "            if (Double.isInfinite(hN)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            if (Double.nan(hN)) {"
+    },
+    {
+        "id": 32,
+        "line": 155,
+        "precode": "                throw new ConvergenceException(LocalizedFormats.CONTINUED_FRACTION_INFINITY_DIVERGENCE,",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "                throw new ConvergenceException(x,"
+    },
+    {
+        "id": 33,
+        "line": 167,
+        "precode": "            dPrev = dN;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            dPrev*= dN;"
+    },
+    {
+        "id": 36,
+        "line": 170,
+        "precode": "            n++;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_31_fixed/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java",
+        "aftercode": "            n++"
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "id": 150,
+        "line": 1634,
+        "precode": "            if (type.isSupported(DurationFieldType.MONTHS_TYPE)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_5_fixed/src/main/java/org/joda/time/Period.java",
+        "aftercode": "            if (type.supported(DurationFieldType.MONTHS_TYPE)) {"
+    },
+    {
+        "id": 151,
+        "line": 1635,
+        "precode": "                int normalizedMonths = FieldUtils.safeToInt(totalMonths);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_5_fixed/src/main/java/org/joda/time/Period.java",
+        "aftercode": "                int normalizedMonths = FieldUtils.safe(totalMonths);"
+    },
+    {
+        "id": 152,
+        "line": 1636,
+        "precode": "                result = result.withMonths(normalizedMonths);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_5_fixed/src/main/java/org/joda/time/Period.java",
+        "aftercode": "                result!= result.withMonths(normalizedMonths);"
+    },
+    {
+        "id": 155,
+        "line": 1640,
+        "precode": "                throw new UnsupportedOperationException(\"Unable to normalize as PeriodType is missing either years or months but period has a month/year amount: \" + toString());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_5_fixed/src/main/java/org/joda/time/Period.java",
+        "aftercode": "                throw new UnsupportedOperationException(\"Unable to normalize as PeriodType is missing either years or months but period has a month/year amount: \"\"+toString());"
+    },
+    {
+        "id": 156,
+        "line": 1643,
+        "precode": "        return result;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_5_fixed/src/main/java/org/joda/time/Period.java",
+        "aftercode": "        returnnull;"
+    }
+]

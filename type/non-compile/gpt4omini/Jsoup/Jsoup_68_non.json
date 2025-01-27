@@ -1,0 +1,114 @@
+[
+    {
+        "id": 759,
+        "line": 396,
+        "precode": "stack.add(i+1, in);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "stack.insertElementAt(in, i + 1);"
+    },
+    {
+        "id": 1098,
+        "line": 241,
+        "precode": "Tag tag = Tag.valueOf(startTag.name(), settings);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "Tag tag = Tag.valueOf(startTag.name(), settings).clone();"
+    },
+    {
+        "id": 1099,
+        "line": 227,
+        "precode": "Element el = new Element(tag, baseUri, startTag.attributes);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "Element el = new Element(tag, baseUri, new Attributes(startTag.attributes));"
+    },
+    {
+        "id": 1104,
+        "line": 235,
+        "precode": "tag.setSelfClosing();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "tag.setSelfClosing(false);"
+    },
+    {
+        "id": 1113,
+        "line": 492,
+        "precode": "else if (last) { transition(HtmlTreeBuilderState.InBody); }",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "else { transition(HtmlTreeBuilderState.BeforeHead); }"
+    },
+    {
+        "id": 1114,
+        "line": 400,
+        "precode": "else if (extraTypes != null && inSorted(elName, extraTypes))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "else if (extraTypes == null || inSorted(elName, extraTypes))"
+    },
+    {
+        "id": 1120,
+        "line": 44,
+        "precode": "private HtmlTreeBuilderState originalState; // original / marked state",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "private HtmlTreeBuilderState originalState = HtmlTreeBuilderState.Final; // original / marked state"
+    },
+    {
+        "id": 1125,
+        "line": 73,
+        "precode": "formElement = null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "formElement = new FormElement(Tag.valueOf(\"form\", settings), baseUri, new Attributes());"
+    },
+    {
+        "id": 1129,
+        "line": 119,
+        "precode": "for (Element parent: contextChain) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "for (Element parent: contextChain.reverse()) {"
+    },
+    {
+        "id": 1131,
+        "line": 121,
+        "precode": "formElement = (FormElement) parent;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "formElement = new FormElement();"
+    },
+    {
+        "id": 1186,
+        "line": 85,
+        "precode": "state = HtmlTreeBuilderState.Initial;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "state = HtmlTreeBuilderState.Data;"
+    },
+    {
+        "id": 1187,
+        "line": 499,
+        "precode": "boolean inListItemScope(String targetName) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "boolean inListItemScope() {"
+    },
+    {
+        "id": 1188,
+        "line": 424,
+        "precode": "else if (\"tr\".equals(name)) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "else if (\"td\".equals(name)) {"
+    },
+    {
+        "id": 1195,
+        "line": 472,
+        "precode": "for (int pos = bottom; pos >= top; pos--)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "for (int pos = bottom; pos > top; pos--)"
+    },
+    {
+        "id": 1198,
+        "line": 521,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 1204,
+        "line": 14,
+        "precode": "if (targetNames.length == 0) return false;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_68_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (targetNames.length > 1) return false;"
+    }
+]

@@ -1,0 +1,149 @@
+[
+    {
+        "id": 348,
+        "line": 758,
+        "precode": "if (!maybeModifiedArguments &&\n          !staleVars.contains(v) &&\n          referenceInfo.isWellDefined() &&\n          referenceInfo.isAssignedOnceInLifetime() &&\n          // Inlining the variable based solely on well-defined and assigned\n          // once is *NOT* correct. We relax the correctness requirement if\n          // the variable is declared constant.\n          (isInlineableDeclaredConstant(v, referenceInfo) ||\n           referenceInfo.isOnlyAssignmentSameScopeAsDeclaration())) {",
+        "aftercode": "if (maybeModifiedArguments &&\n          staleVars.contains(v) &&\n          !referenceInfo.isWellDefined() &&\n          !referenceInfo.isAssignedOnceInLifetime() &&\n          // Inlining the variable based solely on well-defined and assigned\n          // once is *NOT* correct. We relax the correctness requirement if\n          // the variable is declared constant.\n          (!isInlineableDeclaredConstant(v, referenceInfo) ||\n           !referenceInfo.isOnlyAssignmentSameScopeAsDeclaration())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 349,
+        "line": 758,
+        "precode": "if (!maybeModifiedArguments &&\n          !staleVars.contains(v) &&\n          referenceInfo.isWellDefined() &&\n          referenceInfo.isAssignedOnceInLifetime() &&\n          // Inlining the variable based solely on well-defined and assigned\n          // once is *NOT* correct. We relax the correctness requirement if\n          // the variable is declared constant.\n          (isInlineableDeclaredConstant(v, referenceInfo) ||\n           referenceInfo.isOnlyAssignmentSameScopeAsDeclaration())) {",
+        "aftercode": "if (!maybeModifiedArguments ||\n          staleVars.contains(v) ||\n          !referenceInfo.isWellDefined() ||\n          !referenceInfo.isAssignedOnceInLifetime() ||\n          // Inlining the variable based solely on well-defined and assigned\n          // once is *NOT* correct. We relax the correctness requirement if\n          // the variable is declared constant.\n          (!isInlineableDeclaredConstant(v, referenceInfo) &&\n           !referenceInfo.isOnlyAssignmentSameScopeAsDeclaration())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 350,
+        "line": 758,
+        "precode": "if (!maybeModifiedArguments &&\n          !staleVars.contains(v) &&\n          referenceInfo.isWellDefined() &&\n          referenceInfo.isAssignedOnceInLifetime() &&\n          // Inlining the variable based solely on well-defined and assigned\n          // once is *NOT* correct. We relax the correctness requirement if\n          // the variable is declared constant.\n          (isInlineableDeclaredConstant(v, referenceInfo) ||\n           referenceInfo.isOnlyAssignmentSameScopeAsDeclaration())) {",
+        "aftercode": "if (!maybeModifiedArguments &&\n          staleVars.contains(v) &&\n          referenceInfo.isWellDefined() &&\n          referenceInfo.isAssignedOnceInLifetime() &&\n          // Inlining the variable based solely on well-defined and assigned\n          // once is *NOT* correct. We relax the correctness requirement if\n          // the variable is declared constant.\n          (isInlineableDeclaredConstant(v, referenceInfo) ||\n           referenceInfo.isOnlyAssignmentSameScopeAsDeclaration())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 351,
+        "line": 310,
+        "precode": "List<Reference> refs = referenceInfo.references;",
+        "aftercode": "ArrayList<Reference> refs = (ArrayList<Reference>) referenceInfo.references;",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 352,
+        "line": 310,
+        "precode": "List<Reference> refs = referenceInfo.references;",
+        "aftercode": "List<Reference> refs = referenceInfo.references.subList(1, referenceInfo.references.size());",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 353,
+        "line": 310,
+        "precode": "List<Reference> refs = referenceInfo.references;",
+        "aftercode": "List<Reference> refs = new ArrayList<>();",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 354,
+        "line": 311,
+        "precode": "for (int i = 1 /* start from a read */; i < refs.size(); i++) {",
+        "aftercode": "for (int i = 1 /* start from a write */; i < refs.size(); i++) {",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 355,
+        "line": 312,
+        "precode": "Node nameNode = refs.get(i).getNode();",
+        "aftercode": "Node nameNode = refs.get(0).getNode();",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 356,
+        "line": 312,
+        "precode": "Node nameNode = refs.get(i).getNode();",
+        "aftercode": "Node nameNode = refs.get(refs.size()-1).getNode();",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 357,
+        "line": 312,
+        "precode": "Node nameNode = refs.get(i).getNode();",
+        "aftercode": "Node nameNode = null;",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 358,
+        "line": 313,
+        "precode": "if (aliasCandidates.containsKey(nameNode)) {",
+        "aftercode": "if (!aliasCandidates.containsKey(nameNode)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 359,
+        "line": 313,
+        "precode": "if (aliasCandidates.containsKey(nameNode)) {",
+        "aftercode": "if (aliasCandidates.containsValue(nameNode)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java"
+    },
+    {
+        "id": 857,
+        "line": 576,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 858,
+        "line": 576,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 859,
+        "line": 576,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 860,
+        "line": 576,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 861,
+        "line": 576,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 862,
+        "line": 40,
+        "precode": "return canMoveAggressively(value) ||\r\n      canMoveModerately(initialization, reference);",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return canMoveAggressively(value) &&\r\n      canMoveModerately(initialization, reference);"
+    },
+    {
+        "id": 863,
+        "line": 40,
+        "precode": "return canMoveAggressively(value) ||\r\n      canMoveModerately(initialization, reference);",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return canMoveAggressively(value) ^\r\n      canMoveModerately(initialization, reference);"
+    },
+    {
+        "id": 864,
+        "line": 40,
+        "precode": "return canMoveAggressively(value) ||\r\n      canMoveModerately(initialization, reference);",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return canMoveAggressively(value) ||\r\n      !canMoveModerately(initialization, reference);"
+    },
+    {
+        "id": 865,
+        "line": 40,
+        "precode": "return canMoveAggressively(value) ||\r\n      canMoveModerately(initialization, reference);",
+        "filepath": "defects4j_fixed/Closure/Closure_121_fixed/src/com/google/javascript/jscomp/InlineVariables.java",
+        "aftercode": "return canMoveAggressively(value) ||\r\n      canMoveModerately(reference, initialization);"
+    }
+]

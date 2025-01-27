@@ -1,0 +1,37 @@
+[
+    {
+        "id": 282,
+        "line": 32,
+        "precode": "Feature.ESCAPE_NON_ASCII.getMask()",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "~Feature.ESCAPE_NON_ASCII.getMask()"
+    },
+    {
+        "id": 283,
+        "line": 33,
+        "precode": "Feature.STRICT_DUPLICATE_DETECTION.getMask()",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java",
+        "aftercode": "Feature.STRICT_DUPLICATE_DETECTION.getMask() << 1"
+    },
+    {
+        "id": 291,
+        "line": 16,
+        "precode": "_reportError(String.format(\"Attempt to write plain `java.math.BigDecimal` (see JsonGenerator.Feature.WRITE_BIGDECIMAL_AS_PLAIN) with illegal scale (%d): needs to be between [-%d, %d]\", scale, MAX_BIG_DECIMAL_SCALE, MAX_BIG_DECIMAL_SCALE));",
+        "aftercode": "_reportError(String.format(\"Illegal scale (%d) for `java.math.BigDecimal`: must be between [-%d, %d]\", scale, MAX_BIG_DECIMAL_SCALE, MAX_BIG_DECIMAL_SCALE));",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java"
+    },
+    {
+        "id": 295,
+        "line": 435,
+        "precode": "if (Feature.WRITE_BIGDECIMAL_AS_PLAIN.enabledIn(_features)) {",
+        "aftercode": "if (Feature.WRITE_BIGDECIMAL_AS_PLAIN.disabledIn(_features)) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java"
+    },
+    {
+        "id": 298,
+        "line": 16,
+        "precode": "_reportError(String.format(\"Attempt to write plain `java.math.BigDecimal` (see JsonGenerator.Feature.WRITE_BIGDECIMAL_AS_PLAIN) with illegal scale (%d): needs to be between [-%d, %d]\", scale, MAX_BIG_DECIMAL_SCALE, MAX_BIG_DECIMAL_SCALE));",
+        "aftercode": "_reportError(String.format(\"Scale (%d) out of bounds for `java.math.BigDecimal`: must be within [-%d, %d]\", scale, MAX_BIG_DECIMAL_SCALE, MAX_BIG_DECIMAL_SCALE));",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_18_fixed/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java"
+    }
+]

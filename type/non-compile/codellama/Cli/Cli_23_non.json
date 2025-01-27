@@ -1,0 +1,107 @@
+[
+    {
+        "id": 114,
+        "line": 1,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 246,
+        "line": 827,
+        "precode": "if (pos == -1)",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if (pos == -1) || (pos == nextLineTabStop - 1)"
+    },
+    {
+        "id": 248,
+        "line": 822,
+        "precode": "while (true)",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "while (pos != -1)"
+    },
+    {
+        "id": 251,
+        "line": 834,
+        "precode": "if ( (text.length() > width) && (pos == nextLineTabStop - 1) )",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if ( (text.length() > width) && (pos == nextLineTabStop - 1) ) || (pos == -1)"
+    },
+    {
+        "id": 253,
+        "line": 822,
+        "precode": "while (true)",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "while (pos != -1)"
+    },
+    {
+        "id": 266,
+        "line": 820,
+        "precode": "final String padding = createPadding(nextLineTabStop);",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "final String padding = createPadding(nextLineTabStop + 1);"
+    },
+    {
+        "id": 267,
+        "line": 822,
+        "precode": "while (true)",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "while (false)"
+    },
+    {
+        "id": 358,
+        "line": 513,
+        "precode": "List optList = new ArrayList(options.getOptions());",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "List optList = new ArrayList(options.getOptions()).get(0);"
+    },
+    {
+        "id": 359,
+        "line": 514,
+        "precode": "Collections.sort(optList, getOptionComparator());",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "Collections.sort(optList, getOptionComparator()).get(0);"
+    },
+    {
+        "id": 361,
+        "line": 519,
+        "precode": "option = (Option) i.next();",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "option = (Option) i.next().get(0);"
+    },
+    {
+        "id": 362,
+        "line": 522,
+        "precode": "OptionGroup group = options.getOptionGroup(option);",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "OptionGroup group = options.getOptionGroup(option).get(0);"
+    },
+    {
+        "id": 364,
+        "line": 535,
+        "precode": "appendOptionGroup(buff, group);",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "appendOptionGroup(buff, group).get(0);"
+    },
+    {
+        "id": 365,
+        "line": 827,
+        "precode": "if (pos == -1)",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if (pos == -1) || (pos == 0)"
+    },
+    {
+        "id": 369,
+        "line": 822,
+        "precode": "while (true)",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "while (true) || while (false)"
+    },
+    {
+        "id": 371,
+        "line": 825,
+        "precode": "pos = findWrapPos(text, width, 0);",
+        "filepath": "defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "pos = findWrapPos(text, width, 0); || pos = findWrapPos(text, width, 1);"
+    }
+]

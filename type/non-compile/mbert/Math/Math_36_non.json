@@ -1,0 +1,79 @@
+[
+    {
+        "id": 83,
+        "line": 685,
+        "precode": "        double result = numerator.doubleValue() / denominator.doubleValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "        double result = numerator.doubleValue()*denominator.doubleValue();"
+    },
+    {
+        "id": 84,
+        "line": 686,
+        "precode": "        if (Double.isNaN(result)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "        if (Double.nan(result)) {"
+    },
+    {
+        "id": 85,
+        "line": 689,
+        "precode": "            int shift = Math.max(numerator.bitLength(),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "                                 denominator.bitLength())/Double.MAX_EXPONENT;"
+    },
+    {
+        "id": 86,
+        "line": 690,
+        "precode": "                                 denominator.bitLength()) - Double.MAX_EXPONENT;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "                                 denominator.length()) - Double.MAX_EXPONENT;"
+    },
+    {
+        "id": 88,
+        "line": 692,
+        "precode": "                denominator.shiftRight(shift).doubleValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "                denominator.shiftRight(shift).value();"
+    },
+    {
+        "id": 89,
+        "line": 694,
+        "precode": "        return result;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "        return0;"
+    },
+    {
+        "id": 91,
+        "line": 739,
+        "precode": "        if (Double.isNaN(result)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "        if (Double.nan(result)) {"
+    },
+    {
+        "id": 92,
+        "line": 742,
+        "precode": "            int shift = Math.max(numerator.bitLength(),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "                                 denominator.bitLength())*Float.MAX_EXPONENT;"
+    },
+    {
+        "id": 93,
+        "line": 743,
+        "precode": "                                 denominator.bitLength()) - Float.MAX_EXPONENT;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "                                 denominator.length()) - Float.MAX_EXPONENT;"
+    },
+    {
+        "id": 95,
+        "line": 745,
+        "precode": "                denominator.shiftRight(shift).floatValue();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "                denominator.shiftRight(shift).value();"
+    },
+    {
+        "id": 96,
+        "line": 747,
+        "precode": "        return result;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "        return0;"
+    }
+]

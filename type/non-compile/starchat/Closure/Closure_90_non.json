@@ -1,0 +1,177 @@
+[
+    {
+        "id": 587,
+        "line": 301,
+        "precode": "if (info!= null && info.hasReturnType()) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (false && info.hasReturnType()) {\n"
+    },
+    {
+        "id": 588,
+        "line": 301,
+        "precode": "  returnType = info.getReturnType().evaluate(scope, typeRegistry);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  returnType = null;\n"
+    },
+    {
+        "id": 589,
+        "line": 301,
+        "precode": "  returnTypeInferred = false;",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  returnTypeInferred = true;\n"
+    },
+    {
+        "id": 590,
+        "line": 301,
+        "precode": "if (templateTypeName!= null &&\n",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (false &&\n"
+    },
+    {
+        "id": 591,
+        "line": 301,
+        "precode": "    returnType!= null &&\n",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "    false &&\n"
+    },
+    {
+        "id": 592,
+        "line": 301,
+        "precode": "    returnType.restrictByNotNullOrUndefined().isTemplateType()) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "    false &&\n"
+    },
+    {
+        "id": 593,
+        "line": 301,
+        "precode": "      reportError(TEMPLATE_TYPE_EXPECTED, fnName);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "      reportError(0, fnName);\n"
+    },
+    {
+        "id": 594,
+        "line": 301,
+        "precode": "return this;",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "return null;\n"
+    },
+    {
+        "id": 595,
+        "line": 301,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "}\n"
+    },
+    {
+        "id": 597,
+        "line": 526,
+        "precode": "boolean isOptionalParam = isOptionalParameter(arg, info);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "boolean isOptionalParam =!isOptionalParameter(arg, info);"
+    },
+    {
+        "id": 598,
+        "line": 526,
+        "precode": "boolean isVarArgs = isVarArgsParameter(arg, info);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "boolean isVarArgs =!isVarArgsParameter(arg, info);"
+    },
+    {
+        "id": 599,
+        "line": 526,
+        "precode": "if (info!= null && info.hasParameterType(argumentName)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (!info.hasParameterType(argumentName)) {"
+    },
+    {
+        "id": 600,
+        "line": 526,
+        "precode": "parameterType = info.getParameterType(argumentName).evaluate(scope, typeRegistry);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parameterType = typeRegistry.getNativeType(UNKNOWN_TYPE);"
+    },
+    {
+        "id": 601,
+        "line": 526,
+        "precode": "if (oldParameterType!= null && oldParameterType.getJSType()!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (oldParameterType.getJSType() == null) {"
+    },
+    {
+        "id": 602,
+        "line": 526,
+        "precode": "parameterType = oldParameterType.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "parameterType = typeRegistry.getNativeType(UNKNOWN_TYPE);"
+    },
+    {
+        "id": 605,
+        "line": 526,
+        "precode": "if (templateTypeName!= null && parameterType.restrictByNotNullOrUndefined().isTemplateType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (!parameterType.restrictByNotNullOrUndefined().isTemplateType()) {"
+    },
+    {
+        "id": 606,
+        "line": 526,
+        "precode": "if (foundTemplateType) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "if (!foundTemplateType) {"
+    },
+    {
+        "id": 607,
+        "line": 526,
+        "precode": "reportError(TEMPLATE_TYPE_DUPLICATED, fnName);",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "reportError(TEMPLATE_TYPE_EXPECTED, fnName);"
+    },
+    {
+        "id": 1056,
+        "line": 192,
+        "precode": "  if (!baseType.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  if (!baseType.isInterface()) {"
+    },
+    {
+        "id": 1057,
+        "line": 192,
+        "precode": "  if (returnTypeInferred) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  if (returnTypeInferred == false) {"
+    },
+    {
+        "id": 1058,
+        "line": 192,
+        "precode": "  if (baseType.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  if (baseType.isInterface() == false) {"
+    },
+    {
+        "id": 1059,
+        "line": 192,
+        "precode": "  if (baseType.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  if (baseType.isFunctionType() == false) {"
+    },
+    {
+        "id": 1060,
+        "line": 192,
+        "precode": "  if (baseType.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  if (baseType.isConstructor() == false) {"
+    },
+    {
+        "id": 1061,
+        "line": 192,
+        "precode": "  if (baseType.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  if (baseType.isInterface() == false) {"
+    },
+    {
+        "id": 1062,
+        "line": 192,
+        "precode": "  if (baseType.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "  if (baseType.isConstructor() == false) {"
+    }
+]

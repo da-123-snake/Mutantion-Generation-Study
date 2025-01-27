@@ -1,0 +1,37 @@
+[
+    {
+        "id": 99,
+        "line": 859,
+        "precode": "        TimeSeries clone = (TimeSeries) super.clone();",
+        "aftercode": "        TimeSeries clone = (TimeSeries) super.clone();\n        clone.data = new ArrayList<>(this.data);",
+        "filepath": "defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java"
+    },
+    {
+        "id": 100,
+        "line": 860,
+        "precode": "        clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "aftercode": "        clone.data = new ArrayList<>(this.data);",
+        "filepath": "defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java"
+    },
+    {
+        "id": 105,
+        "line": 862,
+        "precode": "    }",
+        "aftercode": "        throw new CloneNotSupportedException();\n    }",
+        "filepath": "defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java"
+    },
+    {
+        "id": 106,
+        "line": 862,
+        "precode": "}",
+        "aftercode": "        throw new RuntimeException();\n}",
+        "filepath": "defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java"
+    },
+    {
+        "id": 470,
+        "line": 927,
+        "precode": "start.compareTo(end) > 0",
+        "aftercode": "start.compareTo(end) < 0",
+        "filepath": "defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java"
+    }
+]

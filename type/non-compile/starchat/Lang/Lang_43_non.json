@@ -1,0 +1,51 @@
+[
+    {
+        "id": 64,
+        "line": 446,
+        "precode": "int start = pos.getIndex();",
+        "filepath": "defects4j_fixed/Lang/Lang_43_fixed/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java",
+        "aftercode": "int start = pos.getIndex() ^ (pos.getIndex() - 1);"
+    },
+    {
+        "id": 65,
+        "line": 446,
+        "precode": "char[] c = pattern.toCharArray();",
+        "filepath": "defects4j_fixed/Lang/Lang_43_fixed/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java",
+        "aftercode": "char[] c = pattern.toCharArray() ^ (pattern.toCharArray() - 1);"
+    },
+    {
+        "id": 66,
+        "line": 446,
+        "precode": "if (escapingOn && c[start] == QUOTE) {",
+        "filepath": "defects4j_fixed/Lang/Lang_43_fixed/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java",
+        "aftercode": "if (escapingOn && (c[start] ^ (c[start] - 1)) == QUOTE) {"
+    },
+    {
+        "id": 67,
+        "line": 446,
+        "precode": "int lastHold = start;",
+        "filepath": "defects4j_fixed/Lang/Lang_43_fixed/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java",
+        "aftercode": "int lastHold = start ^ (start - 1);"
+    },
+    {
+        "id": 68,
+        "line": 446,
+        "precode": "for (int i = pos.getIndex(); i < pattern.length(); i++) {",
+        "filepath": "defects4j_fixed/Lang/Lang_43_fixed/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java",
+        "aftercode": "for (int i = pos.getIndex() ^ (pos.getIndex() - 1); i < pattern.length(); i++) {"
+    },
+    {
+        "id": 69,
+        "line": 446,
+        "precode": "if (escapingOn && pattern.substring(i).startsWith(ESCAPED_QUOTE)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_43_fixed/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java",
+        "aftercode": "if (escapingOn && pattern.substring(i ^ (i - 1)).startsWith(ESCAPED_QUOTE)) {"
+    },
+    {
+        "id": 70,
+        "line": 446,
+        "precode": "appendTo.append(c, lastHold, pos.getIndex() - lastHold).append(",
+        "filepath": "defects4j_fixed/Lang/Lang_43_fixed/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java",
+        "aftercode": "appendTo.append(c, lastHold ^ (lastHold - 1), pos.getIndex() ^ (pos.getIndex() - 1) - lastHold).append("
+    }
+]

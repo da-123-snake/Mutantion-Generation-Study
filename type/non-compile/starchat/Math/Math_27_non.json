@@ -1,0 +1,135 @@
+[
+    {
+        "id": 260,
+        "line": 239,
+        "precode": "double r0 = value;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "double r0 = 1.0 / value;"
+    },
+    {
+        "id": 261,
+        "line": 239,
+        "precode": "long a0 = (long)FastMath.floor(r0);",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "long a0 = (long)FastMath.floor(1.0 / r0);"
+    },
+    {
+        "id": 262,
+        "line": 239,
+        "precode": "if (a0 > overflow) {",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "if (a0 > Long.MAX_VALUE) {"
+    },
+    {
+        "id": 263,
+        "line": 239,
+        "precode": "    throw new FractionConversionException(value, a0, 1l);",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "    throw new FractionConversionException(1.0 / value, a0, 1l);"
+    },
+    {
+        "id": 265,
+        "line": 239,
+        "precode": "a0 = (long)FastMath.floor(r0);",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "a0 = (long)FastMath.floor(r0 * 1.0);"
+    },
+    {
+        "id": 266,
+        "line": 239,
+        "precode": "long a1 = (long)FastMath.floor(r1);",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "long a1 = (long)FastMath.floor(r1); p2 = (a1 * p1) + p0;"
+    },
+    {
+        "id": 267,
+        "line": 239,
+        "precode": "long a1 = (long)FastMath.floor(r1);",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "long a1 = (long)FastMath.floor(r1); q2 = (a1 * q1) + q0;"
+    },
+    {
+        "id": 268,
+        "line": 239,
+        "precode": "p2 = (a1 * p1) + p0;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "p2 = (a1 * p1) + p0; q2 = (a1 * q1) + q0;"
+    },
+    {
+        "id": 269,
+        "line": 239,
+        "precode": "q2 = (a1 * q1) + q0;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "p2 = (a1 * p1) + p0; q2 = (a1 * q1) + q0;"
+    },
+    {
+        "id": 270,
+        "line": 239,
+        "precode": "if ((p2 > overflow) || (q2 > overflow)) {",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "if ((p2 > overflow) || (q2 > overflow)) { p2 = (a1 * p1) + p0; q2 = (a1 * q1) + q0;}"
+    },
+    {
+        "id": 271,
+        "line": 239,
+        "precode": "p2 = (a1 * p1) + p0;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "p2 = (a1 * p1) + p0; q2 = (a1 * q1) + q0;"
+    },
+    {
+        "id": 272,
+        "line": 239,
+        "precode": "q2 = (a1 * q1) + q0;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "p2 = (a1 * p1) + p0; q2 = (a1 * q1) + q0;"
+    },
+    {
+        "id": 273,
+        "line": 599,
+        "precode": "return numerator / denominator;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "return numerator % denominator;"
+    },
+    {
+        "id": 274,
+        "line": 599,
+        "precode": "return numerator / denominator;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "return numerator ^ denominator;"
+    },
+    {
+        "id": 275,
+        "line": 599,
+        "precode": "return new Fraction(numerator, denominator);",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "return new Fraction(numerator, denominator * 2);"
+    },
+    {
+        "id": 276,
+        "line": 599,
+        "precode": "return 100 * doubleValue();",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "return 100 * floatValue();"
+    },
+    {
+        "id": 277,
+        "line": 599,
+        "precode": "return 100 * doubleValue();",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "return 100 * intValue();"
+    },
+    {
+        "id": 278,
+        "line": 599,
+        "precode": "return numerator / denominator;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "return numerator + denominator;"
+    },
+    {
+        "id": 279,
+        "line": 599,
+        "precode": "return numerator / denominator;",
+        "filepath": "defects4j_fixed/Math/Math_27_fixed/src/main/java/org/apache/commons/math3/fraction/Fraction.java",
+        "aftercode": "return numerator - denominator;"
+    }
+]

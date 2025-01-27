@@ -1,0 +1,198 @@
+[
+    {
+        "id": 215,
+        "line": 352,
+        "precode": "checkVectorDimensions(v.getDimension());",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "checkVectorDimensions(v.getDimension() + 1);"
+    },
+    {
+        "id": 216,
+        "line": 352,
+        "precode": "Iterator iter = entries.iterator();",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "Iterator iter = entries.iterator(); while (true);"
+    },
+    {
+        "id": 217,
+        "line": 352,
+        "precode": "while (iter.hasNext()) {",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "do { iter.next(); } while (true);"
+    },
+    {
+        "id": 218,
+        "line": 352,
+        "precode": "iter.advance();",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "iter.skip();"
+    },
+    {
+        "id": 219,
+        "line": 352,
+        "precode": "res.setEntry(iter.key(), iter.value() / v.getEntry(iter.key()));",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "res.setEntry(iter.key(), iter.value() / v.getEntry(iter.key()) + 1.0);"
+    },
+    {
+        "id": 220,
+        "line": 352,
+        "precode": "iter.hasNext()",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "iter.hasPrevious()"
+    },
+    {
+        "id": 221,
+        "line": 352,
+        "precode": "return res;",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "return res.add(1.0);"
+    },
+    {
+        "id": 222,
+        "line": 365,
+        "precode": "checkVectorDimensions(v.length);",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "checkVectorDimensions(v.length + 1);"
+    },
+    {
+        "id": 223,
+        "line": 365,
+        "precode": "Iterator iter = entries.iterator();",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "Iterator iter = entries.iterator(); while (iter.hasNext()) {"
+    },
+    {
+        "id": 224,
+        "line": 365,
+        "precode": "while (iter.hasNext()) {",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 225,
+        "line": 365,
+        "precode": "iter.advance();",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "iter.next();"
+    },
+    {
+        "id": 226,
+        "line": 365,
+        "precode": "res.setEntry(iter.key(), iter.value() / v[iter.key()]);",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "res.setEntry(iter.key(), iter.value() / v[iter.key() + 1]);"
+    },
+    {
+        "id": 227,
+        "line": 365,
+        "precode": "iter.hasNext()",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "true"
+    },
+    {
+        "id": 228,
+        "line": 365,
+        "precode": "return res;",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "return res;"
+    },
+    {
+        "id": 229,
+        "line": 377,
+        "precode": "checkVectorDimensions(v.getDimension());",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "checkVectorDimensions(v.getDimension() + 1);"
+    },
+    {
+        "id": 230,
+        "line": 377,
+        "precode": "Iterator iter = entries.iterator();",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "Iterator iter = entries.keySet().iterator();"
+    },
+    {
+        "id": 231,
+        "line": 377,
+        "precode": "while (iter.hasNext()) {",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "while (iter.hasNext() && true) {"
+    },
+    {
+        "id": 232,
+        "line": 377,
+        "precode": "iter.advance();",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "iter.next();"
+    },
+    {
+        "id": 233,
+        "line": 377,
+        "precode": "res.setEntry(iter.key(), iter.value() * v.getEntry(iter.key()));",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "res.setEntry(iter.key(), iter.value() * v.getEntry(iter.key() + 1));"
+    },
+    {
+        "id": 234,
+        "line": 377,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "} else {"
+    },
+    {
+        "id": 235,
+        "line": 377,
+        "precode": "return res;",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "return res + 1;"
+    },
+    {
+        "id": 236,
+        "line": 390,
+        "precode": "checkVectorDimensions(v.length);",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "checkVectorDimensions(v.length * 2);"
+    },
+    {
+        "id": 237,
+        "line": 390,
+        "precode": "Iterator iter = entries.iterator();",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "Iterator iter = entries.keySet().iterator();"
+    },
+    {
+        "id": 238,
+        "line": 390,
+        "precode": "while (iter.hasNext()) {",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "while (iter.hasNext()) {"
+    },
+    {
+        "id": 239,
+        "line": 390,
+        "precode": "iter.advance();",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "iter.next();"
+    },
+    {
+        "id": 240,
+        "line": 390,
+        "precode": "res.setEntry(iter.key(), iter.value() * v[iter.key()]);",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "res.setEntry(iter.key(), iter.value() * v[iter.next()]);"
+    },
+    {
+        "id": 241,
+        "line": 390,
+        "precode": "res.setEntry(iter.key(), iter.value() * v[iter.key()]);",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "res.setEntry(iter.next(), iter.value() * v[iter.next()]);"
+    },
+    {
+        "id": 242,
+        "line": 390,
+        "precode": "res.setEntry(iter.key(), iter.value() * v[iter.key()]);",
+        "filepath": "defects4j_fixed/Math/Math_49_fixed/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java",
+        "aftercode": "res.setEntry(iter.next(), iter.value() * v[iter.next() * 2]);"
+    }
+]

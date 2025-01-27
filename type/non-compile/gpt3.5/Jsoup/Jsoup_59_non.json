@@ -1,0 +1,142 @@
+[
+    {
+        "id": 555,
+        "line": 76,
+        "precode": "        protected String tagName;",
+        "aftercode": "        protected String tagIdentifier;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 557,
+        "line": 360,
+        "precode": "    final Character asCharacter() {",
+        "aftercode": "    final Char asChar() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 559,
+        "line": 365,
+        "precode": "        return type == TokenType.EOF;",
+        "aftercode": "        return type == TokenType.Eof;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 560,
+        "line": 78,
+        "precode": "        private String pendingAttributeName; // attribute names are generally caught in one hop, not accumulated",
+        "aftercode": "        private String attribute; // attribute names are generally caught in one hop, not accumulated",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 561,
+        "line": 79,
+        "precode": "        private StringBuilder pendingAttributeValue = new StringBuilder(); // but values are accumulated, from e.g. & in hrefs",
+        "aftercode": "        private StringBuilder attributeValue = new StringBuilder(); // but values are accumulated, from e.g. & in hrefs",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 562,
+        "line": 80,
+        "precode": "        private String pendingAttributeValueS; // try to get attr vals in one shot, vs Builder",
+        "aftercode": "        private String attributeValueS; // try to get attr vals in one shot, vs Builder",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 563,
+        "line": 168,
+        "precode": "        final void appendAttributeName(String append) {",
+        "aftercode": "        final void addName(String append) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 565,
+        "line": 159,
+        "precode": "        final void appendTagName(String append) {",
+        "aftercode": "        final void addTagName(String append) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 566,
+        "line": 113,
+        "precode": "        final boolean isEndTag() {",
+        "aftercode": "        final boolean isETag() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 567,
+        "line": 77,
+        "precode": "        protected String normalName; // lc version of tag name, for case insensitive tree build",
+        "aftercode": "        protected String standardName; // lc version of tag name, for case insensitive tree build",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1006,
+        "line": 214,
+        "precode": "                if (pendingAttributeName != null) {",
+        "aftercode": "                if (pendingAttributeName == null) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1007,
+        "line": 215,
+        "precode": "                    pendingAttributeName = pendingAttributeName.trim();",
+        "aftercode": "                    pendingAttributeName = pendingAttributeName.trim().toLowerCase();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1008,
+        "line": 216,
+        "precode": "                    if (pendingAttributeName.length() > 0) {",
+        "aftercode": "                    if (pendingAttributeName.length() <= 0) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1009,
+        "line": 219,
+        "precode": "                        Attribute attribute;",
+        "aftercode": "                        Attribute attribute = new Attribute();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1010,
+        "line": 222,
+        "precode": "                            if (hasPendingAttributeValue)",
+        "aftercode": "                            if (!hasPendingAttributeValue)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1012,
+        "line": 116,
+        "precode": "                    attributes.put(attribute);",
+        "aftercode": "                    attribute.put(attributes);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1016,
+        "line": 275,
+        "precode": "return data.toString();",
+        "aftercode": "return data;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1017,
+        "line": 329,
+        "precode": "return (Doctype) this;",
+        "aftercode": "return (StartTag) this;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1018,
+        "line": 337,
+        "precode": "return (StartTag) this;",
+        "aftercode": "return (EndTag) this;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    },
+    {
+        "id": 1019,
+        "line": 361,
+        "precode": "return (Character) this;",
+        "aftercode": "return (EOF) this;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_59_fixed/src/main/java/org/jsoup/parser/Token.java"
+    }
+]

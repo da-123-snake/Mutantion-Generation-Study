@@ -1,0 +1,156 @@
+[
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if(tag.equals(titleTag)){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if(tag.equals(textareaTag)){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if(tag.isData()){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if(tq.matchChomp(\"null\")){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if((attribute != null)){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if(child.tagName().equals(\"null\")){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "        Attributes attributes = new Attributes();",
+        "line": 126,
+        "aftercode": "Attributes attributes = !tq.matchesAny(\"null\", \"null\", \"null\");"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (attribute != null)",
+        "line": 129,
+        "aftercode": "if(tag.isData()){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if((href.length() != 0)){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 145,
+        "aftercode": "package org.jsoup.parser;\n\nimport org.apache.commons.lang.Validate;\nimport org.jsoup.nodes.*;\n\nimport java.util.*;\n\n/**\n Parses HTML into a {@link Document}. Generally best to use one of the  more convenient parse methods in {@link org.jsoup.Jsoup}.\n\n @author Jonathan Hedley, jonathan@hedley.net */\npublic class Parser {\n    private static final String SQ = \"'\";\n    private static final String DQ = \"\\\"\";\n\n    private static final Tag htmlTag = Tag.valueOf(\"html\");\n    private static final Tag headTag = Tag.valueOf(\"head\");\n    private static final Tag bodyTag = Tag.valueOf(\"body\");\n    private static final Tag titleTag = Tag.valueOf(\"title\");\n    private static final Tag textareaTag = Tag.valueOf(\"textarea\");\n\n    private final LinkedList<Element> stack;\n    private final TokenQueue tq;\n    private final Document doc;\n    private String baseUri;\n\n    private Parser(String html, String baseUri, boolean isBodyFragment) {\n        Validate.notNull(html);\n        Validate.notNull(baseUri);\n\n        stack = new LinkedList<Element>();\n        tq = new TokenQueue(html);\n        this.baseUri = baseUri;\n\n        if (isBodyFragment) {\n            doc = Document.createShell(baseUri);\n            stack.add(doc.body());\n        } else {\n            doc = new Document(baseUri);\n            stack.add(doc);\n        }\n    }\n\n    /**\n     Parse HTML into a Document.\n     @param html HTML to parse\n     @param baseUri base URI of document (i.e. original fetch location), for resolving relative URLs.\n     @return parsed Document\n     */\n    public static Document parse(String html, String baseUri) {\n        Parser parser = new Parser(html, baseUri, false);\n        return parser.parse();\n    }\n\n    /**\n     Parse a fragment of HTML into the {@code body} of a Document.\n     @param bodyHtml fragment of HTML\n     @param baseUri base URI of document (i.e. original fetch location), for resolving relative URLs.\n     @return Document, with empty head, and HTML parsed into body\n     */\n    public static Document parseBodyFragment(String bodyHtml, String baseUri) {\n        Parser parser = new Parser(bodyHtml, baseUri, true);\n        return parser.parse();\n    }\n\n    private Document parse() {\n        while (!tq.isEmpty()) {\n            if (tq.matches(\"<!--\")) {\n                parseComment();\n            } else if (tq.matches(\"<![CDATA[\")) {\n                parseCdata();\n            } else if (tq.matches(\"<?\") || tq.matches(\"<!\")) {\n                parseXmlDecl();\n            } else if (tq.matches(\"</\")) {\n                parseEndTag();\n            } else if (tq.matches(\"<\")) {\n                parseStartTag();\n            } else {\n                parseTextNode();\n            }\n        }\n        return doc.normalise();\n    }\n\n    private void parseComment() {\n        tq.consume(\"<!--\");\n        String data = tq.chompTo(\"->\");\n\n        if (data.endsWith(\"-\")) // i.e. was -->\n            data = data.substring(0, data.length()-1);\n        Comment comment = new Comment(data, baseUri);\n        last().appendChild(comment);\n    }\n\n    private void parseXmlDecl() {\n        tq.consume(\"<\");\n        Character firstChar = tq.consume(); // <? or <!, from initial match.\n        boolean procInstr = firstChar.toString().equals(\"!\");\n        String data = tq.chompTo(\">\");\n\n        XmlDeclaration decl = new XmlDeclaration(data, baseUri, procInstr);\n        last().appendChild(decl);\n    }\n\n    private void parseEndTag() {\n        tq.consume(\"</\");\n        String tagName = tq.consumeWord();\n        tq.chompTo(\">\");\n\n        if (tagName.length() != 0) {\n            Tag tag = Tag.valueOf(tagName);\n            popStackToClose(tag);\n        }\n    }\n\n    private void parseStartTag() {\n        tq.consume(\"<\");\n        String tagName = tq.consumeWord();\n\n        if (tagName.length() == 0) { // doesn't look like a start tag after all; put < back on stack and handle as text\n            tq.addFirst(\"&lt;\");\n            parseTextNode();\n            return;\n        }\n\n        Attributes attributes = new Attributes();\n        while (!tq.matchesAny(\"<\", \"/>\", \">\") && !tq.isEmpty()) {\n            Attribute attribute = parseAttribute();\n            if (attribute != null)\n                attributes.put(attribute);\n        }\n\n        Tag tag = Tag.valueOf(tagName);\n        Element child = new Element(tag, baseUri, attributes);\n\n        boolean isEmptyElement = tag.isEmpty(); // empty element if empty tag (e.g. img) or self-closed el (<div/>\n        if (tq.matchChomp(\"/>\")) { // close empty element or tag\n            isEmptyElement = true;\n        } else {\n            tq.matchChomp(\">\");\n        }\n        addChildToParent(child, isEmptyElement);\n\n        // pc data only tags (textarea, script): chomp to end tag, add content as text node\n        if (tag.isData()) {\n            String data = tq.chompTo(\"</\" + tagName);\n            tq.chompTo(\">\");\n            popStackToClose(tag);\n            \n            Node dataNode;\nif(tag.equals(titleTag)){\n                dataNode = TextNode.createFromEncoded(data, baseUri);\n            else\n\ndataNode = TextNode.createFromEncoded(data, baseUri);\n            child.appendChild(dataNode);   \n        }\n\n        // <base href>: update the base uri\n        if (child.tagName().equals(\"base\")) {\n            String href = child.absUrl(\"href\");\n            if (href.length() != 0) { // ignore <base target> etc\n                baseUri = href;\n                doc.setBaseUri(href); // set on the doc so doc.createElement(Tag) will get updated base\n            }\n        }\n    }\n\n    private Attribute parseAttribute() {\n        tq.consumeWhitespace();\n        String key = tq.consumeAttributeKey();\n        String value = \"\";\n        tq.consumeWhitespace();\n        if (tq.matchChomp(\"=\")) {\n            tq.consumeWhitespace();\n\n            if (tq.matchChomp(SQ)) {\n                value = tq.chompTo(SQ);\n            } else if (tq.matchChomp(DQ)) {\n                value = tq.chompTo(DQ);\n            } else {\n                StringBuilder valueAccum = new StringBuilder();\n                // no ' or \" to look for, so scan to end tag or space (or end of stream)\n                while (!tq.matchesAny(\"<\", \"/>\", \">\") && !tq.matchesWhitespace() && !tq.isEmpty()) {\n                    valueAccum.append(tq.consume());\n                }\n                value = valueAccum.toString();\n            }\n            tq.consumeWhitespace();\n        }\n        if (key.length() != 0)\n            return Attribute.createFromEncoded(key, value);\n        else {\n            tq.consume(); // unknown char, keep popping so not get stuck\n            return null;\n        }\n    }\n\n    private void parseTextNode() {\n        String text = tq.consumeTo(\"<\");\n        TextNode textNode = TextNode.createFromEncoded(text, baseUri);\n        last().appendChild(textNode);\n    }\n\n    private void parseCdata() {\n        tq.consume(\"<![CDATA[\");\n        String rawText = tq.chompTo(\"]]>\");\n        TextNode textNode = new TextNode(rawText, baseUri); // constructor does not escape\n        last().appendChild(textNode);\n    }\n\n    private Element addChildToParent(Element child, boolean isEmptyElement) {\n        Element parent = popStackToSuitableContainer(child.tag());\n        Tag childTag = child.tag();\n        boolean validAncestor = stackHasValidParent(childTag);\n\n        if (!validAncestor) {\n            // create implicit parent around this child\n            Tag parentTag = childTag.getImplicitParent();\n            Element implicit = new Element(parentTag, baseUri);\n            // special case: make sure there's a head before putting in body\n            if (child.tag().equals(bodyTag)) {\n                Element head = new Element(headTag, baseUri);\n                implicit.appendChild(head);\n            }\n            implicit.appendChild(child);\n\n            // recurse to ensure somewhere to put parent\n            Element root = addChildToParent(implicit, false);\n            if (!isEmptyElement)\n                stack.addLast(child);\n            return root;\n        }\n\n        parent.appendChild(child);\n\n        if (!isEmptyElement)\n            stack.addLast(child);\n        return parent;\n    }\n\n    private boolean stackHasValidParent(Tag childTag) {\n        if (stack.size() == 1 && childTag.equals(htmlTag))\n            return true; // root is valid for html node\n        \n        for (int i = stack.size() -1; i >= 0; i--) {\n            Element el = stack.get(i);\n            Tag parent2 = el.tag();\n            if (parent2.isValidParent(childTag)) {\n                return true;\n            }\n        }\n        return false;\n    }\n\n    private Element popStackToSuitableContainer(Tag tag) {\n        while (!stack.isEmpty()) {\n            if (last().tag().canContain(tag))\n                return last();\n            else\n                stack.removeLast();\n        }\n        return null;\n    }\n\n    private Element popStackToClose(Tag tag) {\n        // first check to see if stack contains this tag; if so pop to there, otherwise ignore\n        int counter = 0;\n        Element elToClose = null;\n        for (int i = stack.size() -1; i > 0; i--) {\n            counter++;\n            Element el = stack.get(i);\n            Tag elTag = el.tag();\n            if (elTag.equals(bodyTag) || elTag.equals(htmlTag)) { // once in body, don't close past body\n                break;\n            } else if (elTag.equals(tag)) {\n                elToClose = el;\n                break;\n            }\n        }\n        if (elToClose != null) {\n            for (int i = 0; i < counter; i++) {\n                stack.removeLast();\n            }\n        }\n        return elToClose;\n    }\n\n    private Element last() {\n        return stack.getLast();\n    }\n}"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (attribute != null)",
+        "line": 129,
+        "aftercode": "if(tq.matchChomp(\"null\")){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "        if (tag.isData()) {",
+        "line": 145,
+        "aftercode": ""
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "                dataNode = new DataNode(data, baseUri); // data not encoded but raw (for \" in script)",
+        "line": 154,
+        "aftercode": "tq.matchChomp(\"null\");"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "                dataNode = new DataNode(data, baseUri); // data not encoded but raw (for \" in script)",
+        "line": 154,
+        "aftercode": "dataNode = new DataNode(data);"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            parseTextNode();",
+        "line": 122,
+        "aftercode": "return;"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if((tagName.length() == 0)){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            parseTextNode();",
+        "line": 122,
+        "aftercode": "continue;"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            parseTextNode();",
+        "line": 122,
+        "aftercode": "break;"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "                dataNode = TextNode.createFromEncoded(data, baseUri);",
+        "line": 152,
+        "aftercode": "tq.matchChomp(\"null\");"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "                dataNode = new DataNode(data, baseUri); // data not encoded but raw (for \" in script)",
+        "line": 154,
+        "aftercode": "doc.setBaseUri(href);"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)",
+        "line": 151,
+        "aftercode": "if((\"null\" + tagName)){"
+    },
+    {
+        "id": 26,
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "precode": "            tq.addFirst(\"&lt;\");",
+        "line": 121,
+        "aftercode": "doc.setBaseUri(href);"
+    }
+]

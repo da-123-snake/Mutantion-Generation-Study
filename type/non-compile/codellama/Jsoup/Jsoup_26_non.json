@@ -1,0 +1,247 @@
+[
+    {
+        "id": 381,
+        "line": 1,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 382,
+        "line": 2,
+        "precode": "while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "while (true) { "
+    },
+    {
+        "id": 383,
+        "line": 3,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 384,
+        "line": 4,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 385,
+        "line": 5,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 386,
+        "line": 6,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 387,
+        "line": 7,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 388,
+        "line": 8,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 390,
+        "line": 82,
+        "precode": "ElementMeta meta = createSafeElement(sourceEl);",
+        "aftercode": "ElementMeta meta = createSafeElement(sourceEl, true);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 394,
+        "line": 87,
+        "precode": "numDiscarded += copySafeNodes(sourceEl, destChild); // recurs",
+        "aftercode": "numDiscarded += copySafeNodes(sourceEl, destChild, true); // recurs",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 395,
+        "line": 92,
+        "precode": "if (sourceChild instanceof TextNode) {",
+        "aftercode": "if (sourceChild instanceof TextNode && sourceChild.getWholeText().contains(\"script\")) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 397,
+        "line": 94,
+        "precode": "TextNode destText = new TextNode(sourceText.getWholeText(), sourceChild.baseUri());",
+        "aftercode": "TextNode destText = new TextNode(sourceText.getWholeText(), sourceChild.baseUri()).clone();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 399,
+        "line": 78,
+        "precode": "if (sourceChild instanceof Element) {",
+        "aftercode": "if (sourceChild instanceof Element && sourceChild.tagName() == \"script\") {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 402,
+        "line": 82,
+        "precode": "ElementMeta meta = createSafeElement(sourceEl);",
+        "aftercode": "ElementMeta meta = createSafeElement(sourceEl, true);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java"
+    },
+    {
+        "id": 409,
+        "line": 79,
+        "precode": "Element sourceEl = (Element) sourceChild;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "TextNode sourceText = (TextNode) sourceChild;"
+    },
+    {
+        "id": 410,
+        "line": 81,
+        "precode": "if (whitelist.isSafeTag(sourceEl.tagName())) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "if (whitelist.isSafeAttribute(sourceTag, sourceEl, sourceAttr)) {"
+    },
+    {
+        "id": 411,
+        "line": 82,
+        "precode": "ElementMeta meta = createSafeElement(sourceEl);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "ElementMeta meta = createSafeAttribute(sourceEl);"
+    },
+    {
+        "id": 412,
+        "line": 83,
+        "precode": "Element destChild = meta.el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Attribute destAttr = meta.attr;"
+    },
+    {
+        "id": 413,
+        "line": 84,
+        "precode": "dest.appendChild(destChild);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "dest.appendChild(destAttr);"
+    },
+    {
+        "id": 414,
+        "line": 86,
+        "precode": "numDiscarded += meta.numAttribsDiscarded;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "numDiscarded += meta.numAttrsDiscarded;"
+    },
+    {
+        "id": 415,
+        "line": 87,
+        "precode": "numDiscarded += copySafeNodes(sourceEl, destChild);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "numDiscarded += copySafeNodes(sourceEl, destAttr);"
+    },
+    {
+        "id": 416,
+        "line": 88,
+        "precode": "else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "else if (sourceChild instanceof Element) {"
+    },
+    {
+        "id": 419,
+        "line": 92,
+        "precode": "if (sourceChild instanceof TextNode) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "if (sourceChild instanceof Element) {"
+    },
+    {
+        "id": 420,
+        "line": 93,
+        "precode": "TextNode sourceText = (TextNode) sourceChild;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Element sourceEl = (Element) sourceChild;"
+    },
+    {
+        "id": 421,
+        "line": 94,
+        "precode": "TextNode destText = new TextNode(sourceText.getWholeText(), sourceChild.baseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Element destChild = new Element(Tag.valueOf(sourceTag), sourceEl.baseUri(), destAttrs);"
+    },
+    {
+        "id": 422,
+        "line": 95,
+        "precode": "dest.appendChild(destText);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "dest.appendChild(destChild);"
+    },
+    {
+        "id": 423,
+        "line": 88,
+        "precode": "else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "else if (sourceChild instanceof TextNode) {"
+    },
+    {
+        "id": 427,
+        "line": 79,
+        "precode": "Element sourceEl = (Element) sourceChild;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "TextNode sourceText = (TextNode) sourceChild;"
+    },
+    {
+        "id": 428,
+        "line": 82,
+        "precode": "ElementMeta meta = createSafeElement(sourceEl);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "ElementMeta meta = createSafeAttribute(sourceEl);"
+    },
+    {
+        "id": 429,
+        "line": 83,
+        "precode": "Element destChild = meta.el;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "Attribute destAttr = meta.attr;"
+    },
+    {
+        "id": 430,
+        "line": 84,
+        "precode": "dest.appendChild(destChild);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "dest.appendChild(destAttr);"
+    },
+    {
+        "id": 431,
+        "line": 86,
+        "precode": "numDiscarded += meta.numAttribsDiscarded;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "numDiscarded += meta.numAttrsDiscarded;"
+    },
+    {
+        "id": 432,
+        "line": 87,
+        "precode": "numDiscarded += copySafeNodes(sourceEl, destChild);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "numDiscarded += copySafeNodes(sourceEl, destAttr);"
+    },
+    {
+        "id": 433,
+        "line": 88,
+        "precode": "else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "else if (sourceChild instanceof Element) {"
+    },
+    {
+        "id": 436,
+        "line": 92,
+        "precode": "if (sourceChild instanceof TextNode) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "if (sourceChild instanceof Element) {"
+    }
+]

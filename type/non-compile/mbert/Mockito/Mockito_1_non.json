@@ -1,0 +1,247 @@
+[
+    {
+        "id": 63,
+        "line": 98,
+        "precode": "        Method m1 = invocation.getMethod();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "        Method m1 = invocation.method();"
+    },
+    {
+        "id": 64,
+        "line": 99,
+        "precode": "        Method m2 = candidate.getMethod();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "        Method m2 = candidate.method();"
+    },
+    {
+        "id": 65,
+        "line": 101,
+        "precode": "        if (m1.getName() != null && m1.getName().equals(m2.getName())) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "        if (m1.getName()!= null&m1.getName().equals(m2.getName())) {"
+    },
+    {
+        "id": 66,
+        "line": 103,
+        "precode": "            Class[] params1 = m1.getParameterTypes();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            Class[] params1 = m1.params();"
+    },
+    {
+        "id": 67,
+        "line": 104,
+        "precode": "            Class[] params2 = m2.getParameterTypes();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            Class[] params2 = m2.params();"
+    },
+    {
+        "id": 68,
+        "line": 105,
+        "precode": "            if (params1.length == params2.length) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            if (params1.length!=params2.length) {"
+    },
+    {
+        "id": 69,
+        "line": 106,
+        "precode": "                for (int i = 0; i < params1.length; i++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                for (int i =1; i < params1.length; i++) {"
+    },
+    {
+        "id": 70,
+        "line": 107,
+        "precode": "                if (params1[i] != params2[i])",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                if (params1[i]==params2[i])"
+    },
+    {
+        "id": 71,
+        "line": 108,
+        "precode": "                    return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                    returntrue;"
+    },
+    {
+        "id": 72,
+        "line": 110,
+        "precode": "                return true;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                returnfalse;"
+    },
+    {
+        "id": 73,
+        "line": 113,
+        "precode": "        return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "        returntrue;"
+    },
+    {
+        "id": 118,
+        "line": 124,
+        "precode": "                Matcher m = matchers.get(position);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                Matcher m = matchers.remove(position);"
+    },
+    {
+        "id": 119,
+        "line": 125,
+        "precode": "                if (m instanceof CapturesArguments) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                if (mofCapturesArguments) {"
+    },
+    {
+        "id": 120,
+        "line": 126,
+        "precode": "                    ((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                    ((CapturesArguments) m).parse(invocation.getArgumentAt(position, Object.class));"
+    },
+    {
+        "id": 121,
+        "line": 129,
+        "precode": "            for (int position = indexOfVararg; position < matchers.size(); position++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            for (int position =0; position < matchers.size(); position++) {"
+    },
+    {
+        "id": 122,
+        "line": 130,
+        "precode": "                Matcher m = matchers.get(position);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                Matcher m = matchers.remove(position);"
+    },
+    {
+        "id": 123,
+        "line": 131,
+        "precode": "                if (m instanceof CapturesArguments) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                if (mofCapturesArguments) {"
+    },
+    {
+        "id": 124,
+        "line": 132,
+        "precode": "                    ((CapturesArguments) m).captureFrom(invocation.getRawArguments()[position - indexOfVararg]);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                    ((CapturesArguments) m).parse(invocation.getRawArguments()[position - indexOfVararg]);"
+    },
+    {
+        "id": 179,
+        "line": 103,
+        "precode": "            Class[] params1 = m1.getParameterTypes();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            Class[] params1 = m1.params();"
+    },
+    {
+        "id": 180,
+        "line": 104,
+        "precode": "            Class[] params2 = m2.getParameterTypes();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            Class[] params2 = m2.params();"
+    },
+    {
+        "id": 181,
+        "line": 105,
+        "precode": "            if (params1.length == params2.length) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            if (params1.length!=params2.length) {"
+    },
+    {
+        "id": 182,
+        "line": 106,
+        "precode": "                for (int i = 0; i < params1.length; i++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                for (int i =1; i < params1.length; i++) {"
+    },
+    {
+        "id": 183,
+        "line": 107,
+        "precode": "                if (params1[i] != params2[i])",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                if (params1[i]==params2[i])"
+    },
+    {
+        "id": 184,
+        "line": 108,
+        "precode": "                    return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                    returntrue;"
+    },
+    {
+        "id": 185,
+        "line": 121,
+        "precode": "        if (invocation.getMethod().isVarArgs()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "        if (invocation.getMethod().static()) {"
+    },
+    {
+        "id": 186,
+        "line": 122,
+        "precode": "            int indexOfVararg = invocation.getRawArguments().length - 1;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            int indexOfVararg = invocation.getRawArguments().length+1;"
+    },
+    {
+        "id": 187,
+        "line": 123,
+        "precode": "            for (int position = 0; position < indexOfVararg; position++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            for (int position =1; position < indexOfVararg; position++) {"
+    },
+    {
+        "id": 188,
+        "line": 124,
+        "precode": "                Matcher m = matchers.get(position);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                Matcher m = matchers.remove(position);"
+    },
+    {
+        "id": 189,
+        "line": 125,
+        "precode": "                if (m instanceof CapturesArguments) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                if (mofCapturesArguments) {"
+    },
+    {
+        "id": 190,
+        "line": 126,
+        "precode": "                    ((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                    ((CapturesArguments) m).parse(invocation.getArgumentAt(position, Object.class));"
+    },
+    {
+        "id": 191,
+        "line": 129,
+        "precode": "            for (int position = indexOfVararg; position < matchers.size(); position++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            for (int position =0; position < matchers.size(); position++) {"
+    },
+    {
+        "id": 192,
+        "line": 130,
+        "precode": "                Matcher m = matchers.get(position);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                Matcher m = matchers.remove(position);"
+    },
+    {
+        "id": 193,
+        "line": 131,
+        "precode": "                if (m instanceof CapturesArguments) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                if (mofCapturesArguments) {"
+    },
+    {
+        "id": 194,
+        "line": 132,
+        "precode": "                    ((CapturesArguments) m).captureFrom(invocation.getRawArguments()[position - indexOfVararg]);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "                    ((CapturesArguments) m).parse(invocation.getRawArguments()[position - indexOfVararg]);"
+    },
+    {
+        "id": 195,
+        "line": 137,
+        "precode": "            for (int position = 0; position < matchers.size(); position++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_1_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "            for (int position =1; position < matchers.size(); position++) {"
+    }
+]

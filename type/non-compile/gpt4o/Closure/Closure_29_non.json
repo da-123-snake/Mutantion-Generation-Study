@@ -1,0 +1,93 @@
+[
+    {
+        "id": 606,
+        "line": 15,
+        "precode": "if (gramps.isCall() && gramps.getFirstChild() == parent) {",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (gramps.isCall() && gramps.getLastChild() == parent) {"
+    },
+    {
+        "id": 608,
+        "line": 47,
+        "precode": "for (Node child = val.getFirstChild(); child != null; child = child.getNext()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "for (Node child = val.getLastChild(); child != null; child = child.getPrev()) {"
+    },
+    {
+        "id": 609,
+        "line": 51,
+        "precode": "if (child.isGetterDef() || child.isSetterDef()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (!child.isGetterDef() && !child.isSetterDef()) {"
+    },
+    {
+        "id": 614,
+        "line": 184,
+        "precode": "if (NodeUtil.isVarOrSimpleAssignLhs(parent, gramps)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "if (NodeUtil.isVarOrSimpleAssignRhs(parent, gramps)) {"
+    },
+    {
+        "id": 1086,
+        "line": 328,
+        "precode": "List<Node> nodes = Lists.newArrayList();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "List<Node> nodes = new ArrayList<>();"
+    },
+    {
+        "id": 1087,
+        "line": 329,
+        "precode": "Node val = ref.getAssignedValue();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Node val = ref.getValue();"
+    },
+    {
+        "id": 1088,
+        "line": 330,
+        "precode": "blacklistVarReferencesInTree(val, v.scope);",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "whitelistVarReferencesInTree(val, v.scope);"
+    },
+    {
+        "id": 1090,
+        "line": 332,
+        "precode": "Set<String> all = Sets.newLinkedHashSet(varmap.keySet());",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Set<String> all = new HashSet<>(varmap.keySet());"
+    },
+    {
+        "id": 1093,
+        "line": 336,
+        "precode": "Node value = key.removeFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Node value = key.removeLastChild();"
+    },
+    {
+        "id": 1094,
+        "line": 329,
+        "precode": "Node val = ref.getAssignedValue();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "Node val = ref.getDefaultValue();"
+    },
+    {
+        "id": 1095,
+        "line": 350,
+        "precode": "NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "NodeUtil.numberNode(0));"
+    },
+    {
+        "id": 1099,
+        "line": 350,
+        "precode": "NodeUtil.newUndefinedNode(null)));",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "NodeUtil.newStringNode(\"undefined\"));"
+    },
+    {
+        "id": 1101,
+        "line": 355,
+        "precode": "replacement = IR.trueNode();",
+        "filepath": "defects4j_fixed/Closure/Closure_29_fixed/src/com/google/javascript/jscomp/InlineObjectLiterals.java",
+        "aftercode": "replacement = IR.emptyNode();"
+    }
+]

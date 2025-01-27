@@ -1,0 +1,198 @@
+[
+    {
+        "id": 51,
+        "line": 339,
+        "precode": "    scope.declare(name, null, t, null, false);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "    scope.push(name, null, t, null, false);"
+    },
+    {
+        "id": 52,
+        "line": 362,
+        "precode": "        case Token.EXPR_RESULT:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        caseNAME:"
+    },
+    {
+        "id": 53,
+        "line": 363,
+        "precode": "          Node firstChild = node.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          Node firstChild = node.next();"
+    },
+    {
+        "id": 54,
+        "line": 364,
+        "precode": "          if (firstChild.isAssign()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          if (firstChild.name()) {"
+    },
+    {
+        "id": 55,
+        "line": 365,
+        "precode": "            identifyNameNode(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          if (firstChild.isAssign()) {assign("
+    },
+    {
+        "id": 56,
+        "line": 366,
+        "precode": "                firstChild.getFirstChild(), firstChild.getLastChild(),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "                firstChild.get(), firstChild.getLastChild(),"
+    },
+    {
+        "id": 57,
+        "line": 367,
+        "precode": "                firstChild.getJSDocInfo());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "                firstChild.value());"
+    },
+    {
+        "id": 58,
+        "line": 369,
+        "precode": "            identifyNameNode(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          } else {identify("
+    },
+    {
+        "id": 59,
+        "line": 370,
+        "precode": "                firstChild, null, firstChild.getJSDocInfo());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "            identifyNameNode(node, null, firstChild.getJSDocInfo());"
+    },
+    {
+        "id": 60,
+        "line": 378,
+        "precode": "      if (nameNode.isQualifiedName()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      if (nameNode.name()) {"
+    },
+    {
+        "id": 281,
+        "line": 896,
+        "precode": "                info, ownerType.getOwnerFunction().getInstanceType());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "            builder.inferThisType(info, ownerType.getOwnerFunction().getInstanceType());"
+    },
+    {
+        "id": 284,
+        "line": 899,
+        "precode": "            builder.inferThisType(info, ownerNode.getJSType());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "            builder.add(info, ownerNode.getJSType());"
+    },
+    {
+        "id": 286,
+        "line": 903,
+        "precode": "          if (!searchedForThisType) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          if (...searchedForThisType) {"
+    },
+    {
+        "id": 287,
+        "line": 904,
+        "precode": "            builder.inferThisType(info);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "            builder.build(info);"
+    },
+    {
+        "id": 288,
+        "line": 907,
+        "precode": "          functionType = builder",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          functionType|= builder"
+    },
+    {
+        "id": 289,
+        "line": 908,
+        "precode": "              .inferParameterTypes(parametersNode, info)",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "             .inferParameterTypes(builder, info)"
+    },
+    {
+        "id": 404,
+        "line": 546,
+        "precode": "        case Token.STRING:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        caseKEY:"
+    },
+    {
+        "id": 405,
+        "line": 548,
+        "precode": "          if (!NodeUtil.isObjectLitKey(n, n.getParent())) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          if (AbstractNodeUtil.isObjectLitKey(n, n.getParent())) {"
+    },
+    {
+        "id": 406,
+        "line": 549,
+        "precode": "            n.setJSType(getNativeType(STRING_TYPE));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "            n.set(getNativeType(STRING_TYPE));"
+    },
+    {
+        "id": 407,
+        "line": 553,
+        "precode": "        case Token.NUMBER:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        caseNumber:"
+    },
+    {
+        "id": 408,
+        "line": 554,
+        "precode": "          n.setJSType(getNativeType(NUMBER_TYPE));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          n.set(getNativeType(NUMBER_TYPE));"
+    },
+    {
+        "id": 409,
+        "line": 557,
+        "precode": "        case Token.TRUE:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        caseNULL:"
+    },
+    {
+        "id": 410,
+        "line": 593,
+        "precode": "                JSError.make(sourceName, objectLit, LENDS_ON_NON_OBJECT,",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "                JSError.maker(sourceName, objectLit, LENDS_ON_NON_OBJECT,"
+    },
+    {
+        "id": 411,
+        "line": 594,
+        "precode": "                    lendsName, type.toString()));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "                JSError.make(sourceName, objectLit, LENDS_ON_NON_OBJECT,null, type.toString()));"
+    },
+    {
+        "id": 412,
+        "line": 595,
+        "precode": "            type = null;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "            type!= null;"
+    },
+    {
+        "id": 413,
+        "line": 597,
+        "precode": "            objectLit.setJSType(type);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "            objectLit.add(type);"
+    },
+    {
+        "id": 506,
+        "line": 1747,
+        "precode": "      typeRegistry.declareType(typedef, getNativeType(UNKNOWN_TYPE));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      typeRegistry.register(typedef, getNativeType(UNKNOWN_TYPE));"
+    },
+    {
+        "id": 628,
+        "line": 1288,
+        "precode": "          delegateCallingConventions);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_48_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      codingConvention.checkForCallingConventionDefiningCalls(n,delegate);"
+    }
+]

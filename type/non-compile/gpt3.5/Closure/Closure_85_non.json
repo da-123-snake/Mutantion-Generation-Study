@@ -1,0 +1,163 @@
+[
+    {
+        "id": 280,
+        "line": 220,
+        "precode": "break;",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 281,
+        "line": 159,
+        "precode": "case Token.CONTINUE:",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "case Token.BREAK:"
+    },
+    {
+        "id": 291,
+        "line": 79,
+        "precode": "if (next != null && next.getType() == Token.BLOCK) {",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (next != null && next.getType() == Token.BREAK) {"
+    },
+    {
+        "id": 294,
+        "line": 186,
+        "precode": "else {",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "else statements {"
+    },
+    {
+        "id": 295,
+        "line": 97,
+        "precode": "if (n.getType() == Token.DO) {",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (n.getType() == Token.BREAK) {"
+    },
+    {
+        "id": 297,
+        "line": 223,
+        "precode": "NodeUtil.redeclareVarsInsideBranch(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "NodeUtil.renewVarsInsideBranch(n);"
+    },
+    {
+        "id": 1227,
+        "line": 32,
+        "precode": "case Token.BLOCK:\n        // BLOCKs are used in several ways including wrapping CATCH blocks in TRYs\n        if (parent.getType() == Token.TRY) {\n          if (NodeUtil.isTryCatchNodeContainer(n)) {\n            return;\n          }\n        }\n        break;",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "case Token.BLOCK:\n        // BLOCKs are used in several ways including wrapping CATCH blocks in TRYs\n        if (parent.getType() == Token.TRY) {\n          if (!NodeUtil.isTryCatchNodeContainer(n)) {\n            return;\n          }\n        }\n        break;"
+    },
+    {
+        "id": 1228,
+        "line": 49,
+        "precode": "case Token.CATCH:\n        Node tryNode = parent.getParent();\n        NodeUtil.maybeAddFinally(tryNode);\n        break;",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "case Token.CATCH:\n        Node tryNode = parent;\n        NodeUtil.maybeAddFinally(tryNode);\n        break;"
+    },
+    {
+        "id": 1229,
+        "line": 110,
+        "precode": "NodeUtil.redeclareVarsInsideBranch(n);\n    compiler.reportCodeChange();\n    if (logger.isLoggable(Level.FINE)) {\n      logger.fine(\"Removing \" + n.toString());\n    }\n    NodeUtil.removeChild(n.getParent(), n);",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "NodeUtil.redeclareVarsInsideBranch(n);\n    compiler.reportCodeChange();\n    if (logger.isLoggable(Level.FINE)) {\n      logger.fine(\"Removing node \" + n.toString());\n    }\n    NodeUtil.removeChild(n.getParent(), n);"
+    },
+    {
+        "id": 1230,
+        "line": 16,
+        "precode": "if (outEdges.size() == 1 &&\n            // If there is a next node, there is no chance this jump is useless.\n            (n.getNext() == null || n.getNext().getType() == Token.FUNCTION)) {\n\n          Preconditions.checkState(outEdges.get(0).getValue() == Branch.UNCOND);\n          Node fallThrough = computeFollowing(n);\n          Node nextCfgNode = outEdges.get(0).getDestination().getValue();\n          if (nextCfgNode == fallThrough) {\n            removeDeadExprStatementSafely(n);\n            return fallThrough;\n          }",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (outEdges.size() == 1 &&\n            // If there is a next node, there is no chance this jump is useless.\n            (n.getNext() != null && n.getNext().getType() == Token.FUNCTION)) {\n\n          Preconditions.checkState(outEdges.get(0).getValue() == Branch.UNCOND);\n          Node fallThrough = computeFollowing(n);\n          Node nextCfgNode = outEdges.get(0).getDestination().getValue();\n          if (nextCfgNode == fallThrough) {\n            removeDeadExprStatementSafely(n);\n            return fallThrough;\n          }"
+    },
+    {
+        "id": 1234,
+        "line": 167,
+        "precode": "(n.getNext() == null || n.getNext().getType() == Token.FUNCTION)",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "(n.getNext() == null || n.getNext().getType() != Token.FUNCTION)"
+    },
+    {
+        "id": 1235,
+        "line": 169,
+        "precode": "Preconditions.checkState(outEdges.get(0).getValue() == Branch.UNCOND)",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "Preconditions.checkState(outEdges.get(0).getValue() != Branch.UNCOND)"
+    },
+    {
+        "id": 1236,
+        "line": 170,
+        "precode": "Node fallThrough = computeFollowing(n)",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "Node fallThrough = computeFollowing(n.getNext())"
+    },
+    {
+        "id": 1237,
+        "line": 171,
+        "precode": "Node nextCfgNode = outEdges.get(0).getDestination().getValue()",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "Node nextCfgNode = outEdges.get(0).getSource().getValue()"
+    },
+    {
+        "id": 1238,
+        "line": 172,
+        "precode": "if (nextCfgNode == fallThrough)",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "if (nextCfgNode != fallThrough)"
+    },
+    {
+        "id": 1239,
+        "line": 173,
+        "precode": "removeDeadExprStatementSafely(n)",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java",
+        "aftercode": "removeDeadExprStatementSafely(n.getNext())"
+    },
+    {
+        "id": 1240,
+        "line": 182,
+        "precode": "Node next = ControlFlowAnalysis.computeFollowNode(n);",
+        "aftercode": "Node next = ControlFlowAnalysis.computeNextNode(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java"
+    },
+    {
+        "id": 1245,
+        "line": 219,
+        "precode": "NodeUtil.maybeAddFinally(tryNode);",
+        "aftercode": "NodeUtil.maybeRemoveFinally(tryNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java"
+    },
+    {
+        "id": 1246,
+        "line": 223,
+        "precode": "NodeUtil.redeclareVarsInsideBranch(n);",
+        "aftercode": "NodeUtil.removeVarsInsideBranch(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java"
+    },
+    {
+        "id": 1248,
+        "line": 228,
+        "precode": "NodeUtil.removeChild(n.getParent(), n);",
+        "aftercode": "NodeUtil.replaceChild(n.getParent(), n, new Node(Token.EMPTY));",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java"
+    },
+    {
+        "id": 1249,
+        "line": 21,
+        "precode": "if (n.getType() == Token.EMPTY ||\n    (n.getType() == Token.BLOCK && !n.hasChildren())) {",
+        "aftercode": "if (n.getType() == Token.EMPTY || n.getType() == Token.BLOCK) {",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java"
+    },
+    {
+        "id": 1251,
+        "line": 220,
+        "precode": "break;",
+        "aftercode": "continue;",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java"
+    },
+    {
+        "id": 1252,
+        "line": 228,
+        "precode": "NodeUtil.removeChild(n.getParent(), n);",
+        "aftercode": "NodeUtil.replaceChild(n.getParent(), n, new Node(Token.CONTINUE));",
+        "filepath": "defects4j_fixed/Closure/Closure_85_fixed/src/com/google/javascript/jscomp/UnreachableCodeElimination.java"
+    }
+]

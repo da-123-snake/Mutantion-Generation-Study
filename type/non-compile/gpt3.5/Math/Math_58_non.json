@@ -1,0 +1,16 @@
+[
+    {
+        "id": 270,
+        "line": 120,
+        "precode": "final double[] guess = (new ParameterGuesser(getObservations())).guess();",
+        "filepath": "defects4j_fixed/Math/Math_58_fixed/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java",
+        "aftercode": "final double[] guess = (new ParameterGuesser(getObservations()).guess();"
+    },
+    {
+        "id": 275,
+        "line": 121,
+        "precode": "return fit(guess);",
+        "filepath": "defects4j_fixed/Math/Math_58_fixed/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java",
+        "aftercode": "return fit(Parameters.copyOf(guess, guess.length));"
+    }
+]

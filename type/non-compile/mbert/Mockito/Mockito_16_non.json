@@ -1,0 +1,30 @@
+[
+    {
+        "id": 22,
+        "line": 827,
+        "precode": "        return MOCKITO_CORE.mock(classToMock, mockSettings, true);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_16_fixed/src/org/mockito/Mockito.java",
+        "aftercode": "        return MOCKITO_CORE.create(classToMock, mockSettings, true);"
+    },
+    {
+        "id": 23,
+        "line": 897,
+        "precode": "        return MOCKITO_CORE.mock((Class<T>) object.getClass(), withSettings()",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_16_fixed/src/org/mockito/Mockito.java",
+        "aftercode": "        return MOCKITO_CORE.create((Class<T>) object.getClass(), withSettings()"
+    },
+    {
+        "id": 24,
+        "line": 898,
+        "precode": "                .spiedInstance(object)",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_16_fixed/src/org/mockito/Mockito.java",
+        "aftercode": "               .spiedInstance(this)"
+    },
+    {
+        "id": 25,
+        "line": 899,
+        "precode": "                .defaultAnswer(CALLS_REAL_METHODS), true); ",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_16_fixed/src/org/mockito/Mockito.java",
+        "aftercode": "               .defaultAnswer(object), true); "
+    }
+]

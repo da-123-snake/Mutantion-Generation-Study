@@ -1,0 +1,44 @@
+[
+    {
+        "id": 898,
+        "line": 105,
+        "precode": "appendTagName(String.valueOf(append));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "appendTagName(Character.toString(append));"
+    },
+    {
+        "id": 899,
+        "line": 105,
+        "precode": "appendTagName(String.valueOf(append));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "appendTagName(Character.getName(append));"
+    },
+    {
+        "id": 901,
+        "line": 109,
+        "precode": "pendingAttributeName = pendingAttributeName == null ? append : pendingAttributeName.concat(append);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "pendingAttributeName = pendingAttributeName == null ? append : pendingAttributeName.insert(0, append).toString();"
+    },
+    {
+        "id": 906,
+        "line": 120,
+        "precode": "void appendAttributeValue(char append) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "void appendAttributeValue(char append) { pendingAttributeValue = null; }"
+    },
+    {
+        "id": 908,
+        "line": 120,
+        "precode": "void appendAttributeValue(char append) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "void appendAttributeValue(char append) { appendAttributeValue(String.valueOf(Character.toUpperCase(append))); }"
+    },
+    {
+        "id": 910,
+        "line": 120,
+        "precode": "void appendAttributeValue(char append) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_31_fixed/src/main/java/org/jsoup/parser/Token.java",
+        "aftercode": "void appendAttributeValue(char append) { appendAttributeValue(String.valueOf(Character.toLowerCase(append))); }"
+    }
+]

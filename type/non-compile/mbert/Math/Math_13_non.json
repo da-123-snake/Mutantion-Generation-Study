@@ -1,0 +1,58 @@
+[
+    {
+        "id": 113,
+        "line": 562,
+        "precode": "        if (m instanceof DiagonalMatrix) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "        if (mIsDiagonalMatrix) {"
+    },
+    {
+        "id": 114,
+        "line": 563,
+        "precode": "            final int dim = m.getRowDimension();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "            final int dim = m.dimension();"
+    },
+    {
+        "id": 115,
+        "line": 564,
+        "precode": "            final RealMatrix sqrtM = new DiagonalMatrix(dim);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "            final RealMatrix sqrtM = new DiagonalMatrix(m);"
+    },
+    {
+        "id": 116,
+        "line": 565,
+        "precode": "            for (int i = 0; i < dim; i++) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "            for (int i =1; i < dim; i++) {"
+    },
+    {
+        "id": 117,
+        "line": 566,
+        "precode": "               sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "               sqrtM.set(i, i, FastMath.sqrt(m.getEntry(i, i)));"
+    },
+    {
+        "id": 118,
+        "line": 568,
+        "precode": "            return sqrtM;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "            returnm;"
+    },
+    {
+        "id": 119,
+        "line": 570,
+        "precode": "            final EigenDecomposition dec = new EigenDecomposition(m);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "            final EigenDecomposition dec = new EigenDecomposition(dim);"
+    },
+    {
+        "id": 120,
+        "line": 571,
+        "precode": "            return dec.getSquareRoot();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Math/Math_13_fixed/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java",
+        "aftercode": "            return dec.norm();"
+    }
+]

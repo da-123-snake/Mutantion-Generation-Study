@@ -1,0 +1,51 @@
+[
+    {
+        "id": 8,
+        "line": 21,
+        "precode": "if (opt.hasArg()) {",
+        "filepath": "defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (!opt.hasArg()) {"
+    },
+    {
+        "id": 10,
+        "line": 172,
+        "precode": "else if (!(\"yes\".equalsIgnoreCase(value)",
+        "filepath": "defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "else if (!(value.equalsIgnoreCase(\"yes\") || value.equalsIgnoreCase(\"true\") || value.equals(\"1\")))"
+    },
+    {
+        "id": 11,
+        "line": 180,
+        "precode": "handleOption(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "opt.process();"
+    },
+    {
+        "id": 12,
+        "line": 181,
+        "precode": "currentOption = null;",
+        "filepath": "defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "currentOption = \"\";"
+    },
+    {
+        "id": 13,
+        "line": 150,
+        "precode": "Option opt = options.getOption(option);",
+        "filepath": "defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "Option opt = options.findOption(option);"
+    },
+    {
+        "id": 14,
+        "line": 157,
+        "precode": "OptionGroup group = options.getOptionGroup(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "OptionGroup group = options.findGroupForOption(opt);"
+    },
+    {
+        "id": 15,
+        "line": 25,
+        "precode": "if (opt.getValues() == null || opt.getValues().length == 0) {",
+        "filepath": "defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (opt.getValues() != null && opt.getValues().length > 0) {"
+    }
+]

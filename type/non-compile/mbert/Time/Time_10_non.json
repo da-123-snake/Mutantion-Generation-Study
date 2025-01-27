@@ -1,0 +1,23 @@
+[
+    {
+        "id": 194,
+        "line": 102,
+        "precode": "            throw new IllegalArgumentException(\"ReadablePartial objects must be contiguous\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "            throw new IllegalArgumentException(start);"
+    },
+    {
+        "id": 195,
+        "line": 104,
+        "precode": "        Chronology chrono = DateTimeUtils.getChronology(start.getChronology()).withUTC();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "        Chronology chrono = DateTimeUtils.getChronology(start.getChronology()).clone();"
+    },
+    {
+        "id": 196,
+        "line": 105,
+        "precode": "        int[] values = chrono.get(zeroInstance, chrono.set(start, START_1972), chrono.set(end, START_1972));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "        int[] values = chrono.set(zeroInstance, chrono.set(start, START_1972), chrono.set(end, START_1972));"
+    }
+]

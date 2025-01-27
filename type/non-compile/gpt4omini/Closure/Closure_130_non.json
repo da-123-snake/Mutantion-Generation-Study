@@ -1,0 +1,58 @@
+[
+    {
+        "id": 451,
+        "line": 176,
+        "precode": "List<Ref> refs = Lists.newArrayList(name.getRefs());",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "List<Ref> refs = new ArrayList<>(name.getRefs());"
+    },
+    {
+        "id": 454,
+        "line": 15,
+        "precode": "if ((name.type == Name.Type.OBJECTLIT || name.type == Name.Type.FUNCTION) &&",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "if ((name.type == Name.Type.OBJECTLIT && name.aliasingGets == 0) || (name.type == Name.Type.FUNCTION && name.aliasingGets == 0) &&"
+    },
+    {
+        "id": 1858,
+        "line": 481,
+        "precode": "JSType type = n.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "JSType type = n.getJSType().getImplicitCast();"
+    },
+    {
+        "id": 1863,
+        "line": 481,
+        "precode": "JSType type = n.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "JSType type = n.getJSType().unify(JSType.TOP);"
+    },
+    {
+        "id": 1864,
+        "line": 482,
+        "precode": "if (type != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "if (type.equals(JSType.UNKNOWN)) {"
+    },
+    {
+        "id": 1865,
+        "line": 483,
+        "precode": "ref.setJSType(type);",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "ref.setJSType(type.cloneType());"
+    },
+    {
+        "id": 1867,
+        "line": 31,
+        "precode": "String propName = isJsIdentifier ? key.getString() : String.valueOf(++arbitraryNameCounter);",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "String propName = isJsIdentifier ? key.getString() : String.valueOf(arbitraryNameCounter++);"
+    },
+    {
+        "id": 1869,
+        "line": 19,
+        "precode": "boolean isJsIdentifier = !key.isNumber() && TokenStream.isJSIdentifier(key.getString());",
+        "filepath": "defects4j_fixed/Closure/Closure_130_fixed/src/com/google/javascript/jscomp/CollapseProperties.java",
+        "aftercode": "boolean isJsIdentifier = key.isNumber() || TokenStream.isJSIdentifier(key.getString());"
+    }
+]

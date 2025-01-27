@@ -1,0 +1,58 @@
+[
+    {
+        "id": 446,
+        "line": 244,
+        "precode": "JsonToken t = ctxt.nextTokenToRead();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_15_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "JsonToken t = ctxt.previousTokenToRead();"
+    },
+    {
+        "id": 455,
+        "line": 415,
+        "precode": "t = _nextTokenWithBuffering(_headContext);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_15_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "t = _nextTokenWithoutBuffering(_headContext);"
+    },
+    {
+        "id": 461,
+        "line": 437,
+        "precode": "break;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_15_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 476,
+        "line": 576,
+        "precode": "_currToken = t;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_15_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "_currToken = t.copy();"
+    },
+    {
+        "id": 492,
+        "line": 724,
+        "precode": "return _nextBuffered(buffRoot);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_15_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "return _headContext.nextToken();"
+    },
+    {
+        "id": 507,
+        "line": 796,
+        "precode": "if (t.isStructEnd()) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_15_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "if (!t.isStructEnd()) {"
+    },
+    {
+        "id": 510,
+        "line": 790,
+        "precode": "JsonToken t = nextToken();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_15_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "JsonToken t = previousToken();"
+    },
+    {
+        "id": 512,
+        "line": 796,
+        "precode": "if (t.isStructEnd()) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_15_fixed/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java",
+        "aftercode": "if (t.isStructStart()) {"
+    }
+]

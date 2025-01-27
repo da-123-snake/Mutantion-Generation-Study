@@ -1,0 +1,177 @@
+[
+    {
+        "id": 1042,
+        "line": 50,
+        "precode": "Validate.notNull(key);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "Validate.notNull(key, \"key cannot be null\");"
+    },
+    {
+        "id": 1043,
+        "line": 50,
+        "precode": "key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "key = key.trim(); Validate.notEmpty(key, \"key cannot be empty\");"
+    },
+    {
+        "id": 1044,
+        "line": 50,
+        "precode": "Validate.notEmpty(key); // trimming could potentially make empty, so validate here",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "Validate.notEmpty(key, \"key cannot be empty\"); // trimming could potentially make empty, so validate here"
+    },
+    {
+        "id": 1045,
+        "line": 50,
+        "precode": "this.key = key;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "this.key = key; Validate.notNull(val, \"value cannot be null\");"
+    },
+    {
+        "id": 1046,
+        "line": 50,
+        "precode": "this.val = val;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "this.val = val; Validate.notNull(val, \"value cannot be null\");"
+    },
+    {
+        "id": 1047,
+        "line": 50,
+        "precode": "this.parent = parent;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "this.parent = parent; Validate.notNull(parent, \"parent cannot be null\");"
+    },
+    {
+        "id": 1048,
+        "line": 50,
+        "precode": "return new Attribute(key, val, parent);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "return new Attribute(key, val, parent); Validate.notNull(key, \"key cannot be null\"); Validate.notNull(val, \"value cannot be null\"); Validate.notNull(parent, \"parent cannot be null\");"
+    },
+    {
+        "id": 1049,
+        "line": 50,
+        "precode": "return new Attribute(key, val, parent);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "return new Attribute(key, val, parent); Validate.notNull(key, \"key cannot be null\"); Validate.notNull(val, \"value cannot be null\"); Validate.notNull(parent, \"parent cannot be null\");"
+    },
+    {
+        "id": 1050,
+        "line": 50,
+        "precode": "return new Attribute(key, val, parent);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "return new Attribute(key, val, parent); Validate.notNull(key, \"key cannot be null\"); Validate.notNull(val, \"value cannot be null\"); Validate.notNull(parent, \"parent cannot be null\");"
+    },
+    {
+        "id": 1402,
+        "line": 82,
+        "precode": "String key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String key = key.trim();\nif (parent!= null) {\n    int i = parent.indexOfKey(this.key);\n    if (i!= Attributes.NotFound) {\n        parent.keys[i] = key;\n    }\n}"
+    },
+    {
+        "id": 1403,
+        "line": 82,
+        "precode": "String key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String key = key.trim();\nif (parent!= null) {\n    int i = parent.indexOfKey(this.key);\n    if (i!= -1) {\n        parent.keys[i] = key;\n    }\n}"
+    },
+    {
+        "id": 1404,
+        "line": 82,
+        "precode": "String key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String key = key.trim();\nif (parent!= null) {\n    int i = parent.indexOfKey(this.key);\n    if (i!= 0) {\n        parent.keys[i] = key;\n    }\n}"
+    },
+    {
+        "id": 1405,
+        "line": 82,
+        "precode": "String key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String key = key.trim();\nif (parent!= null) {\n    int i = parent.indexOfKey(this.key);\n    if (i!= 1) {\n        parent.keys[i] = key;\n    }\n}"
+    },
+    {
+        "id": 1406,
+        "line": 82,
+        "precode": "String key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String key = key.trim();\nif (parent!= null) {\n    int i = parent.indexOfKey(this.key);\n    if (i!= 2) {\n        parent.keys[i] = key;\n    }\n}"
+    },
+    {
+        "id": 1407,
+        "line": 82,
+        "precode": "String key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String key = key.trim();\nif (parent!= null) {\n    int i = parent.indexOfKey(this.key);\n    if (i!= 3) {\n        parent.keys[i] = key;\n    }\n}"
+    },
+    {
+        "id": 1408,
+        "line": 82,
+        "precode": "String key = key.trim();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String key = key.trim();\nif (parent!= null) {\n    int i = parent.indexOfKey(this.key);\n    if (i!= 4) {\n        parent.keys[i] = key;\n    }\n}"
+    },
+    {
+        "id": 1409,
+        "line": 97,
+        "precode": "String getValue() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String getValue() {\n\treturn Attributes.checkNotNull(val);\n}"
+    },
+    {
+        "id": 1410,
+        "line": 97,
+        "precode": "\treturn Attributes.checkNotNull(val);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "\treturn Attributes.checkNotNull(val);\n\treturn Attributes.checkNotNull(val);\n}"
+    },
+    {
+        "id": 1411,
+        "line": 97,
+        "precode": "String setValue(String val) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "String setValue(String val) {\n\tString oldVal = parent.get(this.key);\n\tif (parent!= null) {\n\t\tint i = parent.indexOfKey(this.key);\n\t\tif (i!= Attributes.NotFound) {\n\t\t\toldVal = parent.vals[i];\n\t\t}\n\t}\n\tthis.val = val;\n\treturn oldVal;\n}"
+    },
+    {
+        "id": 1412,
+        "line": 97,
+        "precode": "\tString oldVal = parent.get(this.key);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "\tString oldVal = parent.get(this.key);\n\toldVal = parent.get(this.key);\n\tif (parent!= null) {\n\t\tint i = parent.indexOfKey(this.key);\n\t\tif (i!= Attributes.NotFound) {\n\t\t\toldVal = parent.vals[i];\n\t\t}\n\t}\n\tthis.val = val;\n\treturn oldVal;\n}"
+    },
+    {
+        "id": 1413,
+        "line": 97,
+        "precode": "\tif (parent!= null) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "\tif (parent!= null) {\n\t\tint i = parent.indexOfKey(this.key);\n\t\tif (i!= Attributes.NotFound) {\n\t\t\toldVal = parent.vals[i];\n\t\t}\n\t}\n\tthis.val = val;\n\treturn oldVal;\n}"
+    },
+    {
+        "id": 1414,
+        "line": 97,
+        "precode": "\t\tint i = parent.indexOfKey(this.key);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "\t\tint i = parent.indexOfKey(this.key);\n\t\toldVal = parent.get(this.key);\n\tif (parent!= null) {\n\t\t\toldVal = parent.vals[i];\n\t\t}\n\tthis.val = val;\n\treturn oldVal;\n}"
+    },
+    {
+        "id": 1415,
+        "line": 97,
+        "precode": "\t\tif (i!= Attributes.NotFound) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "\t\tif (i!= Attributes.NotFound) {\n\t\t\toldVal = parent.vals[i];\n\t\t}\n\t\tthis.val = val;\n\t\treturn oldVal;\n}"
+    },
+    {
+        "id": 1416,
+        "line": 97,
+        "precode": "\tString val = this.val;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "\tString val = this.val;\n\toldVal = parent.get(this.key);\n\tif (parent!= null) {\n\t\tint i = parent.indexOfKey(this.key);\n\t\tif (i!= Attributes.NotFound) {\n\t\t\toldVal = parent.vals[i];\n\t\t}\n\t}\n\tthis.val = val;\n\treturn oldVal;\n}"
+    },
+    {
+        "id": 1417,
+        "line": 97,
+        "precode": "\tthis.val = val;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "\tthis.val = val;\n\toldVal = parent.get(this.key);\n\tif (parent!= null) {\n\t\tint i = parent.indexOfKey(this.key);\n\t\tif (i!= Attributes.NotFound) {\n\t\t\toldVal = parent.vals[i];\n\t\t}\n\t}\n\treturn oldVal;\n}"
+    }
+]

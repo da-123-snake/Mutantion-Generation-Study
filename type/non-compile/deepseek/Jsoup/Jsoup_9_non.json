@@ -1,0 +1,464 @@
+[
+    {
+        "id": 182,
+        "line": 1,
+        "precode": "package org.jsoup.nodes;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "package org.jsoup.nodes.mutant1;"
+    },
+    {
+        "id": 183,
+        "line": 3,
+        "precode": "import java.nio.charset.CharsetEncoder;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import java.nio.charset.StandardCharsets;"
+    },
+    {
+        "id": 184,
+        "line": 4,
+        "precode": "import java.util.HashMap;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import java.util.TreeMap;"
+    },
+    {
+        "id": 185,
+        "line": 5,
+        "precode": "import java.util.Map;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import java.util.Set;"
+    },
+    {
+        "id": 186,
+        "line": 6,
+        "precode": "import java.util.regex.Matcher;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import java.util.regex.Pattern;"
+    },
+    {
+        "id": 189,
+        "line": 4,
+        "precode": "Matcher m = unescapePattern.matcher(string); // &(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]\\d*);?",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "Matcher m = unescapePattern.matcher(string.replace(\"&\", \"&\")); // &(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]\\d*);?"
+    },
+    {
+        "id": 190,
+        "line": 66,
+        "precode": "StringBuffer accum = new StringBuffer(string.length()); // pity matcher can't use stringbuilder, avoid syncs",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "StringBuilder accum = new StringBuilder(string.length()); // using StringBuilder instead of StringBuffer"
+    },
+    {
+        "id": 204,
+        "line": 565,
+        "precode": "{\"Ocirc\", 0x000D4}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ocirc\", 0x000D5}"
+    },
+    {
+        "id": 205,
+        "line": 569,
+        "precode": "{\"Ograve\", 0x000D2}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ograve\", 0x000D3}"
+    },
+    {
+        "id": 206,
+        "line": 578,
+        "precode": "{\"Oslash\", 0x000D8}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Oslash\", 0x000D9}"
+    },
+    {
+        "id": 207,
+        "line": 579,
+        "precode": "{\"Otilde\", 0x000D5}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Otilde\", 0x000D6}"
+    },
+    {
+        "id": 208,
+        "line": 581,
+        "precode": "{\"Ouml\", 0x000D6}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ouml\", 0x000D7}"
+    },
+    {
+        "id": 209,
+        "line": 605,
+        "precode": "{\"QUOT\", 0x00022}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"QUOT\", 0x00023}"
+    },
+    {
+        "id": 210,
+        "line": 610,
+        "precode": "{\"REG\", 0x000AE}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"REG\", 0x000AF}"
+    },
+    {
+        "id": 211,
+        "line": 693,
+        "precode": "{\"THORN\", 0x000DE}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"THORN\", 0x000DF}"
+    },
+    {
+        "id": 212,
+        "line": 714,
+        "precode": "{\"Uacute\", 0x000DA}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Uacute\", 0x000DB}"
+    },
+    {
+        "id": 213,
+        "line": 719,
+        "precode": "{\"Ucirc\", 0x000DB}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ucirc\", 0x000DC}"
+    },
+    {
+        "id": 214,
+        "line": 579,
+        "precode": "{\"Otilde\", 0x000D5}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Otilde\", 0x000D6}"
+    },
+    {
+        "id": 215,
+        "line": 581,
+        "precode": "{\"Ouml\", 0x000D6}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ouml\", 0x000D5}"
+    },
+    {
+        "id": 216,
+        "line": 605,
+        "precode": "{\"QUOT\", 0x00022}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"QUOT\", 0x00023}"
+    },
+    {
+        "id": 217,
+        "line": 610,
+        "precode": "{\"REG\", 0x000AE}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"REG\", 0x000AF}"
+    },
+    {
+        "id": 218,
+        "line": 693,
+        "precode": "{\"THORN\", 0x000DE}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"THORN\", 0x000DF}"
+    },
+    {
+        "id": 219,
+        "line": 714,
+        "precode": "{\"Uacute\", 0x000DA}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Uacute\", 0x000DB}"
+    },
+    {
+        "id": 220,
+        "line": 719,
+        "precode": "{\"Ucirc\", 0x000DB}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ucirc\", 0x000DA}"
+    },
+    {
+        "id": 221,
+        "line": 723,
+        "precode": "{\"Ugrave\", 0x000D9}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ugrave\", 0x000D8}"
+    },
+    {
+        "id": 222,
+        "line": 749,
+        "precode": "{\"Uuml\", 0x000DC}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Uuml\", 0x000DD}"
+    },
+    {
+        "id": 223,
+        "line": 779,
+        "precode": "{\"Yacute\", 0x000DD}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Yacute\", 0x000DE}"
+    },
+    {
+        "id": 224,
+        "line": 796,
+        "precode": "{\"aacute\", 0x000E1}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"aacute\", 0x000E2}"
+    },
+    {
+        "id": 225,
+        "line": 800,
+        "precode": "{\"acirc\", 0x000E2}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"acirc\", 0x000E1}"
+    },
+    {
+        "id": 226,
+        "line": 801,
+        "precode": "{\"acute\", 0x000B4}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"acute\", 0x000B5}"
+    },
+    {
+        "id": 227,
+        "line": 803,
+        "precode": "{\"aelig\", 0x000E6}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"aelig\", 0x000E7}"
+    },
+    {
+        "id": 228,
+        "line": 226,
+        "precode": "{\"Alpha\", 0x00391}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Alpha\", 0x00392}"
+    },
+    {
+        "id": 229,
+        "line": 227,
+        "precode": "{\"Amacr\", 0x00100}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Amacr\", 0x00101}"
+    },
+    {
+        "id": 230,
+        "line": 228,
+        "precode": "{\"And\", 0x02A53}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"And\", 0x02A54}"
+    },
+    {
+        "id": 231,
+        "line": 229,
+        "precode": "{\"Aogon\", 0x00104}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Aogon\", 0x00105}"
+    },
+    {
+        "id": 232,
+        "line": 230,
+        "precode": "{\"Aopf\", 0x1D538}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Aopf\", 0x1D539}"
+    },
+    {
+        "id": 233,
+        "line": 231,
+        "precode": "{\"ApplyFunction\", 0x02061}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"ApplyFunction\", 0x02062}"
+    },
+    {
+        "id": 234,
+        "line": 232,
+        "precode": "{\"Aring\", 0x000C5}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Aring\", 0x000C6}"
+    },
+    {
+        "id": 235,
+        "line": 233,
+        "precode": "{\"Ascr\", 0x1D49C}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ascr\", 0x1D49D}"
+    },
+    {
+        "id": 236,
+        "line": 234,
+        "precode": "{\"Assign\", 0x02254}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Assign\", 0x02255}"
+    },
+    {
+        "id": 237,
+        "line": 235,
+        "precode": "{\"Atilde\", 0x000C3}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Atilde\", 0x000C4}"
+    },
+    {
+        "id": 238,
+        "line": 236,
+        "precode": "{\"Auml\", 0x000C4}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Auml\", 0x000C5}"
+    },
+    {
+        "id": 239,
+        "line": 237,
+        "precode": "{\"Backslash\", 0x02216}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Backslash\", 0x02217}"
+    },
+    {
+        "id": 240,
+        "line": 238,
+        "precode": "{\"Barv\", 0x02AE7}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Barv\", 0x02AE8}"
+    },
+    {
+        "id": 241,
+        "line": 239,
+        "precode": "{\"Barwed\", 0x02306}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Barwed\", 0x02307}"
+    },
+    {
+        "id": 242,
+        "line": 240,
+        "precode": "{\"Bcy\", 0x00411}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Bcy\", 0x00412}"
+    },
+    {
+        "id": 243,
+        "line": 241,
+        "precode": "{\"Because\", 0x02235}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Because\", 0x02236}"
+    },
+    {
+        "id": 244,
+        "line": 242,
+        "precode": "{\"Bernoullis\", 0x0212C}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Bernoullis\", 0x0212D}"
+    },
+    {
+        "id": 245,
+        "line": 243,
+        "precode": "{\"Beta\", 0x00392}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Beta\", 0x00393}"
+    },
+    {
+        "id": 246,
+        "line": 244,
+        "precode": "{\"Bfr\", 0x1D505}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Bfr\", 0x1D506}"
+    },
+    {
+        "id": 493,
+        "line": 3,
+        "precode": "Matcher m = unescapePattern.matcher(string); // &(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]\\d*);?",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "Matcher m = unescapePattern.matcher(\"\"); // &(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]\\d*);?"
+    },
+    {
+        "id": 525,
+        "line": 341,
+        "precode": "{\"Ecirc\", 0x000CA}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Egrave\", 0x000CA}"
+    },
+    {
+        "id": 526,
+        "line": 341,
+        "precode": "{\"Ecirc\", 0x000CA}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Ecirc\", 0x000C9}"
+    },
+    {
+        "id": 527,
+        "line": 345,
+        "precode": "{\"Egrave\", 0x000C8}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Egrave\", 0x000C9}"
+    },
+    {
+        "id": 528,
+        "line": 359,
+        "precode": "{\"Euml\", 0x000CB}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Euml\", 0x000CC}"
+    },
+    {
+        "id": 529,
+        "line": 371,
+        "precode": "{\"GT\", 0x0003E}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"GT\", 0x0003F}"
+    },
+    {
+        "id": 530,
+        "line": 406,
+        "precode": "{\"Iacute\", 0x000CD}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Igrave\", 0x000CD}"
+    },
+    {
+        "id": 531,
+        "line": 407,
+        "precode": "{\"Icirc\", 0x000CE}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "{\"Icirc\", 0x000CF}"
+    },
+    {
+        "id": 665,
+        "line": 77,
+        "precode": "} // skip",
+        "aftercode": "charval = 0; // skip",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java"
+    },
+    {
+        "id": 1101,
+        "line": 35,
+        "precode": "private static final Map<Character, String> xhtmlByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<String, Character> xhtmlByVal;"
+    },
+    {
+        "id": 1102,
+        "line": 36,
+        "precode": "private static final Map<Character, String> baseByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<String, Character> baseByVal;"
+    },
+    {
+        "id": 1103,
+        "line": 37,
+        "precode": "private static final Map<Character, String> fullByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<String, Character> fullByVal;"
+    },
+    {
+        "id": 1104,
+        "line": 4,
+        "precode": "private static final Pattern unescapePattern = Pattern.compile(\"&(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]+\\d*);?\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Pattern unescapePattern = Pattern.compile(\"&(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]+\\d*);\");"
+    },
+    {
+        "id": 1105,
+        "line": 40,
+        "precode": "static String escape(String string, Document.OutputSettings out) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "static void escape(String string, Document.OutputSettings out) {"
+    },
+    {
+        "id": 1106,
+        "line": 41,
+        "precode": "return escape(string, out.encoder(), out.escapeMode());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "escape(string, out.encoder(), out.escapeMode());"
+    },
+    {
+        "id": 1107,
+        "line": 41,
+        "precode": "return escape(string, out.encoder(), out.escapeMode());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_9_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "return escape(string, out.escapeMode(), out.encoder());"
+    }
+]

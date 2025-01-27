@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1361,
+        "line": 128,
+        "precode": "            return; // not found, skip",
+        "aftercode": "            break; // not found, stop",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1413,
+        "line": 21,
+        "precode": "                if (data.length() > 1 && (data.startsWith(\"!\") || data.startsWith(\"?\"))) {",
+        "aftercode": "                if (data.length() > 1 || (data.startsWith(\"!\") || data.startsWith(\"?\"))) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1414,
+        "line": 23,
+        "precode": "                    Document doc = Jsoup.parse(\"<\" + data.substring(1, data.length() -1) + \">\", baseUri, Parser.xmlParser());",
+        "aftercode": "                    Document doc = Jsoup.parse(data.substring(1, data.length() -1), baseUri, Parser.xmlParser());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1415,
+        "line": 25,
+        "precode": "                    Element el = doc.child(0);",
+        "aftercode": "                    Element el = doc.child(1);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1416,
+        "line": 26,
+        "precode": "                    insert = new XmlDeclaration(settings.normalizeTag(el.tagName()), data.startsWith(\"!\"));",
+        "aftercode": "                    insert = new XmlDeclaration(settings.normalizeTag(el.tagName()), data.startsWith(\"#\"));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1417,
+        "line": 27,
+        "precode": "                    insert.attributes().addAll(el.attributes());",
+        "aftercode": "                    insert.attributes().clear();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1419,
+        "line": 47,
+        "precode": "            if (commentToken.bogus) { // xml declarations are emitted as bogus comments (which is right for html, but not xml)",
+        "aftercode": "            if (!commentToken.bogus) { // xml declarations are emitted as bogus comments (which is right for html, but not xml)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1421,
+        "line": 73,
+        "precode": "            final String data = token.getData();",
+        "aftercode": "            final String data = token.getData().toLowerCase();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1422,
+        "line": 79,
+        "precode": "            DocumentType doctypeNode = new DocumentType(settings.normalizeTag(d.getName()), d.getPublicIdentifier(), d.getSystemIdentifier());",
+        "aftercode": "            DocumentType doctypeNode = new DocumentType(settings.normalizeTag(d.getName()), null, d.getSystemIdentifier());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    },
+    {
+        "id": 1423,
+        "line": 17,
+        "precode": "            Node insert = comment;",
+        "aftercode": "            Node insert = new Element(Tag.valueOf(\"div\"), baseUri);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_77_fixed/src/main/java/org/jsoup/parser/XmlTreeBuilder.java"
+    }
+]

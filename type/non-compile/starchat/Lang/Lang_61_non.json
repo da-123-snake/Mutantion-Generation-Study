@@ -1,0 +1,275 @@
+[
+    {
+        "id": 115,
+        "line": 1194,
+        "precode": "int len = (str == null? 0 : str.length());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "int len = (str == null? 0 : str.length() - str.length());"
+    },
+    {
+        "id": 116,
+        "line": 1194,
+        "precode": "int len = (str == null? 0 : str.length());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "int len = (str == null? 0 : str.length() * str.length());"
+    },
+    {
+        "id": 117,
+        "line": 1194,
+        "precode": "int len = (str == null? 0 : str.length());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "int len = (str == null? 0 : str.length() / str.length());"
+    },
+    {
+        "id": 118,
+        "line": 1194,
+        "precode": "if (len > 0) {",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "if (len < 0) { "
+    },
+    {
+        "id": 119,
+        "line": 1194,
+        "precode": "int index = indexOf(str, 0);",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "int index = indexOf(str, len); "
+    },
+    {
+        "id": 120,
+        "line": 1194,
+        "precode": "while (index >= 0) {",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "while (index < 0) { "
+    },
+    {
+        "id": 121,
+        "line": 1194,
+        "precode": "deleteImpl(index, index + len, len);",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "deleteImpl(index, index - len, len); "
+    },
+    {
+        "id": 122,
+        "line": 1194,
+        "precode": "index = indexOf(str, index);",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "index = indexOf(str, index + 1); "
+    },
+    {
+        "id": 123,
+        "line": 1194,
+        "precode": "while (index >= 0) {",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "while (index > 0) { "
+    },
+    {
+        "id": 124,
+        "line": 1240,
+        "precode": "public StrBuilder deleteAll(StrMatcher matcher) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "public StrBuilder deleteAll(StrMatcher matcher) {\nreturn this;\n}"
+    },
+    {
+        "id": 125,
+        "line": 1240,
+        "precode": "    return replace(matcher, null, 0, size, -1);\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "    return this;\n}"
+    },
+    {
+        "id": 126,
+        "line": 1240,
+        "precode": "}\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "}\npublic StrBuilder deleteAll(StrMatcher matcher) {\nreturn this;\n}"
+    },
+    {
+        "id": 127,
+        "line": 1240,
+        "precode": "public StrBuilder deleteFirst(StrMatcher matcher) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "public StrBuilder deleteFirst(StrMatcher matcher) {\nreturn this;\n}"
+    },
+    {
+        "id": 128,
+        "line": 1240,
+        "precode": "    return replace(matcher, null, 0, size, 1);\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "    return this;\n}"
+    },
+    {
+        "id": 129,
+        "line": 1240,
+        "precode": "}\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "}\npublic StrBuilder deleteFirst(StrMatcher matcher) {\nreturn this;\n}"
+    },
+    {
+        "id": 130,
+        "line": 1240,
+        "precode": "    while (!queue.isEmpty()) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "    while (true) {\n}"
+    },
+    {
+        "id": 131,
+        "line": 1240,
+        "precode": "        queue.remove();\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "        queue.poll();\n}"
+    },
+    {
+        "id": 132,
+        "line": 1240,
+        "precode": "    }\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "    return true;\n}"
+    },
+    {
+        "id": 133,
+        "line": 1240,
+        "precode": "    ArrayList r = new ArrayList();\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "    to_add.addAll(subset);\n}"
+    },
+    {
+        "id": 271,
+        "line": 896,
+        "precode": "String str = (obj == null? getNullText() : obj.toString());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "String str = (obj == null? getNullText() : obj.toString()).substring(0, width);"
+    },
+    {
+        "id": 272,
+        "line": 896,
+        "precode": "String str = (obj == null? getNullText() : obj.toString());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "String str = (obj == null? getNullText() : obj.toString()).substring(str.length() - width, str.length());"
+    },
+    {
+        "id": 273,
+        "line": 896,
+        "precode": "String str = (obj == null? getNullText() : obj.toString());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "String str = (obj == null? getNullText() : obj.toString()).replaceFirst(\".\", \"\");"
+    },
+    {
+        "id": 274,
+        "line": 896,
+        "precode": "String str = (obj == null? getNullText() : obj.toString());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "String str = (obj == null? getNullText() : obj.toString()).toLowerCase();"
+    },
+    {
+        "id": 275,
+        "line": 896,
+        "precode": "String str = (obj == null? getNullText() : obj.toString());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "String str = (obj == null? getNullText() : obj.toString()).toUpperCase();"
+    },
+    {
+        "id": 276,
+        "line": 896,
+        "precode": "String str = (obj == null? getNullText() : obj.toString());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "String str = (obj == null? getNullText() : obj.toString()).trim();"
+    },
+    {
+        "id": 277,
+        "line": 896,
+        "precode": "String str = (obj == null? getNullText() : obj.toString());",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "String str = (obj == null? getNullText() : obj.toString()).trim().toLowerCase();"
+    },
+    {
+        "id": 285,
+        "line": 1737,
+        "precode": "if (startIndex >= size) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "if (startIndex < 0) {\n"
+    },
+    {
+        "id": 286,
+        "line": 1737,
+        "precode": "char[] thisBuf = buffer;\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "char[] thisBuf = ch;\n"
+    },
+    {
+        "id": 287,
+        "line": 1737,
+        "precode": "for (int i = startIndex; i < thisBuf.length; i++) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "for (int i = startIndex; i < ch.length; i++) {\n"
+    },
+    {
+        "id": 288,
+        "line": 1737,
+        "precode": "if (thisBuf[i] == ch) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "if (ch[i] == ch) {\n"
+    },
+    {
+        "id": 289,
+        "line": 1737,
+        "precode": "return i;\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "return -1;\n"
+    },
+    {
+        "id": 290,
+        "line": 1737,
+        "precode": "}\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "}\n"
+    },
+    {
+        "id": 291,
+        "line": 1737,
+        "precode": "}\n",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "}\n"
+    },
+    {
+        "id": 292,
+        "line": 1788,
+        "precode": "int strLen = str.length();",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "int strLen = str.length() + 1;"
+    },
+    {
+        "id": 293,
+        "line": 1788,
+        "precode": "if (strLen == 1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "if (strLen == 0) {"
+    },
+    {
+        "id": 294,
+        "line": 1788,
+        "precode": "return indexOf(str.charAt(0), startIndex);",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "return indexOf('a', startIndex);"
+    },
+    {
+        "id": 295,
+        "line": 1788,
+        "precode": "if (strLen == 0) {",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "if (strLen == 1) {"
+    },
+    {
+        "id": 296,
+        "line": 1788,
+        "precode": "return startIndex;",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 297,
+        "line": 1788,
+        "precode": "if (strLen > size) {",
+        "filepath": "defects4j_fixed/Lang/Lang_61_fixed/src/java/org/apache/commons/lang/text/StrBuilder.java",
+        "aftercode": "if (strLen < size) {"
+    }
+]

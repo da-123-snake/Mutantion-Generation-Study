@@ -1,0 +1,30 @@
+[
+    {
+        "id": 656,
+        "line": 196,
+        "precode": ".copyInformationFromForTree(script));",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": ".copyInformationFromForTree(script));"
+    },
+    {
+        "id": 658,
+        "line": 188,
+        "precode": "CompilerInput ci = t.getInput();",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "CompilerInput ci = t.getInput() == null ? new CompilerInput() : t.getInput();"
+    },
+    {
+        "id": 1865,
+        "line": 184,
+        "precode": "String moduleName = guessCJSModuleName(script.getSourceFileName());",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "String moduleName = guessCJSModuleName(script.getSourceFilePath());"
+    },
+    {
+        "id": 1867,
+        "line": 185,
+        "precode": "script.addChildToFront(IR.var(IR.name(moduleName), IR.objectlit())",
+        "filepath": "defects4j_fixed/Closure/Closure_9_fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java",
+        "aftercode": "script.addChildToFront(IR.const(IR.name(moduleName), IR.objectlit())"
+    }
+]

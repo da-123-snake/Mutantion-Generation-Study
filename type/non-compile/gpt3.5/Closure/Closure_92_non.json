@@ -1,0 +1,93 @@
+[
+    {
+        "id": 153,
+        "line": 371,
+        "precode": "Node enclosingParent = enclosingFnNameNode.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "Node enclosingParent = enclosingFnNameNode.getGrandparent();"
+    },
+    {
+        "id": 157,
+        "line": 61,
+        "precode": "Node className = enclosingFnNameNode.getFirstChild().getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "Node className = enclosingFnNameNode.getFirstChild().getFirstChild().getNext();"
+    },
+    {
+        "id": 1280,
+        "line": 40,
+        "precode": "compiler.getNodeForCodeInsertion(minimumModule).addChildToBack(replacementNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "compiler.getNodeForCodeInsertion(minimumModule).addChildToFront(replacementNode);"
+    },
+    {
+        "id": 1281,
+        "line": 40,
+        "precode": "compiler.getNodeForCodeInsertion(minimumModule).addChildToBack(replacementNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "compiler.getNodeForCodeInsertion(minimumModule + 1).addChildToBack(replacementNode);"
+    },
+    {
+        "id": 1282,
+        "line": 43,
+        "precode": "ProvidedName parentName = providedNames.get(namespace.substring(0, indexOfDot));",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "ProvidedName parentName = providedNames.get(namespace.substring(1, indexOfDot));"
+    },
+    {
+        "id": 1283,
+        "line": 43,
+        "precode": "ProvidedName parentName = providedNames.get(namespace.substring(0, indexOfDot));",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "ProvidedName parentName = providedNames.get(namespace.substring(0, indexOfDot - 1));"
+    },
+    {
+        "id": 1284,
+        "line": 45,
+        "precode": "ProvidedName parentName = providedNames.get(namespace.substring(0, indexOfDot));",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "ProvidedName parentName = providedNames.get(namespace.substring(indexOfDot + 1));"
+    },
+    {
+        "id": 1286,
+        "line": 37,
+        "precode": "               ProvidedName parentName =\n                    providedNames.get(namespace.substring(0, indexOfDot));",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "               providedNames.get(namespace) != null;"
+    },
+    {
+        "id": 1287,
+        "line": 41,
+        "precode": "               Preconditions.checkNotNull(parentName);",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "               Preconditions.checkNotNull(parentName.replacementNode);"
+    },
+    {
+        "id": 1288,
+        "line": 42,
+        "precode": "               Preconditions.checkNotNull(parentName);",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "               Preconditions.checkNotNull(parentName.replacementNode);"
+    },
+    {
+        "id": 1289,
+        "line": 43,
+        "precode": "               Preconditions.checkNotNull(parentName.replacementNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "               Preconditions.checkNotNull(parentName);"
+    },
+    {
+        "id": 1290,
+        "line": 44,
+        "precode": "               parentName.replacementNode.getParent().addChildAfter(replacementNode, parentName.replacementNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "               parentName.replacementNode.getParent().addChildBefore(replacementNode, parentName.replacementNode);"
+    },
+    {
+        "id": 1291,
+        "line": 48,
+        "precode": "               explicitNode.detachFromParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_92_fixed/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java",
+        "aftercode": "               explicitNode.attachToParent();"
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": 276,
+        "line": 159,
+        "precode": "    for (int i = 0; i < tableau.getNumObjectiveFunctions(); i++) {",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "    for (int i = tableau.getNumObjectiveFunctions() - 1; i >= 0; i--) {"
+    },
+    {
+        "id": 277,
+        "line": 159,
+        "precode": "        final double entry = tableau.getEntry(i, col);",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "        final double entry = tableau.getEntry(i + 1, col);"
+    },
+    {
+        "id": 278,
+        "line": 159,
+        "precode": "        if (Precision.compareTo(entry, 0d, maxUlps) > 0) {",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "        if (Precision.compareTo(entry, 0d, maxUlps) >= 0) {"
+    },
+    {
+        "id": 279,
+        "line": 159,
+        "precode": "            final double ratio = rhs / entry;",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "            final double ratio = rhs / (entry + EPSILON);"
+    },
+    {
+        "id": 280,
+        "line": 159,
+        "precode": "            if (cmp == 0) {",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "            if (cmp == 0) {"
+    },
+    {
+        "id": 281,
+        "line": 159,
+        "precode": "        if (minRatioPositions.size() == 0) {",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "        if (minRatioPositions.isEmpty()) {"
+    },
+    {
+        "id": 282,
+        "line": 159,
+        "precode": "            if (minRatioPositions.size() > 1) {",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "            if (minRatioPositions.size() > 1) {"
+    },
+    {
+        "id": 283,
+        "line": 159,
+        "precode": "    // 2. apply Bland's rule to prevent cycling: \n",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "    // 2. apply Bland's rule to prevent cycling: \nwhile (true) {\n"
+    },
+    {
+        "id": 284,
+        "line": 159,
+        "precode": "    // 2. apply Bland's rule to prevent cycling: \n",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "    // 2. apply Bland's rule to prevent cycling: \nfor (int i = 0; i < 10; i++) {\n"
+    },
+    {
+        "id": 285,
+        "line": 159,
+        "precode": "    // 2. apply Bland's rule to prevent cycling: \n",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "    // 2. apply Bland's rule to prevent cycling: \nif (true) {\n"
+    },
+    {
+        "id": 286,
+        "line": 159,
+        "precode": "    // 2. apply Bland's rule to prevent cycling: \n",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "    // 2. apply Bland's rule to prevent cycling: \nwhile (true) {\n    if (true) {\n        break;\n    }\n}\n"
+    },
+    {
+        "id": 287,
+        "line": 159,
+        "precode": "    // 2. apply Bland's rule to prevent cycling: \n",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "    // 2. apply Bland's rule to prevent cycling: \nfor (int i = 0; i < 10; i++) {\n    if (true) {\n        break;\n    }\n}\n"
+    },
+    {
+        "id": 288,
+        "line": 159,
+        "precode": "    // 2. apply Bland's rule to prevent cycling: \n",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "    // 2. apply Bland's rule to prevent cycling: \nif (true) {\n    doSomething();\n}\n"
+    },
+    {
+        "id": 289,
+        "line": 159,
+        "precode": "    // 2. apply Bland's rule to prevent cycling: \n",
+        "filepath": "defects4j_fixed/Math/Math_28_fixed/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java",
+        "aftercode": "    // 2. apply Bland's rule to prevent cycling: \ntry {\n    doSomething();\n} catch (Exception e) {\n    // do something\n}\n"
+    }
+]

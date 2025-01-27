@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1007,
+        "line": 145,
+        "precode": "renamer = nameStack.peek().forChildScope();",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "renamer = nameStack.peek().forParentScope();"
+    },
+    {
+        "id": 1010,
+        "line": 93,
+        "precode": "findDeclaredNames(declarationRoot, null, renamer);",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "findDeclaredNames(declarationRoot, renamer, null);"
+    },
+    {
+        "id": 1011,
+        "line": 145,
+        "precode": "renamer = nameStack.peek().forChildScope();",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "renamer = nameStack.peek();"
+    },
+    {
+        "id": 1014,
+        "line": 150,
+        "precode": "nameStack.push(renamer);",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "nameStack.push(new Renamer());"
+    },
+    {
+        "id": 1023,
+        "line": 150,
+        "precode": "nameStack.push(renamer);",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "nameStack.push(new Renamer(renamer));"
+    },
+    {
+        "id": 1027,
+        "line": 150,
+        "precode": "nameStack.push(renamer);",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "nameStack.push(renamer.clone());"
+    },
+    {
+        "id": 1031,
+        "line": 150,
+        "precode": "nameStack.push(renamer);",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "nameStack.push(renamer.forChildScope().clone());"
+    },
+    {
+        "id": 1033,
+        "line": 150,
+        "precode": "nameStack.push(renamer);",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "nameStack.push(renamer.forChildScope() != null ? renamer.forChildScope() : new Renamer());"
+    },
+    {
+        "id": 1039,
+        "line": 64,
+        "precode": "// Note: The parameters and function body variables live in the same scope, we introduce the scope when in the \"shouldTraverse\" visit of LP, but remove it when we exit the function above.",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "// Note: The parameters live in the same scope; the function body variables are removed."
+    },
+    {
+        "id": 1040,
+        "line": 64,
+        "precode": "// Note: The parameters and function body variables live in the same scope, we introduce the scope when in the \"shouldTraverse\" visit of LP, but remove it when we exit the function above.",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "// Note: The scope is removed immediately when exiting the LP."
+    },
+    {
+        "id": 1041,
+        "line": 64,
+        "precode": "// Note: The parameters and function body variables live in the same scope, we introduce the scope when in the \"shouldTraverse\" visit of LP, but remove it when we exit the function above.",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "// Note: Parameters and body are treated separately in scope management."
+    },
+    {
+        "id": 1042,
+        "line": 64,
+        "precode": "// Note: The parameters and function body variables live in the same scope, we introduce the scope when in the \"shouldTraverse\" visit of LP, but remove it when we exit the function above.",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "// The parameters are managed separately from the function body."
+    },
+    {
+        "id": 1043,
+        "line": 190,
+        "precode": "break;",
+        "filepath": "defects4j_fixed/Closure/Closure_49_fixed/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java",
+        "aftercode": "continue;"
+    }
+]

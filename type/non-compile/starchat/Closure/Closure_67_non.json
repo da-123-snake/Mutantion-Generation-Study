@@ -1,0 +1,51 @@
+[
+    {
+        "id": 550,
+        "line": 335,
+        "precode": "  boolean isGlobalFunctionDeclaration(NodeTraversal t, Node n) {",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "  boolean isGlobalFunctionDeclaration(NodeTraversal t, Node n) {"
+    },
+    {
+        "id": 551,
+        "line": 335,
+        "precode": "    return t.inGlobalScope() &&",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "    return t.inGlobalScope() ||"
+    },
+    {
+        "id": 552,
+        "line": 335,
+        "precode": "        (NodeUtil.isFunctionDeclaration(n) ||",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "        (NodeUtil.isFunctionDeclaration(n) &&"
+    },
+    {
+        "id": 553,
+        "line": 335,
+        "precode": "            n.getType() == Token.FUNCTION &&",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "            n.getType() == Token.FUNCTION ||"
+    },
+    {
+        "id": 554,
+        "line": 335,
+        "precode": "            n.getParent().getType() == Token.NAME)",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "            n.getParent().getType() == Token.NAME))"
+    },
+    {
+        "id": 555,
+        "line": 335,
+        "precode": "  private boolean isPrototypePropertyAssign(Node assign) {",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "  private boolean isPrototypePropertyAssign(Node assign) {"
+    },
+    {
+        "id": 556,
+        "line": 335,
+        "precode": "    if (n!= null && NodeUtil.isVarOrSimpleAssignLhs(n, assign) &&",
+        "filepath": "defects4j_fixed/Closure/Closure_67_fixed/src/com/google/javascript/jscomp/AnalyzePrototypeProperties.java",
+        "aftercode": "    if (n!= null && NodeUtil.isVarOrSimpleAssignLhs(n, assign) ||"
+    }
+]

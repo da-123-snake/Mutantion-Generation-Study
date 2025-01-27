@@ -1,0 +1,72 @@
+[
+    {
+        "id": 40,
+        "line": 371,
+        "precode": "        return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "        return0;"
+    },
+    {
+        "id": 41,
+        "line": 374,
+        "precode": "        return new BigDecimal(in.nextString());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "        return new BigDecimal(in.read());"
+    },
+    {
+        "id": 94,
+        "line": 830,
+        "precode": "        if (!clazz.isAssignableFrom(requestedType)) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "        if (unclazz.isAssignableFrom(requestedType)) {"
+    },
+    {
+        "id": 95,
+        "line": 831,
+        "precode": "          return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "          returnthis;"
+    },
+    {
+        "id": 96,
+        "line": 835,
+        "precode": "            typeAdapter.write(out, value);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "            typeAdapter.writer(out, value);"
+    },
+    {
+        "id": 97,
+        "line": 839,
+        "precode": "            T1 result = typeAdapter.read(in);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "            T1 result = typeAdapter.parse(in);"
+    },
+    {
+        "id": 99,
+        "line": 841,
+        "precode": "              throw new JsonSyntaxException(\"Expected a \" + requestedType.getName()",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "                  + \" but was \"+result.getClass().getName());"
+    },
+    {
+        "id": 100,
+        "line": 842,
+        "precode": "                  + \" but was \" + result.getClass().getName());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "                  +\" + result.getClass().getName());"
+    },
+    {
+        "id": 101,
+        "line": 844,
+        "precode": "            return result;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "            returnnull;"
+    },
+    {
+        "id": 102,
+        "line": 849,
+        "precode": "        return \"Factory[typeHierarchy=\" + clazz.getName() + \",adapter=\" + typeAdapter + \"]\";",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Gson/Gson_2_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "        return \"Factory[typeHierarchy=\" + clazz.getName() + \",adapter=\" + typeAdapter\"+\"]\";"
+    }
+]

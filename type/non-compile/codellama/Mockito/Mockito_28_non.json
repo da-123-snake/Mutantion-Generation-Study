@@ -1,0 +1,37 @@
+[
+    {
+        "id": 216,
+        "line": 92,
+        "precode": "for(Field field : orderedInstanceFieldsFrom(awaitingInjectionClazz)) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_28_fixed/src/org/mockito/internal/configuration/DefaultInjectionEngine.java",
+        "aftercode": "for(Field field : orderedInstanceFieldsFrom(awaitingInjectionClazz).reverse()) {"
+    },
+    {
+        "id": 217,
+        "line": 93,
+        "precode": "Object injected = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_28_fixed/src/org/mockito/internal/configuration/DefaultInjectionEngine.java",
+        "aftercode": "Object injected = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject().reverse();"
+    },
+    {
+        "id": 220,
+        "line": 98,
+        "precode": "private Field[] orderedInstanceFieldsFrom(Class<?> awaitingInjectionClazz) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_28_fixed/src/org/mockito/internal/configuration/DefaultInjectionEngine.java",
+        "aftercode": "private Field[] orderedInstanceFieldsFrom(Class<?> awaitingInjectionClazz) {return null;}"
+    },
+    {
+        "id": 221,
+        "line": 99,
+        "precode": "Field[] declaredFields = awaitingInjectionClazz.getDeclaredFields();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_28_fixed/src/org/mockito/internal/configuration/DefaultInjectionEngine.java",
+        "aftercode": "Field[] declaredFields = awaitingInjectionClazz.getDeclaredFields().reverse();"
+    },
+    {
+        "id": 222,
+        "line": 100,
+        "precode": "Arrays.sort(declaredFields, supertypesLast);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_28_fixed/src/org/mockito/internal/configuration/DefaultInjectionEngine.java",
+        "aftercode": "Arrays.sort(declaredFields, supertypesLast).reverse();"
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 193,
+        "line": 290,
+        "precode": "      returnType = info.getReturnType().evaluate(scope, typeRegistry);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "      returnType|= info.getReturnType().evaluate(scope, typeRegistry);"
+    },
+    {
+        "id": 195,
+        "line": 294,
+        "precode": "    if (templateTypeName != null &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "        returnType!= null&&returnType.restrictByNotNullOrUndefined().isTemplateType()) {"
+    },
+    {
+        "id": 197,
+        "line": 296,
+        "precode": "        returnType.restrictByNotNullOrUndefined().isTemplateType()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "        returnType.restrictByNotNullOrUndefined().evaluate()) {"
+    },
+    {
+        "id": 198,
+        "line": 297,
+        "precode": "      reportError(TEMPLATE_TYPE_EXPECTED, fnName);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "        returnType.restrictByNotNullOrUndefined().isTemplateType()) {warning(TEMPLATE_TYPE_EXPECTED, fnName);"
+    },
+    {
+        "id": 289,
+        "line": 184,
+        "precode": "      if (!type.restrictByNotNullOrUndefined().isSubtype(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "      if (//type.restrictByNotNullOrUndefined().isSubtype("
+    },
+    {
+        "id": 290,
+        "line": 185,
+        "precode": "              typeRegistry.getNativeType(OBJECT_TYPE))) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "              typeRegistry.get(OBJECT_TYPE))) {"
+    },
+    {
+        "id": 291,
+        "line": 186,
+        "precode": "        reportWarning(THIS_TYPE_NON_OBJECT, type.toString());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "              typeRegistry.getNativeType(OBJECT_TYPE))) {error(THIS_TYPE_NON_OBJECT, type.toString());"
+    },
+    {
+        "id": 292,
+        "line": 187,
+        "precode": "        return false;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_90_fixed/src/com/google/javascript/jscomp/FunctionTypeBuilder.java",
+        "aftercode": "        returntrue;"
+    }
+]

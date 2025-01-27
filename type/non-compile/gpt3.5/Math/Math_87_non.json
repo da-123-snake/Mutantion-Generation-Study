@@ -1,0 +1,58 @@
+[
+    {
+        "id": 150,
+        "line": 335,
+        "precode": "basicRows.add(basicRow);",
+        "filepath": "defects4j_fixed/Math/Math_87_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "Set<Integer> basicRows = new TreeSet<Integer>();"
+    },
+    {
+        "id": 152,
+        "line": 336,
+        "precode": "coefficients[i] =",
+        "filepath": "defects4j_fixed/Math/Math_87_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "coefficients[i] = restrictToNonNegative ? mostNegative : 0;"
+    },
+    {
+        "id": 153,
+        "line": 336,
+        "precode": "coefficients[i] =",
+        "filepath": "defects4j_fixed/Math/Math_87_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "coefficients[i] = (basicRow == null ? mostNegative : 0) - (restrictToNonNegative ? 0 : mostNegative);"
+    },
+    {
+        "id": 154,
+        "line": 336,
+        "precode": "coefficients[i] =",
+        "filepath": "defects4j_fixed/Math/Math_87_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "coefficients[i] = (basicRow == null ? 0 : getEntry(basicRow, getRhsOffset())) - mostNegative;"
+    },
+    {
+        "id": 155,
+        "line": 336,
+        "precode": "coefficients[i] =",
+        "filepath": "defects4j_fixed/Math/Math_87_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "coefficients[i] = (basicRow == null ? 0 : getEntry(basicRow, getRhsOffset())) - (!restrictToNonNegative ? mostNegative : 0);"
+    },
+    {
+        "id": 156,
+        "line": 341,
+        "precode": "return new RealPointValuePair(coefficients, f.getValue(coefficients));",
+        "filepath": "defects4j_fixed/Math/Math_87_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "return new RealPointValuePair(coefficients, f.getValue(coefficients, 0, coefficients.length));"
+    },
+    {
+        "id": 159,
+        "line": 343,
+        "precode": "",
+        "filepath": "defects4j_fixed/Math/Math_87_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 160,
+        "line": 343,
+        "precode": "",
+        "filepath": "defects4j_fixed/Math/Math_87_fixed/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "return new RealPointValuePair(coefficients);"
+    }
+]

@@ -1,0 +1,184 @@
+[
+    {
+        "id": 281,
+        "line": 40,
+        "precode": "        Validate.notNull(dirtyDocument);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        Validate.clean(dirtyDocument);"
+    },
+    {
+        "id": 282,
+        "line": 42,
+        "precode": "        Document clean = Document.createShell(dirtyDocument.baseUri());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        Document clean = Document.create(dirtyDocument.baseUri());"
+    },
+    {
+        "id": 284,
+        "line": 44,
+        "precode": "            copySafeNodes(dirtyDocument.body(), clean.body());",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        if (dirtyDocument.body()!= null) // frameset documents won't have a body. the clean doc will have empty body.replace(dirtyDocument.body(), clean.body());"
+    },
+    {
+        "id": 285,
+        "line": 46,
+        "precode": "        return clean;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        returncleaned;"
+    },
+    {
+        "id": 290,
+        "line": 74,
+        "precode": "        List<Node> sourceChildren = source.childNodes();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        List<Node> sourceChildren = source.children();"
+    },
+    {
+        "id": 292,
+        "line": 77,
+        "precode": "        for (Node sourceChild : sourceChildren) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        for (Node sourceChild :source) {"
+    },
+    {
+        "id": 293,
+        "line": 78,
+        "precode": "            if (sourceChild instanceof Element) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "            if (sourceChild==Element) {"
+    },
+    {
+        "id": 295,
+        "line": 81,
+        "precode": "                if (whitelist.isSafeTag(sourceEl.tagName())) { // safe, clone and copy safe attrs",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                if (whitelist.add(sourceEl.tagName())) { // safe, clone and copy safe attrs"
+    },
+    {
+        "id": 296,
+        "line": 82,
+        "precode": "                    ElementMeta meta = createSafeElement(sourceEl);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                    ElementMeta meta =clone(sourceEl);"
+    },
+    {
+        "id": 297,
+        "line": 83,
+        "precode": "                    Element destChild = meta.el;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                    Element destChild =meta;"
+    },
+    {
+        "id": 298,
+        "line": 84,
+        "precode": "                    dest.appendChild(destChild);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                    dest.add(destChild);"
+    },
+    {
+        "id": 300,
+        "line": 90,
+        "precode": "                    numDiscarded += copySafeNodes(sourceEl, dest);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                    numDiscarded*+= copySafeNodes(sourceEl, dest);"
+    },
+    {
+        "id": 301,
+        "line": 92,
+        "precode": "            } else if (sourceChild instanceof TextNode) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "            } else if (sourceChildofTextNode) {"
+    },
+    {
+        "id": 302,
+        "line": 93,
+        "precode": "                TextNode sourceText = (TextNode) sourceChild;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                TextNode sourceText =source;"
+    },
+    {
+        "id": 304,
+        "line": 95,
+        "precode": "                dest.appendChild(destText);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                dest.append(destText);"
+    },
+    {
+        "id": 305,
+        "line": 98,
+        "precode": "        return numDiscarded;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        returndest;"
+    },
+    {
+        "id": 306,
+        "line": 102,
+        "precode": "        String sourceTag = sourceEl.tagName();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        String sourceTag = sourceEl.tag();"
+    },
+    {
+        "id": 307,
+        "line": 104,
+        "precode": "        Element dest = new Element(Tag.valueOf(sourceTag), sourceEl.baseUri(), destAttrs);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        Element dest = new Element(Tag.create(sourceTag), sourceEl.baseUri(), destAttrs);"
+    },
+    {
+        "id": 309,
+        "line": 107,
+        "precode": "        Attributes sourceAttrs = sourceEl.attributes();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        Attributes sourceAttrs = sourceEl.attribute();"
+    },
+    {
+        "id": 310,
+        "line": 108,
+        "precode": "        for (Attribute sourceAttr : sourceAttrs) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        for (Attribute sourceAttr :attributes) {"
+    },
+    {
+        "id": 311,
+        "line": 109,
+        "precode": "            if (whitelist.isSafeAttribute(sourceTag, sourceEl, sourceAttr))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "            if (whitelist.match(sourceTag, sourceEl, sourceAttr))"
+    },
+    {
+        "id": 312,
+        "line": 110,
+        "precode": "                destAttrs.put(sourceAttr);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                destAttrs.add(sourceAttr);"
+    },
+    {
+        "id": 313,
+        "line": 112,
+        "precode": "                numDiscarded++;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "                numDiscarded++"
+    },
+    {
+        "id": 314,
+        "line": 114,
+        "precode": "        Attributes enforcedAttrs = whitelist.getEnforcedAttributes(sourceTag);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        Attributes enforcedAttrs = whitelist.get(sourceTag);"
+    },
+    {
+        "id": 315,
+        "line": 115,
+        "precode": "        destAttrs.addAll(enforcedAttrs);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        destAttrs.put(enforcedAttrs);"
+    },
+    {
+        "id": 316,
+        "line": 117,
+        "precode": "        return new ElementMeta(dest, numDiscarded);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_26_fixed/src/main/java/org/jsoup/safety/Cleaner.java",
+        "aftercode": "        return new ElementMeta(source, numDiscarded);"
+    }
+]

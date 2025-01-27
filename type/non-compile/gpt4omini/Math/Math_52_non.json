@@ -1,0 +1,51 @@
+[
+    {
+        "id": 262,
+        "line": 24,
+        "precode": "Vector3D k = v1Su1.crossProduct(v2Su2);",
+        "filepath": "defects4j_fixed/Math/Math_52_fixed/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java",
+        "aftercode": "Vector3D k = v1Su1.add(v2Su2);"
+    },
+    {
+        "id": 263,
+        "line": 25,
+        "precode": "Vector3D u3 = u1.crossProduct(u2);",
+        "filepath": "defects4j_fixed/Math/Math_52_fixed/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java",
+        "aftercode": "Vector3D u3 = u2.crossProduct(u1);"
+    },
+    {
+        "id": 264,
+        "line": 26,
+        "precode": "double c = k.dotProduct(u3);",
+        "filepath": "defects4j_fixed/Math/Math_52_fixed/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java",
+        "aftercode": "double c = k.crossProduct(u3);"
+    },
+    {
+        "id": 266,
+        "line": 345,
+        "precode": "if (c <= inPlaneThreshold * k.getNorm() * u3.getNorm())",
+        "filepath": "defects4j_fixed/Math/Math_52_fixed/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java",
+        "aftercode": "if (c >= inPlaneThreshold * k.getNorm() * u3.getNorm())"
+    },
+    {
+        "id": 267,
+        "line": 348,
+        "precode": "Vector3D v3 = Vector3D.crossProduct(v1, v2);",
+        "filepath": "defects4j_fixed/Math/Math_52_fixed/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java",
+        "aftercode": "Vector3D v3 = Vector3D.add(v1, v2);"
+    },
+    {
+        "id": 268,
+        "line": 24,
+        "precode": "Vector3D k = v1Su1.crossProduct(v2Su2);",
+        "filepath": "defects4j_fixed/Math/Math_52_fixed/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java",
+        "aftercode": "Vector3D k = v1Su1.subtract(v2Su2);"
+    },
+    {
+        "id": 269,
+        "line": 345,
+        "precode": "if (c <= inPlaneThreshold * k.getNorm() * u3.getNorm())",
+        "filepath": "defects4j_fixed/Math/Math_52_fixed/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java",
+        "aftercode": "if (c < inPlaneThreshold * k.getNorm() * u3.getNorm())"
+    }
+]

@@ -1,0 +1,128 @@
+[
+    {
+        "id": 29,
+        "line": 456,
+        "precode": "  protected CommandLineRunner(String[] args) throws CmdLineException {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "  protected CommandLineRunner(String[] args) throws CmdLineException {\n    super();\n    initConfigFromFlags(args, System.err);\n  }"
+    },
+    {
+        "id": 30,
+        "line": 456,
+        "precode": "  protected CommandLineRunner(String[] args, PrintStream out, PrintStream err) throws CmdLineException {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "  protected CommandLineRunner(String[] args, PrintStream out, PrintStream err) throws CmdLineException {\n    super(out, err);\n    initConfigFromFlags(args, err);\n  }"
+    },
+    {
+        "id": 31,
+        "line": 456,
+        "precode": "    initConfigFromFlags(args, System.err);",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "    initConfigFromFlags(args, System.err);\n  }"
+    },
+    {
+        "id": 32,
+        "line": 456,
+        "precode": "    initConfigFromFlags(args, err);",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "    initConfigFromFlags(args, err);\n  }"
+    },
+    {
+        "id": 33,
+        "line": 456,
+        "precode": "  private void initConfigFromFlags(String[] args, PrintStream err) throws CmdLineException {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "  private void initConfigFromFlags(String[] args, PrintStream err) throws CmdLineException {\n    // Args4j has a different format that the old command-line parser. \n    // So we use some voodoo to get the args into the format that args4j\n    // expects.\n    Pattern argPattern = Pattern.compile(\"(--[a-zA-Z_]+)=(.*)\");\n    Pattern quotesPattern = Pattern.compile(\"^['\"](.*)['\"]$\");\n    List<String> processedArgs = Lists.newArrayList();\n    for (String arg : args) {\n      Matcher matcher = argPattern.matcher(arg);\n      if (matcher.matches()) {\n        processedArgs.add(matcher.group(1));\n\n        String value = matcher.group(2);\n        Matcher quotesMatcher = quotesPattern.matcher(value);\n        if (quotesMatcher.matches()) {\n          processedArgs.add(quotesMatcher.group(1));\n        } else {\n          processedArgs.add(value);\n        }\n      } else {\n        processedArgs.add(arg);\n      }\n    }\n\n    CmdLineParser parser = new CmdLineParser(flags);\n    try {\n      parser.parseArgument(processedArgs.toArray(new String[] {}));\n    } catch (CmdLineException e) {\n      err.println(e.getMessage());\n      parser.printUsage(err);\n      throw e;\n    }\n    getCommandLineConfig()\n       .setPrintTree(flags.print_tree)\n       .setComputePhaseOrdering(flags.compute_phase_ordering)\n       .setPrintAst(flags.print_ast)\n       .setPrintPassGraph(flags.print_pass_graph)\n       .setJscompDevMode(flags.jscomp_dev_mode)\n       .setLoggingLevel(flags.logging_level)\n       .setExterns(flags.externs)\n       .setJs(flags.js)\n       .setJsOutputFile(flags.js_output_file)\n       .setModule(flags.module)\n       .setVariableMapInputFile(flags.variable_map_input_file)\n       .setPropertyMapInputFile(flags.property_map_input_file)\n       .setVariableMapOutputFile(flags.variable_map_output_file)\n       .setCreateNameMapFiles(flags.create_name_map_files)\n       .setPropertyMapOutputFile(flags.property_map_output_file)\n       .setThirdParty(flags.third_party)\n       .setSummaryDetailLevel(flags.summary_detail_level)\n       .setOutputWrapper(flags.output_wrapper)\n       .setOutputWrapperMarker(flags.output_wrapper_marker)\n       .setModuleWrapper(flags.module_wrapper)\n       .setModuleOutputPathPrefix(flags.module_output_path_prefix)\n       .setCreateSourceMap(flags.create_source_map)\n       .setJscompError(flags.jscomp_error)\n       .setJscompWarning(flags.jscomp_warning)\n       .setJscompOff(flags.jscomp_off)\n       .setDefine(flags.define)\n       .setCharset(flags.charset);\n  }"
+    },
+    {
+        "id": 34,
+        "line": 456,
+        "precode": "    CmdLineParser parser = new CmdLineParser(flags);",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "    CmdLineParser parser = new CmdLineParser(flags);\n    try {\n      parser.parseArgument(processedArgs.toArray(new String[] {}));\n    } catch (CmdLineException e) {\n      err.println(e.getMessage());\n      parser.printUsage(err);\n      throw e;\n    }"
+    },
+    {
+        "id": 35,
+        "line": 456,
+        "precode": "      parser.parseArgument(processedArgs.toArray(new String[] {}));",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "      parser.parseArgument(processedArgs.toArray(new String[] {}));\n    }"
+    },
+    {
+        "id": 36,
+        "line": 456,
+        "precode": "    getCommandLineConfig()",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "    getCommandLineConfig()\n       .setPrintTree(flags.print_tree)\n       .setComputePhaseOrdering(flags.compute_phase_ordering)\n       .setPrintAst(flags.print_ast)\n       .setPrintPassGraph(flags.print_pass_graph)\n       .setJscompDevMode(flags.jscomp_dev_mode)\n       .setLoggingLevel(flags.logging_level)\n       .setExterns(flags.externs)\n       .setJs(flags.js)\n       .setJsOutputFile(flags.js_output_file)\n       .setModule(flags.module)\n       .setVariableMapInputFile(flags.variable_map_input_file)\n       .setPropertyMapInputFile(flags.property_map_input_file)\n       .setVariableMapOutputFile(flags.variable_map_output_file)\n       .setCreateNameMapFiles(flags.create_name_map_files)\n       .setPropertyMapOutputFile(flags.property_map_output_file)\n       .setThirdParty(flags.third_party)\n       .setSummaryDetailLevel(flags.summary_detail_level)\n       .setOutputWrapper(flags.output_wrapper)\n       .setOutputWrapperMarker(flags.output_wrapper_marker)\n       .setModuleWrapper(flags.module_wrapper)\n       .setModuleOutputPathPrefix(flags.module_output_path_prefix)\n       .setCreateSourceMap(flags.create_source_map)\n       .setJscompError(flags.jscomp_error)\n       .setJscompWarning(flags.jscomp_warning)\n       .setJscompOff(flags.jscomp_off)\n       .setDefine(flags.define)\n       .setCharset(flags.charset);"
+    },
+    {
+        "id": 815,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = true;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = true;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 816,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = false;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = false;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 817,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint =!options.prettyPrint;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter =!options.printInputDelimiter;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 818,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = (int) (Math.random() * 2) == 0;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = (int) (Math.random() * 2) == 0;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 819,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = (int) (Math.random() * 2) == 1;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = (int) (Math.random() * 2) == 1;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 820,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = (int) (Math.random() * 2) == 2;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = (int) (Math.random() * 2) == 2;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 821,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = (int) (Math.random() * 2) == 3;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = (int) (Math.random() * 2) == 3;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 822,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = (int) (Math.random() * 2) == 4;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = (int) (Math.random() * 2) == 4;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 823,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = (int) (Math.random() * 2) == 5;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = (int) (Math.random() * 2) == 5;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    },
+    {
+        "id": 824,
+        "line": 336,
+        "precode": "private static enum FormattingOption {",
+        "filepath": "defects4j_fixed/Closure/Closure_101_fixed/src/com/google/javascript/jscomp/CommandLineRunner.java",
+        "aftercode": "private static enum FormattingOption {\n    PRETTY_PRINT,\n    PRINT_INPUT_DELIMITER,\n    ;\n\n    private void applyToOptions(CompilerOptions options) {\n        switch (this) {\n            case PRETTY_PRINT:\n                options.prettyPrint = (int) (Math.random() * 2) == 6;\n                break;\n            case PRINT_INPUT_DELIMITER:\n                options.printInputDelimiter = (int) (Math.random() * 2) == 6;\n                break;\n            default:\n                throw new RuntimeException(\"Unknown formatting option: \" + this);\n        }\n    }\n}"
+    }
+]

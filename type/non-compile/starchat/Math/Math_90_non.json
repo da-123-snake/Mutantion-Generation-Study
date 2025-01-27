@@ -1,0 +1,65 @@
+[
+    {
+        "id": 148,
+        "line": 109,
+        "precode": "public void addValue(Object v) {",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "public void addValue(Integer v) {"
+    },
+    {
+        "id": 158,
+        "line": 109,
+        "precode": "public void addValue(Object v) {",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "public void addValue(Integer v) {"
+    },
+    {
+        "id": 164,
+        "line": 140,
+        "precode": "Object obj = v;",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Object obj = v;\nif (v instanceof Integer) {\n    obj = Long.valueOf(((Integer) v).longValue());\n}"
+    },
+    {
+        "id": 165,
+        "line": 140,
+        "precode": "Object obj = v;",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Object obj = v;\nif (v instanceof Integer) {\n    obj = v;\n}"
+    },
+    {
+        "id": 166,
+        "line": 140,
+        "precode": "Object obj = v;",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Object obj = v;\nif (v instanceof Integer) {\n    obj = v;\n}\nelse {\n    throw new IllegalArgumentException(\"Value not comparable to existing values.\");\n}"
+    },
+    {
+        "id": 167,
+        "line": 140,
+        "precode": "Long count = (Long) freqTable.get(obj);",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Long count = (Long) freqTable.get(obj);\nif (count == null) {\n    freqTable.put(obj, Long.valueOf(1));\n}"
+    },
+    {
+        "id": 168,
+        "line": 140,
+        "precode": "Long count = (Long) freqTable.get(obj);",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Long count = (Long) freqTable.get(obj);\nif (count == null) {\n    freqTable.put(obj, Long.valueOf(2));\n}"
+    },
+    {
+        "id": 169,
+        "line": 140,
+        "precode": "Long count = (Long) freqTable.get(obj);",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Long count = (Long) freqTable.get(obj);\nif (count == null) {\n    freqTable.put(obj, Long.valueOf(3));\n}\nelse {\n    freqTable.put(obj, Long.valueOf(count.longValue() + 1));\n}"
+    },
+    {
+        "id": 170,
+        "line": 140,
+        "precode": "    Object obj = v;",
+        "filepath": "defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "    Object obj = v;\n    if (v instanceof Integer) {\n        obj = Long.valueOf(((Integer) v).longValue());\n    }\n    try {\n        Long count = (Long) freqTable.get(obj);\n        if (count == null) {\n            freqTable.put(obj, Long.valueOf(1));\n        }\n        else {\n            freqTable.put(obj, Long.valueOf(count.longValue() + 1));\n        }\n    }\n    catch (ClassCastException ex) {\n        //TreeMap will throw ClassCastException if v is not comparable\n        throw new IllegalArgumentException(\"Value not comparable to existing values.\");\n    }"
+    }
+]

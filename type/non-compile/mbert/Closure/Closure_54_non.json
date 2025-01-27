@@ -1,0 +1,219 @@
+[
+    {
+        "id": 59,
+        "line": 340,
+        "precode": "        case Token.EXPR_RESULT:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        caseNAME:"
+    },
+    {
+        "id": 60,
+        "line": 341,
+        "precode": "          Node firstChild = node.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          Node firstChild = node.next();"
+    },
+    {
+        "id": 61,
+        "line": 342,
+        "precode": "          if (firstChild.getType() == Token.ASSIGN) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          if (firstChild.getType()===Token.ASSIGN) {"
+    },
+    {
+        "id": 62,
+        "line": 343,
+        "precode": "            identifyNameNode(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          if (firstChild.getType() == Token.ASSIGN) {assign("
+    },
+    {
+        "id": 63,
+        "line": 369,
+        "precode": "    return typeRegistry.getNativeType(nativeType);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "    return typeRegistry.get(nativeType);"
+    },
+    {
+        "id": 281,
+        "line": 896,
+        "precode": "      return functionType;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      returninfo;"
+    },
+    {
+        "id": 282,
+        "line": 906,
+        "precode": "      JSType propType = ownerType.getPropertyType(propName);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      JSType propType = ownerType.get(propName);"
+    },
+    {
+        "id": 283,
+        "line": 907,
+        "precode": "      if (propType != null && propType.isFunctionType()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      if (propType!= nullANDpropType.isFunctionType()) {"
+    },
+    {
+        "id": 284,
+        "line": 908,
+        "precode": "        return propType.toMaybeFunctionType();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        return propType.get();"
+    },
+    {
+        "id": 400,
+        "line": 417,
+        "precode": "      for (DeferredSetType deferred : deferredSetTypes) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      for (DeferredSetType deferred :deferred) {"
+    },
+    {
+        "id": 401,
+        "line": 418,
+        "precode": "        deferred.resolve(scope);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        deferred.apply(scope);"
+    },
+    {
+        "id": 402,
+        "line": 422,
+        "precode": "      Iterator<Var> vars = scope.getVars();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      Iterator<Var> vars = scope.iterator();"
+    },
+    {
+        "id": 403,
+        "line": 423,
+        "precode": "      while (vars.hasNext()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      while (vars.next()) {"
+    },
+    {
+        "id": 404,
+        "line": 545,
+        "precode": "          n.setJSType(getNativeType(UNKNOWN_TYPE));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "          n.set(getNativeType(UNKNOWN_TYPE));"
+    },
+    {
+        "id": 405,
+        "line": 548,
+        "precode": "        case Token.OBJECTLIT:",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        caseObject:"
+    },
+    {
+        "id": 406,
+        "line": 549,
+        "precode": "          defineObjectLiteral(t, n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        case Token.OBJECTLIT:emit(t, n);"
+    },
+    {
+        "id": 407,
+        "line": 585,
+        "precode": "      Node lValue = NodeUtil.getBestLValue(objectLit);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      Node lValue = NodeUtil.value(objectLit);"
+    },
+    {
+        "id": 408,
+        "line": 586,
+        "precode": "      String lValueName = NodeUtil.getBestLValueName(lValue);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      String lValueName = NodeUtil.name(lValue);"
+    },
+    {
+        "id": 411,
+        "line": 589,
+        "precode": "        type = createEnumTypeFromNodes(objectLit, lValueName, info, lValue);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        type|= createEnumTypeFromNodes(objectLit, lValueName, info, lValue);"
+    },
+    {
+        "id": 413,
+        "line": 593,
+        "precode": "      if (type == null) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      if (type=null) {"
+    },
+    {
+        "id": 414,
+        "line": 594,
+        "precode": "        type = typeRegistry.createAnonymousObjectType();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        type== typeRegistry.createAnonymousObjectType();"
+    },
+    {
+        "id": 415,
+        "line": 597,
+        "precode": "      setDeferredType(objectLit, type);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      }process(objectLit, type);"
+    },
+    {
+        "id": 416,
+        "line": 600,
+        "precode": "      if (!createdEnumType) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "      if (...createdEnumType) {"
+    },
+    {
+        "id": 516,
+        "line": 1744,
+        "precode": "            (fnVar.getNameNode() != null &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "            (fnVar.getNameNode()!= null&&fnVar.getInitialValue()!= fnNode)) {"
+    },
+    {
+        "id": 518,
+        "line": 1748,
+        "precode": "          defineSlot(fnNameNode, fnNode, fnNode.getJSType(), false);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "                fnVar.getInitialValue()!= fnNode)) {declare(fnNameNode, fnNode, fnNode.getJSType(), false);"
+    },
+    {
+        "id": 565,
+        "line": 1518,
+        "precode": "        Node n = stub.node;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        Node n =stub;"
+    },
+    {
+        "id": 566,
+        "line": 1519,
+        "precode": "        Node parent = n.getParent();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        Node parent = n.parent();"
+    },
+    {
+        "id": 567,
+        "line": 1520,
+        "precode": "        String qName = n.getQualifiedName();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        String qName = n.string();"
+    },
+    {
+        "id": 568,
+        "line": 1521,
+        "precode": "        String propName = n.getLastChild().getString();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        String propName = n.getLastChild().name();"
+    },
+    {
+        "id": 571,
+        "line": 1525,
+        "precode": "        if (scope.isDeclared(qName, false)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        if (scope.is(qName, false)) {"
+    },
+    {
+        "id": 572,
+        "line": 1531,
+        "precode": "        ObjectType ownerType = getObjectSlot(ownerName);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_54_fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java",
+        "aftercode": "        ObjectType ownerType =lookup(ownerName);"
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 21,
+        "line": 1132,
+        "precode": "            TimeZone zone = calendar.getTimeZone();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_8_fixed/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java",
+        "aftercode": "            TimeZone zone = calendar.zone();"
+    },
+    {
+        "id": 22,
+        "line": 1133,
+        "precode": "            if (zone.useDaylightTime()",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_8_fixed/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java",
+        "aftercode": "            if (zone.useDaylightTime()&&calendar.get(Calendar.DST_OFFSET)!= 0) {"
+    },
+    {
+        "id": 24,
+        "line": 1135,
+        "precode": "                buffer.append(getTimeZoneDisplay(zone, true, mStyle, mLocale));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Lang/Lang_8_fixed/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java",
+        "aftercode": "                buffer.end(getTimeZoneDisplay(zone, true, mStyle, mLocale));"
+    }
+]

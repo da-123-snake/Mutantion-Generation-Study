@@ -1,0 +1,58 @@
+[
+    {
+        "id": 162,
+        "line": 64,
+        "precode": "private final Visitor<JSType> restrictToArrayVisitor =",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "private final Visitor<JSType> restrictToArrayVisitor = new RestrictByTrueTypeOfResultVisitor() {\n    @Override\n    protected JSType caseTopType(JSType topType) {\n        return topType.isAllType()?\n            getNativeType(ARRAY_TYPE) : topType;\n    }\n\n    @Override\n    public JSType caseObjectType(ObjectType type) {\n        JSType arrayType = getNativeType(ARRAY_TYPE);\n        return arrayType.isSubtype(type)? arrayType : null;\n    }\n}"
+    },
+    {
+        "id": 163,
+        "line": 64,
+        "precode": "new RestrictByTrueTypeOfResultVisitor() {",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "new RestrictByTrueTypeOfResultVisitor() {\n    @Override\n    protected JSType caseTopType(JSType topType) {\n        return topType.isAllType()?\n            getNativeType(ARRAY_TYPE) : topType;\n    }\n\n    @Override\n    public JSType caseObjectType(ObjectType type) {\n        JSType arrayType = getNativeType(ARRAY_TYPE);\n        return arrayType.isSubtype(type)? arrayType : null;\n    }\n}"
+    },
+    {
+        "id": 164,
+        "line": 64,
+        "precode": "protected JSType caseTopType(",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "protected JSType caseTopType(\n    JSType topType) {\n        return topType.isAllType()?\n            getNativeType(ARRAY_TYPE) : topType;\n    }\n\n    @Override\n    public JSType caseObjectType(ObjectType type) {\n        JSType arrayType = getNativeType(ARRAY_TYPE);\n        return arrayType.isSubtype(type)? arrayType : null;\n    }\n}"
+    },
+    {
+        "id": 165,
+        "line": 64,
+        "precode": "return topType.isAllType()?",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "return topType.isAllType()?\n            getNativeType(ARRAY_TYPE) : topType;\n    }\n\n    @Override\n    public JSType caseObjectType(ObjectType type) {\n        JSType arrayType = getNativeType(ARRAY_TYPE);\n        return arrayType.isSubtype(type)? arrayType : null;\n    }\n}"
+    },
+    {
+        "id": 166,
+        "line": 64,
+        "precode": "getNativeType(",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "getNativeType(\n    ARRAY_TYPE) : topType;\n    }\n\n    @Override\n    public JSType caseObjectType(ObjectType type) {\n        JSType arrayType = getNativeType(ARRAY_TYPE);\n        return arrayType.isSubtype(type)? arrayType : null;\n    }\n}"
+    },
+    {
+        "id": 167,
+        "line": 64,
+        "precode": "return topType.isAllType()?",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "return topType.isAllType()?\n            getNativeType(ARRAY_TYPE) : topType;\n    }\n\n    @Override\n    public JSType caseObjectType(ObjectType type) {\n        JSType arrayType = getNativeType(ARRAY_TYPE);\n        return arrayType.isSubtype(type)? arrayType : null;\n    }\n}"
+    },
+    {
+        "id": 168,
+        "line": 64,
+        "precode": "return arrayType.isSubtype(",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "return arrayType.isSubtype(\n    type)? arrayType : null;\n    }\n}"
+    },
+    {
+        "id": 169,
+        "line": 64,
+        "precode": "return arrayType.isSubtype(",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "return arrayType.isSubtype(\n    type)? arrayType : null;\n    }\n}"
+    }
+]

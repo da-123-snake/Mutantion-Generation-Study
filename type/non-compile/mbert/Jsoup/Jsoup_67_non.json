@@ -1,0 +1,149 @@
+[
+    {
+        "id": 199,
+        "line": 362,
+        "precode": "        clearStackToContext(\"table\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "\n\n{'masked_seq':'void clearStackToTableContext() {remove(\"table\");"
+    },
+    {
+        "id": 200,
+        "line": 366,
+        "precode": "        clearStackToContext(\"tbody\", \"tfoot\", \"thead\", \"template\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "\n\n{'masked_seq':'void clearStackToTableBodyContext() {clear(\"tbody\", \"tfoot\", \"thead\", \"template\");"
+    },
+    {
+        "id": 335,
+        "line": 391,
+        "precode": "        return null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        returnel;"
+    },
+    {
+        "id": 336,
+        "line": 395,
+        "precode": "        int i = stack.lastIndexOf(after);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        int i = stack.index(after);"
+    },
+    {
+        "id": 337,
+        "line": 396,
+        "precode": "        Validate.isTrue(i != -1);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        Validate.assert(i!= -1);"
+    },
+    {
+        "id": 338,
+        "line": 397,
+        "precode": "        stack.add(i+1, in);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        stack.insert(i+1, in);"
+    },
+    {
+        "id": 416,
+        "line": 159,
+        "precode": "        return originalState;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        returnstate;"
+    },
+    {
+        "id": 506,
+        "line": 227,
+        "precode": "        Tag tag = Tag.valueOf(startTag.name(), settings);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        Tag tag = Tag.create(startTag.name(), settings);"
+    },
+    {
+        "id": 507,
+        "line": 228,
+        "precode": "        Element el = new Element(tag, baseUri, startTag.attributes);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        Element el = new Element(name, baseUri, startTag.attributes);"
+    },
+    {
+        "id": 508,
+        "line": 229,
+        "precode": "        insertNode(el);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        Element el = new Element(tag, baseUri, startTag.attributes);insert(el);"
+    },
+    {
+        "id": 509,
+        "line": 230,
+        "precode": "        if (startTag.isSelfClosing()) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        if (startTag.empty()) {"
+    },
+    {
+        "id": 510,
+        "line": 231,
+        "precode": "            if (tag.isKnownTag()) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "            if (tag.empty()) {"
+    },
+    {
+        "id": 511,
+        "line": 232,
+        "precode": "                if (!tag.isEmpty())",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "                if (starttag.isEmpty())"
+    },
+    {
+        "id": 512,
+        "line": 233,
+        "precode": "                    tokeniser.error(\"Tag cannot be self closing; not a void tag\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "                    tokeniser.warn(\"Tag cannot be self closing; not a void tag\");"
+    },
+    {
+        "id": 513,
+        "line": 70,
+        "precode": "        state = HtmlTreeBuilderState.Initial;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        state|= HtmlTreeBuilderState.Initial;"
+    },
+    {
+        "id": 514,
+        "line": 71,
+        "precode": "        originalState = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        originalState!= null;"
+    },
+    {
+        "id": 515,
+        "line": 72,
+        "precode": "        baseUriSetFromDoc = false;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        baseUriSetFromDocRoot= false;"
+    },
+    {
+        "id": 516,
+        "line": 73,
+        "precode": "        headElement = null;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        headElement|= null;"
+    },
+    {
+        "id": 517,
+        "line": 114,
+        "precode": "            resetInsertionMode();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "            stack.add(root);flush();"
+    },
+    {
+        "id": 532,
+        "line": 473,
+        "precode": "            Element el = stack.get(pos);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "            Element el = stack.item(pos);"
+    },
+    {
+        "id": 533,
+        "line": 474,
+        "precode": "            String elName = el.nodeName();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_67_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "            String elName = el.name();"
+    }
+]

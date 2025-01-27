@@ -1,0 +1,79 @@
+[
+    {
+        "id": 285,
+        "line": 18,
+        "precode": "if (objectType != null && (objectType.getConstructor() != null || objectType.isFunctionPrototypeType())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (objectType == null || (objectType.getConstructor() == null && !objectType.isFunctionPrototypeType())) {"
+    },
+    {
+        "id": 286,
+        "line": 18,
+        "precode": "if (objectType != null && (objectType.getConstructor() != null || objectType.isFunctionPrototypeType())) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (objectType != null || (objectType.getConstructor() != null && objectType.isFunctionPrototypeType())) {"
+    },
+    {
+        "id": 291,
+        "line": 741,
+        "precode": "ObjectType dereferenced = type.dereference();",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "ObjectType dereferenced = type;"
+    },
+    {
+        "id": 294,
+        "line": 29,
+        "precode": "if (type.isFunctionPrototypeType() || (type.toObjectType() != null && type.toObjectType().getConstructor() != null)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (!type.isFunctionPrototypeType() && (type.toObjectType() == null || type.toObjectType().getConstructor() == null)) {"
+    },
+    {
+        "id": 295,
+        "line": 29,
+        "precode": "if (type.isFunctionPrototypeType() || (type.toObjectType() != null && type.toObjectType().getConstructor() != null)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (type.isFunctionPrototypeType() && (type.toObjectType() != null || type.toObjectType().getConstructor() != null)) {"
+    },
+    {
+        "id": 297,
+        "line": 752,
+        "precode": "else if (qualifiedName != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "else if (qualifiedName == null) {"
+    },
+    {
+        "id": 298,
+        "line": 754,
+        "precode": "else if (type.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "else if (!type.isFunctionType()) {"
+    },
+    {
+        "id": 301,
+        "line": 767,
+        "precode": "JSType jsType = n.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "JSType jsType = n.getType();"
+    },
+    {
+        "id": 305,
+        "line": 780,
+        "precode": "return typeRegistry.getNativeType(typeId);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return typeRegistry.getType(typeId);"
+    },
+    {
+        "id": 1335,
+        "line": 18,
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, false), rightType, leftType);"
+    },
+    {
+        "id": 1336,
+        "line": 18,
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), leftType, rightType);"
+    }
+]

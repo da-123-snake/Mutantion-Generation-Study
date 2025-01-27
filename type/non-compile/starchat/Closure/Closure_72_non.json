@@ -1,0 +1,100 @@
+[
+    {
+        "id": 946,
+        "line": 168,
+        "precode": "  private void makeLocalNamesUnique(Node fnNode, boolean isCallInLoop) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "  private void makeLocalNamesUnique(Node fnNode, boolean isCallInLoop) {\n    Supplier<String> idSupplier = compiler.getUniqueNameIdSupplier();\n    // Make variable names unique to this instance.\n    NodeTraversal.traverse(\n        compiler, fnNode, new MakeDeclaredNamesUnique(\n            new InlineRenamer(\n                idSupplier, \"inline_\", isCallInLoop)));\n    // Make label names unique to this instance.\n    new RenameLabels(compiler, new LabelNameSupplier(idSupplier), false)\n       .process(null, fnNode);\n  }\n\n  static class LabelNameSupplier implements Supplier<String> {\n    final Supplier<String> idSupplier;\n\n    LabelNameSupplier(Supplier<String> idSupplier) {\n      this.idSupplier = idSupplier;\n    }\n\n    @Override\n    public String get() {\n        return \"JSCompiler_inline_label_\" + idSupplier.get();\n    }\n  }\n"
+    },
+    {
+        "id": 948,
+        "line": 168,
+        "precode": "    // Make variable names unique to this instance.",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "    // Make variable names unique to this instance.\n    NodeTraversal.traverse(\n        compiler, fnNode, new MakeDeclaredNamesUnique(\n            new InlineRenamer(\n                idSupplier, \"inline_\", isCallInLoop)));"
+    },
+    {
+        "id": 949,
+        "line": 168,
+        "precode": "    NodeTraversal.traverse(\n        compiler, fnNode, new MakeDeclaredNamesUnique(\n            new InlineRenamer(\n                idSupplier, \"inline_\", isCallInLoop)));",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "    NodeTraversal.traverse(\n        compiler, fnNode, new MakeDeclaredNamesUnique(\n            new InlineRenamer(\n                idSupplier, \"inline_\", isCallInLoop)));\n    // Make label names unique to this instance."
+    },
+    {
+        "id": 950,
+        "line": 168,
+        "precode": "    // Make label names unique to this instance.",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "    // Make label names unique to this instance.\n    new RenameLabels(compiler, new LabelNameSupplier(idSupplier), false)"
+    },
+    {
+        "id": 951,
+        "line": 168,
+        "precode": "    new RenameLabels(compiler, new LabelNameSupplier(idSupplier), false)",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "    new RenameLabels(compiler, new LabelNameSupplier(idSupplier), false)\n       .process(null, fnNode);"
+    },
+    {
+        "id": 952,
+        "line": 168,
+        "precode": "   .process(null, fnNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "   .process(null, fnNode);\n  }\n\n  static class LabelNameSupplier implements Supplier<String> {\n    final Supplier<String> idSupplier;\n\n    LabelNameSupplier(Supplier<String> idSupplier) {\n      this.idSupplier = idSupplier;\n    }\n\n    @Override\n    public String get() {\n        return \"JSCompiler_inline_label_\" + idSupplier.get();\n    }\n  }\n"
+    },
+    {
+        "id": 953,
+        "line": 168,
+        "precode": "    static class LabelNameSupplier implements Supplier<String> {",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "    static class LabelNameSupplier implements Supplier<String> {\n    final Supplier<String> idSupplier;\n\n    LabelNameSupplier(Supplier<String> idSupplier) {\n      this.idSupplier = idSupplier;\n    }\n\n    @Override\n    public String get() {\n        return \"JSCompiler_inline_label_\" + idSupplier.get();\n    }\n  }\n"
+    },
+    {
+        "id": 954,
+        "line": 236,
+        "precode": "Node newValue = entry.getValue().cloneTree();",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "Node newValue = entry.getValue().cloneTree();\nNode newNode = NodeUtil.newVarNode(name, newValue)\n   .copyInformationFromForTree(newValue);\nnewVars.add(0, newNode);\n// Remove the parameter from the list to replace.\nnewArgMap.remove(name);"
+    },
+    {
+        "id": 955,
+        "line": 236,
+        "precode": "Node newValue = entry.getValue().cloneTree();",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "Node newValue = entry.getValue().cloneTree();\nNode newNode = NodeUtil.newVarNode(name + \"_mutant\", newValue)\n   .copyInformationFromForTree(newValue);\nnewVars.add(0, newNode);\n// Remove the parameter from the list to replace.\nnewArgMap.remove(name);"
+    },
+    {
+        "id": 956,
+        "line": 236,
+        "precode": "if (namesToAlias.contains(name)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "if (namesToAlias.contains(name + \"_mutant\")) {"
+    },
+    {
+        "id": 957,
+        "line": 236,
+        "precode": "Node newValue = entry.getValue().cloneTree();",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "Node newValue = entry.getValue().cloneTree();\nNode newNode = NodeUtil.newVarNode(name + \"_mutant\", newValue)\n   .copyInformationFromForTree(newValue);\nnewVars.add(0, newNode);\n// Remove the parameter from the list to replace.\nnewArgMap.remove(name);"
+    },
+    {
+        "id": 958,
+        "line": 236,
+        "precode": "Node newNode = NodeUtil.newVarNode(name, newValue)",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "Node newNode = NodeUtil.newVarNode(name + \"_mutant\", newValue)"
+    },
+    {
+        "id": 959,
+        "line": 236,
+        "precode": ".copyInformationFromForTree(newValue);",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": ".copyInformationFromForTree(newValue);"
+    },
+    {
+        "id": 960,
+        "line": 236,
+        "precode": "newArgMap.remove(name);",
+        "filepath": "defects4j_fixed/Closure/Closure_72_fixed/src/com/google/javascript/jscomp/FunctionToBlockMutator.java",
+        "aftercode": "newArgMap.remove(name + \"_mutant\");"
+    }
+]

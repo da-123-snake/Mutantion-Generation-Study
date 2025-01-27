@@ -1,0 +1,23 @@
+[
+    {
+        "id": 111,
+        "line": 19,
+        "precode": "((fa * fb > 0.0) && (numIterations < maximumIterations) && \n                ((a > lowerBound) || (b < upperBound)))",
+        "aftercode": "((fa * fb > 0.0) || (numIterations >= maximumIterations) || \n                ((a <= lowerBound) && (b >= upperBound))))",
+        "filepath": "defects4j_fixed/Math/Math_85_fixed/src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java"
+    },
+    {
+        "id": 112,
+        "line": 19,
+        "precode": "((fa * fb > 0.0) && (numIterations < maximumIterations) && \n                ((a > lowerBound) || (b < upperBound)))",
+        "aftercode": "((fa * fb > 0.0) && (numIterations < maximumIterations) && \n                ((a >= lowerBound) || (b <= upperBound))))",
+        "filepath": "defects4j_fixed/Math/Math_85_fixed/src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java"
+    },
+    {
+        "id": 113,
+        "line": 19,
+        "precode": "((fa * fb > 0.0) && (numIterations < maximumIterations) && \n                ((a > lowerBound) || (b < upperBound)))",
+        "aftercode": "((fa * fb >= 0.0) && (numIterations < maximumIterations) && \n                ((a > lowerBound) || (b < upperBound))))",
+        "filepath": "defects4j_fixed/Math/Math_85_fixed/src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java"
+    }
+]

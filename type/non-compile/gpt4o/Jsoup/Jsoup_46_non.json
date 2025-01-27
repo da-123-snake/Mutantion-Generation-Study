@@ -1,0 +1,184 @@
+[
+    {
+        "id": 295,
+        "line": 1,
+        "precode": "package org.jsoup.nodes;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "package org.jsoup.code;"
+    },
+    {
+        "id": 296,
+        "line": 3,
+        "precode": "import org.jsoup.helper.StringUtil;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import org.jsoup.helper.StringHelp;"
+    },
+    {
+        "id": 297,
+        "line": 4,
+        "precode": "import org.jsoup.parser.Parser;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import org.jsoup.parser.MyParser;"
+    },
+    {
+        "id": 298,
+        "line": 6,
+        "precode": "import java.io.IOException;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import java.io.FileNotFoundException;"
+    },
+    {
+        "id": 299,
+        "line": 7,
+        "precode": "import java.io.InputStream;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import java.util.InputMismatchException;"
+    },
+    {
+        "id": 300,
+        "line": 8,
+        "precode": "import java.nio.charset.CharsetEncoder;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "import java.nio.ByteBuffer;"
+    },
+    {
+        "id": 317,
+        "line": 149,
+        "precode": "accum.append(c);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "accum.append(Character.toLowerCase(c));"
+    },
+    {
+        "id": 318,
+        "line": 149,
+        "precode": "accum.append(c);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "accum.append(Character.toUpperCase(c));"
+    },
+    {
+        "id": 332,
+        "line": 149,
+        "precode": "accum.append(c);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "accum.append(Character.toUpperCase(c));"
+    },
+    {
+        "id": 337,
+        "line": 149,
+        "precode": "accum.append(c);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "accum.append(Character.toLowerCase(c));"
+    },
+    {
+        "id": 344,
+        "line": 234,
+        "precode": "InputStream in = Entities.class.getResourceAsStream(filename);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "InputStream in = new FileInputStream(filename);"
+    },
+    {
+        "id": 348,
+        "line": 246,
+        "precode": "return entities;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "return new HashMap<>();"
+    },
+    {
+        "id": 350,
+        "line": 225,
+        "precode": "Character c = Character.valueOf((char) ((Integer) entity[1]).intValue());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "Character c = (char) (int) entity[1];"
+    },
+    {
+        "id": 356,
+        "line": 234,
+        "precode": "InputStream in = Entities.class.getResourceAsStream(filename);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "InputStream in = this.getClass().getResourceAsStream(filename);"
+    },
+    {
+        "id": 358,
+        "line": 237,
+        "precode": "} catch (IOException e) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "} catch (FileNotFoundException e) {"
+    },
+    {
+        "id": 359,
+        "line": 235,
+        "precode": "properties.load(in);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "properties.load(new FileInputStream(filename));"
+    },
+    {
+        "id": 760,
+        "line": 115,
+        "precode": "if (escapeMode != EscapeMode.xhtml)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "if (escapeMode != EscapeMode.html)"
+    },
+    {
+        "id": 761,
+        "line": 115,
+        "precode": "if (escapeMode != EscapeMode.xhtml)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "if (escapeMode == EscapeMode.html)"
+    },
+    {
+        "id": 771,
+        "line": 120,
+        "precode": "case '<':",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "case '>':"
+    },
+    {
+        "id": 1689,
+        "line": 36,
+        "precode": "private static final Map<String, Character> full;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final HashMap<String, Character> full;"
+    },
+    {
+        "id": 1690,
+        "line": 37,
+        "precode": "private static final Map<Character, String> xhtmlByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Hashtable<Character, String> xhtmlByVal;"
+    },
+    {
+        "id": 1691,
+        "line": 38,
+        "precode": "private static final Map<String, Character> base;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private final Map<String, Character> base;"
+    },
+    {
+        "id": 1692,
+        "line": 39,
+        "precode": "private static final Map<Character, String> baseByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final HashMap<Character, String> baseByVal;"
+    },
+    {
+        "id": 1693,
+        "line": 40,
+        "precode": "private static final Map<Character, String> fullByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Hashtable<Character, String> fullByVal;"
+    },
+    {
+        "id": 1694,
+        "line": 37,
+        "precode": "private static final Map<Character, String> xhtmlByVal;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<Character, String> xhtmlValues;"
+    },
+    {
+        "id": 1695,
+        "line": 38,
+        "precode": "private static final Map<String, Character> base;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_46_fixed/src/main/java/org/jsoup/nodes/Entities.java",
+        "aftercode": "private static final Map<String, String> base;"
+    }
+]

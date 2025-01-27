@@ -1,0 +1,37 @@
+[
+    {
+        "id": 101,
+        "line": 209,
+        "precode": "if (partial.size() > 0 && ",
+        "filepath": "defects4j_fixed/Time/Time_14_fixed/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java",
+        "aftercode": "if (partial.size() < 0 && "
+    },
+    {
+        "id": 102,
+        "line": 209,
+        "precode": "partial.getFieldType(0).equals(DateTimeFieldType.monthOfYear()) &&",
+        "filepath": "defects4j_fixed/Time/Time_14_fixed/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java",
+        "aftercode": "!partial.getFieldType(0).equals(DateTimeFieldType.monthOfYear()) &&"
+    },
+    {
+        "id": 103,
+        "line": 209,
+        "precode": "fieldIndex == 0) {",
+        "filepath": "defects4j_fixed/Time/Time_14_fixed/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java",
+        "aftercode": "fieldIndex != 0) {"
+    },
+    {
+        "id": 109,
+        "line": 218,
+        "precode": "instant = partial.getFieldType(i).getField(iChronology).set(instant, values[i]);",
+        "filepath": "defects4j_fixed/Time/Time_14_fixed/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java",
+        "aftercode": "instant = partial.getFieldType(i).getField(iChrono).set(instant, values[i]);"
+    },
+    {
+        "id": 111,
+        "line": 220,
+        "precode": "instant = add(instant, valueToAdd);",
+        "filepath": "defects4j_fixed/Time/Time_14_fixed/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java",
+        "aftercode": "instant = subtract(instant, valueToAdd);"
+    }
+]

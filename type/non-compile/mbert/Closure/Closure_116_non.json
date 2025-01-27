@@ -1,0 +1,79 @@
+[
+    {
+        "id": 314,
+        "line": 695,
+        "precode": "    Node block = fnNode.getLastChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    Node block = fnNode.next();"
+    },
+    {
+        "id": 316,
+        "line": 698,
+        "precode": "    if (block.hasChildren()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    if (block.next()) {"
+    },
+    {
+        "id": 317,
+        "line": 699,
+        "precode": "      Preconditions.checkState(block.hasOneChild());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      Preconditions.check(block.hasOneChild());"
+    },
+    {
+        "id": 318,
+        "line": 700,
+        "precode": "      Node stmt = block.getFirstChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      Node stmt = block.next();"
+    },
+    {
+        "id": 319,
+        "line": 701,
+        "precode": "      if (stmt.isReturn()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      if (stmt.block()) {"
+    },
+    {
+        "id": 320,
+        "line": 702,
+        "precode": "        hasSideEffects = NodeUtil.mayHaveSideEffects(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "        hasSideEffects|= NodeUtil.mayHaveSideEffects("
+    },
+    {
+        "id": 321,
+        "line": 703,
+        "precode": "            stmt.getFirstChild(), compiler);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "            stmt.return(), compiler);"
+    },
+    {
+        "id": 322,
+        "line": 708,
+        "precode": "    Node cArg = callNode.getFirstChild().getNext();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    Node cArg = callNode.getFirstChild().next();"
+    },
+    {
+        "id": 401,
+        "line": 695,
+        "precode": "    Node block = fnNode.getLastChild();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    Node block = fnNode.next();"
+    },
+    {
+        "id": 403,
+        "line": 698,
+        "precode": "    if (block.hasChildren()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "    if (block.next()) {"
+    },
+    {
+        "id": 404,
+        "line": 699,
+        "precode": "      Preconditions.checkState(block.hasOneChild());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_116_fixed/src/com/google/javascript/jscomp/FunctionInjector.java",
+        "aftercode": "      Preconditions.check(block.hasOneChild());"
+    }
+]

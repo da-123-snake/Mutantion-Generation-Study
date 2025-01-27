@@ -1,0 +1,576 @@
+[
+    {
+        "id": 250,
+        "line": 454,
+        "precode": "if (count > maxStringCacheLen)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (count > maxStringCacheLen) return new String(charBuf, start, count);"
+    },
+    {
+        "id": 251,
+        "line": 454,
+        "precode": "if (count < 1)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (count < 1) return \"\";"
+    },
+    {
+        "id": 253,
+        "line": 454,
+        "precode": "int offset = start;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int offset = start;\nfor (int i = 0; i < count; i++) {"
+    },
+    {
+        "id": 254,
+        "line": 454,
+        "precode": "for (int i = 0; i < count; i++) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int i = 0; i < count; i++) {\nhash = 31 * hash + charBuf[offset++];"
+    },
+    {
+        "id": 255,
+        "line": 454,
+        "precode": "hash = 31 * hash + charBuf[offset++];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "hash = 31 * hash + (char) (charBuf[offset++] & 0xFF);"
+    },
+    {
+        "id": 256,
+        "line": 454,
+        "precode": "// get from cache",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "// get from cache\nfinal int index = hash & stringCache.length - 1;\nString cached = stringCache[index];"
+    },
+    {
+        "id": 257,
+        "line": 454,
+        "precode": "if (cached == null) { // miss, add",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (cached == null) {\n    // miss, add\n    cached = new String(charBuf, start, count);\n    stringCache[index] = cached;\n}"
+    },
+    {
+        "id": 392,
+        "line": 415,
+        "precode": "while (bufPos < bufLength) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "while (bufPos < bufLength - 1) {"
+    },
+    {
+        "id": 393,
+        "line": 415,
+        "precode": "char c = charBuf[bufPos];",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "char c = charBuf[bufPos + 1];"
+    },
+    {
+        "id": 394,
+        "line": 415,
+        "precode": "if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f')) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if ((c >= '1' && c <= '9') || (c >= 'B' && c <= 'F') || (c >= 'b' && c <= 'f')) {"
+    },
+    {
+        "id": 395,
+        "line": 415,
+        "precode": "bufPos++;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufPos += 2;"
+    },
+    {
+        "id": 396,
+        "line": 415,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "} else {"
+    },
+    {
+        "id": 397,
+        "line": 415,
+        "precode": "break;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 1047,
+        "line": 415,
+        "precode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data;\n}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data.toLowerCase();\n}"
+    },
+    {
+        "id": 1048,
+        "line": 415,
+        "precode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data;\n}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data.toUpperCase();\n}"
+    },
+    {
+        "id": 1049,
+        "line": 415,
+        "precode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data;\n}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data.replace('a', 'b');\n}"
+    },
+    {
+        "id": 1050,
+        "line": 415,
+        "precode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data;\n}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data.replace('a', 'b').replace('b', 'c');\n}"
+    },
+    {
+        "id": 1051,
+        "line": 415,
+        "precode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data;\n}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data.substring(1);\n}"
+    },
+    {
+        "id": 1052,
+        "line": 415,
+        "precode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data;\n}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data.substring(1, 2);\n}"
+    },
+    {
+        "id": 1053,
+        "line": 415,
+        "precode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data;\n}",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String consumeToEnd() {\n    bufferUp();\n    String data = cacheString(charBuf, stringCache, bufPos, bufLength - bufPos);\n    bufPos = bufLength;\n    return data.substring(1, data.length() - 1);\n}"
+    },
+    {
+        "id": 1054,
+        "line": 181,
+        "precode": "int offset = nextIndexOf(c);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int offset = nextIndexOf(c, last); // added last parameter"
+    },
+    {
+        "id": 1055,
+        "line": 181,
+        "precode": "if (offset!= -1)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (offset!= -1) // added else"
+    },
+    {
+        "id": 1056,
+        "line": 181,
+        "precode": "String consumed = cacheString(charBuf, stringCache, bufPos, offset);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String consumed = cacheString(charBuf, stringCache, bufPos, offset, last); // added last parameter"
+    },
+    {
+        "id": 1057,
+        "line": 181,
+        "precode": "bufPos += offset;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufPos += offset; // added ;"
+    },
+    {
+        "id": 1058,
+        "line": 181,
+        "precode": "return consumed;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return consumed; // added ;"
+    },
+    {
+        "id": 1059,
+        "line": 181,
+        "precode": "int nextIndex = nextIndexOf(seq);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndex = nextIndexOf(seq, last); // added last parameter"
+    },
+    {
+        "id": 1060,
+        "line": 181,
+        "precode": "if (nextIndex!= -1)",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (nextIndex!= -1) // added else"
+    },
+    {
+        "id": 1061,
+        "line": 181,
+        "precode": "String sub = cacheString(charBuf, stringCache, bufPos, nextIndex);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "String sub = cacheString(charBuf, stringCache, bufPos, nextIndex, last); // added last parameter"
+    },
+    {
+        "id": 1062,
+        "line": 181,
+        "precode": "bufPos += nextIndex;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufPos += nextIndex; // added ;"
+    },
+    {
+        "id": 1063,
+        "line": 181,
+        "precode": "return sub;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return sub; // added ;"
+    },
+    {
+        "id": 1223,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1224,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1225,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1226,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1227,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1228,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1229,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1310,
+        "line": 63,
+        "precode": "public final class CharacterReader {\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "public final class CharacterReader {\nstatic final char EOF = (char) -1;\n"
+    },
+    {
+        "id": 1311,
+        "line": 63,
+        "precode": "private static final int maxStringCacheLen = 12;\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "private static final int maxStringCacheLen = 12;\nstatic final int maxBufferLen = 1024 * 32;\n"
+    },
+    {
+        "id": 1312,
+        "line": 63,
+        "precode": "static final int maxBufferLen = 1024 * 32; // visible for testing\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "static final int maxBufferLen = 1024 * 32; // visible for testing\nprivate static final int readAheadLimit = (int) (maxBufferLen * 0.75);\n"
+    },
+    {
+        "id": 1313,
+        "line": 63,
+        "precode": "private static final int readAheadLimit = (int) (maxBufferLen * 0.75);\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "private static final int readAheadLimit = (int) (maxBufferLen * 0.75);\nprivate final char[] charBuf;\n"
+    },
+    {
+        "id": 1314,
+        "line": 63,
+        "precode": "private final char[] charBuf;\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "private final char[] charBuf;\nprivate final Reader reader;\n"
+    },
+    {
+        "id": 1315,
+        "line": 63,
+        "precode": "private final Reader reader;\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "private final Reader reader;\nprivate int bufLength;\n"
+    },
+    {
+        "id": 1316,
+        "line": 63,
+        "precode": "private int bufLength;\n",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "private int bufLength;\nprivate int bufSplitPoint;\n"
+    },
+    {
+        "id": 1317,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1318,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1319,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1320,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1321,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1322,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1323,
+        "line": 99,
+        "precode": "bufferUp();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "bufferDown();"
+    },
+    {
+        "id": 1533,
+        "line": 114,
+        "precode": "int n = ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int n = ~n"
+    },
+    {
+        "id": 1534,
+        "line": 114,
+        "precode": "int n = ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int n = n ^ 1"
+    },
+    {
+        "id": 1535,
+        "line": 114,
+        "precode": "while (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "while (true)"
+    },
+    {
+        "id": 1536,
+        "line": 114,
+        "precode": "return ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return true"
+    },
+    {
+        "id": 1537,
+        "line": 114,
+        "precode": "ArrayList r = new ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "r.addAll(subset)"
+    },
+    {
+        "id": 1538,
+        "line": 114,
+        "precode": "c = ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "c = a"
+    },
+    {
+        "id": 1539,
+        "line": 114,
+        "precode": "while (Math.abs(",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "while (Math.abs(x - approx) > epsilon)"
+    },
+    {
+        "id": 1540,
+        "line": 114,
+        "precode": "if (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (!"
+    },
+    {
+        "id": 1541,
+        "line": 114,
+        "precode": "while (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "while (a < b)"
+    },
+    {
+        "id": 1542,
+        "line": 114,
+        "precode": "for (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int i = 0;"
+    },
+    {
+        "id": 1543,
+        "line": 114,
+        "precode": "do {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "do {"
+    },
+    {
+        "id": 1544,
+        "line": 114,
+        "precode": "switch (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "switch (a) {"
+    },
+    {
+        "id": 1545,
+        "line": 114,
+        "precode": "case ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "case 0:"
+    },
+    {
+        "id": 1546,
+        "line": 114,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 1547,
+        "line": 114,
+        "precode": "catch (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "catch (Exception e) {"
+    },
+    {
+        "id": 1548,
+        "line": 114,
+        "precode": "finally {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "finally {"
+    },
+    {
+        "id": 1549,
+        "line": 114,
+        "precode": "assert (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "assert!("
+    },
+    {
+        "id": 1550,
+        "line": 114,
+        "precode": "for (int i = 0; i < ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "for (int i = 0; i < a;"
+    },
+    {
+        "id": 1551,
+        "line": 114,
+        "precode": "while (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "while (a > b)"
+    },
+    {
+        "id": 1552,
+        "line": 114,
+        "precode": "if (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "if (a == b)"
+    },
+    {
+        "id": 1553,
+        "line": 114,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "try {"
+    },
+    {
+        "id": 1554,
+        "line": 114,
+        "precode": "catch (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "catch (Exception e) {"
+    },
+    {
+        "id": 1555,
+        "line": 114,
+        "precode": "finally {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "finally {"
+    },
+    {
+        "id": 1556,
+        "line": 114,
+        "precode": "assert (",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "assert!("
+    },
+    {
+        "id": 1557,
+        "line": 114,
+        "precode": "return ",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "return a"
+    },
+    {
+        "id": 1558,
+        "line": 154,
+        "precode": "int nextIndexOf(char c) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(char c) {\n\t// doesn't handle scanning for surrogates\n\tbufferUp();\n\tfor (int i = bufPos; i < bufLength; i++) {\n\t\tif (c == charBuf[i])\n\t\t\treturn i - bufPos;\n\t}\n\treturn -1;\n}"
+    },
+    {
+        "id": 1559,
+        "line": 154,
+        "precode": "int nextIndexOf(char c) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(char c) {\n\t// doesn't handle scanning for surrogates\n\tbufferUp();\n\tfor (int i = bufPos; i < bufLength; i++) {\n\t\tif (c == charBuf[i])\n\t\t\treturn i - bufPos;\n\t}\n\treturn -1;\n}"
+    },
+    {
+        "id": 1560,
+        "line": 154,
+        "precode": "int nextIndexOf(char c) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(char c) {\n\t// doesn't handle scanning for surrogates\n\tbufferUp();\n\tfor (int i = bufPos; i < bufLength; i++) {\n\t\tif (c == charBuf[i])\n\t\t\treturn i - bufPos;\n\t}\n\treturn -1;\n}"
+    },
+    {
+        "id": 1561,
+        "line": 154,
+        "precode": "int nextIndexOf(char c) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(char c) {\n\t// doesn't handle scanning for surrogates\n\tbufferUp();\n\tfor (int i = bufPos; i < bufLength; i++) {\n\t\tif (c == charBuf[i])\n\t\t\treturn i - bufPos;\n\t}\n\treturn -1;\n}"
+    },
+    {
+        "id": 1562,
+        "line": 154,
+        "precode": "int nextIndexOf(char c) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(char c) {\n\t// doesn't handle scanning for surrogates\n\tbufferUp();\n\tfor (int i = bufPos; i < bufLength; i++) {\n\t\tif (c == charBuf[i])\n\t\t\treturn i - bufPos;\n\t}\n\treturn -1;\n}"
+    },
+    {
+        "id": 1563,
+        "line": 154,
+        "precode": "int nextIndexOf(char c) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_72_fixed/src/main/java/org/jsoup/parser/CharacterReader.java",
+        "aftercode": "int nextIndexOf(char c) {\n\t// doesn't handle scanning for surrogates\n\tbufferUp();\n\tfor (int i = bufPos; i < bufLength; i++) {\n\t\tif (c == charBuf[i])\n\t\t\treturn i - bufPos;\n\t}\n\treturn -1;\n}"
+    }
+]

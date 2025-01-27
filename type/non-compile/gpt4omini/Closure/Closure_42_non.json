@@ -1,0 +1,163 @@
+[
+    {
+        "id": 335,
+        "line": 256,
+        "precode": "handlePossibleFileOverviewJsDoc(jsDocParser);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "handlePossibleFileOverviewJsDoc(jsDocParser, irNode);"
+    },
+    {
+        "id": 938,
+        "line": 740,
+        "precode": "errorReporter.error(",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "errorReporter.info("
+    },
+    {
+        "id": 941,
+        "line": 579,
+        "precode": "transform(loopNode.getIterator()),",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "transform(loopNode.getIncrement()),"
+    },
+    {
+        "id": 942,
+        "line": 580,
+        "precode": "transform(loopNode.getIteratedObject()),",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "transform(loopNode.getInitializer()),"
+    },
+    {
+        "id": 943,
+        "line": 591,
+        "precode": "transformBlock(loopNode.getBody()));",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "transform(loopNode.getBodyWithSideEffects());"
+    },
+    {
+        "id": 1624,
+        "line": 104,
+        "precode": "return newNode(Token.HOOK,",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode(Token.USELESS_HOOK, "
+    },
+    {
+        "id": 1629,
+        "line": 528,
+        "precode": "if (statementNode.getLabel() != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "if (statementNode.getBreakLabel() != null) {"
+    },
+    {
+        "id": 1630,
+        "line": 529,
+        "precode": "Node labelName = transform(statementNode.getLabel());",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node labelName = transform(statementNode.getBreakLabel());"
+    },
+    {
+        "id": 1631,
+        "line": 532,
+        "precode": "node.addChildToBack(labelName);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "node.addChildToBack(newNode(Token.STRING, \"break label\"));"
+    },
+    {
+        "id": 1632,
+        "line": 112,
+        "precode": "return newNode(Token.CONTINUE);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode(Token.RETURN);"
+    },
+    {
+        "id": 1633,
+        "line": 104,
+        "precode": "return newNode(Token.HOOK,",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode(Token.CALL, "
+    },
+    {
+        "id": 1634,
+        "line": 529,
+        "precode": "Node labelName = transform(statementNode.getLabel());",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node labelName = transform(statementNode.getContinueLabel());"
+    },
+    {
+        "id": 1678,
+        "line": 772,
+        "precode": "Node node = newNode(Token.OBJECTLIT);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node node = newNode(Token.UNDEFINED);"
+    },
+    {
+        "id": 1681,
+        "line": 794,
+        "precode": "Preconditions.checkState(value.isFunction());",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Preconditions.checkState(value.isObject());"
+    },
+    {
+        "id": 1683,
+        "line": 787,
+        "precode": "key.setType(Token.GETTER_DEF);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "key.setType(Token.NORMAL);"
+    },
+    {
+        "id": 1684,
+        "line": 784,
+        "precode": "Node key = transformAsString(el.getLeft());",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node key = transformAsString(el.getRight().toString());"
+    },
+    {
+        "id": 1685,
+        "line": 785,
+        "precode": "Node value = transform(el.getRight());",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node value = transform(el.getRight().getLeft());"
+    },
+    {
+        "id": 1690,
+        "line": 111,
+        "precode": "Node newNode = newNode(Token.GETPROP, leftChild, transformAsString(getNode.getProperty()));",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node newNode = newNode(Token.GETPROP, transform(getNode.getTarget()), transformAsString(getNode.getProperty()));"
+    },
+    {
+        "id": 1692,
+        "line": 833,
+        "precode": "newNode.setCharno(leftChild.getCharno());",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "newNode.setCharno(getNode.getCharno());"
+    },
+    {
+        "id": 1693,
+        "line": 834,
+        "precode": "maybeSetLengthFrom(newNode, getNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "maybeSetLengthFrom(newNode, leftChild);"
+    },
+    {
+        "id": 1697,
+        "line": 111,
+        "precode": "Node newNode = newNode(Token.GETPROP, leftChild, transformAsString(getNode.getProperty()));",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node newNode = newNode(Token.GETPROP, leftChild, getNode.getProperty() + \"_mutation\");"
+    },
+    {
+        "id": 1698,
+        "line": 1042,
+        "precode": "return node;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode; // returning newNode instead"
+    },
+    {
+        "id": 1700,
+        "line": 835,
+        "precode": "return newNode;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode.clone(); // returning a clone of newNode"
+    }
+]

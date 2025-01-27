@@ -1,0 +1,247 @@
+[
+    {
+        "id": 523,
+        "line": 531,
+        "precode": "",
+        "aftercode": "System.out.println(\"Inserting empty tag: \" + el.tagName());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 524,
+        "line": 205,
+        "precode": "stack.add(el);",
+        "aftercode": "// stack.add(el); // commented for testing purposes",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 525,
+        "line": 531,
+        "precode": "",
+        "aftercode": "notifyObserver(el); // notify observer after inserting empty tag",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 526,
+        "line": 206,
+        "precode": "return el;",
+        "aftercode": "// return el; // testing without returning the element",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 654,
+        "line": 394,
+        "precode": "String name = node.nodeName();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "String tagName = node.tagName();"
+    },
+    {
+        "id": 658,
+        "line": 1256,
+        "precode": "setFosterInserts(boolean fosterInserts);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "fosterInserts = false;"
+    },
+    {
+        "id": 932,
+        "line": 234,
+        "precode": "if (node instanceof Element && ((Element) node).tag().isFormListed())",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (node instanceof Element || ((Element) node).tag().isFormListed())"
+    },
+    {
+        "id": 933,
+        "line": 218,
+        "precode": "node = new DataNode(characterToken.getData(), baseUri);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "node = new DataNode(characterToken.getData(), baseUri, null);"
+    },
+    {
+        "id": 936,
+        "line": 379,
+        "precode": "int i = queue.lastIndexOf(out);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "int j = queue.lastIndexOf(out);"
+    },
+    {
+        "id": 940,
+        "line": 480,
+        "precode": "if (StringUtil.in(elName, extraTypes))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "if (StringUtil.in(elName.toLowerCase(), extraTypes))"
+    },
+    {
+        "id": 942,
+        "line": 43,
+        "precode": "state = HtmlTreeBuilderState.Initial;",
+        "aftercode": "state = HtmlTreeBuilderState.ModifiedState;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 945,
+        "line": 461,
+        "precode": "return inScope(targetName, null);",
+        "aftercode": "return inScope(targetName, extras);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 946,
+        "line": 485,
+        "precode": "Element el = it.next();",
+        "aftercode": "// Element el = it.next();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 947,
+        "line": 111,
+        "precode": "void markInsertionMode() {",
+        "aftercode": "// void markInsertionMode() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 951,
+        "line": 304,
+        "precode": "validate.fail(\"Should not be reachable\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "Validate.isTrue(true, \"Should not be reachable\");"
+    },
+    {
+        "id": 956,
+        "line": 70,
+        "precode": "stack.push(root);",
+        "aftercode": "stack.pop(root);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 957,
+        "line": 71,
+        "precode": "resetInsertionMode();",
+        "aftercode": "resetDocumentMode();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 963,
+        "line": 115,
+        "precode": "HtmlTreeBuilderState originalState() {",
+        "aftercode": "boolean originalState() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 964,
+        "line": 119,
+        "precode": "void framesetOk(boolean framesetOk) {",
+        "aftercode": "boolean framesetOk(boolean flag) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 966,
+        "line": 362,
+        "precode": "return it.next();",
+        "aftercode": "return it.previous();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 967,
+        "line": 365,
+        "precode": "return null;",
+        "aftercode": "return next;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 970,
+        "line": 362,
+        "precode": "return it.next();",
+        "aftercode": "return it.previous();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 972,
+        "line": 365,
+        "precode": "return null;",
+        "aftercode": "return next;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 973,
+        "line": 484,
+        "precode": "while (it.hasNext()) {",
+        "aftercode": "while (it.hasNext() && next != el) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 974,
+        "line": 362,
+        "precode": "return it.next();",
+        "aftercode": "return it.previous();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java"
+    },
+    {
+        "id": 984,
+        "line": 85,
+        "precode": "runParser();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "runParser(context);"
+    },
+    {
+        "id": 988,
+        "line": 246,
+        "precode": "stack.pollLast();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "stack.pop();"
+    },
+    {
+        "id": 989,
+        "line": 410,
+        "precode": "return in;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "return out;"
+    },
+    {
+        "id": 990,
+        "line": 484,
+        "precode": "                        } else if (!StringUtil.in(elName, \"optgroup\", \"option\"))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "                        } else if (!StringUtil.in(elName, \"optgroup\", \"option\")) // Mutated to comment out condition"
+    },
+    {
+        "id": 991,
+        "line": 428,
+        "precode": "            } else if (last) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "            // } else if (last) { // Mutated - commented out the else if block"
+    },
+    {
+        "id": 992,
+        "line": 504,
+        "precode": "        void insert(Element el) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "        // void insert(Element el) { // Mutated - commented out insert method"
+    },
+    {
+        "id": 995,
+        "line": 490,
+        "precode": "            return false;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "            // return false; // Mutated - commented out return statement"
+    },
+    {
+        "id": 996,
+        "line": 447,
+        "precode": "            if (StringUtil.in(elName, baseTypes))",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "            // if (StringUtil.in(elName, baseTypes)) // Mutated - commented out if condition"
+    },
+    {
+        "id": 997,
+        "line": 378,
+        "precode": "            stack.add(element);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "            // stack.add(element); // Mutated - commented out stack addition"
+    },
+    {
+        "id": 998,
+        "line": 22,
+        "precode": "    private boolean baseUriSetFromDoc = false;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_33_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java",
+        "aftercode": "    // private boolean baseUriSetFromDoc = false; // Mutated - commented out a variable initialization"
+    }
+]

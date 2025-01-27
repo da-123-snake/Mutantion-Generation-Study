@@ -1,0 +1,86 @@
+[
+    {
+        "id": 17,
+        "line": 30,
+        "precode": "if (lastUnitField.compareTo(loopUnitField) < 0 || (compare != 0 && loopUnitField.isSupported() == false)) {",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "if (lastUnitField.compareTo(loopUnitField) <= 0 && (compare != 0 && loopUnitField.isSupported())) {"
+    },
+    {
+        "id": 205,
+        "line": 221,
+        "precode": "else if (compare == 0) {",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "else {"
+    },
+    {
+        "id": 208,
+        "line": 447,
+        "precode": "DurationField rangeField = fieldType.getRangeDurationType().getField(iChronology);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "DurationField rangeField = fieldType.getRangeDurationType().getField(iChronology).getField(iChronology);"
+    },
+    {
+        "id": 209,
+        "line": 448,
+        "precode": "DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "DurationField loopRangeField = loopType.getRangeDurationType().getField(iChronology).getField(iChronology);"
+    },
+    {
+        "id": 211,
+        "line": 437,
+        "precode": "DurationField unitField = fieldType.getDurationType().getField(iChronology);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "DurationField unitField = fieldType.getDurationType().getField(iChronology).getField(iChronology);"
+    },
+    {
+        "id": 508,
+        "line": 461,
+        "precode": "System.arraycopy(iValues, i, newValues, i + 1, newValues.length - i - 1);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "System.arraycopy(iValues, i, newValues, i, newValues.length - i - 1);"
+    },
+    {
+        "id": 509,
+        "line": 464,
+        "precode": "Partial newPartial = new Partial(newTypes, newValues, iChronology);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "Partial newPartial = new Partial(newTypes, newValues, null);"
+    },
+    {
+        "id": 510,
+        "line": 465,
+        "precode": "iChronology.validate(newPartial, newValues);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "iChronology.validate(newPartial, new int[]{});"
+    },
+    {
+        "id": 511,
+        "line": 466,
+        "precode": "return newPartial;",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "return this;"
+    },
+    {
+        "id": 512,
+        "line": 461,
+        "precode": "System.arraycopy(iValues, i, newValues, i + 1, newValues.length - i - 1);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "System.arraycopy(iValues, i, newValues, i + 1, newValues.length - i);"
+    },
+    {
+        "id": 513,
+        "line": 464,
+        "precode": "Partial newPartial = new Partial(newTypes, newValues, iChronology);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "Partial newPartial = new Partial(newTypes, newValues, Chronology.getISO());"
+    },
+    {
+        "id": 514,
+        "line": 465,
+        "precode": "iChronology.validate(newPartial, newValues);",
+        "filepath": "defects4j_fixed/Time/Time_4_fixed/src/main/java/org/joda/time/Partial.java",
+        "aftercode": "iChronology.validate(newPartial, new int[]{1});"
+    }
+]

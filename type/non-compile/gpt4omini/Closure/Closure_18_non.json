@@ -1,0 +1,149 @@
+[
+    {
+        "id": 537,
+        "line": 1328,
+        "precode": "for (CompilerInput input : inputs) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (CompilerInput input : inputs) { if (input == null) continue; }"
+    },
+    {
+        "id": 538,
+        "line": 1293,
+        "precode": "getTypeRegistry().forwardDeclareType(provide);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "getTypeRegistry().declareType(provide);"
+    },
+    {
+        "id": 539,
+        "line": 24,
+        "precode": "inputs = (moduleGraph == null ? new JSModuleGraph(modules) : moduleGraph).manageDependencies(options.dependencyOptions, inputs);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "inputs = (moduleGraph != null ? moduleGraph : new JSModuleGraph(modules)).manageDependencies(options.dependencyOptions, inputs);"
+    },
+    {
+        "id": 813,
+        "line": 1287,
+        "precode": "boolean staleInputs = false;",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "boolean staleInputs = inputChanged;"
+    },
+    {
+        "id": 1320,
+        "line": 255,
+        "precode": "printer.setSummaryDetailLevel(options.summaryDetailLevel);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "printer.setSummaryDetailLevel(CheckLevel.ERROR);"
+    },
+    {
+        "id": 1323,
+        "line": 253,
+        "precode": "PrintStreamErrorManager printer =",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "PrintStreamErrorManager printer = new PrintStreamErrorManager(createMessageFormatter(), outStream, options);"
+    },
+    {
+        "id": 1388,
+        "line": 1432,
+        "precode": "fillEmptyModules(modules);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "fillEmptyModules(newModules);"
+    },
+    {
+        "id": 1389,
+        "line": 1433,
+        "precode": "rebuildInputsFromModules();",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "rebuildInputsFromModulesWithNewData();"
+    },
+    {
+        "id": 1391,
+        "line": 1433,
+        "precode": "rebuildInputsFromModules();",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "inputsFromModules = rebuildInputsFromModules();"
+    },
+    {
+        "id": 1392,
+        "line": 1432,
+        "precode": "fillEmptyModules(modules);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "fillModules(modules);"
+    },
+    {
+        "id": 1393,
+        "line": 1433,
+        "precode": "rebuildInputsFromModules();",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "finalizeRebuild();"
+    },
+    {
+        "id": 1400,
+        "line": 1464,
+        "precode": "modulesByInput.put(input, m);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "modulesByInput.put(m.getInput(), m);"
+    },
+    {
+        "id": 1401,
+        "line": 1469,
+        "precode": "List<JSModule> modules = Lists.newArrayList(modulesByName.values());",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "List<JSModule> modules = new ArrayList<>(modulesByName.values());"
+    },
+    {
+        "id": 1403,
+        "line": 1492,
+        "precode": "this.modules = modules;",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "this.modules = new ArrayList<>(modules);"
+    },
+    {
+        "id": 1404,
+        "line": 1474,
+        "precode": "for (JSModule module : modules) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (JSModule module : new HashSet<>(modules)) {"
+    },
+    {
+        "id": 1405,
+        "line": 1475,
+        "precode": "for (CompilerInput input : module.getInputs()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (CompilerInput input : new ArrayList<>(module.getInputs())) {"
+    },
+    {
+        "id": 1406,
+        "line": 1476,
+        "precode": "for (String require : input.getRequires()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (String require : new HashSet<>(input.getRequires())) {"
+    },
+    {
+        "id": 1408,
+        "line": 1479,
+        "precode": "report(JSError.make(MISSING_ENTRY_ERROR, require));",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "report(JSError.make(MISSING_ENTRY_WARNING, require));"
+    },
+    {
+        "id": 1410,
+        "line": 37,
+        "precode": "for (CompilerInput input : this.moduleGraph.manageDependencies(options.dependencyOptions, inputs)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "for (CompilerInput input : this.moduleGraph.updateDependencies(options.dependencyOptions, inputs)) {"
+    },
+    {
+        "id": 1411,
+        "line": 1492,
+        "precode": "this.modules = modules;",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "this.modules = new LinkedList<>(modules);"
+    },
+    {
+        "id": 1412,
+        "line": 1493,
+        "precode": "this.moduleGraph = new JSModuleGraph(modules);",
+        "filepath": "defects4j_fixed/Closure/Closure_18_fixed/src/com/google/javascript/jscomp/Compiler.java",
+        "aftercode": "this.moduleGraph = new JSModuleGraph(new ArrayList<>(modules));"
+    }
+]

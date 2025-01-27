@@ -1,0 +1,394 @@
+[
+    {
+        "id": 1,
+        "line": 120,
+        "precode": "int indexOfVararg = invocation.getRawArguments().length - 1;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "int indexOfVararg = invocation.getRawArguments().length - 2;"
+    },
+    {
+        "id": 2,
+        "line": 121,
+        "precode": "for (int position = 0; position < indexOfVararg; position++) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (int position = 0; position < indexOfVararg + 1; position++) {"
+    },
+    {
+        "id": 3,
+        "line": 137,
+        "precode": "Matcher m = matchers.get(position);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Matcher m = matchers.get(position + 1);"
+    },
+    {
+        "id": 4,
+        "line": 138,
+        "precode": "if (m instanceof CapturesArguments) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (m instanceof CapturesArguments) {"
+    },
+    {
+        "id": 5,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position + 1, Object.class));"
+    },
+    {
+        "id": 6,
+        "line": 127,
+        "precode": "for (Matcher m : uniqueMatcherSet(indexOfVararg)) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (Matcher m : uniqueMatcherSet(indexOfVararg + 1)) {"
+    },
+    {
+        "id": 7,
+        "line": 138,
+        "precode": "if (m instanceof CapturesArguments) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (m instanceof CapturesArguments) {"
+    },
+    {
+        "id": 8,
+        "line": 129,
+        "precode": "Object rawArgument = invocation.getRawArguments()[indexOfVararg];",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Object rawArgument = invocation.getRawArguments()[indexOfVararg + 1];"
+    },
+    {
+        "id": 9,
+        "line": 130,
+        "precode": "for (int i = 0; i < Array.getLength(rawArgument); i++) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (int i = 0; i < Array.getLength(rawArgument) + 1; i++) {"
+    },
+    {
+        "id": 10,
+        "line": 131,
+        "precode": "((CapturesArguments) m).captureFrom(Array.get(rawArgument, i));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(Array.get(rawArgument, i + 1));"
+    },
+    {
+        "id": 11,
+        "line": 136,
+        "precode": "for (int position = 0; position < matchers.size(); position++) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (int position = 0; position < matchers.size() + 1; position++) {"
+    },
+    {
+        "id": 12,
+        "line": 137,
+        "precode": "Matcher m = matchers.get(position);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Matcher m = matchers.get(position + 1);"
+    },
+    {
+        "id": 13,
+        "line": 138,
+        "precode": "if (m instanceof CapturesArguments) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (m instanceof CapturesArguments) {"
+    },
+    {
+        "id": 14,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position + 1, Object.class));"
+    },
+    {
+        "id": 15,
+        "line": 147,
+        "precode": "for (int position = indexOfVararg; position < matchers.size(); position++) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (int position = indexOfVararg + 1; position < matchers.size(); position++) {"
+    },
+    {
+        "id": 16,
+        "line": 137,
+        "precode": "Matcher m = matchers.get(position);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Matcher m = matchers.get(position + 1);"
+    },
+    {
+        "id": 17,
+        "line": 138,
+        "precode": "if (m instanceof CapturesArguments) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (m instanceof CapturesArguments) {"
+    },
+    {
+        "id": 18,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position + 1, Object.class));"
+    },
+    {
+        "id": 301,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, String.class));"
+    },
+    {
+        "id": 302,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Integer.class));"
+    },
+    {
+        "id": 303,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Double.class));"
+    },
+    {
+        "id": 304,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Boolean.class));"
+    },
+    {
+        "id": 305,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Float.class));"
+    },
+    {
+        "id": 306,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Long.class));"
+    },
+    {
+        "id": 307,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Short.class));"
+    },
+    {
+        "id": 308,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Byte.class));"
+    },
+    {
+        "id": 309,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Character.class));"
+    },
+    {
+        "id": 310,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Void.class));"
+    },
+    {
+        "id": 311,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, null));"
+    },
+    {
+        "id": 312,
+        "line": 139,
+        "precode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, new Object()));"
+    },
+    {
+        "id": 338,
+        "line": 96,
+        "precode": "Method m1 = invocation.getMethod();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Method m1 = candidate.getMethod();"
+    },
+    {
+        "id": 339,
+        "line": 97,
+        "precode": "Method m2 = candidate.getMethod();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Method m2 = invocation.getMethod();"
+    },
+    {
+        "id": 340,
+        "line": 99,
+        "precode": "if (m1.getName() != null && m1.getName().equals(m2.getName())) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (m1.getName() != null && m2.getName().equals(m1.getName())) {"
+    },
+    {
+        "id": 341,
+        "line": 100,
+        "precode": "/* Avoid unnecessary cloning */",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "/* Avoid unnecessary cloning */"
+    },
+    {
+        "id": 342,
+        "line": 101,
+        "precode": "Class[] params1 = m1.getParameterTypes();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Class[] params1 = m2.getParameterTypes();"
+    },
+    {
+        "id": 343,
+        "line": 102,
+        "precode": "Class[] params2 = m2.getParameterTypes();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Class[] params2 = m1.getParameterTypes();"
+    },
+    {
+        "id": 344,
+        "line": 103,
+        "precode": "if (params1.length == params2.length) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (params1.length != params2.length) {"
+    },
+    {
+        "id": 345,
+        "line": 104,
+        "precode": "for (int i = 0; i < params1.length; i++) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (int i = 0; i < params2.length; i++) {"
+    },
+    {
+        "id": 346,
+        "line": 105,
+        "precode": "if (params1[i] != params2[i])",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (params1[i] == params2[i])"
+    },
+    {
+        "id": 347,
+        "line": 111,
+        "precode": "return false;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 348,
+        "line": 108,
+        "precode": "return true;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 349,
+        "line": 99,
+        "precode": "if (m1.getName() != null && m1.getName().equals(m2.getName())) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (m1.getName() == null || !m1.getName().equals(m2.getName())) {"
+    },
+    {
+        "id": 350,
+        "line": 100,
+        "precode": "/* Avoid unnecessary cloning */",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "/* Avoid unnecessary cloning */"
+    },
+    {
+        "id": 351,
+        "line": 101,
+        "precode": "Class[] params1 = m1.getParameterTypes();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Class[] params1 = m2.getParameterTypes();"
+    },
+    {
+        "id": 352,
+        "line": 102,
+        "precode": "Class[] params2 = m2.getParameterTypes();",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "Class[] params2 = m1.getParameterTypes();"
+    },
+    {
+        "id": 353,
+        "line": 103,
+        "precode": "if (params1.length == params2.length) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (params1.length != params2.length) {"
+    },
+    {
+        "id": 354,
+        "line": 104,
+        "precode": "for (int i = 0; i < params1.length; i++) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (int i = 0; i < params2.length; i++) {"
+    },
+    {
+        "id": 355,
+        "line": 105,
+        "precode": "if (params1[i] != params2[i])",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (params1[i] == params2[i])"
+    },
+    {
+        "id": 356,
+        "line": 111,
+        "precode": "return false;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 357,
+        "line": 103,
+        "precode": "if (params1.length == params2.length) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (params1.length != params2.length) {"
+    },
+    {
+        "id": 358,
+        "line": 104,
+        "precode": "for (int i = 0; i < params1.length; i++) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "for (int i = 0; i < params2.length; i++) {"
+    },
+    {
+        "id": 359,
+        "line": 105,
+        "precode": "if (params1[i] != params2[i])",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "if (params1[i] == params2[i])"
+    },
+    {
+        "id": 360,
+        "line": 111,
+        "precode": "return false;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 361,
+        "line": 108,
+        "precode": "return true;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 362,
+        "line": 164,
+        "precode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 363,
+        "line": 164,
+        "precode": "}",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Mockito/Mockito_3_fixed/src/org/mockito/internal/invocation/InvocationMatcher.java",
+        "aftercode": "}"
+    }
+]

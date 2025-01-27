@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1417,
+        "line": 43,
+        "precode": "        Validate.notNull(key);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "        Validate.isNull(key);"
+    },
+    {
+        "id": 1419,
+        "line": 45,
+        "precode": "        Validate.notEmpty(key); // trimming could potentially make empty, so validate here",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "        Validate.isEmpty(key); // trimming could potentially keep it empty, so validate here"
+    },
+    {
+        "id": 1813,
+        "line": 80,
+        "precode": "return Attributes.checkNotNull(val);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "return Attributes.checkNotNull(val, \"Value cannot be null\");"
+    },
+    {
+        "id": 1815,
+        "line": 80,
+        "precode": "return Attributes.checkNotNull(val);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "return Attributes.getDefault(val);"
+    },
+    {
+        "id": 1817,
+        "line": 80,
+        "precode": "return Attributes.checkNotNull(val);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_88_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "return Attributes.isNotEmpty(val) ? val : \"\";"
+    }
+]

@@ -1,0 +1,65 @@
+[
+    {
+        "id": 338,
+        "line": 111,
+        "precode": "    boolean isResultUsed = NodeUtil.isExpressionResultUsed(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "    boolean isResultUsed = NodeUtil.used(n);"
+    },
+    {
+        "id": 339,
+        "line": 112,
+        "precode": "    boolean isSimpleOp = NodeUtil.isSimpleOperatorType(n.getType());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "    boolean isSimpleOp = NodeUtil.operator(n.getType());"
+    },
+    {
+        "id": 340,
+        "line": 113,
+        "precode": "    if (!isResultUsed &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "    if (!isResultUsed&&(isSimpleOp ||!NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {"
+    },
+    {
+        "id": 343,
+        "line": 116,
+        "precode": "      if (n.isString()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "      if (n.blank()) {"
+    },
+    {
+        "id": 566,
+        "line": 111,
+        "precode": "    boolean isResultUsed = NodeUtil.isExpressionResultUsed(n);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "    boolean isResultUsed = NodeUtil.used(n);"
+    },
+    {
+        "id": 567,
+        "line": 112,
+        "precode": "    boolean isSimpleOp = NodeUtil.isSimpleOperatorType(n.getType());",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "    boolean isSimpleOp = NodeUtil.operator(n.getType());"
+    },
+    {
+        "id": 568,
+        "line": 113,
+        "precode": "    if (!isResultUsed &&",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "    if (!isResultUsed&&(isSimpleOp ||!NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {"
+    },
+    {
+        "id": 571,
+        "line": 116,
+        "precode": "      if (n.isString()) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "      if (n.blank()) {"
+    },
+    {
+        "id": 572,
+        "line": 117,
+        "precode": "        msg = \"Is there a missing '+' on the previous line?\";",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_21_fixed/src/com/google/javascript/jscomp/CheckSideEffects.java",
+        "aftercode": "        msg*= \"Is there a missing \\'+\\' on the previous line?\";"
+    }
+]

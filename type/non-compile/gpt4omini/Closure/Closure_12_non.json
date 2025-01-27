@@ -1,0 +1,51 @@
+[
+    {
+        "id": 327,
+        "line": 161,
+        "precode": "for (DiGraphEdge<Node, Branch> edge : branchEdges) {",
+        "filepath": "defects4j_fixed/Closure/Closure_12_fixed/src/com/google/javascript/jscomp/MaybeReachingVariableUse.java",
+        "aftercode": "for (int i = branchEdges.size() - 1; i >= 0; i--) {"
+    },
+    {
+        "id": 328,
+        "line": 162,
+        "precode": "if (edge.getValue() == Branch.ON_EX) {",
+        "filepath": "defects4j_fixed/Closure/Closure_12_fixed/src/com/google/javascript/jscomp/MaybeReachingVariableUse.java",
+        "aftercode": "if (edge.getValue() == Branch.NORMAL) {"
+    },
+    {
+        "id": 329,
+        "line": 160,
+        "precode": "List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getOutEdges(cfgNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_12_fixed/src/com/google/javascript/jscomp/MaybeReachingVariableUse.java",
+        "aftercode": "List<DiGraphEdge<Node, Branch>> branchEdges = new ArrayList<>();"
+    },
+    {
+        "id": 330,
+        "line": 160,
+        "precode": "List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getOutEdges(cfgNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_12_fixed/src/com/google/javascript/jscomp/MaybeReachingVariableUse.java",
+        "aftercode": "List<DiGraphEdge<Node, Branch>> branchEdges = new ArrayList<>(getCfg().getOutEdges(cfgNode));"
+    },
+    {
+        "id": 331,
+        "line": 162,
+        "precode": "if (edge.getValue() == Branch.ON_EX) {",
+        "filepath": "defects4j_fixed/Closure/Closure_12_fixed/src/com/google/javascript/jscomp/MaybeReachingVariableUse.java",
+        "aftercode": "if (edge.getValue() == Branch.ON_EX || edge.getValue() == Branch.NORMAL) {"
+    },
+    {
+        "id": 332,
+        "line": 160,
+        "precode": "List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getOutEdges(cfgNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_12_fixed/src/com/google/javascript/jscomp/MaybeReachingVariableUse.java",
+        "aftercode": "List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getEdges(cfgNode);"
+    },
+    {
+        "id": 334,
+        "line": 162,
+        "precode": "if (edge.getValue() == Branch.ON_EX) {",
+        "filepath": "defects4j_fixed/Closure/Closure_12_fixed/src/com/google/javascript/jscomp/MaybeReachingVariableUse.java",
+        "aftercode": "if (edge.getValue() == Branch.ON_EX && hasNext) {"
+    }
+]

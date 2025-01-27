@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1191,
+        "line": 89,
+        "precode": "JSDocInfo jsDoc = getFunctionJsDocInfo(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_100_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "JSDocInfo jsDoc = getJsDocInfo(n);"
+    },
+    {
+        "id": 1192,
+        "line": 90,
+        "precode": "(jsDoc != null && (jsDoc.isConstructor() || jsDoc.hasThisType()))",
+        "filepath": "defects4j_fixed/Closure/Closure_100_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java",
+        "aftercode": "(jsDoc != null && !(jsDoc.isConstructor() || jsDoc.hasThisType()))"
+    },
+    {
+        "id": 1202,
+        "line": 138,
+        "precode": "if (n.getType() == Token.THIS && shouldReportThis(n, parent)) {",
+        "aftercode": "if (n.getType() == Token.THIS && shouldReportThis(n, parent) && checkCondition()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_100_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java"
+    },
+    {
+        "id": 1203,
+        "line": 139,
+        "precode": "compiler.report(t.makeError(n, level, GLOBAL_THIS));",
+        "aftercode": "compiler.report(t.makeError(n, level, LOCAL_THIS));",
+        "filepath": "defects4j_fixed/Closure/Closure_100_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java"
+    },
+    {
+        "id": 1210,
+        "line": 138,
+        "precode": "if (n.getType() == Token.THIS && shouldReportThis(n, parent)) {",
+        "aftercode": "if (n.getType() == Token.THIS && shouldReportThis(n, parent) && checkCondition()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_100_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java"
+    },
+    {
+        "id": 1211,
+        "line": 139,
+        "precode": "compiler.report(t.makeError(n, level, GLOBAL_THIS));",
+        "aftercode": "compiler.report(t.makeError(n, level, LOCAL_THIS));",
+        "filepath": "defects4j_fixed/Closure/Closure_100_fixed/src/com/google/javascript/jscomp/CheckGlobalThis.java"
+    }
+]

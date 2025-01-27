@@ -1,0 +1,191 @@
+[
+    {
+        "id": 123,
+        "line": 1297,
+        "precode": "if (objectType instanceof EnumType) {",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "if (objectType instanceof InterfaceType) {"
+    },
+    {
+        "id": 125,
+        "line": 15,
+        "precode": "// TODO(nicksantos): might want to flag the access on a non object when\n// it's impossible to get a property from this type.",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "// TODO(nicksantos): might want to flag the access on a non object when\n// it's impossible to get a property from this type.\n// TODO: additional comment"
+    },
+    {
+        "id": 128,
+        "line": 1293,
+        "precode": "JSType propType = getJSType(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "JSType propType = getJSType(childType);"
+    },
+    {
+        "id": 313,
+        "line": 1663,
+        "precode": "returnType = getNativeType(VOID_TYPE);",
+        "aftercode": "returnType = returnType.getSuperType();",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 418,
+        "line": 1575,
+        "precode": "report(t, n, CONSTRUCTOR_NOT_CALLABLE, childType.toString());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "report(t, n, CONSTRUCTOR_NOT_SUPPORTED, childType.toString());"
+    },
+    {
+        "id": 419,
+        "line": 1588,
+        "precode": "visitParameterList(t, n, functionType);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "visitParameterList(t, n, functionType, true);"
+    },
+    {
+        "id": 420,
+        "line": 1588,
+        "precode": "visitParameterList(t, n, functionType);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "visitParameterList(t, n, functionType, false);"
+    },
+    {
+        "id": 421,
+        "line": 1589,
+        "precode": "ensureTyped(t, n, functionType.getReturnType());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, n, null);"
+    },
+    {
+        "id": 423,
+        "line": 1591,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureUntyped(t, n);"
+    },
+    {
+        "id": 424,
+        "line": 36,
+        "precode": " // TODO: Add something to check for calls of RegExp objects, which is not\n  // supported by IE.  Either say something about the return type or warn\n  // about the non-portability of the call or both.",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": " // TODO: Add something to check for calls of RegExp objects, which is not\n  // supported by IE.\n"
+    },
+    {
+        "id": 425,
+        "line": 1575,
+        "precode": "report(t, n, CONSTRUCTOR_NOT_CALLABLE, childType.toString());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "report(t, n, CONSTRUCTOR_NOT_SUPPORTED, childType.getDisplayName());"
+    },
+    {
+        "id": 426,
+        "line": 1588,
+        "precode": "visitParameterList(t, n, functionType);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "visitParameterList(t, n, functionType, null);"
+    },
+    {
+        "id": 427,
+        "line": 1589,
+        "precode": "ensureTyped(t, n, functionType.getReturnType());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, n, functionType.getReturnType(), childType);"
+    },
+    {
+        "id": 428,
+        "line": 1589,
+        "precode": "ensureTyped(t, n, functionType.getReturnType());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, n, functionType.getReturnType(), newReturnType);"
+    },
+    {
+        "id": 429,
+        "line": 1591,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, n, functionType);"
+    },
+    {
+        "id": 430,
+        "line": 36,
+        "precode": " // TODO: Add something to check for calls of RegExp objects, which is not\n  // supported by IE.  Either say something about the return type or warn\n  // about the non-portability of the call or both.",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": " // TODO: Add something to check for calls of RegExp objects, which is not\n  // supported by IE.  Either say something about the return type or warn\n  // about the non-portability of the call or both.\n  if (!childType.canBeCalled()) {\n      report(t, n, NOT_CALLABLE, childType.getDisplayName());\n      ensureTyped(t, n);\n  }\n"
+    },
+    {
+        "id": 1168,
+        "line": 519,
+        "precode": "case Token.GET:",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "case Token.PUSH:"
+    },
+    {
+        "id": 1169,
+        "line": 520,
+        "precode": "case Token.SET:",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "case Token.MODIFY:"
+    },
+    {
+        "id": 1171,
+        "line": 793,
+        "precode": "visitObjLitKey(t, key, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "visitObjLitValue(t, key, n);"
+    },
+    {
+        "id": 1172,
+        "line": 800,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureUntyped(t, n);"
+    },
+    {
+        "id": 1173,
+        "line": 811,
+        "precode": "checkNoTypeCheckSection(n, false);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "checkTypeCheckSection(n, false);"
+    },
+    {
+        "id": 1195,
+        "line": 18,
+        "precode": "if (functionType.isOrdinaryFunction() && !functionType.getTypeOfThis().isUnknownType() && !functionType.getTypeOfThis().isNativeObjectType() && !(child.getType() == Token.GETELEM || child.getType() == Token.GETPROP)) {",
+        "aftercode": "if (functionType.isOrdinaryFunction() && !functionType.getTypeOfThis().isUnknownType() && !functionType.getTypeOfThis().isNativeObjectType() && (child.getType() == Token.GETELEM || child.getType() == Token.GETPROP)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1196,
+        "line": 18,
+        "precode": "if (functionType.isOrdinaryFunction() && !functionType.getTypeOfThis().isUnknownType() && !functionType.getTypeOfThis().isNativeObjectType() && !(child.getType() == Token.GETELEM || child.getType() == Token.GETPROP)) {",
+        "aftercode": "if (functionType.isOrdinaryFunction() && !functionType.getTypeOfThis().isUnknownType() && functionType.getTypeOfThis().isNativeObjectType() && !(child.getType() == Token.GETELEM || child.getType() == Token.GETPROP)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1200,
+        "line": 1588,
+        "precode": "visitParameterList(t, n, functionType);",
+        "aftercode": "visitParameterList(t, n, functionType.getReturnType());",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1203,
+        "line": 22,
+        "precode": "// TODO: Add something to check for calls of RegExp objects, which is not supported by IE. Either say something about the return type or warn about the non-portability of the call or both.",
+        "aftercode": "",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1204,
+        "line": 22,
+        "precode": "// TODO: Add something to check for calls of RegExp objects, which is not supported by IE. Either say something about the return type or warn about the non-portability of the call or both.",
+        "aftercode": "// TODO: Add something to check for calls of RegExp objects, which is not supported by IE.",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1522,
+        "line": 1410,
+        "precode": "visitParameterList(t, n, type);",
+        "aftercode": "visitParameterList(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_69_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    }
+]

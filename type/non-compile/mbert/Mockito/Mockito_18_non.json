@@ -1,0 +1,58 @@
+[
+    {
+        "id": 74,
+        "line": 75,
+        "precode": "            return invocation.getMock() == invocation.getArguments()[0] ? 0 : 1;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_18_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "            return1;"
+    },
+    {
+        "id": 75,
+        "line": 78,
+        "precode": "        Class<?> returnType = invocation.getMethod().getReturnType();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_18_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "        Class<?> returnType = invocation.getMethod().name();"
+    },
+    {
+        "id": 76,
+        "line": 79,
+        "precode": "        return returnValueFor(returnType);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_18_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "        returnOf(returnType);"
+    },
+    {
+        "id": 157,
+        "line": 84,
+        "precode": "            return Primitives.defaultValueForPrimitiveOrWrapper(type);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_18_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "            return Primitives.wrap(type);"
+    },
+    {
+        "id": 158,
+        "line": 87,
+        "precode": "        } else if (type == Iterable.class) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_18_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "        } else if (type!=Iterable.class) {"
+    },
+    {
+        "id": 159,
+        "line": 88,
+        "precode": "            return new ArrayList<Object>(0);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_18_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "            return new ArrayList<Object>(collection);"
+    },
+    {
+        "id": 160,
+        "line": 89,
+        "precode": "        } else if (type == Collection.class) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_18_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "        } else if (type=Collection.class) {"
+    },
+    {
+        "id": 161,
+        "line": 91,
+        "precode": "        } else if (type == Set.class) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_18_fixed/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+        "aftercode": "        } else if (type!=Set.class) {"
+    }
+]

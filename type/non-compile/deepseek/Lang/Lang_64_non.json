@@ -1,0 +1,114 @@
+[
+    {
+        "id": 350,
+        "line": 183,
+        "precode": "if (other == this) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "if (other instanceof this.getClass()) {"
+    },
+    {
+        "id": 354,
+        "line": 204,
+        "precode": "Method mth = other.getClass().getMethod(\"getValue\", null);",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "Method mth = other.getClass().getMethod(\"getValue\");"
+    },
+    {
+        "id": 355,
+        "line": 205,
+        "precode": "Integer value = (Integer) mth.invoke(other, null);",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "Integer value = (Integer) mth.invoke(other);"
+    },
+    {
+        "id": 356,
+        "line": 206,
+        "precode": "return value.intValue();",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "return (int) value;"
+    },
+    {
+        "id": 357,
+        "line": 207,
+        "precode": "catch (NoSuchMethodException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (NoSuchMethodException ignored) {"
+    },
+    {
+        "id": 358,
+        "line": 209,
+        "precode": "catch (IllegalAccessException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (IllegalAccessException ignored) {"
+    },
+    {
+        "id": 359,
+        "line": 211,
+        "precode": "catch (InvocationTargetException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (InvocationTargetException ignored) {"
+    },
+    {
+        "id": 363,
+        "line": 206,
+        "precode": "return value.intValue();",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "return Integer.valueOf(value);"
+    },
+    {
+        "id": 364,
+        "line": 207,
+        "precode": "catch (NoSuchMethodException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (NoSuchMethodException e) {"
+    },
+    {
+        "id": 365,
+        "line": 209,
+        "precode": "catch (IllegalAccessException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (IllegalAccessException e) {"
+    },
+    {
+        "id": 366,
+        "line": 211,
+        "precode": "catch (InvocationTargetException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (InvocationTargetException e) {"
+    },
+    {
+        "id": 368,
+        "line": 204,
+        "precode": "Method mth = other.getClass().getMethod(\"getValue\", null);",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "Method mth = other.getClass().getDeclaredMethod(\"getValue\");"
+    },
+    {
+        "id": 370,
+        "line": 206,
+        "precode": "return value.intValue();",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "return value;"
+    },
+    {
+        "id": 371,
+        "line": 207,
+        "precode": "catch (NoSuchMethodException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (NoSuchMethodException e) {"
+    },
+    {
+        "id": 372,
+        "line": 209,
+        "precode": "catch (IllegalAccessException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (IllegalAccessException e) {"
+    },
+    {
+        "id": 373,
+        "line": 211,
+        "precode": "catch (InvocationTargetException e) {",
+        "filepath": "defects4j_fixed/Lang/Lang_64_fixed/src/java/org/apache/commons/lang/enums/ValuedEnum.java",
+        "aftercode": "catch (InvocationTargetException e) {"
+    }
+]

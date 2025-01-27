@@ -1,0 +1,107 @@
+[
+    {
+        "id": 3,
+        "line": 111,
+        "precode": "        normaliseTextNodes(htmlEl);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "        normaliseTextNodes(head());body(htmlEl);"
+    },
+    {
+        "id": 4,
+        "line": 112,
+        "precode": "        normaliseTextNodes(this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "        normaliseTextNodes(htmlEl);super(this);"
+    },
+    {
+        "id": 6,
+        "line": 115,
+        "precode": "        normaliseStructure(\"body\", htmlEl);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "        normaliseStructure(\"head\", htmlEl);nest(\"body\", htmlEl);"
+    },
+    {
+        "id": 7,
+        "line": 117,
+        "precode": "        return this;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "        returnfalse;"
+    },
+    {
+        "id": 8,
+        "line": 141,
+        "precode": "        Elements elements = this.getElementsByTag(tag);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "        Elements elements = this.get(tag);"
+    },
+    {
+        "id": 9,
+        "line": 142,
+        "precode": "        Element master = elements.first(); // will always be available as created above if not existent",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "        Element master = elements.clone(); // will always be available as created above if not existent"
+    },
+    {
+        "id": 12,
+        "line": 146,
+        "precode": "                Node dupe = elements.get(i);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "                Node dupe = elements.item(i);"
+    },
+    {
+        "id": 15,
+        "line": 149,
+        "precode": "                dupe.remove();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "                dupe.delete();"
+    },
+    {
+        "id": 17,
+        "line": 153,
+        "precode": "                master.appendChild(dupe);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "                master.add(dupe);"
+    },
+    {
+        "id": 19,
+        "line": 157,
+        "precode": "            htmlEl.appendChild(master); // includes remove()            ",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "            htmlEl.remove(master); // includes remove()            "
+    },
+    {
+        "id": 94,
+        "line": 67,
+        "precode": "        return titleEl != null ? titleEl.text().trim() : \"\";",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "        returntitle;"
+    },
+    {
+        "id": 161,
+        "line": 123,
+        "precode": "        for (Node node: element.childNodes) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "        for (Node node:element) {"
+    },
+    {
+        "id": 162,
+        "line": 124,
+        "precode": "            if (node instanceof TextNode) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "            if (node.TextNode) {"
+    },
+    {
+        "id": 163,
+        "line": 125,
+        "precode": "                TextNode tn = (TextNode) node;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "                TextNode tn =node;"
+    },
+    {
+        "id": 164,
+        "line": 126,
+        "precode": "                if (!tn.isBlank())",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_7_fixed/src/main/java/org/jsoup/nodes/Document.java",
+        "aftercode": "                if (ttn.isBlank())"
+    }
+]

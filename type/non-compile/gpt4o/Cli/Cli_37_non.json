@@ -1,0 +1,44 @@
+[
+    {
+        "id": 12,
+        "line": 149,
+        "precode": "String option = e.nextElement().toString();",
+        "filepath": "defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "Object option = e.nextElement();"
+    },
+    {
+        "id": 13,
+        "line": 151,
+        "precode": "Option opt = options.getOption(option);",
+        "filepath": "defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "Option opt = options.getOption(value);"
+    },
+    {
+        "id": 15,
+        "line": 152,
+        "precode": "if (opt == null)",
+        "filepath": "defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (opt != null) { continue; }"
+    },
+    {
+        "id": 16,
+        "line": 158,
+        "precode": "OptionGroup group = options.getOptionGroup(opt);",
+        "filepath": "defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "//OptionGroup group = options.getOptionGroup(opt);"
+    },
+    {
+        "id": 17,
+        "line": 159,
+        "precode": "boolean selected = group != null && group.getSelected() != null;",
+        "filepath": "defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "boolean selected = group != null && group.getSelected() == opt;"
+    },
+    {
+        "id": 173,
+        "line": 310,
+        "precode": "return options.hasShortOption(optName);",
+        "filepath": "defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return options.containsShortOption(optName);"
+    }
+]

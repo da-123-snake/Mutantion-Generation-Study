@@ -1,0 +1,128 @@
+[
+    {
+        "id": 529,
+        "line": 1460,
+        "precode": "current = current.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "current = current.getPrevious();"
+    },
+    {
+        "id": 531,
+        "line": 1460,
+        "precode": "current = current.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "current = current.getPrevious().getPrevious();"
+    },
+    {
+        "id": 532,
+        "line": 1460,
+        "precode": "current = current.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "current = current.getNext().getPrevious();"
+    },
+    {
+        "id": 533,
+        "line": 1460,
+        "precode": "current = current.getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "current = current.getPrevious().getNext();"
+    },
+    {
+        "id": 535,
+        "line": 1457,
+        "precode": "elem = current;",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "elem = current.getPrevious();"
+    },
+    {
+        "id": 536,
+        "line": 1457,
+        "precode": "elem = current;",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "elem = current.getPrevious().getPrevious();"
+    },
+    {
+        "id": 540,
+        "line": 1477,
+        "precode": "return elem;",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "return current.getPrevious();"
+    },
+    {
+        "id": 1367,
+        "line": 907,
+        "precode": "n.getParent().replaceChild(n, newNumber);",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "n.getParent().replaceChild(n, IR.number(result));"
+    },
+    {
+        "id": 1368,
+        "line": 1088,
+        "precode": "if (Token.NAME != right.getType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "if (Token.NULL != right.getType()) {"
+    },
+    {
+        "id": 1372,
+        "line": 1076,
+        "precode": "if (rightLiteral) {",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "// if (rightLiteral) {"
+    },
+    {
+        "id": 1373,
+        "line": 1077,
+        "precode": "boolean undefinedLeft = (left.getString().equals(\"undefined\"));",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "// boolean undefinedLeft = (left.getString().equals(\"undefined\"));"
+    },
+    {
+        "id": 1375,
+        "line": 1078,
+        "precode": "if (undefinedLeft) {",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "// if (undefinedLeft) {"
+    },
+    {
+        "id": 1376,
+        "line": 1079,
+        "precode": "result = compareToUndefined(right, op);",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "// result = compareToUndefined(right, op);"
+    },
+    {
+        "id": 1380,
+        "line": 1133,
+        "precode": "result = compareToNull(left, op);",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "// result = compareToNull(left, op);"
+    },
+    {
+        "id": 1384,
+        "line": 1044,
+        "precode": "if (ternary == TernaryValue.UNKNOWN) {",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "// if (ternary == TernaryValue.UNKNOWN) {"
+    },
+    {
+        "id": 1441,
+        "line": 31,
+        "precode": "(String.valueOf(result).length() <=\nString.valueOf(lval).length() + String.valueOf(rval).length() + 1\n\n// Do not try to fold arithmetic for numbers > 2^53. After that\n// point, fixed-point math starts to break down and become inaccurate.",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "(String.valueOf(result).length() <=\nString.valueOf(lval).length() + String.valueOf(rval).length())"
+    },
+    {
+        "id": 1442,
+        "line": 33,
+        "precode": "|| Double.isNaN(result)\n|| result == Double.POSITIVE_INFINITY\n|| result == Double.NEGATIVE_INFINITY",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "|| result == Double.POSITIVE_INFINITY\n|| result == Double.NEGATIVE_INFINITY\n|| Double.isNaN(result)"
+    },
+    {
+        "id": 1743,
+        "line": 17,
+        "precode": "private Node performArithmeticOp(int opType, Node left, Node right) {",
+        "aftercode": "private Node performArithmeticOp(int opType, Node right, Node left) {",
+        "filepath": "defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java"
+    }
+]

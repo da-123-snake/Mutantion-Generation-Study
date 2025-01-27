@@ -1,0 +1,170 @@
+[
+    {
+        "id": 29,
+        "line": 1029,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = 1.0 * real;"
+    },
+    {
+        "id": 30,
+        "line": 1029,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = 3.0 * real;"
+    },
+    {
+        "id": 31,
+        "line": 1029,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = -2.0 * real;"
+    },
+    {
+        "id": 41,
+        "line": 75,
+        "precode": "return createComplex(MathUtils.sinh(real2) / d,\n                             FastMath.sin(imaginary2) / d);",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(MathUtils.sinh(real2) / d,\n                             FastMath.cos(imaginary2) / d);"
+    },
+    {
+        "id": 49,
+        "line": 18,
+        "precode": "return new ArrayList<Complex>();",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return new ArrayList<Complex>(); // Mutant 8"
+    },
+    {
+        "id": 54,
+        "line": 1056,
+        "precode": "public double getArgument() {",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "// Mutant 13\npublic double getNthRootArgument() {"
+    },
+    {
+        "id": 172,
+        "line": 258,
+        "precode": "if (divisor.isZero) {",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor.isZero) { return isZero ? INF : NaN; }"
+    },
+    {
+        "id": 173,
+        "line": 262,
+        "precode": "if (divisor.isInfinite() && !isInfinite()) {",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor.isInfinite() && !isInfinite()) { return INF; }"
+    },
+    {
+        "id": 174,
+        "line": 262,
+        "precode": "if (divisor.isInfinite() && !isInfinite()) {",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor.isInfinite() && !isInfinite()) { return NaN; }"
+    },
+    {
+        "id": 175,
+        "line": 258,
+        "precode": "if (divisor.isZero) {",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor.isZero) { return isZero ? NaN : ZERO; }"
+    },
+    {
+        "id": 176,
+        "line": 262,
+        "precode": "if (divisor.isInfinite() && !isInfinite()) {",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (divisor.isInfinite() && !isInfinite()) { return ZERO; }"
+    },
+    {
+        "id": 177,
+        "line": 21,
+        "precode": "createComplex((real * q + imaginary) / denominator,\n(imaginary * q - real) / denominator);",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "createComplex((real * q + imaginary) / denominator,\n(imaginary * q + real) / denominator);"
+    },
+    {
+        "id": 178,
+        "line": 28,
+        "precode": "createComplex((imaginary * q + real) / denominator,\n(imaginary - real * q) / denominator);",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "createComplex((imaginary * q + real) / denominator,\n(imaginary + real * q) / denominator);"
+    },
+    {
+        "id": 179,
+        "line": 295,
+        "precode": "return isZero ? NaN : INF;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return isZero ? NaN : -INF;"
+    },
+    {
+        "id": 181,
+        "line": 300,
+        "precode": "return createComplex(real / divisor,",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(real, divisor / imaginary);"
+    },
+    {
+        "id": 182,
+        "line": 295,
+        "precode": "return isZero ? NaN : INF;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return isZero ? NaN : 0;"
+    },
+    {
+        "id": 183,
+        "line": 298,
+        "precode": "return !isInfinite() ? ZERO : NaN;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return !isInfinite() ? NEGATIVE_ZERO : NaN;"
+    },
+    {
+        "id": 184,
+        "line": 295,
+        "precode": "return isZero ? NaN : INF;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return isZero ? NAN : INF;"
+    },
+    {
+        "id": 185,
+        "line": 298,
+        "precode": "return !isInfinite() ? ZERO : NaN;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return isInfinite() ? ZERO : NAN;"
+    },
+    {
+        "id": 187,
+        "line": 6,
+        "precode": "/** Record whether this complex number is zero. */",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "/** Record whether this complex number is non-zero. */"
+    },
+    {
+        "id": 191,
+        "line": 20,
+        "precode": "double real2 = real + (im * im);",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = real - (im * im);"
+    },
+    {
+        "id": 192,
+        "line": 21,
+        "precode": "double im2 = -2.0 * real * im;",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double im2 = 2.0 * real * im;"
+    },
+    {
+        "id": 302,
+        "line": 130,
+        "precode": "} else {",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "} else if (real != 0.0) {"
+    },
+    {
+        "id": 306,
+        "line": 165,
+        "precode": "imaginary + addend.getImaginary());",
+        "filepath": "defects4j_fixed/Math/Math_47_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "imaginary + addend.getImaginary()))/2;"
+    }
+]

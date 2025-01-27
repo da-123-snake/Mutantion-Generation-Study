@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1751,
+        "line": 91,
+        "precode": "if (\"select\".equals(el.normalName())) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "if (\"select\".equals(el.normalName())) { Elements options = el.select(\"option[selected]\");"
+    },
+    {
+        "id": 1752,
+        "line": 92,
+        "precode": "Elements options = el.select(\"option[selected]\");",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "Elements options = el.select(\"option[selected]\"); boolean set = false;"
+    },
+    {
+        "id": 1754,
+        "line": 94,
+        "precode": "for (Element option: options) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "for (Element option: options) { data.add(HttpConnection.KeyVal.create(name, option.val())); set = true; }"
+    },
+    {
+        "id": 1755,
+        "line": 98,
+        "precode": "if (!set) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_93_fixed/src/main/java/org/jsoup/nodes/FormElement.java",
+        "aftercode": "if (!set) { Element option = el.select(\"option\").first(); if (option != null) data.add(HttpConnection.KeyVal.create(name, option.val())); }"
+    }
+]

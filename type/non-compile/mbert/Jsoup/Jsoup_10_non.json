@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 447,
+        "precode": "            node.outerHtmlHead(accum, depth, out);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "            node.head(accum, depth, out);"
+    },
+    {
+        "id": 3,
+        "line": 360,
+        "precode": "        StringBuilder accum = new StringBuilder(32*1024);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        StringBuilder accum = new StringBuilder(32x1024);"
+    },
+    {
+        "id": 4,
+        "line": 361,
+        "precode": "        outerHtml(accum);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        StringBuilder accum = new StringBuilder(32*1024);print(accum);"
+    },
+    {
+        "id": 5,
+        "line": 362,
+        "precode": "        return accum.toString();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        return accum.String();"
+    },
+    {
+        "id": 6,
+        "line": 366,
+        "precode": "        new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).traverse(this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        new NodeTraversor(new OuterHtmlVisitor(accum, getOutputSettings())).walk(this);"
+    },
+    {
+        "id": 7,
+        "line": 371,
+        "precode": "        return ownerDocument() != null ? ownerDocument().outputSettings() : (new Document(\"\")).outputSettings();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        returnsettings;"
+    },
+    {
+        "id": 114,
+        "line": 170,
+        "precode": "                    return abs.toExternalForm();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "                    return abs.url();"
+    },
+    {
+        "id": 115,
+        "line": 173,
+        "precode": "                if (relUrl.startsWith(\"?\"))",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "                if (relUrl.include(\"?\"))"
+    },
+    {
+        "id": 116,
+        "line": 174,
+        "precode": "                    relUrl = base.getPath() + relUrl;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "                    relUrl.= base.getPath() + relUrl;"
+    },
+    {
+        "id": 117,
+        "line": 175,
+        "precode": "                URL abs = new URL(base, relUrl);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "                URL abs = new URL(url, relUrl);"
+    },
+    {
+        "id": 118,
+        "line": 176,
+        "precode": "                return abs.toExternalForm();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "                return abs.url();"
+    },
+    {
+        "id": 145,
+        "line": 104,
+        "precode": "        Validate.notNull(attributeKey);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        Validate.name(attributeKey);"
+    },
+    {
+        "id": 146,
+        "line": 105,
+        "precode": "        return attributes.hasKey(attributeKey);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        return attributes.get(attributeKey);"
+    },
+    {
+        "id": 147,
+        "line": 114,
+        "precode": "        Validate.notNull(attributeKey);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_10_fixed/src/main/java/org/jsoup/nodes/Node.java",
+        "aftercode": "        Validate.name(attributeKey);"
+    }
+]

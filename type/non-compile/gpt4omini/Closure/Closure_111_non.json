@@ -1,0 +1,16 @@
+[
+    {
+        "id": 222,
+        "line": 60,
+        "precode": "JSType arrayType = getNativeType(ARRAY_TYPE);",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "JSType arrayType = getNativeType(ARRAY_TYPE).getInstanceType();"
+    },
+    {
+        "id": 224,
+        "line": 61,
+        "precode": "return arrayType.isSubtype(type) ? arrayType : null;",
+        "filepath": "defects4j_fixed/Closure/Closure_111_fixed/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java",
+        "aftercode": "return arrayType.isSubtype(type) ? getNativeType(NODE_TYPE) : null;"
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "id": 107,
+        "line": 706,
+        "precode": "long instantMillis = instant.getMillis();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantMillis = instant.getNanos();"
+    },
+    {
+        "id": 108,
+        "line": 707,
+        "precode": "Chronology chrono = instant.getChronology();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "Chronology chrono = instant.getCalendar();"
+    },
+    {
+        "id": 111,
+        "line": 710,
+        "precode": "chrono = selectChronology(chrono);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "chrono = selectCalendar(chrono);"
+    },
+    {
+        "id": 192,
+        "line": 706,
+        "precode": "long instantMillis = instant.getMillis();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "long instantMillis = instant.get(DateTimeFieldType.millisOfDay());"
+    },
+    {
+        "id": 197,
+        "line": 712,
+        "precode": "DateTimeParserBucket bucket = new DateTimeParserBucket(",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Time/Time_7_fixed/src/main/java/org/joda/time/format/DateTimeFormatter.java",
+        "aftercode": "DateTimeParserBucket bucket = new DateTimeParserBucket(\n    instantLocal, chrono, iLocale, iPivotYear, defaultYear);"
+    }
+]

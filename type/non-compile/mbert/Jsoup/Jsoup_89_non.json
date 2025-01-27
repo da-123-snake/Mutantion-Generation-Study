@@ -1,0 +1,30 @@
+[
+    {
+        "id": 163,
+        "line": 80,
+        "precode": "        return Attributes.checkNotNull(val);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_89_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "        return Attributes.escape(val);"
+    },
+    {
+        "id": 345,
+        "line": 90,
+        "precode": "            oldVal = parent.get(this.key); // trust the container more",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_89_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "            oldVal|= parent.get(this.key); // trust the container more"
+    },
+    {
+        "id": 346,
+        "line": 91,
+        "precode": "            int i = parent.indexOfKey(this.key);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_89_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "            int i = parent.get(this.key);"
+    },
+    {
+        "id": 348,
+        "line": 93,
+        "precode": "                parent.vals[i] = val;",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_89_fixed/src/main/java/org/jsoup/nodes/Attribute.java",
+        "aftercode": "                parent.vals[i]|= val;"
+    }
+]

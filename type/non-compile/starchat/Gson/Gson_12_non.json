@@ -1,0 +1,100 @@
+[
+    {
+        "id": 9,
+        "line": 316,
+        "precode": "String[] pathNames = new String[32];",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "String[] pathNames = new String[32];\nString[] pathNames = null;"
+    },
+    {
+        "id": 10,
+        "line": 316,
+        "precode": "int[] pathIndices = new int[32];",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "int[] pathIndices = new int[32];\nint[] pathIndices = null;"
+    },
+    {
+        "id": 11,
+        "line": 316,
+        "precode": "public JsonTreeReader(JsonElement element) {",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "public JsonTreeReader(JsonElement element) {\n\tpathNames = null;\n\tpathIndices = null;"
+    },
+    {
+        "id": 12,
+        "line": 316,
+        "precode": "super(UNREADABLE_READER);",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "super(UNREADABLE_READER);\n\tpathNames = null;\n\tpathIndices = null;"
+    },
+    {
+        "id": 13,
+        "line": 316,
+        "precode": "private String[] pathNames = new String[32];",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "private String[] pathNames;\nprivate String[] pathNames = new String[32];"
+    },
+    {
+        "id": 14,
+        "line": 316,
+        "precode": "private int[] pathIndices = new int[32];",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "private int[] pathIndices;\nprivate int[] pathIndices = new int[32];"
+    },
+    {
+        "id": 15,
+        "line": 316,
+        "precode": "public void beginArray() throws IOException {",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "public void beginArray() throws IOException {\n\tpathNames[stackSize - 2] = null;\n\tpathIndices[stackSize - 2] = 0;\n\tpathNames[stackSize - 1] = null;\n\tpathIndices[stackSize - 1] = 0;"
+    },
+    {
+        "id": 16,
+        "line": 316,
+        "precode": "expect(JsonToken.BEGIN_ARRAY);",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "expect(JsonToken.BEGIN_ARRAY);\n\tpathNames[stackSize - 2] = null;\n\tpathIndices[stackSize - 2] = 0;\n\tpathNames[stackSize - 1] = null;\n\tpathIndices[stackSize - 1] = 0;"
+    },
+    {
+        "id": 17,
+        "line": 316,
+        "precode": "public void endArray() throws IOException {",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "public void endArray() throws IOException {\n\tpopStack(); // empty iterator\n\tpopStack(); // array\n\tpathNames[stackSize - 2] = null;\n\tpathIndices[stackSize - 2]++;\n\tpathNames[stackSize - 1] = null;\n\tpathIndices[stackSize - 1]++;"
+    },
+    {
+        "id": 18,
+        "line": 316,
+        "precode": "expect(JsonToken.END_ARRAY);",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "expect(JsonToken.END_ARRAY);\n\tpopStack(); // empty iterator\n\tpopStack(); // array\n\tpathNames[stackSize - 2] = null;\n\tpathIndices[stackSize - 2]++;\n\tpathNames[stackSize - 1] = null;\n\tpathIndices[stackSize - 1]++;"
+    },
+    {
+        "id": 19,
+        "line": 316,
+        "precode": "public void beginObject() throws IOException {",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "public void beginObject() throws IOException {\n\tpush(object.entrySet().iterator());\n\tpathNames[stackSize - 2] = null;\n\tpathIndices[stackSize - 2] = 0;\n\tpathNames[stackSize - 1] = null;\n\tpathIndices[stackSize - 1] = 0;"
+    },
+    {
+        "id": 20,
+        "line": 316,
+        "precode": "expect(JsonToken.BEGIN_OBJECT);",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "expect(JsonToken.BEGIN_OBJECT);\n\tpush(object.entrySet().iterator());\n\tpathNames[stackSize - 2] = null;\n\tpathIndices[stackSize - 2] = 0;\n\tpathNames[stackSize - 1] = null;\n\tpathIndices[stackSize - 1] = 0;"
+    },
+    {
+        "id": 21,
+        "line": 316,
+        "precode": "public void endObject() throws IOException {",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "public void endObject() throws IOException {\n\tpopStack(); // empty iterator\n\tpopStack(); // object\n\tpathNames[stackSize - 2] = null;\n\tpathIndices[stackSize - 2]++;\n\tpathNames[stackSize - 1] = null;\n\tpathIndices[stackSize - 1]++;"
+    },
+    {
+        "id": 22,
+        "line": 316,
+        "precode": "expect(JsonToken.END_OBJECT);",
+        "filepath": "defects4j_fixed/Gson/Gson_12_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java",
+        "aftercode": "expect(JsonToken.END_OBJECT);\n\tpopStack(); // empty iterator\n\tpopStack(); // object\n\tpathNames[stackSize - 2] = null;\n\tpathIndices[stackSize - 2]++;\n\tpathNames[stackSize - 1] = null;\n\tpathIndices[stackSize - 1]++;"
+    }
+]

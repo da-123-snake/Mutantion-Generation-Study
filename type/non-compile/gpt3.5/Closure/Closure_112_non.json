@@ -1,0 +1,163 @@
+[
+    {
+        "id": 198,
+        "line": 1188,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 199,
+        "line": 1221,
+        "precode": "Node constructor = n.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "Node constructor = n.getLastChild();"
+    },
+    {
+        "id": 200,
+        "line": 1252,
+        "precode": "n.setJSType(type);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "n.setJSType(null);"
+    },
+    {
+        "id": 203,
+        "line": 43,
+        "precode": "n.setJSType(getPropertyType(objNode.getJSType(), property.getString(), n, scope));",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "n.setJSType(null);"
+    },
+    {
+        "id": 591,
+        "line": 1037,
+        "precode": "Map<TemplateType, JSType> resolvedTypes = Maps.newIdentityHashMap();",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "Map<TemplateType, JSType> resolvedTypes = new HashMap<TemplateType, JSType>();"
+    },
+    {
+        "id": 592,
+        "line": 1039,
+        "precode": "Node callTarget = call.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "Node callTarget = call.getSecondChild();"
+    },
+    {
+        "id": 594,
+        "line": 1041,
+        "precode": "Node obj = callTarget.getFirstChild();",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "Node obj = callTarget.getSecondChild();"
+    },
+    {
+        "id": 595,
+        "line": 1034,
+        "precode": "return Collections.emptyMap();",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "return new HashMap<TemplateType, JSType>();"
+    },
+    {
+        "id": 596,
+        "line": 1065,
+        "precode": "if (paramType.isUnionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "if (!paramType.isUnionType()) {"
+    },
+    {
+        "id": 600,
+        "line": 1003,
+        "precode": "for (Node iParameter : fnType.getParameters()) {",
+        "aftercode": "for (Node iParameter : fnType.getParameters()) {\n // Mutant 2: Modified code\nif (iParameter.hasChildren() { continue; }",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 601,
+        "line": 1004,
+        "precode": "if (i + 1 >= childCount) {",
+        "aftercode": "if (i + 1 >= childCount) {\n // Mutant 3: Modified code\nbreak;",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 603,
+        "line": 1020,
+        "precode": "if (restrictedParameter != null) {",
+        "aftercode": "if (restrictedParameter != null && restrictedParameter.isNonNullable()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 604,
+        "line": 28,
+        "precode": "maybeResolveTemplatedType(\n          paramType.getTemplateTypeMap().getTemplateType(key),\n          argType.getTemplateTypeMap().getTemplateType(key),\n          resolvedTypes);",
+        "aftercode": "maybeResolveTemplatedType(\n          paramType.getTemplateTypeMap().getTemplateType(key),\n          argType.getTemplateTypeMap().getTemplateType(key),\n          resolvedTypes);\n // Mutant 4: Inserted code\ncounter++;",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 605,
+        "line": 33,
+        "precode": "maybeResolveTemplateTypeFromNodes(\n            paramFunctionType.getParameters(),\n            argFunctionType.getParameters(),\n            resolvedTypes);",
+        "aftercode": "// Mutant 5: Deleted code\nmaybeResolveTemplateTypeFromNodes(\n            paramFunctionType.getParameters(),\n            argFunctionType.getParameters(),\n            resolvedTypes);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 606,
+        "line": 42,
+        "precode": "map.put(template, replacement);",
+        "aftercode": "map.put(template, replacement);\n // Mutant 6: Inserted code\nmap.put(template, replacement.getSuperType());",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 609,
+        "line": 1173,
+        "precode": "return replacement != null ?",
+        "aftercode": "return replacement != null || replacements.containsKey(type);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java"
+    },
+    {
+        "id": 790,
+        "line": 123,
+        "precode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), callParams.iterator(), resolvedTypes);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "maybeResolveTemplateTypeFromNodes(\n        callParams.iterator(), callParams.iterator(), resolvedTypes);"
+    },
+    {
+        "id": 791,
+        "line": 123,
+        "precode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), callParams.iterator(), resolvedTypes);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), declParams.iterator(), resolvedTypes);"
+    },
+    {
+        "id": 792,
+        "line": 123,
+        "precode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), callParams.iterator(), resolvedTypes);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "maybeResolveTemplateTypeFromNodes(\n        callParams.iterator(), declParams.iterator(), resolvedTypes);"
+    },
+    {
+        "id": 793,
+        "line": 124,
+        "precode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), callParams.iterator(), resolvedTypes);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "maybeResolveTemplateTypeFromNodes(\n        callParams.iterator(), resolvedTypes);"
+    },
+    {
+        "id": 794,
+        "line": 124,
+        "precode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), callParams.iterator(), resolvedTypes);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), resolvedTypes);"
+    },
+    {
+        "id": 795,
+        "line": 124,
+        "precode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), callParams.iterator(), resolvedTypes);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "maybeResolveTemplateTypeFromNodes(\n        declParams, resolvedTypes);"
+    },
+    {
+        "id": 796,
+        "line": 124,
+        "precode": "maybeResolveTemplateTypeFromNodes(\n        declParams.iterator(), callParams.iterator(), resolvedTypes);",
+        "filepath": "defects4j_fixed/Closure/Closure_112_fixed/src/com/google/javascript/jscomp/TypeInference.java",
+        "aftercode": "maybeResolveTemplateTypeFromNodes(declParams, resolvedTypes);"
+    }
+]

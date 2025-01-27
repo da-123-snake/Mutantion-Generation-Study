@@ -1,0 +1,30 @@
+[
+    {
+        "id": 437,
+        "line": 148,
+        "precode": "return REGISTRY.get();",
+        "filepath": "defects4j_fixed/Lang/Lang_34_fixed/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java",
+        "aftercode": "return REGISTRY.get() != null ? REGISTRY.get() : new WeakHashMap<>();"
+    },
+    {
+        "id": 438,
+        "line": 148,
+        "precode": "return REGISTRY.get();",
+        "filepath": "defects4j_fixed/Lang/Lang_34_fixed/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java",
+        "aftercode": "return new WeakHashMap<>(REGISTRY.get());"
+    },
+    {
+        "id": 442,
+        "line": 148,
+        "precode": "return REGISTRY.get();",
+        "filepath": "defects4j_fixed/Lang/Lang_34_fixed/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java",
+        "aftercode": "Map<Object, Object> registry = REGISTRY.get(); return registry == null ? new HashMap<>() : registry;"
+    },
+    {
+        "id": 445,
+        "line": 163,
+        "precode": "Map<Object, Object> m = getRegistry();",
+        "filepath": "defects4j_fixed/Lang/Lang_34_fixed/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java",
+        "aftercode": "Map<Object, Object> m = (getRegistry() == null) ? new HashMap<>() : getRegistry();"
+    }
+]

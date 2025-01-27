@@ -1,0 +1,51 @@
+[
+    {
+        "id": 80,
+        "line": 1054,
+        "precode": "            throw new IllegalArgumentException(\"Requires start <= end.\");",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "            throw new IllegalArgumentException(end);"
+    },
+    {
+        "id": 81,
+        "line": 1056,
+        "precode": "        TimeSeries copy = (TimeSeries) super.clone();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "        TimeSeries copy = (TimeSeries) super.copy();"
+    },
+    {
+        "id": 82,
+        "line": 1057,
+        "precode": "        copy.minY = Double.NaN;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "        copy.minY!= Double.NaN;"
+    },
+    {
+        "id": 83,
+        "line": 1058,
+        "precode": "        copy.maxY = Double.NaN;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "        copy.maxY!= Double.NaN;"
+    },
+    {
+        "id": 84,
+        "line": 1059,
+        "precode": "        copy.data = new java.util.ArrayList();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "        copy.dataList= new java.util.ArrayList();"
+    },
+    {
+        "id": 156,
+        "line": 855,
+        "precode": "                updateBoundsForRemovedItem(d);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "                TimeSeriesDataItem d = (TimeSeriesDataItem) this.data.remove(0);add(d);"
+    },
+    {
+        "id": 157,
+        "line": 858,
+        "precode": "        removeAgedItems(false);  // remove old items if necessary, but",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "        }while(false);  // remove old items if necessary, but"
+    }
+]

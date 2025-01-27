@@ -1,0 +1,135 @@
+[
+    {
+        "id": 494,
+        "line": 870,
+        "precode": "reportOverflowInt(rawNum);",
+        "aftercode": "reportOverflowDouble(rawNum);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 495,
+        "line": 870,
+        "precode": "reportOverflowInt(rawNum);",
+        "aftercode": "reportOverflowFloat(rawNum);",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 499,
+        "line": 842,
+        "precode": "NumberInput.inLongRange(buf, offset, len, _numberNegative)) {",
+        "aftercode": "NumberInput.inLongRange(buf, offset, len, _numberNegative) && len > 5) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 500,
+        "line": 887,
+        "precode": "        int result = (int) _numberLong;",
+        "aftercode": "        int result = (int) _numberBigInt;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 503,
+        "line": 925,
+        "precode": "            _numberLong = _numberBigInt.longValue();",
+        "aftercode": "            _numberLong = _numberInt.longValue();",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 512,
+        "line": 567,
+        "precode": "                double d = _numberDouble;",
+        "aftercode": "                double d = _numberNegative;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 513,
+        "line": 567,
+        "precode": "                double d = _numberDouble;",
+        "aftercode": "                double d = _currToken;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 515,
+        "line": 565,
+        "precode": "            if ((_numTypesValid & NR_DOUBLE) != 0) {",
+        "aftercode": "            if ((_numberDouble & NR_DOUBLE) != 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 517,
+        "line": 565,
+        "precode": "            if ((_numTypesValid & NR_DOUBLE) != 0) {",
+        "aftercode": "            if ((_fractLen & NR_DOUBLE) != 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 519,
+        "line": 567,
+        "precode": "                double d = _numberDouble;",
+        "aftercode": "                double d = _fractLen;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 521,
+        "line": 567,
+        "precode": "                double d = _numberDouble;",
+        "aftercode": "                double d = _expLen;",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 523,
+        "line": 8,
+        "precode": "                if ((_numTypesValid & NR_INT) != 0) {",
+        "aftercode": "                if ((_numTypesValid & NR_INT) == 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 524,
+        "line": 9,
+        "precode": "                if ((_numTypesValid & NR_LONG) != 0) {",
+        "aftercode": "                if ((_numTypesValid & NR_LONG) == 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 525,
+        "line": 10,
+        "precode": "                if ((_numTypesValid & NR_BIGINT) != 0) {",
+        "aftercode": "                if ((_numTypesValid & NR_BIGINT) == 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 528,
+        "line": 49,
+        "precode": "                if (_numTypesValid == NR_UNKNOWN) {",
+        "aftercode": "                if (_numTypesValid != NR_UNKNOWN) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 529,
+        "line": 50,
+        "precode": "                _parseNumericValue(NR_UNKNOWN); // will also check event type",
+        "aftercode": "                _parseNumericValue(NR_DOUBLE); // will also check event type",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 532,
+        "line": 72,
+        "precode": "                if ((_numTypesValid & NR_BIGINT) == 0) {",
+        "aftercode": "                if ((_numTypesValid & NR_BIGINT) != 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 534,
+        "line": 87,
+        "precode": "                if (_numTypesValid == NR_UNKNOWN) {",
+        "aftercode": "                if (_numTypesValid != NR_UNKNOWN) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    },
+    {
+        "id": 535,
+        "line": 94,
+        "precode": "                if ((_numTypesValid & NR_BIGDECIMAL) == 0) {",
+        "aftercode": "                if ((_numTypesValid & NR_BIGDECIMAL) != 0) {",
+        "filepath": "defects4j_fixed/JacksonCore/JacksonCore_24_fixed/src/main/java/com/fasterxml/jackson/core/base/ParserBase.java"
+    }
+]

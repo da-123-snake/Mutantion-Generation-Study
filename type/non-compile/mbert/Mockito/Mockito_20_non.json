@@ -1,0 +1,100 @@
+[
+    {
+        "id": 157,
+        "line": 29,
+        "precode": "                settings.getTypeToMock(),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                settings.name(),"
+    },
+    {
+        "id": 158,
+        "line": 30,
+        "precode": "                settings.getExtraInterfaces()",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                settings.get()"
+    },
+    {
+        "id": 159,
+        "line": 32,
+        "precode": "        Instantiator instantiator = new InstantiatorProvider().getInstantiator(settings);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "        Instantiator instantiator = new InstantiatorProvider().create(settings);"
+    },
+    {
+        "id": 160,
+        "line": 33,
+        "precode": "        T mockInstance = null;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "        T mockInstance =NULL;"
+    },
+    {
+        "id": 161,
+        "line": 35,
+        "precode": "            mockInstance = instantiator.newInstance(mockedProxyType);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "            mockInstance!= instantiator.newInstance(mockedProxyType);"
+    },
+    {
+        "id": 162,
+        "line": 36,
+        "precode": "            MockMethodInterceptor.MockAccess mockAccess = (MockMethodInterceptor.MockAccess) mockInstance;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "            MockMethodInterceptor.MockAccess mockAccess =null;"
+    },
+    {
+        "id": 163,
+        "line": 37,
+        "precode": "            mockAccess.setMockitoInterceptor(new MockMethodInterceptor(asInternalMockHandler(handler), settings));",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "            mockAccess.add(new MockMethodInterceptor(asInternalMockHandler(handler), settings));"
+    },
+    {
+        "id": 164,
+        "line": 43,
+        "precode": "                    \"  class to mock : \" + describeClass(mockedProxyType),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                    \"  class to mock : \"\"+describeClass(mockedProxyType),"
+    },
+    {
+        "id": 165,
+        "line": 44,
+        "precode": "                    \"  created class : \" + describeClass(settings.getTypeToMock()),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                    \"  created class : \"\"+describeClass(settings.getTypeToMock()),"
+    },
+    {
+        "id": 166,
+        "line": 45,
+        "precode": "                    \"  proxy instance class : \" + describeClass(mockInstance),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                    \"  proxy instance class : \"\"+describeClass(mockInstance),"
+    },
+    {
+        "id": 167,
+        "line": 46,
+        "precode": "                    \"  instance creation by : \" + instantiator.getClass().getSimpleName(),",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                    \"  instance creation by : \"+(instantiator.getClass().getSimpleName(),"
+    },
+    {
+        "id": 168,
+        "line": 47,
+        "precode": "                    \"\",",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                    \"  instance creation by : \" + instantiator.getClass().getSimpleName(),\"\","
+    },
+    {
+        "id": 169,
+        "line": 48,
+        "precode": "                    \"You might experience classloading issues, please ask the mockito mailing-list.\",",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                    \"\",\"\","
+    },
+    {
+        "id": 170,
+        "line": 49,
+        "precode": "                    \"\"",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Mockito/Mockito_20_fixed/src/org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker.java",
+        "aftercode": "                    \"You might experience classloading issues, please ask the mockito mailing-list.\","
+    }
+]

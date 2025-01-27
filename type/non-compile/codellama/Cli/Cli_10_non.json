@@ -1,0 +1,65 @@
+[
+    {
+        "id": 56,
+        "line": 1,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 65,
+        "line": 50,
+        "precode": "protected Options getOptions() {",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "protected Options getOptions() { return null; }"
+    },
+    {
+        "id": 66,
+        "line": 54,
+        "precode": "protected List getRequiredOptions() {",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "protected List getRequiredOptions() { return null; }"
+    },
+    {
+        "id": 67,
+        "line": 45,
+        "precode": "protected void setOptions(final Options options) {",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "protected void setOptions(final Options options) { this.options = null; }"
+    },
+    {
+        "id": 69,
+        "line": 45,
+        "precode": "protected void setOptions(final Options options) {",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "protected void setOptions(final Options options) { this.options = options; }"
+    },
+    {
+        "id": 246,
+        "line": 263,
+        "precode": "Option opt = getOptions().getOption(option);",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "Option opt = getOptions().getOption(option).toLowerCase();"
+    },
+    {
+        "id": 278,
+        "line": 1,
+        "precode": "if (properties == null) {",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "if (properties == null) { return; }"
+    },
+    {
+        "id": 282,
+        "line": 266,
+        "precode": "String value = properties.getProperty(option);",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "String value = properties.getProperty(option); if (opt.hasArg()) { if ((opt.getValues() == null) || (opt.getValues().length == 0)) { try { opt.addValueForProcessing(value); } catch (RuntimeException exp) { // if we cannot add the value don't worry about it } } } else if (!(\"yes\".equalsIgnoreCase(value) || \"true\".equalsIgnoreCase(value) || \"1\".equalsIgnoreCase(value))) { // if the value is not yes, true or 1 then don't add the option to the CommandLine break; } cmd.addOption(opt);"
+    },
+    {
+        "id": 316,
+        "line": 320,
+        "precode": "buff.append(iter.next());",
+        "filepath": "defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "aftercode": "buff.append(iter.next() + 1);"
+    }
+]

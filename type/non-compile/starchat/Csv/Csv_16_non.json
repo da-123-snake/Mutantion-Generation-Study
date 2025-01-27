@@ -1,0 +1,422 @@
+[
+    {
+        "id": 8,
+        "line": 386,
+        "precode": "if (this.lexer!= null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (this.lexer == null) {"
+    },
+    {
+        "id": 9,
+        "line": 386,
+        "precode": "this.lexer.close();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.lexer = null;"
+    },
+    {
+        "id": 10,
+        "line": 386,
+        "precode": "if (this.lexer!= null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (this.lexer == null) {"
+    },
+    {
+        "id": 11,
+        "line": 386,
+        "precode": "this.lexer.close();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.lexer = null;"
+    },
+    {
+        "id": 12,
+        "line": 386,
+        "precode": "if (this.lexer!= null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (this.lexer == null) {"
+    },
+    {
+        "id": 13,
+        "line": 386,
+        "precode": "this.lexer.close();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.lexer = null;"
+    },
+    {
+        "id": 14,
+        "line": 386,
+        "precode": "if (this.lexer!= null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (this.lexer == null) {"
+    },
+    {
+        "id": 15,
+        "line": 386,
+        "precode": "this.lexer.close();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.lexer = null;"
+    },
+    {
+        "id": 46,
+        "line": 288,
+        "precode": "private final Map<String, Integer> headerMap;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "private final Map<String, Integer> headerMap = new HashMap<>();"
+    },
+    {
+        "id": 47,
+        "line": 288,
+        "precode": "private final Lexer lexer;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "private final Lexer lexer = new Lexer();"
+    },
+    {
+        "id": 48,
+        "line": 289,
+        "precode": "private final CSVRecordIterator csvRecordIterator;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "private final CSVRecordIterator csvRecordIterator = new CSVRecordIterator();"
+    },
+    {
+        "id": 49,
+        "line": 288,
+        "precode": "/** A record buffer for getRecord(). Grows as necessary and is reused. */",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "/** A record buffer for getRecord(). Grows as necessary and is reused. */\nprivate final List<String> recordList = new ArrayList<>();"
+    },
+    {
+        "id": 50,
+        "line": 288,
+        "precode": "recordList.add(record);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "recordList.add(record);\nrecordList.add(null);"
+    },
+    {
+        "id": 51,
+        "line": 288,
+        "precode": "return recordList.get(i);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return recordList.get(i);"
+    },
+    {
+        "id": 52,
+        "line": 288,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 53,
+        "line": 373,
+        "precode": "this.format = format;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.format = (CSVFormat) format.clone();"
+    },
+    {
+        "id": 54,
+        "line": 373,
+        "precode": "this.lexer = new Lexer(format, new ExtendedBufferedReader(reader));",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.lexer = new Lexer(format.clone(), new ExtendedBufferedReader(reader));"
+    },
+    {
+        "id": 55,
+        "line": 373,
+        "precode": "this.csvRecordIterator = new CSVRecordIterator();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.csvRecordIterator = new CSVRecordIterator(format.clone());"
+    },
+    {
+        "id": 56,
+        "line": 373,
+        "precode": "this.headerMap = this.initializeHeader();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.headerMap = this.initializeHeader(format.clone());"
+    },
+    {
+        "id": 57,
+        "line": 373,
+        "precode": "this.characterOffset = characterOffset;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.characterOffset = characterOffset + format.toString().length();"
+    },
+    {
+        "id": 58,
+        "line": 373,
+        "precode": "this.recordNumber = recordNumber - 1;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.recordNumber = recordNumber;"
+    },
+    {
+        "id": 59,
+        "line": 373,
+        "precode": "this.addRecordValue(lastRecord);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.addRecordValue(lastRecord, format.clone());"
+    },
+    {
+        "id": 60,
+        "line": 576,
+        "precode": "return depth == 0;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 61,
+        "line": 576,
+        "precode": "if (this.isClosed()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 62,
+        "line": 576,
+        "precode": "return csvRecordIterator;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 63,
+        "line": 576,
+        "precode": "this.csvRecordIterator = new CSVRecordIterator();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.csvRecordIterator = null;"
+    },
+    {
+        "id": 64,
+        "line": 576,
+        "precode": "this.csvRecordIterator = new CSVRecordIterator();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.csvRecordIterator = null;"
+    },
+    {
+        "id": 65,
+        "line": 576,
+        "precode": "if (this.csvRecordIterator == null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 66,
+        "line": 576,
+        "precode": "return this.csvRecordIterator;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 67,
+        "line": 576,
+        "precode": "this.csvRecordIterator = new CSVRecordIterator();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.csvRecordIterator = null;"
+    },
+    {
+        "id": 68,
+        "line": 576,
+        "precode": "if (this.csvRecordIterator == null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 69,
+        "line": 576,
+        "precode": "return csvRecordIterator;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 70,
+        "line": 576,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 71,
+        "line": 576,
+        "precode": "while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 72,
+        "line": 576,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 73,
+        "line": 576,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 74,
+        "line": 576,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 75,
+        "line": 576,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 101,
+        "line": 288,
+        "precode": "private final Map<String, Integer> headerMap;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "private final Map<String, Integer> headerMap = new HashMap<>();"
+    },
+    {
+        "id": 102,
+        "line": 288,
+        "precode": "private final Lexer lexer;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "private final Lexer lexer = new Lexer();"
+    },
+    {
+        "id": 103,
+        "line": 289,
+        "precode": "private final CSVRecordIterator csvRecordIterator;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "private final CSVRecordIterator csvRecordIterator = new CSVRecordIterator();"
+    },
+    {
+        "id": 105,
+        "line": 288,
+        "precode": "while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 106,
+        "line": 288,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 107,
+        "line": 288,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 126,
+        "line": 42,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 127,
+        "line": 42,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": " while (true) { "
+    },
+    {
+        "id": 128,
+        "line": 42,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 129,
+        "line": 42,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 130,
+        "line": 42,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 131,
+        "line": 42,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 132,
+        "line": 42,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 133,
+        "line": 373,
+        "precode": "final String nullString = this.format.getNullString();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "final String nullString = this.format.getEmptyString();"
+    },
+    {
+        "id": 134,
+        "line": 373,
+        "precode": "final String nullString = this.format.getNullString();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "final String nullString = this.format.getDelimiter();"
+    },
+    {
+        "id": 135,
+        "line": 373,
+        "precode": "final String nullString = this.format.getNullString();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "final String nullString = this.format.getCommentMarker();"
+    },
+    {
+        "id": 136,
+        "line": 373,
+        "precode": "final String nullString = this.format.getNullString();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "final String nullString = this.format.getHeader();"
+    },
+    {
+        "id": 137,
+        "line": 373,
+        "precode": "final String nullString = this.format.getNullString();",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "final String nullString = this.format.getEscape();"
+    },
+    {
+        "id": 138,
+        "line": 373,
+        "precode": "this.recordList.add(inputClean.equals(nullString)? null : inputClean);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.recordList.add(inputClean.equals(nullString)? inputClean : null);"
+    },
+    {
+        "id": 139,
+        "line": 373,
+        "precode": "this.recordList.add(inputClean.equals(nullString)? null : inputClean);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.recordList.add(inputClean.equals(nullString)? null : inputClean.trim());"
+    },
+    {
+        "id": 140,
+        "line": 373,
+        "precode": "this.recordList.add(inputClean.equals(nullString)? null : inputClean);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.recordList.add(inputClean.equals(nullString)? null : inputClean.substring(1));"
+    },
+    {
+        "id": 141,
+        "line": 373,
+        "precode": "this.recordList.add(inputClean.equals(nullString)? null : inputClean);",
+        "filepath": "defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.recordList.add(inputClean.equals(nullString)? null : inputClean.substring(0, inputClean.length() - 1));"
+    }
+]

@@ -1,0 +1,135 @@
+[
+    {
+        "id": 1043,
+        "line": 391,
+        "precode": "  while ((lastArg = argList.getLastChild())!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "  while (true) {"
+    },
+    {
+        "id": 1044,
+        "line": 391,
+        "precode": "  while ((lastArg = argList.getLastChild())!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "  while (lastArg == null) {"
+    },
+    {
+        "id": 1045,
+        "line": 391,
+        "precode": "  while ((lastArg = argList.getLastChild())!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "  while (lastArg.getParent() == null) {"
+    },
+    {
+        "id": 1046,
+        "line": 391,
+        "precode": "  while ((lastArg = argList.getLastChild())!= null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "  while (lastArg.getNext() == null) {"
+    },
+    {
+        "id": 1048,
+        "line": 391,
+        "precode": "    Var var = fnScope.getVar(lastArg.getString());",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "    Var var = fnScope.getVar(lastArg.getString() + lastArg.getString());"
+    },
+    {
+        "id": 1049,
+        "line": 391,
+        "precode": "    if (!referenced.contains(var)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "    if (referenced.contains(var)) {"
+    },
+    {
+        "id": 1050,
+        "line": 391,
+        "precode": "      argList.removeChild(lastArg);",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "      argList.removeChild(lastArg.getParent());"
+    },
+    {
+        "id": 1051,
+        "line": 391,
+        "precode": "      compiler.reportCodeChange();",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "      System.out.println(\"Changed\");"
+    },
+    {
+        "id": 1212,
+        "line": 754,
+        "precode": "if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "if ((assignedToUnknownValue || maybeEscaped) &&!hasPropertyAssign) {"
+    },
+    {
+        "id": 1215,
+        "line": 754,
+        "precode": "if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "if (!(assignedToUnknownValue || maybeEscaped)) {"
+    },
+    {
+        "id": 1218,
+        "line": 754,
+        "precode": "if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "if ((assignedToUnknownValue ||!maybeEscaped) && hasPropertyAssign) {"
+    },
+    {
+        "id": 1221,
+        "line": 754,
+        "precode": "if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign) {",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign) {"
+    },
+    {
+        "id": 1222,
+        "line": 914,
+        "precode": "this.nameNode = nameNode;",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "this.nameNode = (this.nameNode & (this.nameNode - 1));"
+    },
+    {
+        "id": 1223,
+        "line": 914,
+        "precode": "this.isPropertyAssign = isPropertyAssign;",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "this.isPropertyAssign =!this.isPropertyAssign;"
+    },
+    {
+        "id": 1224,
+        "line": 914,
+        "precode": "this.maybeAliased = NodeUtil.isExpressionResultUsed(assignNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "this.maybeAliased =!this.maybeAliased;"
+    },
+    {
+        "id": 1225,
+        "line": 914,
+        "precode": "this.mayHaveSecondarySideEffects = maybeAliased || NodeUtil.mayHaveSideEffects(assignNode.getFirstChild()) || NodeUtil.mayHaveSideEffects(assignNode.getLastChild());",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "this.mayHaveSecondarySideEffects =!this.mayHaveSecondarySideEffects;"
+    },
+    {
+        "id": 1226,
+        "line": 914,
+        "precode": "nameNode = nameNode;",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "nameNode = (nameNode & (nameNode - 1));"
+    },
+    {
+        "id": 1227,
+        "line": 914,
+        "precode": "isPropertyAssign = isPropertyAssign;",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "isPropertyAssign =!isPropertyAssign;"
+    },
+    {
+        "id": 1228,
+        "line": 914,
+        "precode": "maybeAliased = NodeUtil.isExpressionResultUsed(assignNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_45_fixed/src/com/google/javascript/jscomp/RemoveUnusedVars.java",
+        "aftercode": "maybeAliased =!maybeAliased;"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 30,
+        "line": 7,
+        "precode": "/** The period in the units of this period. */",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "/** The period of this period. */"
+    },
+    {
+        "id": 31,
+        "line": 8,
+        "precode": "",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "/** The period of this period in seconds. */"
+    },
+    {
+        "id": 32,
+        "line": 9,
+        "precode": "",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "/** The period of this period in milliseconds. */"
+    },
+    {
+        "id": 33,
+        "line": 10,
+        "precode": "",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "/** The period of this period as a long. */"
+    },
+    {
+        "id": 38,
+        "line": 104,
+        "precode": "Chronology chrono = DateTimeUtils.getChronology(start.getChronology()).withUTC();",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "Chronology chrono = DateTimeUtils.getChronology(start.getChronology()).withZoneUTC();"
+    },
+    {
+        "id": 40,
+        "line": 105,
+        "precode": "int[] values = chrono.get(zeroInstance, chrono.set(start, START_1972), chrono.set(end, START_1972));",
+        "filepath": "defects4j_fixed/Time/Time_10_fixed/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java",
+        "aftercode": "int[] values = chrono.get(zeroInstance, chrono.set(end, START_1972), chrono.set(start, START_1973));"
+    }
+]

@@ -1,0 +1,247 @@
+[
+    {
+        "id": 139,
+        "line": 1312,
+        "precode": "if (childType.isDict()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "if (childType.isArray()) {"
+    },
+    {
+        "id": 140,
+        "line": 1316,
+        "precode": "checkPropertyAccess(childType, property.getString(), t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "checkPropertyAccess(childType, property.getString(), t, childType);"
+    },
+    {
+        "id": 141,
+        "line": 1318,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "ensureTyped(t, childType);"
+    },
+    {
+        "id": 352,
+        "line": 1659,
+        "precode": "Iterator<Node> arguments = call.children().iterator();",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "Iterator<Node> arguments = call.descendants().iterator();"
+    },
+    {
+        "id": 357,
+        "line": 1681,
+        "precode": "int numArgs = call.getChildCount() - 1;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "int numArgs = call.getChildCount(); minArgs++;"
+    },
+    {
+        "id": 358,
+        "line": 1681,
+        "precode": "int numArgs = call.getChildCount() - 1;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "int numArgs = call.getChildCount(); maxArgs--;"
+    },
+    {
+        "id": 528,
+        "line": 70,
+        "precode": "HashMap<String, ObjectType> properties\n            = new HashMap<String, ObjectType>();",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "HashMap<String, ObjectType> properties = new HashMap<String, ObjectType>();"
+    },
+    {
+        "id": 529,
+        "line": 71,
+        "precode": "HashMap<String, ObjectType> currentProperties\n            = new HashMap<String, ObjectType>();",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "HashMap<String, ObjectType> currentProperties = new HashMap<String, ObjectType>();"
+    },
+    {
+        "id": 533,
+        "line": 1587,
+        "precode": "properties.putAll(currentProperties);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "properties.addAll(currentProperties);"
+    },
+    {
+        "id": 534,
+        "line": 1591,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "//}"
+    },
+    {
+        "id": 535,
+        "line": 1591,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "//}"
+    },
+    {
+        "id": 536,
+        "line": 1591,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "//}"
+    },
+    {
+        "id": 537,
+        "line": 1591,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "//}"
+    },
+    {
+        "id": 538,
+        "line": 1591,
+        "precode": "}",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "//}"
+    },
+    {
+        "id": 1342,
+        "line": 47,
+        "precode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        break;",
+        "aftercode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        ensureTyped(t, n, STRING_TYPE);\n        break;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1343,
+        "line": 53,
+        "precode": "case Token.GETPROP:\n        visitGetProp(t, n, parent);\n        typeable = !(parent.isAssign() &&\n                     parent.getFirstChild() == n);",
+        "aftercode": "case Token.GETPROP:\n        visitGetProp(t, n, parent);\n        typeable = !(parent.isAssign() &&\n                     parent.getFirstChild() != n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1344,
+        "line": 47,
+        "precode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        break;",
+        "aftercode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        ensureTyped(t, n, NUMBER_TYPE);\n        break;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1345,
+        "line": 53,
+        "precode": "case Token.GETPROP:\n        visitGetProp(t, n, parent);\n        typeable = !(parent.isAssign() &&\n                     parent.getFirstChild() == n);",
+        "aftercode": "case Token.GETPROP:\n        visitGetProp(t, n, parent);\n        typeable = !(parent.isAssign() &&\n                     parent.getFirstChild().getNext() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1346,
+        "line": 47,
+        "precode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        break;",
+        "aftercode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        ensureTyped(t, n, BOOLEAN_TYPE);\n        break;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1347,
+        "line": 53,
+        "precode": "case Token.GETPROP:\n        visitGetProp(t, n, parent);\n        typeable = !(parent.isAssign() &&\n                     parent.getFirstChild() == n);",
+        "aftercode": "case Token.GETPROP:\n        visitGetProp(t, n, parent);\n        typeable = !(parent.isAssign() &&\n                     parent.getFirstChild().getFirstChild() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1348,
+        "line": 47,
+        "precode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        break;",
+        "aftercode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        ensureTyped(t, n, VOID_TYPE);\n        break;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1349,
+        "line": 53,
+        "precode": "case Token.GETPROP:\n        visitGetProp(t, n, parent);\n        typeable = !(parent.isAssign() &&\n                     parent.getFirstChild() == n);",
+        "aftercode": "case Token.GETPROP:\n        visitGetProp(t, n, parent);\n        typeable = !(parent.isAssign() &&\n                     parent.getFirstChild().getLastChild() == n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1350,
+        "line": 47,
+        "precode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        break;",
+        "aftercode": "case Token.REGEXP:\n        ensureTyped(t, n, REGEXP_TYPE);\n        ensureTyped(t, n, NULL_TYPE);\n        break;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java"
+    },
+    {
+        "id": 1379,
+        "line": 1583,
+        "precode": "for (ObjectType interfaceType : functionType.getExtendedInterfaces()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "for (ObjectType interfaceType : functionType.getExtendedInterfaces()) {\n    if (interfaceType == null) {"
+    },
+    {
+        "id": 1798,
+        "line": 1390,
+        "precode": "return true;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 1799,
+        "line": 1390,
+        "precode": "return true;",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "return 1;"
+    },
+    {
+        "id": 1800,
+        "line": 141,
+        "precode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getFirstChild()), getJSType(n.getLastChild()));",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getFirstChild()), false);"
+    },
+    {
+        "id": 1801,
+        "line": 141,
+        "precode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getFirstChild()), getJSType(n.getLastChild()));",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "validator.expectIndexMatch(\n        t, n, false, getJSType(n.getLastChild()));"
+    },
+    {
+        "id": 1802,
+        "line": 141,
+        "precode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getFirstChild()), getJSType(n.getLastChild()));",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getLastChild()), getJSType(n.getLastChild()));"
+    },
+    {
+        "id": 1803,
+        "line": 141,
+        "precode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getFirstChild()), getJSType(n.getLastChild()));",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getFirstChild()), null);"
+    },
+    {
+        "id": 1804,
+        "line": 141,
+        "precode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getFirstChild()), getJSType(n.getLastChild()));",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "validator.expectIndexMatch(\n        t, n, getJSType(n.getFirstChild()), \"string\");"
+    },
+    {
+        "id": 1806,
+        "line": 1413,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "t.reportCodeChange();"
+    },
+    {
+        "id": 1807,
+        "line": 1413,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "t.validateScope(t.getScope());"
+    },
+    {
+        "id": 1808,
+        "line": 1413,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "t.maybeReportMissingGoogRequire();"
+    },
+    {
+        "id": 1809,
+        "line": 1413,
+        "precode": "ensureTyped(t, n);",
+        "filepath": "defects4j_fixed/Closure/Closure_11_fixed/src/com/google/javascript/jscomp/TypeCheck.java",
+        "aftercode": "t.report(t.makeError(n, Check.AMBIGUOUS_ENUM));"
+    }
+]

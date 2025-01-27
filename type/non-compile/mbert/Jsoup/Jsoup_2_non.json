@@ -1,0 +1,58 @@
+[
+    {
+        "id": 89,
+        "line": 205,
+        "precode": "        tq.consume(\"<![CDATA[\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "        tq.append(\"<![CDATA[\");"
+    },
+    {
+        "id": 90,
+        "line": 206,
+        "precode": "        String rawText = tq.chompTo(\"]]>\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "        String rawText = tq.select(\"]]>\");"
+    },
+    {
+        "id": 91,
+        "line": 207,
+        "precode": "        TextNode textNode = new TextNode(rawText, baseUri); // constructor does not escape",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "        TextNode textNode = new TextNode(text, baseUri); // constructor does not escape"
+    },
+    {
+        "id": 92,
+        "line": 208,
+        "precode": "        last().appendChild(textNode);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "        last().add(textNode);"
+    },
+    {
+        "id": 239,
+        "line": 145,
+        "precode": "        if (tag.isData()) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "        if (tag.empty()) {"
+    },
+    {
+        "id": 240,
+        "line": 146,
+        "precode": "            String data = tq.chompTo(\"</\" + tagName);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "            String data = tq.join(\"</\" + tagName);"
+    },
+    {
+        "id": 241,
+        "line": 147,
+        "precode": "            tq.chompTo(\">\");",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "            tq.push(\">\");"
+    },
+    {
+        "id": 242,
+        "line": 148,
+        "precode": "            popStackToClose(tag);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/Jsoup/Jsoup_2_fixed/src/main/java/org/jsoup/parser/Parser.java",
+        "aftercode": "            tq.chompTo(\">\");end(tag);"
+    }
+]

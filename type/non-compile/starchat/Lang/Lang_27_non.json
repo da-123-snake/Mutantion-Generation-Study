@@ -1,0 +1,604 @@
+[
+    {
+        "id": 1,
+        "line": 603,
+        "precode": "if (str == null) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 2,
+        "line": 603,
+        "precode": "if (StringUtils.isBlank(str)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "throw new NumberFormatException(\"A blank string is not a valid number\");"
+    },
+    {
+        "id": 3,
+        "line": 603,
+        "precode": "if (str.startsWith(\"--\")) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 4,
+        "line": 603,
+        "precode": "if (str.startsWith(\"0x\") || str.startsWith(\"-0x\")) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return createInteger(str);"
+    },
+    {
+        "id": 5,
+        "line": 603,
+        "precode": "char lastChar = str.charAt(str.length() - 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "char lastChar = str.charAt(str.length() - 2);"
+    },
+    {
+        "id": 9,
+        "line": 603,
+        "precode": "int decPos = str.indexOf(\".\");",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "int decPos = str.indexOf(\".\", decPos + 1);"
+    },
+    {
+        "id": 10,
+        "line": 603,
+        "precode": "int expPos = str.indexOf(\"e\") + str.indexOf(\"E\") + 1;",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "int expPos = str.indexOf(\"e\", expPos) + str.indexOf(\"E\", expPos) + 1;"
+    },
+    {
+        "id": 11,
+        "line": 603,
+        "precode": "if (decPos > -1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (decPos > -2) {"
+    },
+    {
+        "id": 12,
+        "line": 603,
+        "precode": "if (expPos > -1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -2) {"
+    },
+    {
+        "id": 13,
+        "line": 603,
+        "precode": "if (expPos > -1 && expPos < str.length() - 1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -2 && expPos < str.length() - 2) {"
+    },
+    {
+        "id": 14,
+        "line": 603,
+        "precode": "String dec = str.substring(decPos + 1, expPos);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "String dec = str.substring(decPos + 2, expPos);"
+    },
+    {
+        "id": 15,
+        "line": 603,
+        "precode": "String mant = str.substring(0, decPos);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "String mant = str.substring(1, decPos);"
+    },
+    {
+        "id": 16,
+        "line": 603,
+        "precode": "if (!Character.isDigit(lastChar) && lastChar!= \".\") {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (!Character.isDigit(lastChar) && lastChar!= \".\") {"
+    },
+    {
+        "id": 17,
+        "line": 603,
+        "precode": "if (expPos > -1 && expPos < str.length() - 1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -2 && expPos < str.length() - 2) {"
+    },
+    {
+        "id": 18,
+        "line": 603,
+        "precode": "String numeric = str.substring(0, str.length() - 1);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "String numeric = str.substring(0, str.length() - 2);"
+    },
+    {
+        "id": 19,
+        "line": 603,
+        "precode": "boolean allZeros = isAllZeros(mant) && isAllZeros(exp);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "boolean allZeros = isAllZeros(mant2) && isAllZeros(exp2);"
+    },
+    {
+        "id": 20,
+        "line": 603,
+        "precode": "switch (lastChar) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "switch (lastChar) {"
+    },
+    {
+        "id": 21,
+        "line": 603,
+        "precode": "case 'l' :",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "case'm' :"
+    },
+    {
+        "id": 78,
+        "line": 603,
+        "precode": "if (str == null) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str == null) return null;"
+    },
+    {
+        "id": 79,
+        "line": 603,
+        "precode": "if (StringUtils.isBlank(str)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (StringUtils.isBlank(str)) return null;"
+    },
+    {
+        "id": 80,
+        "line": 603,
+        "precode": "if (str.startsWith(\"--\")) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str.startsWith(\"--\")) return null;"
+    },
+    {
+        "id": 81,
+        "line": 603,
+        "precode": "if (str.startsWith(\"0x\") || str.startsWith(\"-0x\")) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str.startsWith(\"0x\") || str.startsWith(\"-0x\")) return createInteger(str);"
+    },
+    {
+        "id": 82,
+        "line": 603,
+        "precode": "if (decPos > -1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (decPos > -1) {"
+    },
+    {
+        "id": 83,
+        "line": 603,
+        "precode": "if (expPos > -1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -1) {"
+    },
+    {
+        "id": 84,
+        "line": 603,
+        "precode": "if (!Character.isDigit(lastChar) && lastChar!= \".\") {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (!Character.isDigit(lastChar) && lastChar!= \".\") {"
+    },
+    {
+        "id": 163,
+        "line": 1357,
+        "precode": "if (chars[i] == 'l' || chars[i] == 'L') {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (chars[i] == 'L' &&!hasExp) {"
+    },
+    {
+        "id": 164,
+        "line": 1357,
+        "precode": "if (chars[i] == 'l' || chars[i] == 'L') {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (chars[i] == 'l' &&!hasExp) {"
+    },
+    {
+        "id": 165,
+        "line": 1357,
+        "precode": "if (chars[i] == 'l' || chars[i] == 'L') {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (chars[i] == 'l' && hasExp) {"
+    },
+    {
+        "id": 166,
+        "line": 1357,
+        "precode": "if (chars[i] == 'l' || chars[i] == 'L') {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (chars[i] == 'L' && hasExp) {"
+    },
+    {
+        "id": 167,
+        "line": 1357,
+        "precode": "if (chars[i] == 'l' || chars[i] == 'L') {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (chars[i] == 'l') {"
+    },
+    {
+        "id": 168,
+        "line": 1357,
+        "precode": "if (chars[i] == 'l' || chars[i] == 'L') {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (chars[i] == 'L') {"
+    },
+    {
+        "id": 169,
+        "line": 1357,
+        "precode": "if (chars[i] == 'l' || chars[i] == 'L') {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (chars[i] == 'l' || chars[i] == 'L') {"
+    },
+    {
+        "id": 170,
+        "line": 603,
+        "precode": "if (decPos > -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (decPos > -1) {\nif (true) {\n"
+    },
+    {
+        "id": 171,
+        "line": 603,
+        "precode": "if (decPos > -1) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (decPos > -1) {\nif (false) {\n"
+    },
+    {
+        "id": 172,
+        "line": 603,
+        "precode": "if (expPos > -1) {\n    if (expPos < decPos || expPos > str.length()) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -1) {\n    if (expPos < decPos || expPos > str.length()) {\nif (true) {\n"
+    },
+    {
+        "id": 173,
+        "line": 603,
+        "precode": "if (expPos > -1) {\n    if (expPos < decPos || expPos > str.length()) {\n",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -1) {\n    if (expPos < decPos || expPos > str.length()) {\nif (false) {\n"
+    },
+    {
+        "id": 174,
+        "line": 603,
+        "precode": "        dec = str.substring(decPos + 1, expPos);\n",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "        dec = str.substring(decPos + 1, expPos);\nif (true) {\n"
+    },
+    {
+        "id": 175,
+        "line": 603,
+        "precode": "        dec = str.substring(decPos + 1, expPos);\n",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "        dec = str.substring(decPos + 1, expPos);\nif (false) {\n"
+    },
+    {
+        "id": 176,
+        "line": 603,
+        "precode": "    }\n}\n}",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "    }\n}\nif (true) {\n"
+    },
+    {
+        "id": 177,
+        "line": 603,
+        "precode": "if (str == null) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 178,
+        "line": 603,
+        "precode": "if (StringUtils.isBlank(str)) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "throw new NumberFormatException(\"A blank string is not a valid number\");"
+    },
+    {
+        "id": 179,
+        "line": 603,
+        "precode": "if (str.startsWith(\"--\")) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 180,
+        "line": 603,
+        "precode": "if (str.startsWith(\"0x\") || str.startsWith(\"-0x\")) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return createInteger(str);"
+    },
+    {
+        "id": 184,
+        "line": 603,
+        "precode": "int decPos = str.indexOf(\".\");",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "int expPos = str.indexOf('e') + str.indexOf('E') + 1;"
+    },
+    {
+        "id": 185,
+        "line": 603,
+        "precode": "if (decPos > -1) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -1) {"
+    },
+    {
+        "id": 205,
+        "line": 603,
+        "precode": "if (str == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str == null) return null;"
+    },
+    {
+        "id": 206,
+        "line": 603,
+        "precode": "if (StringUtils.isBlank(str))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (StringUtils.isBlank(str)) throw new NumberFormatException(\"A blank string is not a valid number\");"
+    },
+    {
+        "id": 207,
+        "line": 603,
+        "precode": "if (str.startsWith(\"--\"))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str.startsWith(\"--\")) return null;"
+    },
+    {
+        "id": 208,
+        "line": 603,
+        "precode": "if (str.startsWith(\"0x\") || str.startsWith(\"-0x\"))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str.startsWith(\"0x\") || str.startsWith(\"-0x\")) return createInteger(str);"
+    },
+    {
+        "id": 209,
+        "line": 603,
+        "precode": "if (!Character.isDigit(lastChar) && lastChar!= '.)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (!Character.isDigit(lastChar) && lastChar!= '.') {"
+    },
+    {
+        "id": 210,
+        "line": 603,
+        "precode": "if (expPos > -1 && expPos < str.length() - 1)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -1 && expPos < str.length() - 1) {"
+    },
+    {
+        "id": 211,
+        "line": 603,
+        "precode": "if (expPos > -1 && expPos > str.length())",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (expPos > -1 && expPos > str.length()) throw new NumberFormatException(str + \" is not a valid number.\");"
+    },
+    {
+        "id": 212,
+        "line": 603,
+        "precode": "if (decPos > -1)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (decPos > -1) {"
+    },
+    {
+        "id": 213,
+        "line": 603,
+        "precode": "if (decPos > -1 && decPos < str.length() - 1)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (decPos > -1 && decPos < str.length() - 1) {"
+    },
+    {
+        "id": 214,
+        "line": 603,
+        "precode": "if (decPos > -1 && decPos > str.length())",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (decPos > -1 && decPos > str.length()) throw new NumberFormatException(str + \" is not a valid number.\");"
+    },
+    {
+        "id": 215,
+        "line": 603,
+        "precode": "if (dec == null && exp == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp == null) {"
+    },
+    {
+        "id": 216,
+        "line": 603,
+        "precode": "if (dec == null && exp!= null)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp!= null) {"
+    },
+    {
+        "id": 217,
+        "line": 603,
+        "precode": "if (dec!= null && exp == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec!= null && exp == null) {"
+    },
+    {
+        "id": 218,
+        "line": 603,
+        "precode": "if (!Character.isDigit(lastChar) && lastChar!= '.)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (!Character.isDigit(lastChar) && lastChar!= '.') {"
+    },
+    {
+        "id": 219,
+        "line": 603,
+        "precode": "if (lastChar == 'l' || lastChar == 'L')",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (lastChar == 'l' || lastChar == 'L') {"
+    },
+    {
+        "id": 220,
+        "line": 603,
+        "precode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric)))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {"
+    },
+    {
+        "id": 221,
+        "line": 603,
+        "precode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric)))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {"
+    },
+    {
+        "id": 222,
+        "line": 603,
+        "precode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric)))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {"
+    },
+    {
+        "id": 223,
+        "line": 603,
+        "precode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric)))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {"
+    },
+    {
+        "id": 224,
+        "line": 603,
+        "precode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric)))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {"
+    },
+    {
+        "id": 225,
+        "line": 603,
+        "precode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric)))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {"
+    },
+    {
+        "id": 226,
+        "line": 603,
+        "precode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric)))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (dec == null && exp == null && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {"
+    },
+    {
+        "id": 446,
+        "line": 603,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 447,
+        "line": 603,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": " while (true) { "
+    },
+    {
+        "id": 448,
+        "line": 603,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 449,
+        "line": 603,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 450,
+        "line": 603,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 451,
+        "line": 603,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 452,
+        "line": 726,
+        "precode": "if (str == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str == null) return null;"
+    },
+    {
+        "id": 453,
+        "line": 726,
+        "precode": "if (StringUtils.isBlank(str))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (StringUtils.isBlank(str)) throw new NumberFormatException(\"A blank string is not a valid number\");"
+    },
+    {
+        "id": 454,
+        "line": 726,
+        "precode": "return new BigDecimal(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return new BigDecimal(str);"
+    },
+    {
+        "id": 455,
+        "line": 726,
+        "precode": "if (str == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str == null) return null;"
+    },
+    {
+        "id": 456,
+        "line": 726,
+        "precode": "if (StringUtils.isBlank(str))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (StringUtils.isBlank(str)) throw new NumberFormatException(\"A blank string is not a valid number\");"
+    },
+    {
+        "id": 457,
+        "line": 726,
+        "precode": "return new BigDecimal(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return new BigDecimal(str);"
+    },
+    {
+        "id": 458,
+        "line": 726,
+        "precode": "if (str == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str == null) return null;"
+    },
+    {
+        "id": 459,
+        "line": 726,
+        "precode": "if (StringUtils.isBlank(str))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (StringUtils.isBlank(str)) throw new NumberFormatException(\"A blank string is not a valid number\");"
+    },
+    {
+        "id": 460,
+        "line": 726,
+        "precode": "return new BigDecimal(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return new BigDecimal(str);"
+    },
+    {
+        "id": 461,
+        "line": 726,
+        "precode": "if (str == null)",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (str == null) return null;"
+    },
+    {
+        "id": 462,
+        "line": 726,
+        "precode": "if (StringUtils.isBlank(str))",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "if (StringUtils.isBlank(str)) throw new NumberFormatException(\"A blank string is not a valid number\");"
+    },
+    {
+        "id": 463,
+        "line": 726,
+        "precode": "return new BigDecimal(str);",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return new BigDecimal(str);"
+    },
+    {
+        "id": 464,
+        "line": 726,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Lang/Lang_27_fixed/src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "aftercode": "return true;"
+    }
+]

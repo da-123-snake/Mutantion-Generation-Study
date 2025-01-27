@@ -1,0 +1,212 @@
+[
+    {
+        "id": 306,
+        "line": 16,
+        "precode": "if (jsDocParser != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "if (jsDocParser == null) {"
+    },
+    {
+        "id": 311,
+        "line": 59,
+        "precode": "int newVariable = 5;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "int newVariable = 10;"
+    },
+    {
+        "id": 312,
+        "line": 248,
+        "precode": "return true;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 821,
+        "line": 697,
+        "precode": "return newNode(",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode(Token.FOR_IN,"
+    },
+    {
+        "id": 1404,
+        "line": 89,
+        "precode": "return newNode(\n          Token.HOOK,\n          transform(exprNode.getTestExpression()),\n          transform(exprNode.getTrueExpression()),\n          transform(exprNode.getFalseExpression()));",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode(\n          Token.AND,\n          transform(exprNode.getTestExpression()),\n          transform(exprNode.getTrueExpression()),\n          transform(exprNode.getFalseExpression()));"
+    },
+    {
+        "id": 1406,
+        "line": 108,
+        "precode": "return newNode(\n          Token.DO,\n          transformBlock(loopNode.getBody()),\n          transform(loopNode.getCondition()));",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode(\n          Token.DO,\n          transform(loopNode.getBody()),\n          transformBlock(loopNode.getCondition()));"
+    },
+    {
+        "id": 1407,
+        "line": 118,
+        "precode": "return newNode(\n          Token.GETELEM,\n          transform(getNode.getTarget()),\n          transform(getNode.getElement()));",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode(\n          Token.GETPROP,\n          transform(getNode.getTarget()),\n          transform(getNode.getElement()));"
+    },
+    {
+        "id": 1408,
+        "line": 128,
+        "precode": "Node node = newNode(Token.EMPTY);\nreturn node;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node node = newNode(Token.EXPR_RESULT);\nreturn node;"
+    },
+    {
+        "id": 1409,
+        "line": 138,
+        "precode": "Node node = newNode(transformTokenType(statementNode.getType()));\nnode.addChildToBack(transform(statementNode.getExpression()));\nreturn node;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node node = newNode(transformTokenType(statementNode.getType()));\nreturn node;"
+    },
+    {
+        "id": 1410,
+        "line": 148,
+        "precode": "return newNode(\n          Token.FOR,\n          transform(loopNode.getInitializer()),\n          transform(loopNode.getCondition()),\n          transform(loopNode.getIncrement()));",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "return newNode(\n          Token.FORIN,\n          transform(loopNode.getInitializer()),\n          transform(loopNode.getCondition()),\n          transform(loopNode.getIncrement()));"
+    },
+    {
+        "id": 1411,
+        "line": 159,
+        "precode": "Node node = newNode(transformTokenType(callNode.getType()),\n                           transform(callNode.getTarget()));\nfor (AstNode child : callNode.getArguments()) {\n  node.addChildToBack(transform(child));\n}\n\nnode.setLineno(node.getFirstChild().getLineno());\nnode.setCharno(node.getFirstChild().getCharno());\nmaybeSetLengthFrom(node, callNode);\nreturn node;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node node = newNode(transformTokenType(callNode.getType()),\n                           transform(callNode.getTarget()));\nreturn node;"
+    },
+    {
+        "id": 1412,
+        "line": 171,
+        "precode": "Node node = newNode(Token.FUNCTION);\nNode newName = transform(name);\nif (isUnnamedFunction) {\n  newName.setLineno(functionNode.getLineno());\n  int lpColumn = functionNode.getAbsolutePosition() +\n      functionNode.getLp();\n  newName.setCharno(position2charno(lpColumn));\n  maybeSetLengthFrom(newName, name);\n}\n\nnode.addChildToBack(newName);\nNode lp = newNode(Token.PARAM_LIST);\nName fnName = functionNode.getFunctionName();\nif (fnName != null) {\n  lp.setLineno(fnName.getLineno());\n} else {\n  lp.setLineno(functionNode.getLineno());\n}\nint lparenCharno = functionNode.getLp() +\n    functionNode.getAbsolutePosition();\n\nlp.setCharno(position2charno(lparenCharno));\nfor (AstNode param : functionNode.getParams()) {\n  lp.addChildToBack(transform(param));\n}\nnode.addChildToBack(lp);\n\nNode bodyNode = transform(functionNode.getBody());\nparseDirectives(bodyNode);\nnode.addChildToBack(bodyNode);\nreturn node;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node node = newNode(Token.FUNCTION);\nNode newName = transform(name);\n\nnode.addChildToBack(newName);\nNode lp = newNode(Token.PARAM_LIST);\nfor (AstNode param : functionNode.getParams()) {\n  lp.addChildToBack(transform(param));\n}\nnode.addChildToBack(lp);\n\nNode bodyNode = transform(functionNode.getBody());\nparseDirectives(bodyNode);\nnode.addChildToBack(bodyNode);\nreturn node;"
+    },
+    {
+        "id": 1413,
+        "line": 183,
+        "precode": "Node node = newNode(Token.IF);\nnode.addChildToBack(transform(statementNode.getCondition()));\nnode.addChildToBack(transformBlock(statementNode.getThenPart()));\nif (statementNode.getElsePart() != null) {\n  node.addChildToBack(transformBlock(statementNode.getElsePart()));\n}\nreturn node;",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node node = newNode(Token.IF);\nnode.addChildToBack(transform(statementNode.getCondition()));\nnode.addChildToBack(transformBlock(statementNode.getThenPart()));\nreturn node;"
+    },
+    {
+        "id": 1435,
+        "line": 338,
+        "precode": "int lineno = node.getLineno();",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "// The JsDocInfoParser expects the comment without the initial '/**'.\nint lineno = node.getLineno(); int position = node.getAbsolutePosition();"
+    },
+    {
+        "id": 1436,
+        "line": 339,
+        "precode": "int position = node.getAbsolutePosition();",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "// The JsDocInfoParser expects the comment without the initial '/**'.\nint lineno = node.getLineno(); int position = node.getAbsolutePosition();"
+    },
+    {
+        "id": 1439,
+        "line": 338,
+        "precode": "int lineno = node.getLineno();",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1440,
+        "line": 339,
+        "precode": "int position = node.getAbsolutePosition();",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": ""
+    },
+    {
+        "id": 1443,
+        "line": 338,
+        "precode": "int lineno = node.getLineno();",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "JsDocInfoParser jsdocParser =\n  new JsDocInfoParser(\n      new JsDocTokenStream(comment.substring(numOpeningChars),\n                           lineno,\n                           position2charno(position) + numOpeningChars),\n      node,\n      irNode,\n      config,"
+    },
+    {
+        "id": 1444,
+        "line": 339,
+        "precode": "int position = node.getAbsolutePosition();",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "JsDocInfoParser jsdocParser =\n  new JsDocInfoParser(\n      new JsDocTokenStream(comment.substring(numOpeningChars),\n                           lineno,\n                           position2charno(position) + numOpeningChars),\n      node,\n      irNode,\n      config,"
+    },
+    {
+        "id": 1445,
+        "line": 338,
+        "precode": "int lineno = node.getLineno();",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "JsDocInfoParser jsdocParser =\n  new JsDocInfoParser(\n      new JsDocTokenStream(comment.substring(numOpeningChars),\n                           lineno,\n                           position2charno(position) + numOpeningChars),\n      node,\n      irNode,\n      config, int position = node.getAbsolutePosition();"
+    },
+    {
+        "id": 1453,
+        "line": 31,
+        "precode": "return processInfixExpression(propertyNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//return processInfixExpression(propertyNode);"
+    },
+    {
+        "id": 1454,
+        "line": 772,
+        "precode": "Node node = newNode(Token.OBJECTLIT);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "Node node = newNode(Token.OBJECTLITERAL);"
+    },
+    {
+        "id": 1456,
+        "line": 763,
+        "precode": "return newNumberNode(literalNode.getNumber());",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//return newNumberNode(literalNode.getNumber());"
+    },
+    {
+        "id": 1457,
+        "line": 758,
+        "precode": "return processFunctionCall(exprNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//return processFunctionCall(exprNode);"
+    },
+    {
+        "id": 1458,
+        "line": 752,
+        "precode": "private boolean isReservedKeyword(String identifier) {",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//private boolean isReservedKeyword(String identifier) {"
+    },
+    {
+        "id": 1459,
+        "line": 39,
+        "precode": "Preconditions.checkArgument(fnNode.isFunction());",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//Preconditions.checkArgument(fnNode.isFunction());"
+    },
+    {
+        "id": 1460,
+        "line": 40,
+        "precode": "return fnNode.getFirstChild().getNext();",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//return fnNode.getFirstChild().getNext();"
+    },
+    {
+        "id": 1461,
+        "line": 46,
+        "precode": "return processInfixExpression(propertyNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//return processInfixExpression(propertyNode);"
+    },
+    {
+        "id": 1462,
+        "line": 47,
+        "precode": "return processInfixExpression(propertyNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//return processInfixExpression(propertyNode);"
+    },
+    {
+        "id": 1463,
+        "line": 49,
+        "precode": "return processInfixExpression(propertyNode);",
+        "filepath": "defects4j_fixed/Closure/Closure_42_fixed/src/com/google/javascript/jscomp/parsing/IRFactory.java",
+        "aftercode": "//return processInfixExpression(propertyNode);"
+    }
+]

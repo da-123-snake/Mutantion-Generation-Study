@@ -1,0 +1,86 @@
+[
+    {
+        "id": 168,
+        "line": 911,
+        "precode": "}",
+        "aftercode": "return offsetLocal;",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java"
+    },
+    {
+        "id": 169,
+        "line": 900,
+        "precode": "else if (offsetLocal >= 0) {",
+        "aftercode": "else if (offsetLocal < 0) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java"
+    },
+    {
+        "id": 276,
+        "line": 911,
+        "precode": "}",
+        "aftercode": "if (offsetLocal != offsetAdjusted) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java"
+    },
+    {
+        "id": 283,
+        "line": 911,
+        "precode": "}",
+        "aftercode": "if (offsetLocal != offsetAdjusted) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java"
+    },
+    {
+        "id": 285,
+        "line": 911,
+        "precode": "}",
+        "aftercode": "if (offsetLocal >= 0) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java"
+    },
+    {
+        "id": 471,
+        "line": 257,
+        "precode": "if (minutesOffset < 0 || minutesOffset > 59) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (minutesOffset < 0 || minutesOffset > 59) { throw new IllegalArgumentException(\"Minutes out of range: \" + minutesOffset); }"
+    },
+    {
+        "id": 473,
+        "line": 261,
+        "precode": "try {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "try { int hoursInMinutes = FieldUtils.safeMultiply(hoursOffset, 60); if (hoursInMinutes < 0) { minutesOffset = FieldUtils.safeAdd(hoursInMinutes, -minutesOffset); } else { minutesOffset = FieldUtils.safeAdd(hoursInMinutes, minutesOffset); } offset = FieldUtils.safeMultiply(minutesOffset, DateTimeConstants.MILLIS_PER_MINUTE); } catch (ArithmeticException ex) { throw new IllegalArgumentException(\"Offset is too large\"); }"
+    },
+    {
+        "id": 476,
+        "line": 254,
+        "precode": "if (hoursOffset == 0 && minutesOffset == 0) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (hoursOffset == 0 && minutesOffset == 0) { return DateTimeZone.UTC; }"
+    },
+    {
+        "id": 483,
+        "line": 257,
+        "precode": "if (minutesOffset < 0 || minutesOffset > 59) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (minutesOffset < 0 || minutesOffset > 59) { throw new IllegalArgumentException(\"Minutes out of range: \" + minutesOffset); }"
+    },
+    {
+        "id": 485,
+        "line": 261,
+        "precode": "try {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "try { int hoursInMinutes = FieldUtils.safeMultiply(hoursOffset, 60); if (hoursInMinutes < 0) { minutesOffset = FieldUtils.safeAdd(hoursInMinutes, -minutesOffset); } else { minutesOffset = FieldUtils.safeAdd(hoursInMinutes, minutesOffset); } offset = FieldUtils.safeMultiply(minutesOffset, DateTimeConstants.MILLIS_PER_MINUTE); } catch (ArithmeticException ex) { throw new IllegalArgumentException(\"Offset is too large\"); }"
+    },
+    {
+        "id": 488,
+        "line": 254,
+        "precode": "if (hoursOffset == 0 && minutesOffset == 0) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (hoursOffset == 0 && minutesOffset == 0) { return DateTimeZone.UTC; }"
+    },
+    {
+        "id": 489,
+        "line": 283,
+        "precode": "return fixedOffsetZone(id, millisOffset);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_17_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return fixedOffsetZone(millisOffset, id);"
+    }
+]

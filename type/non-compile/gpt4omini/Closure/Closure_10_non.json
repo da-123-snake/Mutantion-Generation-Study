@@ -1,0 +1,170 @@
+[
+    {
+        "id": 13,
+        "line": 1417,
+        "precode": "return anyResultsMatch(n, MAY_BE_STRING_PREDICATE);",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return anyResultsMatch(n, !MAY_BE_STRING_PREDICATE);"
+    },
+    {
+        "id": 16,
+        "line": 1415,
+        "precode": "static boolean mayBeString(Node n, boolean recurse) {",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "static boolean mayBeString(Node n, boolean recurse, boolean ignore) {"
+    },
+    {
+        "id": 1359,
+        "line": 144,
+        "precode": "case Token.NAME:",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.UNDEFINED:"
+    },
+    {
+        "id": 1368,
+        "line": 958,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 1372,
+        "line": 958,
+        "precode": "return false;",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return nameNode.isObject();"
+    },
+    {
+        "id": 1373,
+        "line": 961,
+        "precode": "return true;",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return nameNode.isDefined();"
+    },
+    {
+        "id": 1546,
+        "line": 319,
+        "precode": "case Token.STRING:",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.STRING_LITERAL:"
+    },
+    {
+        "id": 1548,
+        "line": 322,
+        "precode": "case Token.ARRAYLIT:",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.LITERAL_ARRAY:"
+    },
+    {
+        "id": 1696,
+        "line": 1266,
+        "precode": "case Token.AND:",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.OR:"
+    },
+    {
+        "id": 1697,
+        "line": 1264,
+        "precode": "case Token.COMMA:",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "case Token.ASSIGN:"
+    },
+    {
+        "id": 1701,
+        "line": 15,
+        "precode": "return evaluatesToLocalValue(value.getFirstChild().getNext(), locals) && evaluatesToLocalValue(value.getLastChild(), locals);",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return evaluatesToLocalValue(value.getFirstChild().getNext(), locals) || evaluatesToLocalValue(value.getLastChild(), locals);"
+    },
+    {
+        "id": 1703,
+        "line": 24,
+        "precode": "return callHasLocalResult(value) || isToStringMethodCall(value) || locals.apply(value);",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return callHasLocalResult(value) && isToStringMethodCall(value) || locals.apply(value);"
+    },
+    {
+        "id": 1704,
+        "line": 29,
+        "precode": "if (isAssignmentOp(value) || isSimpleOperator(value) || isImmutableValue(value)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (isAssignmentOp(value) && isSimpleOperator(value) || isImmutableValue(value)) {"
+    },
+    {
+        "id": 1938,
+        "line": 370,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 1947,
+        "line": 370,
+        "precode": "try {",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "catch (Exception e) {"
+    },
+    {
+        "id": 1948,
+        "line": 65,
+        "precode": "if (s.equals(\"-infinity\")",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"NaN\")"
+    },
+    {
+        "id": 1951,
+        "line": 348,
+        "precode": "return Double.valueOf(Integer.parseInt(s.substring(2), 16));",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Integer.valueOf(Integer.parseInt(s.substring(2), 16));"
+    },
+    {
+        "id": 1953,
+        "line": 48,
+        "precode": "if (s.equals(\"Infinity\")",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equalsIgnoreCase(\"Infinity\")"
+    },
+    {
+        "id": 1957,
+        "line": 63,
+        "precode": "if (s.equals(\"undefined\")",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"null\")"
+    },
+    {
+        "id": 1958,
+        "line": 62,
+        "precode": "if (s.equals(\"Infinity\")",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"NaN\")"
+    },
+    {
+        "id": 1959,
+        "line": 66,
+        "precode": "if (s.equals(\"-infinity\")",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "if (s.equals(\"+infinity\")"
+    },
+    {
+        "id": 1961,
+        "line": 348,
+        "precode": "return Double.valueOf(Integer.parseInt(s.substring(2), 16));",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Integer.valueOf(Integer.parseInt(s.substring(2), 16));"
+    },
+    {
+        "id": 1963,
+        "line": 372,
+        "precode": "catch (NumberFormatException e) {",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "catch (Exception e) {"
+    },
+    {
+        "id": 1966,
+        "line": 43,
+        "precode": "return Integer.parseInt(s.substring(2), 16);",
+        "filepath": "defects4j_fixed/Closure/Closure_10_fixed/src/com/google/javascript/jscomp/NodeUtil.java",
+        "aftercode": "return Integer.parseInt(s.substring(2), 10);"
+    }
+]

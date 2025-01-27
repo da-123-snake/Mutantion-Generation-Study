@@ -1,0 +1,247 @@
+[
+    {
+        "id": 80,
+        "line": 78,
+        "precode": "private Object spiedInstance;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private Object spiedInstance = null;"
+    },
+    {
+        "id": 81,
+        "line": 78,
+        "precode": "private Answer<Object> defaultAnswer;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private Answer<Object> defaultAnswer = null;"
+    },
+    {
+        "id": 82,
+        "line": 78,
+        "precode": "private MockName mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private MockName mockName = null;"
+    },
+    {
+        "id": 83,
+        "line": 78,
+        "precode": "private boolean serializable;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private boolean serializable = false;"
+    },
+    {
+        "id": 84,
+        "line": 78,
+        "precode": "public MockSettings serializable() {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "public MockSettings serializable() {"
+    },
+    {
+        "id": 85,
+        "line": 78,
+        "precode": "this.serializable = true;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "this.serializable = false;"
+    },
+    {
+        "id": 86,
+        "line": 78,
+        "precode": "public MockSettings extraInterfaces(Class<?>... extraInterfaces) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "public MockSettings extraInterfaces(Class<?>... extraInterfaces) {"
+    },
+    {
+        "id": 87,
+        "line": 78,
+        "precode": "if (extraInterfaces == null || extraInterfaces.length == 0) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "if (extraInterfaces == null || extraInterfaces.length == 0) {"
+    },
+    {
+        "id": 88,
+        "line": 78,
+        "precode": "new Reporter().extraInterfacesRequiresAtLeastOneInterface();",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "new Reporter().extraInterfacesRequiresAtLeastOneInterface();"
+    },
+    {
+        "id": 90,
+        "line": 78,
+        "precode": "for (Class<?> i : extraInterfaces) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "for (Class<?> i : extraInterfaces) {"
+    },
+    {
+        "id": 91,
+        "line": 78,
+        "precode": "if (i == null) {",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "if (i == null) {"
+    },
+    {
+        "id": 93,
+        "line": 78,
+        "precode": "this.extraInterfaces = extraInterfaces;\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "this.extraInterfaces = extraInterfaces;\n    this.serializable = false;"
+    },
+    {
+        "id": 94,
+        "line": 78,
+        "precode": "this.name = name;\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "this.name = name;\n    this.extraInterfaces = extraInterfaces;\n    this.serializable = false;"
+    },
+    {
+        "id": 95,
+        "line": 78,
+        "precode": "this.spiedInstance = spiedInstance;\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "this.spiedInstance = spiedInstance;\n    this.name = name;\n    this.extraInterfaces = extraInterfaces;\n    this.serializable = false;"
+    },
+    {
+        "id": 96,
+        "line": 78,
+        "precode": "this.defaultAnswer = defaultAnswer;\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "this.defaultAnswer = defaultAnswer;\n    this.spiedInstance = spiedInstance;\n    this.name = name;\n    this.extraInterfaces = extraInterfaces;\n    this.serializable = false;"
+    },
+    {
+        "id": 97,
+        "line": 78,
+        "precode": "this.mockName = new MockName(name, classToMock);\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "this.mockName = new MockName(name, classToMock);\n    this.defaultAnswer = defaultAnswer;\n    this.spiedInstance = spiedInstance;\n    this.name = name;\n    this.extraInterfaces = extraInterfaces;\n    this.serializable = false;"
+    },
+    {
+        "id": 98,
+        "line": 78,
+        "precode": "this.serializable = serializable;\n",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "this.mockName = new MockName(name, classToMock);\n    this.defaultAnswer = defaultAnswer;\n    this.spiedInstance = spiedInstance;\n    this.name = name;\n    this.extraInterfaces = extraInterfaces;\n    this.serializable = serializable;"
+    },
+    {
+        "id": 99,
+        "line": 78,
+        "precode": "private String name;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private String name = null;"
+    },
+    {
+        "id": 100,
+        "line": 78,
+        "precode": "private Object spiedInstance;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private Object spiedInstance = null;"
+    },
+    {
+        "id": 101,
+        "line": 78,
+        "precode": "private Answer<Object> defaultAnswer;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private Answer<Object> defaultAnswer = null;"
+    },
+    {
+        "id": 102,
+        "line": 78,
+        "precode": "private MockName mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private MockName mockName = null;"
+    },
+    {
+        "id": 103,
+        "line": 78,
+        "precode": "private boolean serializable;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "private boolean serializable = false;"
+    },
+    {
+        "id": 104,
+        "line": 78,
+        "precode": "public MockSettings serializable()",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "public MockSettings serializable() {"
+    },
+    {
+        "id": 105,
+        "line": 78,
+        "precode": "this.serializable = true;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "this.serializable = false;"
+    },
+    {
+        "id": 106,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 107,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 108,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 109,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 110,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 111,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 112,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 113,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 114,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 115,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    },
+    {
+        "id": 116,
+        "line": 78,
+        "precode": "return mockName;",
+        "filepath": "defects4j_fixed/Mockito/Mockito_17_fixed/src/org/mockito/internal/creation/MockSettingsImpl.java",
+        "aftercode": "return mockName;"
+    }
+]

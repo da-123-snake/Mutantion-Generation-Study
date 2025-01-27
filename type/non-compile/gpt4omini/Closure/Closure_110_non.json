@@ -1,0 +1,394 @@
+[
+    {
+        "id": 111,
+        "line": 256,
+        "precode": "var x = goog.x;",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "var x = goog.y;"
+    },
+    {
+        "id": 112,
+        "line": 257,
+        "precode": "As a side-effect, this means you can shadow the namespace 'goog'",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "As a side-effect, this means you can shadow the namespace 'foo'"
+    },
+    {
+        "id": 113,
+        "line": 258,
+        "precode": "in inner scopes. When we inline the namespaces, we have to rename",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "in outer scopes. When we inline the namespaces, we no longer rename"
+    },
+    {
+        "id": 114,
+        "line": 261,
+        "precode": "Fortunately, we already have a name uniquifier that runs during tree",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "Unfortunately, we already have a name duplicator that runs during tree"
+    },
+    {
+        "id": 115,
+        "line": 262,
+        "precode": "normalization (before optimizations). We run it here on a limited",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "normalization (after optimizations). We run it here on an extensive"
+    },
+    {
+        "id": 125,
+        "line": 431,
+        "precode": "NodeUtil.newQualifiedNameNode(",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.newQualifiedNameNodeAlternative("
+    },
+    {
+        "id": 126,
+        "line": 432,
+        "precode": "compiler.getCodingConvention(),",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "compiler.getAlternateCodingConvention(),"
+    },
+    {
+        "id": 127,
+        "line": 432,
+        "precode": "globalName,",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "globalName + 'Altered',"
+    },
+    {
+        "id": 128,
+        "line": 434,
+        "precode": "recordAlias(v);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "removeAlias(v);"
+    },
+    {
+        "id": 130,
+        "line": 437,
+        "precode": "GOOG_SCOPE_NON_ALIAS_LOCAL,",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "ANOTHER_GOOGLE_SCOPE_ERROR,"
+    },
+    {
+        "id": 164,
+        "line": 369,
+        "precode": "Node grandparent = parent.getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "Node grandparent = parent.getPrevious();"
+    },
+    {
+        "id": 173,
+        "line": 30,
+        "precode": "NodeUtil.setDebugInformation(newDecl.getFirstChild().getFirstChild(), n, name);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.setDebugInformation(newDecl.getFirstChild().getFirstChild(), n, \"newName\");"
+    },
+    {
+        "id": 177,
+        "line": 142,
+        "precode": "Node newName = IR.name(\"\" ).useSourceInfoFrom(existingName);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "Node newName = IR.name(existingName.getString()).useSourceInfoFrom(existingName);"
+    },
+    {
+        "id": 180,
+        "line": 155,
+        "precode": "NodeUtil.setDebugInformation(newDecl.getFirstChild().getFirstChild(), n, name);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.setDebugInformation(newDecl.getFirstChild(), n, name);"
+    },
+    {
+        "id": 182,
+        "line": 156,
+        "precode": "NodeUtil.newQualifiedNameNodeDeclaration(compiler.getCodingConvention(), globalName, value, v.getJSDocInfo()).useSourceInfoIfMissingFromForTree(n);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.newQualifiedNameNodeDeclaration(compiler.getCodingConvention(), globalName, null, v.getJSDocInfo()).useSourceInfoIfMissingFromForTree(n);"
+    },
+    {
+        "id": 184,
+        "line": 157,
+        "precode": "v.getNameNode().addChildToFront(NodeUtil.newQualifiedNameNode(compiler.getCodingConvention(), globalName, n, name));",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "v.getNameNode().addChildToBack(NodeUtil.newQualifiedNameNode(compiler.getCodingConvention(), globalName, n, name));"
+    },
+    {
+        "id": 185,
+        "line": 90,
+        "precode": "Node newName = IR.name(\"*\").useSourceInfoFrom(existingName);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "Node newName = IR.name(\"x\").useSourceInfoFrom(existingName);"
+    },
+    {
+        "id": 190,
+        "line": 405,
+        "precode": "value.detachFromParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "value.removeFromParent();"
+    },
+    {
+        "id": 192,
+        "line": 413,
+        "precode": "Node newDecl = NodeUtil.newQualifiedNameNodeDeclaration(",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "Node newDecl = NodeUtil.newQualifiedNameNodeValue("
+    },
+    {
+        "id": 193,
+        "line": 432,
+        "precode": "compiler.getCodingConvention(),",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "compiler.getAnotherConvention(),"
+    },
+    {
+        "id": 194,
+        "line": 107,
+        "precode": "NodeUtil.setDebugInformation(newDecl.getFirstChild().getFirstChild(), n, name);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.setDebugInformation(newDecl.getLastChild().getFirstChild(), n, name);"
+    },
+    {
+        "id": 196,
+        "line": 423,
+        "precode": "grandparent.addChildToFront(newDecl);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "grandparent.addChildToEnd(newDecl);"
+    },
+    {
+        "id": 199,
+        "line": 116,
+        "precode": "NodeUtil.newQualifiedNameNode(compiler.getCodingConvention(), globalName, n, name));",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.newQualifiedNameNode(compiler.getCodingConvention(), globalName, name, n));"
+    },
+    {
+        "id": 200,
+        "line": 434,
+        "precode": "recordAlias(v);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "unlinkAlias(v);"
+    },
+    {
+        "id": 201,
+        "line": 120,
+        "precode": "String qualifiedName = aliasVar.getInitialValue().getQualifiedName();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "String qualifiedName = aliasVar.getCurrentValue().getQualifiedName();"
+    },
+    {
+        "id": 204,
+        "line": 419,
+        "precode": "NodeUtil.setDebugInformation(",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.clearDebugInformation("
+    },
+    {
+        "id": 207,
+        "line": 423,
+        "precode": "grandparent.addChildToFront(newDecl);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "grandparent.addChildAfter(newDecl);"
+    },
+    {
+        "id": 210,
+        "line": 430,
+        "precode": "v.getNameNode().addChildToFront(",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "v.getNameNode().addChildToEnd("
+    },
+    {
+        "id": 211,
+        "line": 431,
+        "precode": "NodeUtil.newQualifiedNameNode(",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.createQualifiedNameNode("
+    },
+    {
+        "id": 213,
+        "line": 419,
+        "precode": "NodeUtil.setDebugInformation(",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.configureDebugInformation("
+    },
+    {
+        "id": 214,
+        "line": 420,
+        "precode": "newDecl.getFirstChild().getFirstChild(), n, name);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "newDecl.getFirstChild().getFirstChild(), n, 'differentName');"
+    },
+    {
+        "id": 499,
+        "line": 176,
+        "precode": "scopeClosureBlock.detachFromParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "scopeClosureBlock.removeFromParent();"
+    },
+    {
+        "id": 502,
+        "line": 180,
+        "precode": "NodeUtil.tryMergeBlock(scopeClosureBlock);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "scopeClosureBlock.mergeWithPrevious();"
+    },
+    {
+        "id": 504,
+        "line": 186,
+        "precode": "compiler.reportCodeChange();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "compiler.noteCodeChange();"
+    },
+    {
+        "id": 507,
+        "line": 176,
+        "precode": "scopeClosureBlock.detachFromParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "scopeClosureBlock.detach();"
+    },
+    {
+        "id": 509,
+        "line": 173,
+        "precode": "for (Node scopeCall : traversal.getScopeCalls()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "for (Node scopeCall : traversal.getScopeCalls().toArray()) {"
+    },
+    {
+        "id": 510,
+        "line": 163,
+        "precode": "for (Node aliasDefinition : traversal.getAliasDefinitionsInOrder()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "for (Node aliasDefinition : traversal.getAliasDefinitionsInOrder().iterator()) {"
+    },
+    {
+        "id": 511,
+        "line": 180,
+        "precode": "NodeUtil.tryMergeBlock(scopeClosureBlock);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "NodeUtil.mergeBlocks(scopeClosureBlock);"
+    },
+    {
+        "id": 512,
+        "line": 183,
+        "precode": "if (traversal.getAliasUsages().size() > 0 ||",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "if (traversal.getAliasUsages().isEmpty()) {"
+    },
+    {
+        "id": 514,
+        "line": 173,
+        "precode": "for (Node scopeCall : traversal.getScopeCalls()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "while (!traversal.getScopeCalls().isEmpty()) {"
+    },
+    {
+        "id": 518,
+        "line": 148,
+        "precode": "if (traversal.getAliasDefinitionsInOrder().size() > 0 ||",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "if (traversal.getAliasDefinitionsInOrder().isEmpty() ||"
+    },
+    {
+        "id": 519,
+        "line": 176,
+        "precode": "scopeClosureBlock.detachFromParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "scopeClosureBlock.remove();"
+    },
+    {
+        "id": 520,
+        "line": 177,
+        "precode": "expressionWithScopeCall.getParent().replaceChild(",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "expressionWithScopeCall.getParent().insertBefore("
+    },
+    {
+        "id": 523,
+        "line": 466,
+        "precode": "for (Var v : scope.getVarIterable()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "for (Var v : scope.getVarIterable().toArray()) {"
+    },
+    {
+        "id": 527,
+        "line": 465,
+        "precode": "Scope scope = t.getScope();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "Scope scope = t.getScope().clone();"
+    },
+    {
+        "id": 626,
+        "line": 276,
+        "precode": "private List<AliasUsage> getAliasUsages() {",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "private List<AliasUsage> retrieveAliasUsages() {"
+    },
+    {
+        "id": 627,
+        "line": 277,
+        "precode": "      return aliasUsages;",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      return new ArrayList<>(aliasUsages);"
+    },
+    {
+        "id": 628,
+        "line": 280,
+        "precode": "List<Node> getScopeCalls() {",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "public List<Node> collectScopeCalls() {"
+    },
+    {
+        "id": 629,
+        "line": 281,
+        "precode": "      return scopeCalls;",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      return new LinkedList<>(scopeCalls);"
+    },
+    {
+        "id": 630,
+        "line": 277,
+        "precode": "      return aliasUsages;",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "      return aliasUsages.isEmpty() ? new ArrayList<>() : aliasUsages;"
+    },
+    {
+        "id": 631,
+        "line": 280,
+        "precode": "List<Node> getScopeCalls() {",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "Set<Node> getScopeCalls() {"
+    },
+    {
+        "id": 633,
+        "line": 280,
+        "precode": "List<Node> getScopeCalls() {",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "public List<Node> fetchScopeCalls() {"
+    },
+    {
+        "id": 637,
+        "line": 295,
+        "precode": "Node n = t.getCurrentNode().getParent();",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "Node n = t.getCurrentNode().getGrandParent();"
+    },
+    {
+        "id": 639,
+        "line": 297,
+        "precode": "transformation = transformationHandler.logAliasTransformation(",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "transformation = null;"
+    },
+    {
+        "id": 643,
+        "line": 17,
+        "precode": "renamingNamespaceShadows(t);",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "clearingNamespaceShadows(t);"
+    },
+    {
+        "id": 646,
+        "line": 31,
+        "precode": "sourcePosition<AliasTransformation> pos =",
+        "filepath": "defects4j_fixed/Closure/Closure_110_fixed/src/com/google/javascript/jscomp/ScopedAliases.java",
+        "aftercode": "SourcePosition<AliasTransformation> alternatePos ="
+    }
+]

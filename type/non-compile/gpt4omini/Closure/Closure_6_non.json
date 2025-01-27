@@ -1,0 +1,135 @@
+[
+    {
+        "id": 283,
+        "line": 732,
+        "precode": "objectType.getConstructor() != null ||",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "objectType.getConstructor() == null ||"
+    },
+    {
+        "id": 287,
+        "line": 741,
+        "precode": "ObjectType dereferenced = type.dereference();",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "ObjectType dereferenced = type; // removing dereference"
+    },
+    {
+        "id": 289,
+        "line": 752,
+        "precode": "else if (qualifiedName != null) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "else {"
+    },
+    {
+        "id": 291,
+        "line": 754,
+        "precode": "else if (type.isFunctionType()) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "else if (type.isFunctionPrototypeType()) {"
+    },
+    {
+        "id": 293,
+        "line": 757,
+        "precode": "else {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "else if (type.isNullType()) {"
+    },
+    {
+        "id": 296,
+        "line": 715,
+        "precode": "ObjectType objectType = getJSType(n.getFirstChild()).dereference();",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "ObjectType objectType = getJSType(n.getFirstChild());"
+    },
+    {
+        "id": 298,
+        "line": 741,
+        "precode": "ObjectType dereferenced = type.dereference();",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "ObjectType dereferenced = type.getImplicitPrototype();"
+    },
+    {
+        "id": 302,
+        "line": 773,
+        "precode": "return getNativeType(UNKNOWN_TYPE);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "return getNativeType(KNOWN_TYPE);"
+    },
+    {
+        "id": 305,
+        "line": 773,
+        "precode": "getNativeType(UNKNOWN_TYPE);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "getNativeType(CUSTOM_TYPE);"
+    },
+    {
+        "id": 306,
+        "line": 767,
+        "precode": "JSType jsType = n.getJSType();",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "JSType jsType = n.getJSTypeOrDefault();"
+    },
+    {
+        "id": 1319,
+        "line": 378,
+        "precode": "mismatch(t, n,",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"error in assignment\","
+    },
+    {
+        "id": 1321,
+        "line": 15,
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"assignment to property \" + propName + \" in \" + getReadableJSTypeName(owner, true), rightType, leftType);"
+    },
+    {
+        "id": 1322,
+        "line": 15,
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"failed assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);"
+    },
+    {
+        "id": 1323,
+        "line": 15,
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"assigning to property \" + propName + \" in \" + getReadableJSTypeName(owner, true), rightType, leftType);"
+    },
+    {
+        "id": 1324,
+        "line": 15,
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"type mismatch in assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);"
+    },
+    {
+        "id": 1325,
+        "line": 15,
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"unexpected assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);"
+    },
+    {
+        "id": 1326,
+        "line": 15,
+        "precode": "mismatch(t, n, \"assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "mismatch(t, n, \"error in assignment to property \" + propName + \" of \" + getReadableJSTypeName(owner, true), rightType, leftType);"
+    },
+    {
+        "id": 1331,
+        "line": 398,
+        "precode": "boolean expectCanAssignTo(NodeTraversal t, Node n, JSType rightType,",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "boolean expectCanAssignTo(NodeTraversal t, Node n, JSType leftType,"
+    },
+    {
+        "id": 1332,
+        "line": 400,
+        "precode": "if (!rightType.canAssignTo(leftType)) {",
+        "filepath": "defects4j_fixed/Closure/Closure_6_fixed/src/com/google/javascript/jscomp/TypeValidator.java",
+        "aftercode": "if (rightType.canAssignTo(leftType) || leftType.isUnknown()) {"
+    }
+]

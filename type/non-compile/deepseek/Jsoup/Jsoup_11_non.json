@@ -1,0 +1,240 @@
+[
+    {
+        "id": 17,
+        "line": 125,
+        "precode": "if (tq.matchesAny(combinators)) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "if (!tq.matchesAny(combinators)) {"
+    },
+    {
+        "id": 22,
+        "line": 234,
+        "precode": "} else {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "} if (tq.isEmpty()) {"
+    },
+    {
+        "id": 23,
+        "line": 113,
+        "precode": "addElements(findElements());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "removeElements(findElements());"
+    },
+    {
+        "id": 33,
+        "line": 93,
+        "precode": "public static Elements select(String query, Iterable<Element> roots) {",
+        "aftercode": "public static Elements select(String query, List<Element> roots) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java"
+    },
+    {
+        "id": 36,
+        "line": 96,
+        "precode": "LinkedHashSet<Element> elements = new LinkedHashSet<Element>();",
+        "aftercode": "HashSet<Element> elements = new HashSet<Element>();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java"
+    },
+    {
+        "id": 37,
+        "line": 98,
+        "precode": "for (Element root : roots) {",
+        "aftercode": "for (Element root : new ArrayList<>(roots)) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java"
+    },
+    {
+        "id": 39,
+        "line": 134,
+        "precode": "return new Elements(elements);",
+        "aftercode": "return new Elements(new ArrayList<>(elements));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java"
+    },
+    {
+        "id": 42,
+        "line": 125,
+        "precode": "if (tq.matchesAny(combinators)) {",
+        "aftercode": "if (!tq.matchesAny(combinators)) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java"
+    },
+    {
+        "id": 45,
+        "line": 173,
+        "precode": "else if (tq.matches(\":has(\")) {",
+        "aftercode": "else if (tq.matches(\":has\")) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java"
+    },
+    {
+        "id": 46,
+        "line": 409,
+        "precode": "static Elements filterOut(Collection<Element> elements, Collection<Element> outs) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "static Elements filterOut(Collection<Element> elements, Collection<Element> outs, boolean flag) {"
+    },
+    {
+        "id": 54,
+        "line": 9,
+        "precode": "if (!found) output.add(el);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "if (found) output.add(el);"
+    },
+    {
+        "id": 56,
+        "line": 426,
+        "precode": "public SelectorParseException(String msg, Object... params) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "public SelectorParseException(String msg, Object param) {"
+    },
+    {
+        "id": 58,
+        "line": 411,
+        "precode": "for (Element el: elements) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "for (Element el: elements.stream().filter(e -> e != null).collect(Collectors.toList())) {"
+    },
+    {
+        "id": 60,
+        "line": 413,
+        "precode": "for (Element out: outs) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "for (Element out: outs.stream().filter(o -> o != null).collect(Collectors.toList())) {"
+    },
+    {
+        "id": 63,
+        "line": 416,
+        "precode": "break;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 64,
+        "line": 9,
+        "precode": "if (!found) output.add(el);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "if (found == false) output.add(el);"
+    },
+    {
+        "id": 66,
+        "line": 426,
+        "precode": "public SelectorParseException(String msg, Object... params) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "public SelectorParseException(String msg, Object... params) throws Exception {"
+    },
+    {
+        "id": 76,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements = new LinkedHashSet<>(output);"
+    },
+    {
+        "id": 77,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.addAll(0, output);"
+    },
+    {
+        "id": 78,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.removeIf(output::contains);"
+    },
+    {
+        "id": 80,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(new ArrayList<>(output));"
+    },
+    {
+        "id": 81,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().collect(Collectors.toList()));"
+    },
+    {
+        "id": 82,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().filter(e -> true).collect(Collectors.toList()));"
+    },
+    {
+        "id": 83,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().distinct().collect(Collectors.toList()));"
+    },
+    {
+        "id": 84,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().sorted().collect(Collectors.toList()));"
+    },
+    {
+        "id": 85,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().limit(1).collect(Collectors.toList()));"
+    },
+    {
+        "id": 86,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().skip(1).collect(Collectors.toList()));"
+    },
+    {
+        "id": 87,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().map(e -> e).collect(Collectors.toList()));"
+    },
+    {
+        "id": 88,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().peek(e -> {}).collect(Collectors.toList()));"
+    },
+    {
+        "id": 89,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().parallel().collect(Collectors.toList()));"
+    },
+    {
+        "id": 90,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().sequential().collect(Collectors.toList()));"
+    },
+    {
+        "id": 91,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().unordered().collect(Collectors.toList()));"
+    },
+    {
+        "id": 92,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().onClose(() -> {}).collect(Collectors.toList()));"
+    },
+    {
+        "id": 93,
+        "line": 153,
+        "precode": "elements.clear(); elements.addAll(output);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_11_fixed/src/main/java/org/jsoup/select/Selector.java",
+        "aftercode": "elements.clear(); elements.addAll(output.stream().toArray(Element[]::new));"
+    }
+]

@@ -1,0 +1,261 @@
+[
+    {
+        "id": 389,
+        "line": 278,
+        "precode": "void maybeEndStatement() {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 390,
+        "line": 278,
+        "precode": "void endFunction() {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void endFunction() {\n    sawFunction = true;\n    if (statementContext) {\n        endLine();\n    }\n}"
+    },
+    {
+        "id": 391,
+        "line": 278,
+        "precode": "void beginCaseBody() {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void beginCaseBody() {\n    append(\":\");\n}"
+    },
+    {
+        "id": 392,
+        "line": 278,
+        "precode": "void endCaseBody() {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void endCaseBody() {\n}"
+    },
+    {
+        "id": 393,
+        "line": 278,
+        "precode": "void add(String newcode) {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void add(String newcode) {\n    maybeEndStatement();\n\n    if (newcode.length() == 0) {\n        return;\n    }\n\n    char c = newcode.charAt(0);\n    if ((isWordChar(c) || c == '\\') &&\n        isWordChar(getLastChar())) {\n        // need space to separate. This is not pretty printing. \n        // For example: \"return foo;\"\n        append(\" \");\n    } else if (c == '/' && getLastChar() == '/') {\n        // Do not allow a forward slash to appear after a DIV.\n        // For example,\n        // REGEXP DIV REGEXP\n        // is valid and should print like\n        // / // / /\n        append(\" \");\n    }\n\n    append(newcode);\n}"
+    },
+    {
+        "id": 394,
+        "line": 278,
+        "precode": "void appendOp(String op, boolean binOp) {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void appendOp(String op, boolean binOp) {\n    append(op);\n}"
+    },
+    {
+        "id": 395,
+        "line": 278,
+        "precode": "void addOp(String op, boolean binOp) {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void addOp(String op, boolean binOp) {\n    maybeEndStatement();\n\n    char first = op.charAt(0);\n    char prev = getLastChar();\n\n    if ((first == '+' || first == '-') && prev == first) {\n        // This is not pretty printing. This is to prevent misparsing of\n        // things like \"x + ++y\" or \"x++ + ++y\"\n        append(\" \");\n    } else if (Character.isLetter(first) &&\n               isWordChar(prev)) {\n        // Make sure there is a space after e.g. instanceof, typeof\n        append(\" \");\n    } else if (prev == '-' && first == '>') {\n        // Make sure that we don't emit -->\n        append(\" \");\n    }\n\n    // Allow formating around the operator.\n    appendOp(op, binOp);\n\n    // Line breaking after an operator is always safe. Line breaking before an\n    // operator on the other hand is not. We only line break after a bin op\n    // because it looks strange.\n    if (binOp) {\n        maybeCutLine();\n    }\n}"
+    },
+    {
+        "id": 396,
+        "line": 278,
+        "precode": "  while (exp > 0) {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "  while (exp > 1) {"
+    },
+    {
+        "id": 397,
+        "line": 278,
+        "precode": "  while (exp > 0) {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "  while (exp > 2) {"
+    },
+    {
+        "id": 398,
+        "line": 278,
+        "precode": "  while (exp > 0) {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "  while (true) {"
+    },
+    {
+        "id": 399,
+        "line": 278,
+        "precode": "    mantissa /= 10;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    mantissa /= 100;"
+    },
+    {
+        "id": 400,
+        "line": 278,
+        "precode": "    mantissa /= 10;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    mantissa /= 1000;"
+    },
+    {
+        "id": 401,
+        "line": 278,
+        "precode": "    mantissa /= 10;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    mantissa /= 10000;"
+    },
+    {
+        "id": 402,
+        "line": 278,
+        "precode": "    mantissa /= 10;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    mantissa /= 100000;"
+    },
+    {
+        "id": 403,
+        "line": 278,
+        "precode": "    mantissa /= 10;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    mantissa /= 1000000;"
+    },
+    {
+        "id": 404,
+        "line": 278,
+        "precode": "    mantissa /= 10;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    mantissa /= 10000000;"
+    },
+    {
+        "id": 405,
+        "line": 278,
+        "precode": "    mantissa /= 10;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    mantissa /= 100000000;"
+    },
+    {
+        "id": 656,
+        "line": 278,
+        "precode": "void maybeEndStatement() {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 657,
+        "line": 278,
+        "precode": "    // Add a ';' if we need to.",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 658,
+        "line": 278,
+        "precode": "        append(\";\");",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 659,
+        "line": 278,
+        "precode": "        maybeLineBreak();",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 660,
+        "line": 278,
+        "precode": "        endLine();",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 661,
+        "line": 278,
+        "precode": "        statementNeedsEnded = false;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 662,
+        "line": 278,
+        "precode": "    statementNeedsEnded = false;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 663,
+        "line": 278,
+        "precode": "    if (statementNeedsEnded) {",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 664,
+        "line": 278,
+        "precode": "        append(\";\");",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 665,
+        "line": 278,
+        "precode": "        maybeLineBreak();",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 666,
+        "line": 278,
+        "precode": "        endLine();",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 667,
+        "line": 278,
+        "precode": "    }",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 668,
+        "line": 278,
+        "precode": "    statementStarted = true;",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "void maybeEndStatement() {\n    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n        append(\";\");\n        maybeLineBreak();\n        endLine();\n        statementNeedsEnded = false;\n    }\n    statementStarted = true;\n}"
+    },
+    {
+        "id": 1043,
+        "line": 278,
+        "precode": "  void maybeEndStatement() {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    // Add a ';'if we need to.\n    if (statementNeedsEnded) {\n      append(';');\n      maybeLineBreak();\n      endLine();\n      statementNeedsEnded = false;\n    }\n    statementStarted = true;\n  }"
+    },
+    {
+        "id": 1044,
+        "line": 278,
+        "precode": "    // Add a ';' if we need to.\n",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    // Add a ';' if we need to.\n    if (statementNeedsEnded) {\n      append(';');\n      maybeLineBreak();\n      endLine();\n      statementNeedsEnded = false;\n    }\n    statementStarted = true;\n  }"
+    },
+    {
+        "id": 1045,
+        "line": 278,
+        "precode": "    if (statementContext) {\n",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    if (statementContext) {\n      endLine();\n    }"
+    },
+    {
+        "id": 1046,
+        "line": 278,
+        "precode": "      append(';');\n",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "      append(';');\n      maybeLineBreak();\n      endLine();"
+    },
+    {
+        "id": 1047,
+        "line": 278,
+        "precode": "      maybeLineBreak();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "      maybeLineBreak();\n      endLine();"
+    },
+    {
+        "id": 1048,
+        "line": 278,
+        "precode": "      endLine();\n",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "      endLine();\n    }"
+    },
+    {
+        "id": 1049,
+        "line": 278,
+        "precode": "    statementNeedsEnded = false;\n",
+        "filepath": "defects4j_fixed/Closure/Closure_38_fixed/src/com/google/javascript/jscomp/CodeConsumer.java",
+        "aftercode": "    statementNeedsEnded = false;\n  }"
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": 411,
+        "line": 104,
+        "precode": "private static final ThreadLocal<Set<IDKey>> REGISTRY = new ThreadLocal<Set<IDKey>>();",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "private static final ThreadLocal<Map<IDKey, Object>> REGISTRY = new ThreadLocal<Map<IDKey, Object>>();"
+    },
+    {
+        "id": 415,
+        "line": 104,
+        "precode": "private static final ThreadLocal<Set<IDKey>> REGISTRY = new ThreadLocal<Set<IDKey>>();",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "private final ThreadLocal<Set<IDKey>> REGISTRY = ThreadLocal.withInitial(HashSet::new);"
+    },
+    {
+        "id": 416,
+        "line": 104,
+        "precode": "private static final ThreadLocal<Set<IDKey>> REGISTRY = new ThreadLocal<Set<IDKey>>();",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "private static final ThreadLocal<Set<IDKey>> REGISTRY = ThreadLocal.of(Set::new);"
+    },
+    {
+        "id": 420,
+        "line": 147,
+        "precode": "Set<IDKey> registry = getRegistry();",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "Set<IDKey> registry = new HashSet<>();"
+    },
+    {
+        "id": 425,
+        "line": 518,
+        "precode": "    synchronized (HashCodeBuilder.class) {",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "    synchronized (this) {"
+    },
+    {
+        "id": 427,
+        "line": 520,
+        "precode": "            REGISTRY.set(new HashSet<IDKey>());",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "            REGISTRY.set(new LinkedHashSet<IDKey>());"
+    },
+    {
+        "id": 431,
+        "line": 520,
+        "precode": "            REGISTRY.set(new HashSet<IDKey>());",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "            REGISTRY.set(new HashSet<>());"
+    },
+    {
+        "id": 433,
+        "line": 517,
+        "precode": "static void register(Object value) {",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "static void register(Object value, boolean flag) {"
+    },
+    {
+        "id": 440,
+        "line": 539,
+        "precode": "Set<IDKey> s = getRegistry();",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "List<IDKey> s = getRegistry();"
+    },
+    {
+        "id": 441,
+        "line": 541,
+        "precode": "s.remove(new IDKey(value));",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "s.removeIf(key -> key.equals(new IDKey(value)));"
+    },
+    {
+        "id": 443,
+        "line": 544,
+        "precode": "REGISTRY.remove();",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "REGISTRY.clear();"
+    },
+    {
+        "id": 446,
+        "line": 539,
+        "precode": "Set<IDKey> s = getRegistry();",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "Set<IDKey> s = new HashSet<>(getRegistry());"
+    },
+    {
+        "id": 447,
+        "line": 540,
+        "precode": "if (s != null) {",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "if (s == null) return;"
+    },
+    {
+        "id": 448,
+        "line": 544,
+        "precode": "REGISTRY.remove();",
+        "filepath": "defects4j_fixed/Lang/Lang_32_fixed/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "aftercode": "REGISTRY.add(new IDKey(value));"
+    }
+]

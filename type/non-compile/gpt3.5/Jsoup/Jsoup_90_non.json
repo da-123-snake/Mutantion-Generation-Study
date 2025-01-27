@@ -1,0 +1,58 @@
+[
+    {
+        "id": 756,
+        "line": 835,
+        "precode": "        Document doc = DataUtil.parseInputStream(bodyStream, charset, url.toExternalForm(), req.parser());",
+        "aftercode": "        Document doc = DataUtil.parseInputStream(bodyStream, charset, url.toExternalForm(), req.parserDefined);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java"
+    },
+    {
+        "id": 758,
+        "line": 202,
+        "precode": "        String body = Charset.forName(DataUtil.defaultCharset).decode(byteData).toString();",
+        "aftercode": "        String body = Charset.forName(DataUtil.defaultCharset).decode(byteData).toString().toUpperCase();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java"
+    },
+    {
+        "id": 764,
+        "line": 272,
+        "precode": "                for (Map.Entry<String, List<String>> header : req.multiHeaders().entrySet()) {",
+        "aftercode": "                for (Map.Entry<String, List<String>> header : req.multiHeaders.entrySet()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java"
+    },
+    {
+        "id": 765,
+        "line": 294,
+        "precode": "                return conn;",
+        "aftercode": "                return null;",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java"
+    },
+    {
+        "id": 766,
+        "line": 305,
+        "precode": "        while (true) {",
+        "aftercode": "        while (false) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java"
+    },
+    {
+        "id": 769,
+        "line": 360,
+        "precode": "                  conn.setInstanceFollowRedirects(false); // don't rely on native redirection support",
+        "aftercode": "                  conn.setInstanceFollowRedirects(true); // don't rely on native redirection support",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java"
+    },
+    {
+        "id": 770,
+        "line": 377,
+        "precode": "                if (req.parser() != null && req.method().hasBody()) {",
+        "aftercode": "                if (req.parser() != null && !req.method().hasBody()) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java"
+    },
+    {
+        "id": 771,
+        "line": 390,
+        "precode": "                conn.setReadTimeout(req.timeout() / 2); // gets reduced after connection is made and status is read",
+        "aftercode": "                conn.setReadTimeout(req.timeout() * 2); // gets reduced after connection is made and status is read",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_90_fixed/src/main/java/org/jsoup/helper/HttpConnection.java"
+    }
+]

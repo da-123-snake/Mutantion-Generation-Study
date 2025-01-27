@@ -1,0 +1,114 @@
+[
+    {
+        "id": 26,
+        "line": 906,
+        "precode": "      Node newNumber = IR.number(result);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "      Node newNumber = IR.Number(result);"
+    },
+    {
+        "id": 27,
+        "line": 907,
+        "precode": "      n.getParent().replaceChild(n, newNumber);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "      n.getParent().replace(n, newNumber);"
+    },
+    {
+        "id": 28,
+        "line": 908,
+        "precode": "      reportCodeChange();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "      n.getParent().replaceChild(n, newNumber);break();"
+    },
+    {
+        "id": 29,
+        "line": 910,
+        "precode": "      return newNumber;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "      returnn;"
+    },
+    {
+        "id": 30,
+        "line": 1082,
+        "precode": "          if (leftLiteral && nullRight && isEqualityOp(op)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "          if (leftLiteral && nullRight.isEqualityOp(op)) {"
+    },
+    {
+        "id": 31,
+        "line": 1083,
+        "precode": "            result = compareToNull(left, op);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "            result*= compareToNull(left, op);"
+    },
+    {
+        "id": 33,
+        "line": 1089,
+        "precode": "          return n;  // Only eval if they are the same type",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "          returnresult;  // Only eval if they are the same type"
+    },
+    {
+        "id": 166,
+        "line": 715,
+        "precode": "    Double lValObj = NodeUtil.getNumberValue(left);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "    Double lValObj = NodeUtil.value(left);"
+    },
+    {
+        "id": 168,
+        "line": 717,
+        "precode": "      return null;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "      returnresult;"
+    },
+    {
+        "id": 169,
+        "line": 719,
+        "precode": "    Double rValObj = NodeUtil.getNumberValue(right);",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "    Double rValObj = NodeUtil.value(right);"
+    },
+    {
+        "id": 326,
+        "line": 1452,
+        "precode": "      if (i != intIndex) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "      if (i==intIndex) {"
+    },
+    {
+        "id": 327,
+        "line": 1453,
+        "precode": "        if (mayHaveSideEffects(current)) {",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "        if (next(current)) {"
+    },
+    {
+        "id": 328,
+        "line": 1454,
+        "precode": "          return n;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "          returncurrent;"
+    },
+    {
+        "id": 329,
+        "line": 1457,
+        "precode": "        elem = current;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "        elem!= current;"
+    },
+    {
+        "id": 330,
+        "line": 1460,
+        "precode": "      current = current.getNext();",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "      current!= current.getNext();"
+    },
+    {
+        "id": 346,
+        "line": 695,
+        "precode": "    return n;",
+        "filepath": "/mnt/disk1/cmd/defects4j_fixed/Closure/Closure_23_fixed/src/com/google/javascript/jscomp/PeepholeFoldConstants.java",
+        "aftercode": "    returnresult;"
+    }
+]

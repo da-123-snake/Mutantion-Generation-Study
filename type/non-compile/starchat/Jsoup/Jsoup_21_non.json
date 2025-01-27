@@ -1,0 +1,114 @@
+[
+    {
+        "id": 117,
+        "line": 80,
+        "precode": "Or() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "Or() {\n\tevaluators = new ArrayList<>();\n}"
+    },
+    {
+        "id": 118,
+        "line": 80,
+        "precode": "\tsuper();",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "\t super();\n\tevaluators = new ArrayList<>();"
+    },
+    {
+        "id": 119,
+        "line": 85,
+        "precode": "\t\t",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "\t\t evaluators = new ArrayList<>();"
+    },
+    {
+        "id": 120,
+        "line": 85,
+        "precode": "\t\t",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "\t\t evaluators.addAll(evaluators);"
+    },
+    {
+        "id": 121,
+        "line": 85,
+        "precode": "\t\t",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "\t\t if (evaluators.size() > 1) {\n\t\t\t\tevaluators.add(new And(evaluators));\n\t\t\t} else if (evaluators.size() == 1) {\n\t\t\t\t// do nothing\n\t\t\t}"
+    },
+    {
+        "id": 122,
+        "line": 85,
+        "precode": "\t\t",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "\t\t if (evaluators.size() > 1) {\n\t\t\t\tevaluators.add(new And(evaluators));\n\t\t\t} else {\n\t\t\t\t// do nothing\n\t\t\t}"
+    },
+    {
+        "id": 123,
+        "line": 85,
+        "precode": "\t\t",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "\t\t for (Evaluator s : evaluators) {\n\t\t\t\tif (s.matches(root, node)) {\n\t\t\t\t\treturn true;\n\t\t\t\t}\n\t\t\t}"
+    },
+    {
+        "id": 124,
+        "line": 85,
+        "precode": "\t\t",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "\t\t for (Evaluator s : evaluators) {\n\t\t\t\tif (s.matches(root, node))\n\t\t\t\t\treturn true;\n\t\t\t}"
+    },
+    {
+        "id": 125,
+        "line": 85,
+        "precode": "\t\t",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "\t\t for (Evaluator s : evaluators) {\n\t\t\t\tif (s.matches(root, node))\nreturn true;\n\t\t\t}"
+    },
+    {
+        "id": 126,
+        "line": 80,
+        "precode": "Or() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "Or() {\n\tevaluators = new ArrayList<>();\n}"
+    },
+    {
+        "id": 127,
+        "line": 80,
+        "precode": "Or() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "Or() {\n\tevaluators = new LinkedList<>();\n}"
+    },
+    {
+        "id": 128,
+        "line": 80,
+        "precode": "Or() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "Or() {\n\tevaluators = Collections.emptyList();\n}"
+    },
+    {
+        "id": 129,
+        "line": 80,
+        "precode": "Or() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "Or() {\n\tevaluators = new TreeSet<>();\n}"
+    },
+    {
+        "id": 130,
+        "line": 80,
+        "precode": "Or() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "Or() {\n\tevaluators = new HashSet<>();\n}"
+    },
+    {
+        "id": 131,
+        "line": 80,
+        "precode": "Or() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "Or() {\n\tevaluators = new LinkedHashSet<>();\n}"
+    },
+    {
+        "id": 132,
+        "line": 80,
+        "precode": "Or() {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_21_fixed/src/main/java/org/jsoup/select/CombiningEvaluator.java",
+        "aftercode": "Or() {\n\tevaluators = new TreeSet<>(Comparator.comparingInt(o -> o));\n}"
+    }
+]

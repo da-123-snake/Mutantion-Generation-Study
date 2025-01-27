@@ -1,0 +1,324 @@
+[
+    {
+        "id": 29,
+        "line": 514,
+        "precode": "void setInitialBuffer(byte[] out, int outPos, int outAvail) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "void setInitialBuffer(byte[] out, int outPos, int outAvail) {\n\t// We can re-use consumer's original output array under\n\t// special circumstances, saving on some System.arraycopy().\n\tif (out!= null && out.length == outAvail) {\n\t\tbuffer = out;\n\t\tpos = outPos;\n\t\treadPos = outPos;\n\t}\n}"
+    },
+    {
+        "id": 30,
+        "line": 514,
+        "precode": "if (out!= null && out.length == outAvail) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (out!= null && out.length == outAvail) {\n\t// We can re-use consumer's original output array under\n\t// special circumstances, saving on some System.arraycopy().\n\tif (out!= null && out.length == outAvail) {\n\t\tbuffer = out;\n\t\tpos = outPos;\n\t\treadPos = outPos;\n\t}\n}"
+    },
+    {
+        "id": 31,
+        "line": 514,
+        "precode": "if (buffer == null || buffer.length - pos < encodeSize) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (buffer == null || buffer.length - pos < encodeSize) {\n\tresizeBuffer();\n}"
+    },
+    {
+        "id": 32,
+        "line": 514,
+        "precode": "if (eof) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (eof) {\n\treturn;\n}"
+    },
+    {
+        "id": 33,
+        "line": 514,
+        "precode": "if (inAvail < 0) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (inAvail < 0) {\n\teof = true;\n\tif (buffer == null || buffer.length - pos < encodeSize) {\n\t\tresizeBuffer();\n\t}\n\tswitch (modulus) {\n\t\tcase 1 :\n\t\t\tbuffer[pos++] = encodeTable[(x >> 2) & MASK_6BITS];\n\t\t\tbuffer[pos++] = encodeTable[(x << 4) & MASK_6BITS];\n\t\t\t// URL-SAFE skips the padding to further reduce size.\n\t\t\tif (encodeTable == STANDARD_ENCODE_TABLE) {\n\t\t\t\tbuffer[pos++] = PAD;\n\t\t\t\tbuffer[pos++] = PAD;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase 2 :\n\t\t\tbuffer[pos++] = encodeTable[(x >> 10) & MASK_6BITS];\n\t\t\tbuffer[pos++] = encodeTable[(x >> 4) & MASK_6BITS];\n\t\t\tbuffer[pos++] = encodeTable[(x << 2) & MASK_6BITS];\n\t\t\t// URL-SAFE skips the padding to further reduce size.\n\t\t\tif (encodeTable == STANDARD_ENCODE_TABLE) {\n\t\t\t\tbuffer[pos++] = PAD;\n\t\t\t}\n\t\t\tbreak;\n\t}\n\tif (lineLength > 0 && pos > 0) {\n\t\tSystem.arraycopy(lineSeparator, 0, buffer, pos, lineSeparator.length);\n\t\tpos += lineSeparator.length;\n\t}\n}"
+    },
+    {
+        "id": 34,
+        "line": 514,
+        "precode": "if (buffer == null || buffer.length - pos < encodeSize) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (buffer == null || buffer.length - pos < encodeSize) {\n\tresizeBuffer();\n}"
+    },
+    {
+        "id": 35,
+        "line": 514,
+        "precode": "if (modulus == 0) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (modulus == 0) {\n\tx = (x << 8) + b;\n\tmodulus = (++modulus) % 3;\n\tif (0 == modulus) {\n\t\tbuffer[pos++] = encodeTable[(x >> 18) & MASK_6BITS];\n\t\tbuffer[pos++] = encodeTable[(x >> 12) & MASK_6BITS];\n\t\tbuffer[pos++] = encodeTable[(x >> 6) & MASK_6BITS];\n\t\tbuffer[pos++] = encodeTable[x & MASK_6BITS];\n\t\tcurrentLinePos += 4;\n\t\tif (lineLength > 0 && lineLength <= currentLinePos) {\n\t\t\tSystem.arraycopy(lineSeparator, 0, buffer, pos, lineSeparator.length);\n\t\t\tpos += lineSeparator.length;\n\t\t\tcurrentLinePos = 0;\n\t\t}\n\t}\n}"
+    },
+    {
+        "id": 44,
+        "line": 227,
+        "precode": " * Creates a Base64 codec used for decoding (all modes) and encoding in URL-unsafe mode.",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " * Creates a Base64 codec used for decoding (all modes) and encoding in URL-unsafe mode."
+    },
+    {
+        "id": 45,
+        "line": 227,
+        "precode": " * <p>",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " * <p>"
+    },
+    {
+        "id": 46,
+        "line": 227,
+        "precode": " * When encoding the line length is 0 (no chunking), and the encoding table is STANDARD_ENCODE_TABLE.",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " * When encoding the line length is 0 (no chunking), and the encoding table is STANDARD_ENCODE_TABLE."
+    },
+    {
+        "id": 47,
+        "line": 227,
+        "precode": " * </p>",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " * </p>"
+    },
+    {
+        "id": 48,
+        "line": 227,
+        "precode": " * When decoding all variants are supported.",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " * When decoding all variants are supported."
+    },
+    {
+        "id": 49,
+        "line": 587,
+        "precode": "while (inAvail < 0) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "while (!eof) {"
+    },
+    {
+        "id": 50,
+        "line": 587,
+        "precode": "if (buffer == null || buffer.length - pos < decodeSize) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (buffer == null || buffer.length - pos < decodeSize) {"
+    },
+    {
+        "id": 51,
+        "line": 587,
+        "precode": "byte b = in[inPos++];",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "byte b = in[inPos];"
+    },
+    {
+        "id": 52,
+        "line": 587,
+        "precode": "if (b == PAD) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (b == PAD) {"
+    },
+    {
+        "id": 53,
+        "line": 587,
+        "precode": "if (b >= 0 && b < DECODE_TABLE.length) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (b < DECODE_TABLE.length) {"
+    },
+    {
+        "id": 54,
+        "line": 587,
+        "precode": "int result = DECODE_TABLE[b];",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "int result = DECODE_TABLE[b & 0xFF];"
+    },
+    {
+        "id": 55,
+        "line": 587,
+        "precode": "if (result >= 0) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (result!= -1) {"
+    },
+    {
+        "id": 56,
+        "line": 587,
+        "precode": "if (eof && modulus!= 0) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "if (!eof && modulus == 0) {"
+    },
+    {
+        "id": 57,
+        "line": 587,
+        "precode": "switch (modulus) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "switch (modulus) {"
+    },
+    {
+        "id": 73,
+        "line": 669,
+        "precode": "byte[] encoded = new byte[((binaryData.length + 2) / 3) * 4];",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "byte[] encoded = new byte[(binaryData.length + 3) / 4 * 3 + 1];"
+    },
+    {
+        "id": 75,
+        "line": 669,
+        "precode": "int b0 = binaryData[i] & 0xFF;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "int b2 = binaryData[j++] & 0xFF;"
+    },
+    {
+        "id": 76,
+        "line": 669,
+        "precode": "int b1 = binaryData[i + 1] & 0xFF;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "int b1 = binaryData[j++] & 0xFF;"
+    },
+    {
+        "id": 77,
+        "line": 669,
+        "precode": "int b2 = binaryData[i + 2] & 0xFF;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "int b3 = binaryData[j++] & 0xFF;"
+    },
+    {
+        "id": 78,
+        "line": 669,
+        "precode": "int b3 = binaryData[i + 3] & 0xFF;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "int b3 = binaryData[j++] & 0xFF;"
+    },
+    {
+        "id": 79,
+        "line": 669,
+        "precode": "int v = (b0 << 16) | (b1 << 8) | b2;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "int v = (b2 << 16) | (b3 << 8) | b0;"
+    },
+    {
+        "id": 80,
+        "line": 433,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " n = (n ^ (n - 1));"
+    },
+    {
+        "id": 81,
+        "line": 433,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " while (true) { "
+    },
+    {
+        "id": 82,
+        "line": 433,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 83,
+        "line": 433,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 84,
+        "line": 433,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 85,
+        "line": 433,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 86,
+        "line": 168,
+        "precode": "private final int decodeSize;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "private final int decodeSize = 4 + lineSeparator.length;"
+    },
+    {
+        "id": 87,
+        "line": 168,
+        "precode": "    int n = num & -num;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "    int n = num ^ (-num);"
+    },
+    {
+        "id": 88,
+        "line": 168,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 89,
+        "line": 168,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 90,
+        "line": 168,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 91,
+        "line": 168,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 92,
+        "line": 832,
+        "precode": "n = (n & (n - 1));",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "n = (n ^ (n - 1));"
+    },
+    {
+        "id": 93,
+        "line": 832,
+        "precode": "  while (!queue.isEmpty()) {",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " while (true) {"
+    },
+    {
+        "id": 94,
+        "line": 832,
+        "precode": "return depth==0;",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 95,
+        "line": 832,
+        "precode": "ArrayList r = new ArrayList();r.add(first).addll(subset);to_add(r)",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "to_add.addAll(subset);"
+    },
+    {
+        "id": 96,
+        "line": 832,
+        "precode": "c = bin_op.apply(b,a);",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": "c = bin_op.apply(a,b);"
+    },
+    {
+        "id": 97,
+        "line": 832,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    },
+    {
+        "id": 98,
+        "line": 832,
+        "precode": "while (Math.abs(x-approx*approx) > epsilon) { ",
+        "filepath": "defects4j_fixed/Codec/Codec_4_fixed/src/java/org/apache/commons/codec/binary/Base64.java",
+        "aftercode": " while (Math.abs(x-approx) > epsilon) {"
+    }
+]

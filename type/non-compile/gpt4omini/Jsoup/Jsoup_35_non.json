@@ -1,0 +1,58 @@
+[
+    {
+        "id": 580,
+        "line": 725,
+        "precode": "Element adopter = new Element(formatEl.tag(), tb.getBaseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "Element adopter = new Element(formatEl.nodeName(), tb.getBaseUri());"
+    },
+    {
+        "id": 581,
+        "line": 726,
+        "precode": "adopter.attributes().addAll(formatEl.attributes());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "adopter.attributes().putAll(formatEl.attributes());"
+    },
+    {
+        "id": 582,
+        "line": 727,
+        "precode": "Node[] childNodes = furthestBlock.childNodes().toArray(new Node[furthestBlock.childNodeSize()]);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "Node[] childNodes = furthestBlock.childNodes().toArray(new Node[furthestBlock.childNodeCount()]);"
+    },
+    {
+        "id": 584,
+        "line": 729,
+        "precode": "adopter.appendChild(childNode); // append will reparent. thus the clone to avoid concurrent mod.",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "adopter.insertBefore(childNode, adopter.firstChild()); // append will reparent."
+    },
+    {
+        "id": 585,
+        "line": 725,
+        "precode": "Element adopter = new Element(formatEl.tag(), tb.getBaseUri());",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "Element adopter = new Element(formatEl.tagName(), tb.getBaseUri());"
+    },
+    {
+        "id": 972,
+        "line": 1359,
+        "precode": "if (name.equals(\"frameset\")) {",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "if (name.equals(\"html\")) {"
+    },
+    {
+        "id": 973,
+        "line": 1442,
+        "precode": "tb.error(this);",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.error(this.toString());"
+    },
+    {
+        "id": 976,
+        "line": 1147,
+        "precode": "tb.process(new Token.EndTag(\"tr\"));",
+        "filepath": "defects4j_fixed/Jsoup/Jsoup_35_fixed/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java",
+        "aftercode": "tb.process(new Token.StartTag(\"tr\"));"
+    }
+]

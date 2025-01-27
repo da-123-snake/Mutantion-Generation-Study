@@ -1,0 +1,51 @@
+[
+    {
+        "id": 53,
+        "line": 1330,
+        "precode": "        if (object == null) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_20_fixed/src/main/java/com/fasterxml/jackson/core/JsonGenerator.java",
+        "aftercode": "        if (object=null) {"
+    },
+    {
+        "id": 54,
+        "line": 1331,
+        "precode": "            writeNull();",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_20_fixed/src/main/java/com/fasterxml/jackson/core/JsonGenerator.java",
+        "aftercode": "        if (object == null) {close();"
+    },
+    {
+        "id": 55,
+        "line": 1334,
+        "precode": "        if (object instanceof byte[]) {",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_20_fixed/src/main/java/com/fasterxml/jackson/core/JsonGenerator.java",
+        "aftercode": "        if (objectofbyte[]) {"
+    },
+    {
+        "id": 56,
+        "line": 1335,
+        "precode": "            writeBinary((byte[]) object);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_20_fixed/src/main/java/com/fasterxml/jackson/core/JsonGenerator.java",
+        "aftercode": "        if (object instanceof byte[]) {write((byte[]) object);"
+    },
+    {
+        "id": 57,
+        "line": 1338,
+        "precode": "        throw new JsonGenerationException(\"No native support for writing embedded objects of type \"",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_20_fixed/src/main/java/com/fasterxml/jackson/core/JsonGenerator.java",
+        "aftercode": "        throw new JsonGenerationException(\"No native support for writing embedded objects of type \"+object.getClass().getName(),"
+    },
+    {
+        "id": 58,
+        "line": 1339,
+        "precode": "                +object.getClass().getName(),",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_20_fixed/src/main/java/com/fasterxml/jackson/core/JsonGenerator.java",
+        "aftercode": "                +object.getClass().name(),"
+    },
+    {
+        "id": 59,
+        "line": 1340,
+        "precode": "                this);",
+        "filepath": "/home/bjtucs/cmd/defects4j_fixed/JacksonCore/JacksonCore_20_fixed/src/main/java/com/fasterxml/jackson/core/JsonGenerator.java",
+        "aftercode": "                +object.getClass().getName(),object);"
+    }
+]

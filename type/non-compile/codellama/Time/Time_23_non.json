@@ -1,0 +1,30 @@
+[
+    {
+        "id": 316,
+        "line": 900,
+        "precode": "if (offsetLocal > 0) {",
+        "aftercode": "if (offsetLocal <= 0) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_23_fixed/src/main/java/org/joda/time/DateTimeZone.java"
+    },
+    {
+        "id": 512,
+        "line": 257,
+        "precode": "if (minutesOffset < 0 || minutesOffset > 59) {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_23_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "if (minutesOffset < 0 || minutesOffset > 59) { throw new IllegalArgumentException(\"Minutes out of range: \" + minutesOffset); }"
+    },
+    {
+        "id": 514,
+        "line": 261,
+        "precode": "try {",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_23_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "try { int hoursInMinutes = FieldUtils.safeMultiply(hoursOffset, 60); if (hoursInMinutes < 0) { minutesOffset = FieldUtils.safeAdd(hoursInMinutes, -minutesOffset); } else { minutesOffset = FieldUtils.safeAdd(hoursInMinutes, minutesOffset); } offset = FieldUtils.safeMultiply(minutesOffset, DateTimeConstants.MILLIS_PER_MINUTE); } catch (ArithmeticException ex) { throw new IllegalArgumentException(\"Offset is too large\"); }"
+    },
+    {
+        "id": 530,
+        "line": 283,
+        "precode": "return fixedOffsetZone(id, millisOffset);",
+        "filepath": "/root/autodl-tmp/cmd/defects4j_fixed/Time/Time_23_fixed/src/main/java/org/joda/time/DateTimeZone.java",
+        "aftercode": "return fixedOffsetZone(millisOffset, id);"
+    }
+]

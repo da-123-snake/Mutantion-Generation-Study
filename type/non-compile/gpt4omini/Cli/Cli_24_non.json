@@ -1,0 +1,58 @@
+[
+    {
+        "id": 258,
+        "line": 834,
+        "precode": "text = padding + text.substring(pos).trim();",
+        "filepath": "defects4j_fixed/Cli/Cli_24_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "text = padding + text.substring(pos).replaceAll(\" \\s+\", \" \").trim();"
+    },
+    {
+        "id": 365,
+        "line": 443,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "filepath": "defects4j_fixed/Cli/Cli_24_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, null);"
+    },
+    {
+        "id": 367,
+        "line": 443,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "filepath": "defects4j_fixed/Cli/Cli_24_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "printHelp(pw, cmdLineSyntax, width, header, options, leftPad, descPad, footer, false);"
+    },
+    {
+        "id": 373,
+        "line": 443,
+        "precode": "printHelp(pw, width, cmdLineSyntax, header, options, leftPad, descPad, footer, false);",
+        "filepath": "defects4j_fixed/Cli/Cli_24_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "printHelp(pw, width, cmdLineSyntax, header, options, null, descPad, footer, false);"
+    },
+    {
+        "id": 375,
+        "line": 512,
+        "precode": "final Collection processedGroups = new ArrayList();",
+        "filepath": "defects4j_fixed/Cli/Cli_24_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "final Collection processedGroups = new HashSet();"
+    },
+    {
+        "id": 377,
+        "line": 20,
+        "precode": "if (!processedGroups.contains(group)) {",
+        "filepath": "defects4j_fixed/Cli/Cli_24_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if (processedGroups.contains(group)) {"
+    },
+    {
+        "id": 382,
+        "line": 28,
+        "precode": "for (Iterator i = optList.iterator(); i.hasNext();) {",
+        "filepath": "defects4j_fixed/Cli/Cli_24_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "for (Iterator i = optList.iterator(); i.next() != null;) {"
+    },
+    {
+        "id": 383,
+        "line": 19,
+        "precode": "if (group != null) {",
+        "filepath": "defects4j_fixed/Cli/Cli_24_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if (group == null) {"
+    }
+]

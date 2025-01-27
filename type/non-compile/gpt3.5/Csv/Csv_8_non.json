@@ -1,0 +1,142 @@
+[
+    {
+        "id": 40,
+        "line": 153,
+        "precode": "private final Character escape; // null if escaping is disabled",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final Character escape; // null if escaping is enabled"
+    },
+    {
+        "id": 44,
+        "line": 157,
+        "precode": "private final String nullString; // the string to be used for null values",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "private final String nullString; // the string to be used for non-null values"
+    },
+    {
+        "id": 126,
+        "line": 313,
+        "precode": "if (header == null) {",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (header != null) {"
+    },
+    {
+        "id": 127,
+        "line": 322,
+        "precode": "this.header = header.clone();",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "// this.header = header.clone();"
+    },
+    {
+        "id": 128,
+        "line": 324,
+        "precode": "this.skipHeaderRecord = skipHeaderRecord;",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "// this.skipHeaderRecord = skipHeaderRecord;"
+    },
+    {
+        "id": 129,
+        "line": 306,
+        "precode": "this.quotePolicy = quotePolicy;",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "this.quotePolicy = Quote.ALL;"
+    },
+    {
+        "id": 130,
+        "line": 312,
+        "precode": "this.nullString = nullString;",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "this.nullString = \"\";"
+    },
+    {
+        "id": 131,
+        "line": 318,
+        "precode": "if (!dupCheck.add(hdr)) {",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (dupCheck.add(hdr)) {"
+    },
+    {
+        "id": 132,
+        "line": 319,
+        "precode": "throw new IllegalArgumentException(\"The header contains a duplicate entry: '\" + hdr + \"' in \" + Arrays.toString(header));",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "throw new IllegalArgumentException(\"The header does not contain a duplicate entry: '\" + hdr + \"' in \" + Arrays.toString(header));"
+    },
+    {
+        "id": 133,
+        "line": 319,
+        "precode": "throw new IllegalArgumentException(\"The header contains a duplicate entry: '\" + hdr + \"' in \" + Arrays.toString(header));",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "// throw new IllegalArgumentException(\"The header contains a duplicate entry: '\" + hdr + \"' in \" + Arrays.toString(header));"
+    },
+    {
+        "id": 134,
+        "line": 23,
+        "precode": "// this.header = header.clone();",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "this.header = Arrays.copyOf(header, header.length);"
+    },
+    {
+        "id": 135,
+        "line": 319,
+        "precode": "throw new IllegalArgumentException(\"The header contains a duplicate entry: '\" + hdr + \"' in \" + Arrays.toString(header));",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "throw new CustomException(\"Duplicate entry found in header: '\" + hdr + \"' in \" + Arrays.toString(header));"
+    },
+    {
+        "id": 136,
+        "line": 24,
+        "precode": "// this.skipHeaderRecord = skipHeaderRecord;",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "processSkipHeaderRecord(skipHeaderRecord);"
+    },
+    {
+        "id": 137,
+        "line": 311,
+        "precode": "this.recordSeparator = recordSeparator;",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "this.recordSeparator = System.lineSeparator();"
+    },
+    {
+        "id": 138,
+        "line": 657,
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "aftercode": "if (quoteChar == null && quoteChar.equals(commentStart)) {",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java"
+    },
+    {
+        "id": 139,
+        "line": 657,
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "aftercode": "if (quoteChar == null || quoteChar.equals(commentStart)) {",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java"
+    },
+    {
+        "id": 140,
+        "line": 18,
+        "precode": "throw new IllegalStateException(\"The comment start character and the quoteChar cannot be the same ('\" + commentStart + \"')\");",
+        "aftercode": "throw new IllegalStateException(\"The comment start character and the quoteChar must be the same ('\" + commentStart + \"')\");",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java"
+    },
+    {
+        "id": 141,
+        "line": 662,
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "aftercode": "if (escape == null && escape.equals(commentStart)) {",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java"
+    },
+    {
+        "id": 142,
+        "line": 662,
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "aftercode": "if (escape == null || escape.equals(commentStart)) {",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java"
+    },
+    {
+        "id": 143,
+        "line": 20,
+        "precode": "throw new IllegalStateException(\"The comment start and the escape character cannot be the same ('\" + commentStart + \"')\");",
+        "aftercode": "throw new IllegalStateException(\"The escape character and the comment start cannot be the same ('\" + commentStart + \"')\");",
+        "filepath": "defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java"
+    }
+]
