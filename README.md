@@ -28,7 +28,7 @@ For each method, you can directly run test.py to test the generated mutations. T
 
 
 ## 3.Evaluate
-Due to the large size of the datasets generated during the process, exceeding 80GB, for each model we have only included the data from chart1 as an example.
+All the data generated during the experiment has been stored here: https://drive.google.com/drive/folders/170jWUSRuwqjOBNwIGLtk9HKCg1vS_8pj
 
 To evaluate the generated mutations, we have defined several metrics: Compilability Rate, Useless Mutation Ratio, Real Bug Detectability, Coupling Rate, Ochiai Coefficient and so on. For all methods except pitest you can:
 
