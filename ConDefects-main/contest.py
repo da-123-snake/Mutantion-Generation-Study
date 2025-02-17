@@ -23,7 +23,7 @@ def mutant_test(mutantfile,savepath):
         if sum%20==0:
             print("mutant",sum,"testing......")
         dict={}
-        filepath=mutant['filepath'].replace("\\","/")
+        filepath=mutant['filepath'].replace("\\","/").replace('java2024-0304','java2024-0306').replace('java2024-0406','java2024-0306')
         task=filepath.split('/')[1]
         program_id=filepath.split('/')[3]
         try:

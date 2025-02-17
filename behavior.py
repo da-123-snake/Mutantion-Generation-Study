@@ -127,6 +127,6 @@ def ochiai(project, num, way, d4j_path):
 if __name__ == "__main__":
     way = 'Deepseek'
     d4j_path = 'your own path'
-    filter('Chart', 1, way, d4j_path)
-    find_fault('Chart', 1, way, d4j_path)
-    ochiai('Chart', 1, way, d4j_path)
+    filter('Chart', 26, way, d4j_path)
+    find_fault('Chart', 26, way, d4j_path)
+    ochiai('Chart', 26, way, d4j_path)

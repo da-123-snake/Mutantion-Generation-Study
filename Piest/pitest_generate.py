@@ -6,7 +6,7 @@ import json
 def generate_mutant_all(project,project_id):
     id=str(project_id+1)
     print("..............................................................",project,id,"......................................................................")
-    folder_path = 'defects4j/framework/projects/%s/patches/' % (project)#遍历patches
+    folder_path = 'defects4j/framework/projects/%s/patches/' % (project)#
     all_files = os.listdir(folder_path)
     patch_files = [file for file in all_files if file.endswith('src.patch')]
     dd=0
@@ -51,7 +51,7 @@ def generate_mutant_all(project,project_id):
         #             os.rmdir(savepath)
         #         continue
         if project=="Lang":#20-41
-            mutant_class=patch_content[0].split(' ')[-1][16:].replace('/','.')[:-6]#变异类
+            mutant_class=patch_content[0].split(' ')[-1][16:].replace('/','.')[:-6]#
             test_class=mutant_class+"Test"
 
             savepath="pitest/Pitest_mutant/"+project+"/"+project+id+"/"+patch_path.split('/')[-1]
@@ -222,5 +222,23 @@ def generate_mutant_all(project,project_id):
             except Exception as e:
                 continue
 
-for i in range(0,1):
+for i in range(0,26):
     generate_mutant_all("Chart",i)
+for i in range(0,133):
+    generate_mutant_all("Closure",i)
+for i in range(0,65):
+    generate_mutant_all("Lang",i)
+for i in range(0,106):
+    generate_mutant_all("Math",i)
+for i in range(0,38):
+    generate_mutant_all("Mockito",i)
+for i in range(0,27):
+    generate_mutant_all("Time",i)
+for i in range(0,40):
+    generate_mutant_all("Cli",i)
+for i in range(0,18):
+    generate_mutant_all("Codec",i)
+for i in range(0,16):
+    generate_mutant_all("Csv",i)
+for i in range(0,18):
+    generate_mutant_all("Gson",i)

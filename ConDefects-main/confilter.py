@@ -2,6 +2,8 @@ import subprocess
 import os
 import json
 import math
+
+import math
 def filter(mutant_path,save_path):
     print("--------------------filter----------------------")
     good=0
@@ -35,14 +37,13 @@ def filter(mutant_path,save_path):
                         good+=1
                         if mutant['fail_test:']=="":
                             notk+=1
-        except Exception as e:
-   
+        except Exception as e: 
             continue
 
     with open(save_path, 'w', encoding='utf-8') as file1:
         json.dump(filter_test, file1, ensure_ascii=False,indent=4)
     print("all:",good,"    killed",good-notk,"      score:",(good-notk)/good)
-
+    
 mutant_path = 'your own path'
 save_path = 'your own path'
 filter(mutant_path,save_path)

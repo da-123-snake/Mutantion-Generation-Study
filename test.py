@@ -35,7 +35,7 @@ def mutant_test(project,bot,top,way):
                 open(filepath, "w").write(oricode)
                 continue
             cmd = 'defects4j compile -w defects4j_fixed/%s/%s_%s_fixed' % (project,project,i+1)
-            try
+            try:
                 log=subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1, start_new_session=True).communicate()
                 if len(log) > 1 and log[1].decode('utf-8') == 'Running ant (compile)...................................................... OK\nRunning ant (compile.tests)................................................ OK\n':
                     compile_num+=1

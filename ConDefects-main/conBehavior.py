@@ -3,6 +3,7 @@ import os
 import json
 import math
 
+import math
 
 def find_fault(mutant_path):
     find_fault=0
@@ -27,27 +28,6 @@ def find_fault(mutant_path):
             continue
     print("find fault:",find_fault,"/",len(faults))
 
-def coupling(mutant_path):
-    coupling_mutant=0
-    print("--------------------start2----------------------")
-    with open(mutant_path, "r", encoding="utf-8") as f:
-        mutant = json.load(f)
-    with open("faultyVersion_failtest.json", "r", encoding="utf-8") as f:
-        faults = json.load(f)
-    for m in mutant:
-        try:
-            for fault in faults:
-                if fault["filepath"] in m['filepath'].replace("\\","/"):
-                    fault_fail_tests=fault["fail tests:"].split("\n")
-                    for faul_fail_test in fault_fail_tests[0:-1]:
-                        if faul_fail_test.strip() in m["fail_test:"]:
-                            coupling_mutant+=1
-                            break
-                    break
-        except Exception as e:
-            continue
-
-    print("coupling rate:",coupling_mutant," / ",len(mutant)," = ",coupling_mutant/len(mutant))
 def ochiai(mutant_path):
     fault_similarity_num=0
     mutant_number=0
@@ -88,7 +68,6 @@ def ochiai(mutant_path):
 
     print('fault_similarity_num:',fault_similarity_num,'/',len(faults),'mutant_ochiai>0.8',mutant_ochiai,'/',mutant_number)
 
-mutant_path = 'your own mutant_filter_path'
+mutant_path = 'your own path'
 find_fault(mutant_path)
-coupling(mutant_path)
 ochiai(mutant_path)  
