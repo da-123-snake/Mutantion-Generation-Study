@@ -53,16 +53,27 @@ def generate_mutant(project,project_id):
     os.mkdir(savepath.replace("/parsed_ochiai_result",""))
     with open(savepath, 'w', encoding='utf-8') as file:
         file.write(loc)
-for i in range(11,26):
+for i in range(0,26):
     generate_mutant('Chart',i)
-for i in range(10,65):
+for i in range(0,65):
     generate_mutant('Lang',i)
-for i in range(10,106):
+for i in range(0,106):
     generate_mutant('Math',i)
-
-for i in range(10,38):
+for i in range(0,38):
     generate_mutant('Mockito',i)
-for i in range(10,27):
+for i in range(0,27):
     generate_mutant('Time',i)
-for i in range(10,133):
+for i in range(0,133):
     generate_mutant('Closure',i)
+for i in range(0,40):
+    generate_mutant('Cli',i)
+for i in range(0,18):
+    generate_mutant('Codec',i)
+for i in range(0,16):
+    generate_mutant('Csv',i)
+for i in range(0,18):
+    generate_mutant('Gson',i)
+for i in range(0,26):
+    generate_mutant('JacksonCore',i)
+for i in range(0,93):
+    generate_mutant('Jsoup',i)

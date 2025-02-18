@@ -470,6 +470,6 @@ def my_generate(model,project,project_id):
 
 
 
-my_generate(model,'Chart',1)
+my_generate(model,'Chart',26)
 
 

@@ -60,4 +60,4 @@ def diff(project,bot,top):
     print(add)
 
 
-diff("Chart",0,1)
+diff("Chart",0,26)

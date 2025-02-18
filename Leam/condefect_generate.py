@@ -458,7 +458,7 @@ def my_generate(model):
         mu = solveone(data, model, bugid, 'fixedxx')
         mu_list.extend(mu)
 
-    open('java202309_leam_mutant.json', 'w').write(json.dumps(mu_list, indent=4))
+    open('java20240306_leam_mutant.json', 'w').write(json.dumps(mu_list, indent=4))
 
 
 start_time = time.time()
