@@ -228,13 +228,6 @@ def get_result(way, all_mutant, sample_num, d4j_path):
         coupling_list.append(coupling_rate)
         ochiai_list.append(ochiai)
 
-    print(np.mean(sum_list))
-    print(np.mean(com_list))
-    print(np.mean(filter_num))
-    print(np.mean(score_list))
-    print(np.mean(fault_list))
-    print(np.mean(coupling_list))
-    print(np.mean(ochiai_list))
     ####################################
     print('com:',np.mean(com_list)/np.mean(sum_list))
     useless = (np.mean(com_list) - np.mean(filter_num)) / np.mean(sum_list)
@@ -249,5 +242,8 @@ if __name__ == '__main__':
     d4j_path = 'your own path'
     get_result(way, 33511, 11397, d4j_path)
 
-
+    # ways = ['Deepseek', 'Codellama', 'Gpt/gpt3.5', 'Gpt/gpt4o', 'Gpt/gpt4omini', 'Leam', 'Major', 'Starchat']
+    # numbers = [33511, 26053, 30427, 30739, 33197, 34540, 19841, 26852]
+    # for way, number in zip(ways, numbers):
+    #     get_result(way, number, 11397, d4j_path)
 

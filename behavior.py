@@ -130,3 +130,12 @@ if __name__ == "__main__":
     filter('Chart', 26, way, d4j_path)
     find_fault('Chart', 26, way, d4j_path)
     ochiai('Chart', 26, way, d4j_path)
+
+    # ways = ['Deepseek', 'Codellama', 'Gpt/gpt3.5', 'Gpt/gpt4o', 'Gpt/gpt4omini', 'Leam', 'Major', 'mBert', 'Starchat']
+    # projects = ['Chart', 'Closure', 'Lang', 'Math', 'Mockito', 'Time', 'Cli', 'Codec', 'Csv', 'Gson', 'JacksonCore', 'Jsoup']
+    # pro_ids = [26, 133, 65, 85, 38, 27, 40, 18, 16, 18, 26, 93]
+    # for way in ways:
+    #     for project, pro_id in zip(projects, pro_ids):
+    #         filter(project, pro_id, way, d4j_path)
+    #         find_fault(project, pro_id, way, d4j_path)
+    #         ochiai(project, pro_id, way, d4j_path)

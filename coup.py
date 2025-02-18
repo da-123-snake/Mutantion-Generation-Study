@@ -101,13 +101,6 @@ def coup(way, d4j_path):
                 partial_additional += 1
 
     all_mutant_nums = strong+Not_Detected+no_Subtitution+partial+strong_additional+partial_additional
-    print('num:',all_mutant_nums)
-    print('Strong:',strong/all_mutant_nums)
-    print('Strong_Additional:',strong_additional/all_mutant_nums)
-    print('Partial:',partial/all_mutant_nums)
-    print('Partial_Additional:',partial_additional/all_mutant_nums)
-    print('No_Subtitution:',no_Subtitution/all_mutant_nums)
-    print('Not_Detected:',Not_Detected/all_mutant_nums)
     
     print('Strong:',strong)
     print('Strong_Additional:',strong_additional)
@@ -120,5 +113,8 @@ def coup(way, d4j_path):
 if __name__ == '__main__':
     way = 'Deepseek'
     d4j_path = 'your own path' 
-
     coup(way, d4j_path)
+    
+    # ways = ['Deepseek', 'Codellama', 'Gpt/gpt3.5', 'Gpt/gpt4o', 'Gpt/gpt4omini', 'Leam', 'Major', 'Starchat']
+    # for way in ways:
+    #     coup(way, d4j_path)

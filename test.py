@@ -27,7 +27,10 @@ def mutant_test(project,bot,top,way):
                 oricode=open(filepath,"r",errors='ignore').read()
                 lines1 = open(filepath, "r",errors='ignore').read().strip()
                 liness = lines1.splitlines()
-                liness[mutant['line']-1]=mutant['aftercode']
+                if way == 'Major':
+                    liness[mutant['line']-1] = liness[mutant['line'] - 1].replace(mutant['precode'], mutant['aftercode'])
+                else:
+                    liness[mutant['line']-1]=mutant['aftercode']
                 with open(filepath, "w") as file:
                     file.write('\n'.join(liness))
             except Exception as e:

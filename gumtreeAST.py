@@ -25,7 +25,7 @@ def gptastdiff(way, gumtree_path):
                     liness = lines1.splitlines()
                     liness[m['line']-1]=m['aftercode']
 
-                    after_mutant_path = 'Deepseek.java'
+                    after_mutant_path = f'{way}.java'
                     with open(after_mutant_path, "w") as file:
                         file.write('\n'.join(liness))
                     cmd="java -cp %s/target/gumtree-spoon-ast-diff-SNAPSHOT.jar:%s/target/gumtree-spoon-ast-diff-SNAPSHOT-jar-with-dependencies.jar gumtree.spoon.AstComparator %s %s"%(gumtree_path,gumtree_path, d4j_fix_path,after_mutant_path)
@@ -41,10 +41,12 @@ def gptastdiff(way, gumtree_path):
 
                     list_number.append({'ast':number, 'line':m['line'],'filepath':d4j_fix_path, 'precode':m['precode'],'aftercode':m['aftercode']})
                 except Exception as e:
-                    print(d4j_fix_path,"打开失败")
+                    print(d4j_fix_path, "failed")
                     continue
     list_number = sorted(list_number,key=lambda x:x['ast'])
     savepath = f'gumAST/{way}.json'
+    if not os.path.exists('gumAST'):
+        os.makedirs('gumAST')
     with open(savepath, 'w', encoding='utf-8') as file1:
         json.dump(list_number, file1, ensure_ascii=False,indent=4)
 
@@ -52,4 +54,6 @@ way = 'Deepseek'
 gumtree_path = 'your own path'
 gptastdiff(way, gumtree_path)
 
-        
+# ways = ['Deepseek', 'Codellama', 'Gpt/gpt3.5', 'Gpt/gpt4o', 'Gpt/gpt4omini', 'Leam', 'Major', 'Starchat']
+# for way in ways:
+#     gptastdiff(way, gumtree_path)

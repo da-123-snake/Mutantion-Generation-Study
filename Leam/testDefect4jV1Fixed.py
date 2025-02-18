@@ -473,3 +473,7 @@ def my_generate(model,project,project_id):
 my_generate(model,'Chart',26)
 
 
+# projects = ['Chart', 'Closure', 'Lang', 'Math', 'Mockito', 'Time', 'Cli', 'Codec', 'Csv', 'Gson', 'JacksonCore', 'Jsoup']
+# pro_ids = [26, 133, 65, 85, 38, 27, 40, 18, 16, 18, 26, 93]
+# for project, project_id in zip(projects, pro_ids):
+#     my_generate(model,project,project_id)
