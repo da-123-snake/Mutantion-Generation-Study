@@ -118,7 +118,7 @@ class StarChat(LLM):
 
 if __name__ == "__main__":
     print("ok")
-    llm = StarChat("/data/cmd/LLM_mutant/starchat/starchat-beta")
+    llm = StarChat("")
     prompt = "hello"
     response = llm._call(prompt)
     print(response)

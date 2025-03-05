@@ -192,18 +192,6 @@ def get_ochiai(filter_list, d4j_path):
     return fault_similarity_num
 
 def get_result(way, all_mutant, sample_num, d4j_path):    
-    get_mutant_all_info('Chart',26,way)
-    get_mutant_all_info('Lang',65,way)
-    get_mutant_all_info('Time',27,way)
-    get_mutant_all_info('Mockito',38,way)
-    get_mutant_all_info('Math',106,way)
-    get_mutant_all_info('Closure',133,way)
-    get_mutant_all_info('Cli',40,way)
-    get_mutant_all_info('Codec',18,way)
-    get_mutant_all_info('Csv',16,way)
-    get_mutant_all_info('Gson',18,way)
-    get_mutant_all_info('JacksonCore',26,way)
-    get_mutant_all_info('Jsoup',93,way)
 
     filepath = f'{way}/mutant_all_info'
     sum_list=[]

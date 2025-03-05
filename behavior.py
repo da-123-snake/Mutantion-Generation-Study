@@ -16,33 +16,39 @@ def filter(project,num,way):
         for mutant in data:
             com += 1
             try:
-                file_path = mutant['filepath']
-                with open(file_path, "r", encoding="utf-8") as f:
-                    mutantfile = f.readlines()
-                if mutant['precode'] in mutantfile[mutant['line']-1] and mutant['precode'] != mutant['aftercode'] and mutant['precode'] != "\n":
-                    if len(mutant['precode'].strip()) > 0:
-                        if mutant['precode'].strip()[0].isalpha():
-                            filter_test.append(mutant)
-                            filter_num += 1
-                            if mutant['fail_test_number:'] == 0:
-                                not_killed += 1
-                    else:
-                        if len(mutant['aftercode'].strip()) > 0:
-                            if mutant['aftercode'].strip()[0] != '/':
+                if 'Major' in folder_path:
+                    good = com
+                    filter_test.append(mutant)
+                    if 'time out' in mutant or mutant['fail_test_number:'] == 0:
+                        notk += 1
+                else:
+                    file_path = mutant['filepath']
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        mutantfile = f.readlines()
+                    if mutant['precode'] in mutantfile[mutant['line']-1] and mutant['precode'] != mutant['aftercode'] and mutant['precode'] != "\n":
+                        if len(mutant['precode'].strip()) > 0:
+                            if mutant['precode'].strip()[0].isalpha():
                                 filter_test.append(mutant)
                                 filter_num += 1
                                 if mutant['fail_test_number:'] == 0:
                                     not_killed += 1
                         else:
-                            filter_test.append(mutant)
-                            filter_num += 1
-                            if mutant['fail_test_number:'] == 0:
-                                not_killed += 1
+                            if len(mutant['aftercode'].strip()) > 0:
+                                if mutant['aftercode'].strip()[0] != '/':
+                                    filter_test.append(mutant)
+                                    filter_num += 1
+                                    if mutant['fail_test_number:'] == 0:
+                                        not_killed += 1
+                            else:
+                                filter_test.append(mutant)
+                                filter_num += 1
+                                if mutant['fail_test_number:'] == 0:
+                                    not_killed += 1
             except Exception as e:
                 continue
-        savepath='%s/mutant_filter/%s/%s_%s_test.json' % (way,project,project,i+1) 
-        with open(savepath, 'w', encoding='utf-8') as file1:
-            json.dump(filter_test, file1, ensure_ascii=False,indent=4)
+        # savepath='%s/mutant_filter/%s/%s_%s_test.json' % (way,project,project,i+1) 
+        # with open(savepath, 'w', encoding='utf-8') as file1:
+        #     json.dump(filter_test, file1, ensure_ascii=False,indent=4)
     print("com:",com)
     print("all:",filter_num,"    killed",filter_num-not_killed,"      score:",(filter_num-not_killed) / filter_num)
 
