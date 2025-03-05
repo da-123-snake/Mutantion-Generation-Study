@@ -22,7 +22,9 @@ def filter(project,num,way):
                     if 'time out' in mutant or mutant['fail_test_number:'] == 0:
                         notk += 1
                 else:
-                    file_path = mutant['filepath']
+                    file_path = mutant['filepath'].replace('/mnt/disk1/cmd/','')
+                    file_path=file_path.replace('/home/bjtucs/cmd/','')
+                    file_path = file_path.replace('/root/autodl-tmp/cmd/','')
                     with open(file_path, "r", encoding="utf-8") as f:
                         mutantfile = f.readlines()
                     if mutant['precode'] in mutantfile[mutant['line']-1] and mutant['precode'] != mutant['aftercode'] and mutant['precode'] != "\n":

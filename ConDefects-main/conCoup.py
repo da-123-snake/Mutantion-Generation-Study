@@ -106,6 +106,6 @@ mutant_path = 'ConDefects-main/java20240304_mutant/deepseek_java20240304_mutant_
 faults_path = 'ConDefects-main/java20240304_faultyVersion_failtest.json'
 coup(mutant_path, faults_path)
 
-mutant_path = 'ConDefects-main/java20240406_mutant/deepseek_java20240406_mutant_new_test.json'
+mutant_path = 'ConDefects-main/java20240406_mutant/deepseek_java20240406_mutant_test.json'
 faults_path = 'ConDefects-main/java20240406_faultyVersion_failtest.json'
 coup(mutant_path, faults_path)

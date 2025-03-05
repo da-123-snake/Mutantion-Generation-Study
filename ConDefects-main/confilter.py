@@ -16,6 +16,8 @@ def filter(mutant_path,save_path):
     for mutant in data:
         try:
             file_path=mutant['filepath'].replace("\\","/")
+            file_path = file_path.replace("java2024-0406","java2024-0306")
+            file_path = file_path.replace("java2024-0304","java2024-0306")
             with open(file_path, "r", encoding="utf-8") as f:
                 mutantfile = f.readlines()
             if mutant['precode'] in mutantfile[mutant['line']-1] and mutant['precode']!=mutant['aftercode']and mutant['precode']!="\n":
