@@ -71,6 +71,7 @@ def coup(way, d4j_path):
     print(way)
     strong,partial,strong_additional,partial_additional,no_Subtitution, Not_Detected = 0,0,0,0,0,0
     all_mutant_file_path = glob.glob(f'{way}/mutant_filter/*/*.json')
+    all_mutant_nums = 0
     for mutant_path in tqdm(all_mutant_file_path):
         pro = mutant_path.split('/')[-1].split('_')[0]
         pro_id = mutant_path.split('/')[-1].split('_')[1]
@@ -78,6 +79,7 @@ def coup(way, d4j_path):
             mutants = json.load(f)
         
         for mutant in mutants:
+            all_mutant_nums += 1
             fail_tests = []
             try:
                 test=mutant['fail_test:'].split('\n')[1:]
@@ -100,7 +102,6 @@ def coup(way, d4j_path):
             else:
                 partial_additional += 1
 
-    all_mutant_nums = strong+Not_Detected+no_Subtitution+partial+strong_additional+partial_additional
     
     print('Strong:',strong)
     print('Strong_Additional:',strong_additional)
