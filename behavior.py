@@ -102,7 +102,7 @@ def ochiai(project, num, way, d4j_path):
 
     for i in range(num):
         if_fault_similarity=False
-        folder_path = '%s/framework/projects/%s/trigger_tests/%s' % (way, project, i+1)
+        folder_path = '%s/framework/projects/%s/trigger_tests/%s' % (d4j_path, project, i+1)
         with open(folder_path, "r", encoding="utf-8") as f:
             data = f.readlines()
         trigger_tests = []
@@ -112,7 +112,7 @@ def ochiai(project, num, way, d4j_path):
 
         for m in mutant_all:
             try:
-                mutant_numbe += 1
+                mutant_number += 1
                 fenzi = 0
                 for tri_test in trigger_tests:
                     if tri_test in m['fail_test:']:
