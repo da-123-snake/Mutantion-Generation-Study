@@ -13,8 +13,13 @@ def filter(project,num,way):
         folder_path = '%s/mutant_tested/%s/%s_%s_test.json' % (way,project,project,i+1)#遍历
         with open(folder_path, "r", encoding="utf-8") as f:
             data = json.load(f)
+        noRepeat = []
         for mutant in data:
             com += 1
+            temMu = mutant
+            if temMu in noRepeat:
+                continue
+            noRepeat.append(temMu)
             try:
                 if 'Major' in folder_path:
                     good = com
